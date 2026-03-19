@@ -4,11 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "npx http-server ./frontend -p 3000"
+    "server": "node backend/server.js",
+    "wrapper": "chokidar 'frontend/src/**/*' -c 'node frontend/wrapper.js'",
+    "dev": "concurrently -n 'server,wrapper' \"npm run server\" \"npm run wrapper\""
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@awesome.me/webawesome": "^3.3.1"
+    "@awesome.me/webawesome": "^3.3.1",
+    "chokidar": "^5.0.0",
+    "chokidar-cli": "^3.0.0",
+    "concurrently": "^9.2.1",
+    "express": "^5.2.1"
   }
 }

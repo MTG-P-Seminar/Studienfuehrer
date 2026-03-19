@@ -1,0 +1,21 @@
+wa-badge.badge-colored {
+  --wa-color-on-normal: color-mix(in oklab, var(--badge-color), var(--wa-color-text-normal) 40%);
+  --wa-color-fill-normal: color-mix(in oklab, var(--badge-color), var(--wa-color-surface-default) 80%);
+  --wa-color-fill-loud: var(--badge-color);
+  --wa-color-border-normal: color-mix(in oklab, var(--badge-color), var(--wa-color-surface-default) 60%);
+}
+
+wa-dropdown-item.dropdown-item-colored {
+  color: color-mix(in oklab, var(--dropdown-item-color), var(--wa-color-text-normal) 40%);
+}
+
+wa-dropdown-item.dropdown-item-colored:hover, wa-dropdown-item.dropdown-item-colored:focus-visible {
+  background-color: color-mix(in oklab, var(--dropdown-item-color), var(--wa-color-surface-default) 80%);
+}
+
+.university-tum { --badge-color: #3070b3; --dropdown-item-color: #3070b3; }
+.university-lmu { --badge-color: #00883a; --dropdown-item-color: #00883a; }
+.university-unibw { --badge-color: #ed6600; --dropdown-item-color: #ed6600; }
+
+.study-field-science { --badge-color: #ff0083; --dropdown-item-color: #ff0083; }
+.study-field-humanities { --badge-color: #00c3ff; --dropdown-item-color: #00c3ff; }
