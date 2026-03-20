@@ -97,3 +97,37 @@ wa-dropdown-item[slot="submenu"]::part(label) {
   white-space: normal;
   hyphens: manual;
 }
+
+wa-details[theme]::part(base) {
+  border-color: color-mix(in oklab, var(--theme-color), var(--wa-color-surface-default) 60%) !important;
+}
+
+wa-details[theme]:not([open])::part(base) {
+  border-bottom-width: 0;
+}
+
+wa-details[theme]::part(header) {
+  border: 0 color-mix(in oklab, var(--theme-color), var(--wa-color-surface-default) 60%) solid;
+  border-bottom-width: var(--wa-panel-border-width);
+  background-color: color-mix(in oklab, var(--theme-color), var(--wa-color-surface-default) 80%);
+  transition: 0.3s;
+}
+
+wa-details[theme]::part(icon) {
+  color: color-mix(in oklab, var(--theme-color), var(--wa-color-text-normal) 40%);
+}
+
+wa-badge[theme] {
+  --wa-color-on-normal: color-mix(in oklab, var(--theme-color), var(--wa-color-text-normal) 40%);
+  --wa-color-fill-normal: color-mix(in oklab, var(--theme-color), var(--wa-color-surface-default) 80%);
+  --wa-color-fill-loud: var(--theme-color);
+  --wa-color-border-normal: color-mix(in oklab, var(--theme-color), var(--wa-color-surface-default) 60%);
+}
+
+wa-dropdown-item[theme] {
+  color: color-mix(in oklab, var(--theme-color), var(--wa-color-text-normal) 40%);
+}
+
+wa-dropdown-item[theme]:hover, wa-dropdown-item[theme]:focus-visible {
+  background-color: color-mix(in oklab, var(--theme-color), var(--wa-color-surface-default) 80%);
+}
