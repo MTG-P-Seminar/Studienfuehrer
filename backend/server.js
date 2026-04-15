@@ -7,7 +7,7 @@ const PORT = 3000;
 app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
 app.get("/:page", (req, res) => {
-  const page = req.params.page;
+  const page = req.params.page.toLowerCase();
 
   const filePath = path.join(__dirname, `../frontend/dist/pages/${page}`, "index.html");
 

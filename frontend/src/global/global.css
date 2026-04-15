@@ -1,16 +1,16 @@
 :root {
   --wa-color-brand: #3e397c;
-  --wa-color-brand-05: color-mix(in oklab, var(--wa-color-brand), var(--wa-color-text-normal) 90%);
-  --wa-color-brand-10: color-mix(in oklab, var(--wa-color-brand), var(--wa-color-text-normal) 80%);
-  --wa-color-brand-20: color-mix(in oklab, var(--wa-color-brand), var(--wa-color-text-normal) 60%);
-  --wa-color-brand-30: color-mix(in oklab, var(--wa-color-brand), var(--wa-color-text-normal) 40%);
-  --wa-color-brand-40: color-mix(in oklab, var(--wa-color-brand), var(--wa-color-text-normal) 20%);
+  --wa-color-brand-05: color-mix(in oklab, var(--wa-color-brand), black 67.5%);
+  --wa-color-brand-10: color-mix(in oklab, var(--wa-color-brand), black 60%);
+  --wa-color-brand-20: color-mix(in oklab, var(--wa-color-brand), black 45%);
+  --wa-color-brand-30: color-mix(in oklab, var(--wa-color-brand), black 30%);
+  --wa-color-brand-40: color-mix(in oklab, var(--wa-color-brand), black 15%);
   --wa-color-brand-50: var(--wa-color-brand);
-  --wa-color-brand-60: color-mix(in oklab, var(--wa-color-brand), var(--wa-color-surface-default) 20%);
-  --wa-color-brand-70: color-mix(in oklab, var(--wa-color-brand), var(--wa-color-surface-default) 40%);
-  --wa-color-brand-80: color-mix(in oklab, var(--wa-color-brand), var(--wa-color-surface-default) 60%);
-  --wa-color-brand-90: color-mix(in oklab, var(--wa-color-brand), var(--wa-color-surface-default) 80%);
-  --wa-color-brand-95: color-mix(in oklab, var(--wa-color-brand), var(--wa-color-surface-default) 90%);
+  --wa-color-brand-60: color-mix(in oklab, var(--wa-color-brand), white 20%);
+  --wa-color-brand-70: color-mix(in oklab, var(--wa-color-brand), white 40%);
+  --wa-color-brand-80: color-mix(in oklab, var(--wa-color-brand), white 60%);
+  --wa-color-brand-90: color-mix(in oklab, var(--wa-color-brand), white 80%);
+  --wa-color-brand-95: color-mix(in oklab, var(--wa-color-brand), white 90%);
 
   --wa-font-size-xs: round(calc(var(--wa-font-size-s) / 1.125), 1px)
 }
@@ -52,6 +52,10 @@
 
 wa-callout[appearance="filled-outlined"]::part(message) {
   color: var(--wa-color-on-normal);
+}
+
+wa-callout[size="small"] {
+  padding: 0.75em;
 }
 
 wa-carousel-item wa-card {
@@ -98,6 +102,27 @@ wa-dropdown-item[slot="submenu"]::part(label) {
   hyphens: manual;
 }
 
+a {
+  text-decoration-style: solid;
+  text-decoration-color: currentColor;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a wa-icon {
+  margin-right: 0.25rem;
+}
+
+a[theme] {
+  color: var(--theme-color)
+}
+
+:is(h1, h2, h3, h4, h5, h6, b, span)[theme] {
+  color: var(--theme-color)
+}
+
 wa-details[theme]::part(base) {
   border-color: color-mix(in oklab, var(--theme-color), var(--wa-color-surface-default) 60%) !important;
 }
@@ -110,7 +135,7 @@ wa-details[theme]::part(header) {
   border: 0 color-mix(in oklab, var(--theme-color), var(--wa-color-surface-default) 60%) solid;
   border-bottom-width: var(--wa-panel-border-width);
   background-color: color-mix(in oklab, var(--theme-color), var(--wa-color-surface-default) 80%);
-  transition: 0.3s;
+  transition: border-radius 0.3s;
 }
 
 wa-details[theme]::part(icon) {

@@ -8,6 +8,15 @@ const VENDOR_SRC = path.join(__dirname, "src/vendor");
 const VENDOR_DIST = path.join(__dirname, "dist/vendor");
 const GLOBAL_SRC = path.join(__dirname, "src/global");
 const GLOBAL_DIST = path.join(__dirname, "dist/global");
+const ASSETS_SRC = path.join(__dirname, "src/assets");
+const ASSETS_DIST = path.join(__dirname, "dist/assets");
+
+const titles = {
+  leni: "Leni",
+  showcase: "Showcase",
+  tum: "TUM",
+  yubikey: "YubiKey"
+}
 
 // Wrapper laden
 const wrapperTemplate = fs.readFileSync(WRAPPER_PATH, "utf-8");
@@ -46,6 +55,10 @@ console.log("✔ Vendor copied");
 copyFolderRecursive(GLOBAL_SRC, GLOBAL_DIST);
 console.log("✔ Global copied");
 
+// --- Assets kopieren ---
+copyFolderRecursive(ASSETS_SRC, ASSETS_DIST);
+console.log("✔ Assets copied");
+
 // --- Pages verarbeiten ---
 fs.readdirSync(SRC_DIR).forEach((page) => {
   const pagePath = path.join(SRC_DIR, page);
@@ -80,7 +93,8 @@ fs.readdirSync(SRC_DIR).forEach((page) => {
     )
     .replace(
       /<\/head>/i,
-      `  <link rel="stylesheet" href="/pages/${page}/index.css">\n</head>`
+      `<link rel="stylesheet" href="/pages/${page}/index.css">\n</head>
+       <title>${titles[page]} · StAu MTG</title>`
     )
     .replace(
       /<\/body>/i,

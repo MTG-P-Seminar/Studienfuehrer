@@ -1,0 +1,32 @@
+[theme="unibw"] { --theme-color: #ed6600; }
+
+.img-wrapper {
+  position: relative;
+}
+
+.img-wrapper wa-button, .img-overlay wa-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.img-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.img-overlay img {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(calc(-50%), calc(-50%));
+  padding: 1rem;
+  border-radius: calc(var(--wa-panel-border-radius) + 1rem);
+}
+
+.img-overlay-visible {
+  display: block;
+}

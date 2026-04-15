@@ -1,0 +1,198 @@
+<div class="wa-cluster wa-items-center">
+  <h1 class="wa-heading-xl">UniBw: Yubikey und erste Anmeldung</h1>
+  <wa-badge appearance="filled-outlined" variant="brand">Vitus (11d)</wa-badge>
+</div>
+
+<wa-callout variant="brand">
+  <wa-icon slot="icon" name="book"></wa-icon>
+  Bei deinem ersten Besuch an der UniBw bekommst du eine kurze Führung über das Gelände und
+  dann einige Dinge: Neben einem Fahrradsattelüberzug und einem Block mit Klebezetteln gab
+  es unter anderem einen Plan für das Uni-Gelände, eine Zutrittskarte sowie den sogenannten
+  Yubikey, Erstanmeldedaten und eine grobe Anleitung.
+  Der Yubikey ist in der UniBw ein Sicherheitsschlüssel mit USB-C-Anschluss, der für den Zugang zu
+  den Apps der Uni benötigt wird. Die Einrichtung und erste Anmeldung mit dem Yubikey
+  funktionieren folgendermaßen:
+</wa-callout>
+
+<wa-carousel class="vertical" style="--aspect-ratio: unset; max-width: 700px; margin: auto;" navigation pagination id="meinElement">
+  <wa-carousel-item>
+    <wa-card>
+      <h3 class="wa-heading-l" slot="header">Schritt 1</h3>
+
+      Zuerst muss das Initialpasswort, also das voreingestellte Passwort, geändert werden. Dafür gehst
+      du auf die
+      <a href="https://nutzer.unibw.de" theme="unibw" target="_blank">
+        <wa-icon name="link"></wa-icon>Nutzerseite der UniBw</a>
+      und meldest dich zuerst mit deiner Rechenzentrumkennung und dem Initialpasswort an.
+    </wa-card>
+  </wa-carousel-item>
+
+  <wa-carousel-item>
+    <wa-card>
+      <h3 class="wa-heading-l" slot="header">Schritt 2</h3>
+
+      Dieses soll darauf dann direkt geändert werden, unter dem blauen Feld „Passwort ändern“.
+    </wa-card>
+  </wa-carousel-item>
+
+  <wa-carousel-item>
+    <wa-card>
+      <h3 class="wa-heading-l" slot="header">Schritt 3</h3>
+
+      <div class="wa-stack">
+        <div class="img-wrapper">
+          <img slot="media" src="/assets/yubikey-0.jpg"/>
+          <wa-button size="small"><wa-icon name="expand"></wa-icon></wa-button>
+        </div>
+
+        Unter dem Reiter Übersicht musst du jetzt bei „App Passwörter“ für deine eigene Universitäts-
+        Email-Adresse dein Passwort abspeichern. Dieses ist schon generiert und du musst es lediglich
+        abspeichern.
+        
+        <div class="img-wrapper">
+          <img slot="media" src="/assets/yubikey-1.jpg"/>
+          <wa-button size="small"><wa-icon name="expand"></wa-icon></wa-button>
+        </div>
+
+        <wa-callout variant="danger" appearance="accent">
+          <wa-icon slot="icon" name="circle-exclamation"></wa-icon>
+          <b>Achtung</b>: Dieses Passwort wird nur einmal angezeigt. Speichere es dringend in einem
+          Passwort-Manager ab, um es nicht zu verlieren, da das Rechenzentrum keinen Zugriff darauf hat.
+        </wa-callout>
+      </div>
+
+    </wa-card>
+  </wa-carousel-item>
+
+  <wa-carousel-item>
+    <wa-card>
+      <h3 class="wa-heading-l" slot="header">Schritt 4</h3>
+
+      Mit diesem Passwort und deiner RZ-Kennung kannst du dich nun im
+      <a href="https://email.unibw.de" theme="unibw" target="_blank">
+        <wa-icon name="link"></wa-icon>Emailportal der UniBw</a> 
+      anmelden. Dort findest du eine Email mit deinem Yubikey-Passwort, mit
+      dem du in Zukunft dich in den anderen Portalen anmelden kannst, und eine Übersicht der Portale.
+    </wa-card>
+  </wa-carousel-item>
+
+  <wa-carousel-item>
+    <wa-card>
+      <h3 class="wa-heading-l" slot="header">Schritt 5</h3>
+
+      <div class="wa-stack">
+        <div class="img-wrapper">
+          <img slot="media" src="/assets/yubikey-2.jpg"/>
+          <wa-button size="small"><wa-icon name="expand"></wa-icon></wa-button>
+        </div>
+
+        <div>
+          Öffne erneut die Nutzer-Seite und melde dich jetzt nicht mit deinem Passwort an, sondern drücke
+          auf das Feld „Mit UniBwM-SecureID anmelden“.
+        </div>
+      </div>
+    </wa-card>
+  </wa-carousel-item>
+
+  <wa-carousel-item>
+    <wa-card>
+      <h3 class="wa-heading-l" slot="header">Schritt 6</h3>
+
+      <div class="wa-stack">
+        <div class="img-wrapper">
+          <img slot="media" src="/assets/yubikey-3.jpg"/>
+          <wa-button size="small"><wa-icon name="expand"></wa-icon></wa-button>
+        </div>
+
+        <div>
+          Gib jetzt deine Rechenzentrum-Kennung ein und klicke auf Anmelden und dann „Anmelden mit Passkey“.
+        </div>
+      </div>
+    </wa-card>
+  </wa-carousel-item>
+
+  <wa-carousel-item>
+    <wa-card>
+      <h3 class="wa-heading-l" slot="header">Schritt 7</h3>
+
+      <div class="wa-stack">
+        <div class="img-wrapper">
+          <img slot="media" src="/assets/yubikey-4.jpg"/>
+          <wa-button size="small"><wa-icon name="expand"></wa-icon></wa-button>
+        </div>
+
+        <div>
+          Wähle jetzt „Sicherheitsschlüssel“ aus und stecke den Yubikey in den USBC-Port deines Gerätes.
+          Jetzt solltest du dein Yubikey-Passwort aus der Email benutzen können, und dich dann durch
+          Aktivieren des Yubikeys (Berühre das grüne Y auf dem Yubikey) anmelden.
+        </div>
+
+        <wa-callout variant="brand" appearance="accent" size="small">
+          <wa-icon slot="icon" name="circle-info"></wa-icon>
+          Falls du ein Tablet benutzt kann es hier dazu kommen, dass deine Tastatur auf dem Touch-Pad
+          nicht mehr angezeigt wird, sobald der Yubikey in dem Gerät steckt. In dem Fall steckst du den
+          Yubikey einfach erst in dein Gerät, wenn dieser aktiviert werden muss.
+        </wa-callout>
+      </div>
+    </wa-card>
+  </wa-carousel-item>
+
+  <wa-carousel-item>
+    <wa-card>
+      <h3 class="wa-heading-l" slot="header">Schritt 8</h3>
+
+      <div class="wa-stack">
+        <div class="img-wrapper">
+          <img slot="media" src="/assets/yubikey-6.jpg"/>
+          <wa-button size="small"><wa-icon name="expand"></wa-icon></wa-button>
+        </div>
+
+        <div>
+          Bei der ersten Nutzung des Yubikeys musst du dein Benutzerkonto mit dem Yubikey verknüpfen.
+          Drücke dafür auf das dir angezeigte Feld „Zu einem bestehenden Benutzerkonto hinzufügen“.
+        </div>
+      </div>
+    </wa-card>
+  </wa-carousel-item>
+
+  <wa-carousel-item>
+    <wa-card>
+      <h3 class="wa-heading-l" slot="header">Schritt 9</h3>
+
+      <div class="wa-stack">
+        <div class="img-wrapper">
+          <img slot="media" src="/assets/yubikey-5.jpg"/>
+          <wa-button size="small"><wa-icon name="expand"></wa-icon></wa-button>
+        </div>
+
+        <div>
+          Jetzt musst du nur noch deine Email-Adresse verifizieren, um die Verknüpfung abzuschließen.
+          Melde dich dazu erneut auf dem <a href="https://email.unibw.de" theme="unibw" target="_blank">
+          <wa-icon name="link"></wa-icon>Emailportal der UniBw</a> mit deinem Email-Passwort an und klicke auf
+          den Link „Link zur Bestätigung der Kontoverknüpfung“ in der Mail zur Bestätigung.
+        </div>
+
+        <wa-callout variant="success" appearance="accent" size="small">
+          <wa-icon slot="icon" name="circle-check"></wa-icon>
+          Erfolgreich ist die Verknüpfung dann, wenn sich nun die Nutzerseite der UniBw wieder öffnet.
+        </wa-callout>
+      </div>
+    </wa-card>
+  </wa-carousel-item>
+
+  <wa-carousel-item>
+    <wa-card>
+      <h3 class="wa-heading-l" slot="header">Geschafft!</h3>
+        <wa-callout variant="success" appearance="accent" size="small">
+          <wa-icon slot="icon" name="circle-check"></wa-icon>
+          Auf diese Weise kannst du dich nun auf allen Portalen der UniBw anmelden. Auf diesen folgst du
+          dann einfach den Schritten 6 und 7, nachdem du dort auch auf „Mit UniBwM-SecureID anmelden“ klickst.
+        </wa-callout>
+      </div>
+    </wa-card>
+  </wa-carousel-item>
+</wa-carousel>
+
+<div class="img-overlay" id="overlay">
+  <wa-button size="small"><wa-icon name="compress"></wa-icon></wa-button>
+</div>
