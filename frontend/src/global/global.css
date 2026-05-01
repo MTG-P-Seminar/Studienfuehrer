@@ -50,6 +50,18 @@
   .wa-gap-y-4xl { row-gap: var(--wa-space-4xl); }
 }
 
+.wa-text-success {
+  color: var(--wa-color-success);
+}
+
+.wa-text-warning {
+  color: var(--wa-color-warning);
+}
+
+.wa-text-danger {
+  color: var(--wa-color-danger);
+}
+
 wa-callout[appearance="filled-outlined"]::part(message) {
   color: var(--wa-color-on-normal);
 }
@@ -155,4 +167,20 @@ wa-dropdown-item[theme] {
 
 wa-dropdown-item[theme]:hover, wa-dropdown-item[theme]:focus-visible {
   background-color: color-mix(in oklab, var(--theme-color), var(--wa-color-surface-default) 80%);
+}
+
+table[theme] {
+  --wa-color-border-quiet: color-mix(in oklab, var(--theme-color), var(--wa-color-surface-default) 60%);
+}
+
+table[theme] th {
+  background-color: color-mix(in oklab, var(--theme-color), var(--wa-color-surface-default) 80%);
+}
+
+table[theme] th:first-child {
+  border-top-left-radius: var(--wa-border-radius-m);
+}
+
+table[theme] th:last-child {
+  border-top-right-radius: var(--wa-border-radius-m);
 }

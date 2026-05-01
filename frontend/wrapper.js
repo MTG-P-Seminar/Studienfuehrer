@@ -15,7 +15,8 @@ const titles = {
   leni: "Leni",
   showcase: "Showcase",
   tum: "TUM",
-  yubikey: "YubiKey"
+  yubikey: "YubiKey",
+  lmu: "LMU"
 }
 
 // Wrapper laden
