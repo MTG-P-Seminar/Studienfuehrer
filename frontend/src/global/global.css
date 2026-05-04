@@ -16,7 +16,7 @@
 }
 
 ::selection, ::part(input)::selection {
-  background: color-mix(in oklab, var(--wa-color-brand), transparent 40%);
+  background: color-mix(in oklab, var(--theme-color, var(--wa-color-brand)), transparent 50%);
 }
 
 .container {
@@ -60,10 +60,6 @@
 
 .wa-text-danger {
   color: var(--wa-color-danger);
-}
-
-wa-callout[appearance="filled-outlined"]::part(message) {
-  color: var(--wa-color-on-normal);
 }
 
 wa-callout[size="small"] {
@@ -127,6 +123,24 @@ a wa-icon {
   margin-right: 0.25rem;
 }
 
+[theme="black"] {
+  --theme-color: #2f323f;
+  --wa-color-on-loud: white;
+}
+
+[theme] {
+  --wa-color-fill-loud: var(--theme-color);
+  --wa-color-fill-normal: color-mix(in oklab, var(--theme-color), var(--wa-color-surface-default) 80%);
+  --wa-color-fill-quiet: color-mix(in oklab, var(--theme-color), var(--wa-color-surface-default) 85%);
+  --wa-color-border-loud: color-mix(in oklab, var(--wa-theme-color), var(--wa-color-surface-default) 20%);
+  --wa-color-border-normal: color-mix(in oklab, var(--theme-color), var(--wa-color-surface-default) 60%);
+  --wa-color-border-quiet: color-mix(in oklab, var(--theme-color), var(--wa-color-surface-default) 75%);
+  --wa-color-on-normal: color-mix(in oklab, var(--theme-color), var(--wa-color-text-normal) 40%);
+  --wa-color-on-quiet: color-mix(in oklab, var(--theme-color), var(--wa-color-text-normal) 15%);
+
+  --wa-form-control-activated-color: var(--theme-color);
+}
+
 a[theme] {
   color: var(--theme-color)
 }
@@ -152,13 +166,6 @@ wa-details[theme]::part(header) {
 
 wa-details[theme]::part(icon) {
   color: color-mix(in oklab, var(--theme-color), var(--wa-color-text-normal) 40%);
-}
-
-wa-badge[theme] {
-  --wa-color-on-normal: color-mix(in oklab, var(--theme-color), var(--wa-color-text-normal) 40%);
-  --wa-color-fill-normal: color-mix(in oklab, var(--theme-color), var(--wa-color-surface-default) 80%);
-  --wa-color-fill-loud: var(--theme-color);
-  --wa-color-border-normal: color-mix(in oklab, var(--theme-color), var(--wa-color-surface-default) 60%);
 }
 
 wa-dropdown-item[theme] {

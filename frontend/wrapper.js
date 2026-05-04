@@ -12,11 +12,13 @@ const ASSETS_SRC = path.join(__dirname, "src/assets");
 const ASSETS_DIST = path.join(__dirname, "dist/assets");
 
 const titles = {
-  leni: "Leni",
-  showcase: "Showcase",
-  tum: "TUM",
-  yubikey: "YubiKey",
-  lmu: "LMU"
+  "showcase": "Showcase",
+
+  "abroad-tips": "Tipps fürs Auslandsjahr",
+  "tum": "Frühstudium an der TUM",
+  "lmu": "Frühstudium an der LMU",
+  "unibw-communication": "Kommunikation an der Bundeswehruni",
+  "unibw-yubikey": "Anleitung für den YubiKey an der Bundeswehruni",
 }
 
 // Wrapper laden

@@ -1,30 +1,33 @@
-<div class="wa-cluster wa-items-center">
-  <h1 class="wa-heading-xl">Frühstudium an der LMU</h1>
-</div>
+<h1 class="wa-heading-xl">Frühstudium an der LMU</h1>
+<wa-divider></wa-divider>
 
 <h2 class="wa-heading-l">Studium</h2>
 
 <wa-details summary="Mögliche Studiengänge" theme="lmu">
   <div class="wa-stack">
-    <div class="wa-text-success"><wa-icon name="circle-check"></wa-icon> Alle Studiengänge aus den Bereichen</div>
-    <ul>
-      <li>Geschichts-, Kultur- und Kunstwissenschaften</li>
-      <li>Mathematik und Naturwissenschaften</li>
-      <li>Rechts-, Wirtschafts- und Sozialwissenschaften</li>
-      <li>Sprach- und Literaturwissenschaften und Philosophie</li>
-      <li>Alle Studiengänge findet ihr <a href="https://www.lmu.de/de/studium/studienangebot/alle-studienfaecher-und-studiengaenge"
-        theme="lmu" target="_blank">
-        <wa-icon name="link"></wa-icon>hier
-      </a></li>
-    </ul>
+    <div>
+      <div class="wa-text-success"><wa-icon name="circle-check"></wa-icon> Alle Studiengänge aus den Bereichen</div>
+      <ul>
+        <li>Geschichts-, Kultur- und Kunstwissenschaften</li>
+        <li>Mathematik und Naturwissenschaften</li>
+        <li>Rechts-, Wirtschafts- und Sozialwissenschaften</li>
+        <li>Sprach- und Literaturwissenschaften und Philosophie</li>
+        <li>Alle Studiengänge findet ihr <a href="https://www.lmu.de/de/studium/studienangebot/alle-studienfaecher-und-studiengaenge"
+          theme="lmu" target="_blank">
+          <wa-icon name="link"></wa-icon>hier
+        </a></li>
+      </ul>
+    </div>
 
-    <div class="wa-text-danger"><wa-icon name="circle-xmark"></wa-icon> Ausnahmen (nicht möglich als Frühstudium)</div>
-    <ul>
-      <li>Humanmedizin</li>
-      <li>Tiermedizin</li>
-      <li>Zahnmedizin</li>
-      <li>Psychologie</li>
-    </ul>
+    <div>
+      <div class="wa-text-danger"><wa-icon name="circle-xmark"></wa-icon> Ausnahmen (nicht möglich als Frühstudium)</div>
+      <ul>
+        <li>Humanmedizin</li>
+        <li>Tiermedizin</li>
+        <li>Zahnmedizin</li>
+        <li>Psychologie</li>
+      </ul>
+    </div>
   </div>
 </wa-details>
 
@@ -78,7 +81,7 @@
       <li>Gegebenenfalls <a href="https://www.lmu.de/de/studium/beratung-und-orientierung/lmu-und-schule/fruehstudium-und-unitag/"
         theme="lmu" target="_blank">
         <wa-icon name="link"></wa-icon>Online Infoveranstaltung</a> besuchen</li>
-      <wa-callout appearance="accent" size="small" style="margin: 1rem 0">
+      <wa-callout appearance="filled-outlined" size="small" style="margin: 1rem 0" theme="lmu">
         <wa-icon slot="icon" name="circle-info"></wa-icon>
         Die Veranstaltung zu besuchen ist sehr empfehlenswert, da man einfach Kontakt
         aufnehmen, Fragen stellen kann und schon vorgemerkt ist.
@@ -97,19 +100,185 @@
 
 <wa-details summary="Bewerbung" theme="lmu">
   <div class="wa-stack">
-
     <form id="application-documents">
-      <wa-checkbox size="small">
+      <wa-checkbox size="small" theme="lmu">
         Empfehlungsschreiben einer Fachlehrkraft oder Schulleitung (auf Frau Dabbert und Fachlehrkraft zugehen)
       </wa-checkbox>
       <br>
-      <wa-checkbox size="small">Motivationsschreiben (nicht nötig, aber empfehlenswert)</wa-checkbox>
+      <wa-checkbox size="small" theme="lmu">Motivationsschreiben (nicht nötig, aber empfehlenswert)</wa-checkbox>
       <br>
-      <wa-checkbox size="small">Letztes Zeugnis (nicht nötig, aber empfehlenswert)</wa-checkbox>
+      <wa-checkbox size="small" theme="lmu">Letztes Zeugnis (nicht nötig, aber empfehlenswert)</wa-checkbox>
       <br>
-      <wa-checkbox size="small">Gegebenenfalls Nachweise von Wettbewerben, Olympiaden oder Hochbegabtenklasse</wa-checkbox>
+      <wa-checkbox size="small" theme="lmu">Gegebenenfalls Nachweise von Wettbewerben, Olympiaden oder Hochbegabtenklasse</wa-checkbox>
     </form>
 
-    <div><b theme="lmu">Bei Zusage erhaltet ihr eine Befürwortung des Studiendekans</div>
+    <div>Bei einer Zusage erhaltet ihr die Befürwortung des Studiendekans.</div>
   </div>
+</wa-details>
+
+<wa-details summary="Immatrikulation" theme="lmu">
+  <div class="wa-stack">
+    <div>
+      Alle Unterlagen müssen der Studentenkanzlei analog zugesendet oder selbst im Briefkasten des Hauptgebäudes eingeworfen werden.
+      (Weitere Informationen und die Adresse findest du <a href="https://www.lmu.de/de/studium/hochschulzugang/fruehstudierende/"
+        theme="lmu" target="_blank">
+        <wa-icon name="link"></wa-icon>hier</a>)
+    </div>
+
+
+    <form id="immatriculation-documents">
+      <wa-checkbox size="small" theme="lmu">
+        <a href="https://cms-cdn.lmu.de/media/lmu/downloads/studentenkanzlei/sammelmappe-fruehstudium-2.pdf" theme="tum" target="_blank">
+          <wa-icon name="link"></wa-icon>Ausgefüllter Immatrikulationsantrag und Einverständniserklärung der Erziehungsberechtigten
+        </a>
+      </wa-checkbox>
+      <br>
+      <wa-checkbox size="small" theme="lmu">Kopie des Personalausweises oder Pass</wa-checkbox>
+      <br>
+      <wa-checkbox size="small" theme="lmu">Bestätigung der Schule über Art des angestrebten Schulabschlusses</wa-checkbox>
+      <br>
+      <wa-checkbox size="small" theme="lmu">Befürwortung der Schulleitung</wa-checkbox>
+      <br>
+      <wa-checkbox size="small" theme="lmu">Befürwortung der/des Studiendekan/-in</wa-checkbox>
+    </form>
+
+    <div>Wenn alles klappt, erhaltet ihr eine Aktivierungsmail für das Benutzerkonto.</div>
+
+    <wa-callout variant="danger" appearance="accent" size="small">
+      <wa-icon slot="icon" name="circle-exclamation"></wa-icon>
+      <b>Wichtig</b>: Macht alles so früh wie möglich, damit ihr alle Fristen einhalten könnt.
+      Die Immatrikulationsfrist steht auf der Website der LMU, unterscheidet sich aber
+      von der für Normalstudierende. Außerdem sind einige Mitarbeiter im August und Anfang September im Urlaub.
+    </wa-callout>
+  </div>
+</wa-details>
+
+<h2 class="wa-heading-l">Während dem Studium</h2>
+
+<wa-details summary="Wichtige Portale" theme="lmu">
+  <div class="wa-stack wa-gap-xs">
+    <div>
+      <a href="https://www.lmu.de/de/index.html" theme="lmu" target="_blank"><wa-icon name="link"></wa-icon>LMU-Webseite</a>:
+      Hier findet ihr nochmal alle Informationen zu verschieden Studiengängen und dem Bewerbungsverfahren.
+    </div>
+    
+    <div>
+      <a href=" https://qissos.verwaltung.uni-muenchen.de/qisserversos/rds?state=user&type=0&application=lsf" theme="lmu" target="_blank">
+        <wa-icon name="link"></wa-icon>Online-Selbstbedienungsfunktion</a>:
+      Hier könnt ihr eure Immatrikulationsbescheinigung herunterladen. Das solltet ihr unbedingt machen.
+      Außerdem müsst ihr sie auch bei der Schule abgeben. Geht dazu einfach nach der Anmeldung
+      auf "Studiumsverwaltung → Studienbescheinigungen → Immatrikulationsbescheinigung
+      Frühstudierend".
+      Auf der Bescheinigung befindet sich auch die Martrikelnummer. Bei Studierenden
+      steht sie auch auf dem Studierendenausweis, sie wird aber manchmal für Klausuren
+      und auch für die Klausurergebnisse benutzt. Daher solltet ihr darauf vorbereitet sein,
+      die Martrikelnummer auch bei der Klausur dabei zu haben.
+    </div>
+    
+    <div>
+      <a href="https://lsf.verwaltung.uni-muenchen.de/qisserver/rds?state=user&type=0" theme="lmu" target="_blank"><wa-icon name="link">
+        </wa-icon>LSF (Lehre Studium Forschung)</a>:
+      Hier findet ihr, wo und wann Vorlesungen, Tutorien oder Prüfungen stattfinden.
+      Außerdem müsst ihr euch hier für Prüfungen anmelden. Die Prüfungen findet ihr meistens im jeweiligen Modul im
+      Verzeichnis. Außerdem findet ihr bei vielen Vorlesungen in der Info weiter unten
+      genauere Informationen zu den Inhalten und die Moodle-Einschreibung. Das ist je nach
+      Fakultät für Frühstudierende unterschiedlich freigeschalten, für die Prüfungsanmeldung nur
+      in Absprache mit Dozierenden oder Studienkoordination.
+    </div>
+
+    <wa-callout variant="danger" appearance="accent" size="small">
+      <wa-icon slot="icon" name="circle-exclamation"></wa-icon>
+      <b>Vorsicht</b>: Das LSF ist je nach Fakultät unterschiedlich freigeschalten. Es kann also
+      sein, dass ihr euch als Frühstudierender nicht über das LSF für Prüfungen
+      anmelden könnt. Deswegen müsst ihr unbedingt immer Absprache mit den Dozierenden oder
+      der Studienkoordination halten.
+    </wa-callout>
+    
+    <div>
+      <a href="https://www.lmu.de/raumfinder/" theme="lmu" target="_blank"><wa-icon name="link"></wa-icon>LMU-Raumfinder</a>:
+      Hier könnt ihr Räume finden. Gebt dafür zuerst die Adresse des Gebäudes und dann den Raum ein. Dann erhaltet ihr den Lageplan.
+      Manchmal ist er etwas kompliziert zu lesen, deswegen solltet ihr bei neuen Räumen immer etwas früher da sein.
+    </div>
+    
+    <div>
+      <a href="https://moodle.lmu.de" theme="lmu" target="_blank"><wa-icon name="link"></wa-icon>Moodle</a>:
+      Moodle ist ähnlich wie mebis, aber ihr müsst euch selbst in die Kurse einschreiben. Hier findet
+      ihr oft Vorlesungsfolien und Prüfungsinformationen. Moodle wird nicht in allen
+      Vorlesungen benutzt, aber das wird in der ersten Vorlesung gesagt. Es lohnt sich aber,
+      im LSF nach Infos zu suchen, damit man sich gegebenenfalls vorher schon einschreiben kann.
+    </div>
+
+    <wa-callout theme="lmu" appearance="filled-outlined" size="small">
+      <wa-icon slot="icon" name="circle-info"></wa-icon>
+      Wusstet ihr? mebis basiert auf Moodle!
+    </wa-callout>
+    
+    <div>
+      <a href="https://campus.tum.de" theme="lmu" target="_blank"><wa-icon name="link"></wa-icon>LMU Portal</a>:
+      Hier findet ihr unter "Benutzerkonto" eure LRZ-Kennung. Diese wird zum Beispiel für den WLAN-Zugang benötigt.
+    </div>
+
+    <div>
+      <b theme="lmu">eduroam</b>:
+      eduroam ist ein WLAN, das an vielen Orten wie Unis oder Schulen (auch am MTG) verfügbar ist.
+      Sehr praktisch ist, dass es meistens gut funktioniert und ihr nach der Anmeldung immer automatisch verbunden werdet.
+      Darüber hinaus gibt es eduroam auch in vielen anderen Ländern.
+    </div>
+
+    <wa-callout theme="lmu" appearance="filled-outlined" size="small">
+      <wa-icon slot="icon" name="circle-info"></wa-icon>
+      <b>Anmeldung für eduroam</b>:
+      <br>
+      1. WLAN auf <a href="https://eduroam.org" theme="lmu" target="_blank"><wa-icon name="link"></wa-icon>eduroam.org</a> herunterladen und Anweisungen befolgen
+      <br>
+      2. Mit korrekten Zugangsdaten anmelden:
+      <br>
+      <b>Benutzername</b>: LMU-Kennung oder LRZ-Kennung oder LRZ-Kennung@eduroam.mwn.de
+      (Letzteres funktioniert auch außerhalb von München)
+      <br>
+      <b>Passwort</b>: Passwort für LMU-Kennung
+    </wa-callout>
+  </div>
+</wa-details>
+
+<wa-details summary="Tipps zur Kommunikation" theme="lmu">
+  <ul>
+    <li>
+      Immer mal wieder Studierende ansprechen, sie sind meistens nett. Ihr könnt sie auch
+      nach Mitschriften oder ähnlichem fragen, wenn ihr eine Vorlesung verpasst habt.
+    </li>
+    <li>
+      Am Anfang und Ende des Semesters gibt es Frühstudierendentreffen, wo ihr euch
+      mit anderen Frühstudierenden vernetzen könnt. Das ist auch oft sehr hilfreich, vor
+      allem wenn ihr denselben Studiengang habt.
+    </li>
+    <li>
+      Lieber immer einmal mehr nachfragen wenn ihr mit der Studienkoordination schreibt, zum Beispiel
+      bei der Prüfungsanmeldung.
+    </li>
+  </ul>
+</wa-details>
+
+<wa-details summary='Bewertung zum Studiengang "Allgemeine und organismische Biologie"' theme="lmu">
+  <ul>
+    <li>
+      Die meisten Inhalte sind nicht sehr kompliziert.
+    </li>
+    <li>
+      Man muss nicht den gesamten Stoff für die Klausur im Detail auswendig können, da
+      es Sigle-Choice Aufgaben sind. Manche Aufgaben lassen sich sogar mit Allgemeinwissen lösen.
+    </li>
+    <li>
+      Trotzdem gibt es sehr viel Stoff. Es gibt drei Vorlesungen pro Woche mit jeweils mindestens
+      50 Folien, die in hoher Geschwindigkeit besprochen werden.
+    </li>
+    <li>
+      Der Stoff vielseitig, es wird also immer Themen geben, die einen interessieren, aber
+      auch einige, zu denen man überhaupt keinen Zugang findet.
+    </li>
+  </ul>
+  <b>Faziz</b>:
+  Es ist ein sehr interessantes und vielseitiges Studienfach. Obwohl die Stoffmenge
+  groß ist, ist die Klausur gut machbar, wenn man frühzeitig anfängt die Vorlesungen
+  nachzuarbeiten und nicht bis nach der Vorlesungszeit wartet.
 </wa-details>
