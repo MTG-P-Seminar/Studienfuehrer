@@ -31,7 +31,7 @@ jobs:
         run: npm install
 
       - name: Build
-        run: npm run build
+        run: node frontend/wrapper.js
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
