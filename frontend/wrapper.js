@@ -87,18 +87,23 @@ fs.readdirSync(SRC_DIR).forEach((page) => {
     const htmlContent = fs.readFileSync(htmlPath, "utf-8");
     const extracted = extractContent(htmlContent);
 
-    const finalHtml = wrapperTemplate.replace(
+    if (process.env.GITHUB_ACTIONS === "true") {
+      console.log("läuft in GitHub Actions");
+    }
+    const BASE_PATH = process.env.GITHUB_ACTIONS === "true" ? `/${process.env.GITHUB_REPOSITORY}/`: "/"
+
+    const finalHtml = wrapperTemplate.replaceAll("${BASE_PATH}", BASE_PATH).replace(
       /<main[^>]*>[\s\S]*?<\/main>/i,
       `<main class="container wa-stack">\n${extracted}\n</main>`
     )
     .replace(
       /<\/head>/i,
-      `<link rel="stylesheet" href="/pages/${page}/index.css">\n</head>
+      `<link rel="stylesheet" href="${BASE_PATH}pages/${page}/index.css">\n</head>
        <title>${titles[page]} · StAu MTG</title>`
     )
     .replace(
       /<\/body>/i,
-      `  <script src="/pages/${page}/index.js" type="module"></script>\n</body>`
+      `  <script src="${BASE_PATH}pages/${page}/index.js" type="module"></script>\n</body>`
     );;
 
     fs.writeFileSync(

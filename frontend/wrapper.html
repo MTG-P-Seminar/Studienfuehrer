@@ -3,23 +3,11 @@
 <head>
 <meta charset="UTF-8">
 
-<link rel="stylesheet" id="webawesome-css">
-<link rel="stylesheet" id="global-css">
-<script type="module" id="webawesome-js"></script>
-<script type="module" id="webawesome-loader-js"></script>
-<script type="module" id="global-js"></script>
-
-<script>
-  const isGithub = location.hostname.includes("github.io");
-  const BASE_PATH = isGithub ? `/Studienfuehrer/` : "/";
-
-  document.getElementById("webawesome-css").href = BASE_PATH + "vendor/webawesome/dist-cdn/styles/webawesome.css";
-  document.getElementById("global-css").href = BASE_PATH + "global/global.css";
-  document.getElementById("webawesome-js").src = BASE_PATH + "vendor/webawesome/dist-cdn/webawesome.js";
-  document.getElementById("webawesome-loader-js").src = BASE_PATH + "vendor/webawesome/dist-cdn/webawesome.loader.js";
-  document.getElementById("global-js").src = BASE_PATH + "global/global.js";
-</script>
-
+<link rel="stylesheet" href="${BASE_PATH}vendor/webawesome/dist-cdn/styles/webawesome.css">
+<script type="module" src="${BASE_PATH}vendor/webawesome/dist-cdn/webawesome.js"></script>
+<script type="module" src="${BASE_PATH}vendor/webawesome/dist-cdn/webawesome.loader.js"></script>
+<link rel="stylesheet" href="${BASE_PATH}global/global.css">
+<script type="module" src="${BASE_PATH}global/global.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
