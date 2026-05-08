@@ -127,6 +127,10 @@ a wa-icon {
   --theme-color: #2f323f;
   --wa-color-on-loud: white;
 }
+[theme="abroad"] { --theme-color: #b42eff; }
+[theme="lmu"] { --theme-color: #00914c; }
+[theme="tum"] { --theme-color: #3070b3; }
+[theme="unibw"] { --theme-color: #ed6600; }
 
 [theme] {
   --wa-color-fill-loud: var(--theme-color);
@@ -174,6 +178,14 @@ wa-dropdown-item[theme] {
 
 wa-dropdown-item[theme]:hover, wa-dropdown-item[theme]:focus-visible {
   background-color: color-mix(in oklab, var(--theme-color), var(--wa-color-surface-default) 80%);
+}
+
+wa-tab-group[theme] {
+  --indicator-color: var(--theme-color);
+}
+
+wa-tab-group[theme] wa-tab[active] {
+  color: var(--theme-color)
 }
 
 table[theme] {

@@ -13,12 +13,15 @@ const ASSETS_DIST = path.join(__dirname, "dist/assets");
 
 const titles = {
   "showcase": "Showcase",
-
+  "abroad-challenges": "Herausforderungen und Tipps zum Auslandsjahr",
+  "abroad-faq": "FAQ zum Auslandsjahr",
   "abroad-tips": "Tipps fürs Auslandsjahr",
-  "tum": "Frühstudium an der TUM",
   "lmu": "Frühstudium an der LMU",
-  "unibw-communication": "Kommunikation an der Bundeswehruni",
-  "unibw-yubikey": "Anleitung für den YubiKey an der Bundeswehruni",
+  "todos": "TODOs",
+  "tum": "Frühstudium an der TUM",
+  "unibw-communication": "Kommunikation an der Universität der Bundeswehr",
+  "unibw-portals": "Portale der Universität der Bundeswehr",
+  "unibw-yubikey": "Anleitung für den YubiKey an der Universität der Bundeswehr",
 }
 
 // Wrapper laden
