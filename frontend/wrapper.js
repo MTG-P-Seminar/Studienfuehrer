@@ -98,7 +98,7 @@ fs.readdirSync(SRC_DIR).forEach((page) => {
     }
     const BASE_PATH = process.env.GITHUB_ACTIONS === "true" ? `/${process.env.GITHUB_REPOSITORY.split("/")[1]}/`: "/"
 
-    const finalHtml = wrapperTemplate.replaceAll("${BASE_PATH}", BASE_PATH).replace(
+    const finalHtml = wrapperTemplate.replace(
       /<main[^>]*>[\s\S]*?<\/main>/i,
       `<main class="container wa-stack">\n${extracted}\n</main>`
     )
@@ -110,7 +110,7 @@ fs.readdirSync(SRC_DIR).forEach((page) => {
     .replace(
       /<\/body>/i,
       `  <script src="${BASE_PATH}pages/${page}/index.js" type="module"></script>\n</body>`
-    );;
+    ).replaceAll("${BASE_PATH}", BASE_PATH);
 
     fs.writeFileSync(
       path.join(distPagePath, "index.html"),
