@@ -1,5 +1,25 @@
 import { registerIconLibrary } from '/vendor/webawesome/dist-cdn/webawesome.js';
 
+export function createCheckList(localStorageKey, formId) {
+  let checked = new Set(JSON.parse(localStorage.getItem(localStorageKey) ?? "[]"))
+
+  document.querySelectorAll(`#${formId} wa-checkbox`).forEach((cb, i) => {
+    if (checked.has(i)) {
+      cb.checked = true
+    }
+
+    cb.addEventListener("input", () => {
+      if (checked.has(i)) {
+        checked.delete(i)
+      }
+      else {
+        checked.add(i)
+      }
+      localStorage.setItem(localStorageKey, JSON.stringify(Array.from(checked)))
+    })
+  })
+}
+
 registerIconLibrary('default', {
   resolver: (name, _, variant) => {
     return `/vendor/fontawesome/svgs/${variant ?? "solid"}/${name}.svg`;

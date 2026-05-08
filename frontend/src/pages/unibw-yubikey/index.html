@@ -1,9 +1,7 @@
-<div class="wa-cluster wa-items-center">
-  <h1 class="wa-heading-xl">UniBw: Yubikey und erste Anmeldung</h1>
-  <wa-badge appearance="filled-outlined" variant="brand">Vitus (11d)</wa-badge>
-</div>
+<h1 class="wa-heading-xl">UniBw: Yubikey und erste Anmeldung</h1>
+<wa-divider></wa-divider>
 
-<wa-callout variant="brand">
+<wa-callout theme="unibw">
   <wa-icon slot="icon" name="book"></wa-icon>
   Bei deinem ersten Besuch an der UniBw bekommst du eine kurze Führung über das Gelände und
   dann einige Dinge: Neben einem Fahrradsattelüberzug und einem Block mit Klebezetteln gab
@@ -14,7 +12,7 @@
   funktionieren folgendermaßen:
 </wa-callout>
 
-<wa-carousel class="vertical" style="--aspect-ratio: unset; max-width: 700px; margin: auto;" navigation pagination id="meinElement">
+<wa-carousel class="vertical" style="--aspect-ratio: unset; max-width: 700px; margin: auto;" navigation pagination theme="unibw">
   <wa-carousel-item>
     <wa-card>
       <h3 class="wa-heading-l" slot="header">Schritt 1</h3>
@@ -42,7 +40,7 @@
       <div class="wa-stack">
         <div class="img-wrapper">
           <img slot="media" src="/assets/yubikey-0.jpg"/>
-          <wa-button size="small"><wa-icon name="expand"></wa-icon></wa-button>
+          <wa-button size="small" theme="black"><wa-icon name="expand"></wa-icon></wa-button>
         </div>
 
         Unter dem Reiter Übersicht musst du jetzt bei „App Passwörter“ für deine eigene Universitäts-
@@ -51,7 +49,7 @@
         
         <div class="img-wrapper">
           <img slot="media" src="/assets/yubikey-1.jpg"/>
-          <wa-button size="small"><wa-icon name="expand"></wa-icon></wa-button>
+          <wa-button size="small" theme="black"><wa-icon name="expand"></wa-icon></wa-button>
         </div>
 
         <wa-callout variant="danger" appearance="accent">
@@ -83,7 +81,7 @@
       <div class="wa-stack">
         <div class="img-wrapper">
           <img slot="media" src="/assets/yubikey-2.jpg"/>
-          <wa-button size="small"><wa-icon name="expand"></wa-icon></wa-button>
+          <wa-button size="small" theme="black"><wa-icon name="expand"></wa-icon></wa-button>
         </div>
 
         <div>
@@ -101,7 +99,7 @@
       <div class="wa-stack">
         <div class="img-wrapper">
           <img slot="media" src="/assets/yubikey-3.jpg"/>
-          <wa-button size="small"><wa-icon name="expand"></wa-icon></wa-button>
+          <wa-button size="small" theme="black"><wa-icon name="expand"></wa-icon></wa-button>
         </div>
 
         <div>
@@ -118,7 +116,7 @@
       <div class="wa-stack">
         <div class="img-wrapper">
           <img slot="media" src="/assets/yubikey-4.jpg"/>
-          <wa-button size="small"><wa-icon name="expand"></wa-icon></wa-button>
+          <wa-button size="small" theme="black"><wa-icon name="expand"></wa-icon></wa-button>
         </div>
 
         <div>
@@ -127,7 +125,7 @@
           Aktivieren des Yubikeys (Berühre das grüne Y auf dem Yubikey) anmelden.
         </div>
 
-        <wa-callout variant="brand" appearance="accent" size="small">
+        <wa-callout theme="unibw" size="small">
           <wa-icon slot="icon" name="circle-info"></wa-icon>
           Falls du ein Tablet benutzt kann es hier dazu kommen, dass deine Tastatur auf dem Touch-Pad
           nicht mehr angezeigt wird, sobald der Yubikey in dem Gerät steckt. In dem Fall steckst du den
@@ -144,7 +142,7 @@
       <div class="wa-stack">
         <div class="img-wrapper">
           <img slot="media" src="/assets/yubikey-6.jpg"/>
-          <wa-button size="small"><wa-icon name="expand"></wa-icon></wa-button>
+          <wa-button size="small" theme="black"><wa-icon name="expand"></wa-icon></wa-button>
         </div>
 
         <div>
@@ -162,7 +160,7 @@
       <div class="wa-stack">
         <div class="img-wrapper">
           <img slot="media" src="/assets/yubikey-5.jpg"/>
-          <wa-button size="small"><wa-icon name="expand"></wa-icon></wa-button>
+          <wa-button size="small" theme="black"><wa-icon name="expand"></wa-icon></wa-button>
         </div>
 
         <div>
@@ -194,5 +192,5 @@
 </wa-carousel>
 
 <div class="img-overlay" id="overlay">
-  <wa-button size="small"><wa-icon name="compress"></wa-icon></wa-button>
+  <wa-button size="small" theme="black"><wa-icon name="compress"></wa-icon></wa-button>
 </div>
