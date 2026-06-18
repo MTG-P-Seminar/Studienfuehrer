@@ -96,7 +96,7 @@ fs.readdirSync(SRC_DIR).forEach((page) => {
     if (process.env.GITHUB_ACTIONS === "true") {
       console.log("läuft in GitHub Actions");
     }
-    const BASE_PATH = process.env.GITHUB_ACTIONS === "true" ? `/${process.env.GITHUB_REPOSITORY.split("/")[1]}/`: "/"
+    const BASE_PATH = process.env.GITHUB_ACTIONS === "true" ? `/${process.env.GITHUB_REPOSITORY.split("/")[1]}/`: "../"
 
     const finalHtml = wrapperTemplate.replace(
       /<main[^>]*>[\s\S]*?<\/main>/i,
