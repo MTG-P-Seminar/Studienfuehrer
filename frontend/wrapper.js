@@ -16,6 +16,8 @@ const titles = {
   "abroad-challenges": "Herausforderungen und Tipps zum Auslandsjahr",
   "abroad-faq": "FAQ zum Auslandsjahr",
   "abroad-tips": "Tipps fürs Auslandsjahr",
+  "early-studies-ratings": "Bewertungen zum Frühstudium",
+  "early-studies-regular-class": "Frühstudium - Erfahrungen aus der Perspektive eines Regelklassenschülers",
   "lmu": "Frühstudium an der LMU",
   "todos": "TODOs",
   "tum": "Frühstudium an der TUM",

@@ -128,6 +128,7 @@ a wa-icon {
   --wa-color-on-loud: white;
 }
 [theme="abroad"] { --theme-color: #b42eff; }
+[theme="early-studies"] { --theme-color: #ff2e51; }
 [theme="lmu"] { --theme-color: #00914c; }
 [theme="tum"] { --theme-color: #3070b3; }
 [theme="unibw"] { --theme-color: #ed6600; }
