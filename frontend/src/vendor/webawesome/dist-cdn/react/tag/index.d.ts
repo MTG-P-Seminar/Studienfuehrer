@@ -3,7 +3,8 @@ import { type EventName } from '@lit/react';
 import type { WaRemoveEvent } from '../../events/events.js';
 export type { WaRemoveEvent } from '../../events/events.js';
 /**
- * @summary Tags are used as labels to organize things or to indicate a selection.
+ * @summary Tags label, categorize, or represent selections with a compact visual marker. Use them for status
+ *  indicators, filters, or removable chips.
  * @documentation https://webawesome.com/docs/components/tag
  * @status stable
  * @since 2.0

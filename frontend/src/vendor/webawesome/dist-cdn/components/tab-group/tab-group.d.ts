@@ -3,7 +3,8 @@ import '../button/button.js';
 import '../tab-panel/tab-panel.js';
 import '../tab/tab.js';
 /**
- * @summary Tab groups organize content into a container that shows one section at a time.
+ * @summary Tab groups organize related content into a single container that displays one panel at a time, with tabs for
+ *  switching between them.
  * @documentation https://webawesome.com/docs/components/tab-group
  * @status stable
  * @since 2.0
@@ -31,6 +32,8 @@ import '../tab/tab.js';
  * @cssproperty --indicator-color - The color of the active tab indicator.
  * @cssproperty --track-color - The color of the indicator's track (the line that separates tabs from panels).
  * @cssproperty --track-width - The width of the indicator's track (the line that separates tabs from panels).
+ *
+ * @ssr - In an SSR environment, there is no access to the children of a `<wa-tab-group>`, as such, it cannot set "active" on children and will not render any panels unless you manually set the "active" attribute on the appropriate `<wa-tab-panel>` + `<wa-tab>`.
  */
 export default class WaTabGroup extends WebAwesomeElement {
     static css: import("lit").CSSResult;
@@ -42,7 +45,8 @@ export default class WaTabGroup extends WebAwesomeElement {
     private panels;
     private readonly localize;
     tabGroup: HTMLElement;
-    body: HTMLSlotElement;
+    /** Default slot for `<wa-tab-panel>` children (inside the `body` part container). */
+    defaultSlot: HTMLSlotElement;
     nav: HTMLElement;
     private hasScrollControls;
     /** Sets the active tab. */

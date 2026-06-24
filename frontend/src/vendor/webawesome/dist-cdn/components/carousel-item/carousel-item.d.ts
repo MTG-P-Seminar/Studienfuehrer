@@ -1,6 +1,6 @@
 import WebAwesomeElement from '../../internal/webawesome-element.js';
 /**
- * @summary A carousel item represent a slide within a carousel.
+ * @summary Carousel items represent individual slides within a carousel.
  *
  * @since 2.0
  * @status experimental

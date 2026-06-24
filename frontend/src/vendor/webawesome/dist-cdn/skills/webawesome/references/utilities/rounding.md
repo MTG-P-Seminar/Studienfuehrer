@@ -2,11 +2,15 @@
 
 **Full documentation:** https://webawesome.com/docs/utilities/rounding
 
-Web Awesome includes classes to set an element's `border-radius` property. They can be used alongside Web Awesome layout utilities, like [frame](https://webawesome.com/docs/utilities/frame), to round all corners of an element.
+CSS Utilities Rounding Utilities
 
-Each class corresponds to one of the [`--wa-border-radius-*`](https://webawesome.com/docs/tokens/borders/#radius) tokens in your theme.
+These utility classes round the corners of any element using the radius tokens from your theme, so buttons, cards, images, and custom components can all share the same corner style without hard-coded values. Common uses include rounding an image inside a [frame](https://webawesome.com/docs/utilities/frame), shaping an avatar into a circle, or giving a tag a pill silhouette.
 
-| Class Name | border-radius Value |
+Each class corresponds to one of the [`--wa-border-radius-*`](https://webawesome.com/docs/tokens/borders/#radius) tokens in your theme, so the corner style you pick automatically updates if you adjust your theme's rounding scale.
+
+## Rounding Classes
+
+Link to This Section | Class Name | border-radius Value |
 | --- | --- |
 | \`wa-border-radius-s\` | \`--wa-border-radius-s\` |
 | \`wa-border-radius-m\` | \`--wa-border-radius-m\` |

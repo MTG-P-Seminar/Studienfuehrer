@@ -20,6 +20,8 @@ Through the magic of a mutation observer, changing the `lang` attribute will aut
 
 ## Available Translations
 
+Link to This Section
+
 Web Awesome ships with [a number of translations](https://github.com/shoelace-style/webawesome/tree/next/packages/webawesome/src/translations). The default is English (US), which also serves as the fallback locale. As such, you do not need to import the English translation.
 
 You can import translations using the following syntax, where `<code>` is replaced with any language code shown above.
@@ -40,6 +42,8 @@ import('/translations/<code>.js');
 
 ### Translation Resolution
 
+Link to This Section
+
 The locale set by `<html lang="...">` is the default locale for the document. If a country code is provided, e.g. `es-PE` for Peruvian Spanish, the localization library will resolve it like this:
 
 1.  Look for `es-PE`
@@ -50,7 +54,9 @@ Web Awesome uses English as a fallback to provide a better experience than rende
 
 ### Submitting New Translations or Improvements
 
-To contribute new translations or improvements to existing translations, please submit a pull request on GitHub. Translations are located in [`src/translations`](https://github.com/shoelace-style/shoelace/blob/next/src/translations) and can be edited directly on GitHub if you don't want to clone the repo locally.
+Link to This Section
+
+To contribute new translations or improvements to existing translations, please submit a pull request on GitHub. Translations are located in [`src/translations`](https://github.com/shoelace-style/webawesome/tree/next/packages/webawesome/src/translations) and can be edited directly on GitHub if you don't want to clone the repo locally.
 
 Regional translations are welcome! For example, if a German translation (`de`) exists it's perfectly acceptable to submit a German (Switzerland) (`de-CH`) translation.
 
@@ -59,6 +65,8 @@ If you have any questions, please start a [discussion](https://github.com/shoela
 Web Awesome provides a localization mechanism for component internals. This is not designed to be used as localization tool for your entire application. You should use a more appropriate tool such as [i18next](https://www.i18next.com/) if you need to localize content in your app.
 
 ## Multiple Locales Per Page
+
+Link to This Section
 
 You can use a different locale for an individual component by setting its `lang` and/or `dir` attributes. Here's a contrived example to demonstrate.
 
@@ -90,6 +98,8 @@ For performance reasons, the `lang` and `dir` attributes must be on the componen
 This limitation exists because there's no efficient way to determine the current locale of a given element in a DOM tree. I consider this a gap in the platform and [I've proposed a couple properties](https://github.com/whatwg/html/issues/7039) to make this possible.
 
 ## Creating Your Own Translations
+
+Link to This Section
 
 You can provide your own translations if you have specific needs or if you don't want to wait for a translation to land upstream. The easiest way to do this is to copy `src/translations/en.ts` into your own project and translate the terms inside. When your translation is done, you can import it and use it just like a built-in translation.
 

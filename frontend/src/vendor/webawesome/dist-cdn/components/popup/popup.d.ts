@@ -5,7 +5,8 @@ export interface VirtualElement {
     contextElement?: Element;
 }
 /**
- * @summary Popup is a utility that lets you declaratively anchor "popup" containers to another element.
+ * @summary Popups declaratively anchor one element to another and keep them positioned together as the page scrolls or
+ *  resizes. Primarily a low-level building block for popovers, dropdowns, and tooltips.
  * @documentation https://webawesome.com/docs/components/popup
  * @status stable
  * @since 2.0
@@ -34,8 +35,8 @@ export interface VirtualElement {
  * @cssproperty [--auto-size-available-height] - A read-only custom property that determines the amount of height the
  *  popup can be before overflowing. Useful for positioning child elements that need to overflow. This property is only
  *  available when using `auto-size`.
- * @cssproperty [--show-duration=100ms] - The show duration to use when applying built-in animation classes.
- * @cssproperty [--hide-duration=100ms] - The hide duration to use when applying built-in animation classes.
+ * @cssproperty [--show-duration=var(--wa-transition-fast)] - The show duration to use when applying built-in animation classes.
+ * @cssproperty [--hide-duration=var(--wa-transition-fast)] - The hide duration to use when applying built-in animation classes.
  */
 export default class WaPopup extends WebAwesomeElement {
     static css: import("lit").CSSResult;
@@ -45,6 +46,10 @@ export default class WaPopup extends WebAwesomeElement {
     /** A reference to the internal popup container. Useful for animating and styling the popup with JavaScript. */
     popup: HTMLElement;
     private arrowEl;
+    /**
+     * This is intentionally set to false. Check the connectedCallback for further notes.
+     */
+    private SUPPORTS_POPOVER;
     /**
      * The element the popup will be anchored to. If the anchor lives outside of the popup, you can provide the anchor
      * element `id`, a DOM element reference, or a `VirtualElement`. If the anchor lives inside the popup, use the

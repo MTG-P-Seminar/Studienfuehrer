@@ -3,49 +3,56 @@
 **Full documentation:** https://webawesome.com/docs/components/tooltip
 
 
-`<wa-tooltip>` Since 2.0 Stable
+`<wa-tooltip>`
 
-Tooltips display additional information based on a specific action.
+Stable [Feedback](https://webawesome.com/docs/components/?category=feedback) [Since 2.0](https://webawesome.com/docs/resources/changelog#wa_200)
+
+Tooltips display brief contextual information when the user hovers, focuses, or taps a target element.
 
 A tooltip's target is based on the `for` attribute which points to an element id.
 
 ```html
-<wa-tooltip for="my-button">This is a tooltip</wa-tooltip> <wa-button id="my-button">Hover Me</wa-button>
+<wa-tooltip for="my-button">This is a tooltip</wa-tooltip>
+<wa-button appearance="filled" id="my-button">Hover Me</wa-button>
 ```
 
 ## Examples
 
+Link to This Section
+
 ### Placement
+
+Link to This Section
 
 Use the `placement` attribute to set the preferred placement of the tooltip.
 
 ```html
 <div class="tooltip-placement-example">
   <div class="tooltip-placement-example-row">
-    <wa-button id="tooltip-top-start"></wa-button>
-    <wa-button id="tooltip-top"></wa-button>
-    <wa-button id="tooltip-top-end"></wa-button>
+    <wa-button appearance="filled" id="tooltip-top-start"></wa-button>
+    <wa-button appearance="filled" id="tooltip-top"></wa-button>
+    <wa-button appearance="filled" id="tooltip-top-end"></wa-button>
   </div>
 
   <div class="tooltip-placement-example-row">
-    <wa-button id="tooltip-left-start"></wa-button>
-    <wa-button id="tooltip-right-start"></wa-button>
+    <wa-button appearance="filled" id="tooltip-left-start"></wa-button>
+    <wa-button appearance="filled" id="tooltip-right-start"></wa-button>
   </div>
 
   <div class="tooltip-placement-example-row">
-    <wa-button id="tooltip-left"></wa-button>
-    <wa-button id="tooltip-right"></wa-button>
+    <wa-button appearance="filled" id="tooltip-left"></wa-button>
+    <wa-button appearance="filled" id="tooltip-right"></wa-button>
   </div>
 
   <div class="tooltip-placement-example-row">
-    <wa-button id="tooltip-left-end"></wa-button>
-    <wa-button id="tooltip-right-end"></wa-button>
+    <wa-button appearance="filled" id="tooltip-left-end"></wa-button>
+    <wa-button appearance="filled" id="tooltip-right-end"></wa-button>
   </div>
 
   <div class="tooltip-placement-example-row">
-    <wa-button id="tooltip-bottom-start"></wa-button>
-    <wa-button id="tooltip-bottom"></wa-button>
-    <wa-button id="tooltip-bottom-end"></wa-button>
+    <wa-button appearance="filled" id="tooltip-bottom-start"></wa-button>
+    <wa-button appearance="filled" id="tooltip-bottom"></wa-button>
+    <wa-button appearance="filled" id="tooltip-bottom-end"></wa-button>
   </div>
 </div>
 
@@ -88,19 +95,23 @@ Use the `placement` attribute to set the preferred placement of the tooltip.
 
 ### Click Trigger
 
+Link to This Section
+
 Set the `trigger` attribute to `click` to toggle the tooltip on click instead of hover.
 
 ```html
-<wa-button id="toggle-button">Click to Toggle</wa-button>
+<wa-button appearance="filled" id="toggle-button">Click to Toggle</wa-button>
 <wa-tooltip for="toggle-button" trigger="click">Click again to dismiss</wa-tooltip>
 ```
 
 ### Manual Trigger
 
+Link to This Section
+
 Tooltips can be controller programmatically by setting the `trigger` attribute to `manual`. Use the `open` attribute to control when the tooltip is shown.
 
 ```html
-<wa-button style="margin-right: 4rem;">Toggle Manually</wa-button>
+<wa-button appearance="filled" style="margin-right: 4rem;">Toggle Manually</wa-button>
 
 <wa-tooltip for="manual-trigger-tooltip" trigger="manual" class="manual-tooltip">This is an avatar!</wa-tooltip>
 <wa-avatar id="manual-trigger-tooltip" label="User"></wa-avatar>
@@ -115,10 +126,12 @@ Tooltips can be controller programmatically by setting the `trigger` attribute t
 
 ### Removing Arrows
 
+Link to This Section
+
 You can control the size of tooltip arrows by overriding the `--wa-tooltip-arrow-size` design token. To remove the arrow, use the `without-arrow` attribute.
 
 ```html
-<wa-button id="no-arrow">No Arrow</wa-button>
+<wa-button appearance="filled" id="no-arrow">No Arrow</wa-button>
 <wa-tooltip for="no-arrow" without-arrow>This is a tooltip with no arrow</wa-tooltip>
 ```
 
@@ -132,10 +145,12 @@ To override it globally, set it in a root block in your stylesheet after the Web
 
 ### HTML in Tooltips
 
+Link to This Section
+
 Use the default slot to create tooltips with HTML content. Tooltips are designed only for text and presentational elements. Avoid placing interactive content, such as buttons, links, and form controls, in a tooltip.
 
 ```html
-<wa-button id="rich-tooltip">Hover me</wa-button>
+<wa-button appearance="filled" id="rich-tooltip">Hover me</wa-button>
 <wa-tooltip for="rich-tooltip">
   <div>I'm not <strong>just</strong> a tooltip, I'm a <em>tooltip</em> with HTML!</div>
 </wa-tooltip>
@@ -143,107 +158,69 @@ Use the default slot to create tooltips with HTML content. Tooltips are designed
 
 ### Setting a Maximum Width
 
+Link to This Section
+
 Use the `--max-width` custom property to change the width the tooltip can grow to before wrapping occurs.
 
 ```html
 <wa-tooltip for="wrapping-tooltip" style="--max-width: 80px;">
   This tooltip will wrap after only 80 pixels.
 </wa-tooltip>
-<wa-button id="wrapping-tooltip">Hover me</wa-button>
-```
-
-## Importing
-
-Autoloading components via [projects](https://webawesome.com/docs/#using-a-project) is the recommended way to import components. If you prefer to do it manually, use one of the following code snippets.
-
-\*\*CDN\*\*
-
-Let your project code do the work! [Sign up for free](https://webawesome.com/signup) to use a project with your very own CDN — it's the fastest and easiest way to use Web Awesome.
-
-\*\*npm\*\*
-
-To manually import this component from NPM, use the following code.
-
-```js
-import '@awesome.me/webawesome/dist/components/tooltip/tooltip.js';
-```
-
-\*\*React\*\*
-
-To manually import this component from React, use the following code.
-
-```js
-import WaTooltip from '@awesome.me/webawesome/dist/react/tooltip';
+<wa-button appearance="filled" id="wrapping-tooltip">Hover me</wa-button>
 ```
 
 ## Slots
 
-Learn more about [using slots](https://webawesome.com/docs/usage/#slots).
+Valid slot names for this component (use exactly these — any other `slot` value
+is silently ignored and the element falls back to the default slot):
 
-| Name | Description |
-| --- | --- |
-| (default) | The tooltip's default slot where any content should live. Interactive content should be avoided. |
+- `(default)` — The tooltip's default slot where any content should live. Interactive content should be avoided.
 
 ## Attributes & Properties
 
-Learn more about [attributes and properties](https://webawesome.com/docs/usage/#attributes-and-properties).
-
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`css\` | \`CSSResultGroup \\| undefined\` One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. Type Default styles | | |
-| \`disabled\` disabled | \`boolean\` Disables the tooltip so it won't show when triggered. Type Default false | | |
-| \`distance\` distance | \`number\` The distance in pixels from which to offset the tooltip away from its target. Type Default 8 | | |
-| \`hideDelay\` hide-delay | \`number\` The amount of time to wait before hiding the tooltip when the user mouses out. Type Default 0 | | |
-| \`open\` open | \`boolean\` Indicates whether or not the tooltip is open. You can use this in lieu of the show/hide methods. Type Default false | | |
-| \`placement\` placement | \`'top' \\| 'top-start' \\| 'top-end' \\| 'right' \\| 'right-start' \\| 'right-end' \\| 'bottom' \\| 'bottom-start' \\| 'bottom-end' \\| 'left' \\| 'left-start' \\| 'left-end'\` The preferred placement of the tooltip. Note that the actual placement may vary as needed to keep the tooltip inside of the viewport. Type Default 'top' | | |
-| \`showDelay\` show-delay | \`number\` The amount of time to wait before showing the tooltip when the user mouses in. Type Default 150 | | |
-| \`skidding\` skidding | \`number\` The distance in pixels from which to offset the tooltip along its target. Type Default 0 | | |
-| \`trigger\` trigger | \`click\` Controls how the tooltip is activated. Possible options include , hover, focus, and manual. Multiple options can be passed by separating them with a space. When manual is used, the tooltip must be activated programmatically. Type string Default 'hover focus' | | |
-| \`withoutArrow\` without-arrow | \`boolean\` Removes the arrow from the tooltip. Type Default false | | |
+| Attribute | Property | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| `placement` |  | `\| 'top' \| 'top-start' \| 'top-end' \| 'right' \| 'right-start' \| 'right-end' \| 'bottom' \| 'bottom-start' \| 'bottom-end' \| 'left' \| 'left-start' \| 'left-end'` | `'top'` | The preferred placement of the tooltip. Note that the actual placement may vary as needed to keep the tooltip inside of the viewport. |
+| `disabled` |  | `boolean` | `false` | Disables the tooltip so it won't show when triggered. |
+| `distance` |  | `number` | `8` | The distance in pixels from which to offset the tooltip away from its target. |
+| `open` |  | `boolean` | `false` | Indicates whether or not the tooltip is open. You can use this in lieu of the show/hide methods. |
+| `skidding` |  | `number` | `0` | The distance in pixels from which to offset the tooltip along its target. |
+| `show-delay` | `showDelay` | `number` | `150` | The amount of time to wait before showing the tooltip when the user mouses in. |
+| `hide-delay` | `hideDelay` | `number` | `0` | The amount of time to wait before hiding the tooltip when the user mouses out. |
+| `trigger` |  | `string` | `'hover focus'` | Controls how the tooltip is activated. Possible options include `click`, `hover`, `focus`, and `manual`. Multiple options can be passed by separating them with a space. When manual is used, the tooltip must be activated programmatically. |
+| `without-arrow` | `withoutArrow` | `boolean` | `false` | Removes the arrow from the tooltip. |
+| `for` |  | `string \| null` | `null` |  |
+| `dir` |  | `string` |  |  |
+| `lang` |  | `string` |  |  |
+| `did-ssr` | `didSSR` |  |  |  |
 
 ## Methods
 
-Learn more about [methods](https://webawesome.com/docs/usage/#methods).
-
-| Name | Description | Arguments |
+| Method | Description | Arguments |
 | --- | --- | --- |
-| \`hide()\` | Hides the tooltip | |
-| \`show()\` | Shows the tooltip. | |
+| `show` | Shows the tooltip. |  |
+| `hide` | Hides the tooltip |  |
 
 ## Events
 
-Learn more about [events](https://webawesome.com/docs/usage/#events).
-
-| Name | Description |
+| Event | Description |
 | --- | --- |
-| \`wa-after-hide\` | Emitted after the tooltip has hidden and all animations are complete. |
-| \`wa-after-show\` | Emitted after the tooltip has shown and all animations are complete. |
-| \`wa-hide\` | Emitted when the tooltip begins to hide. |
-| \`wa-show\` | Emitted when the tooltip begins to show. |
+| `wa-show` | Emitted when the tooltip begins to show. |
+| `wa-after-show` | Emitted after the tooltip has shown and all animations are complete. |
+| `wa-hide` | Emitted when the tooltip begins to hide. |
+| `wa-after-hide` | Emitted after the tooltip has hidden and all animations are complete. |
 
-## CSS custom properties
+## CSS Parts
 
-Learn more about [CSS custom properties](https://webawesome.com/docs/customizing/#custom-properties).
-
-| Name | Description |
+| Part | Description |
 | --- | --- |
-| \`--max-width\` | The maximum width of the tooltip before its content will wrap. |
+| `base` | The component's base wrapper, an `<wa-popup>` element. |
+| `base__popup` | The popup's exported `popup` part. Use this to target the tooltip's popup container. |
+| `base__arrow` | The popup's exported `arrow` part. Use this to target the tooltip's arrow. |
+| `body` | The tooltip's body where its content is rendered. |
 
-## CSS parts
+## CSS Custom Properties
 
-Learn more about [CSS parts](https://webawesome.com/docs/customizing/#css-parts).
-
-| Name | Description | CSS selector |
+| Property | Default | Description |
 | --- | --- | --- |
-| \`base\` | \`\` The component's base wrapper, an element. | \`::part(base)\` |
-| \`base\_\_arrow\` | \`arrow\` The popup's exported part. Use this to target the tooltip's arrow. | \`::part(base\_\_arrow)\` |
-| \`base\_\_popup\` | \`popup\` The 's exported popup part. Use this to target the tooltip's popup container. | \`::part(base\_\_popup)\` |
-| \`body\` | The tooltip's body where its content is rendered. | \`::part(body)\` |
-
-## Dependencies
-
-This component automatically imports the following elements. Sub-dependencies, if any exist, will also be included in this list.
-
--   [`<wa-popup>`](https://webawesome.com/docs/components/popup)
-
-**Need a hand?** Report a bug Ask for help
+| `--max-width` |  | The maximum width of the tooltip before its content will wrap. |

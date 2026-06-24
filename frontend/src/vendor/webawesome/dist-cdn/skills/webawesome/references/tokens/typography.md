@@ -2,86 +2,85 @@
 
 **Full documentation:** https://webawesome.com/docs/tokens/typography
 
+Design Tokens Typography
+
+Typography tokens give your theme consistent, scalable text styles across every component. You can adjust individual tokens or use scale multipliers to change all sizes or weights at once.
+
 ## Font Family
 
-Font families are assigned specific roles — like heading or code — to help keep text styles consistent and easy to customize. By default, these properties use system fonts and generic fallbacks to maximize performance.
+Link to This Section
 
-| Custom Property | Default Value |
+Font family tokens are assigned to specific roles — body text, headings, code, and long-form prose. By default, they use system fonts for maximum performance.
+
+| Custom Property | Description |
 | --- | --- |
-| \`--wa-font-family-body\` | \`ui-sans-serif, system-ui, sans-serif\` |
-| \`--wa-font-family-heading\` | \`var(--wa-font-family-body)\` |
-| \`--wa-font-family-code\` | \`ui-monospace, monospace\` |
-| \`--wa-font-family-longform\` | \`ui-serif, serif\` |
+| \`--wa-font-family-body\` | Default font for body text and UI components |
+| \`--wa-font-family-heading\` | Font for headings |
+| \`--wa-font-family-code\` | Font for code blocks and inline code |
+| \`--wa-font-family-longform\` | Font for long-form prose and reading-optimized content |
 
 ## Font Size
 
-Font sizes use a ratio of 1.125 to scale sizes proportionally. Starting with the medium (`m`) font size, smaller sizes (`s` through `2xs`) are 1.125x smaller as the sizes decrease, and larger sizes (`l` through `4xl`) are _twice_ 1.125x larger as sizes increase — here, the ratio is doubled to maximize impact between sizes.
+Link to This Section
 
-Each value uses `rem` units and is rounded to the nearest whole pixel when rendered with [`round()`](https://developer.mozilla.org/en-US/docs/Web/CSS/round).
+Font sizes use a ratio of 1.125 to scale proportionally. The medium size (`m`) is the base; sizes below are 1.125× smaller and sizes above are _twice_ 1.125× larger to maximize visual contrast between larger sizes. All values use `rem` units and round to the nearest whole pixel.
 
-You can use `--wa-font-size-scale` to increase or decrease all font sizes at once. By default, this multiplier is `1`.
+Use `--wa-font-size-scale` to proportionally increase or decrease all sizes at once.
 
-The calculations for each size and the resulting pixel value (assuming a 16px root font size) are listed below.
-
-| Custom Property | Default Value |
+| Custom Property | Description |
 | --- | --- |
-| \`--wa-font-size-2xs\` | \`round(calc(var(--wa-font-size-xs) / 1.125), 1px)\` (11px) |
-| \`--wa-font-size-xs\` | \`round(calc(var(--wa-font-size-s) / 1.125), 1px)\` (12px) |
-| \`--wa-font-size-s\` | \`round(calc(var(--wa-font-size-m) / 1.125), 1px)\` (14px) |
-| \`--wa-font-size-m\` | \`calc(1rem \* var(--wa-font-size-scale))\` (16px) |
-| \`--wa-font-size-l\` | \`round(calc(var(--wa-font-size-m) \* 1.125 \* 1.125), 1px)\` (20px) |
-| \`--wa-font-size-xl\` | \`round(calc(var(--wa-font-size-l) \* 1.125 \* 1.125), 1px)\` (25px) |
-| \`--wa-font-size-2xl\` | \`round(calc(var(--wa-font-size-xl) \* 1.125 \* 1.125), 1px)\` (32px) |
-| \`--wa-font-size-3xl\` | \`round(calc(var(--wa-font-size-2xl) \* 1.125 \* 1.125), 1px)\` (41px) |
-| \`--wa-font-size-4xl\` | \`round(calc(var(--wa-font-size-3xl) \* 1.125 \* 1.125)\` (52px) |
-
-You can also use these two custom properties make any font size proportionally smaller or larger to its parent.
-
-| Custom Property | Default Value |
-| --- | --- |
-| \`--wa-font-size-smaller\` | \`round(calc(1em / 1.125), 1px)\` |
-| \`--wa-font-size-larger\` | \`round(calc(1em \* 1.125 \* 1.125), 1px)\` |
+| \`--wa-font-size-scale\` | Global multiplier applied to all font size calculations |
+| \`--wa-font-size-3xs\` | Smallest font size. Use sparingly and only for non-essential UI. |
+| \`--wa-font-size-2xs\` | Near-smallest font size. Use sparingly and only for non-essential UI. |
+| \`--wa-font-size-xs\` | Extra-small font size, suitable for labels and metadata |
+| \`--wa-font-size-s\` | Small font size, for secondary text and hints |
+| \`--wa-font-size-m\` | Base font size, used for most body text |
+| \`--wa-font-size-l\` | Large font size, for slightly emphasized text and small headings |
+| \`--wa-font-size-xl\` | Extra-large font size, for subheadings |
+| \`--wa-font-size-2xl\` | 2× extra-large font size, for section headings |
+| \`--wa-font-size-3xl\` | 3× extra-large font size, for page headings |
+| \`--wa-font-size-4xl\` | 4× extra-large font size, for display headings |
+| \`--wa-font-size-5xl\` | 5× extra-large font size, for hero headlines |
+| \`--wa-font-size-smaller\` | Makes text proportionally smaller relative to its parent's font size |
+| \`--wa-font-size-larger\` | Makes text proportionally larger relative to its parent's font size |
 
 ## Font Weight
 
-Font weight properties are given common names or assigned specific roles.
+Link to This Section
 
-Common weights let you easily adjust the full range of weights for your theme.
+Font weight tokens come in two flavors: named weights that cover the full range, and role-based weights for specific text types. Role-based weights reference named weights by default.
 
-| Custom Property | Default Value |
+| Custom Property | Description |
 | --- | --- |
-| \`--wa-font-weight-light\` | \`300\` |
-| \`--wa-font-weight-normal\` | \`400\` |
-| \`--wa-font-weight-semibold\` | \`500\` |
-| \`--wa-font-weight-bold\` | \`600\` |
-
-Role-based weights allow you to uniformly adjust the weight of certain types of text to keep styles consistent.
-
-| Custom Property | Default Value |
-| --- | --- |
-| \`--wa-font-weight-body\` | \`var(--wa-font-weight-normal)\` |
-| \`--wa-font-weight-heading\` | \`var(--wa-font-weight-bold)\` |
-| \`--wa-font-weight-code\` | \`var(--wa-font-weight-normal)\` |
-| \`--wa-font-weight-longform\` | \`var(--wa-font-weight-normal)\` |
-| \`--wa-font-weight-action\` | \`var(--wa-font-weight-semibold)\` |
-
-In Web Awesome, we use `--wa-font-weight-action` for interactive text, such as button labels and tab names. We also recommend using `--wa-font-weight-action` for text that uses color alone to signal interactivity, such as links without text decoration.
+| \`--wa-font-weight-light\` | Light text weight |
+| \`--wa-font-weight-normal\` | Normal text weight |
+| \`--wa-font-weight-semibold\` | Medium/semibold text weight |
+| \`--wa-font-weight-bold\` | Bold text weight |
+| \`--wa-font-weight-body\` | Weight for body/paragraph text |
+| \`--wa-font-weight-heading\` | Weight for headings |
+| \`--wa-font-weight-code\` | Weight for code |
+| \`--wa-font-weight-longform\` | Weight for long-form prose |
+| \`--wa-font-weight-action\` | Weight for interactive text like button labels and tabs. Also recommended for links that don't use text decorations. |
 
 ## Line Height
 
-Line heights control the distance between lines of text and are unitless to scale proportionately with text size. For readability, `--wa-line-height-normal`, recommended for paragraph text, should be 1.5 or greater.
+Link to This Section
 
-| Custom Property | Default Value |
+Line heights are unitless to scale proportionately with text size. For readability, paragraph text should be at least `1.5`.
+
+| Custom Property | Description |
 | --- | --- |
-| \`--wa-line-height-condensed\` | \`1.2\` |
-| \`--wa-line-height-normal\` | \`1.6\` |
-| \`--wa-line-height-expanded\` | \`2\` |
+| \`--wa-line-height-condensed\` | Tight line height for headings and short UI text |
+| \`--wa-line-height-normal\` | Standard line height for body/paragraph text |
+| \`--wa-line-height-expanded\` | Open line height for reading-optimized or airy content |
 
-## Links
+## Link Decoration
 
-Together with [`--wa-color-link`](https://webawesome.com/docs/tokens/color/#text), these tokens add text decoration to `<a>` elements to signal their role as hyperlinks.
+Link to This Section
 
-| Custom Property | Default Value |
+Together with [`--wa-color-text-link`](?active_tab=color), these tokens add text decoration to `<a>` elements to signal their role as hyperlinks.
+
+| Custom Property | Description |
 | --- | --- |
-| \`--wa-link-decoration-default\` | \`underline color-mix(in oklab, var(--wa-color-text-link) 70%, transparent) dotted\` |
-| \`--wa-link-decoration-hover\` | \`underline\` |
+| \`--wa-link-decoration-default\` | Text decoration applied to links in their default (non-hovered) state |
+| \`--wa-link-decoration-hover\` | Text decoration applied to links on hover |

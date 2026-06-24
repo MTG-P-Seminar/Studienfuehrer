@@ -2,24 +2,32 @@
 
 **Full documentation:** https://webawesome.com/docs/tokens/transitions
 
-Transitions can make interactions more lively and emphasize the relationship between a user's action and its outcome.
+Design Tokens Transitions
 
-### Duration
+Transition tokens make interactions feel more lively and help users understand the relationship between their action and its outcome.
+
+Mouse over or focus the preview swatches below to see each token in action.
+
+## Duration
+
+Link to This Section
 
 Web Awesome uses different transition durations to make it easy to track a component's state while minimizing sluggish or distracting movement.
 
-Properties that change between frequent, incidental states, such as hover and focus, generally use faster transitions than properties that change between states that are more intentional and impactful, like checked or open.
+Properties that change between frequent, incidental states (like hover) typically use faster durations than properties that change between intentional states (like opening a menu or checking a box).
 
-| Custom Property | Default Value |
+| Custom Property | Description |
 | --- | --- |
-| \`--wa-transition-slow\` | \`300ms\` |
-| \`--wa-transition-normal\` | \`150ms\` |
-| \`--wa-transition-fast\` | \`75ms\` |
+| \`--wa-transition-fast\` | Fast duration for frequent, incidental state changes like hover and focus |
+| \`--wa-transition-normal\` | Standard duration for typical state changes |
+| \`--wa-transition-slow\` | Slow duration for intentional, impactful state changes like opening a panel or checking a box |
 
-### Easing
+## Easing
+
+Link to This Section
 
 Easing controls the standard `transition-timing-function` used for transitions throughout Web Awesome.
 
-| Custom Property | Default Value |
+| Custom Property | Description |
 | --- | --- |
-| \`--wa-transition-easing\` | \`ease\` |
+| \`--wa-transition-easing\` | \`transition-timing-function\` Timing function () used for all Web Awesome transitions |

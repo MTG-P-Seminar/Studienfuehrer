@@ -5,7 +5,7 @@ import type WaTooltip from '../tooltip/tooltip.js';
 /**
  * <wa-slider>
  *
- * @summary Ranges allow the user to select a single value within a given range using a slider.
+ * @summary Sliders let users choose a numeric value within a defined range by dragging a thumb along a track.
  * @documentation https://webawesome.com/docs/components/range
  * @status stable
  * @since 2.0
@@ -55,7 +55,7 @@ export default class WaSlider extends WebAwesomeFormAssociatedElement {
     static formAssociated: boolean;
     static observeSlots: boolean;
     static css: import("lit").CSSResult[];
-    static get validators(): import("../../internal/webawesome-form-associated-element.js").Validator<WebAwesomeFormAssociatedElement>[];
+    static get validators(): (import("../../internal/webawesome-form-associated-element.js").Validator<WebAwesomeFormAssociatedElement> | import("../../internal/webawesome-form-associated-element.js").Validator<WaSlider>)[];
     private draggableTrack;
     private draggableThumbMin;
     private draggableThumbMax;
@@ -103,7 +103,8 @@ export default class WaSlider extends WebAwesomeFormAssociatedElement {
     /** The orientation of the slider. */
     orientation: 'horizontal' | 'vertical';
     /** The slider's size. */
-    size: 'small' | 'medium' | 'large';
+    size: 'xs' | 's' | 'm' | 'l' | 'xl' | 'small' | 'medium' | 'large';
+    handleSizeChange(): void;
     /** The starting value from which to draw the slider's fill, which is based on its current value. */
     indicatorOffset: number;
     /** The minimum value allowed. */
@@ -112,8 +113,6 @@ export default class WaSlider extends WebAwesomeFormAssociatedElement {
     max: number;
     /** The granularity the value must adhere to when incrementing and decrementing. */
     step: number;
-    /** Makes the slider a required field. */
-    required: boolean;
     /** Tells the browser to focus the slider when the page loads or a dialog is shown. */
     autofocus: boolean;
     /** The distance of the tooltip from the slider's thumb. */
@@ -125,11 +124,22 @@ export default class WaSlider extends WebAwesomeFormAssociatedElement {
     /** Draws a tooltip above the thumb when the control has focus or is dragged. */
     withTooltip: boolean;
     /**
+     * Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup
+     * includes the label before the component hydrates on the client.
+     */
+    withLabel: boolean;
+    /**
+     * Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup
+     * includes the hint before the component hydrates on the client.
+     */
+    withHint: boolean;
+    /**
      * A custom formatting function to apply to the value. This will be shown in the tooltip and announced by screen
      * readers. Must be set with JavaScript. Property only.
      */
     valueFormatter: (value: number) => string;
     firstUpdated(): void;
+    protected willUpdate(changedProperties: PropertyValues<this>): void;
     updated(changedProperties: PropertyValues<this>): void;
     /** @internal Called when a containing fieldset is disabled. */
     formDisabledCallback(isDisabled: boolean): void;
@@ -152,7 +162,10 @@ export default class WaSlider extends WebAwesomeFormAssociatedElement {
     private showRangeTooltips;
     private hideRangeTooltips;
     /** Updates the form value submission for range sliders */
-    private updateFormValue;
+    /**
+     * @internal
+     */
+    protected updateFormValue(value?: unknown): void;
     /** Sets focus to the slider. */
     focus(): void;
     /** Removes focus from the slider. */

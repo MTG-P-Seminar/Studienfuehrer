@@ -3,9 +3,11 @@
 **Full documentation:** https://webawesome.com/docs/components/select
 
 
-`<wa-select>` Since 2.0 Stable
+`<wa-select>`
 
-Selects allow you to choose items from a menu of predefined options.
+Stable [Forms](https://webawesome.com/docs/components/?category=forms) [Since 2.0](https://webawesome.com/docs/resources/changelog#wa_200)
+
+Selects let users choose one or more values from a dropdown list of predefined options. Use them in forms when a fixed set of choices needs to fit in limited space.
 
 ```html
 <wa-select>
@@ -22,7 +24,11 @@ This component works with standard `<form>` elements. Please refer to the sectio
 
 ## Examples
 
+Link to This Section
+
 ### Labels
+
+Link to This Section
 
 Use the `label` attribute to give the select an accessible label. For labels that contain HTML, use the `label` slot instead.
 
@@ -36,6 +42,8 @@ Use the `label` attribute to give the select an accessible label. For labels tha
 
 ### Hint
 
+Link to This Section
+
 Add descriptive hint to a select with the `hint` attribute. For hints that contain HTML, use the `hint` slot instead.
 
 ```html
@@ -47,6 +55,8 @@ Add descriptive hint to a select with the `hint` attribute. For hints that conta
 ```
 
 ### Placeholders
+
+Link to This Section
 
 Use the `placeholder` attribute to add a placeholder.
 
@@ -60,6 +70,8 @@ Use the `placeholder` attribute to add a placeholder.
 
 ### Clearable
 
+Link to This Section
+
 Use the `with-clear` attribute to make the control clearable. The clear button only appears when an option is selected.
 
 ```html
@@ -71,6 +83,8 @@ Use the `with-clear` attribute to make the control clearable. The clear button o
 ```
 
 ### Appearance
+
+Link to This Section
 
 Use the `appearance` attribute to change the select's visual appearance.
 
@@ -96,6 +110,8 @@ Use the `appearance` attribute to change the select's visual appearance.
 
 ### Pill
 
+Link to This Section
+
 Use the `pill` attribute to give selects rounded edges.
 
 ```html
@@ -108,6 +124,8 @@ Use the `pill` attribute to give selects rounded edges.
 
 ### Disabled
 
+Link to This Section
+
 Use the `disabled` attribute to disable a select.
 
 ```html
@@ -119,6 +137,8 @@ Use the `disabled` attribute to disable a select.
 ```
 
 ### Multiple
+
+Link to This Section
 
 To allow multiple options to be selected, use the `multiple` attribute. It's a good practice to use `with-clear` when this option is enabled. You can select multiple options by adding the `selected` attribute to individual options.
 
@@ -136,6 +156,8 @@ To allow multiple options to be selected, use the `multiple` attribute. It's a g
 Selecting multiple options may result in wrapping, causing the control to expand vertically. You can use the `max-options-visible` attribute to control the maximum number of selected options to show at once.
 
 ### Setting Initial Values
+
+Link to This Section
 
 Use the `selected` attribute on individual options to set the initial selection, similar to native HTML.
 
@@ -163,7 +185,9 @@ Framework users can bind directly to the `value` property for reactive data bind
 
 ### Grouping Options
 
-Use `<wa-divider>` to group listbox items visually. You can also use `<small>` to provide labels, but they won't be announced by most assistive devices.
+Link to This Section
+
+Use [`<wa-divider>`](https://webawesome.com/docs/components/divider) to group listbox items visually. You can also use `<small>` to provide labels, but they won't be announced by most assistive devices.
 
 ```html
 <wa-select>
@@ -181,10 +205,12 @@ Use `<wa-divider>` to group listbox items visually. You can also use `<small>` t
 
 ### Sizes
 
+Link to This Section
+
 Use the `size` attribute to change a select's size.
 
 ```html
-<wa-select placeholder="Small" size="small">
+<wa-select placeholder="Extra Small" size="xs">
   <wa-option value="option-1">Option 1</wa-option>
   <wa-option value="option-2">Option 2</wa-option>
   <wa-option value="option-3">Option 3</wa-option>
@@ -192,7 +218,7 @@ Use the `size` attribute to change a select's size.
 
 <br />
 
-<wa-select placeholder="Medium" size="medium">
+<wa-select placeholder="Small" size="s">
   <wa-option value="option-1">Option 1</wa-option>
   <wa-option value="option-2">Option 2</wa-option>
   <wa-option value="option-3">Option 3</wa-option>
@@ -200,7 +226,23 @@ Use the `size` attribute to change a select's size.
 
 <br />
 
-<wa-select placeholder="Large" size="large">
+<wa-select placeholder="Medium" size="m">
+  <wa-option value="option-1">Option 1</wa-option>
+  <wa-option value="option-2">Option 2</wa-option>
+  <wa-option value="option-3">Option 3</wa-option>
+</wa-select>
+
+<br />
+
+<wa-select placeholder="Large" size="l">
+  <wa-option value="option-1">Option 1</wa-option>
+  <wa-option value="option-2">Option 2</wa-option>
+  <wa-option value="option-3">Option 3</wa-option>
+</wa-select>
+
+<br />
+
+<wa-select placeholder="Extra Large" size="xl">
   <wa-option value="option-1">Option 1</wa-option>
   <wa-option value="option-2">Option 2</wa-option>
   <wa-option value="option-3">Option 3</wa-option>
@@ -208,6 +250,8 @@ Use the `size` attribute to change a select's size.
 ```
 
 ### Placement
+
+Link to This Section
 
 The preferred placement of the select's listbox can be set with the `placement` attribute. Note that the actual position may vary to ensure the panel remains in the viewport. Valid placements are `top` and `bottom`.
 
@@ -221,10 +265,12 @@ The preferred placement of the select's listbox can be set with the `placement` 
 
 ### Start & End Decorations
 
-Use the `start` and `end` slots to add presentational elements like `<wa-icon>` within the combobox.
+Link to This Section
+
+Use the `start` and `end` slots to add presentational elements like [`<wa-icon>`](https://webawesome.com/docs/components/icon) within the combobox.
 
 ```html
-<wa-select placeholder="Small" size="small" with-clear>
+<wa-select placeholder="Extra Small" size="xs" with-clear>
   <wa-icon slot="start" name="house" variant="solid"></wa-icon>
   <wa-icon slot="end" name="flag-checkered"></wa-icon>
   <wa-option value="option-1">Option 1</wa-option>
@@ -232,7 +278,7 @@ Use the `start` and `end` slots to add presentational elements like `<wa-icon>` 
   <wa-option value="option-3">Option 3</wa-option>
 </wa-select>
 <br />
-<wa-select placeholder="Medium" size="medium" with-clear>
+<wa-select placeholder="Small" size="s" with-clear>
   <wa-icon slot="start" name="house" variant="solid"></wa-icon>
   <wa-icon slot="end" name="flag-checkered"></wa-icon>
   <wa-option value="option-1">Option 1</wa-option>
@@ -240,7 +286,23 @@ Use the `start` and `end` slots to add presentational elements like `<wa-icon>` 
   <wa-option value="option-3">Option 3</wa-option>
 </wa-select>
 <br />
-<wa-select placeholder="Large" size="large" with-clear>
+<wa-select placeholder="Medium" size="m" with-clear>
+  <wa-icon slot="start" name="house" variant="solid"></wa-icon>
+  <wa-icon slot="end" name="flag-checkered"></wa-icon>
+  <wa-option value="option-1">Option 1</wa-option>
+  <wa-option value="option-2">Option 2</wa-option>
+  <wa-option value="option-3">Option 3</wa-option>
+</wa-select>
+<br />
+<wa-select placeholder="Large" size="l" with-clear>
+  <wa-icon slot="start" name="house" variant="solid"></wa-icon>
+  <wa-icon slot="end" name="flag-checkered"></wa-icon>
+  <wa-option value="option-1">Option 1</wa-option>
+  <wa-option value="option-2">Option 2</wa-option>
+  <wa-option value="option-3">Option 3</wa-option>
+</wa-select>
+<br />
+<wa-select placeholder="Extra Large" size="xl" with-clear>
   <wa-icon slot="start" name="house" variant="solid"></wa-icon>
   <wa-icon slot="end" name="flag-checkered"></wa-icon>
   <wa-option value="option-1">Option 1</wa-option>
@@ -251,9 +313,11 @@ Use the `start` and `end` slots to add presentational elements like `<wa-icon>` 
 
 ### Custom Tags
 
-When multiple options can be selected, you can provide custom tags by passing a function to the `getTag` property. Your function can return a string of HTML, a [Lit Template](https://lit.dev/docs/templates/overview/), or an [`HTMLElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement). The `getTag()` function will be called for each option. The first argument is an `<wa-option>` element and the second argument is the tag's index (its position in the tag list).
+Link to This Section
 
-Remember that custom tags are rendered in a shadow root. To style them, you can use the `style` attribute in your template or you can add your own [parts](https://webawesome.com/docs/customizing/#css-parts) and target them with the [`::part()`](https://developer.mozilla.org/en-US/docs/Web/CSS/::part) selector.
+When multiple options can be selected, you can provide custom tags by passing a function to the `getTag` property. Your function can return a string of HTML, a [Lit Template](https://lit.dev/docs/templates/overview/), or an [`HTMLElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement). The `getTag()` function will be called for each option. The first argument is an [`<wa-option>`](https://webawesome.com/docs/components/option) element and the second argument is the tag's index (its position in the tag list).
+
+Remember that custom tags are rendered in a shadow root. To style them, you can use the `style` attribute in your template or you can add your own [parts](https://webawesome.com/docs/usage/#css-parts) and target them with the [`::part()`](https://developer.mozilla.org/en-US/docs/Web/CSS/::part) selector.
 
 ```html
 <wa-select placeholder="Select one" multiple with-clear class="custom-tag">
@@ -298,9 +362,13 @@ When using custom tags with `with-remove`, you must include the `data-value` att
 
 ### Lazy loading options
 
+Link to This Section
+
 Lazy loading options works similarly to native `<select>` elements. The select component handles various scenarios intelligently:
 
 #### Basic lazy loading scenarios:
+
+Link to This Section
 
 -   **Empty select with value**: If a `<wa-select>` is created without any options but given a `value` attribute, its value will be `""` initially. When options are added later, if any option has a value matching the select's value attribute, the select's value will update to match.
     
@@ -317,7 +385,7 @@ Here's a comprehensive example showing different lazy loading scenarios:
       <wa-option value="baz">Baz</wa-option>
     </wa-select>
     <br />
-    <wa-button type="button">Add "foo" option</wa-button>
+    <wa-button appearance="filled" type="button">Add "foo" option</wa-button>
   </div>
 
   <br />
@@ -325,7 +393,7 @@ Here's a comprehensive example showing different lazy loading scenarios:
   <div>
     <wa-select name="select-2" value="foo" label="Single select (with no existing options)"> </wa-select>
     <br />
-    <wa-button type="button">Add "foo" option</wa-button>
+    <wa-button appearance="filled" type="button">Add "foo" option</wa-button>
   </div>
 
   <br />
@@ -336,7 +404,7 @@ Here's a comprehensive example showing different lazy loading scenarios:
       <wa-option value="baz" selected>Baz</wa-option>
     </wa-select>
     <br />
-    <wa-button type="button">Add "foo" option (selected)</wa-button>
+    <wa-button appearance="filled" type="button">Add "foo" option (selected)</wa-button>
   </div>
 
   <br />
@@ -344,14 +412,14 @@ Here's a comprehensive example showing different lazy loading scenarios:
   <div>
     <wa-select name="select-4" value="foo" multiple label="Multiple Select (with no existing options)"> </wa-select>
     <br />
-    <wa-button type="button">Add "foo" option</wa-button>
+    <wa-button appearance="filled" type="button">Add "foo" option</wa-button>
   </div>
 
   <br /><br />
 
   <div style="display: flex; gap: 16px;">
-    <wa-button type="reset">Reset</wa-button>
-    <wa-button type="submit" variant="brand">Show FormData</wa-button>
+    <wa-button appearance="filled" type="reset">Reset</wa-button>
+    <wa-button appearance="filled" type="submit" variant="neutral">Show FormData</wa-button>
   </div>
 
   <br />
@@ -413,152 +481,103 @@ Here's a comprehensive example showing different lazy loading scenarios:
 
 The key principle is that the select component prioritizes user interactions and explicit selections over programmatic changes, ensuring a predictable user experience even with dynamically loaded content.
 
-## Importing
-
-Autoloading components via [projects](https://webawesome.com/docs/#using-a-project) is the recommended way to import components. If you prefer to do it manually, use one of the following code snippets.
-
-\*\*CDN\*\*
-
-Let your project code do the work! [Sign up for free](https://webawesome.com/signup) to use a project with your very own CDN — it's the fastest and easiest way to use Web Awesome.
-
-\*\*npm\*\*
-
-To manually import this component from NPM, use the following code.
-
-```js
-import '@awesome.me/webawesome/dist/components/select/select.js';
-```
-
-\*\*React\*\*
-
-To manually import this component from React, use the following code.
-
-```js
-import WaSelect from '@awesome.me/webawesome/dist/react/select';
-```
-
 ## Slots
 
-Learn more about [using slots](https://webawesome.com/docs/usage/#slots).
+Valid slot names for this component (use exactly these — any other `slot` value
+is silently ignored and the element falls back to the default slot):
 
-| Name | Description |
-| --- | --- |
-| (default) | \`\` The listbox options. Must be elements. You can use to group items visually. |
-| \`clear-icon\` | An icon to use in lieu of the default clear icon. |
-| \`end\` | \`\` An element, such as , placed at the start of the combobox. |
+- `(default)` — The listbox options. Must be `<wa-option>` elements. You can use `<wa-divider>` to group items visually.
+- `label` — The input's label. Alternatively, you can use the `label` attribute.
+- `start` — An element, such as `<wa-icon>`, placed at the start of the combobox.
+- `end` — An element, such as `<wa-icon>`, placed at the end of the combobox.
+- `clear-icon` — An icon to use in lieu of the default clear icon.
+- `expand-icon` — The icon to show when the control is expanded and collapsed. Rotates on open and close.
+- `hint` — Text that describes how to use the input. Alternatively, you can use the `hint` attribute.
 
 ## Attributes & Properties
 
-Learn more about [attributes and properties](https://webawesome.com/docs/usage/#attributes-and-properties).
-
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`appearance\` appearance | \`'filled' \\| 'outlined' \\| 'filled-outlined'\` The select's visual appearance. Type Default 'outlined' | | |
-| \`css\` | \`CSSResultGroup \\| undefined\` One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. Type Default \[styles, formControlStyles, sizeStyles\] | | |
-| \`disabled\` disabled | \`boolean\` Disables the select control. Type Default false | | |
-| \`form\` | \`
-
-\` By default, form controls are associated with the nearest containing element. This attribute allows you to place the form control outside of a form and associate it with the form that has this id. The form must be in the same document or shadow root for this to work. Type HTMLFormElement \\| null | | |
-| \`getTag\` | \`(option: WaOption, index: number) => TemplateResult \\| string \\| HTMLElement\` A function that customizes the tags to be rendered when multiple=true. The first argument is the option, the second is the current tag's index. The function should return either a Lit TemplateResult or a string containing trusted HTML of the symbol to render at the specified value. Type | | |
-| \`hint\` hint | \`hint\` The select's . If you need to display HTML, use the hint slot instead. Type string Default '' | | |
-| \`label\` label | \`label\` The select's . If you need to display HTML, use the label slot instead. Type string Default '' | | |
-| \`maxOptionsVisible\` max-options-visible | \`multiple\` The maximum number of selected options to show when is true. After the maximum, "+n" will be shown to indicate the number of additional items that are selected. Set to 0 to remove the limit. Type number Default 3 | | |
-| \`multiple\` multiple | \`boolean\` Allows more than one option to be selected. Type Default false | | |
-| \`name\` name | \`string \\| null\` The name of the select, submitted as a name/value pair with form data. Type Default '' | | |
-| \`open\` open | \`show()\` Indicates whether or not the select is open. You can toggle this attribute to show and hide the menu, or you can use the and hide() methods and this attribute will reflect the select's open state. Type boolean Default false | | |
-| \`pill\` pill | \`boolean\` Draws a pill-style select with rounded edges. Type Default false | | |
-| \`placeholder\` placeholder | \`string\` Placeholder text to show as a hint when the select is empty. Type Default '' | | |
-| \`placement\` placement | \`'top' \\| 'bottom'\` The preferred placement of the select's menu. Note that the actual placement may vary as needed to keep the listbox inside of the viewport. Type Default 'bottom' | | |
-| \`required\` required | \`boolean\` The select's required attribute. Type Default false | | |
-| \`size\` size | \`'small' \\| 'medium' \\| 'large'\` The select's size. Type Default 'medium' | | |
-| \`validationTarget\` | \`undefined \\| HTMLElement\` Where to anchor native constraint validation Type | | |
-| \`validators\` | \`observedAttributes\` Validators are static because they have , essentially attributes to "watch" for changes. Whenever these attributes change, we want to be notified and update the validator. Type Validator\[\] Default \[\] | | |
-| \`value\` value | The select's value. This will be a string for single select or an array for multi-select. | | |
-| \`withClear\` with-clear | \`boolean\` Adds a clear button when the select is not empty. Type Default false | | |
-| \`withHint\` with-hint | \`boolean\` Used for SSR purposes when hint is slotted in. Will show the hint on first render. Type Default false | | |
-| \`withLabel\` with-label | \`boolean\` Used for SSR purposes when a label is slotted in. Will show the label on first render. Type Default false | | |
+| Attribute | Property | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| `name` |  | `string \| null` | `''` | The name of the select, submitted as a name/value pair with form data. |
+| `value` |  |  |  | The select's value. This will be a string for single select or an array for multi-select. |
+| `size` |  | `'xs' \| 's' \| 'm' \| 'l' \| 'xl' \| 'small' \| 'medium' \| 'large'` | `'m'` | The select's size. |
+| `placeholder` |  | `string` | `''` | Placeholder text to show as a hint when the select is empty. |
+| `multiple` |  | `boolean` | `false` | Allows more than one option to be selected. |
+| `max-options-visible` | `maxOptionsVisible` | `number` | `3` | The maximum number of selected options to show when `multiple` is true. After the maximum, "+n" will be shown to indicate the number of additional items that are selected. Set to 0 to remove the limit. |
+| `disabled` |  | `boolean` | `false` | Disables the select control. |
+| `with-clear` | `withClear` | `boolean` | `false` | Adds a clear button when the select is not empty. |
+| `open` |  | `boolean` | `false` | Indicates whether or not the select is open. You can toggle this attribute to show and hide the menu, or you can use the `show()` and `hide()` methods and this attribute will reflect the select's open state. |
+| `appearance` |  | `'filled' \| 'outlined' \| 'filled-outlined'` | `'outlined'` | The select's visual appearance. |
+| `pill` |  | `boolean` | `false` | Draws a pill-style select with rounded edges. |
+| `label` |  | `string` | `''` | The select's label. If you need to display HTML, use the `label` slot instead. |
+| `placement` |  | `'top' \| 'bottom'` | `'bottom'` | The preferred placement of the select's menu. Note that the actual placement may vary as needed to keep the listbox inside of the viewport. |
+| `hint` |  | `string` | `''` | The select's hint. If you need to display HTML, use the `hint` slot instead. |
+| `with-label` | `withLabel` | `boolean` | `false` | Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup includes the label before the component hydrates on the client. |
+| `with-hint` | `withHint` | `boolean` | `false` | Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup includes the hint before the component hydrates on the client. |
+| `required` |  | `boolean` | `false` | The select's required attribute. |
+| `custom-error` | `customError` | `string \| null` | `null` |  |
+| `dir` |  | `string` |  |  |
+| `lang` |  | `string` |  |  |
+| `did-ssr` | `didSSR` |  |  |  |
 
 ## Methods
 
-Learn more about [methods](https://webawesome.com/docs/usage/#methods).
-
-| Name | Description | Arguments |
+| Method | Description | Arguments |
 | --- | --- | --- |
-| \`blur()\` | Removes focus from the control. | |
-| \`focus()\` | Sets focus on the control. | \`options: FocusOptions\` |
-| \`formStateRestoreCallback()\` | Called when the browser is trying to restore element’s state to state in which case reason is "restore", or when the browser is trying to fulfill autofill on behalf of user in which case reason is "autocomplete". In the case of "restore", state is a string, File, or FormData object previously set as the second argument to setFormValue. | \`state: string \\| File \\| FormData \\| null, reason: 'autocomplete' \\| 'restore'\` |
-| \`hide()\` | Hides the listbox. | |
-| \`resetValidity()\` | Reset validity is a way of removing manual custom errors and native validation. | |
-| \`setCustomValidity()\` | Do not use this when creating a "Validator". This is intended for end users of components. We track manually defined custom errors so we don't clear them on accident in our validators. | \`message: string\` |
-| \`show()\` | Shows the listbox. | |
+| `show` | Shows the listbox. |  |
+| `hide` | Hides the listbox. |  |
+| `focus` | Sets focus on the control. | `options: FocusOptions` |
+| `blur` | Removes focus from the control. |  |
+| `setCustomValidity` | Do not use this when creating a "Validator". This is intended for end users of components. We track manually defined custom errors so we don't clear them on accident in our validators. | `message: string` |
+| `formStateRestoreCallback` | Called when the browser is trying to restore element’s state to state in which case reason is "restore", or when the browser is trying to fulfill autofill on behalf of user in which case reason is "autocomplete". In the case of "restore", state is a string, File, or FormData object previously set as the second argument to setFormValue. | `state: string \| File \| FormData \| null, reason: 'autocomplete' \| 'restore'` |
+| `resetValidity` | Reset validity is a way of removing manual custom errors and native validation. |  |
 
 ## Events
 
-Learn more about [events](https://webawesome.com/docs/usage/#events).
-
-| Name | Description |
+| Event | Description |
 | --- | --- |
-| \`blur\` | Emitted when the control loses focus. |
-| \`change\` | Emitted when the control's value changes. |
-| \`focus\` | Emitted when the control gains focus. |
-| \`input\` | Emitted when the control receives input. |
-| \`wa-after-hide\` | Emitted after the select's menu closes and all animations are complete. |
-| \`wa-after-show\` | Emitted after the select's menu opens and all animations are complete. |
-| \`wa-clear\` | Emitted when the control's value is cleared. |
-| \`wa-hide\` | Emitted when the select's menu closes. |
-| \`wa-invalid\` | Emitted when the form control has been checked for validity and its constraints aren't satisfied. |
-| \`wa-show\` | Emitted when the select's menu opens. |
-
-## CSS custom properties
-
-Learn more about [CSS custom properties](https://webawesome.com/docs/customizing/#custom-properties).
-
-| Name | Description |
-| --- | --- |
-| \`--hide-duration\` | \`100ms\` The duration of the hide animation. Default |
-| \`--show-duration\` | \`100ms\` The duration of the show animation. Default |
-| \`--tag-max-size\` | \`multiple\` When using , the max size of tags before their content is truncated. Default 10ch |
+| `input` | Emitted when the control receives input. |
+| `change` | Emitted when the control's value changes. |
+| `focus` | Emitted when the control gains focus. |
+| `blur` | Emitted when the control loses focus. |
+| `wa-clear` | Emitted when the control's value is cleared. |
+| `wa-show` | Emitted when the select's menu opens. |
+| `wa-after-show` | Emitted after the select's menu opens and all animations are complete. |
+| `wa-hide` | Emitted when the select's menu closes. |
+| `wa-after-hide` | Emitted after the select's menu closes and all animations are complete. |
+| `wa-invalid` | Emitted when the form control has been checked for validity and its constraints aren't satisfied. |
 
 ## Custom States
 
-Learn more about [custom states](https://webawesome.com/docs/customizing/#custom-states).
+| State | Description |
+| --- | --- |
+| `blank` | The select is empty. |
 
-| Name | Description | CSS selector |
+## CSS Parts
+
+| Part | Description |
+| --- | --- |
+| `form-control` | The form control that wraps the label, input, and hint. |
+| `form-control-label` | The label's wrapper. |
+| `form-control-input` | The select's wrapper. |
+| `hint` | The hint's wrapper. |
+| `combobox` | The container the wraps the start, end, value, clear icon, and expand button. |
+| `start` | The container that wraps the `start` slot. |
+| `end` | The container that wraps the `end` slot. |
+| `display-input` | The element that displays the selected option's label, an `<input>` element. |
+| `listbox` | The listbox container where options are slotted. |
+| `tags` | The container that houses option tags when `multiselect` is used. |
+| `tag` | The individual tags that represent each multiselect option. |
+| `tag__content` | The tag's content part. |
+| `tag__remove-button` | The tag's remove button. |
+| `tag__remove-button__base` | The tag's remove button base part. |
+| `clear-button` | The clear button. |
+| `expand-icon` | The container that wraps the expand icon. |
+
+## CSS Custom Properties
+
+| Property | Default | Description |
 | --- | --- | --- |
-| \`blank\` | The select is empty. | \`:state(blank)\` |
-
-## CSS parts
-
-Learn more about [CSS parts](https://webawesome.com/docs/customizing/#css-parts).
-
-| Name | Description | CSS selector |
-| --- | --- | --- |
-| \`clear-button\` | The clear button. | \`::part(clear-button)\` |
-| \`combobox\` | The container the wraps the start, end, value, clear icon, and expand button. | \`::part(combobox)\` |
-| \`display-input\` | \`\` The element that displays the selected option's label, an element. | \`::part(display-input)\` |
-| \`end\` | \`end\` The container that wraps the slot. | \`::part(end)\` |
-| \`expand-icon\` | The container that wraps the expand icon. | \`::part(expand-icon)\` |
-| \`form-control\` | The form control that wraps the label, input, and hint. | \`::part(form-control)\` |
-| \`form-control-input\` | The select's wrapper. | \`::part(form-control-input)\` |
-| \`form-control-label\` | The label's wrapper. | \`::part(form-control-label)\` |
-| \`hint\` | The hint's wrapper. | \`::part(hint)\` |
-| \`listbox\` | The listbox container where options are slotted. | \`::part(listbox)\` |
-| \`start\` | \`start\` The container that wraps the slot. | \`::part(start)\` |
-| \`tag\` | The individual tags that represent each multiselect option. | \`::part(tag)\` |
-| \`tag\_\_content\` | The tag's content part. | \`::part(tag\_\_content)\` |
-| \`tag\_\_remove-button\` | The tag's remove button. | \`::part(tag\_\_remove-button)\` |
-| \`tag\_\_remove-button\_\_base\` | The tag's remove button base part. | \`::part(tag\_\_remove-button\_\_base)\` |
-| \`tags\` | \`multiselect\` The container that houses option tags when is used. | \`::part(tags)\` |
-
-## Dependencies
-
-This component automatically imports the following elements. Sub-dependencies, if any exist, will also be included in this list.
-
--   [`<wa-button>`](https://webawesome.com/docs/components/button)
--   [`<wa-icon>`](https://webawesome.com/docs/components/icon)
--   [`<wa-option>`](https://webawesome.com/docs/components/option)
--   [`<wa-popup>`](https://webawesome.com/docs/components/popup)
--   [`<wa-spinner>`](https://webawesome.com/docs/components/spinner)
--   [`<wa-tag>`](https://webawesome.com/docs/components/tag)
-
-**Need a hand?** Report a bug Ask for help
+| `--show-duration` | `var(--wa-transition-fast)` | The duration of the show animation. |
+| `--hide-duration` | `var(--wa-transition-fast)` | The duration of the hide animation. |
+| `--tag-max-size` | `10ch` | When using `multiple`, the max size of tags before their content is truncated. |

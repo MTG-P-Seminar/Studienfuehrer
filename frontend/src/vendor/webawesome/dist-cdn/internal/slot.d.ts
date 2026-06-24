@@ -1,12 +1,16 @@
 import type { ReactiveController, ReactiveControllerHost } from 'lit';
 /** A reactive controller that determines when slots exist. */
 export declare class HasSlotController implements ReactiveController {
-    host: ReactiveControllerHost & Element;
+    host: ReactiveControllerHost & HTMLElement;
     slotNames: string[];
-    constructor(host: ReactiveControllerHost & Element, ...slotNames: string[]);
+    constructor(host: typeof this.host, ...slotNames: string[]);
     private hasDefaultSlot;
     private hasNamedSlot;
-    test(slotName: string): boolean;
+    /**
+     * @param slotName     - Name of the slot to look for
+     * @param propertyName - Generally we infer via `withHeader` property on the host, but in cases where its different, you can specify a manual property name.
+     */
+    test(slotName: string, propertyName?: null | string): boolean;
     hostConnected(): void;
     hostDisconnected(): void;
     private handleSlotChange;

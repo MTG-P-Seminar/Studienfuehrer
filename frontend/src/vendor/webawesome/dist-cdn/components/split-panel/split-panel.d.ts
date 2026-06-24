@@ -1,6 +1,8 @@
+import { type PropertyValues } from 'lit';
 import WebAwesomeElement from '../../internal/webawesome-element.js';
 /**
- * @summary Split panels display two adjacent panels, allowing the user to reposition them.
+ * @summary Split panels display two adjacent panels separated by a draggable divider, letting users resize each side to
+ *  suit their workflow.
  * @documentation https://webawesome.com/docs/components/split-panel
  * @status stable
  * @since 2.0
@@ -66,6 +68,9 @@ export default class WaSplitPanel extends WebAwesomeElement {
     handlePositionChange(): void;
     handlePositionInPixelsChange(): void;
     handleVerticalChange(): void;
+    private updateStyles;
+    willUpdate(changedProperties: PropertyValues<this>): void;
+    updated(changedProperties: PropertyValues<this>): void;
     render(): import("lit-html").TemplateResult<1>;
 }
 declare global {

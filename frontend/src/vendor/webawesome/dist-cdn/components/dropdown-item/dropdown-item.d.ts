@@ -2,9 +2,10 @@ import type { PropertyValues } from 'lit';
 import WebAwesomeElement from '../../internal/webawesome-element.js';
 import '../icon/icon.js';
 /**
- * @summary Represents an individual item within a dropdown menu, supporting standard items, checkboxes, and submenus.
+ * @summary Dropdown items represent selectable entries within a dropdown menu, including standard actions, checkable
+ *  items, and submenu triggers.
  * @documentation https://webawesome.com/docs/components/dropdown-item
- * @status experimental
+ * @status stable
  * @since 3.0
  *
  * @dependency wa-icon
@@ -35,7 +36,8 @@ export default class WaDropdownItem extends WebAwesomeElement {
     /**
      * @internal The dropdown item's size.
      */
-    size: 'small' | 'medium' | 'large';
+    size: 'xs' | 's' | 'm' | 'l' | 'xl' | 'small' | 'medium' | 'large';
+    handleSizeChange(): void;
     /**
      * @internal The controller will set this property to true when at least one checkbox exists in the dropdown. This
      * allows non-checkbox items to draw additional space to align properly with checkbox items.
@@ -76,6 +78,8 @@ export default class WaDropdownItem extends WebAwesomeElement {
     closeSubmenu(): Promise<void>;
     /** Gets all dropdown items in the submenu. */
     private getSubmenuItems;
+    /** Prevents click events from firing on the host when the item is disabled (e.g. programmatic .click() calls). */
+    private handleHostClick;
     /** Prevents click events from firing when the item is disabled. */
     private handleClick;
     /** Handles mouse enter to open the submenu */

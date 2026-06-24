@@ -3,8 +3,8 @@ import WebAwesomeElement from '../../internal/webawesome-element.js';
 import '../dropdown-item/dropdown-item.js';
 import '../popup/popup.js';
 /**
- * @summary Dropdowns display a list of options that can be triggered by a button or other element. They support
- *  keyboard navigation, submenus, and various customization options.
+ * @summary Dropdowns display a list of options triggered by a button or other element. They support keyboard
+ *  navigation, submenus, and checkable items for building menus and context actions.
  * @documentation https://webawesome.com/docs/components/dropdown
  * @status stable
  * @since 2.0
@@ -40,7 +40,8 @@ export default class WaDropdown extends WebAwesomeElement {
     /** Opens or closes the dropdown. */
     open: boolean;
     /** The dropdown's size. */
-    size: 'small' | 'medium' | 'large';
+    size: 'xs' | 's' | 'm' | 'l' | 'xl' | 'small' | 'medium' | 'large';
+    handleSizeChange(): void;
     /**
      * The placement of the dropdown menu in reference to the trigger. The menu will shift to a more optimal location if
      * the preferred placement doesn't have enough room.

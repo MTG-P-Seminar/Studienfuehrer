@@ -2,15 +2,17 @@
 
 **Full documentation:** https://webawesome.com/docs/utilities/native
 
+CSS Utilities Native Styles
+
 Native styles use design tokens to spruce up native HTML elements so that they match the look and feel of your theme. While these native styles are completely optional, they're a great starting point for a cohesive design and a huge help when using a combination of native elements and Web Awesome components in your project.
 
 ## Using native styles
 
-\*\*CDN\*\*
+Link to This Section \*\*CDN\*\*
 
-1.  Head over to your project's **Settings**.
-2.  Next to **Features**, select the **Native styles** checkbox.
-3.  **Save Changes** to immediately update anywhere you're using your project.
+1.  Head over to your project's Settings.
+2.  Next to Features, select the Native styles checkbox.
+3.  Save Changes to immediately update anywhere you're using your project.
 
 \*\*npm\*\*
 
@@ -44,7 +46,42 @@ Or, if you only want styles for native elements, include a theme and native styl
 
 You can additionally include any pre-made [theme](https://webawesome.com/docs/themes/) or [color palette](https://webawesome.com/docs/color-palettes/) to change the look of native elements.
 
+## Opting out of native styles
+
+Link to This Section
+
+If you want to keep Web Awesome's components, tokens, and utilities but let a native element fall back to browser defaults, reset that element in your own stylesheet.
+
+```html
+<div class="wa-cluster wa-align-items-center">
+  <button type="button">Styled by native.css</button>
+  <button type="button" class="native-reset">Browser default button</button>
+</div>
+
+<style>
+  .native-reset {
+    all: revert;
+    font: inherit;
+  }
+</style>
+```
+
+Use `all: revert` on the exact element you want to opt out of native styles. Re-apply any properties you still want to inherit from your app, such as `font`.
+
+To opt out for an entire section, apply the same reset within a wrapper and target only the native elements in that area.
+
+```css
+.native-reset-zone :where(button, input, select, textarea, table, details, dialog, progress) {
+  all: revert;
+  font: inherit;
+}
+```
+
+If your app has separate page-level entry points, the simplest page-level opt-out is to not load `native.css` on pages that should keep browser defaults. You can still load your theme, components, and any [utilities](https://webawesome.com/docs/utilities/) you want on those pages.
+
 ## Content flow
+
+Link to This Section
 
 Native styles set default space between many block-level HTML elements using the `--wa-content-spacing` token from your theme. This helps ensure that your content is readable.
 
@@ -74,9 +111,13 @@ To remove this default spacing, you can set `--wa-content-spacing: 0` in your st
 
 ## Typography
 
+Link to This Section
+
 Native styles use [typography design tokens](https://webawesome.com/docs/tokens/typography/) to style text elements. A number of styles — such as `color`, `font-family`, `font-size`, `font-weight`, and `line-height` — are set on the `<body>` element to be inherited by child elements.
 
 ### Headings
+
+Link to This Section
 
 Create headings with `<h1>` through `<h6>`. Headings use tokens with the `-heading` suffix, condensed line height, and `text-wrap: balance` for a prominent yet compact appearance.
 
@@ -91,6 +132,8 @@ Create headings with `<h1>` through `<h6>`. Headings use tokens with the `-headi
 
 ### Paragraphs
 
+Link to This Section
+
 Create paragraphs with `<p>`. Paragraphs inherit the default text styles set on the `<body>` element and use `text-wrap: pretty` to prevent orphaned lines in supported browsers.
 
 ```html
@@ -100,14 +143,16 @@ Create paragraphs with `<p>`. Paragraphs inherit the default text styles set on 
 </p>
 
 <p>
-  You can have as many paragraphs as you need and they'll maintain consistent spacing between them. Native styles
-  ensure everything stays readable and well-proportioned, no matter how much content you throw at it.
+  You can have as many paragraphs as you need and they'll maintain consistent spacing between them. Native styles ensure
+  everything stays readable and well-proportioned, no matter how much content you throw at it.
 </p>
 ```
 
 ### Blockquotes
 
-Emphasize longer quotations with `<blockquote>`. Block quotes use your theme's serif font family and a leading border to stand out.
+Link to This Section
+
+Emphasize longer quotations with `<blockquote>`. Block quotes use your theme's serif font family, a quiet color, a leading border, and a larger font size that scales with surrounding text.
 
 ```html
 <blockquote>
@@ -119,7 +164,9 @@ Emphasize longer quotations with `<blockquote>`. Block quotes use your theme's s
 
 ### Lists
 
-Create ordered and unordered lists with `<ol>` and `<ul>`, plus `<li>` for list items within.
+Link to This Section
+
+Create ordered and unordered lists with `<ol>` and `<ul>`, plus `<li>` for list items within. Markers use `currentColor` at reduced opacity so they sit quietly next to text.
 
 ```html
 <div class="wa-grid">
@@ -149,6 +196,31 @@ Create ordered and unordered lists with `<ol>` and `<ul>`, plus `<li>` for list 
 </div>
 ```
 
+Use `<menu>` as a semantic alternative to unordered lists. Native styles reset the browser's default list styles for `<menu>` to support more flexible styling.
+
+```html
+<menu class="wa-cluster">
+  <li>
+    <button class="wa-filled wa-size-s">
+      <wa-icon name="cut"></wa-icon>
+      <span>Cut</span>
+    </button>
+  </li>
+  <li>
+    <button class="wa-filled wa-size-s">
+      <wa-icon name="copy"></wa-icon>
+      <span>Copy</span>
+    </button>
+  </li>
+  <li>
+    <button class="wa-filled wa-size-s">
+      <wa-icon name="paste"></wa-icon>
+      <span>Paste</span>
+    </button>
+  </li>
+</menu>
+```
+
 Use `<dl>` to create lists of terms (`<dt>`) and definitions (`<dd>`).
 
 ```html
@@ -173,6 +245,8 @@ Use `<dl>` to create lists of terms (`<dt>`) and definitions (`<dd>`).
 
 ### Code blocks
 
+Link to This Section
+
 Create code blocks or other preformatted text with `<pre>`. Preformatted text uses your theme's monospace font family and a subtle background color.
 
 ```html
@@ -185,6 +259,8 @@ export function thing() {
 ```
 
 ### Inline text
+
+Link to This Section
 
 Use any inline text element like `<strong>`, `<em>`, `<a>`, `<kbd>`, and others to stylize or emphasize text.
 
@@ -213,7 +289,11 @@ Use any inline text element like `<strong>`, `<em>`, `<a>`, `<kbd>`, and others 
 
 ## Widgets & media
 
+Link to This Section
+
 ### Media
+
+Link to This Section
 
 Add responsive media with `<img>`, `<svg>`, `<video>`, `<iframe>`, and others. Media takes up 100% width by default and scales according to its container's width.
 
@@ -224,49 +304,59 @@ Add responsive media with `<img>`, `<svg>`, `<video>`, `<iframe>`, and others. M
 />
 ```
 
+### Figures
+
+Link to This Section
+
+Pair media with a caption using `<figure>` and `<figcaption>`. Captions use a quiet color and condensed line-height so they read as a label, not running text.
+
+```html
+<figure>
+  <img
+    src="https://images.unsplash.com/photo-1620196244888-d31ff5bbf163?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    alt="A gray kitten lays next to a toy"
+  />
+  <figcaption>A gray kitten taking a break next to a felt mouse, somewhere off-camera.</figcaption>
+</figure>
+```
+
 ### Tables
 
-Structure tabular data with `<table>` and related elements like `<caption>`, `<thead>`, `<tbody>`, `<th>`, `<tr>`, and `<td>`.
+Link to This Section
+
+Structure tabular data with `<table>` and related elements like `<caption>`, `<thead>`, `<tbody>`, `<th>`, `<tr>`, and `<td>`. Headers carry a subtle bottom border, and numeric columns use `tabular-nums` so digits line up.
 
 ```html
 <table>
   <caption>
-    This
-    <code>&lt;caption&gt;</code>
-    describes the table
+    Average rainfall, in millimeters
   </caption>
   <thead>
     <tr>
-      <th>First column</th>
-      <th>Second column</th>
-      <th>Third column</th>
-      <th>Final column</th>
+      <th>City</th>
+      <th>Spring</th>
+      <th>Summer</th>
+      <th>Autumn</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Data</td>
-      <td>Data</td>
-      <td>Data</td>
-      <td>Data</td>
+      <td>Lisbon</td>
+      <td>119</td>
+      <td>14</td>
+      <td>97</td>
     </tr>
     <tr>
-      <td>Data</td>
-      <td>Data</td>
-      <td>Data</td>
-      <td>Data</td>
+      <td>Reykjavík</td>
+      <td>148</td>
+      <td>156</td>
+      <td>219</td>
     </tr>
     <tr>
-      <td>Data</td>
-      <td>Data</td>
-      <td>Data</td>
-      <td>Data</td>
-    </tr>
-    <tr>
-      <td>Data</td>
-      <td>Data</td>
-      <td>Data</td>
-      <td>Data</td>
+      <td>Kyoto</td>
+      <td>362</td>
+      <td>508</td>
+      <td>327</td>
     </tr>
   </tbody>
 </table>
@@ -315,6 +405,8 @@ Add the `wa-hover-rows` class to highlight table rows on hover and the `wa-zebra
 
 ### Details
 
+Link to This Section
+
 Create disclosure widgets with `<details>` and `<summary>`. Details closely match the appearance of [`<wa-details>`](https://webawesome.com/docs/components/details/).
 
 ```html
@@ -328,6 +420,8 @@ Create disclosure widgets with `<details>` and `<summary>`. Details closely matc
 ```
 
 ### Dialog
+
+Link to This Section
 
 Create modal and non-modal dialog boxes with `<dialog>`. Dialogs closely match the appearance of [`<wa-dialog>`](https://webawesome.com/docs/components/dialog/).
 
@@ -351,6 +445,8 @@ Create modal and non-modal dialog boxes with `<dialog>`. Dialogs closely match t
 
 ### Progress
 
+Link to This Section
+
 Create progress indicators with `<progress>`. Progress indicators closely match the appearance of [`<wa-progress-bar>`](https://webawesome.com/docs/components/progress-bar/).
 
 ```html
@@ -361,9 +457,13 @@ Create progress indicators with `<progress>`. Progress indicators closely match 
 
 ## Forms
 
+Link to This Section
+
 Native styles use [form control design tokens](https://webawesome.com/docs/tokens/component-groups/#form-controls) to style form elements like buttons and inputs. Form elements additionally inherit `font-family` from the `<body>` element.
 
 ### Buttons
+
+Link to This Section
 
 Create buttons with `<button>` or `<input type="button | submit | reset">`. Buttons closely match the appearance of [`<wa-button>`](https://webawesome.com/docs/components/button/).
 
@@ -400,12 +500,14 @@ Add the `wa-accent`, `wa-filled`, `wa-outlined`, or `wa-plain` class to specify 
 <button class="wa-plain wa-neutral">Plain</button>
 ```
 
-Add the `wa-size-s`, `wa-size-m`, or `wa-size-l` class to specify the size of the button.
+Add a `wa-size-*` class to specify the size of the button. Available sizes are `wa-size-xs`, `wa-size-s`, `wa-size-m`, `wa-size-l`, and `wa-size-xl`.
 
 ```html
+<button class="wa-size-xs">Extra Small</button>
 <button class="wa-size-s">Small</button>
 <button class="wa-size-m">Medium</button>
 <button class="wa-size-l">Large</button>
+<button class="wa-size-xl">Extra Large</button>
 ```
 
 Add the `wa-pill` class to give buttons rounded edges.
@@ -414,7 +516,7 @@ Add the `wa-pill` class to give buttons rounded edges.
 <button class="wa-pill">Pill button</button>
 ```
 
-When using `<wa-icon>` within a button, wrap adjacent label text in `<span>` or similar to automatically add margin between the icon and the label, just like the `start` and `end` slots of `<wa-button>`.
+When using [`<wa-icon>`](https://webawesome.com/docs/components/icon) within a button, wrap adjacent label text in `<span>` or similar to automatically add margin between the icon and the label, just like the `start` and `end` slots of [`<wa-button>`](https://webawesome.com/docs/components/button).
 
 ```html
 <button>
@@ -428,6 +530,8 @@ When using `<wa-icon>` within a button, wrap adjacent label text in `<span>` or 
 ```
 
 ### Form controls
+
+Link to This Section
 
 Create a variety of form controls with `<input type="">`, `<select>`, and `<textarea>`. Each control closely matches the appearance of the corresponding Web Awesome component.
 
@@ -466,10 +570,15 @@ Create a variety of form controls with `<input type="">`, `<select>`, and `<text
 </script>
 ```
 
-Add the `wa-size-s`, `wa-size-m`, or `wa-size-l` class to any form control or its parent `<label>` to specify its size.
+Add a `wa-size-*` class to any form control or its parent `<label>` to specify its size. Available sizes are `wa-size-xs`, `wa-size-s`, `wa-size-m`, `wa-size-l`, and `wa-size-xl`.
 
 ```html
 <div class="wa-stack">
+  <input type="text" placeholder="Extra small input" class="wa-size-xs" />
+  <div class="wa-cluster">
+    <label class="wa-size-xs"><input type="checkbox" checked /> Extra small checkbox</label>
+    <label class="wa-size-xs"><input type="radio" name="radio-xs" value="1" checked /> Extra small radio</label>
+  </div>
   <input type="text" placeholder="Small input" class="wa-size-s" />
   <div class="wa-cluster">
     <label class="wa-size-s"><input type="checkbox" checked /> Small checkbox</label>
@@ -484,6 +593,11 @@ Add the `wa-size-s`, `wa-size-m`, or `wa-size-l` class to any form control or it
   <div class="wa-cluster">
     <label class="wa-size-l"><input type="checkbox" checked /> Large checkbox</label>
     <label class="wa-size-l"><input type="radio" name="radio-large" value="1" checked /> Large radio</label>
+  </div>
+  <input type="text" placeholder="Extra large input" class="wa-size-xl" />
+  <div class="wa-cluster">
+    <label class="wa-size-xl"><input type="checkbox" checked /> Extra large checkbox</label>
+    <label class="wa-size-xl"><input type="radio" name="radio-xl" value="1" checked /> Extra large radio</label>
   </div>
 </div>
 ```
@@ -519,6 +633,8 @@ Add any [button](#buttons) modifier class to `<input type="file">` to change the
 
 ### Fieldsets
 
+Link to This Section
+
 Group form controls together with `<fieldset>` and `<legend>`.
 
 ```html
@@ -531,6 +647,8 @@ Group form controls together with `<fieldset>` and `<legend>`.
 ```
 
 ### Form layouts
+
+Link to This Section
 
 Wrap form controls in a flex container to arrange them horizontally or vertically with even spacing. Layout utility classes like [`wa-cluster`](https://webawesome.com/docs/utilities/cluster) and [`wa-stack`](https://webawesome.com/docs/utilities/stack) can be added directly to a `<fieldset>` or `<form>` to make this especially easy.
 
@@ -557,7 +675,7 @@ Wrap form controls in a flex container to arrange them horizontally or verticall
   </label>
   <label><input type="checkbox" checked /> Add whipped butter</label>
   <button>
-    <wa-icon name="pancakes"></wa-icon>
+    <wa-icon name="layer-group"></wa-icon>
     Stack 'em up
   </button>
 </form>

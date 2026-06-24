@@ -3,9 +3,11 @@
 **Full documentation:** https://webawesome.com/docs/components/spinner
 
 
-`<wa-spinner>` Since 2.0 Stable
+`<wa-spinner>`
 
-Spinners are used to show the progress of an indeterminate operation.
+Stable [Feedback](https://webawesome.com/docs/components/?category=feedback) [Since 2.0](https://webawesome.com/docs/resources/changelog#wa_200)
+
+Spinners indicate that an operation is in progress when the duration is unknown. Use them for loading states where a determinate progress bar isn't practical.
 
 ```html
 <wa-spinner></wa-spinner>
@@ -13,7 +15,11 @@ Spinners are used to show the progress of an indeterminate operation.
 
 ## Examples
 
+Link to This Section
+
 ### Size
+
+Link to This Section
 
 Spinners are sized based on the current font size. To change their size, set the `font-size` property on the spinner itself or on a parent element as shown below.
 
@@ -25,6 +31,8 @@ Spinners are sized based on the current font size. To change their size, set the
 
 ### Track Width
 
+Link to This Section
+
 The width of the spinner's track can be changed by setting the `--track-width` custom property.
 
 ```html
@@ -33,61 +41,33 @@ The width of the spinner's track can be changed by setting the `--track-width` c
 
 ### Color
 
+Link to This Section
+
 The spinner's colors can be changed by setting the `--indicator-color` and `--track-color` custom properties.
 
 ```html
 <wa-spinner style="font-size: 3rem; --indicator-color: deeppink; --track-color: pink;"></wa-spinner>
 ```
 
-## Importing
-
-Autoloading components via [projects](https://webawesome.com/docs/#using-a-project) is the recommended way to import components. If you prefer to do it manually, use one of the following code snippets.
-
-\*\*CDN\*\*
-
-Let your project code do the work! [Sign up for free](https://webawesome.com/signup) to use a project with your very own CDN — it's the fastest and easiest way to use Web Awesome.
-
-\*\*npm\*\*
-
-To manually import this component from NPM, use the following code.
-
-```js
-import '@awesome.me/webawesome/dist/components/spinner/spinner.js';
-```
-
-\*\*React\*\*
-
-To manually import this component from React, use the following code.
-
-```js
-import WaSpinner from '@awesome.me/webawesome/dist/react/spinner';
-```
-
 ## Attributes & Properties
 
-Learn more about [attributes and properties](https://webawesome.com/docs/usage/#attributes-and-properties).
+| Attribute | Property | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| `dir` |  | `string` |  |  |
+| `lang` |  | `string` |  |  |
+| `did-ssr` | `didSSR` |  |  |  |
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`css\` | \`CSSResultGroup \\| undefined\` One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. Type Default styles | | |
+## CSS Parts
 
-## CSS custom properties
-
-Learn more about [CSS custom properties](https://webawesome.com/docs/customizing/#custom-properties).
-
-| Name | Description |
+| Part | Description |
 | --- | --- |
-| \`--indicator-color\` | The color of the spinner's indicator. |
-| \`--speed\` | The time it takes for the spinner to complete one animation cycle. |
-| \`--track-color\` | The color of the track. |
-| \`--track-width\` | The width of the track. |
+| `base` | The component's base wrapper. |
 
-## CSS parts
+## CSS Custom Properties
 
-Learn more about [CSS parts](https://webawesome.com/docs/customizing/#css-parts).
-
-| Name | Description | CSS selector |
+| Property | Default | Description |
 | --- | --- | --- |
-| \`base\` | The component's base wrapper. | \`::part(base)\` |
-
-**Need a hand?** Report a bug Ask for help
+| `--track-width` |  | The width of the track. |
+| `--track-color` |  | The color of the track. |
+| `--indicator-color` |  | The color of the spinner's indicator. |
+| `--speed` |  | The time it takes for the spinner to complete one animation cycle. |

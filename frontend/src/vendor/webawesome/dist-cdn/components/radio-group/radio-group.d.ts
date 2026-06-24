@@ -3,7 +3,8 @@ import { WebAwesomeFormAssociatedElement } from '../../internal/webawesome-form-
 import '../radio/radio.js';
 import type WaRadio from '../radio/radio.js';
 /**
- * @summary Radio groups are used to group multiple [radios](/docs/components/radio) so they function as a single form control.
+ * @summary Radio groups wrap a set of radios so they function as a single form control with one shared value. They
+ *  handle keyboard navigation, labeling, and validation for the group as a whole.
  * @documentation https://webawesome.com/docs/components/radio-group
  * @status stable
  * @since 2.0
@@ -50,19 +51,24 @@ export default class WaRadioGroup extends WebAwesomeFormAssociatedElement {
     /** The default value of the form control. Primarily used for resetting the form control. */
     defaultValue: string | null;
     /** The radio group's size. When present, this size will be applied to all `<wa-radio>` items inside. */
-    size: 'small' | 'medium' | 'large';
+    size: 'xs' | 's' | 'm' | 'l' | 'xl' | 'small' | 'medium' | 'large';
+    handleSizeChange(): void;
     /** Ensures a child radio is checked before allowing the containing form to submit. */
     required: boolean;
     /**
-     * Used for SSR. if true, will show slotted label on initial render.
+     * Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup
+     * includes the label before the component hydrates on the client.
      */
     withLabel: boolean;
     /**
-     * Used for SSR. if true, will show slotted hint on initial render.
+     * Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup
+     * includes the hint before the component hydrates on the client.
      */
     withHint: boolean;
     static shadowRootOptions: {
         delegatesFocus: boolean;
+        clonable?: boolean;
+        customElementRegistry?: CustomElementRegistry;
         mode: ShadowRootMode;
         serializable?: boolean;
         slotAssignment?: SlotAssignmentMode;

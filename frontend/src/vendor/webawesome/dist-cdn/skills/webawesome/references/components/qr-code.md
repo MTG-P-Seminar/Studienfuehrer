@@ -3,15 +3,17 @@
 **Full documentation:** https://webawesome.com/docs/components/qr-code
 
 
-`<wa-qr-code>` Since 2.0 Stable
+`<wa-qr-code>`
 
-Generates a [QR code](https://www.qrcode.com/) and renders it using the [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API).
+Stable [Media](https://webawesome.com/docs/components/?category=media) [Since 2.0](https://webawesome.com/docs/resources/changelog#wa_200)
+
+QR codes encode a URL or other short text into a scannable image, rendered client-side using the Canvas API. Use them to share links, contact info, or Wi-Fi credentials that visitors can scan with a phone.
 
 QR codes are useful for providing small pieces of information to users who can quickly scan them with a smartphone. Most smartphones have built-in QR code scanners, so simply pointing the camera at a QR code will decode it and allow the user to visit a website, dial a phone number, read a message, etc.
 
 ```html
 <div class="qr-overview">
-  <wa-qr-code value="https://shoelace.style/" label="Scan this code to visit Web Awesome on the web!"></wa-qr-code>
+  <wa-qr-code value="https://webawesome.com/" label="Scan this code to visit Web Awesome on the web!"></wa-qr-code>
   <br />
 
   <wa-input maxlength="255" with-clear label="Value">
@@ -25,8 +27,10 @@ QR codes are useful for providing small pieces of information to users who can q
   const input = container.querySelector('wa-input');
 
   customElements.whenDefined('wa-qr-code').then(() => {
-    input.value = qrCode.value;
-    input.addEventListener('input', () => (qrCode.value = input.value));
+    qrCode.updateComplete.then(() => {
+      input.value = qrCode.value;
+      input.addEventListener('input', () => (qrCode.value = input.value));
+    });
   });
 </script>
 
@@ -43,15 +47,21 @@ QR codes are useful for providing small pieces of information to users who can q
 
 ## Examples
 
+Link to This Section
+
 ### Size
+
+Link to This Section
 
 Use the `size` attribute to change the size of the QR code.
 
 ```html
-<wa-qr-code value="https://shoelace.style/" size="64"></wa-qr-code>
+<wa-qr-code value="https://webawesome.com/" size="64"></wa-qr-code>
 ```
 
 ### Colors
+
+Link to This Section
 
 The QR code's fill color is determined by the current text color. To change it, set the CSS `color` property on the host element or an ancestor element.
 
@@ -61,7 +71,7 @@ A _quiet zone_ is the blank space around a QR code that helps scanners detect it
 
 ```html
 <wa-qr-code
-  value="https://shoelace.style/"
+  value="https://webawesome.com/"
   style="
     color: var(--wa-color-indigo-20);
     background-color: var(--wa-color-indigo-90);
@@ -71,24 +81,38 @@ A _quiet zone_ is the blank space around a QR code that helps scanners detect it
 ></wa-qr-code>
 ```
 
+#### Corner Color
+
+Link to This Section
+
+You can change the color of the corners to be different from the main element with the `--corner-color` custom property.
+
+```html
+<wa-qr-code value="https://webawesome.com/" style="--corner-color: var(--wa-color-brand)"></wa-qr-code>
+```
+
 ### Radius
+
+Link to This Section
 
 Create a rounded effect with the `radius` attribute.
 
 ```html
-<wa-qr-code value="https://shoelace.style/" radius="0.5"></wa-qr-code>
+<wa-qr-code value="https://webawesome.com/" radius="0.5"></wa-qr-code>
 ```
 
 ### Error Correction
+
+Link to This Section
 
 QR codes can be rendered with various levels of [error correction](https://www.qrcode.com/en/about/error_correction.html) that can be set using the `error-correction` attribute. This example generates four codes with the same value using different error correction levels.
 
 ```html
 <div class="qr-error-correction">
-  <wa-qr-code value="https://shoelace.style/" error-correction="L"></wa-qr-code>
-  <wa-qr-code value="https://shoelace.style/" error-correction="M"></wa-qr-code>
-  <wa-qr-code value="https://shoelace.style/" error-correction="Q"></wa-qr-code>
-  <wa-qr-code value="https://shoelace.style/" error-correction="H"></wa-qr-code>
+  <wa-qr-code value="https://webawesome.com/" error-correction="L"></wa-qr-code>
+  <wa-qr-code value="https://webawesome.com/" error-correction="M"></wa-qr-code>
+  <wa-qr-code value="https://webawesome.com/" error-correction="Q"></wa-qr-code>
+  <wa-qr-code value="https://webawesome.com/" error-correction="H"></wa-qr-code>
 </div>
 
 <style>
@@ -100,51 +124,73 @@ QR codes can be rendered with various levels of [error correction](https://www.q
 </style>
 ```
 
-## Importing
+### Images
 
-Autoloading components via [projects](https://webawesome.com/docs/#using-a-project) is the recommended way to import components. If you prefer to do it manually, use one of the following code snippets.
+Link to This Section
 
-\*\*CDN\*\*
+Use the `image` attribute to add a logo or image to the center of the QR code. When using an image, the error correction level will automatically be set to `H` to ensure the code remains scannable.
 
-Let your project code do the work! [Sign up for free](https://webawesome.com/signup) to use a project with your very own CDN — it's the fastest and easiest way to use Web Awesome.
-
-\*\*npm\*\*
-
-To manually import this component from NPM, use the following code.
-
-```js
-import '@awesome.me/webawesome/dist/components/qr-code/qr-code.js';
+```html
+<wa-qr-code value="https://webawesome.com/" image="/assets/images/logos/wa-avatar4x.png"></wa-qr-code>
 ```
 
-\*\*React\*\*
+### Image Coverage
 
-To manually import this component from React, use the following code.
+Link to This Section
 
-```js
-import WaQrCode from '@awesome.me/webawesome/dist/react/qr-code';
+Use the `image-coverage` attribute to control how much of the QR code the image is allowed to cover, from `0` to `1`. The default is `0.5`.
+
+The higher the `image-coverage` value, the harder it will be for QR readers to scan. For example, `1.0` usually makes the QR code unreadable.
+
+```html
+<div class="qr-ec-cover">
+  <wa-qr-code
+    value="https://fontawesome.com/"
+    image="/assets/images/logos/fa-avatar4x.png"
+    image-coverage="0.3"
+  ></wa-qr-code>
+  <wa-qr-code
+    value="https://webawesome.com/"
+    image="/assets/images/logos/wa-avatar4x.png"
+    image-coverage="0.6"
+  ></wa-qr-code>
+  <wa-qr-code
+    value="https://build.awesome.me/"
+    image="/assets/images/logos/ba-avatar4x.png"
+    image-coverage="0.9"
+  ></wa-qr-code>
+</div>
+
+<style>
+  .qr-ec-cover {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+</style>
 ```
 
 ## Attributes & Properties
 
-Learn more about [attributes and properties](https://webawesome.com/docs/usage/#attributes-and-properties).
+| Attribute | Property | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| `value` |  | `string` | `''` | The QR code's value. |
+| `label` |  | `string` | `''` | The label for assistive devices to announce. If unspecified, the value will be used instead. |
+| `size` |  | `number` | `128` | The size of the QR code, in pixels. |
+| `fill` |  | `string` | `''` | The fill color. This can be any valid CSS color, but not a CSS custom property. |
+| `background` |  | `string` | `''` | The background color. This can be any valid CSS color or `transparent`. It cannot be a CSS custom property. |
+| `radius` |  | `number` | `0` | The edge radius of each module. Must be between 0 and 0.5. |
+| `error-correction` | `errorCorrection` | `'L' \| 'M' \| 'Q' \| 'H'` | `'H'` | The level of error correction to use. [Learn more](https://www.qrcode.com/en/about/error_correction.html) |
+| `image` |  | `string \| null` | `null` |  |
+| `image-background` | `imageBackground` | `string \| null` | `null` |  |
+| `image-coverage` | `imageCoverage` | `number \| null` | `null` |  |
+| `image-padding` | `imagePadding` | `number \| null` | `null` |  |
+| `dir` |  | `string` |  |  |
+| `lang` |  | `string` |  |  |
+| `did-ssr` | `didSSR` |  |  |  |
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`background\` background | \`transparent\` The background color. This can be any valid CSS color or . It cannot be a CSS custom property. Type string Default '' | | |
-| \`css\` | \`CSSResultGroup \\| undefined\` One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. Type Default styles | | |
-| \`errorCorrection\` error-correction | \`'L' \\| 'M' \\| 'Q' \\| 'H'\` The level of error correction to use. Learn more Type Default 'H' | | |
-| \`fill\` fill | \`string\` The fill color. This can be any valid CSS color, but not a CSS custom property. Type Default '' | | |
-| \`label\` label | \`string\` The label for assistive devices to announce. If unspecified, the value will be used instead. Type Default '' | | |
-| \`radius\` radius | \`number\` The edge radius of each module. Must be between 0 and 0.5. Type Default 0 | | |
-| \`size\` size | \`number\` The size of the QR code, in pixels. Type Default 128 | | |
-| \`value\` value | \`string\` The QR code's value. Type Default '' | | |
+## CSS Parts
 
-## CSS parts
-
-Learn more about [CSS parts](https://webawesome.com/docs/customizing/#css-parts).
-
-| Name | Description | CSS selector |
-| --- | --- | --- |
-| \`base\` | The component's base wrapper. | \`::part(base)\` |
-
-**Need a hand?** Report a bug Ask for help
+| Part | Description |
+| --- | --- |
+| `base` | The component's base wrapper. |

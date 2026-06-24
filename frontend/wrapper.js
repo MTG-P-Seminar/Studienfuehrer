@@ -18,6 +18,7 @@ const titles = {
   "abroad-tips": "Tipps fürs Auslandsjahr",
   "early-studies-ratings": "Bewertungen zum Frühstudium",
   "early-studies-regular-class": "Frühstudium - Erfahrungen aus der Perspektive eines Regelklassenschülers",
+  "home": "StAu - Studien- und Auslandsjahrführer des MTG",
   "lmu": "Frühstudium an der LMU",
   "todos": "TODOs",
   "tum": "Frühstudium an der TUM",

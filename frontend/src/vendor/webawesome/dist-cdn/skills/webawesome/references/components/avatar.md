@@ -3,9 +3,11 @@
 **Full documentation:** https://webawesome.com/docs/components/avatar
 
 
-`<wa-avatar>` Since 2.0 Stable
+`<wa-avatar>`
 
-Avatars are used to represent a person or object.
+Stable [Media](https://webawesome.com/docs/components/?category=media) [Since 2.0](https://webawesome.com/docs/resources/changelog#wa_200)
+
+Avatars represent a person or object with an image, initials, or icon. Use them in lists, comments, and profiles to give users visual context at a glance.
 
 By default, a generic icon will be shown. You can personalize avatars by adding custom icons, initials, and images. You should always provide a `label` for assistive devices.
 
@@ -15,7 +17,11 @@ By default, a generic icon will be shown. You can personalize avatars by adding 
 
 ## Examples
 
+Link to This Section
+
 ### Images
+
+Link to This Section
 
 To use an image for the avatar, set the `image` and `label` attributes. This will take priority and be shown over initials and icons. Avatar images can be lazily loaded by setting the `loading` attribute to `lazy`.
 
@@ -33,6 +39,8 @@ To use an image for the avatar, set the `image` and `label` attributes. This wil
 
 ### Initials
 
+Link to This Section
+
 When you don't have an image to use, you can set the `initials` attribute to show something more personalized than an icon.
 
 ```html
@@ -40,6 +48,8 @@ When you don't have an image to use, you can set the `initials` attribute to sho
 ```
 
 ### Custom Icons
+
+Link to This Section
 
 When no image or initials are set, an icon will be shown. The default avatar shows a generic "user" icon, but you can customize this with the `icon` slot.
 
@@ -59,6 +69,8 @@ When no image or initials are set, an icon will be shown. The default avatar sho
 
 ### Shapes
 
+Link to This Section
+
 Avatars can be shaped using the `shape` attribute.
 
 ```html
@@ -68,6 +80,8 @@ Avatars can be shaped using the `shape` attribute.
 ```
 
 ### Avatar Groups
+
+Link to This Section
 
 You can group avatars with a few lines of CSS.
 
@@ -105,81 +119,42 @@ You can group avatars with a few lines of CSS.
 </style>
 ```
 
-## Importing
-
-Autoloading components via [projects](https://webawesome.com/docs/#using-a-project) is the recommended way to import components. If you prefer to do it manually, use one of the following code snippets.
-
-\*\*CDN\*\*
-
-Let your project code do the work! [Sign up for free](https://webawesome.com/signup) to use a project with your very own CDN — it's the fastest and easiest way to use Web Awesome.
-
-\*\*npm\*\*
-
-To manually import this component from NPM, use the following code.
-
-```js
-import '@awesome.me/webawesome/dist/components/avatar/avatar.js';
-```
-
-\*\*React\*\*
-
-To manually import this component from React, use the following code.
-
-```js
-import WaAvatar from '@awesome.me/webawesome/dist/react/avatar';
-```
-
 ## Slots
 
-Learn more about [using slots](https://webawesome.com/docs/usage/#slots).
+Valid slot names for this component (use exactly these — any other `slot` value
+is silently ignored and the element falls back to the default slot):
 
-| Name | Description |
-| --- | --- |
-| \`icon\` | \`
+- `icon` — The default icon to use when no image or initials are present. Works best with `<wa-icon>`.
 
 ## Attributes & Properties
 
-Learn more about [attributes and properties](https://webawesome.com/docs/usage/#attributes-and-properties).
-
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`css\` | \`CSSResultGroup \\| undefined\` One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. Type Default styles | | |
-| \`image\` image | \`string\` The image source to use for the avatar. Type Default '' | | |
-| \`initials\` initials | \`string\` Initials to use as a fallback when no image is available (1-2 characters max recommended). Type Default '' | | |
-| \`label\` label | \`string\` A label to use to describe the avatar to assistive devices. Type Default '' | | |
-| \`loading\` loading | \`'eager' \\| 'lazy'\` Indicates how the browser should load the image. Type Default 'eager' | | |
-| \`shape\` shape | \`'circle' \\| 'square' \\| 'rounded'\` The shape of the avatar. Type Default 'circle' | | |
+| Attribute | Property | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| `image` |  | `string` | `''` | The image source to use for the avatar. |
+| `label` |  | `string` | `''` | A label to use to describe the avatar to assistive devices. |
+| `initials` |  | `string` | `''` | Initials to use as a fallback when no image is available (1-2 characters max recommended). |
+| `loading` |  | `'eager' \| 'lazy'` | `'eager'` | Indicates how the browser should load the image. |
+| `shape` |  | `'circle' \| 'square' \| 'rounded'` | `'circle'` | The shape of the avatar. |
+| `dir` |  | `string` |  |  |
+| `lang` |  | `string` |  |  |
+| `did-ssr` | `didSSR` |  |  |  |
 
 ## Events
 
-Learn more about [events](https://webawesome.com/docs/usage/#events).
-
-| Name | Description |
+| Event | Description |
 | --- | --- |
-| \`wa-error\` | The image could not be loaded. This may because of an invalid URL, a temporary network condition, or some unknown cause. |
+| `wa-error` | The image could not be loaded. This may because of an invalid URL, a temporary network condition, or some unknown cause. |
 
-## CSS custom properties
+## CSS Parts
 
-Learn more about [CSS custom properties](https://webawesome.com/docs/customizing/#custom-properties).
-
-| Name | Description |
+| Part | Description |
 | --- | --- |
-| \`--size\` | The size of the avatar. |
+| `icon` | The container that wraps the avatar's icon. |
+| `initials` | The container that wraps the avatar's initials. |
+| `image` | The avatar image. Only shown when the `image` attribute is set. |
 
-## CSS parts
+## CSS Custom Properties
 
-Learn more about [CSS parts](https://webawesome.com/docs/customizing/#css-parts).
-
-| Name | Description | CSS selector |
+| Property | Default | Description |
 | --- | --- | --- |
-| \`icon\` | The container that wraps the avatar's icon. | \`::part(icon)\` |
-| \`image\` | \`image\` The avatar . Only shown when the image attribute is set. | \`::part(image)\` |
-| \`initials\` | The container that wraps the avatar's initials. | \`::part(initials)\` |
-
-## Dependencies
-
-This component automatically imports the following elements. Sub-dependencies, if any exist, will also be included in this list.
-
--   [`<wa-icon>`](https://webawesome.com/docs/components/icon)
-
-**Need a hand?** Report a bug Ask for help
+| `--size` |  | The size of the avatar. |

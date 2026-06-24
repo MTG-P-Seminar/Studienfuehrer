@@ -7,7 +7,8 @@ import '../popup/popup.js';
 import type WaPopup from '../popup/popup.js';
 import '../tag/tag.js';
 /**
- * @summary Selects allow you to choose items from a menu of predefined options.
+ * @summary Selects let users choose one or more values from a dropdown list of predefined options. Use them in forms
+ *  when a fixed set of choices needs to fit in limited space.
  * @documentation https://webawesome.com/docs/components/select
  * @status stable
  * @since 2.0
@@ -53,8 +54,8 @@ import '../tag/tag.js';
  * @csspart clear-button - The clear button.
  * @csspart expand-icon - The container that wraps the expand icon.
  *
- * @cssproperty [--show-duration=100ms] - The duration of the show animation.
- * @cssproperty [--hide-duration=100ms] - The duration of the hide animation.
+ * @cssproperty [--show-duration=var(--wa-transition-fast)] - The duration of the show animation.
+ * @cssproperty [--hide-duration=var(--wa-transition-fast)] - The duration of the hide animation.
  * @cssproperty [--tag-max-size=10ch] - When using `multiple`, the max size of tags before their content is truncated.
  *
  * @cssstate blank - The select is empty.
@@ -63,11 +64,13 @@ export default class WaSelect extends WebAwesomeFormAssociatedElement {
     static css: import("lit").CSSResult[];
     static get validators(): import("../../internal/webawesome-form-associated-element.js").Validator<WebAwesomeFormAssociatedElement>[];
     assumeInteractionOn: string[];
+    private cachedOptions;
     private readonly hasSlotController;
     private readonly localize;
     private selectionOrder;
     private typeToSelectString;
     private typeToSelectTimeout;
+    private slotChangePending;
     popup: WaPopup;
     combobox: HTMLSlotElement;
     displayInput: HTMLInputElement;
@@ -78,12 +81,14 @@ export default class WaSelect extends WebAwesomeFormAssociatedElement {
     displayLabel: string;
     currentOption: WaOption;
     selectedOptions: WaOption[];
+    /** @internal */
     optionValues: Set<string | null> | undefined;
     /** The name of the select, submitted as a name/value pair with form data. */
     name: string;
     private _defaultValue;
     set defaultValue(val: null | string | string[]);
     get defaultValue(): null | string | string[];
+    private rawValuesEqual;
     /**
      * @private
      * A converter for defaultValue from array to string if its multiple. Also fixes some hydration issues.
@@ -94,7 +99,8 @@ export default class WaSelect extends WebAwesomeFormAssociatedElement {
     set value(val: string | string[] | null);
     get value(): string | string[] | null;
     /** The select's size. */
-    size: 'small' | 'medium' | 'large';
+    size: 'xs' | 's' | 'm' | 'l' | 'xl' | 'small' | 'medium' | 'large';
+    handleSizeChange(): void;
     /** Placeholder text to show as a hint when the select is empty. */
     placeholder: string;
     /** Allows more than one option to be selected. */
@@ -127,11 +133,13 @@ export default class WaSelect extends WebAwesomeFormAssociatedElement {
     /** The select's hint. If you need to display HTML, use the `hint` slot instead. */
     hint: string;
     /**
-     * Used for SSR purposes when a label is slotted in. Will show the label on first render.
+     * Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup
+     * includes the label before the component hydrates on the client.
      */
     withLabel: boolean;
     /**
-     * Used for SSR purposes when hint is slotted in. Will show the hint on first render.
+     * Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup
+     * includes the hint before the component hydrates on the client.
      */
     withHint: boolean;
     /** The select's required attribute. */
@@ -159,6 +167,7 @@ export default class WaSelect extends WebAwesomeFormAssociatedElement {
     private handleClearMouseDown;
     private handleOptionClick;
     handleDefaultSlotChange(): void;
+    private processSlotChange;
     private handleTagRemove;
     private getAllOptions;
     private getFirstOption;

@@ -1,7 +1,8 @@
 import WebAwesomeElement from '../../internal/webawesome-element.js';
 import WaTreeItem from '../tree-item/tree-item.js';
 /**
- * @summary Trees allow you to display a hierarchical list of selectable [tree items](/docs/components/tree-item). Items with children can be expanded and collapsed as desired by the user.
+ * @summary Trees allow you to display a hierarchical list of selectable tree items. Items with children can be expanded
+ *  and collapsed as desired by the user.
  * @documentation https://webawesome.com/docs/components/tree
  * @status stable
  * @since 2.0
@@ -31,12 +32,15 @@ export default class WaTree extends WebAwesomeElement {
     /**
      * The selection behavior of the tree. Single selection allows only one node to be selected at a time. Multiple
      * displays checkboxes and allows more than one node to be selected. Leaf allows only leaf nodes to be selected.
+     * Leaf-multiple allows multiple leaf nodes to be selected while parent nodes only expand and collapse.
      */
-    selection: 'single' | 'multiple' | 'leaf';
+    selection: 'single' | 'multiple' | 'leaf' | 'leaf-multiple';
     private lastFocusedItem;
     private mutationObserver;
     private clickTarget;
     private readonly localize;
+    tabIndex: number;
+    role: string;
     constructor();
     connectedCallback(): Promise<void>;
     disconnectedCallback(): void;

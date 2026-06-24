@@ -6,15 +6,19 @@ Web Awesome form controls are form-associated custom elements, meaning they will
 
 ## Constraint Validation
 
+Link to This Section
+
 Client-side validation can be enabled through the browser's [Constraint Validation API](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation) for Web Awesome form controls. You can activate it using attributes such as `required`, `pattern`, `minlength`, `maxlength`, etc. Web Awesome implements many of the same attributes as native form controls, but check the documentation for a list of supported properties for each component.
 
 If you don't want to use client-side validation, you can suppress this behavior by adding `novalidate` to the surrounding `<form>` element.
 
-If this syntax looks unfamiliar, don't worry! Most of what you're learning on this page is platform knowledge that applies to regular form controls, too.
+And if this syntax looks unfamiliar, don't worry! Most of what you're learning on this page is platform knowledge that applies to native form controls, too.
 
-Client-side validation can be used to improve the UX of forms, but it is not a replacement for server-side validation. **You should always validate and sanitize user input on the server!**
+Client-side validation can be used to improve the UX of forms, but it is not a replacement for server-side validation. You should always validate and sanitize user input on the server!
 
 ### Required Fields
+
+Link to This Section
 
 To make a field required, use the `required` attribute. Required fields will automatically receive an asterisk after their labels. The form will not be submitted if a required field is incomplete.
 
@@ -33,7 +37,7 @@ To make a field required, use the `required` attribute. Required fields will aut
   <br />
   <wa-checkbox required>Check me before submitting</wa-checkbox>
   <br /><br />
-  <wa-button type="submit" variant="brand">Submit</wa-button>
+  <wa-button appearance="filled" type="submit" variant="neutral">Submit</wa-button>
 </form>
 
 <script type="module">
@@ -58,14 +62,16 @@ To make a field required, use the `required` attribute. Required fields will aut
 
 ### Input Patterns
 
-To restrict a value to a specific [pattern](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/pattern), use the `pattern` attribute. This example only allows the letters A-Z, so the form will not submit if a number or symbol is entered. This only works with `<wa-input>` elements.
+Link to This Section
+
+To restrict a value to a specific [pattern](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/pattern), use the `pattern` attribute. This example only allows the letters A-Z, so the form will not submit if a number or symbol is entered. This only works with [`<wa-input>`](https://webawesome.com/docs/components/input) elements.
 
 ```html
 <form class="input-validation-pattern">
   <wa-input name="letters" required label="Letters" pattern="[A-Za-z]+"></wa-input>
   <br />
-  <wa-button type="submit" variant="brand">Submit</wa-button>
-  <wa-button type="reset" variant="neutral">Reset</wa-button>
+  <wa-button appearance="filled" type="submit" variant="neutral">Submit</wa-button>
+  <wa-button appearance="filled" type="reset" variant="neutral">Reset</wa-button>
 </form>
 
 <script type="module">
@@ -83,6 +89,8 @@ To restrict a value to a specific [pattern](https://developer.mozilla.org/en-US/
 
 ### Input Types
 
+Link to This Section
+
 Some input types will automatically trigger constraints, such as `email` and `url`.
 
 ```html
@@ -91,8 +99,8 @@ Some input types will automatically trigger constraints, such as `email` and `ur
   <br />
   <wa-input type="url" label="URL" placeholder="https://example.com/" required></wa-input>
   <br />
-  <wa-button type="submit" variant="brand">Submit</wa-button>
-  <wa-button type="reset" variant="neutral">Reset</wa-button>
+  <wa-button appearance="filled" type="submit" variant="neutral">Submit</wa-button>
+  <wa-button appearance="filled" type="reset" variant="neutral">Reset</wa-button>
 </form>
 
 <script type="module">
@@ -110,14 +118,16 @@ Some input types will automatically trigger constraints, such as `email` and `ur
 
 ### Custom Error Messages
 
+Link to This Section
+
 To create a custom validation error, pass a non-empty string to the `setCustomValidity()` method. This will override any existing validation constraints. The form will not be submitted when a custom validity is set and the browser will show a validation error when the containing form is submitted. To make the input valid again, call `setCustomValidity()` again with an empty string.
 
 ```html
 <form class="input-validation-custom">
   <wa-input label="Type webawesome" required></wa-input>
   <br />
-  <wa-button type="submit" variant="brand">Submit</wa-button>
-  <wa-button type="reset" variant="neutral">Reset</wa-button>
+  <wa-button appearance="filled" type="submit" variant="neutral">Submit</wa-button>
+  <wa-button appearance="filled" type="reset" variant="neutral">Reset</wa-button>
 </form>
 
 <script type="module">
@@ -145,6 +155,8 @@ To create a custom validation error, pass a non-empty string to the `setCustomVa
 Custom validation can be applied to any form control that supports the `setCustomValidity()` method. It is not limited to inputs and textareas.
 
 ## Custom Validation Styles
+
+Link to This Section
 
 Due to the many ways form controls are used, Web Awesome doesn't provide out of the box validation styles for form controls as part of its default theme.
 

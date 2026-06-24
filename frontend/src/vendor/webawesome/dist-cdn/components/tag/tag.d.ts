@@ -1,7 +1,8 @@
 import WebAwesomeElement from '../../internal/webawesome-element.js';
 import '../button/button.js';
 /**
- * @summary Tags are used as labels to organize things or to indicate a selection.
+ * @summary Tags label, categorize, or represent selections with a compact visual marker. Use them for status
+ *  indicators, filters, or removable chips.
  * @documentation https://webawesome.com/docs/components/tag
  * @status stable
  * @since 2.0
@@ -25,7 +26,8 @@ export default class WaTag extends WebAwesomeElement {
     /** The tag's visual appearance. */
     appearance: 'accent' | 'filled' | 'outlined' | 'filled-outlined';
     /** The tag's size. */
-    size: 'small' | 'medium' | 'large';
+    size: 'xs' | 's' | 'm' | 'l' | 'xl' | 'small' | 'medium' | 'large';
+    handleSizeChange(): void;
     /** Draws a pill-style tag with rounded edges. */
     pill: boolean;
     /** Makes the tag removable and shows a remove button. */

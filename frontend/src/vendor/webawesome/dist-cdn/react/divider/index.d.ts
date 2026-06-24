@@ -1,6 +1,7 @@
 import Component from '../../components/divider/divider.js';
 /**
- * @summary Dividers are used to visually separate or group elements.
+ * @summary Dividers visually separate or group adjacent elements with a horizontal or vertical line. Use them to
+ *  establish rhythm and hierarchy within menus, toolbars, and layouts.
  * @documentation https://webawesome.com/docs/components/divider
  * @status stable
  * @since 2.0

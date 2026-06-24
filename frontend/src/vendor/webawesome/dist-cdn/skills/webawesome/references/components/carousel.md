@@ -3,9 +3,11 @@
 **Full documentation:** https://webawesome.com/docs/components/carousel
 
 
-`<wa-carousel>` Since 2.2 Experimental
+`<wa-carousel>`
 
-Carousels display an arbitrary number of content slides along a horizontal or vertical axis.
+Experimental [Media](https://webawesome.com/docs/components/?category=media) [Since 2.2](https://webawesome.com/docs/resources/changelog#wa_220)
+
+Carousels display a series of content slides along a horizontal or vertical axis, one or more at a time. Users can navigate between slides with controls, pagination, or autoplay.
 
 ```html
 <wa-carousel pagination navigation mouse-dragging loop>
@@ -44,7 +46,11 @@ Carousels display an arbitrary number of content slides along a horizontal or ve
 
 ## Examples
 
+Link to This Section
+
 ### Pagination
+
+Link to This Section
 
 Use the `pagination` attribute to show the total number of slides and the current slide as a set of interactive dots.
 
@@ -85,6 +91,8 @@ Use the `pagination` attribute to show the total number of slides and the curren
 
 ### Navigation
 
+Link to This Section
+
 Use the `navigation` attribute to show previous and next buttons.
 
 ```html
@@ -123,6 +131,8 @@ Use the `navigation` attribute to show previous and next buttons.
 ```
 
 ### Looping
+
+Link to This Section
 
 By default, the carousel will not advanced beyond the first and last slides. You can change this behavior and force the carousel to "wrap" with the `loop` attribute.
 
@@ -163,6 +173,8 @@ By default, the carousel will not advanced beyond the first and last slides. You
 
 ### Autoplay
 
+Link to This Section
+
 The carousel will automatically advance when the `autoplay` attribute is used. To change how long a slide is shown before advancing, set `autoplay-interval` to the desired number of milliseconds. For best results, use the `loop` attribute when autoplay is enabled. Note that autoplay will pause while the user interacts with the carousel.
 
 ```html
@@ -201,6 +213,8 @@ The carousel will automatically advance when the `autoplay` attribute is used. T
 ```
 
 ### Mouse Dragging
+
+Link to This Section
 
 The carousel uses [scroll snap](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scroll_Snap) to position slides at various snap positions. This allows users to scroll through the slides very naturally, especially on touch devices. Unfortunately, desktop users won't be able to click and drag with a mouse, which can feel unnatural. Adding the `mouse-dragging` attribute can help with this.
 
@@ -259,6 +273,8 @@ This example is best demonstrated using a mouse. Try clicking and dragging the s
 
 ### Multiple Slides Per View
 
+Link to This Section
+
 The `slides-per-page` attribute makes it possible to display multiple slides at a time. You can also use the `slides-per-move` attribute to advance more than once slide at a time, if desired.
 
 ```html
@@ -274,6 +290,8 @@ The `slides-per-page` attribute makes it possible to display multiple slides at 
 
 ### Adding and Removing Slides
 
+Link to This Section
+
 The content of the carousel can be changed by adding or removing carousel items. The carousel will update itself automatically.
 
 ```html
@@ -284,8 +302,8 @@ The content of the carousel can be changed by adding or removing carousel items.
 </wa-carousel>
 
 <div class="carousel-options">
-  <wa-button id="dynamic-add">Add slide</wa-button>
-  <wa-button id="dynamic-remove">Remove slide</wa-button>
+  <wa-button appearance="filled" id="dynamic-add">Add slide</wa-button>
+  <wa-button appearance="filled" id="dynamic-remove">Remove slide</wa-button>
 </div>
 
 <style>
@@ -346,6 +364,8 @@ The content of the carousel can be changed by adding or removing carousel items.
 
 ### Vertical Scrolling
 
+Link to This Section
+
 Setting the `orientation` attribute to `vertical` will render the carousel in a vertical layout. If the content of your slides vary in height, you will need to set an explicit `height` or `max-height` on the carousel using CSS.
 
 ```html
@@ -402,6 +422,8 @@ Setting the `orientation` attribute to `vertical` will render the carousel in a 
 ```
 
 ### Aspect Ratio
+
+Link to This Section
 
 Use the `--aspect-ratio` custom property to customize the size of the carousel's viewport from the default value of 16/9.
 
@@ -461,6 +483,8 @@ Use the `--aspect-ratio` custom property to customize the size of the carousel's
 
 ### Scroll Hint
 
+Link to This Section
+
 Use the `--scroll-hint` custom property to add inline padding in horizontal carousels and block padding in vertical carousels. This will make the closest slides slightly visible, hinting that there are more items in the carousel.
 
 ```html
@@ -499,6 +523,8 @@ Use the `--scroll-hint` custom property to add inline padding in horizontal caro
 ```
 
 ### Gallery Example
+
+Link to This Section
 
 The carousel has a robust API that makes it possible to extend and customize. This example syncs the active slide with a set of thumbnails, effectively creating a gallery-style carousel.
 
@@ -621,104 +647,66 @@ The carousel has a robust API that makes it possible to extend and customize. Th
 </script>
 ```
 
-## Importing
-
-Autoloading components via [projects](https://webawesome.com/docs/#using-a-project) is the recommended way to import components. If you prefer to do it manually, use one of the following code snippets.
-
-\*\*CDN\*\*
-
-Let your project code do the work! [Sign up for free](https://webawesome.com/signup) to use a project with your very own CDN — it's the fastest and easiest way to use Web Awesome.
-
-\*\*npm\*\*
-
-To manually import this component from NPM, use the following code.
-
-```js
-import '@awesome.me/webawesome/dist/components/carousel/carousel.js';
-```
-
-\*\*React\*\*
-
-To manually import this component from React, use the following code.
-
-```js
-import WaCarousel from '@awesome.me/webawesome/dist/react/carousel';
-```
-
 ## Slots
 
-Learn more about [using slots](https://webawesome.com/docs/usage/#slots).
+Valid slot names for this component (use exactly these — any other `slot` value
+is silently ignored and the element falls back to the default slot):
 
-| Name | Description |
-| --- | --- |
-| (default) | \`\` The carousel's main content, one or more elements. |
-| \`next-icon\` | \`\` Optional previous icon to use instead of the default. Works best with . |
+- `(default)` — The carousel's main content, one or more `<wa-carousel-item>` elements.
+- `next-icon` — Optional next icon to use instead of the default. Works best with `<wa-icon>`.
+- `previous-icon` — Optional previous icon to use instead of the default. Works best with `<wa-icon>`.
 
 ## Attributes & Properties
 
-Learn more about [attributes and properties](https://webawesome.com/docs/usage/#attributes-and-properties).
-
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`autoplay\` autoplay | \`boolean\` When set, the slides will scroll automatically when the user is not interacting with them. Type Default false | | |
-| \`autoplayInterval\` autoplay-interval | \`number\` Specifies the amount of time, in milliseconds, between each automatic scroll. Type Default 3000 | | |
-| \`css\` | \`CSSResultGroup \\| undefined\` One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. Type Default styles | | |
-| \`loop\` loop | \`boolean\` When set, allows the user to navigate the carousel in the same direction indefinitely. Type Default false | | |
-| \`mouseDragging\` mouse-dragging | \`boolean\` When set, it is possible to scroll through the slides by dragging them with the mouse. Type Default false | | |
-| \`navigation\` navigation | \`boolean\` When set, show the carousel's navigation. Type Default false | | |
-| \`orientation\` orientation | \`'horizontal' \\| 'vertical'\` Specifies the orientation in which the carousel will lay out. Type Default 'horizontal' | | |
-| \`pagination\` pagination | \`boolean\` When set, show the carousel's pagination indicators. Type Default false | | |
-| \`slidesPerMove\` slides-per-move | \`slides-per-page\` Specifies the number of slides the carousel will advance when scrolling, useful when specifying a greater than one. It can't be higher than slides-per-page. Type number Default 1 | | |
-| \`slidesPerPage\` slides-per-page | \`number\` Specifies how many slides should be shown at a given time. Type Default 1 | | |
+| Attribute | Property | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| `loop` |  | `boolean` | `false` | When set, allows the user to navigate the carousel in the same direction indefinitely. |
+| `slides` |  | `number` | `0` |  |
+| `currentSlide` |  | `number` | `0` |  |
+| `navigation` |  | `boolean` | `false` | When set, show the carousel's navigation. |
+| `pagination` |  | `boolean` | `false` | When set, show the carousel's pagination indicators. |
+| `autoplay` |  | `boolean` | `false` | When set, the slides will scroll automatically when the user is not interacting with them. |
+| `autoplay-interval` | `autoplayInterval` | `number` | `3000` | Specifies the amount of time, in milliseconds, between each automatic scroll. |
+| `slides-per-page` | `slidesPerPage` | `number` | `1` | Specifies how many slides should be shown at a given time. |
+| `slides-per-move` | `slidesPerMove` | `number` | `1` | Specifies the number of slides the carousel will advance when scrolling, useful when specifying a `slides-per-page` greater than one. It can't be higher than `slides-per-page`. |
+| `orientation` |  | `'horizontal' \| 'vertical'` | `'horizontal'` | Specifies the orientation in which the carousel will lay out. |
+| `mouse-dragging` | `mouseDragging` | `boolean` | `false` | When set, it is possible to scroll through the slides by dragging them with the mouse. |
+| `dir` |  | `string` |  |  |
+| `lang` |  | `string` |  |  |
+| `did-ssr` | `didSSR` |  |  |  |
 
 ## Methods
 
-Learn more about [methods](https://webawesome.com/docs/usage/#methods).
-
-| Name | Description | Arguments |
+| Method | Description | Arguments |
 | --- | --- | --- |
-| \`goToSlide()\` | \`index\` Scrolls the carousel to the slide specified by . | \`index: number, behavior: ScrollBehavior\` |
-| \`next()\` | \`slides-per-move\` Move the carousel forward by slides. | \`behavior: ScrollBehavior\` |
-| \`previous()\` | \`slides-per-move\` Move the carousel backward by slides. | \`behavior: ScrollBehavior\` |
+| `previous` | Move the carousel backward by `slides-per-move` slides. | `behavior: ScrollBehavior` |
+| `next` | Move the carousel forward by `slides-per-move` slides. | `behavior: ScrollBehavior` |
+| `goToSlide` | Scrolls the carousel to the slide specified by `index`. | `index: number, behavior: ScrollBehavior` |
 
 ## Events
 
-Learn more about [events](https://webawesome.com/docs/usage/#events).
-
-| Name | Description |
+| Event | Description |
 | --- | --- |
-| \`wa-slide-change\` | Emitted when the active slide changes. |
+| `wa-slide-change` | Emitted when the active slide changes. |
 
-## CSS custom properties
+## CSS Parts
 
-Learn more about [CSS custom properties](https://webawesome.com/docs/customizing/#custom-properties).
-
-| Name | Description |
+| Part | Description |
 | --- | --- |
-| \`--aspect-ratio\` | \`16/9\` The aspect ratio of each slide. Default |
-| \`--scroll-hint\` | The amount of padding to apply to the scroll area, allowing adjacent slides to become partially visible as a scroll hint. |
-| \`--slide-gap\` | \`var(--wa-space-m)\` The space between each slide. Default |
+| `base` | The carousel's internal wrapper. |
+| `scroll-container` | The scroll container that wraps the slides. |
+| `pagination` | The pagination indicators wrapper. |
+| `pagination-item` | The pagination indicator. |
+| `pagination-item-active` | Applied when the item is active. |
+| `navigation` | The navigation wrapper. |
+| `navigation-button` | The navigation button. |
+| `navigation-button-previous` | Applied to the previous button. |
+| `navigation-button-next` | Applied to the next button. |
 
-## CSS parts
+## CSS Custom Properties
 
-Learn more about [CSS parts](https://webawesome.com/docs/customizing/#css-parts).
-
-| Name | Description | CSS selector |
+| Property | Default | Description |
 | --- | --- | --- |
-| \`base\` | The carousel's internal wrapper. | \`::part(base)\` |
-| \`navigation\` | The navigation wrapper. | \`::part(navigation)\` |
-| \`navigation-button\` | The navigation button. | \`::part(navigation-button)\` |
-| \`navigation-button-next\` | Applied to the next button. | \`::part(navigation-button-next)\` |
-| \`navigation-button-previous\` | Applied to the previous button. | \`::part(navigation-button-previous)\` |
-| \`pagination\` | The pagination indicators wrapper. | \`::part(pagination)\` |
-| \`pagination-item\` | The pagination indicator. | \`::part(pagination-item)\` |
-| \`pagination-item-active\` | Applied when the item is active. | \`::part(pagination-item-active)\` |
-| \`scroll-container\` | The scroll container that wraps the slides. | \`::part(scroll-container)\` |
-
-## Dependencies
-
-This component automatically imports the following elements. Sub-dependencies, if any exist, will also be included in this list.
-
--   [`<wa-icon>`](https://webawesome.com/docs/components/icon)
-
-**Need a hand?** Report a bug Ask for help
+| `--aspect-ratio` | `16/9` | The aspect ratio of each slide. |
+| `--scroll-hint` |  | The amount of padding to apply to the scroll area, allowing adjacent slides to become partially visible as a scroll hint. |
+| `--slide-gap` | `var(--wa-space-m)` | The space between each slide. |

@@ -1,7 +1,8 @@
 import type { PropertyValues } from 'lit';
 import WebAwesomeElement from '../../internal/webawesome-element.js';
 /**
- * @summary Button groups can be used to group related buttons into sections.
+ * @summary Button groups combine related buttons into a single visual unit. Use them for toolbars, segmented controls,
+ *  or any set of actions that belong together.
  * @documentation https://webawesome.com/docs/components/button-group
  * @status stable
  * @since 2.0
@@ -27,8 +28,6 @@ export default class WaButtonGroup extends WebAwesomeElement {
     private handleBlur;
     private handleMouseOver;
     private handleMouseOut;
-    private handleSlotChange;
-    private updateClassNames;
     render(): import("lit-html").TemplateResult<1>;
 }
 declare global {

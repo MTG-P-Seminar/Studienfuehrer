@@ -3,9 +3,11 @@
 **Full documentation:** https://webawesome.com/docs/components/format-bytes
 
 
-`<wa-format-bytes>` Since 2.0 Stable
+`<wa-format-bytes>`
 
-Formats a number as a human readable bytes value.
+Stable [Helpers](https://webawesome.com/docs/components/?category=helpers) [Since 2.0](https://webawesome.com/docs/resources/changelog#wa_200)
+
+Formats a number of bytes as a human-readable string with the appropriate unit, such as kB, MB, or GB. Supports both byte and bit units with configurable locale.
 
 ```html
 <div class="format-bytes-overview">
@@ -24,7 +26,11 @@ Formats a number as a human readable bytes value.
 
 ## Examples
 
+Link to This Section
+
 ### Formatting Bytes
+
+Link to This Section
 
 Set the `value` attribute to a number to get the value in bytes.
 
@@ -37,6 +43,8 @@ Set the `value` attribute to a number to get the value in bytes.
 
 ### Formatting Bits
 
+Link to This Section
+
 To get the value in bits, set the `unit` attribute to `bit`.
 
 ```html
@@ -48,6 +56,8 @@ To get the value in bits, set the `unit` attribute to `bit`.
 
 ### Localization
 
+Link to This Section
+
 Use the `lang` attribute to set the number formatting locale.
 
 ```html
@@ -57,39 +67,13 @@ Use the `lang` attribute to set the number formatting locale.
 <wa-format-bytes value="1200000000" lang="de"></wa-format-bytes>
 ```
 
-## Importing
-
-Autoloading components via [projects](https://webawesome.com/docs/#using-a-project) is the recommended way to import components. If you prefer to do it manually, use one of the following code snippets.
-
-\*\*CDN\*\*
-
-Let your project code do the work! [Sign up for free](https://webawesome.com/signup) to use a project with your very own CDN — it's the fastest and easiest way to use Web Awesome.
-
-\*\*npm\*\*
-
-To manually import this component from NPM, use the following code.
-
-```js
-import '@awesome.me/webawesome/dist/components/format-bytes/format-bytes.js';
-```
-
-\*\*React\*\*
-
-To manually import this component from React, use the following code.
-
-```js
-import WaFormatBytes from '@awesome.me/webawesome/dist/react/format-bytes';
-```
-
 ## Attributes & Properties
 
-Learn more about [attributes and properties](https://webawesome.com/docs/usage/#attributes-and-properties).
-
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`css\` | \`CSSResultGroup \\| undefined\` One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. Type | | |
-| \`display\` display | \`'long' \\| 'short' \\| 'narrow'\` Determines how to display the result, e.g. "100 bytes", "100 b", or "100b". Type Default 'short' | | |
-| \`unit\` unit | \`'byte' \\| 'bit'\` The type of unit to display. Type Default 'byte' | | |
-| \`value\` value | \`number\` The to format in bytes. Type number Default 0 | | |
-
-**Need a hand?** Report a bug Ask for help
+| Attribute | Property | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| `value` |  | `number` | `0` | The number to format in bytes. |
+| `unit` |  | `'byte' \| 'bit'` | `'byte'` | The type of unit to display. |
+| `display` |  | `'long' \| 'short' \| 'narrow'` | `'short'` | Determines how to display the result, e.g. "100 bytes", "100 b", or "100b". |
+| `dir` |  | `string` |  |  |
+| `lang` |  | `string` |  |  |
+| `did-ssr` | `didSSR` |  |  |  |

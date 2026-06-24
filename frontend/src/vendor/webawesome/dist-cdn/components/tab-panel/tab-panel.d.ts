@@ -1,6 +1,6 @@
 import WebAwesomeElement from '../../internal/webawesome-element.js';
 /**
- * @summary Tab panels are used inside [tab groups](/docs/components/tab-group) to display tabbed content.
+ * @summary Tab panels hold the content shown for a single tab inside a tab group.
  * @documentation https://webawesome.com/docs/components/tab-panel
  * @status stable
  * @since 2.0
@@ -19,6 +19,7 @@ export default class WaTabPanel extends WebAwesomeElement {
     name: string;
     /** When true, the tab panel will be shown. */
     active: boolean;
+    role: string;
     connectedCallback(): void;
     handleActiveChange(): void;
     render(): import("lit-html").TemplateResult<1>;

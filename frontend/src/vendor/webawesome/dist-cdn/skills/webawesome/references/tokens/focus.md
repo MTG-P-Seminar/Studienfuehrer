@@ -2,32 +2,25 @@
 
 **Full documentation:** https://webawesome.com/docs/tokens/focus
 
-A consistent focus ring helps with predictable keyboard navigation. Together with [`--wa-color-focus`](https://webawesome.com/docs/tokens/color/#interactions), these tokens create a uniform focus state for Web Awesome components.
+Design Tokens Focus
 
-| Custom Property | Default Value |
+Focus tokens create a consistent, recognizable outline that lets keyboard users track where they are on the page. Together with [`--wa-color-focus`](?active_tab=color), these tokens assemble the focus ring applied to all interactive Web Awesome components.
+
+| Custom Property | Description |
 | --- | --- |
-| \`--wa-focus-ring-style\` | \`solid\` |
-| \`--wa-focus-ring-width\` | \`0.1875rem\` (3px) |
-| \`--wa-focus-ring\` | \`var(--wa-focus-ring-style) var(--wa-focus-ring-width) var(--wa-color-focus)\` |
-| \`--wa-focus-ring-offset\` | \`0.0625rem\` (1px) |
+| \`--wa-focus-ring-style\` | Line style for the focus outline |
+| \`--wa-focus-ring-width\` | Thickness of the focus outline |
+| \`--wa-focus-ring\` | Shorthand combining style, width, and color into a complete focus outline value |
+| \`--wa-focus-ring-offset\` | Gap between the element's edge and the focus outline |
 
-See your theme's focus ring in action by navigating this form example with your keyboard.
+See your theme's focus ring by navigating this form with your keyboard:
 
 ```html
-<form class="wa-block-spacing-m">
+<form class="wa-stack">
   <wa-input label="Text Input">
     <span slot="hint">Press <kbd>Tab</kbd> to move focus to other interactive elements.</span>
   </wa-input>
   <wa-checkbox>Checkbox</wa-checkbox>
-  <wa-button>Button</wa-button>
+  <wa-button variant="brand">Button</wa-button>
 </form>
-
-<style>
-  form > * + * {
-    display: block;
-    --display: block;
-    width: fit-content;
-    margin-block-start: var(--wa-space-m);
-  }
-</style>
 ```

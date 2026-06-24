@@ -2,44 +2,45 @@
 
 **Full documentation:** https://webawesome.com/docs/tokens/borders
 
-## Style
+Design Tokens Borders
 
-Border style controls the standard line shape of borders throughout Web Awesome.
+Border tokens define the edges and corners of Web Awesome components. They use `rem` units so they scale with root font size. You can adjust individual tokens or use scale multipliers to change all widths or radii at once.
 
-| Custom Property | Default Value |
+## Border Style
+
+Link to This Section
+
+A single style token controls the line type used for all component borders throughout the library.
+
+| Custom Property | Description |
 | --- | --- |
-| \`--wa-border-style\` | \`solid\` |
+| \`--wa-border-style\` | Standard border line style used across all components |
 
-## Width
+## Border Width
 
-Border widths use `rem` units in order to scale proportionately with the root font size.
+Link to This Section
 
-| Custom Property | Default Value |
+Border width tokens use `rem` units and are scaled by `--wa-border-width-scale`. Values below `1` make all borders thinner; values above `1` make them thicker.
+
+| Custom Property | Description |
 | --- | --- |
-| \`--wa-border-width-s\` | \`0.0625rem\` (1px) |
-| \`--wa-border-width-m\` | \`0.125rem\` (2px) |
-| \`--wa-border-width-l\` | \`0.1875rem\` (3px) |
+| \`--wa-border-width-scale\` | Global multiplier for all border width calculations |
+| \`--wa-border-width-s\` | Thin border, used for most component outlines |
+| \`--wa-border-width-m\` | Medium border, used for emphasized borders |
+| \`--wa-border-width-l\` | Thick border, used for prominent outlines |
 
-To scale all borders at once, you can use the `--wa-border-width-scale` property which specifies a multiplier on `border-width`. Values < 1 make all borders uniformly thinner, while values > 1 make them thicker.
+## Border Radius
 
-## Radius
+Link to This Section
 
-Border radius controls the corners of Web Awesome components.
+Border radius tokens control the corner rounding of components. Size-based tokens use `rem` units and scale with `--wa-border-radius-scale`. Values below `1` make corners sharper; values above `1` make them rounder. Shape tokens provide fixed shapes regardless of the scale.
 
-Common border radius properties allow you to achieve specific shapes beyond your theme's preferred corner styles.
-
-| Custom Property | Default Value |
+| Custom Property | Description |
 | --- | --- |
-| \`--wa-border-radius-pill\` | \`9999px\` |
-| \`--wa-border-radius-circle\` | \`50%\` |
-| \`--wa-border-radius-square\` | \`0px\` |
-
-Size-based border radius properties allow you to customize the overall roundness of Web Awesome components. These use `rem` units in order to scale proportionately with the root font size.
-
-| Custom Property | Default Value |
-| --- | --- |
-| \`--wa-border-radius-s\` | \`0.1875rem\` (3px) |
-| \`--wa-border-radius-m\` | \`0.375rem\` (6px) |
-| \`--wa-border-radius-l\` | \`0.75rem\` (12px) |
-
-To scale all border radii at once, you can use the `--wa-border-radius-scale` property which specifies a multiplier on `border-radius`. Values < 1 make corners sharper, while values > 1 make them rounder.
+| \`--wa-border-radius-scale\` | Global multiplier for all border radius calculations |
+| \`--wa-border-radius-s\` | Small corner rounding, for compact components like badges and checkboxes |
+| \`--wa-border-radius-m\` | Medium corner rounding, the default for most inputs and buttons |
+| \`--wa-border-radius-l\` | Large corner rounding, for cards and panels |
+| \`--wa-border-radius-pill\` | Fully rounded ends, creating a pill shape regardless of element size |
+| \`--wa-border-radius-circle\` | Perfectly circular shape; element must have a 1:1 aspect ratio |
+| \`--wa-border-radius-square\` | No corner rounding; sharp, square corners |

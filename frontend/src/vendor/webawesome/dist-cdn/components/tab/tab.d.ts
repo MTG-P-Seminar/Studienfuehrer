@@ -1,6 +1,6 @@
 import WebAwesomeElement from '../../internal/webawesome-element.js';
 /**
- * @summary Tabs are used inside [tab groups](/docs/components/tab-group) to represent and activate [tab panels](/docs/components/tab-panel).
+ * @summary Tabs label and activate an individual panel inside a tab group.
  * @documentation https://webawesome.com/docs/components/tab
  * @status stable
  * @since 2.0
@@ -25,7 +25,12 @@ export default class WaTab extends WebAwesomeElement {
      * Need to wrap in a `@property()` otherwise NextJS blows up.
      */
     tabIndex: number;
-    connectedCallback(): void;
+    /**
+     * @internal
+     * Need to wrap in @property({reflect: true}) otherwise it will not SSR properly.
+     */
+    slot: string;
+    role: string;
     handleActiveChange(): void;
     handleDisabledChange(): void;
     render(): import("lit-html").TemplateResult<1>;

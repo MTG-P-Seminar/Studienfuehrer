@@ -2,7 +2,8 @@ import WebAwesomeElement from '../../internal/webawesome-element.js';
 import type { HTMLTemplateResult, PropertyValues } from 'lit';
 export type IconAnimation = 'beat' | 'fade' | 'beat-fade' | 'bounce' | 'flip' | 'shake' | 'spin' | 'spin-pulse' | 'spin-reverse';
 /**
- * @summary Icons are symbols that can be used to represent various options within an application.
+ * @summary Icons are scalable vector symbols that represent actions, content, or status throughout your application.
+ *  They support Font Awesome and custom icon libraries with animation presets.
  * @documentation https://webawesome.com/docs/components/icon
  * @status stable
  * @since 2.0
@@ -87,8 +88,9 @@ export default class WaIcon extends WebAwesomeElement {
     private resolveIcon;
     handleLabelChange(): void;
     setIcon(): Promise<void>;
+    willUpdate(changedProperties: PropertyValues<this>): void;
     updated(changedProperties: PropertyValues<this>): void;
-    render(): HTMLTemplateResult | SVGElement | null;
+    render(): SVGElement | HTMLTemplateResult | null;
 }
 declare global {
     interface HTMLElementTagNameMap {

@@ -1,7 +1,9 @@
-import WebAwesomeElement from '../../internal/webawesome-element.js';
+import { type PropertyValues } from 'lit';
+import { WebAwesomeFormAssociatedElement } from '../../internal/webawesome-form-associated-element.js';
 import '../icon/icon.js';
 /**
- * @summary Ratings give users a way to quickly view and provide feedback.
+ * @summary Ratings display a numeric score as a row of selectable symbols, typically stars. Use them to capture quick
+ *  feedback or show an average rating for a product or piece of content.
  * @documentation https://webawesome.com/docs/components/rating
  * @status stable
  * @since 2.0
@@ -12,6 +14,7 @@ import '../icon/icon.js';
  * @event {{ phase: 'start' | 'move' | 'end', value: number }} wa-hover - Emitted when the user hovers over a value. The
  *  `phase` property indicates when hovering starts, moves to a new value, or ends. The `value` property tells what the
  *  rating's value would be if the user were to commit to the hovered value.
+ * @event wa-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
  *
  * @csspart base - The component's base wrapper.
  *
@@ -19,16 +22,25 @@ import '../icon/icon.js';
  * @cssproperty --symbol-color-active - The active color for symbols.
  * @cssproperty --symbol-spacing - The spacing to use around symbols.
  */
-export default class WaRating extends WebAwesomeElement {
+export default class WaRating extends WebAwesomeFormAssociatedElement {
     static css: import("lit").CSSResult[];
+    static get validators(): import("../../internal/webawesome-form-associated-element.js").Validator<WebAwesomeFormAssociatedElement>[];
+    assumeInteractionOn: string[];
     private readonly localize;
-    rating: HTMLElement;
+    role: string;
+    connectedCallback(): void;
+    disconnectedCallback(): void;
+    updated(changedProperties: PropertyValues<this>): void;
     private hoverValue;
     private isHovering;
+    /** The name of the rating, submitted as a name/value pair with form data. */
+    name: string | null;
     /** A label that describes the rating to assistive devices. */
     label: string;
     /** The current rating. */
     value: number;
+    /** The default value of the form control. Used to reset the rating to its initial value. */
+    defaultValue: number;
     /** The highest rating to show. */
     max: number;
     /**
@@ -40,6 +52,8 @@ export default class WaRating extends WebAwesomeElement {
     readonly: boolean;
     /** Disables the rating. */
     disabled: boolean;
+    /** Makes the rating a required field. */
+    required: boolean;
     /**
      * A function that customizes the symbol to be rendered. The first and only argument is the rating's current value.
      * The function should return a string containing trusted HTML of the symbol to render at the specified value. Works
@@ -47,26 +61,22 @@ export default class WaRating extends WebAwesomeElement {
      */
     getSymbol: (value: number, isSelected: boolean) => string;
     /** The component's size. */
-    size: 'small' | 'medium' | 'large';
-    private getValueFromMousePosition;
-    private getValueFromTouchPosition;
+    size: 'xs' | 's' | 'm' | 'l' | 'xl' | 'small' | 'medium' | 'large';
+    handleSizeChange(): void;
+    private getValueFromPointerPosition;
     private getValueFromXCoordinate;
     private handleClick;
-    private setValue;
+    private setRatingValue;
     private handleKeyDown;
-    private handleMouseEnter;
-    private handleMouseMove;
-    private handleMouseLeave;
-    private handleTouchStart;
-    private handleTouchMove;
-    private handleTouchEnd;
+    private handlePointerEnter;
+    private handlePointerMove;
+    private handlePointerLeave;
+    private handlePointerDown;
+    private handlePointerUp;
     private roundToPrecision;
     handleHoverValueChange(): void;
     handleIsHoveringChange(): void;
-    /** Sets focus on the rating. */
-    focus(options?: FocusOptions): void;
-    /** Removes focus from the rating. */
-    blur(): void;
+    formResetCallback(): void;
     render(): import("lit-html").TemplateResult<1>;
 }
 declare global {

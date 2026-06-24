@@ -1,7 +1,8 @@
 import type { PropertyValues } from 'lit';
 import WebAwesomeElement from '../../internal/webawesome-element.js';
+import '../icon/icon.js';
 /**
- * @summary Zoomable frames render iframe content with zoom and interaction controls.
+ * @summary Zoomable frames embed iframe content with built-in controls for zooming, panning, and managing interaction.
  * @documentation https://webawesome.com/docs/components/zoomable-frame
  * @status stable
  * @since 3.0
@@ -22,7 +23,9 @@ import WebAwesomeElement from '../../internal/webawesome-element.js';
 export default class WaZoomableFrame extends WebAwesomeElement {
     static css: import("lit").CSSResult;
     private readonly localize;
+    private themeObserver;
     private availableZoomLevels;
+    constructor();
     iframe: HTMLIFrameElement;
     /** The URL of the content to display. */
     src: string;
@@ -46,6 +49,8 @@ export default class WaZoomableFrame extends WebAwesomeElement {
     withoutControls: boolean;
     /** Disables interaction when present. */
     withoutInteraction: boolean;
+    /** Enables automatic theme syncing (light/dark mode and theme selector classes) from the host document to the iframe. */
+    withThemeSync: boolean;
     /** Returns the internal iframe's `window` object. (Readonly property) */
     get contentWindow(): Window | null;
     /** Returns the internal iframe's `document` object. (Readonly property) */
@@ -54,11 +59,14 @@ export default class WaZoomableFrame extends WebAwesomeElement {
     private getCurrentZoomIndex;
     private isZoomInDisabled;
     private isZoomOutDisabled;
+    willUpdate(changedProperties: PropertyValues<this>): void;
     updated(changedProperties: PropertyValues<this>): void;
     /** Zooms in to the next available zoom level. */
     zoomIn(): void;
     /** Zooms out to the previous available zoom level. */
     zoomOut(): void;
+    disconnectedCallback(): void;
+    private syncTheme;
     private handleLoad;
     private handleError;
     render(): import("lit-html").TemplateResult<1>;

@@ -3,9 +3,11 @@
 **Full documentation:** https://webawesome.com/docs/components/skeleton
 
 
-`<wa-skeleton>` Since 2.0 Stable
+`<wa-skeleton>`
 
-Skeletons are used to provide a visual representation of where content will eventually be drawn.
+Stable [Feedback](https://webawesome.com/docs/components/?category=feedback) [Since 2.0](https://webawesome.com/docs/resources/changelog#wa_200)
+
+Skeletons show placeholder shapes where content will appear once it finishes loading, reducing perceived wait time and preventing layout shift.
 
 These are simple containers for scaffolding layouts that mimic what users will see when content has finished loading. This prevents large areas of empty space during asynchronous operations.
 
@@ -59,7 +61,11 @@ Skeletons try not to be opinionated, as there are endless possibilities for desi
 
 ## Examples
 
+Link to This Section
+
 ### Effects
+
+Link to This Section
 
 There are two built-in effects, `sheen` and `pulse`. Effects are intentionally subtle, as they can be distracting when used extensively. The default is `none`, which displays a static, non-animated skeleton.
 
@@ -87,6 +93,8 @@ There are two built-in effects, `sheen` and `pulse`. Effects are intentionally s
 ```
 
 ### Paragraphs
+
+Link to This Section
 
 Use multiple skeletons and some clever styles to simulate paragraphs.
 
@@ -120,6 +128,8 @@ Use multiple skeletons and some clever styles to simulate paragraphs.
 
 ### Avatars
 
+Link to This Section
+
 Set a matching width and height to make a circle, square, or rounded avatar skeleton.
 
 ```html
@@ -148,6 +158,8 @@ Set a matching width and height to make a circle, square, or rounded avatar skel
 ```
 
 ### Custom Shapes
+
+Link to This Section
 
 Set a `border-radius` on the `indicator` part to make circles, squares, and rectangles. For more complex shapes, you can apply `clip-path` to the `indicator` part. [Try Clippy](https://bennettfeely.com/clippy/) if you need help generating custom shapes.
 
@@ -211,60 +223,32 @@ Set a `border-radius` on the `indicator` part to make circles, squares, and rect
 
 ### Custom Colors
 
+Link to This Section
+
 Set the `--color` and `--sheen-color` custom properties to adjust the skeleton's color.
 
 ```html
 <wa-skeleton effect="sheen" style="--color: tomato; --sheen-color: #ffb094;"></wa-skeleton>
 ```
 
-## Importing
-
-Autoloading components via [projects](https://webawesome.com/docs/#using-a-project) is the recommended way to import components. If you prefer to do it manually, use one of the following code snippets.
-
-\*\*CDN\*\*
-
-Let your project code do the work! [Sign up for free](https://webawesome.com/signup) to use a project with your very own CDN — it's the fastest and easiest way to use Web Awesome.
-
-\*\*npm\*\*
-
-To manually import this component from NPM, use the following code.
-
-```js
-import '@awesome.me/webawesome/dist/components/skeleton/skeleton.js';
-```
-
-\*\*React\*\*
-
-To manually import this component from React, use the following code.
-
-```js
-import WaSkeleton from '@awesome.me/webawesome/dist/react/skeleton';
-```
-
 ## Attributes & Properties
 
-Learn more about [attributes and properties](https://webawesome.com/docs/usage/#attributes-and-properties).
+| Attribute | Property | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| `effect` |  | `'pulse' \| 'sheen' \| 'none'` | `'none'` | Determines which effect the skeleton will use. |
+| `dir` |  | `string` |  |  |
+| `lang` |  | `string` |  |  |
+| `did-ssr` | `didSSR` |  |  |  |
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`css\` | \`CSSResultGroup \\| undefined\` One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. Type Default styles | | |
-| \`effect\` effect | \`'pulse' \\| 'sheen' \\| 'none'\` Determines which effect the skeleton will use. Type Default 'none' | | |
+## CSS Parts
 
-## CSS custom properties
-
-Learn more about [CSS custom properties](https://webawesome.com/docs/customizing/#custom-properties).
-
-| Name | Description |
+| Part | Description |
 | --- | --- |
-| \`--color\` | The color of the skeleton. |
-| \`--sheen-color\` | The sheen color when the skeleton is in its loading state. |
+| `indicator` | The skeleton's indicator which is responsible for its color and animation. |
 
-## CSS parts
+## CSS Custom Properties
 
-Learn more about [CSS parts](https://webawesome.com/docs/customizing/#css-parts).
-
-| Name | Description | CSS selector |
+| Property | Default | Description |
 | --- | --- | --- |
-| \`indicator\` | The skeleton's indicator which is responsible for its color and animation. | \`::part(indicator)\` |
-
-**Need a hand?** Report a bug Ask for help
+| `--color` |  | The color of the skeleton. |
+| `--sheen-color` |  | The sheen color when the skeleton is in its loading state. |

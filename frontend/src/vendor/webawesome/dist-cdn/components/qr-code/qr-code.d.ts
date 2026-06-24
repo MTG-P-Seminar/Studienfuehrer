@@ -1,7 +1,8 @@
 import type { PropertyValues } from 'lit';
 import WebAwesomeElement from '../../internal/webawesome-element.js';
 /**
- * @summary Generates a [QR code](https://www.qrcode.com/) and renders it using the [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API).
+ * @summary QR codes encode a URL or other short text into a scannable image, rendered client-side using the Canvas API.
+ *  Use them to share links, contact info, or Wi-Fi credentials that visitors can scan with a phone.
  * @documentation https://webawesome.com/docs/components/qr-code
  * @status stable
  * @since 2.0
@@ -10,7 +11,7 @@ import WebAwesomeElement from '../../internal/webawesome-element.js';
  */
 export default class WaQrCode extends WebAwesomeElement {
     static css: import("lit").CSSResult;
-    canvas: HTMLElement;
+    canvas: HTMLCanvasElement;
     /** The QR code's value. */
     value: string;
     /** The label for assistive devices to announce. If unspecified, the value will be used instead. */
@@ -31,11 +32,12 @@ export default class WaQrCode extends WebAwesomeElement {
     radius: number;
     /** The level of error correction to use. [Learn more](https://www.qrcode.com/en/about/error_correction.html) */
     errorCorrection: 'L' | 'M' | 'Q' | 'H';
-    /**
-     * Whether or not the qr-code generated.
-     */
-    private generated;
-    firstUpdated(changedProperties: PropertyValues<this>): void;
+    image: string | null;
+    imageBackground: string | null;
+    imageCoverage: number | null;
+    imagePadding: number | null;
+    private computedStyle;
+    updated(changedProperties: PropertyValues<this>): void;
     generate(): void;
     render(): import("lit-html").TemplateResult<1>;
 }

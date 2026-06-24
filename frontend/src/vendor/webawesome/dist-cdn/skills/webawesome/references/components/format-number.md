@@ -3,9 +3,11 @@
 **Full documentation:** https://webawesome.com/docs/components/format-number
 
 
-`<wa-format-number>` Since 2.0 Stable
+`<wa-format-number>`
 
-Formats a number using the specified locale and options.
+Stable [Helpers](https://webawesome.com/docs/components/?category=helpers) [Since 2.0](https://webawesome.com/docs/resources/changelog#wa_200)
+
+Formats a number for display using the specified locale and options, including currency, percent, and unit styles. Powered by the Intl.NumberFormat API.
 
 Localization is handled by the browser's [`Intl.NumberFormat` API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat). No language packs are required.
 
@@ -27,7 +29,11 @@ Localization is handled by the browser's [`Intl.NumberFormat` API](https://devel
 
 ## Examples
 
+Link to This Section
+
 ### Percentages
+
+Link to This Section
 
 To get the value as a percent, set the `type` attribute to `percent`.
 
@@ -41,6 +47,8 @@ To get the value as a percent, set the `type` attribute to `percent`.
 
 ### Localization
 
+Link to This Section
+
 Use the `lang` attribute to set the number formatting locale.
 
 ```html
@@ -50,6 +58,8 @@ Russian: <wa-format-number value="2000" lang="ru" minimum-fraction-digits="2"></
 ```
 
 ### Currency
+
+Link to This Section
 
 To format a number as a monetary value, set the `type` attribute to `currency` and set the `currency` attribute to the desired ISO 4217 currency code. You should also specify `lang` to ensure the the number is formatted correctly for the target locale.
 
@@ -61,46 +71,20 @@ To format a number as a monetary value, set the `type` attribute to `currency` a
 <wa-format-number type="currency" currency="CNY" value="2000" lang="zh-cn"></wa-format-number>
 ```
 
-## Importing
-
-Autoloading components via [projects](https://webawesome.com/docs/#using-a-project) is the recommended way to import components. If you prefer to do it manually, use one of the following code snippets.
-
-\*\*CDN\*\*
-
-Let your project code do the work! [Sign up for free](https://webawesome.com/signup) to use a project with your very own CDN — it's the fastest and easiest way to use Web Awesome.
-
-\*\*npm\*\*
-
-To manually import this component from NPM, use the following code.
-
-```js
-import '@awesome.me/webawesome/dist/components/format-number/format-number.js';
-```
-
-\*\*React\*\*
-
-To manually import this component from React, use the following code.
-
-```js
-import WaFormatNumber from '@awesome.me/webawesome/dist/react/format-number';
-```
-
 ## Attributes & Properties
 
-Learn more about [attributes and properties](https://webawesome.com/docs/usage/#attributes-and-properties).
-
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`css\` | \`CSSResultGroup \\| undefined\` One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. Type | | |
-| \`currency\` currency | \`string\` The ISO 4217 currency code to use when formatting. Type Default 'USD' | | |
-| \`currencyDisplay\` currency-display | \`'symbol' \\| 'narrowSymbol' \\| 'code' \\| 'name'\` How to display the currency. Type Default 'symbol' | | |
-| \`maximumFractionDigits\` maximum-fraction-digits | \`number\` The maximum of fraction digits to use. Possible values are 0-100. Type number | | |
-| \`maximumSignificantDigits\` maximum-significant-digits | \`number\` The maximum of significant digits to use,. Possible values are 1-21. Type number | | |
-| \`minimumFractionDigits\` minimum-fraction-digits | \`number\` The minimum of fraction digits to use. Possible values are 0-100. Type number | | |
-| \`minimumIntegerDigits\` minimum-integer-digits | \`number\` The minimum of integer digits to use. Possible values are 1-21. Type number | | |
-| \`minimumSignificantDigits\` minimum-significant-digits | \`number\` The minimum of significant digits to use. Possible values are 1-21. Type number | | |
-| \`type\` type | \`'currency' \\| 'decimal' \\| 'percent'\` The formatting style to use. Type Default 'decimal' | | |
-| \`value\` value | \`number\` The to format. Type number Default 0 | | |
-| \`withoutGrouping\` without-grouping | \`boolean\` Turns off grouping separators. Type Default false | | |
-
-**Need a hand?** Report a bug Ask for help
+| Attribute | Property | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| `value` |  | `number` | `0` | The number to format. |
+| `type` |  | `'currency' \| 'decimal' \| 'percent'` | `'decimal'` | The formatting style to use. |
+| `without-grouping` | `withoutGrouping` | `boolean` | `false` | Turns off grouping separators. |
+| `currency` |  | `string` | `'USD'` | The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) currency code to use when formatting. |
+| `currency-display` | `currencyDisplay` | `'symbol' \| 'narrowSymbol' \| 'code' \| 'name'` | `'symbol'` | How to display the currency. |
+| `minimum-integer-digits` | `minimumIntegerDigits` | `number` |  | The minimum number of integer digits to use. Possible values are 1-21. |
+| `minimum-fraction-digits` | `minimumFractionDigits` | `number` |  | The minimum number of fraction digits to use. Possible values are 0-100. |
+| `maximum-fraction-digits` | `maximumFractionDigits` | `number` |  | The maximum number of fraction digits to use. Possible values are 0-100. |
+| `minimum-significant-digits` | `minimumSignificantDigits` | `number` |  | The minimum number of significant digits to use. Possible values are 1-21. |
+| `maximum-significant-digits` | `maximumSignificantDigits` | `number` |  | The maximum number of significant digits to use,. Possible values are 1-21. |
+| `dir` |  | `string` |  |  |
+| `lang` |  | `string` |  |  |
+| `did-ssr` | `didSSR` |  |  |  |

@@ -1,0 +1,55 @@
+body {
+  height: 100dvh;
+  overflow: hidden;
+}
+
+main {
+  background: #dfcdb5;
+  padding: 0 !important;
+  margin: 0 !important;
+  max-width: none !important;
+  width: 100dvw;
+  height: 100dvh;
+}
+
+.main-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+  width: 100dvw;
+  overflow: hidden;
+}
+
+.main-img {
+  border-radius: 0;
+  width: 100dvw;
+}
+
+.section-button {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: calc(50dvh + 16dvw);
+  font-size: calc(1dvw + 1dvh);
+  color: #694a36;
+}
+
+.section-button span {
+  white-space: nowrap;
+}
+
+.section-button wa-icon {
+  transition: 0.3s;
+}
+
+.section-button:hover wa-icon {
+  transform: translate(1rem);
+}
+
+.section-button-early-studies {
+  left: 22dvw;
+}
+
+.section-button-abroad {
+  left: 78dvw;
+}

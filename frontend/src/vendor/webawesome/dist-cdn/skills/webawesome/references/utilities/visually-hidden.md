@@ -2,9 +2,13 @@
 
 **Full documentation:** https://webawesome.com/docs/utilities/visually-hidden
 
+CSS Utilities Visually Hidden
+
+Add the `wa-visually-hidden` class to any element to remove it from the page visually while keeping it available to screen readers and other assistive technologies. That's what you want for skip links, invisible labels on icon-only buttons, and any text that describes something a sighted user already understands from context.
+
 > "There are real world situations where visually hiding content may be appropriate, while the content should remain available to assistive technologies, such as screen readers. For instance, hiding a search field's label as a common magnifying glass icon is used in its stead." — [The A11Y Project](https://www.a11yproject.com/posts/2013-01-11-how-to-hide-content/)
 
-Since visually hidden content can receive focus when tabbing, the element will become visible when something inside receives focus. This behavior is intentional, as otherwise sighted keyboard users wouldn't be able to determine where the focus indicator is.
+Since visually hidden content can receive focus when tabbing, the element becomes visible again as soon as something inside it receives focus. That behavior is intentional: sighted keyboard users need to see where the focus indicator is.
 
 ```html
 <div style="min-height: 1.875rem;">
@@ -14,19 +18,25 @@ Since visually hidden content can receive focus when tabbing, the element will b
 
 ## Examples
 
+Link to This Section
+
 ### Links That Open in New Windows
+
+Link to This Section
 
 In this example, the link will open a new window. Screen readers will announce "opens in a new window" even though the text content isn't visible to sighted users.
 
 ```html
 <a href="https://example.com/" target="_blank">
   Visit External Page
-  <wa-icon name="arrow-up-right-from-square" variant="regular"></wa-icon>
+  <wa-icon name="arrow-up-right-from-square"></wa-icon>
   <span class="wa-visually-hidden">opens in a new window</span>
 </a>
 ```
 
 ### Content Conveyed By Context
+
+Link to This Section
 
 Adding a label may seem redundant at times, but they're very helpful for unsighted users. Rather than omit them, you can provide context to unsighted users with visually hidden content that will be announced by assistive devices such as screen readers.
 
@@ -40,6 +50,8 @@ Adding a label may seem redundant at times, but they're very helpful for unsight
 
 ### Visually Hidden Input Parts
 
+Link to This Section
+
 Sometimes you want a form control to have a cleaner, more minimal appearance by hiding the `label` or `hint` visually. However, removing these elements entirely would make the form inaccessible to users with assistive devices.
 
 Instead, you can hide them visually while keeping them available to screen readers by adding the `wa-visually-hidden-label` or `wa-visually-hidden-hint` class.
@@ -52,7 +64,7 @@ Instead, you can hide them visually while keeping them available to screen reade
   class="wa-visually-hidden-label"
   style="margin-block-end: 1rem;"
 >
-  <wa-icon slot="start" name="magnifying-glass" variant="regular"></wa-icon>
+  <wa-icon slot="start" name="magnifying-glass"></wa-icon>
 </wa-input>
 
 <wa-input
@@ -63,7 +75,7 @@ Instead, you can hide them visually while keeping them available to screen reade
   class="wa-visually-hidden-hint"
   style="margin-block-end: 1rem;"
 >
-  <wa-icon slot="start" name="phone" variant="regular"></wa-icon>
+  <wa-icon slot="start" name="phone"></wa-icon>
 </wa-input>
 
 <wa-select
@@ -81,7 +93,7 @@ Instead, you can hide them visually while keeping them available to screen reade
   <wa-option value="wakanda">Wakanda</wa-option>
   <wa-option value="genovia">Genovia</wa-option>
   <wa-option value="elbonia">Elbonia</wa-option>
-  <wa-icon slot="start" name="globe" variant="regular"></wa-icon>
+  <wa-icon slot="start" name="globe"></wa-icon>
 </wa-select>
 
 <wa-input
@@ -97,6 +109,8 @@ Instead, you can hide them visually while keeping them available to screen reade
 
 ### Force Visually Hidden
 
+Link to This Section
+
 There are cases where you want to _always_ visually hide certain content, even when it's focused. For example when hiding a checkbox to render a custom one:
 
 ```html
@@ -109,7 +123,7 @@ There are cases where you want to _always_ visually hide certain content, even w
 
 <style>
   .checkbox {
-    display: inline-flex;
+    display: flex;
     vertical-align: middle;
     width: var(--wa-font-size-l);
     height: var(--wa-font-size-l);

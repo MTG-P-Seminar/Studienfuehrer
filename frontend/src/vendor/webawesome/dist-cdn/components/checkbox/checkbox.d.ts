@@ -2,7 +2,8 @@ import type { PropertyValues } from 'lit';
 import { WebAwesomeFormAssociatedElement } from '../../internal/webawesome-form-associated-element.js';
 import '../icon/icon.js';
 /**
- * @summary Checkboxes allow the user to toggle an option on or off.
+ * @summary Checkboxes let users toggle an option on or off, or select multiple items from a list. They also support an
+ *  indeterminate state for partial selections in groups.
  * @documentation https://webawesome.com/docs/components/checkbox
  * @status stable
  * @since 2.0
@@ -37,6 +38,8 @@ export default class WaCheckbox extends WebAwesomeFormAssociatedElement {
     static css: import("lit").CSSResult[];
     static shadowRootOptions: {
         delegatesFocus: boolean;
+        clonable?: boolean;
+        customElementRegistry?: CustomElementRegistry;
         mode: ShadowRootMode;
         serializable?: boolean;
         slotAssignment?: SlotAssignmentMode;
@@ -52,7 +55,8 @@ export default class WaCheckbox extends WebAwesomeFormAssociatedElement {
     get value(): string | null;
     set value(val: string | null);
     /** The checkbox's size. */
-    size: 'small' | 'medium' | 'large';
+    size: 'xs' | 's' | 'm' | 'l' | 'xl' | 'small' | 'medium' | 'large';
+    handleSizeChange(): void;
     /** Disables the checkbox. */
     disabled: boolean;
     /**

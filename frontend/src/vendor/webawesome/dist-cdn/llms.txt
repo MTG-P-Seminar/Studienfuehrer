@@ -1,6 +1,6 @@
 # Web Awesome
 
-> A forward-thinking library of web components. Version 3.3.1.
+> A forward-thinking library of web components. Version 3.9.0.
 
 Web Awesome provides a comprehensive set of customizable, accessible web components for building modern
 web applications. All components use shadow DOM and are framework-agnostic, working with vanilla JavaScript
@@ -23,72 +23,154 @@ For comprehensive documentation, visit https://webawesome.com/docs/
 
 ## Components
 
-- [Animated Image](https://webawesome.com/docs/components/animated-image): A component for displaying animated GIFs and WEBPs that play and pause on interaction.
-- [Animation](https://webawesome.com/docs/components/animation): Animate elements declaratively with nearly 100 baked-in presets, or roll your own with custom keyframes.
-- [Avatar](https://webawesome.com/docs/components/avatar): Avatars are used to represent a person or object.
-- [Badge](https://webawesome.com/docs/components/badge): Badges are used to draw attention and display statuses or counts.
-- [Breadcrumb](https://webawesome.com/docs/components/breadcrumb): Breadcrumbs provide a group of links so users can easily navigate a website's hierarchy.
-- [Breadcrumb Item](https://webawesome.com/docs/components/breadcrumb-item): Breadcrumb Items are used inside breadcrumbs to represent different links.
-- [Button](https://webawesome.com/docs/components/button): Buttons represent actions that are available to the user.
-- [Button Group](https://webawesome.com/docs/components/button-group): Button groups can be used to group related buttons into sections.
-- [Callout](https://webawesome.com/docs/components/callout): Callouts are used to display important messages inline.
-- [Card](https://webawesome.com/docs/components/card): Cards can be used to group related subjects in a container.
-- [Carousel](https://webawesome.com/docs/components/carousel): Carousels display an arbitrary number of content slides along a horizontal or vertical axis.
-- [Carousel Item](https://webawesome.com/docs/components/carousel-item): A carousel item represent a slide within a carousel.
-- [Checkbox](https://webawesome.com/docs/components/checkbox): Checkboxes allow the user to toggle an option on or off.
-- [Color Picker](https://webawesome.com/docs/components/color-picker): Color pickers allow the user to select a color.
-- [Comparison](https://webawesome.com/docs/components/comparison): Compare visual differences between similar content with a sliding panel.
-- [Copy Button](https://webawesome.com/docs/components/copy-button): Copies data to the clipboard when the user clicks the button.
-- [Details](https://webawesome.com/docs/components/details): Details show a brief summary and expand to show additional content.
-- [Dialog](https://webawesome.com/docs/components/dialog): Dialogs, sometimes called "modals", appear above the page and require the user's immediate attention.
-- [Divider](https://webawesome.com/docs/components/divider): Dividers are used to visually separate or group elements.
-- [Drawer](https://webawesome.com/docs/components/drawer): Drawers slide in from a container to expose additional options and information.
-- [Dropdown](https://webawesome.com/docs/components/dropdown): Dropdowns expose additional content that "drops down" in a panel.
-- [Dropdown Item](https://webawesome.com/docs/components/dropdown-item): Provides items to select in a dropdown.
-- [Format Bytes](https://webawesome.com/docs/components/format-bytes): Formats a number as a human readable bytes value.
-- [Format Date](https://webawesome.com/docs/components/format-date): Formats a date/time using the specified locale and options.
-- [Format Number](https://webawesome.com/docs/components/format-number): Formats a number using the specified locale and options.
-- [Icon](https://webawesome.com/docs/components/icon): Icons are symbols that can be used to represent various options within an application.
-- [Include](https://webawesome.com/docs/components/include): Includes give you the power to embed external HTML files into the page.
-- [Input](https://webawesome.com/docs/components/input): Inputs collect data from the user.
-- [Intersection Observer](https://webawesome.com/docs/components/intersection-observer): Tracks immediate child elements and fires events as they move in and out of view.
-- [Mutation Observer](https://webawesome.com/docs/components/mutation-observer): The Mutation Observer component offers a thin, declarative interface to the MutationObserver API.
-- [Number Input](https://webawesome.com/docs/components/number-input): Number inputs allow users to enter and edit numeric values with optional stepper buttons.
-- [Option](https://webawesome.com/docs/components/option): Options define the selectable items within various form controls such as select.
-- [Popover](https://webawesome.com/docs/components/popover): Popovers display interactive content when their anchor element is clicked.
-- [Popup](https://webawesome.com/docs/components/popup): Popup is a utility that lets you declaratively anchor "popup" containers to another element.
-- [Progress Bar](https://webawesome.com/docs/components/progress-bar): Progress bars are used to show the status of an ongoing operation.
-- [Progress Ring](https://webawesome.com/docs/components/progress-ring): Progress rings are used to show the progress of a determinate operation in a circular fashion.
-- [QR Code](https://webawesome.com/docs/components/qr-code): Generates a QR code and renders it using the Canvas API.
-- [Radio](https://webawesome.com/docs/components/radio): Radios allow the user to select a single option from a group.
-- [Radio Group](https://webawesome.com/docs/components/radio-group): Radio groups are used to group multiple radios so they function as a single form control.
-- [Rating](https://webawesome.com/docs/components/rating): Ratings give users a way to quickly view and provide feedback.
-- [Relative Time](https://webawesome.com/docs/components/relative-time): Outputs a localized time phrase relative to the current date and time.
-- [Resize Observer](https://webawesome.com/docs/components/resize-observer): The Resize Observer component offers a thin, declarative interface to the ResizeObserver API.
-- [Scroller](https://webawesome.com/docs/components/scroller): Scrollers create an accessible container while providing visual cues that help users identify and navigate through content that scrolls.
-- [Select](https://webawesome.com/docs/components/select): Selects allow you to choose items from a menu of predefined options.
-- [Skeleton](https://webawesome.com/docs/components/skeleton): Skeletons are used to provide a visual representation of where content will eventually be drawn.
-- [Slider](https://webawesome.com/docs/components/slider): Ranges allow the user to select a single value within a given range using a slider.
-- [Spinner](https://webawesome.com/docs/components/spinner): Spinners are used to show the progress of an indeterminate operation.
-- [Split Panel](https://webawesome.com/docs/components/split-panel): Split panels display two adjacent panels, allowing the user to reposition them.
-- [Switch](https://webawesome.com/docs/components/switch): Switches allow the user to toggle an option on or off.
-- [Tab](https://webawesome.com/docs/components/tab): Tabs are used inside tab groups to represent and activate tab panels.
-- [Tab Group](https://webawesome.com/docs/components/tab-group): Tab groups organize content into a container that shows one section at a time.
-- [Tab Panel](https://webawesome.com/docs/components/tab-panel): Tab panels are used inside tab groups to display tabbed content.
-- [Tag](https://webawesome.com/docs/components/tag): Tags are used as labels to organize things or to indicate a selection.
-- [Textarea](https://webawesome.com/docs/components/textarea): Textareas collect data from the user and allow multiple lines of text.
-- [Tooltip](https://webawesome.com/docs/components/tooltip): Tooltips display additional information based on a specific action.
+- [Accordion](https://webawesome.com/docs/components/accordion): Accordions are a vertically stacked set of interactive headings that each contain a title, representing a section of content.
+- [Accordion Item](https://webawesome.com/docs/components/accordion-item): Accordion items are used inside `<wa-accordion>` to create expandable sections with accessible headers.
+- [Animated Image](https://webawesome.com/docs/components/animated-image): Animated images display GIFs and WEBPs with controls to play and pause them on demand. Use them when you want motion but need to give users control over when it plays.
+- [Animation](https://webawesome.com/docs/components/animation): Animate elements declaratively with nearly 100 baked-in presets, or roll your own with custom keyframes. Powered by the Web Animations API.
+- [Avatar](https://webawesome.com/docs/components/avatar): Avatars represent a person or object with an image, initials, or icon. Use them in lists, comments, and profiles to give users visual context at a glance.
+- [Badge](https://webawesome.com/docs/components/badge): Badges draw attention to adjacent content by displaying a status, count, or label. Use them to highlight notifications, categorize items, or flag new activity.
+- [Breadcrumb](https://webawesome.com/docs/components/breadcrumb): Breadcrumbs display a trail of links that show users where they are in a site's hierarchy. They help users understand the current location and navigate back to parent pages.
+- [Breadcrumb Item](https://webawesome.com/docs/components/breadcrumb-item): Breadcrumb items represent individual links inside a breadcrumb, typically one per level of the site hierarchy.
+- [Button](https://webawesome.com/docs/components/button): Buttons represent actions the user can take, such as submitting a form, opening a dialog, or navigating to another page.
+- [Button Group](https://webawesome.com/docs/components/button-group): Button groups combine related buttons into a single visual unit. Use them for toolbars, segmented controls, or any set of actions that belong together.
+- [Callout](https://webawesome.com/docs/components/callout): Callouts display important messages inline with surrounding content. Use them to highlight tips, warnings, errors, or other information users should not miss.
+- [Card](https://webawesome.com/docs/components/card): Cards group related content and actions inside a bordered container. Use them to present products, articles, user profiles, or any self-contained unit of information.
+- [Carousel](https://webawesome.com/docs/components/carousel): Carousels display a series of content slides along a horizontal or vertical axis, one or more at a time. Users can navigate between slides with controls, pagination, or autoplay.
+- [Carousel Item](https://webawesome.com/docs/components/carousel-item): Carousel items represent individual slides within a carousel.
+- [Checkbox](https://webawesome.com/docs/components/checkbox): Checkboxes let users toggle an option on or off, or select multiple items from a list. They also support an indeterminate state for partial selections in groups.
+- [Checkbox Group](https://webawesome.com/docs/components/checkbox-group): Checkbox groups give a set of related checkboxes or switches a shared label, hint, and grouping semantics.
+- [Color Picker](https://webawesome.com/docs/components/color-picker): Color pickers let users choose a color from a visual palette or by entering a value. They support HEX, RGB, HSL, and HSV formats with optional alpha channel and swatch presets.
+- [Comparison](https://webawesome.com/docs/components/comparison): Comparisons show the visual differences between two pieces of similar content using a draggable divider. Use them for before/after images, design revisions, or side-by-side previews.
+- [Copy Button](https://webawesome.com/docs/components/copy-button): Copy buttons copy text to the clipboard when the user activates them. They provide built-in success and error feedback so users know the copy worked.
+- [Details](https://webawesome.com/docs/components/details): Details display a brief summary and expand to reveal additional content. Use them to progressively disclose information, group related FAQs, or hide advanced options.
+- [Dialog](https://webawesome.com/docs/components/dialog): Dialogs appear above the page and require the user's immediate attention. Use them for confirmations, forms, or focused tasks that interrupt the main flow.
+- [Divider](https://webawesome.com/docs/components/divider): Dividers visually separate or group adjacent elements with a horizontal or vertical line. Use them to establish rhythm and hierarchy within menus, toolbars, and layouts.
+- [Drawer](https://webawesome.com/docs/components/drawer): Drawers slide in from the edge of a container to expose additional options and information without navigating away. Useful for navigation menus, filters, and secondary content.
+- [Dropdown](https://webawesome.com/docs/components/dropdown): Dropdowns display a list of options triggered by a button or other element. They support keyboard navigation, submenus, and checkable items for building menus and context actions.
+- [Dropdown Item](https://webawesome.com/docs/components/dropdown-item): Dropdown items represent selectable entries within a dropdown menu, including standard actions, checkable items, and submenu triggers.
+- [Format Bytes](https://webawesome.com/docs/components/format-bytes): Formats a number of bytes as a human-readable string with the appropriate unit, such as kB, MB, or GB. Supports both byte and bit units with configurable locale.
+- [Format Date](https://webawesome.com/docs/components/format-date): Formats a date or time for display using the specified locale and options. Powered by the Intl.DateTimeFormat API for consistent, localized output.
+- [Format Number](https://webawesome.com/docs/components/format-number): Formats a number for display using the specified locale and options, including currency, percent, and unit styles. Powered by the Intl.NumberFormat API.
+- [Icon](https://webawesome.com/docs/components/icon): Icons are scalable vector symbols that represent actions, content, or status throughout your application. They support Font Awesome and custom icon libraries with animation presets.
+- [Include](https://webawesome.com/docs/components/include): Fetches an external HTML file and embeds its contents inline on the page. Useful for reusing shared markup like headers, footers, and partials across multiple pages.
+- [Input](https://webawesome.com/docs/components/input): Inputs collect single-line data from the user, such as text, numbers, email addresses, and passwords. They support labels, hints, validation, and prefix or suffix slots.
+- [Intersection Observer](https://webawesome.com/docs/components/intersection-observer): Tracks immediate child elements and fires events as they move in and out of view. Useful for lazy loading, scroll-triggered animations, and viewport-aware interactions.
+- [Known Date](https://webawesome.com/docs/components/known-date): Known dates let users enter dates they already know — birthdays, expirations, document dates — through three separate day, month, and year fields shown in the locale's natural order.
+- [Markdown](https://webawesome.com/docs/components/markdown): Markdown elements render markdown content as HTML directly in the browser, making it easy to display user-generated content or documentation without a server-side build step.
+- [Mutation Observer](https://webawesome.com/docs/components/mutation-observer): Mutation observers watch for changes to an element's DOM tree and emit an event when they occur. Provides a thin, declarative interface to the browser's MutationObserver API.
+- [Number Input](https://webawesome.com/docs/components/number-input): Number inputs let users enter and edit numeric values, with optional stepper buttons for incrementing and decrementing. Use them for quantities, measurements, and other numeric form fields.
+- [Option](https://webawesome.com/docs/components/option): Options represent the individual choices inside a select or similar form control. Each option holds a value and the label shown to the user.
+- [Page](https://webawesome.com/docs/components/page): Pages scaffold an entire application layout with header, navigation, sidebar, main content, aside, and footer regions. Use them to structure full pages with minimal markup and responsive behavior built in.
+- [Popover](https://webawesome.com/docs/components/popover): Popovers display contextual content and interactive elements in a floating panel anchored to a trigger. Use them for rich tooltips, menus, or any content that appears on demand without navigating away.
+- [Popup](https://webawesome.com/docs/components/popup): Popups declaratively anchor one element to another and keep them positioned together as the page scrolls or resizes. Primarily a low-level building block for popovers, dropdowns, and tooltips.
+- [Progress Bar](https://webawesome.com/docs/components/progress-bar): Progress bars show how far along an ongoing operation is as a horizontal fill. Use them for file uploads, multi-step flows, or any task with measurable progress.
+- [Progress Ring](https://webawesome.com/docs/components/progress-ring): Progress rings show how far along a determinate operation is using a circular indicator. Use them as a compact alternative to progress bars when horizontal space is limited.
+- [QR Code](https://webawesome.com/docs/components/qr-code): QR codes encode a URL or other short text into a scannable image, rendered client-side using the Canvas API. Use them to share links, contact info, or Wi-Fi credentials that visitors can scan with a phone.
+- [Radio](https://webawesome.com/docs/components/radio): Radios represent a single option within a mutually exclusive set. Use them inside a radio group when users must pick exactly one choice from a small list.
+- [Radio Group](https://webawesome.com/docs/components/radio-group): Radio groups wrap a set of radios so they function as a single form control with one shared value. They handle keyboard navigation, labeling, and validation for the group as a whole.
+- [Rating](https://webawesome.com/docs/components/rating): Ratings display a numeric score as a row of selectable symbols, typically stars. Use them to capture quick feedback or show an average rating for a product or piece of content.
+- [Relative Time](https://webawesome.com/docs/components/relative-time): Relative times display a date as a localized phrase relative to now, such as "3 hours ago" or "in 2 days". The phrase updates automatically as time passes and respects the user's locale.
+- [Resize Observer](https://webawesome.com/docs/components/resize-observer): Resize observers watch their slotted elements for size changes and emit an event when they occur. Provides a thin, declarative interface to the browser's ResizeObserver API.
+- [Scroller](https://webawesome.com/docs/components/scroller): Scrollers wrap overflowing content in an accessible container with visual cues that help users recognize and navigate scrollable regions.
+- [Select](https://webawesome.com/docs/components/select): Selects let users choose one or more values from a dropdown list of predefined options. Use them in forms when a fixed set of choices needs to fit in limited space.
+- [Skeleton](https://webawesome.com/docs/components/skeleton): Skeletons show placeholder shapes where content will appear once it finishes loading, reducing perceived wait time and preventing layout shift.
+- [Slider](https://webawesome.com/docs/components/slider): Sliders let users choose a numeric value within a defined range by dragging a thumb along a track.
+- [Spinner](https://webawesome.com/docs/components/spinner): Spinners indicate that an operation is in progress when the duration is unknown. Use them for loading states where a determinate progress bar isn't practical.
+- [Split Panel](https://webawesome.com/docs/components/split-panel): Split panels display two adjacent panels separated by a draggable divider, letting users resize each side to suit their workflow.
+- [Switch](https://webawesome.com/docs/components/switch): Switches toggle a single setting on or off and apply the change immediately, without requiring a form submission.
+- [Tab](https://webawesome.com/docs/components/tab): Tabs label and activate an individual panel inside a tab group.
+- [Tab Group](https://webawesome.com/docs/components/tab-group): Tab groups organize related content into a single container that displays one panel at a time, with tabs for switching between them.
+- [Tab Panel](https://webawesome.com/docs/components/tab-panel): Tab panels hold the content shown for a single tab inside a tab group.
+- [Tag](https://webawesome.com/docs/components/tag): Tags label, categorize, or represent selections with a compact visual marker. Use them for status indicators, filters, or removable chips.
+- [Textarea](https://webawesome.com/docs/components/textarea): Textareas collect multi-line text input from the user, with optional resizing and character counting.
+- [Time Input](https://webawesome.com/docs/components/time-input): Time pickers let users enter a time through a segmented field or select one visually from a popup column picker. They support 12- and 24-hour formats, optional seconds, and locale-aware segment order.
+- [Tooltip](https://webawesome.com/docs/components/tooltip): Tooltips display brief contextual information when the user hovers, focuses, or taps a target element.
 - [Tree](https://webawesome.com/docs/components/tree): Trees allow you to display a hierarchical list of selectable tree items. Items with children can be expanded and collapsed as desired by the user.
-- [Tree Item](https://webawesome.com/docs/components/tree-item): A tree item serves as a hierarchical node that lives inside a tree.
-- [Zoomable Frame](https://webawesome.com/docs/components/zoomable-frame): Zoomable frames render iframe content with zoom and interaction controls.
+- [Tree Item](https://webawesome.com/docs/components/tree-item): Tree items represent a single hierarchical node inside a tree, and can contain nested items that expand and collapse.
+- [Zoomable Frame](https://webawesome.com/docs/components/zoomable-frame): Zoomable frames embed iframe content with built-in controls for zooming, panning, and managing interaction.
 
 ## Optional
 
 The following is a quick reference describing every component's API. For comprehensive documentation, refer to the component documentation using the URLs provided above.
 
+#### `<wa-accordion>`
+
+**Description:** Accordions are a vertically stacked set of interactive headings that each contain a title, representing a section of content.
+
+**Documentation:** https://webawesome.com/docs/components/accordion
+
+**Slots:**
+
+- `(default)`: One or more `<wa-accordion-item>` elements.
+
+**Properties:**
+
+- `mode`: Controls how items can be expanded. `multiple` (the default) allows any number of items to be open at once. `single` allows only one item to be open at a time; opening a new item collapses the previously open one, and clicking an open item does not collapse it. `single-collapsible` is the same as `single` except that clicking the open item collapses it, so zero open items is a valid state. (Type: `'single' | 'single-collapsible' | 'multiple'`, Default: `'multiple'`)
+- `iconPlacement` (attribute: `icon-placement`): The location of the expand/collapse icon in child items. (Type: `'start' | 'end'`, Default: `'end'`)
+- `headingLevel` (attribute: `heading-level`): The heading level for child item triggers (1–6), or "none" to omit the heading wrapper. Defaults to 3. (Type: `string`, Default: `'3'`)
+- `appearance`: The accordion's visual appearance. (Type: `'filled' | 'outlined' | 'filled-outlined' | 'plain'`, Default: `'outlined'`)
+
+**Methods:**
+
+- `expandAll()`: Expands all accordion items. No-op when `mode` is `single` or `single-collapsible`.
+- `collapseAll()`: Collapses all accordion items.
+
+**Events:**
+
+- `wa-expand`: Emitted before an item expands. Cancelable.
+- `wa-after-expand`: Emitted after an item finishes expanding.
+- `wa-collapse`: Emitted before an item collapses. Cancelable.
+- `wa-after-collapse`: Emitted after an item finishes collapsing.
+
+#### `<wa-accordion-item>`
+
+**Description:** Accordion items are used inside `<wa-accordion>` to create expandable sections with accessible headers.
+
+**Documentation:** https://webawesome.com/docs/components/accordion-item
+
+**Slots:**
+
+- `(default)`: The accordion item's body content.
+- `label`: The accordion item's label. Alternatively, use the `label` attribute.
+- `icon`: Optional expand/collapse icon. Works best with `<wa-icon>`.
+
+**Properties:**
+
+- `label`: The text label shown in the header. If you need HTML, use the `label` slot instead. (Type: `string`, Default: `''`)
+- `expanded`: Expands the accordion item. (Type: `boolean`, Default: `false`)
+- `disabled`: Disables the accordion item so it can't be toggled. (Type: `boolean`, Default: `false`)
+
+**Methods:**
+
+- `expand()`: Expands the accordion item with animation.
+- `collapse()`: Collapses the accordion item with animation.
+- `toggle()`: Toggles the accordion item's expanded state.
+- `focus(options: FocusOptions)`: Focuses the accordion item's trigger button.
+
+**CSS Custom Properties:**
+
+- `--spacing`: The amount of space around and between the item's header and content. (Default: `var(--wa-space-m)`)
+- `--show-duration`: The duration of the expand animation. (Default: `var(--wa-transition-normal)`)
+- `--hide-duration`: The duration of the collapse animation. (Default: `var(--wa-transition-normal)`)
+- `--easing`: The easing of the expand/collapse animation. (Default: `var(--wa-transition-easing)`)
+
+**CSS Parts:**
+
+- `base`: The component's base wrapper.
+- `heading`: The heading element wrapping the trigger button. Omitted when `heading-level="none"`.
+- `button`: The trigger button that toggles the panel.
+- `label`: The container that wraps the label.
+- `icon`: The container that wraps the expand/collapse icon.
+- `panel`: The panel that contains the item's content.
+- `content`: The content slot inside the panel.
+
+**CSS States:**
+
+- `animating`: Applied while the panel is animating.
+
 #### `<wa-animated-image>`
 
-**Description:** A component for displaying animated GIFs and WEBPs that play and pause on interaction.
+**Description:** Animated images display GIFs and WEBPs with controls to play and pause them on demand. Use them when you want motion but need to give users control over when it plays.
 
 **Documentation:** https://webawesome.com/docs/components/animated-image
 
@@ -99,7 +181,6 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `styles`)
 - `src`: The path to the image to load. (Type: `string`)
 - `alt`: A description of the image used by assistive devices. (Type: `string`)
 - `play`: Plays the animation. When this attribute is remove, the animation will pause. (Type: `boolean`)
@@ -120,7 +201,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-animation>`
 
-**Description:** Animate elements declaratively with nearly 100 baked-in presets, or roll your own with custom keyframes.
+**Description:** Animate elements declaratively with nearly 100 baked-in presets, or roll your own with custom keyframes. Powered by the Web Animations API.
 
 **Documentation:** https://webawesome.com/docs/components/animation
 
@@ -130,7 +211,6 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `styles`)
 - `name`: The name of the built-in animation to use. For custom animations, use the `keyframes` prop. (Type: `string`, Default: `'none'`)
 - `play`: Plays the animation. When omitted, the animation will be paused. This attribute will be automatically removed when the animation finishes or gets canceled. (Type: `boolean`, Default: `false`)
 - `delay`: The number of milliseconds to delay the start of the animation. (Type: `number`, Default: `0`)
@@ -158,7 +238,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-avatar>`
 
-**Description:** Avatars are used to represent a person or object.
+**Description:** Avatars represent a person or object with an image, initials, or icon. Use them in lists, comments, and profiles to give users visual context at a glance.
 
 **Documentation:** https://webawesome.com/docs/components/avatar
 
@@ -168,7 +248,6 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `styles`)
 - `image`: The image source to use for the avatar. (Type: `string`, Default: `''`)
 - `label`: A label to use to describe the avatar to assistive devices. (Type: `string`, Default: `''`)
 - `initials`: Initials to use as a fallback when no image is available (1-2 characters max recommended). (Type: `string`, Default: `''`)
@@ -191,7 +270,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-badge>`
 
-**Description:** Badges are used to draw attention and display statuses or counts.
+**Description:** Badges draw attention to adjacent content by displaying a status, count, or label. Use them to highlight notifications, categorize items, or flag new activity.
 
 **Documentation:** https://webawesome.com/docs/components/badge
 
@@ -203,7 +282,6 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `[variantStyles, styles]`)
 - `variant`: The badge's theme variant. Defaults to `brand` if not within another element with a variant. (Type: `'brand' | 'neutral' | 'success' | 'warning' | 'danger'`, Default: `'brand'`)
 - `appearance`: The badge's visual appearance. (Type: `'accent' | 'filled' | 'outlined' | 'filled-outlined'`, Default: `'accent'`)
 - `pill`: Draws a pill-style badge with rounded edges. (Type: `boolean`, Default: `false`)
@@ -221,7 +299,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-breadcrumb>`
 
-**Description:** Breadcrumbs provide a group of links so users can easily navigate a website's hierarchy.
+**Description:** Breadcrumbs display a trail of links that show users where they are in a site's hierarchy. They help users understand the current location and navigate back to parent pages.
 
 **Documentation:** https://webawesome.com/docs/components/breadcrumb
 
@@ -232,7 +310,6 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `styles`)
 - `label`: The label to use for the breadcrumb control. This will not be shown on the screen, but it will be announced by screen readers and other assistive devices to provide more context for users. (Type: `string`, Default: `''`)
 
 **CSS Parts:**
@@ -241,7 +318,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-breadcrumb-item>`
 
-**Description:** Breadcrumb Items are used inside breadcrumbs to represent different links.
+**Description:** Breadcrumb items represent individual links inside a breadcrumb, typically one per level of the site hierarchy.
 
 **Documentation:** https://webawesome.com/docs/components/breadcrumb-item
 
@@ -254,7 +331,6 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `styles`)
 - `href`: Optional URL to direct the user to when the breadcrumb item is activated. When set, a link will be rendered internally. When unset, a button will be rendered instead. (Type: `string | undefined`)
 - `target`: Tells the browser where to open the link. Only used when `href` is set. (Type: `'_blank' | '_parent' | '_self' | '_top' | undefined`)
 - `rel`: The `rel` attribute to use on the link. Only used when `href` is set. (Type: `string`, Default: `'noreferrer noopener'`)
@@ -268,7 +344,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-button>`
 
-**Description:** Buttons represent actions that are available to the user.
+**Description:** Buttons represent actions the user can take, such as submitting a form, opening a dialog, or navigating to another page.
 
 **Documentation:** https://webawesome.com/docs/components/button
 
@@ -280,12 +356,13 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `[styles, variantStyles, sizeStyles]`)
 - `validators`: Validators are static because they have `observedAttributes`, essentially attributes to "watch" for changes. Whenever these attributes change, we want to be notified and update the validator. (Type: `Validator[]`, Default: `[]`)
 - `variant`: The button's theme variant. Defaults to `neutral` if not within another element with a variant. (Type: `'neutral' | 'brand' | 'success' | 'warning' | 'danger'`, Default: `'neutral'`)
 - `appearance`: The button's visual appearance. (Type: `'accent' | 'filled' | 'outlined' | 'filled-outlined' | 'plain'`, Default: `'accent'`)
-- `size`: The button's size. (Type: `'small' | 'medium' | 'large'`, Default: `'medium'`)
+- `size`: The button's size. (Type: `'xs' | 's' | 'm' | 'l' | 'xl' | 'small' | 'medium' | 'large'`, Default: `'m'`)
 - `withCaret` (attribute: `with-caret`): Draws the button with a caret. Used to indicate that the button triggers a dropdown menu or similar behavior. (Type: `boolean`, Default: `false`)
+- `withStart` (attribute: `with-start`): Only required for SSR. Set to `true` if you're slotting in a `start` element so the server-rendered markup includes the start slot before the component hydrates on the client. (Type: `boolean`, Default: `false`)
+- `withEnd` (attribute: `with-end`): Only required for SSR. Set to `true` if you're slotting in an `end` element so the server-rendered markup includes the end slot before the component hydrates on the client. (Type: `boolean`, Default: `false`)
 - `disabled`: Disables the button. (Type: `boolean`, Default: `false`)
 - `loading`: Draws the button in a loading state. (Type: `boolean`, Default: `false`)
 - `pill`: Draws a pill-style button with rounded edges. (Type: `boolean`, Default: `false`)
@@ -328,9 +405,16 @@ The following is a quick reference describing every component's API. For compreh
 - `caret`: The button's caret icon, a `<wa-icon>` element.
 - `spinner`: The spinner that shows when the button is in the loading state.
 
+**CSS States:**
+
+- `disabled`: Applied when the button is disabled.
+- `icon-button`: Applied when the button contains only a `<wa-icon>` with no other content.
+- `link`: Applied when the button is rendered as a link (i.e. `href` is set).
+- `loading`: Applied when the button is in the loading state.
+
 #### `<wa-button-group>`
 
-**Description:** Button groups can be used to group related buttons into sections.
+**Description:** Button groups combine related buttons into a single visual unit. Use them for toolbars, segmented controls, or any set of actions that belong together.
 
 **Documentation:** https://webawesome.com/docs/components/button-group
 
@@ -340,7 +424,6 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `[styles]`)
 - `label`: A label to use for the button group. This won't be displayed on the screen, but it will be announced by assistive devices when interacting with the control and is strongly recommended. (Type: `string`, Default: `''`)
 - `orientation`: The button group's orientation. (Type: `'horizontal' | 'vertical'`, Default: `'horizontal'`)
 
@@ -350,7 +433,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-callout>`
 
-**Description:** Callouts are used to display important messages inline.
+**Description:** Callouts display important messages inline with surrounding content. Use them to highlight tips, warnings, errors, or other information users should not miss.
 
 **Documentation:** https://webawesome.com/docs/components/callout
 
@@ -361,10 +444,9 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `[styles, variantStyles, sizeStyles]`)
 - `variant`: The callout's theme variant. Defaults to `brand` if not within another element with a variant. (Type: `'brand' | 'neutral' | 'success' | 'warning' | 'danger'`, Default: `'brand'`)
 - `appearance`: The callout's visual appearance. (Type: `'accent' | 'filled' | 'outlined' | 'plain' | 'filled-outlined'`)
-- `size`: The callout's size. (Type: `'small' | 'medium' | 'large'`, Default: `'medium'`)
+- `size`: The callout's size. (Type: `'xs' | 's' | 'm' | 'l' | 'xl' | 'small' | 'medium' | 'large'`, Default: `'m'`)
 
 **CSS Parts:**
 
@@ -373,7 +455,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-card>`
 
-**Description:** Cards can be used to group related subjects in a container.
+**Description:** Cards group related content and actions inside a bordered container. Use them to present products, articles, user profiles, or any self-contained unit of information.
 
 **Documentation:** https://webawesome.com/docs/components/card
 
@@ -389,11 +471,12 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `[sizeStyles, styles]`)
 - `appearance`: The card's visual appearance. (Type: `'accent' | 'filled' | 'outlined' | 'filled-outlined' | 'plain'`, Default: `'outlined'`)
-- `withHeader` (attribute: `with-header`): Renders the card with a header. Only needed for SSR, otherwise is automatically added. (Type: `boolean`, Default: `false`)
-- `withMedia` (attribute: `with-media`): Renders the card with an image. Only needed for SSR, otherwise is automatically added. (Type: `boolean`, Default: `false`)
-- `withFooter` (attribute: `with-footer`): Renders the card with a footer. Only needed for SSR, otherwise is automatically added. (Type: `boolean`, Default: `false`)
+- `withHeader` (attribute: `with-header`): Only required for SSR. Set to `true` if you're slotting in a `header` element so the server-rendered markup includes the header before the component hydrates on the client. (Type: `boolean`, Default: `false`)
+- `withMedia` (attribute: `with-media`): Only required for SSR. Set to `true` if you're slotting in a `media` element so the server-rendered markup includes the media before the component hydrates on the client. (Type: `boolean`, Default: `false`)
+- `withFooter` (attribute: `with-footer`): Only required for SSR. Set to `true` if you're slotting in a `footer` element so the server-rendered markup includes the footer before the component hydrates on the client. (Type: `boolean`, Default: `false`)
+- `withHeaderActions` (attribute: `with-header-actions`): Only required for SSR. Set to `true` if you're slotting in a `header-actions` element so the server-rendered markup includes the media before the component hydrates on the client. (Type: `boolean`, Default: `false`)
+- `withFooterActions` (attribute: `with-footer-actions`): Only required for SSR. Set to `true` if you're slotting in a `footer-actions` element so the server-rendered markup includes the media before the component hydrates on the client. (Type: `boolean`, Default: `false`)
 - `orientation`: Renders the card's orientation * (Type: `'horizontal' | 'vertical'`, Default: `'vertical'`)
 
 **CSS Custom Properties:**
@@ -409,7 +492,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-carousel>`
 
-**Description:** Carousels display an arbitrary number of content slides along a horizontal or vertical axis.
+**Description:** Carousels display a series of content slides along a horizontal or vertical axis, one or more at a time. Users can navigate between slides with controls, pagination, or autoplay.
 
 **Documentation:** https://webawesome.com/docs/components/carousel
 
@@ -421,7 +504,6 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `styles`)
 - `loop`: When set, allows the user to navigate the carousel in the same direction indefinitely. (Type: `boolean`, Default: `false`)
 - `navigation`: When set, show the carousel's navigation. (Type: `boolean`, Default: `false`)
 - `pagination`: When set, show the carousel's pagination indicators. (Type: `boolean`, Default: `false`)
@@ -462,7 +544,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-carousel-item>`
 
-**Description:** A carousel item represent a slide within a carousel.
+**Description:** Carousel items represent individual slides within a carousel.
 
 **Documentation:** https://webawesome.com/docs/components/carousel-item
 
@@ -470,17 +552,13 @@ The following is a quick reference describing every component's API. For compreh
 
 - `(default)`: The carousel item's content..
 
-**Properties:**
-
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `styles`)
-
 **CSS Custom Properties:**
 
 - `--aspect-ratio`: The slide's aspect ratio. Inherited from the carousel by default.
 
 #### `<wa-checkbox>`
 
-**Description:** Checkboxes allow the user to toggle an option on or off.
+**Description:** Checkboxes let users toggle an option on or off, or select multiple items from a list. They also support an indeterminate state for partial selections in groups.
 
 **Documentation:** https://webawesome.com/docs/components/checkbox
 
@@ -491,11 +569,10 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `[formControlStyles, sizeStyles, styles]`)
 - `validators`: Validators are static because they have `observedAttributes`, essentially attributes to "watch" for changes. Whenever these attributes change, we want to be notified and update the validator. (Type: `Validator[]`, Default: `[]`)
 - `name`: The name of the checkbox, submitted as a name/value pair with form data. (Type: `string | null`, Default: `null`)
 - `value`: The value of the checkbox, submitted as a name/value pair with form data. (Type: `string | null`)
-- `size`: The checkbox's size. (Type: `'small' | 'medium' | 'large'`, Default: `'medium'`)
+- `size`: The checkbox's size. (Type: `'xs' | 's' | 'm' | 'l' | 'xl' | 'small' | 'medium' | 'large'`, Default: `'m'`)
 - `disabled`: Disables the checkbox. (Type: `boolean`, Default: `false`)
 - `indeterminate`: Draws the checkbox in an indeterminate state. This is usually applied to checkboxes that represents a "select all/none" behavior when associated checkboxes have a mix of checked and unchecked states. (Type: `boolean`, Default: `false`)
 - `checked`: Draws the checkbox in a checked state.
@@ -542,9 +619,42 @@ The following is a quick reference describing every component's API. For compreh
 - `disabled`: Applied when the checkbox is disabled.
 - `indeterminate`: Applied when the checkbox is in an indeterminate state.
 
+#### `<wa-checkbox-group>`
+
+**Description:** Checkbox groups give a set of related checkboxes or switches a shared label, hint, and grouping semantics.
+
+**Documentation:** https://webawesome.com/docs/components/checkbox-group
+
+**Slots:**
+
+- `(default)`: The default slot where `<wa-checkbox>` or `<wa-switch>` elements are placed.
+- `label`: The checkbox group's label. Required for proper accessibility. Alternatively, you can use the `label` attribute.
+- `hint`: Text that describes how to use the checkbox group. Alternatively, you can use the `hint` attribute.
+
+**Properties:**
+
+- `label`: The checkbox group's label. Required for proper accessibility. If you need to display HTML, use the `label` slot instead. (Type: `string`, Default: `''`)
+- `hint`: The checkbox group's hint. If you need to display HTML, use the `hint` slot instead. (Type: `string`, Default: `''`)
+- `orientation`: The orientation in which to show grouped checkboxes. (Type: `'horizontal' | 'vertical'`, Default: `'vertical'`)
+- `size`: The group's size. When present, this size will be applied to all `<wa-checkbox>` and `<wa-switch>` items inside. (Type: `'xs' | 's' | 'm' | 'l' | 'xl' | 'small' | 'medium' | 'large'`)
+- `required`: Indicates that at least one option should be selected. This only adds a visual indicator to the label. To enforce the requirement, use the `required` attribute on the individual checkboxes and/or their `setCustomValidity()` method. (Type: `boolean`, Default: `false`)
+- `withLabel` (attribute: `with-label`): Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup includes the label before the component hydrates on the client. (Type: `boolean`, Default: `false`)
+- `withHint` (attribute: `with-hint`): Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup includes the hint before the component hydrates on the client. (Type: `boolean`, Default: `false`)
+
+**CSS Custom Properties:**
+
+- `--gap`: The gap between grouped checkboxes. (Default: `0.5em`)
+
+**CSS Parts:**
+
+- `form-control`: The form control that wraps the label, group, and hint.
+- `form-control-label`: The label's wrapper.
+- `form-control-input`: The element that wraps the grouped checkboxes, exposed as a `role="group"`.
+- `hint`: The hint's wrapper.
+
 #### `<wa-color-picker>`
 
-**Description:** Color pickers allow the user to select a color.
+**Description:** Color pickers let users choose a color from a visual palette or by entering a value. They support HEX, RGB, HSL, and HSV formats with optional alpha channel and swatch presets.
 
 **Documentation:** https://webawesome.com/docs/components/color-picker
 
@@ -555,22 +665,24 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `[visuallyHidden, sizeStyles, formControlStyles, styles]`)
 - `validators`: Validators are static because they have `observedAttributes`, essentially attributes to "watch" for changes. Whenever these attributes change, we want to be notified and update the validator. (Type: `Validator[]`, Default: `[]`)
 - `validationTarget`: Override this to change where constraint validation popups are anchored. (Type: `undefined | HTMLElement`)
 - `value`: The current value of the color picker. The value's format will vary based the `format` attribute. To get the value in a specific format, use the `getFormattedValue()` method. The value is submitted as a name/value pair with form data.
 - `defaultValue` (attribute: `value`): The default value of the form control. Primarily used for resetting the form control. (Type: `string | null`)
+- `withLabel` (attribute: `with-label`): Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup includes the label before the component hydrates on the client. (Type: `boolean`, Default: `false`)
+- `withHint` (attribute: `with-hint`): Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup includes the hint before the component hydrates on the client. (Type: `boolean`, Default: `false`)
 - `label`: The color picker's label. This will not be displayed, but it will be announced by assistive devices. If you need to display HTML, you can use the `label` slot` instead. (Type: `string`, Default: `''`)
 - `hint`: The color picker's hint. If you need to display HTML, use the `hint` slot instead. (Type: `string`, Default: `''`)
 - `format`: The format to use. If opacity is enabled, these will translate to HEXA, RGBA, HSLA, and HSVA respectively. The color picker will accept user input in any format (including CSS color names) and convert it to the desired format. (Type: `'hex' | 'rgb' | 'hsl' | 'hsv'`, Default: `'hex'`)
-- `size`: Determines the size of the color picker's trigger (Type: `'small' | 'medium' | 'large'`, Default: `'medium'`)
+- `size`: Determines the size of the color picker's trigger (Type: `'xs' | 's' | 'm' | 'l' | 'xl' | 'small' | 'medium' | 'large'`, Default: `'m'`)
+- `placement`: The preferred placement of the color picker's popup. Note that the actual placement will vary as configured to keep the panel inside of the viewport. (Type: `| 'top'     | 'top-start'     | 'top-end'     | 'bottom'     | 'bottom-start'     | 'bottom-end'     | 'right'     | 'right-start'     | 'right-end'     | 'left'     | 'left-start'     | 'left-end'`, Default: `'bottom-start'`)
 - `withoutFormatToggle` (attribute: `without-format-toggle`): Removes the button that lets users toggle between format. (Type: `boolean`, Default: `false`)
 - `name`: The name of the form control, submitted as a name/value pair with form data. (Type: `string | null`, Default: `null`)
 - `disabled`: Disables the color picker. (Type: `boolean`, Default: `false`)
 - `open`: Indicates whether or not the popup is open. You can toggle this attribute to show and hide the popup, or you can use the `show()` and `hide()` methods and this attribute will reflect the popup's open state. (Type: `boolean`, Default: `false`)
 - `opacity`: Shows the opacity slider. Enabling this will cause the formatted value to be HEXA, RGBA, or HSLA. (Type: `boolean`, Default: `false`)
 - `uppercase`: By default, values are lowercase. With this attribute, values will be uppercase instead. (Type: `boolean`, Default: `false`)
-- `swatches`: One or more predefined color swatches to display as presets in the color picker. Can include any format the color picker can parse, including HEX(A), RGB(A), HSL(A), HSV(A), and CSS color names. Each color must be separated by a semicolon (`;`). Alternatively, you can pass an array of color values to this property using JavaScript. (Type: `string | string[]`, Default: `''`)
+- `swatches`: One or more predefined color swatches to display as presets in the color picker. Can include any format the color picker can parse, including HEX(A), RGB(A), HSL(A), HSV(A), and CSS color names. Each color must be separated by a semicolon (`;`). Alternatively, you can pass an array of color values or an array of `{ color, label }` objects to this property using JavaScript. When using objects with labels, the label will be used for the swatch's accessible name instead of the raw color value. (Type: `string | string[] | WaColorPickerSwatch[]`, Default: `''`)
 - `required`: Makes the color picker a required field. (Type: `boolean`, Default: `false`)
 - `form`: By default, form controls are associated with the nearest containing `<form>` element. This attribute allows you to place the form control outside of a form and associate it with the form that has this `id`. The form must be in the same document or shadow root for this to work. (Type: `HTMLFormElement | null`)
 
@@ -638,7 +750,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-comparison>`
 
-**Description:** Compare visual differences between similar content with a sliding panel.
+**Description:** Comparisons show the visual differences between two pieces of similar content using a draggable divider. Use them for before/after images, design revisions, or side-by-side previews.
 
 **Documentation:** https://webawesome.com/docs/components/comparison
 
@@ -650,7 +762,6 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `styles`)
 - `position`: The position of the divider as a percentage. (Type: `number`, Default: `50`)
 
 **Events:**
@@ -676,27 +787,28 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-copy-button>`
 
-**Description:** Copies data to the clipboard when the user clicks the button.
+**Description:** Copy buttons copy text to the clipboard when the user activates them. They provide built-in success and error feedback so users know the copy worked.
 
 **Documentation:** https://webawesome.com/docs/components/copy-button
 
 **Slots:**
 
+- `(default)`: The trigger element. By default, a copy icon button is rendered so this is optional. If desired, you can slot in a custom element such as `<wa-button>` or `<button>`.
 - `copy-icon`: The icon to show in the default copy state. Works best with `<wa-icon>`.
 - `success-icon`: The icon to show when the content is copied. Works best with `<wa-icon>`.
 - `error-icon`: The icon to show when a copy error occurs. Works best with `<wa-icon>`.
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `[visuallyHidden, styles]`)
 - `value`: The text value to copy. (Type: `string`, Default: `''`)
 - `from`: An id that references an element in the same document from which data will be copied. If both this and `value` are present, this value will take precedence. By default, the target element's `textContent` will be copied. To copy an attribute, append the attribute name wrapped in square brackets, e.g. `from="el[value]"`. To copy a property, append a dot and the property name, e.g. `from="el.value"`. (Type: `string`, Default: `''`)
 - `disabled`: Disables the copy button. (Type: `boolean`, Default: `false`)
-- `copyLabel` (attribute: `copy-label`): A custom label to show in the tooltip. (Type: `string`, Default: `''`)
+- `copyLabel` (attribute: `copy-label`): A custom label to use as the accessible name and tooltip text in the default copy state. (Type: `string`, Default: `''`)
 - `successLabel` (attribute: `success-label`): A custom label to show in the tooltip after copying. (Type: `string`, Default: `''`)
 - `errorLabel` (attribute: `error-label`): A custom label to show in the tooltip when a copy error occurs. (Type: `string`, Default: `''`)
 - `feedbackDuration` (attribute: `feedback-duration`): The length of time to show feedback before restoring the default trigger. (Type: `number`, Default: `1000`)
 - `tooltipPlacement` (attribute: `tooltip-placement`): The preferred placement of the tooltip. (Type: `'top' | 'right' | 'bottom' | 'left'`, Default: `'top'`)
+- `tooltip`: Controls the built-in tooltip. `full` (default) shows the tooltip on hover and focus and during copy feedback. `copy` keeps the tooltip silent on hover/focus and only shows it briefly to confirm a successful or failed copy. `none` disables the tooltip entirely. Applies to both the default and custom triggers. (Type: `'full' | 'copy' | 'none'`, Default: `'full'`)
 
 **Events:**
 
@@ -709,14 +821,16 @@ The following is a quick reference describing every component's API. For compreh
 - `copy-icon`: The container that holds the copy icon.
 - `success-icon`: The container that holds the success icon.
 - `error-icon`: The container that holds the error icon.
-- `tooltip__base`: The tooltip's exported `base` part.
-- `tooltip__base__popup`: The tooltip's exported `popup` part.
-- `tooltip__base__arrow`: The tooltip's exported `arrow` part.
-- `tooltip__body`: The tooltip's exported `body` part.
+- `feedback`: The internal `<wa-tooltip>` element.
+
+**CSS States:**
+
+- `success`: Applied when the copy operation succeeds.
+- `error`: Applied when the copy operation fails.
 
 #### `<wa-details>`
 
-**Description:** Details show a brief summary and expand to show additional content.
+**Description:** Details display a brief summary and expand to reveal additional content. Use them to progressively disclose information, group related FAQs, or hide advanced options.
 
 **Documentation:** https://webawesome.com/docs/components/details
 
@@ -729,7 +843,6 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `styles`)
 - `open`: Indicates whether or not the details is open. You can toggle this attribute to show and hide the details, or you can use the `show()` and `hide()` methods and this attribute will reflect the details' open state. (Type: `boolean`, Default: `false`)
 - `summary`: The summary to show in the header. If you need to display HTML, use the `summary` slot instead. (Type: `string`)
 - `name`: Groups related details elements. When one opens, others with the same name will close. (Type: `string`)
@@ -752,8 +865,8 @@ The following is a quick reference describing every component's API. For compreh
 **CSS Custom Properties:**
 
 - `--spacing`: The amount of space around and between the details' content. Expects a single value.
-- `--show-duration`: The show duration to use when applying built-in animation classes. (Default: `200ms`)
-- `--hide-duration`: The hide duration to use when applying built-in animation classes. (Default: `200ms`)
+- `--show-duration`: The show duration to use when applying built-in animation classes. (Default: `var(--wa-transition-normal)`)
+- `--hide-duration`: The hide duration to use when applying built-in animation classes. (Default: `var(--wa-transition-normal)`)
 
 **CSS Parts:**
 
@@ -769,7 +882,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-dialog>`
 
-**Description:** Dialogs, sometimes called "modals", appear above the page and require the user's immediate attention.
+**Description:** Dialogs appear above the page and require the user's immediate attention. Use them for confirmations, forms, or focused tasks that interrupt the main flow.
 
 **Documentation:** https://webawesome.com/docs/components/dialog
 
@@ -782,11 +895,11 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `styles`)
 - `open`: Indicates whether or not the dialog is open. Toggle this attribute to show and hide the dialog. (Type: `boolean`, Default: `false`)
 - `label`: The dialog's label as displayed in the header. You should always include a relevant label, as it is required for proper accessibility. If you need to display HTML, use the `label` slot instead. (Type: `string`, Default: `''`)
 - `withoutHeader` (attribute: `without-header`): Disables the header. This will also remove the default close button. (Type: `boolean`, Default: `false`)
 - `lightDismiss` (attribute: `light-dismiss`): When enabled, the dialog will be closed when the user clicks outside of it. (Type: `boolean`, Default: `false`)
+- `withFooter` (attribute: `with-footer`): Only required for SSR. Set to `true` if you're slotting in a `footer` element so the server-rendered markup includes the footer before the component hydrates on the client. (Type: `boolean`, Default: `false`)
 
 **Events:**
 
@@ -799,8 +912,9 @@ The following is a quick reference describing every component's API. For compreh
 
 - `--spacing`: The amount of space around and between the dialog's content.
 - `--width`: The preferred width of the dialog. Note that the dialog will shrink to accommodate smaller screens.
-- `--show-duration`: The animation duration when showing the dialog. (Default: `200ms`)
-- `--hide-duration`: The animation duration when hiding the dialog. (Default: `200ms`)
+- `--backdrop-filter`: A filter to apply to the backdrop behind the dialog. (Default: `none`)
+- `--show-duration`: The animation duration when showing the dialog. (Default: `var(--wa-transition-normal)`)
+- `--hide-duration`: The animation duration when hiding the dialog. (Default: `var(--wa-transition-normal)`)
 
 **CSS Parts:**
 
@@ -815,13 +929,12 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-divider>`
 
-**Description:** Dividers are used to visually separate or group elements.
+**Description:** Dividers visually separate or group adjacent elements with a horizontal or vertical line. Use them to establish rhythm and hierarchy within menus, toolbars, and layouts.
 
 **Documentation:** https://webawesome.com/docs/components/divider
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `styles`)
 - `orientation`: Sets the divider's orientation. (Type: `'horizontal' | 'vertical'`, Default: `'horizontal'`)
 
 **CSS Custom Properties:**
@@ -832,7 +945,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-drawer>`
 
-**Description:** Drawers slide in from a container to expose additional options and information.
+**Description:** Drawers slide in from the edge of a container to expose additional options and information without navigating away. Useful for navigation menus, filters, and secondary content.
 
 **Documentation:** https://webawesome.com/docs/components/drawer
 
@@ -845,12 +958,12 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `styles`)
 - `open`: Indicates whether or not the drawer is open. Toggle this attribute to show and hide the drawer. (Type: `boolean`, Default: `false`)
 - `label`: The drawer's label as displayed in the header. You should always include a relevant label, as it is required for proper accessibility. If you need to display HTML, use the `label` slot instead. (Type: `string`, Default: `''`)
 - `placement`: The direction from which the drawer will open. (Type: `'top' | 'end' | 'bottom' | 'start'`, Default: `'end'`)
 - `withoutHeader` (attribute: `without-header`): Disables the header. This will also remove the default close button. (Type: `boolean`, Default: `false`)
-- `lightDismiss` (attribute: `light-dismiss`): When enabled, the drawer will be closed when the user clicks outside of it. (Type: `boolean`, Default: `true`)
+- `lightDismiss` (attribute: `light-dismiss`): When enabled, the drawer will be closed when the user clicks outside of it. (Type: `boolean`, Default: `false`)
+- `withFooter` (attribute: `with-footer`): Only required for SSR. Set to `true` if you're slotting in a `footer` element so the server-rendered markup includes the footer before the component hydrates on the client. (Type: `boolean`, Default: `false`)
 - `modal`: Exposes the internal modal utility that controls focus trapping. To temporarily disable focus trapping and allow third-party modals spawned from an active Shoelace modal, call `modal.activateExternal()` when the third-party modal opens. Upon closing, call `modal.deactivateExternal()` to restore Shoelace's focus trapping.
 
 **Events:**
@@ -864,8 +977,9 @@ The following is a quick reference describing every component's API. For compreh
 
 - `--spacing`: The amount of space around and between the drawer's content.
 - `--size`: The preferred size of the drawer. This will be applied to the drawer's width or height depending on its `placement`. Note that the drawer will shrink to accommodate smaller screens.
-- `--show-duration`: The animation duration when showing the drawer. (Default: `200ms`)
-- `--hide-duration`: The animation duration when hiding the drawer. (Default: `200ms`)
+- `--backdrop-filter`: A filter to apply to the backdrop behind the drawer. (Default: `none`)
+- `--show-duration`: The animation duration when showing the drawer. (Default: `var(--wa-transition-normal)`)
+- `--hide-duration`: The animation duration when hiding the drawer. (Default: `var(--wa-transition-normal)`)
 
 **CSS Parts:**
 
@@ -880,7 +994,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-dropdown>`
 
-**Description:** Dropdowns expose additional content that "drops down" in a panel.
+**Description:** Dropdowns display a list of options triggered by a button or other element. They support keyboard navigation, submenus, and checkable items for building menus and context actions.
 
 **Documentation:** https://webawesome.com/docs/components/dropdown
 
@@ -891,9 +1005,8 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `[sizeStyles, styles]`)
 - `open`: Opens or closes the dropdown. (Type: `boolean`, Default: `false`)
-- `size`: The dropdown's size. (Type: `'small' | 'medium' | 'large'`, Default: `'medium'`)
+- `size`: The dropdown's size. (Type: `'xs' | 's' | 'm' | 'l' | 'xl' | 'small' | 'medium' | 'large'`, Default: `'m'`)
 - `placement`: The placement of the dropdown menu in reference to the trigger. The menu will shift to a more optimal location if the preferred placement doesn't have enough room. (Type: `| 'top'     | 'top-start'     | 'top-end'     | 'bottom'     | 'bottom-start'     | 'bottom-end'     | 'right'     | 'right-start'     | 'right-end'     | 'left'     | 'left-start'     | 'left-end'`, Default: `'bottom-start'`)
 - `distance`: The distance of the dropdown menu from its trigger. (Type: `number`, Default: `0`)
 - `skidding`: The offset of the dropdown menu along its trigger. (Type: `number`, Default: `0`)
@@ -918,7 +1031,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-dropdown-item>`
 
-**Description:** Provides items to select in a dropdown.
+**Description:** Dropdown items represent selectable entries within a dropdown menu, including standard actions, checkable items, and submenu triggers.
 
 **Documentation:** https://webawesome.com/docs/components/dropdown-item
 
@@ -931,7 +1044,6 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `styles`)
 - `variant`: The type of menu item to render. (Type: `'danger' | 'default'`, Default: `'default'`)
 - `value`: An optional value for the menu item. This is useful for determining which item was selected when listening to the dropdown's `wa-select` event. (Type: `string`)
 - `type`: Set to `checkbox` to make the item a checkbox. (Type: `'normal' | 'checkbox'`, Default: `'normal'`)
@@ -960,7 +1072,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-format-bytes>`
 
-**Description:** Formats a number as a human readable bytes value.
+**Description:** Formats a number of bytes as a human-readable string with the appropriate unit, such as kB, MB, or GB. Supports both byte and bit units with configurable locale.
 
 **Documentation:** https://webawesome.com/docs/components/format-bytes
 
@@ -969,11 +1081,10 @@ The following is a quick reference describing every component's API. For compreh
 - `value`: The number to format in bytes. (Type: `number`, Default: `0`)
 - `unit`: The type of unit to display. (Type: `'byte' | 'bit'`, Default: `'byte'`)
 - `display`: Determines how to display the result, e.g. "100 bytes", "100 b", or "100b". (Type: `'long' | 'short' | 'narrow'`, Default: `'short'`)
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`)
 
 #### `<wa-format-date>`
 
-**Description:** Formats a date/time using the specified locale and options.
+**Description:** Formats a date or time for display using the specified locale and options. Powered by the Intl.DateTimeFormat API for consistent, localized output.
 
 **Documentation:** https://webawesome.com/docs/components/format-date
 
@@ -991,11 +1102,10 @@ The following is a quick reference describing every component's API. For compreh
 - `timeZoneName` (attribute: `time-zone-name`): The format for displaying the time. (Type: `'short' | 'long'`)
 - `timeZone` (attribute: `time-zone`): The time zone to express the time in. (Type: `string`)
 - `hourFormat` (attribute: `hour-format`): The format for displaying the hour. (Type: `'auto' | '12' | '24'`, Default: `'auto'`)
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`)
 
 #### `<wa-format-number>`
 
-**Description:** Formats a number using the specified locale and options.
+**Description:** Formats a number for display using the specified locale and options, including currency, percent, and unit styles. Powered by the Intl.NumberFormat API.
 
 **Documentation:** https://webawesome.com/docs/components/format-number
 
@@ -1011,17 +1121,15 @@ The following is a quick reference describing every component's API. For compreh
 - `maximumFractionDigits` (attribute: `maximum-fraction-digits`): The maximum number of fraction digits to use. Possible values are 0-100. (Type: `number`)
 - `minimumSignificantDigits` (attribute: `minimum-significant-digits`): The minimum number of significant digits to use. Possible values are 1-21. (Type: `number`)
 - `maximumSignificantDigits` (attribute: `maximum-significant-digits`): The maximum number of significant digits to use,. Possible values are 1-21. (Type: `number`)
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`)
 
 #### `<wa-icon>`
 
-**Description:** Icons are symbols that can be used to represent various options within an application.
+**Description:** Icons are scalable vector symbols that represent actions, content, or status throughout your application. They support Font Awesome and custom icon libraries with animation presets.
 
 **Documentation:** https://webawesome.com/docs/components/icon
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `styles`)
 - `name`: The name of the icon to draw. Available names depend on the icon library being used. (Type: `string | undefined`)
 - `family`: The family of icons to choose from. For Font Awesome Free, valid options include `classic` and `brands`. For Font Awesome Pro subscribers, valid options include, `classic`, `sharp`, `duotone`, `sharp-duotone`, and `brands`. A valid kit code must be present to show pro icons via CDN. You can set `<html data-fa-kit-code="...">` to provide one. (Type: `string`)
 - `variant`: The name of the icon's variant. For Font Awesome, valid options include `thin`, `light`, `regular`, and `solid` for the `classic` and `sharp` families. Some variants require a Font Awesome Pro subscription. Custom icon libraries may or may not use this property. (Type: `string`)
@@ -1074,13 +1182,12 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-include>`
 
-**Description:** Includes give you the power to embed external HTML files into the page.
+**Description:** Fetches an external HTML file and embeds its contents inline on the page. Useful for reusing shared markup like headers, footers, and partials across multiple pages.
 
 **Documentation:** https://webawesome.com/docs/components/include
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `styles`)
 - `src`: The location of the HTML file to include. Be sure you trust the content you are including as it will be executed as code and can result in XSS attacks. (Type: `string`)
 - `mode`: The fetch mode to use. (Type: `'cors' | 'no-cors' | 'same-origin'`, Default: `'cors'`)
 - `allowScripts` (attribute: `allow-scripts`): Allows included scripts to be executed. Be sure you trust the content you are including as it will be executed as code and can result in XSS attacks. (Type: `boolean`, Default: `false`)
@@ -1092,7 +1199,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-input>`
 
-**Description:** Inputs collect data from the user.
+**Description:** Inputs collect single-line data from the user, such as text, numbers, email addresses, and passwords. They support labels, hints, validation, and prefix or suffix slots.
 
 **Documentation:** https://webawesome.com/docs/components/input
 
@@ -1108,12 +1215,11 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `[sizeStyles, formControlStyles, styles]`)
 - `validators`: Validators are static because they have `observedAttributes`, essentially attributes to "watch" for changes. Whenever these attributes change, we want to be notified and update the validator. (Type: `Validator[]`, Default: `[]`)
 - `type`: The type of input. Works the same as a native `<input>` element, but only a subset of types are supported. Defaults to `text`. (Type: `| 'date'     | 'datetime-local'     | 'email'     | 'number'     | 'password'     | 'search'     | 'tel'     | 'text'     | 'time'     | 'url'`, Default: `'text'`)
 - `value`: The current value of the input, submitted as a name/value pair with form data.
 - `defaultValue` (attribute: `value`): The default value of the form control. Primarily used for resetting the form control. (Type: `string | null`)
-- `size`: The input's size. (Type: `'small' | 'medium' | 'large'`, Default: `'medium'`)
+- `size`: The input's size. (Type: `'xs' | 's' | 'm' | 'l' | 'xl' | 'small' | 'medium' | 'large'`, Default: `'m'`)
 - `appearance`: The input's visual appearance. (Type: `'filled' | 'outlined' | 'filled-outlined'`, Default: `'outlined'`)
 - `pill`: Draws a pill-style input with rounded edges. (Type: `boolean`, Default: `false`)
 - `label`: The input's label. If you need to display HTML, use the `label` slot instead. (Type: `string`, Default: `''`)
@@ -1132,14 +1238,14 @@ The following is a quick reference describing every component's API. For compreh
 - `max`: The input's maximum value. Only applies to date and number input types. (Type: `number | string`)
 - `step`: Specifies the granularity that the value must adhere to, or the special value `any` which means no stepping is implied, allowing any numeric value. Only applies to date and number input types. (Type: `number | 'any'`)
 - `autocapitalize`: Controls whether and how text input is automatically capitalized as it is entered by the user. (Type: `'off' | 'none' | 'on' | 'sentences' | 'words' | 'characters'`)
-- `autocorrect`: Indicates whether the browser's autocorrect feature is on or off. (Type: `'off' | 'on'`)
+- `autocorrect`: Indicates whether the browser's autocorrect feature is on or off. When set as an attribute, use `"off"` or `"on"`. When set as a property, use `true` or `false`. (Type: `boolean`)
 - `autocomplete`: Specifies what permission the browser has to provide assistance in filling out form field values. Refer to [this page on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) for available values. (Type: `string`)
 - `autofocus`: Indicates that the input should receive focus on page load. (Type: `boolean`)
 - `enterkeyhint`: Used to customize the label or icon of the Enter key on virtual keyboards. (Type: `'enter' | 'done' | 'go' | 'next' | 'previous' | 'search' | 'send'`)
 - `spellcheck`: Enables spell checking on the input. (Type: `boolean`, Default: `true`)
 - `inputmode`: Tells the browser what type of data will be entered by the user, allowing it to display the appropriate virtual keyboard on supportive devices. (Type: `'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url'`)
-- `withLabel` (attribute: `with-label`): Used for SSR. Will determine if the SSRed component will have the label slot rendered on initial paint. (Type: `boolean`, Default: `false`)
-- `withHint` (attribute: `with-hint`): Used for SSR. Will determine if the SSRed component will have the hint slot rendered on initial paint. (Type: `boolean`, Default: `false`)
+- `withLabel` (attribute: `with-label`): Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup includes the label before the component hydrates on the client. (Type: `boolean`, Default: `false`)
+- `withHint` (attribute: `with-hint`): Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup includes the hint before the component hydrates on the client. (Type: `boolean`, Default: `false`)
 - `name`: The name of the input, submitted as a name/value pair with form data. (Type: `string | null`, Default: `null`)
 - `disabled`: Disables the form control. (Type: `boolean`, Default: `false`)
 - `form`: By default, form controls are associated with the nearest containing `<form>` element. This attribute allows you to place the form control outside of a form and associate it with the form that has this `id`. The form must be in the same document or shadow root for this to work. (Type: `HTMLFormElement | null`)
@@ -1185,7 +1291,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-intersection-observer>`
 
-**Description:** Tracks immediate child elements and fires events as they move in and out of view.
+**Description:** Tracks immediate child elements and fires events as they move in and out of view. Useful for lazy loading, scroll-triggered animations, and viewport-aware interactions.
 
 **Documentation:** https://webawesome.com/docs/components/intersection-observer
 
@@ -1195,7 +1301,6 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `styles`)
 - `root`: Element ID to define the viewport boundaries for tracked targets. (Type: `string | null`, Default: `null`)
 - `rootMargin` (attribute: `root-margin`): Offset space around the root boundary. Accepts values like CSS margin syntax. (Type: `string`, Default: `'0px'`)
 - `threshold`: One or more space-separated values representing visibility percentages that trigger the observer callback. (Type: `string`, Default: `'0'`)
@@ -1207,9 +1312,103 @@ The following is a quick reference describing every component's API. For compreh
 
 - `wa-intersect`: Fired when a tracked element begins or ceases intersecting.
 
+#### `<wa-known-date>`
+
+**Description:** Known dates let users enter dates they already know — birthdays, expirations, document dates — through three separate day, month, and year fields shown in the locale's natural order.
+
+**Documentation:** https://webawesome.com/docs/components/known-date
+
+**Slots:**
+
+- `label`: The known date's group label. Alternatively, use the `label` attribute.
+- `hint`: Text that describes how to use the known date. Alternatively, use the `hint` attribute.
+
+**Properties:**
+
+- `validators`: Validators are static because they have `observedAttributes`, essentially attributes to "watch" for changes. Whenever these attributes change, we want to be notified and update the validator. (Type: `Validator[]`, Default: `[]`)
+- `valueInput`: Hidden mirror used for native constraint validation (min/max/required + valid-date roundtrip). (Type: `HTMLInputElement`)
+- `parts`: The three field strings. Stored verbatim so user-typed digits round-trip faithfully. (Type: `DateParts`, Default: `{ ...EMPTY_PARTS }`)
+- `name`: The name submitted with form data. (Type: `string | null`, Default: `''`)
+- `value`: The committed value as an ISO `YYYY-MM-DD` string. The setter also accepts a `Date` or `null`. Reading returns an empty string when the value is blank or any field is only partially filled. (Type: `string`)
+- `defaultValue` (attribute: `value`): The default value used for form reset. (Type: `string`)
+- `disabled`: Disables the known date. (Type: `boolean`, Default: `false`)
+- `required`: Makes the known date required for form submission. (Type: `boolean`, Default: `false`)
+- `readonly`: Makes the fields non-editable. (Type: `boolean`, Default: `false`)
+- `size`: The known date's size. (Type: `WaKnownDateSize | 'small' | 'medium' | 'large'`, Default: `'m'`)
+- `appearance`: The known date's visual appearance. (Type: `WaKnownDateAppearance`, Default: `'outlined'`)
+- `pill`: Draws pill-style fields with rounded edges. (Type: `boolean`, Default: `false`)
+- `label`: The known date's label. If you need to display HTML, use the `label` slot instead. (Type: `string`, Default: `''`)
+- `hint`: The known date's hint. If you need to display HTML, use the `hint` slot instead. (Type: `string`, Default: `''`)
+- `autocomplete`: Browser autofill family. When set to `bday`, the three fields receive `bday-day`, `bday-month`, and `bday-year` respectively. The field-agnostic directives `off` and `on` are applied to all three fields. Any other value is forwarded only to the year field. (Type: `string`, Default: `''`)
+- `min`: Earliest selectable date as `YYYY-MM-DD`. (Type: `string`, Default: `''`)
+- `max`: Latest selectable date as `YYYY-MM-DD`. (Type: `string`, Default: `''`)
+- `locale`: BCP-47 locale override. When empty, the inherited `lang` attribute is used. (Type: `string`, Default: `''`)
+- `withLabel` (attribute: `with-label`): Only required for SSR. Set to `true` if you're slotting in a `label` element. (Type: `boolean`, Default: `false`)
+- `withHint` (attribute: `with-hint`): Only required for SSR. Set to `true` if you're slotting in a `hint` element. (Type: `boolean`, Default: `false`)
+- `valueAsDate`: The committed value as a `Date`, or `null` when the value is empty/invalid. (Type: `Date | null`)
+- `validationTarget`: Anchor native validation popups on a real visible input. The hidden mirror handles form data, but anchoring a popup on `display: none` content would render it at offset (0, 0). (Type: `undefined | HTMLElement`)
+- `form`: By default, form controls are associated with the nearest containing `<form>` element. This attribute allows you to place the form control outside of a form and associate it with the form that has this `id`. The form must be in the same document or shadow root for this to work. (Type: `HTMLFormElement | null`)
+
+**Methods:**
+
+- `focus(options: FocusOptions)`: Focuses the first empty field, or the first field when all are filled.
+- `blur()`: Removes focus from the known date.
+- `formStateRestoreCallback(state: string | File | FormData | null)`: Called when the browser is trying to restore element’s state to state in which case reason is "restore", or when the browser is trying to fulfill autofill on behalf of user in which case reason is "autocomplete". In the case of "restore", state is a string, File, or FormData object previously set as the second argument to setFormValue.
+- `setCustomValidity(message: string)`: Do not use this when creating a "Validator". This is intended for end users of components. We track manually defined custom errors so we don't clear them on accident in our validators.
+- `resetValidity()`: Reset validity is a way of removing manual custom errors and native validation.
+
+**Events:**
+
+- `input`: Emitted as the user types in any field.
+- `change`: Emitted when the committed value transitions to a new ISO date.
+- `blur`: Emitted when the control loses focus.
+- `focus`: Emitted when the control gains focus.
+- `wa-invalid`: Emitted when the form control has been checked for validity and its constraints aren't satisfied.
+
+**CSS Parts:**
+
+- `form-control`: The form control's outer wrapper.
+- `form-control-label`: The wrapper inside the legend that styles the visible label text.
+- `form-control-input`: Alias on the fields row matching other form controls.
+- `hint`: The hint's wrapper.
+- `label`: Alias on the legend's inner label wrapper.
+- `base`: The component's outer wrapper (alias of the fields row).
+- `fieldset`: The `<fieldset>` element grouping the three fields (or a `role="group"` div).
+- `legend`: The `<legend>` element (when a label is present).
+- `fields`: The flex row holding the three field blocks.
+- `field`: Each field block (label + input).
+- `field-day`: Added to the day field block.
+- `field-month`: Added to the month field block.
+- `field-year`: Added to the year field block.
+- `field-label`: The text label above each field's input.
+- `field-input`: The native `<input>` inside a field.
+- `error`: The inline error message region. This is an intentional difference from `<wa-date-input>` and `<wa-time-input>`, which rely on the browser's native validation popup. Because this control is composed of three separate fields, an inline `role="alert"` region gives a single, predictable place to surface the validation message rather than anchoring a native popup on one of the three fields.
+
+**CSS States:**
+
+- `blank`: The known date has no committed value.
+- `disabled`: The known date is disabled.
+
+#### `<wa-markdown>`
+
+**Description:** Markdown elements render markdown content as HTML directly in the browser, making it easy to display user-generated content or documentation without a server-side build step.
+
+**Documentation:** https://webawesome.com/docs/components/markdown
+
+**Properties:**
+
+- `tabSize` (attribute: `tab-size`): The tab stop width used when converting leading tabs to spaces during whitespace normalization. (Type: `number`, Default: `4`)
+- `marked`: A reference to the shared Marked instance for convenience. Equivalent to `WaMarkdown.getMarked()`. (Type: `Marked`)
+
+**Methods:**
+
+- `getMarked()`: Returns the shared Marked instance used by all `<wa-markdown>` components.
+- `updateAll()`: Re-renders all connected `<wa-markdown>` instances. Call this after changing the Marked configuration.
+- `renderMarkdown()`: Reads the script content, normalizes whitespace, parses markdown, and injects the result.
+
 #### `<wa-mutation-observer>`
 
-**Description:** The Mutation Observer component offers a thin, declarative interface to the MutationObserver API.
+**Description:** Mutation observers watch for changes to an element's DOM tree and emit an event when they occur. Provides a thin, declarative interface to the browser's MutationObserver API.
 
 **Documentation:** https://webawesome.com/docs/components/mutation-observer
 
@@ -1219,7 +1418,6 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `styles`)
 - `attr`: Watches for changes to attributes. To watch only specific attributes, separate them by a space, e.g. `attr="class id title"`. To watch all attributes, use `*`. (Type: `string`)
 - `attrOldValue` (attribute: `attr-old-value`): Indicates whether or not the attribute's previous value should be recorded when monitoring changes. (Type: `boolean`, Default: `false`)
 - `charData` (attribute: `char-data`): Watches for changes to the character data contained within the node. (Type: `boolean`, Default: `false`)
@@ -1233,7 +1431,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-number-input>`
 
-**Description:** Number inputs allow users to enter and edit numeric values with optional stepper buttons.
+**Description:** Number inputs let users enter and edit numeric values, with optional stepper buttons for incrementing and decrementing. Use them for quantities, measurements, and other numeric form fields.
 
 **Documentation:** https://webawesome.com/docs/components/number-input
 
@@ -1248,11 +1446,10 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `[sizeStyles, formControlStyles, styles]`)
 - `validators`: Validators are static because they have `observedAttributes`, essentially attributes to "watch" for changes. Whenever these attributes change, we want to be notified and update the validator. (Type: `Validator[]`, Default: `[]`)
 - `value`: The current value of the input, submitted as a name/value pair with form data.
 - `defaultValue` (attribute: `value`): The default value of the form control. Primarily used for resetting the form control. (Type: `string | null`)
-- `size`: The input's size. (Type: `'small' | 'medium' | 'large'`, Default: `'medium'`)
+- `size`: The input's size. (Type: `'xs' | 's' | 'm' | 'l' | 'xl' | 'small' | 'medium' | 'large'`, Default: `'m'`)
 - `appearance`: The input's visual appearance. (Type: `'filled' | 'outlined' | 'filled-outlined'`, Default: `'outlined'`)
 - `pill`: Draws a pill-style input with rounded edges. (Type: `boolean`, Default: `false`)
 - `label`: The input's label. If you need to display HTML, use the `label` slot instead. (Type: `string`, Default: `''`)
@@ -1268,8 +1465,8 @@ The following is a quick reference describing every component's API. For compreh
 - `autofocus`: Indicates that the input should receive focus on page load. (Type: `boolean`)
 - `enterkeyhint`: Used to customize the label or icon of the Enter key on virtual keyboards. (Type: `'enter' | 'done' | 'go' | 'next' | 'previous' | 'search' | 'send'`)
 - `inputmode`: Tells the browser what type of data will be entered by the user, allowing it to display the appropriate virtual keyboard on supportive devices. (Type: `'numeric' | 'decimal'`, Default: `'numeric'`)
-- `withLabel` (attribute: `with-label`): Used for SSR. Will determine if the SSRed component will have the label slot rendered on initial paint. (Type: `boolean`, Default: `false`)
-- `withHint` (attribute: `with-hint`): Used for SSR. Will determine if the SSRed component will have the hint slot rendered on initial paint. (Type: `boolean`, Default: `false`)
+- `withLabel` (attribute: `with-label`): Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup includes the label before the component hydrates on the client. (Type: `boolean`, Default: `false`)
+- `withHint` (attribute: `with-hint`): Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup includes the hint before the component hydrates on the client. (Type: `boolean`, Default: `false`)
 - `name`: The name of the input, submitted as a name/value pair with form data. (Type: `string | null`, Default: `null`)
 - `disabled`: Disables the form control. (Type: `boolean`, Default: `false`)
 - `form`: By default, form controls are associated with the nearest containing `<form>` element. This attribute allows you to place the form control outside of a form and associate it with the form that has this `id`. The form must be in the same document or shadow root for this to work. (Type: `HTMLFormElement | null`)
@@ -1292,6 +1489,7 @@ The following is a quick reference describing every component's API. For compreh
 - `change`: Emitted when an alteration to the control's value is committed by the user.
 - `blur`: Emitted when the control loses focus.
 - `focus`: Emitted when the control gains focus.
+- `beforeinput`: Emitted before the value changes. Can be cancelled with `event.preventDefault()` to prevent the value from changing.
 - `wa-invalid`: Emitted when the form control has been checked for validity and its constraints aren't satisfied.
 
 **CSS Parts:**
@@ -1314,7 +1512,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-option>`
 
-**Description:** Options define the selectable items within various form controls such as select.
+**Description:** Options represent the individual choices inside a select or similar form control. Each option holds a value and the label shown to the user.
 
 **Documentation:** https://webawesome.com/docs/components/option
 
@@ -1326,12 +1524,11 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `styles`)
 - `value`: The option's value. When selected, the containing form control will receive this value. The value must be unique from other options in the same group. Values may not contain spaces, as spaces are used as delimiters when listing multiple values. (Type: `string`, Default: `''`)
 - `disabled`: Draws the option in a disabled state, preventing selection. (Type: `boolean`, Default: `false`)
 - `defaultSelected` (attribute: `selected`): Selects an option initially. (Type: `boolean`, Default: `false`)
 - `label`: The option’s plain text label. Usually automatically generated, but can be useful to provide manually for cases involving complex content. (Type: `string`)
-- `defaultLabel`: The default label, generated from the element contents. Will be equal to `label` in most cases. (Type: `string`, Default: `''`)
+- `defaultLabel`: The default label, generated from the element contents. Will be equal to `label` in most cases. (Type: `string`)
 
 **CSS Parts:**
 
@@ -1344,11 +1541,82 @@ The following is a quick reference describing every component's API. For compreh
 
 - `current`: The user has keyed into the option, but hasn't selected it yet (shows a highlight)
 - `selected`: The option is selected and has aria-selected="true"
+- `disabled`: Applied when the option is disabled
 - `hover`: Like `:hover` but works while dragging in Safari
+
+#### `<wa-page>`
+
+**Description:** Pages scaffold an entire application layout with header, navigation, sidebar, main content, aside, and footer regions. Use them to structure full pages with minimal markup and responsive behavior built in.
+
+**Documentation:** https://webawesome.com/docs/components/page
+
+**Slots:**
+
+- `(default)`: The page's main content.
+- `banner`: The banner that gets display above the header. The banner will not be shown if no content is provided.
+- `header`: The header to display at the top of the page. If a banner is present, the header will appear below the banner. The header will not be shown if there is no content.
+- `subheader`: A subheader to display below the `header`. This is a good place to put things like breadcrumbs.
+- `menu`: The left side of the page. If you slot an element in here, you will override the default `navigation` slot and will be handling navigation on your own. This also will not disable the fallback behavior of the navigation button. This section "sticks" to the top as the page scrolls.
+- `navigation-header`: The header for a navigation area. On mobile this will be the header for `<wa-drawer>`.
+- `navigation`: The main content to display in the navigation area. This is displayed on the left side of the page, if `menu` is not used. This section "sticks" to the top as the page scrolls.
+- `navigation-footer`: The footer for a navigation area. On mobile this will be the footer for `<wa-drawer>`.
+- `navigation-toggle`: Use this slot to slot in your own button + icon for toggling the navigation drawer. By default it is a `<wa-button>` + a 3 bars `<wa-icon>`
+- `navigation-toggle-icon`: Use this to slot in your own icon for toggling the navigation drawer. By default it is 3 bars `<wa-icon>`.
+- `main-header`: Header to display inline above the main content.
+- `main-footer`: Footer to display inline below the main content.
+- `aside`: Content to be shown on the right side of the page. Typically contains a table of contents, ads, etc. This section "sticks" to the top as the page scrolls.
+- `skip-to-content`: The "skip to content" slot. You can override this If you would like to override the `Skip to content` button and add additional "Skip to X", they can be inserted here.
+- `footer`: The content to display in the footer. This is always displayed underneath the viewport so will always make the page "scrollable".
+
+**Properties:**
+
+- `view`: The view is a reflection of the "mobileBreakpoint", when the page is larger than the `mobile-breakpoint` (768px by default), it is considered to be a "desktop" view. The view is merely a way to distinguish when to show/hide the navigation. You can use additional media queries to make other adjustments to content as necessary. The default is "desktop" because the "mobile navigation drawer" isn't accessible via SSR due to drawer requiring JS. (Type: `'mobile' | 'desktop'`, Default: `'desktop'`)
+- `navOpen` (attribute: `nav-open`): Whether or not the navigation drawer is open. Note, the navigation drawer is only "open" on mobile views. (Type: `boolean`, Default: `false`)
+- `mobileBreakpoint` (attribute: `mobile-breakpoint`): At what page width to hide the "navigation" slot and collapse into a hamburger button. Accepts both numbers (interpreted as px) and CSS lengths (e.g. `50em`), which are resolved based on the root element. (Type: `string`, Default: `'768px'`)
+- `navigationPlacement` (attribute: `navigation-placement`): Where to place the navigation when in the mobile viewport. (Type: `'start' | 'end'`, Default: `'start'`)
+- `disableNavigationToggle` (attribute: `disable-navigation-toggle`): Determines whether or not to hide the default hamburger button. This will automatically flip to "true" if you add an element with `data-toggle-nav` anywhere in the element light DOM. Generally this will be set for you and you don't need to do anything, unless you're using SSR, in which case you should set this manually for initial page loads. (Type: `boolean`, Default: `false`)
+
+**Methods:**
+
+- `visiblePixelsInViewport(element: HTMLElement | null)`: https://stackoverflow.com/a/26831113 This prevents awkward gaps when scrolling the page and the aside / menu dont "fill" the gaps.
+- `showNavigation()`: Shows the mobile navigation drawer
+- `hideNavigation()`: Hides the mobile navigation drawer
+- `toggleNavigation()`: Toggles the mobile navigation drawer
+
+**CSS Custom Properties:**
+
+- `--menu-width`: The width of the page's "menu" section. (Default: `auto`)
+- `--main-width`: The width of the page's "main" section. (Default: `1fr`)
+- `--aside-width`: The wide of the page's "aside" section. (Default: `auto`)
+- `--banner-height`: The height of the banner. This gets calculated when the page initializes. If the height is known, you can set it here to prevent shifting when the page loads. (Default: `0px`)
+- `--header-height`: The height of the header. This gets calculated when the page initializes. If the height is known, you can set it here to prevent shifting when the page loads. (Default: `0px`)
+- `--subheader-height`: The height of the subheader. This gets calculated when the page initializes. If the height is known, you can set it here to prevent shifting when the page loads. (Default: `0px`)
+
+**CSS Parts:**
+
+- `base`: The component's base wrapper.
+- `banner`: The banner to show above header.
+- `header`: The header, usually for top level navigation / branding.
+- `subheader`: Shown below the header, usually intended for things like breadcrumbs and other page level navigation.
+- `body`: The wrapper around menu, main, and aside.
+- `menu`: The left hand side of the page. Generally intended for navigation.
+- `navigation`: The `<nav>` that wraps the navigation slots on desktop viewports.
+- `navigation-header`: The header for a navigation area. On mobile this will be the header for `<wa-drawer>`.
+- `navigation-footer`: The footer for a navigation area. On mobile this will be the footer for `<wa-drawer>`.
+- `navigation-toggle`: The default `<wa-button>` that will toggle the `<wa-drawer>` for mobile viewports.
+- `navigation-toggle-icon`: The default `<wa-icon>` displayed inside of the navigation-toggle button.
+- `main-header`: The header above main content.
+- `main-content`: The main content.
+- `main-footer`: The footer below main content.
+- `aside`: The right hand side of the page. Used for things like table of contents, ads, etc.
+- `skip-links`: Wrapper around skip-link
+- `skip-link`: The "skip to main content" link
+- `footer`: The footer of the page. This is always below the initial viewport size.
+- `dialog-wrapper`: A wrapper around elements such as dialogs or other modal-like elements.
 
 #### `<wa-popover>`
 
-**Description:** Popovers display interactive content when their anchor element is clicked.
+**Description:** Popovers display contextual content and interactive elements in a floating panel anchored to a trigger. Use them for rich tooltips, menus, or any content that appears on demand without navigating away.
 
 **Documentation:** https://webawesome.com/docs/components/popover
 
@@ -1358,7 +1626,6 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `styles`)
 - `placement`: The preferred placement of the popover. Note that the actual placement may vary as needed to keep the popover inside of the viewport. (Type: `| 'top'     | 'top-start'     | 'top-end'     | 'right'     | 'right-start'     | 'right-end'     | 'bottom'     | 'bottom-start'     | 'bottom-end'     | 'left'     | 'left-start'     | 'left-end'`, Default: `'top'`)
 - `open`: Shows or hides the popover. (Type: `boolean`, Default: `false`)
 - `distance`: The distance in pixels from which to offset the popover away from its target. (Type: `number`, Default: `8`)
@@ -1382,8 +1649,8 @@ The following is a quick reference describing every component's API. For compreh
 
 - `--arrow-size`: The size of the tiny arrow that points to the popover (set to zero to remove). (Default: `0.375rem`)
 - `--max-width`: The maximum width of the popover's body content. (Default: `25rem`)
-- `--show-duration`: The speed of the show animation. (Default: `100ms`)
-- `--hide-duration`: The speed of the hide animation. (Default: `100ms`)
+- `--show-duration`: The speed of the show animation. (Default: `var(--wa-transition-fast)`)
+- `--hide-duration`: The speed of the hide animation. (Default: `var(--wa-transition-fast)`)
 
 **CSS Parts:**
 
@@ -1399,7 +1666,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-popup>`
 
-**Description:** Popup is a utility that lets you declaratively anchor "popup" containers to another element.
+**Description:** Popups declaratively anchor one element to another and keep them positioned together as the page scrolls or resizes. Primarily a low-level building block for popovers, dropdowns, and tooltips.
 
 **Documentation:** https://webawesome.com/docs/components/popup
 
@@ -1410,7 +1677,6 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `styles`)
 - `popup`: A reference to the internal popup container. Useful for animating and styling the popup with JavaScript. (Type: `HTMLElement`)
 - `anchor`: The element the popup will be anchored to. If the anchor lives outside of the popup, you can provide the anchor element `id`, a DOM element reference, or a `VirtualElement`. If the anchor lives inside the popup, use the `anchor` slot instead. (Type: `Element | string | VirtualElement`)
 - `active`: Activates the positioning logic and shows the popup. When this attribute is removed, the positioning logic is torn down and the popup will be hidden. (Type: `boolean`, Default: `false`)
@@ -1450,8 +1716,8 @@ The following is a quick reference describing every component's API. For compreh
 - `--arrow-color`: The color of the arrow. (Default: `black`)
 - `--auto-size-available-width`: A read-only custom property that determines the amount of width the popup can be before overflowing. Useful for positioning child elements that need to overflow. This property is only available when using `auto-size`.
 - `--auto-size-available-height`: A read-only custom property that determines the amount of height the popup can be before overflowing. Useful for positioning child elements that need to overflow. This property is only available when using `auto-size`.
-- `--show-duration`: The show duration to use when applying built-in animation classes. (Default: `100ms`)
-- `--hide-duration`: The hide duration to use when applying built-in animation classes. (Default: `100ms`)
+- `--show-duration`: The show duration to use when applying built-in animation classes. (Default: `var(--wa-transition-fast)`)
+- `--hide-duration`: The hide duration to use when applying built-in animation classes. (Default: `var(--wa-transition-fast)`)
 
 **CSS Parts:**
 
@@ -1461,7 +1727,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-progress-bar>`
 
-**Description:** Progress bars are used to show the status of an ongoing operation.
+**Description:** Progress bars show how far along an ongoing operation is as a horizontal fill. Use them for file uploads, multi-step flows, or any task with measurable progress.
 
 **Documentation:** https://webawesome.com/docs/components/progress-bar
 
@@ -1471,7 +1737,6 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `styles`)
 - `value`: The current progress as a percentage, 0 to 100. (Type: `number`, Default: `0`)
 - `indeterminate`: When true, percentage is ignored, the label is hidden, and the progress bar is drawn in an indeterminate state. (Type: `boolean`, Default: `false`)
 - `label`: A custom label for assistive devices. (Type: `string`, Default: `''`)
@@ -1490,7 +1755,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-progress-ring>`
 
-**Description:** Progress rings are used to show the progress of a determinate operation in a circular fashion.
+**Description:** Progress rings show how far along a determinate operation is using a circular indicator. Use them as a compact alternative to progress bars when horizontal space is limited.
 
 **Documentation:** https://webawesome.com/docs/components/progress-ring
 
@@ -1500,7 +1765,6 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `styles`)
 - `value`: The current progress as a percentage, 0 to 100. (Type: `number`, Default: `0`)
 - `label`: A custom label for assistive devices. (Type: `string`, Default: `''`)
 
@@ -1522,13 +1786,12 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-qr-code>`
 
-**Description:** Generates a QR code and renders it using the Canvas API.
+**Description:** QR codes encode a URL or other short text into a scannable image, rendered client-side using the Canvas API. Use them to share links, contact info, or Wi-Fi credentials that visitors can scan with a phone.
 
 **Documentation:** https://webawesome.com/docs/components/qr-code
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `styles`)
 - `value`: The QR code's value. (Type: `string`, Default: `''`)
 - `label`: The label for assistive devices to announce. If unspecified, the value will be used instead. (Type: `string`, Default: `''`)
 - `size`: The size of the QR code, in pixels. (Type: `number`, Default: `128`)
@@ -1543,7 +1806,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-radio>`
 
-**Description:** Radios allow the user to select a single option from a group.
+**Description:** Radios represent a single option within a mutually exclusive set. Use them inside a radio group when users must pick exactly one choice from a small list.
 
 **Documentation:** https://webawesome.com/docs/components/radio
 
@@ -1553,10 +1816,9 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `[formControlStyles, sizeStyles, styles]`)
 - `value`: The radio's value. When selected, the radio group will receive this value. (Type: `string`)
 - `appearance`: The radio's visual appearance. (Type: `'default' | 'button'`, Default: `'default'`)
-- `size`: The radio's size. When used inside a radio group, the size will be determined by the radio group's size, which will override this attribute. (Type: `'small' | 'medium' | 'large'`)
+- `size`: The radio's size. When used inside a radio group, the size will be determined by the radio group's size, which will override this attribute. (Type: `'xs' | 's' | 'm' | 'l' | 'xl' | 'small' | 'medium' | 'large'`)
 - `disabled`: Disables the radio. (Type: `boolean`, Default: `false`)
 - `validators`: Validators are static because they have `observedAttributes`, essentially attributes to "watch" for changes. Whenever these attributes change, we want to be notified and update the validator. (Type: `Validator[]`, Default: `[]`)
 - `name`: The name of the input, submitted as a name/value pair with form data. (Type: `string | null`, Default: `null`)
@@ -1592,7 +1854,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-radio-group>`
 
-**Description:** Radio groups are used to group multiple radios so they function as a single form control.
+**Description:** Radio groups wrap a set of radios so they function as a single form control with one shared value. They handle keyboard navigation, labeling, and validation for the group as a whole.
 
 **Documentation:** https://webawesome.com/docs/components/radio-group
 
@@ -1604,7 +1866,6 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `[sizeStyles, formControlStyles, styles]`)
 - `validators`: Validators are static because they have `observedAttributes`, essentially attributes to "watch" for changes. Whenever these attributes change, we want to be notified and update the validator. (Type: `Validator[]`, Default: `[]`)
 - `label`: The radio group's label. Required for proper accessibility. If you need to display HTML, use the `label` slot instead. (Type: `string`, Default: `''`)
 - `hint`: The radio groups's hint. If you need to display HTML, use the `hint` slot instead. (Type: `string`, Default: `''`)
@@ -1613,10 +1874,10 @@ The following is a quick reference describing every component's API. For compreh
 - `orientation`: The orientation in which to show radio items. (Type: `'horizontal' | 'vertical'`, Default: `'vertical'`)
 - `value`: The current value of the radio group, submitted as a name/value pair with form data.
 - `defaultValue` (attribute: `value`): The default value of the form control. Primarily used for resetting the form control. (Type: `string | null`)
-- `size`: The radio group's size. When present, this size will be applied to all `<wa-radio>` items inside. (Type: `'small' | 'medium' | 'large'`)
+- `size`: The radio group's size. When present, this size will be applied to all `<wa-radio>` items inside. (Type: `'xs' | 's' | 'm' | 'l' | 'xl' | 'small' | 'medium' | 'large'`)
 - `required`: Ensures a child radio is checked before allowing the containing form to submit. (Type: `boolean`, Default: `false`)
-- `withLabel` (attribute: `with-label`): Used for SSR. if true, will show slotted label on initial render. (Type: `boolean`, Default: `false`)
-- `withHint` (attribute: `with-hint`): Used for SSR. if true, will show slotted hint on initial render. (Type: `boolean`, Default: `false`)
+- `withLabel` (attribute: `with-label`): Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup includes the label before the component hydrates on the client. (Type: `boolean`, Default: `false`)
+- `withHint` (attribute: `with-hint`): Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup includes the hint before the component hydrates on the client. (Type: `boolean`, Default: `false`)
 - `validationTarget`: We use the first available radio as the validationTarget similar to native HTML that shows the validation popup on the first radio element. (Type: `undefined | HTMLElement`)
 - `form`: By default, form controls are associated with the nearest containing `<form>` element. This attribute allows you to place the form control outside of a form and associate it with the form that has this `id`. The form must be in the same document or shadow root for this to work. (Type: `HTMLFormElement | null`)
 
@@ -1643,31 +1904,38 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-rating>`
 
-**Description:** Ratings give users a way to quickly view and provide feedback.
+**Description:** Ratings display a numeric score as a row of selectable symbols, typically stars. Use them to capture quick feedback or show an average rating for a product or piece of content.
 
 **Documentation:** https://webawesome.com/docs/components/rating
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `[sizeStyles, styles]`)
+- `validators`: Validators are static because they have `observedAttributes`, essentially attributes to "watch" for changes. Whenever these attributes change, we want to be notified and update the validator. (Type: `Validator[]`, Default: `[]`)
+- `name`: The name of the rating, submitted as a name/value pair with form data. (Type: `string | null`, Default: `null`)
 - `label`: A label that describes the rating to assistive devices. (Type: `string`, Default: `''`)
 - `value`: The current rating. (Type: `number`, Default: `0`)
+- `defaultValue` (attribute: `default-value`): The default value of the form control. Used to reset the rating to its initial value. (Type: `number`, Default: `0`)
 - `max`: The highest rating to show. (Type: `number`, Default: `5`)
 - `precision`: The precision at which the rating will increase and decrease. For example, to allow half-star ratings, set this attribute to `0.5`. (Type: `number`, Default: `1`)
 - `readonly`: Makes the rating readonly. (Type: `boolean`, Default: `false`)
 - `disabled`: Disables the rating. (Type: `boolean`, Default: `false`)
+- `required`: Makes the rating a required field. (Type: `boolean`, Default: `false`)
 - `getSymbol`: A function that customizes the symbol to be rendered. The first and only argument is the rating's current value. The function should return a string containing trusted HTML of the symbol to render at the specified value. Works well with `<wa-icon>` elements. (Type: `(value: number, isSelected: boolean) => string`)
-- `size`: The component's size. (Type: `'small' | 'medium' | 'large'`, Default: `'medium'`)
+- `size`: The component's size. (Type: `'xs' | 's' | 'm' | 'l' | 'xl' | 'small' | 'medium' | 'large'`, Default: `'m'`)
+- `form`: By default, form controls are associated with the nearest containing `<form>` element. This attribute allows you to place the form control outside of a form and associate it with the form that has this `id`. The form must be in the same document or shadow root for this to work. (Type: `HTMLFormElement | null`)
+- `validationTarget`: Override this to change where constraint validation popups are anchored. (Type: `undefined | HTMLElement`)
 
 **Methods:**
 
-- `focus(options: FocusOptions)`: Sets focus on the rating.
-- `blur()`: Removes focus from the rating.
+- `setCustomValidity(message: string)`: Do not use this when creating a "Validator". This is intended for end users of components. We track manually defined custom errors so we don't clear them on accident in our validators.
+- `formStateRestoreCallback(state: string | File | FormData | null, reason: 'autocomplete' | 'restore')`: Called when the browser is trying to restore element’s state to state in which case reason is "restore", or when the browser is trying to fulfill autofill on behalf of user in which case reason is "autocomplete". In the case of "restore", state is a string, File, or FormData object previously set as the second argument to setFormValue.
+- `resetValidity()`: Reset validity is a way of removing manual custom errors and native validation.
 
 **Events:**
 
 - `change`: Emitted when the rating's value changes.
 - `wa-hover`: Emitted when the user hovers over a value. The `phase` property indicates when hovering starts, moves to a new value, or ends. The `value` property tells what the rating's value would be if the user were to commit to the hovered value.
+- `wa-invalid`: Emitted when the form control has been checked for validity and its constraints aren't satisfied.
 
 **CSS Custom Properties:**
 
@@ -1681,7 +1949,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-relative-time>`
 
-**Description:** Outputs a localized time phrase relative to the current date and time.
+**Description:** Relative times display a date as a localized phrase relative to now, such as "3 hours ago" or "in 2 days". The phrase updates automatically as time passes and respects the user's locale.
 
 **Documentation:** https://webawesome.com/docs/components/relative-time
 
@@ -1691,11 +1959,10 @@ The following is a quick reference describing every component's API. For compreh
 - `format`: The formatting style to use. (Type: `'long' | 'short' | 'narrow'`, Default: `'long'`)
 - `numeric`: When `auto`, values such as "yesterday" and "tomorrow" will be shown when possible. When `always`, values such as "1 day ago" and "in 1 day" will be shown. (Type: `'always' | 'auto'`, Default: `'auto'`)
 - `sync`: Keep the displayed value up to date as time passes. (Type: `boolean`, Default: `false`)
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`)
 
 #### `<wa-resize-observer>`
 
-**Description:** The Resize Observer component offers a thin, declarative interface to the ResizeObserver API.
+**Description:** Resize observers watch their slotted elements for size changes and emit an event when they occur. Provides a thin, declarative interface to the browser's ResizeObserver API.
 
 **Documentation:** https://webawesome.com/docs/components/resize-observer
 
@@ -1705,7 +1972,6 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `styles`)
 - `disabled`: Disables the observer. (Type: `boolean`, Default: `false`)
 
 **Events:**
@@ -1714,7 +1980,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-scroller>`
 
-**Description:** Scrollers create an accessible container while providing visual cues that help users identify and navigate through content that scrolls.
+**Description:** Scrollers wrap overflowing content in an accessible container with visual cues that help users recognize and navigate scrollable regions.
 
 **Documentation:** https://webawesome.com/docs/components/scroller
 
@@ -1724,7 +1990,6 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `[styles]`)
 - `orientation`: The scroller's orientation. (Type: `'horizontal' | 'vertical'`, Default: `'horizontal'`)
 - `withoutScrollbar` (attribute: `without-scrollbar`): Removes the visible scrollbar. (Type: `boolean`, Default: `false`)
 - `withoutShadow` (attribute: `without-shadow`): Removes the shadows. (Type: `boolean`, Default: `false`)
@@ -1740,7 +2005,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-select>`
 
-**Description:** Selects allow you to choose items from a menu of predefined options.
+**Description:** Selects let users choose one or more values from a dropdown list of predefined options. Use them in forms when a fixed set of choices needs to fit in limited space.
 
 **Documentation:** https://webawesome.com/docs/components/select
 
@@ -1756,12 +2021,11 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `[styles, formControlStyles, sizeStyles]`)
 - `validators`: Validators are static because they have `observedAttributes`, essentially attributes to "watch" for changes. Whenever these attributes change, we want to be notified and update the validator. (Type: `Validator[]`, Default: `[]`)
 - `validationTarget`: Where to anchor native constraint validation (Type: `undefined | HTMLElement`)
 - `name`: The name of the select, submitted as a name/value pair with form data. (Type: `string | null`, Default: `''`)
 - `value`: The select's value. This will be a string for single select or an array for multi-select.
-- `size`: The select's size. (Type: `'small' | 'medium' | 'large'`, Default: `'medium'`)
+- `size`: The select's size. (Type: `'xs' | 's' | 'm' | 'l' | 'xl' | 'small' | 'medium' | 'large'`, Default: `'m'`)
 - `placeholder`: Placeholder text to show as a hint when the select is empty. (Type: `string`, Default: `''`)
 - `multiple`: Allows more than one option to be selected. (Type: `boolean`, Default: `false`)
 - `maxOptionsVisible` (attribute: `max-options-visible`): The maximum number of selected options to show when `multiple` is true. After the maximum, "+n" will be shown to indicate the number of additional items that are selected. Set to 0 to remove the limit. (Type: `number`, Default: `3`)
@@ -1773,8 +2037,8 @@ The following is a quick reference describing every component's API. For compreh
 - `label`: The select's label. If you need to display HTML, use the `label` slot instead. (Type: `string`, Default: `''`)
 - `placement`: The preferred placement of the select's menu. Note that the actual placement may vary as needed to keep the listbox inside of the viewport. (Type: `'top' | 'bottom'`, Default: `'bottom'`)
 - `hint`: The select's hint. If you need to display HTML, use the `hint` slot instead. (Type: `string`, Default: `''`)
-- `withLabel` (attribute: `with-label`): Used for SSR purposes when a label is slotted in. Will show the label on first render. (Type: `boolean`, Default: `false`)
-- `withHint` (attribute: `with-hint`): Used for SSR purposes when hint is slotted in. Will show the hint on first render. (Type: `boolean`, Default: `false`)
+- `withLabel` (attribute: `with-label`): Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup includes the label before the component hydrates on the client. (Type: `boolean`, Default: `false`)
+- `withHint` (attribute: `with-hint`): Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup includes the hint before the component hydrates on the client. (Type: `boolean`, Default: `false`)
 - `required`: The select's required attribute. (Type: `boolean`, Default: `false`)
 - `getTag`: A function that customizes the tags to be rendered when multiple=true. The first argument is the option, the second is the current tag's index.  The function should return either a Lit TemplateResult or a string containing trusted HTML of the symbol to render at the specified value. (Type: `(option: WaOption, index: number) => TemplateResult | string | HTMLElement`)
 - `form`: By default, form controls are associated with the nearest containing `<form>` element. This attribute allows you to place the form control outside of a form and associate it with the form that has this `id`. The form must be in the same document or shadow root for this to work. (Type: `HTMLFormElement | null`)
@@ -1804,8 +2068,8 @@ The following is a quick reference describing every component's API. For compreh
 
 **CSS Custom Properties:**
 
-- `--show-duration`: The duration of the show animation. (Default: `100ms`)
-- `--hide-duration`: The duration of the hide animation. (Default: `100ms`)
+- `--show-duration`: The duration of the show animation. (Default: `var(--wa-transition-fast)`)
+- `--hide-duration`: The duration of the hide animation. (Default: `var(--wa-transition-fast)`)
 - `--tag-max-size`: When using `multiple`, the max size of tags before their content is truncated. (Default: `10ch`)
 
 **CSS Parts:**
@@ -1833,13 +2097,12 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-skeleton>`
 
-**Description:** Skeletons are used to provide a visual representation of where content will eventually be drawn.
+**Description:** Skeletons show placeholder shapes where content will appear once it finishes loading, reducing perceived wait time and preventing layout shift.
 
 **Documentation:** https://webawesome.com/docs/components/skeleton
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `styles`)
 - `effect`: Determines which effect the skeleton will use. (Type: `'pulse' | 'sheen' | 'none'`, Default: `'none'`)
 
 **CSS Custom Properties:**
@@ -1853,7 +2116,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-slider>`
 
-**Description:** Ranges allow the user to select a single value within a given range using a slider.
+**Description:** Sliders let users choose a numeric value within a defined range by dragging a thumb along a track.
 
 **Documentation:** https://webawesome.com/docs/components/slider
 
@@ -1865,7 +2128,6 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `[sizeStyles, formControlStyles, styles]`)
 - `validators`: Validators are static because they have `observedAttributes`, essentially attributes to "watch" for changes. Whenever these attributes change, we want to be notified and update the validator. (Type: `Validator[]`, Default: `[]`)
 - `validationTarget`: Override validation target to point to the focusable element (Type: `undefined | HTMLElement`)
 - `label`: The slider's label. If you need to provide HTML in the label, use the `label` slot instead. (Type: `string`, Default: `''`)
@@ -1880,17 +2142,18 @@ The following is a quick reference describing every component's API. For compreh
 - `disabled`: Disables the slider. (Type: `boolean`, Default: `false`)
 - `readonly`: Makes the slider a read-only field. (Type: `boolean`, Default: `false`)
 - `orientation`: The orientation of the slider. (Type: `'horizontal' | 'vertical'`, Default: `'horizontal'`)
-- `size`: The slider's size. (Type: `'small' | 'medium' | 'large'`, Default: `'medium'`)
+- `size`: The slider's size. (Type: `'xs' | 's' | 'm' | 'l' | 'xl' | 'small' | 'medium' | 'large'`, Default: `'m'`)
 - `indicatorOffset` (attribute: `indicator-offset`): The starting value from which to draw the slider's fill, which is based on its current value. (Type: `number`)
 - `min`: The minimum value allowed. (Type: `number`, Default: `0`)
 - `max`: The maximum value allowed. (Type: `number`, Default: `100`)
 - `step`: The granularity the value must adhere to when incrementing and decrementing. (Type: `number`, Default: `1`)
-- `required`: Makes the slider a required field. (Type: `boolean`, Default: `false`)
 - `autofocus`: Tells the browser to focus the slider when the page loads or a dialog is shown. (Type: `boolean`)
 - `tooltipDistance` (attribute: `tooltip-distance`): The distance of the tooltip from the slider's thumb. (Type: `number`, Default: `8`)
 - `tooltipPlacement` (attribute: `tooltip-placement`): The placement of the tooltip in reference to the slider's thumb. (Type: `'top' | 'right' | 'bottom' | 'left'`, Default: `'top'`)
 - `withMarkers` (attribute: `with-markers`): Draws markers at each step along the slider. (Type: `boolean`, Default: `false`)
 - `withTooltip` (attribute: `with-tooltip`): Draws a tooltip above the thumb when the control has focus or is dragged. (Type: `boolean`, Default: `false`)
+- `withLabel` (attribute: `with-label`): Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup includes the label before the component hydrates on the client. (Type: `boolean`, Default: `false`)
+- `withHint` (attribute: `with-hint`): Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup includes the hint before the component hydrates on the client. (Type: `boolean`, Default: `false`)
 - `valueFormatter`: A custom formatting function to apply to the value. This will be shown in the tooltip and announced by screen readers. Must be set with JavaScript. Property only. (Type: `(value: number) => string`)
 - `form`: By default, form controls are associated with the nearest containing `<form>` element. This attribute allows you to place the form control outside of a form and associate it with the form that has this `id`. The form must be in the same document or shadow root for this to work. (Type: `HTMLFormElement | null`)
 
@@ -1948,13 +2211,9 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-spinner>`
 
-**Description:** Spinners are used to show the progress of an indeterminate operation.
+**Description:** Spinners indicate that an operation is in progress when the duration is unknown. Use them for loading states where a determinate progress bar isn't practical.
 
 **Documentation:** https://webawesome.com/docs/components/spinner
-
-**Properties:**
-
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `styles`)
 
 **CSS Custom Properties:**
 
@@ -1969,7 +2228,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-split-panel>`
 
-**Description:** Split panels display two adjacent panels, allowing the user to reposition them.
+**Description:** Split panels display two adjacent panels separated by a draggable divider, letting users resize each side to suit their workflow.
 
 **Documentation:** https://webawesome.com/docs/components/split-panel
 
@@ -1981,7 +2240,6 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `styles`)
 - `position`: The current position of the divider from the primary panel's edge as a percentage 0-100. Defaults to 50% of the container's initial size. (Type: `number`, Default: `50`)
 - `positionInPixels` (attribute: `position-in-pixels`): The current position of the divider from the primary panel's edge in pixels. (Type: `number`)
 - `orientation`: Sets the split panel's orientation. (Type: `'horizontal' | 'vertical'`, Default: `'horizontal'`)
@@ -2010,7 +2268,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-switch>`
 
-**Description:** Switches allow the user to toggle an option on or off.
+**Description:** Switches toggle a single setting on or off and apply the change immediately, without requiring a form submission.
 
 **Documentation:** https://webawesome.com/docs/components/switch
 
@@ -2021,17 +2279,16 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `[formControlStyles, sizeStyles, styles]`)
 - `validators`: Validators are static because they have `observedAttributes`, essentially attributes to "watch" for changes. Whenever these attributes change, we want to be notified and update the validator. (Type: `Validator[]`, Default: `[]`)
 - `name`: The name of the switch, submitted as a name/value pair with form data. (Type: `string | null`, Default: `null`)
 - `value`: The value of the switch, submitted as a name/value pair with form data. (Type: `string | null`)
-- `size`: The switch's size. (Type: `'small' | 'medium' | 'large'`, Default: `'medium'`)
+- `size`: The switch's size. (Type: `'xs' | 's' | 'm' | 'l' | 'xl' | 'small' | 'medium' | 'large'`, Default: `'m'`)
 - `disabled`: Disables the switch. (Type: `boolean`, Default: `false`)
 - `checked`: Draws the checkbox in a checked state.
 - `defaultChecked` (attribute: `checked`): The default value of the form control. Primarily used for resetting the form control. (Type: `boolean`)
 - `required`: Makes the switch a required field. (Type: `boolean`, Default: `false`)
 - `hint`: The switch's hint. If you need to display HTML, use the `hint` slot instead. (Type: `string`, Default: `''`)
-- `withHint` (attribute: `with-hint`): Used for SSR. If you slot in hint, make sure to add `with-hint` to your component to get it to properly render with SSR. (Type: `boolean`, Default: `false`)
+- `withHint` (attribute: `with-hint`): Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup includes the hint before the component hydrates on the client. (Type: `boolean`, Default: `false`)
 - `form`: By default, form controls are associated with the nearest containing `<form>` element. This attribute allows you to place the form control outside of a form and associate it with the form that has this `id`. The form must be in the same document or shadow root for this to work. (Type: `HTMLFormElement | null`)
 - `validationTarget`: Override this to change where constraint validation popups are anchored. (Type: `undefined | HTMLElement`)
 
@@ -2068,7 +2325,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-tab>`
 
-**Description:** Tabs are used inside tab groups to represent and activate tab panels.
+**Description:** Tabs label and activate an individual panel inside a tab group.
 
 **Documentation:** https://webawesome.com/docs/components/tab
 
@@ -2078,7 +2335,6 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `styles`)
 - `panel`: The name of the tab panel this tab is associated with. The panel must be located in the same tab group. (Type: `string`, Default: `''`)
 - `disabled`: Disables the tab and prevents selection. (Type: `boolean`, Default: `false`)
 
@@ -2088,7 +2344,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-tab-group>`
 
-**Description:** Tab groups organize content into a container that shows one section at a time.
+**Description:** Tab groups organize related content into a single container that displays one panel at a time, with tabs for switching between them.
 
 **Documentation:** https://webawesome.com/docs/components/tab-group
 
@@ -2099,7 +2355,7 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `styles`)
+- `defaultSlot`: Default slot for `<wa-tab-panel>` children (inside the `body` part container). (Type: `HTMLSlotElement`)
 - `active`: Sets the active tab. (Type: `string`, Default: `''`)
 - `placement`: The placement of the tabs. (Type: `'top' | 'bottom' | 'start' | 'end'`, Default: `'top'`)
 - `activation`: When set to auto, navigating tabs with the arrow keys will instantly show the corresponding tab panel. When set to manual, the tab will receive focus but will not show until the user presses spacebar or enter. (Type: `'auto' | 'manual'`, Default: `'auto'`)
@@ -2129,7 +2385,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-tab-panel>`
 
-**Description:** Tab panels are used inside tab groups to display tabbed content.
+**Description:** Tab panels hold the content shown for a single tab inside a tab group.
 
 **Documentation:** https://webawesome.com/docs/components/tab-panel
 
@@ -2139,7 +2395,6 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `styles`)
 - `name`: The tab panel's name. (Type: `string`, Default: `''`)
 - `active`: When true, the tab panel will be shown. (Type: `boolean`, Default: `false`)
 
@@ -2153,7 +2408,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-tag>`
 
-**Description:** Tags are used as labels to organize things or to indicate a selection.
+**Description:** Tags label, categorize, or represent selections with a compact visual marker. Use them for status indicators, filters, or removable chips.
 
 **Documentation:** https://webawesome.com/docs/components/tag
 
@@ -2163,10 +2418,9 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `[styles, variantStyles, sizeStyles]`)
 - `variant`: The tag's theme variant. Defaults to `neutral` if not within another element with a variant. (Type: `'brand' | 'neutral' | 'success' | 'warning' | 'danger'`, Default: `'neutral'`)
 - `appearance`: The tag's visual appearance. (Type: `'accent' | 'filled' | 'outlined' | 'filled-outlined'`, Default: `'filled-outlined'`)
-- `size`: The tag's size. (Type: `'small' | 'medium' | 'large'`, Default: `'medium'`)
+- `size`: The tag's size. (Type: `'xs' | 's' | 'm' | 'l' | 'xl' | 'small' | 'medium' | 'large'`, Default: `'m'`)
 - `pill`: Draws a pill-style tag with rounded edges. (Type: `boolean`, Default: `false`)
 - `withRemove` (attribute: `with-remove`): Makes the tag removable and shows a remove button. (Type: `boolean`, Default: `false`)
 
@@ -2183,7 +2437,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-textarea>`
 
-**Description:** Textareas collect data from the user and allow multiple lines of text.
+**Description:** Textareas collect multi-line text input from the user, with optional resizing and character counting.
 
 **Documentation:** https://webawesome.com/docs/components/textarea
 
@@ -2194,12 +2448,11 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `[styles, formControlStyles, sizeStyles]`)
 - `validators`: Validators are static because they have `observedAttributes`, essentially attributes to "watch" for changes. Whenever these attributes change, we want to be notified and update the validator. (Type: `Validator[]`, Default: `[]`)
 - `name`: The name of the textarea, submitted as a name/value pair with form data. (Type: `string | null`, Default: `null`)
 - `value`: The current value of the input, submitted as a name/value pair with form data.
 - `defaultValue` (attribute: `value`): The default value of the form control. Primarily used for resetting the form control. (Type: `string`)
-- `size`: The textarea's size. (Type: `'small' | 'medium' | 'large'`, Default: `'medium'`)
+- `size`: The textarea's size. (Type: `'xs' | 's' | 'm' | 'l' | 'xl' | 'small' | 'medium' | 'large'`, Default: `'m'`)
 - `appearance`: The textarea's visual appearance. (Type: `'filled' | 'outlined' | 'filled-outlined'`, Default: `'outlined'`)
 - `label`: The textarea's label. If you need to display HTML, use the `label` slot instead. (Type: `string`, Default: `''`)
 - `hint`: The textarea's hint. If you need to display HTML, use the `hint` slot instead. (Type: `string`, Default: `''`)
@@ -2212,14 +2465,15 @@ The following is a quick reference describing every component's API. For compreh
 - `minlength`: The minimum length of input that will be considered valid. (Type: `number`)
 - `maxlength`: The maximum length of input that will be considered valid. (Type: `number`)
 - `autocapitalize`: Controls whether and how text input is automatically capitalized as it is entered by the user. (Type: `'off' | 'none' | 'on' | 'sentences' | 'words' | 'characters'`)
-- `autocorrect`: Indicates whether the browser's autocorrect feature is on or off. (Type: `string`)
+- `autocorrect`: Indicates whether the browser's autocorrect feature is on or off. When set as an attribute, use `"off"` or `"on"`. When set as a property, use `true` or `false`. (Type: `boolean`)
 - `autocomplete`: Specifies what permission the browser has to provide assistance in filling out form field values. Refer to [this page on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) for available values. (Type: `string`)
 - `autofocus`: Indicates that the input should receive focus on page load. (Type: `boolean`)
 - `enterkeyhint`: Used to customize the label or icon of the Enter key on virtual keyboards. (Type: `'enter' | 'done' | 'go' | 'next' | 'previous' | 'search' | 'send'`)
 - `spellcheck`: Enables spell checking on the textarea. (Type: `boolean`, Default: `true`)
 - `inputmode`: Tells the browser what type of data will be entered by the user, allowing it to display the appropriate virtual keyboard on supportive devices. (Type: `'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url'`)
-- `withLabel` (attribute: `with-label`): Used for SSR. If you're slotting in a `label` element, make sure to set this to `true`. (Type: `boolean`, Default: `false`)
-- `withHint` (attribute: `with-hint`): Used for SSR. If you're slotting in a `hint` element, make sure to set this to `true`. (Type: `boolean`, Default: `false`)
+- `withLabel` (attribute: `with-label`): Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup includes the label before the component hydrates on the client. (Type: `boolean`, Default: `false`)
+- `withHint` (attribute: `with-hint`): Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup includes the hint before the component hydrates on the client. (Type: `boolean`, Default: `false`)
+- `withCount` (attribute: `with-count`): Shows a character count below the textarea. When `maxlength` is set, shows remaining characters instead. (Type: `boolean`, Default: `false`)
 - `form`: By default, form controls are associated with the nearest containing `<form>` element. This attribute allows you to place the form control outside of a form and associate it with the form that has this `id`. The form must be in the same document or shadow root for this to work. (Type: `HTMLFormElement | null`)
 - `validationTarget`: Override this to change where constraint validation popups are anchored. (Type: `undefined | HTMLElement`)
 
@@ -2250,14 +2504,122 @@ The following is a quick reference describing every component's API. For compreh
 - `hint`: The hint's wrapper.
 - `textarea`: The internal `<textarea>` control.
 - `base`: The wrapper around the `<textarea>` control.
+- `count`: The character count element, rendered when the `with-count` attribute is present.
 
 **CSS States:**
 
 - `blank`: The textarea is empty.
 
+#### `<wa-time-input>`
+
+**Description:** Time pickers let users enter a time through a segmented field or select one visually from a popup column picker. They support 12- and 24-hour formats, optional seconds, and locale-aware segment order.
+
+**Documentation:** https://webawesome.com/docs/components/time-input
+
+**Slots:**
+
+- `label`: The time picker's label. Alternatively, use the `label` attribute.
+- `hint`: Text that describes how to use the time picker. Alternatively, use the `hint` attribute.
+- `start`: An element placed at the start of the input.
+- `end`: An element placed at the end of the input.
+- `clear-icon`: An icon to use in lieu of the default clear icon.
+- `expand-icon`: The icon to show on the popup toggle button. Defaults to a clock icon.
+- `footer`: Content shown below the column picker in the popup. Replaces the default Now button when present.
+
+**Properties:**
+
+- `validators`: Validators are static because they have `observedAttributes`, essentially attributes to "watch" for changes. Whenever these attributes change, we want to be notified and update the validator. (Type: `Validator[]`, Default: `[]`)
+- `assumeInteractionOn`: Every segment edit dispatches `input`, so a single observed `input` event marks the field as interacted with. (Type: `string[]`, Default: `['input']`)
+- `validationTarget`: Override this to change where constraint validation popups are anchored. (Type: `undefined | HTMLElement`)
+- `name`: The time picker's name, submitted as a name/value pair with form data. (Type: `string | null`, Default: `''`)
+- `value`: The time picker's value as a wire-format string matching HTML `<input type="time">`: `HH:mm`, `HH:mm:ss`, or `HH:mm:ss.sss` (always 24-hour). The setter also accepts a `Date` (extracts local h/m/s) or `null`. (Type: `string`)
+- `defaultValue` (attribute: `value`): The default value of the form control. Used for form reset. (Type: `string`)
+- `disabled`: Disables the time picker. (Type: `boolean`, Default: `false`)
+- `required`: Makes the time picker required for form submission. (Type: `boolean`, Default: `false`)
+- `readonly`: Makes the input non-editable. The popup still opens for browsing. (Type: `boolean`, Default: `false`)
+- `size`: The time picker's size. (Type: `WaTimeInputSize | 'small' | 'medium' | 'large'`, Default: `'m'`)
+- `appearance`: The time picker's visual appearance. (Type: `'filled' | 'outlined' | 'filled-outlined'`, Default: `'outlined'`)
+- `pill`: Draws a pill-style time picker with rounded edges. (Type: `boolean`, Default: `false`)
+- `label`: The time picker's label. If you need to display HTML, use the `label` slot instead. (Type: `string`, Default: `''`)
+- `hint`: The time picker's hint. If you need to display HTML, use the `hint` slot instead. (Type: `string`, Default: `''`)
+- `autocomplete`: Forwarded to the hidden form input to enable browser autofill (`on`/`off`/custom tokens). (Type: `string`, Default: `''`)
+- `withClear` (attribute: `with-clear`): Shows a clear button when the time picker has a value. (Type: `boolean`, Default: `false`)
+- `withNow` (attribute: `with-now`): Renders a "Now" button in the popup footer. (Type: `boolean`, Default: `false`)
+- `withLabel` (attribute: `with-label`): Only required for SSR. Set to `true` if you're slotting in a `label` element. (Type: `boolean`, Default: `false`)
+- `withHint` (attribute: `with-hint`): Only required for SSR. Set to `true` if you're slotting in a `hint` element. (Type: `boolean`, Default: `false`)
+- `min`: The earliest selectable time in wire format. May be later than `max` to represent an overnight range. The picker delegates reversed-range semantics to the mirrored native `<input type="time">`. (Type: `string`, Default: `''`)
+- `max`: The latest selectable time in wire format. (Type: `string`, Default: `''`)
+- `step`: The granularity, in seconds, matching HTML `<input type="time">`. Default `60` hides the seconds segment. Values below 60 reveal the seconds segment. `'any'` disables `stepMismatch` enforcement. (Type: `number | 'any'`, Default: `60`)
+- `hourFormat` (attribute: `hour-format`): Whether the UI uses a 12-hour or 24-hour clock. `auto` follows the resolved locale. (Type: `WaTimeInputHourFormat`, Default: `'auto'`)
+- `open`: Whether the popup is open. (Type: `boolean`, Default: `false`)
+- `placement`: Preferred popup placement. (Type: `WaTimeInputPlacement`, Default: `'bottom-start'`)
+- `distance`: Distance in pixels between the popup and the input. (Type: `number`, Default: `0`)
+- `valueAsDate`: The time as a `Date` (today + wire value), or `null` when empty. (Type: `Date | null`)
+- `valueAsNumber`: Milliseconds since midnight, or `NaN` when empty. (Type: `number`)
+- `form`: By default, form controls are associated with the nearest containing `<form>` element. This attribute allows you to place the form control outside of a form and associate it with the form that has this `id`. The form must be in the same document or shadow root for this to work. (Type: `HTMLFormElement | null`)
+
+**Methods:**
+
+- `focus(options: FocusOptions)`: Sets focus on the first empty (else first) segment.
+- `blur()`: Removes focus from the time picker.
+- `show()`: Opens the popup.
+- `hide()`: Closes the popup.
+- `formStateRestoreCallback(state: string | File | FormData | null)`: Called when the browser is trying to restore element’s state to state in which case reason is "restore", or when the browser is trying to fulfill autofill on behalf of user in which case reason is "autocomplete". In the case of "restore", state is a string, File, or FormData object previously set as the second argument to setFormValue.
+- `setCustomValidity(message: string)`: Do not use this when creating a "Validator". This is intended for end users of components. We track manually defined custom errors so we don't clear them on accident in our validators.
+- `resetValidity()`: Reset validity is a way of removing manual custom errors and native validation.
+
+**Events:**
+
+- `input`: Emitted as the user types into a segment or interacts with the popup columns.
+- `change`: Emitted when the committed value changes.
+- `focus`: Emitted when the control receives focus.
+- `blur`: Emitted when the control loses focus.
+- `wa-clear`: Emitted when the clear button is activated.
+- `wa-show`: Emitted when the popup is about to open. Cancelable.
+- `wa-after-show`: Emitted after the popup opens and animations complete.
+- `wa-hide`: Emitted when the popup is about to close. Cancelable.
+- `wa-after-hide`: Emitted after the popup closes and animations complete.
+- `wa-invalid`: Emitted when the form control has been checked for validity and its constraints aren't satisfied.
+
+**CSS Custom Properties:**
+
+- `--show-duration`: The duration of the show animation. (Default: `var(--wa-transition-fast)`)
+- `--hide-duration`: The duration of the hide animation. (Default: `var(--wa-transition-fast)`)
+- `--column-item-height`: Height of each option inside a popup column. (Default: `2.25em`)
+- `--column-width`: Width of each popup column. (Default: `3em`)
+
+**CSS Parts:**
+
+- `form-control`: The form control that wraps the label, input, and hint.
+- `form-control-label`: The label's wrapper.
+- `form-control-input`: The input's wrapper.
+- `hint`: The hint's wrapper.
+- `base`: The component's base wrapper.
+- `input-wrapper`: The container around the start slot, segmented input, clear button, and expand button.
+- `start`: The container that wraps the `start` slot.
+- `end`: The container that wraps the `end` slot.
+- `input`: The segmented input group.
+- `segment`: Each editable segment (hour/minute/second/AM-PM spinbutton). Use `[part~="segment"]` to style all.
+- `segment-literal`: Inert literal text between segments (separators).
+- `clear-button`: The clear button.
+- `expand-button`: The popup toggle button.
+- `expand-icon`: The expand icon wrapper.
+- `popup`: The popup container.
+- `columns`: The row of column listboxes inside the popup.
+- `column`: Each column listbox.
+- `column-item`: Each option inside a column.
+- `column-item-selected`: The currently selected option inside a column.
+- `now-button`: The default "Now" button rendered in the popup footer when `with-now` is set.
+
+**CSS States:**
+
+- `blank`: The time picker has no committed value.
+- `open`: The popup is open.
+- `disabled`: The time picker is disabled.
+
 #### `<wa-tooltip>`
 
-**Description:** Tooltips display additional information based on a specific action.
+**Description:** Tooltips display brief contextual information when the user hovers, focuses, or taps a target element.
 
 **Documentation:** https://webawesome.com/docs/components/tooltip
 
@@ -2267,7 +2629,6 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `styles`)
 - `placement`: The preferred placement of the tooltip. Note that the actual placement may vary as needed to keep the tooltip inside of the viewport. (Type: `| 'top'     | 'top-start'     | 'top-end'     | 'right'     | 'right-start'     | 'right-end'     | 'bottom'     | 'bottom-start'     | 'bottom-end'     | 'left'     | 'left-start'     | 'left-end'`, Default: `'top'`)
 - `disabled`: Disables the tooltip so it won't show when triggered. (Type: `boolean`, Default: `false`)
 - `distance`: The distance in pixels from which to offset the tooltip away from its target. (Type: `number`, Default: `8`)
@@ -2315,8 +2676,7 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `styles`)
-- `selection`: The selection behavior of the tree. Single selection allows only one node to be selected at a time. Multiple displays checkboxes and allows more than one node to be selected. Leaf allows only leaf nodes to be selected. (Type: `'single' | 'multiple' | 'leaf'`, Default: `'single'`)
+- `selection`: The selection behavior of the tree. Single selection allows only one node to be selected at a time. Multiple displays checkboxes and allows more than one node to be selected. Leaf allows only leaf nodes to be selected. Leaf-multiple allows multiple leaf nodes to be selected while parent nodes only expand and collapse. (Type: `'single' | 'multiple' | 'leaf' | 'leaf-multiple'`, Default: `'single'`)
 
 **Events:**
 
@@ -2336,7 +2696,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-tree-item>`
 
-**Description:** A tree item serves as a hierarchical node that lives inside a tree.
+**Description:** Tree items represent a single hierarchical node inside a tree, and can contain nested items that expand and collapse.
 
 **Documentation:** https://webawesome.com/docs/components/tree-item
 
@@ -2348,7 +2708,6 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `styles`)
 - `expanded`: Expands the tree item. (Type: `boolean`, Default: `false`)
 - `selected`: Draws the tree item in a selected state. (Type: `boolean`, Default: `false`)
 - `disabled`: Disables the tree item. (Type: `boolean`, Default: `false`)
@@ -2369,8 +2728,8 @@ The following is a quick reference describing every component's API. For compreh
 
 **CSS Custom Properties:**
 
-- `--show-duration`: The animation duration when expanding tree items. (Default: `200ms`)
-- `--hide-duration`: The animation duration when collapsing tree items. (Default: `200ms`)
+- `--show-duration`: The animation duration when expanding tree items. (Default: `var(--wa-transition-normal)`)
+- `--hide-duration`: The animation duration when collapsing tree items. (Default: `var(--wa-transition-normal)`)
 
 **CSS Parts:**
 
@@ -2398,7 +2757,7 @@ The following is a quick reference describing every component's API. For compreh
 
 #### `<wa-zoomable-frame>`
 
-**Description:** Zoomable frames render iframe content with zoom and interaction controls.
+**Description:** Zoomable frames embed iframe content with built-in controls for zooming, panning, and managing interaction.
 
 **Documentation:** https://webawesome.com/docs/components/zoomable-frame
 
@@ -2409,7 +2768,6 @@ The following is a quick reference describing every component's API. For compreh
 
 **Properties:**
 
-- `css`: One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. (Type: `CSSResultGroup | undefined`, Default: `styles`)
 - `src`: The URL of the content to display. (Type: `string`)
 - `srcdoc`: Inline HTML to display. (Type: `string`)
 - `allowfullscreen`: Allows fullscreen mode. (Type: `boolean`, Default: `false`)
@@ -2420,6 +2778,7 @@ The following is a quick reference describing every component's API. For compreh
 - `zoomLevels` (attribute: `zoom-levels`): The zoom levels to step through when using zoom controls. This does not restrict programmatic changes to the zoom. (Type: `string`, Default: `'25% 50% 75% 100% 125% 150% 175% 200%'`)
 - `withoutControls` (attribute: `without-controls`): Removes the zoom controls. (Type: `boolean`, Default: `false`)
 - `withoutInteraction` (attribute: `without-interaction`): Disables interaction when present. (Type: `boolean`, Default: `false`)
+- `withThemeSync` (attribute: `with-theme-sync`): Enables automatic theme syncing (light/dark mode and theme selector classes) from the host document to the iframe. (Type: `boolean`, Default: `false`)
 - `contentWindow`: Returns the internal iframe's `window` object. (Readonly property) (Type: `Window | null`)
 - `contentDocument`: Returns the internal iframe's `document` object. (Readonly property) (Type: `Document | null`)
 

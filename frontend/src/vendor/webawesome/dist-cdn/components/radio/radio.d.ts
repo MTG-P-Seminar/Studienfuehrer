@@ -2,7 +2,8 @@ import type { PropertyValues } from 'lit';
 import { WebAwesomeFormAssociatedElement } from '../../internal/webawesome-form-associated-element.js';
 import '../icon/icon.js';
 /**
- * @summary Radios allow the user to select a single option from a group.
+ * @summary Radios represent a single option within a mutually exclusive set. Use them inside a radio group when users
+ *  must pick exactly one choice from a small list.
  * @documentation https://webawesome.com/docs/components/radio
  * @status stable
  * @since 2.0
@@ -37,7 +38,8 @@ export default class WaRadio extends WebAwesomeFormAssociatedElement {
      * The radio's size. When used inside a radio group, the size will be determined by the radio group's size, which will
      * override this attribute.
      */
-    size: 'small' | 'medium' | 'large';
+    size: 'xs' | 's' | 'm' | 'l' | 'xl' | 'small' | 'medium' | 'large';
+    handleSizeChange(): void;
     /** Disables the radio. */
     disabled: boolean;
     constructor();

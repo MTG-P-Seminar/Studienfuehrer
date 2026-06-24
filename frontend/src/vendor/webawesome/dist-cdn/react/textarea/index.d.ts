@@ -3,7 +3,7 @@ import { type EventName } from '@lit/react';
 import type { WaInvalidEvent } from '../../events/events.js';
 export type { WaInvalidEvent } from '../../events/events.js';
 /**
- * @summary Textareas collect data from the user and allow multiple lines of text.
+ * @summary Textareas collect multi-line text input from the user, with optional resizing and character counting.
  * @documentation https://webawesome.com/docs/components/textarea
  * @status stable
  * @since 2.0
@@ -22,6 +22,7 @@ export type { WaInvalidEvent } from '../../events/events.js';
  * @csspart hint - The hint's wrapper.
  * @csspart textarea - The internal `<textarea>` control.
  * @csspart base - The wrapper around the `<textarea>` control.
+ * @csspart count - The character count element, rendered when the `with-count` attribute is present.
  *
  * @cssstate blank - The textarea is empty.
  */

@@ -2,172 +2,569 @@
 
 **Full documentation:** https://webawesome.com/docs/tokens/color
 
-Web Awesome's color system is made up of CSS custom properties to help with consistent color use throughout your project.
+Design Tokens Color
 
-Color is organized by three main categories:
+Web Awesome's color system is made up of three layers: a [color palette](https://webawesome.com/docs/color-palettes) that gives you a full spectrum of hues, [variant colors](#variant-colors) that define semantic color variations (like success and danger), and [colors for themed elements](#color-for-themed-elements) that apply specific tints from your palette and variant colors to the elements that make up a theme.
 
--   [Color scales](#color-scales) that gives you a full spectrum of hues to work with
--   [Foundational colors](#foundational-colors) that lay the groundwork for your theme
--   [Semantic colors](#semantic-colors) that draw attention and convey meaning
+For an overview of how theming works across the library, see [Theming](https://webawesome.com/docs/theming-overview) .
 
-## Color Scales
+## Color Palette
 
-Color scales are determined by your [color palette](https://webawesome.com/docs/color-palettes) and are made up of the lowest level color tokens in your theme. Each token is identified by a name, like red or gray, and numerical tint based on the color's lightness. On this scale, 100 is equal to pure white and 0 is equal to pure black.
+Link to This Section
 
-You can use these tints to ensure accessible color contrast per [WCAG 2.1 success criteria](https://www.w3.org/TR/WCAG21/#contrast-minimum):
+[Color palettes](https://webawesome.com/docs/color-palettes) give you a full spectrum of colors to use in your project and are the lowest-level color tokens. Each color palette includes 10 different hues, each with 11 numeric tints that make up a color scale from light to dark — `95` is near white, `05` is near black.
 
--   A difference of 40 ensures a minimum 3:1 contrast ratio, suitable for large text and icons (AA)
--   A difference of 50 ensures a minimum 4.5:1 contrast ratio, suitable for normal text (AA) and large text (AAA)
--   A difference of 60 ensures a minimum 7:1 contrast ratio, suitable for all text (AAA)
+These numeric tints help ensure accessible color contrast per [WCAG 2.1 success criteria](https://www.w3.org/TR/WCAG21/#contrast-minimum):
 
-You have several hand-crafted [color palettes](https://webawesome.com/docs/color-palettes) to choose from. Each palette defines 10 hues each with a scale of 11 tints using the format `--wa-color-{hue}-{tint}`.
+-   A difference of 40 provides a minimum 3:1 contrast ratio, suitable for large text and icons (AA)
+-   A difference of 50 provides a minimum 4.5:1 contrast ratio, suitable for normal text (AA) and large text (AAA)
+-   A difference of 60 provides a minimum 7:1 contrast ratio, suitable for all text (AAA)
 
 Red
 
-\`--wa-color-red-95\`, \`--wa-color-red-90\`, \`--wa-color-red-80\`, \`--wa-color-red-70\`, \`--wa-color-red-60\`, \`--wa-color-red-50\`, \`--wa-color-red-40\`, \`--wa-color-red-30\`, \`--wa-color-red-20\`, \`--wa-color-red-10\`, \`--wa-color-red-05\`
+`--wa-color-red-*`
+
+95
+
+90
+
+80
+
+70
+
+60
+
+50
+
+40
+
+30
+
+20
+
+10
+
+05
 
 Orange
 
-\`--wa-color-orange-95\`, \`--wa-color-orange-90\`, \`--wa-color-orange-80\`, \`--wa-color-orange-70\`, \`--wa-color-orange-60\`, \`--wa-color-orange-50\`, \`--wa-color-orange-40\`, \`--wa-color-orange-30\`, \`--wa-color-orange-20\`, \`--wa-color-orange-10\`, \`--wa-color-orange-05\`
+`--wa-color-orange-*`
+
+95
+
+90
+
+80
+
+70
+
+60
+
+50
+
+40
+
+30
+
+20
+
+10
+
+05
 
 Yellow
 
-\`--wa-color-yellow-95\`, \`--wa-color-yellow-90\`, \`--wa-color-yellow-80\`, \`--wa-color-yellow-70\`, \`--wa-color-yellow-60\`, \`--wa-color-yellow-50\`, \`--wa-color-yellow-40\`, \`--wa-color-yellow-30\`, \`--wa-color-yellow-20\`, \`--wa-color-yellow-10\`, \`--wa-color-yellow-05\`
+`--wa-color-yellow-*`
+
+95
+
+90
+
+80
+
+70
+
+60
+
+50
+
+40
+
+30
+
+20
+
+10
+
+05
 
 Green
 
-\`--wa-color-green-95\`, \`--wa-color-green-90\`, \`--wa-color-green-80\`, \`--wa-color-green-70\`, \`--wa-color-green-60\`, \`--wa-color-green-50\`, \`--wa-color-green-40\`, \`--wa-color-green-30\`, \`--wa-color-green-20\`, \`--wa-color-green-10\`, \`--wa-color-green-05\`
+`--wa-color-green-*`
+
+95
+
+90
+
+80
+
+70
+
+60
+
+50
+
+40
+
+30
+
+20
+
+10
+
+05
 
 Cyan
 
-\`--wa-color-cyan-95\`, \`--wa-color-cyan-90\`, \`--wa-color-cyan-80\`, \`--wa-color-cyan-70\`, \`--wa-color-cyan-60\`, \`--wa-color-cyan-50\`, \`--wa-color-cyan-40\`, \`--wa-color-cyan-30\`, \`--wa-color-cyan-20\`, \`--wa-color-cyan-10\`, \`--wa-color-cyan-05\`
+`--wa-color-cyan-*`
+
+95
+
+90
+
+80
+
+70
+
+60
+
+50
+
+40
+
+30
+
+20
+
+10
+
+05
 
 Blue
 
-\`--wa-color-blue-95\`, \`--wa-color-blue-90\`, \`--wa-color-blue-80\`, \`--wa-color-blue-70\`, \`--wa-color-blue-60\`, \`--wa-color-blue-50\`, \`--wa-color-blue-40\`, \`--wa-color-blue-30\`, \`--wa-color-blue-20\`, \`--wa-color-blue-10\`, \`--wa-color-blue-05\`
+`--wa-color-blue-*`
+
+95
+
+90
+
+80
+
+70
+
+60
+
+50
+
+40
+
+30
+
+20
+
+10
+
+05
 
 Indigo
 
-\`--wa-color-indigo-95\`, \`--wa-color-indigo-90\`, \`--wa-color-indigo-80\`, \`--wa-color-indigo-70\`, \`--wa-color-indigo-60\`, \`--wa-color-indigo-50\`, \`--wa-color-indigo-40\`, \`--wa-color-indigo-30\`, \`--wa-color-indigo-20\`, \`--wa-color-indigo-10\`, \`--wa-color-indigo-05\`
+`--wa-color-indigo-*`
+
+95
+
+90
+
+80
+
+70
+
+60
+
+50
+
+40
+
+30
+
+20
+
+10
+
+05
 
 Purple
 
-\`--wa-color-purple-95\`, \`--wa-color-purple-90\`, \`--wa-color-purple-80\`, \`--wa-color-purple-70\`, \`--wa-color-purple-60\`, \`--wa-color-purple-50\`, \`--wa-color-purple-40\`, \`--wa-color-purple-30\`, \`--wa-color-purple-20\`, \`--wa-color-purple-10\`, \`--wa-color-purple-05\`
+`--wa-color-purple-*`
+
+95
+
+90
+
+80
+
+70
+
+60
+
+50
+
+40
+
+30
+
+20
+
+10
+
+05
 
 Pink
 
-\`--wa-color-pink-95\`, \`--wa-color-pink-90\`, \`--wa-color-pink-80\`, \`--wa-color-pink-70\`, \`--wa-color-pink-60\`, \`--wa-color-pink-50\`, \`--wa-color-pink-40\`, \`--wa-color-pink-30\`, \`--wa-color-pink-20\`, \`--wa-color-pink-10\`, \`--wa-color-pink-05\`
+`--wa-color-pink-*`
+
+95
+
+90
+
+80
+
+70
+
+60
+
+50
+
+40
+
+30
+
+20
+
+10
+
+05
 
 Gray
 
-\`--wa-color-gray-95\`, \`--wa-color-gray-90\`, \`--wa-color-gray-80\`, \`--wa-color-gray-70\`, \`--wa-color-gray-60\`, \`--wa-color-gray-50\`, \`--wa-color-gray-40\`, \`--wa-color-gray-30\`, \`--wa-color-gray-20\`, \`--wa-color-gray-10\`, \`--wa-color-gray-05\`
+`--wa-color-gray-*`
 
-### Semantic Scales
+95
 
-Any hue can be mapped to `brand`, `neutral`, `success`, `warning`, and `danger` scales. Like the tokens in a color scale, each token is identified by its semantic group and a numerical tint using the format `--wa-color-{group}-{tint}`.
+90
+
+80
+
+70
+
+60
+
+50
+
+40
+
+30
+
+20
+
+10
+
+05
+
+### Core Colors
+
+Link to This Section
+
+In addition to numeric tints, each hue has a _core color_ — the most colorful, vibrant tint in the scale. The exact tint varies by palette. Use `--wa-color-{hue}` when you want a representative color for a hue without specifying a tint.
+
+The tint for each core color is stored as an integer in `--wa-color-{hue}-key`. These tokens are used internally to determine a compatible text color when using the core color as a background and are not used directly by components.
+
+Using this key, the color system derives a paired _on color_ guaranteed to meet WCAG 2.1 AA contrast when placed on top of the corresponding core color. If the core tint is light (≥ 60), the on color is a dark shade of that hue; otherwise it is white. Use `--wa-color-{hue}-on` any time you render text or icons on a core color background.
+
+| Core Color | Key | On Color |
+| --- | --- | --- |
+| \`--wa-color-red\` | \`--wa-color-red-key\` | \`--wa-color-red-on\` |
+| \`--wa-color-orange\` | \`--wa-color-orange-key\` | \`--wa-color-orange-on\` |
+| \`--wa-color-yellow\` | \`--wa-color-yellow-key\` | \`--wa-color-yellow-on\` |
+| \`--wa-color-green\` | \`--wa-color-green-key\` | \`--wa-color-green-on\` |
+| \`--wa-color-cyan\` | \`--wa-color-cyan-key\` | \`--wa-color-cyan-on\` |
+| \`--wa-color-blue\` | \`--wa-color-blue-key\` | \`--wa-color-blue-on\` |
+| \`--wa-color-indigo\` | \`--wa-color-indigo-key\` | \`--wa-color-indigo-on\` |
+| \`--wa-color-purple\` | \`--wa-color-purple-key\` | \`--wa-color-purple-on\` |
+| \`--wa-color-pink\` | \`--wa-color-pink-key\` | \`--wa-color-pink-on\` |
+| \`--wa-color-gray\` | \`--wa-color-gray-key\` | \`--wa-color-gray-on\` |
+
+## Variant Colors
+
+Link to This Section
+
+Variant colors are aliases for specific hues in your color palette to give them an extra layer of semantic meaning. These variants are familiar, meaningful hues that reinforce a specific message or intended use:
+
+| Variant | Use | Default |
+| --- | --- | --- |
+| Brand | Product recognition | blue |
+| Neutral | Generic and ordinary content | gray |
+| Success | Validity or confirmation | green |
+| Warning | Caution or uncertainty | yellow |
+| Danger | Errors or risk | red |
+
+Brand and neutral are used by nearly every element, component, and pattern across the library. Success, warning, and danger are used selectively by components that could benefit from semantic reinforcement, such as buttons and callouts.
+
+Each variant color is an alias for a palette color and follows the same token format: `--wa-color-{variant}-{tint}`.
 
 Brand
 
-\`--wa-color-brand-95\`, \`--wa-color-brand-90\`, \`--wa-color-brand-80\`, \`--wa-color-brand-70\`, \`--wa-color-brand-60\`, \`--wa-color-brand-50\`, \`--wa-color-brand-40\`, \`--wa-color-brand-30\`, \`--wa-color-brand-20\`, \`--wa-color-brand-10\`, \`--wa-color-brand-05\`
+`--wa-color-brand-*`
+
+95
+
+90
+
+80
+
+70
+
+60
+
+50
+
+40
+
+30
+
+20
+
+10
+
+05
 
 Neutral
 
-\`--wa-color-neutral-95\`, \`--wa-color-neutral-90\`, \`--wa-color-neutral-80\`, \`--wa-color-neutral-70\`, \`--wa-color-neutral-60\`, \`--wa-color-neutral-50\`, \`--wa-color-neutral-40\`, \`--wa-color-neutral-30\`, \`--wa-color-neutral-20\`, \`--wa-color-neutral-10\`, \`--wa-color-neutral-05\`
+`--wa-color-neutral-*`
+
+95
+
+90
+
+80
+
+70
+
+60
+
+50
+
+40
+
+30
+
+20
+
+10
+
+05
 
 Success
 
-\`--wa-color-success-95\`, \`--wa-color-success-90\`, \`--wa-color-success-80\`, \`--wa-color-success-70\`, \`--wa-color-success-60\`, \`--wa-color-success-50\`, \`--wa-color-success-40\`, \`--wa-color-success-30\`, \`--wa-color-success-20\`, \`--wa-color-success-10\`, \`--wa-color-success-05\`
+`--wa-color-success-*`
+
+95
+
+90
+
+80
+
+70
+
+60
+
+50
+
+40
+
+30
+
+20
+
+10
+
+05
 
 Warning
 
-\`--wa-color-warning-95\`, \`--wa-color-warning-90\`, \`--wa-color-warning-80\`, \`--wa-color-warning-70\`, \`--wa-color-warning-60\`, \`--wa-color-warning-50\`, \`--wa-color-warning-40\`, \`--wa-color-warning-30\`, \`--wa-color-warning-20\`, \`--wa-color-warning-10\`, \`--wa-color-warning-05\`
+`--wa-color-warning-*`
+
+95
+
+90
+
+80
+
+70
+
+60
+
+50
+
+40
+
+30
+
+20
+
+10
+
+05
 
 Danger
 
-\`--wa-color-danger-95\`, \`--wa-color-danger-90\`, \`--wa-color-danger-80\`, \`--wa-color-danger-70\`, \`--wa-color-danger-60\`, \`--wa-color-danger-50\`, \`--wa-color-danger-40\`, \`--wa-color-danger-30\`, \`--wa-color-danger-20\`, \`--wa-color-danger-10\`, \`--wa-color-danger-05\`
+`--wa-color-danger-*`
 
-## Foundational Colors
+95
 
-Foundational colors lay the groundwork for the content and structure of your project. These colors are named according to their role in your theme.
+90
+
+80
+
+70
+
+60
+
+50
+
+40
+
+30
+
+20
+
+10
+
+05
+
+### Core Colors
+
+Link to This Section
+
+Just like the hues in your color palette, each variant has a _core color_ — an alias for the most colorful, vibrant tint in the color scale selected for your variant. Use `--wa-color-{variant}` when you want a representative color for a variant without specifying a tint.
+
+Each core color also has a paired _on color_ (`--wa-color-{variant}-on`) guaranteed to meet WCAG 2.1 AA contrast when placed on top of it. Use on color tokens any time you render text or icons on a core color background.
+
+| Core Color | On Color |
+| --- | --- |
+| \`--wa-color-brand\` | \`--wa-color-brand-on\` |
+| \`--wa-color-neutral\` | \`--wa-color-neutral-on\` |
+| \`--wa-color-success\` | \`--wa-color-success-on\` |
+| \`--wa-color-warning\` | \`--wa-color-warning-on\` |
+| \`--wa-color-danger\` | \`--wa-color-danger-on\` |
+
+### Changing Variant Colors
+
+Link to This Section
+
+Any hue from your color palette can be assigned to any variant without redefining the tokens in your own stylesheet. To use a different hue, simply apply the class `"wa-{variant}-{hue}` to the `<html>` element.
+
+```html
+<html class="wa-brand-purple wa-success-cyan"></html>
+```
+
+All ten palette hues — `red`, `orange`, `yellow`, `green`, `cyan`, `blue`, `indigo`, `purple`, `pink`, and `gray` — are available for every variant.
+
+## Color for Themed Elements
+
+Link to This Section
+
+These tokens apply specific tints from your color palette and variant colors to the elements and components that make up a theme. They're named for the role they play rather than their appearance, and adapt to light and dark modes.
 
 ### Surfaces
 
-Surfaces are background layers that other content rests on. Surface colors help convey hierarchy through a sense of elevation, where `--wa-color-surface-raised` is the closest to the user (e.g., dialogs and popup menus) and `--wa-color-surface-lowered` is the farthest away (e.g., wells).
+Link to This Section
 
-| Custom Property |
-| --- |
-| \`--wa-color-surface-raised\` |
-| \`--wa-color-surface-default\` |
-| \`--wa-color-surface-lowered\` |
-| \`--wa-color-surface-border\` |
+Surfaces are background layers that content rests on. They convey elevation hierarchy — `raised` is closest to the user (e.g., dialogs) and `lowered` is farthest away (e.g., wells).
+
+| Custom Property | Description |
+| --- | --- |
+| \`--wa-color-surface-raised\` | Background for elevated surfaces like dialogs and dropdown menus |
+| \`--wa-color-surface-default\` | Default page or container background |
+| \`--wa-color-surface-lowered\` | Background for recessed surfaces like wells and code blocks |
+| \`--wa-color-surface-border\` | Border color used to delineate surface areas |
 
 ### Text
 
-Text colors are used for standard text elements. We recommend a minimum 4.5:1 contrast ratio between text colors and surface colors.
+Link to This Section
 
-| Custom Property |
-| --- |
-| \`--wa-color-text-normal\` |
-| \`--wa-color-text-quiet\` |
-| \`--wa-color-text-link\` |
+Text colors are used for readable content. We recommend a minimum 4.5:1 contrast ratio against surface colors for text colors.
+
+| Custom Property | Description |
+| --- | --- |
+| \`--wa-color-text-normal\` | Primary text color for most content |
+| \`--wa-color-text-quiet\` | Subdued text for hints, captions, and other secondary content |
+| \`--wa-color-text-link\` | Color for hyperlinks |
 
 ### Overlays
 
-Overlays provide a backdrop to isolate content, often allowing background context to show through.
+Link to This Section
 
-| Custom Property |
-| --- |
-| \`--wa-color-overlay-modal\` |
-| \`--wa-color-overlay-inline\` |
+Overlays provide a backdrop that isolates content, often with some transparency so background context shows through.
+
+| Custom Property | Description |
+| --- | --- |
+| \`--wa-color-overlay-modal\` | Semi-transparent backdrop behind modal dialogs |
+| \`--wa-color-overlay-inline\` | Subtle overlay for inline highlights or dimmed regions |
 
 ### Shadow
 
-Web Awesome uses a single color for all shadows. This is used alongside other [shadow tokens](https://webawesome.com/docs/tokens/shadows) to construct your theme's shadows.
+Link to This Section
 
-| Custom Property |
-| --- |
-| \`--wa-color-shadow\` |
+A single color is used for all drop shadows. Use it alongside the [shadow tokens](?active_tab=shadows) to construct realistic shadows.
+
+| Custom Property | Description |
+| --- | --- |
+| \`--wa-color-shadow\` | Color used for all component drop shadows |
 
 ### Interactions
 
-#### Focus
+Link to This Section
 
-Web Awesome uses a single focus color for predictable keyboard navigation. This is used alongside other [focus tokens](https://webawesome.com/docs/tokens/focus) to construct `--wa-focus-ring`. We recommend a minimum 3:1 contrast ratio against surface colors and background colors wherever possible.
+These tokens power the consistent hover, active, and focus feedback you see across interactive components. The `--wa-color-focus` token sets the color of the keyboard focus ring. The `--wa-color-mix-hover` and `--wa-color-mix-active` tokens are overlays — they're mixed into a component's background via [`color-mix()`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix) to subtly shift it on hover and press, so every interactive component reacts consistently without each one defining its own hover/active palette.
 
-| Custom Property |
-| --- |
-| \`--wa-color-focus\` |
+| Custom Property | Description |
+| --- | --- |
+| \`--wa-color-focus\` | Outline color for keyboard focus rings. Used alongside focus tokens. |
+| \`--wa-color-mix-hover\` | Color blended into a component's fill on hover |
+| \`--wa-color-mix-active\` | Color blended into a component's fill on press |
 
-#### Hover and Active
+### Semantic Variants
 
-Web Awesome leverages `color-mix()` to achieve consistent hover and active states across components without the need for untold numbers of handpicked colors. Through `color-mix()`, these custom properties contextually generate hover and active colors based on the color of the component.
+Link to This Section
 
-| Custom Property |
-| --- |
-| \`--wa-color-mix-hover\` |
-| \`--wa-color-mix-active\` |
+Semantic variants use the `--wa-color-{variant}-{tint}` tokens from your [variant colors](#variant-colors) to power the `variant=""` attribute shared by buttons, badges, callouts, and many other components. Each variant is a complete, self-contained color system built from five groups — `brand`, `success`, `neutral`, `warning`, and `danger` — each defining fills, borders, and on colors at three attention levels.
 
-## Semantic Colors
+Tokens follow the format `--wa-color-{variant}-{role}-{attention}`. The three **roles** are:
 
-Semantic colors reinforce a specific message, intended usage, or expected results through familiar, meaningful hues. Each color is identified by its semantic group, role, and attention using the format `--wa-color-{group}-{role}-{attention}`. There are five groups of semantic colors:
+-   **Fill** for backgrounds or areas larger than a few pixels
+-   **Border** for borders, dividers, and strokes
+-   **On** for content displayed _on top of_ a fill (pair `on-loud` with `fill-loud`)
 
--   **Brand** to emphasize your brand color
--   **Success** for validity or confirmation
--   **Neutral** for ordinary or inactive content
--   **Warning** for caution or uncertainty
--   **Danger** for errors or risk
+The three **attention** levels are `quiet`, `normal`, and `loud` — from least to most visually prominent.
 
-Each group defines colors for specific roles so that colors can be easily assembled with predictable results and readable contrast. There are three roles:
-
--   **Fill** for background colors or areas larger than a few pixels
--   **Border** for borders, dividers, and other stroke-width elements
--   **On** for content displayed on a fill (e.g., pair `--wa-color-danger-on-loud` with `--wa-color-danger-fill-loud`)
-
-Finally, each color is named according to how much attention it draws. Here, we use noise as an analogy: a loud noise draws more attention than a quiet one. There are three levels of attention:
-
--   **Quiet** draws the least attention
--   **Normal** draws some attention
--   **Loud** draws the most attention
-
-| Custom Property | brand | success | neutral | warning | danger |
+| Custom Property | brand | neutral | success | warning | danger |
 | --- | --- | --- | --- | --- | --- |
+| \`--wa-color-\*-fill-quiet\` | | | | | |
+| \`--wa-color-\*-fill-normal\` | | | | | |
+| \`--wa-color-\*-fill-loud\` | | | | | |
+| \`--wa-color-\*-border-quiet\` | | | | | |
+| \`--wa-color-\*-border-normal\` | | | | | |
+| \`--wa-color-\*-border-loud\` | | | | | |
+| \`--wa-color-\*-on-quiet\` | Aa | Aa | Aa | Aa | Aa |
+| \`--wa-color-\*-on-normal\` | Aa | Aa | Aa | Aa | Aa |
+| \`--wa-color-\*-on-loud\` | Aa | Aa | Aa | Aa | Aa |

@@ -3,9 +3,11 @@
 **Full documentation:** https://webawesome.com/docs/components/relative-time
 
 
-`<wa-relative-time>` Since 2.0 Stable
+`<wa-relative-time>`
 
-Outputs a localized time phrase relative to the current date and time.
+Stable [Helpers](https://webawesome.com/docs/components/?category=helpers) [Since 2.0](https://webawesome.com/docs/resources/changelog#wa_200)
+
+Relative times display a date as a localized phrase relative to now, such as "3 hours ago" or "in 2 days". The phrase updates automatically as time passes and respects the user's locale.
 
 Localization is handled by the browser's [`Intl.RelativeTimeFormat` API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat). No language packs are required.
 
@@ -20,7 +22,11 @@ When using strings, avoid ambiguous dates such as `03/04/2020` which can be inte
 
 ## Examples
 
+Link to This Section
+
 ### Keeping Time in Sync
+
+Link to This Section
 
 Use the `sync` attribute to update the displayed value automatically as time passes.
 
@@ -39,6 +45,8 @@ Use the `sync` attribute to update the displayed value automatically as time pas
 
 ### Formatting Styles
 
+Link to This Section
+
 You can change how the time is displayed using the `format` attribute. Note that some locales may display the same values for `narrow` and `short` formats.
 
 ```html
@@ -48,6 +56,8 @@ You can change how the time is displayed using the `format` attribute. Note that
 ```
 
 ### Localization
+
+Link to This Section
 
 Use the `lang` attribute to set the desired locale.
 
@@ -59,40 +69,14 @@ Greek: <wa-relative-time date="2020-07-15T09:17:00-04:00" lang="el"></wa-relativ
 Russian: <wa-relative-time date="2020-07-15T09:17:00-04:00" lang="ru"></wa-relative-time>
 ```
 
-## Importing
-
-Autoloading components via [projects](https://webawesome.com/docs/#using-a-project) is the recommended way to import components. If you prefer to do it manually, use one of the following code snippets.
-
-\*\*CDN\*\*
-
-Let your project code do the work! [Sign up for free](https://webawesome.com/signup) to use a project with your very own CDN — it's the fastest and easiest way to use Web Awesome.
-
-\*\*npm\*\*
-
-To manually import this component from NPM, use the following code.
-
-```js
-import '@awesome.me/webawesome/dist/components/relative-time/relative-time.js';
-```
-
-\*\*React\*\*
-
-To manually import this component from React, use the following code.
-
-```js
-import WaRelativeTime from '@awesome.me/webawesome/dist/react/relative-time';
-```
-
 ## Attributes & Properties
 
-Learn more about [attributes and properties](https://webawesome.com/docs/usage/#attributes-and-properties).
-
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`css\` | \`CSSResultGroup \\| undefined\` One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. Type | | |
-| \`date\` date | \`date.toISOString()\` The date from which to calculate time from. If not set, the current date and time will be used. When passing a string, it's strongly recommended to use the ISO 8601 format to ensure timezones are handled correctly. To convert a date to this format in JavaScript, use . Type Date \\| string Default new Date() | | |
-| \`format\` format | \`'long' \\| 'short' \\| 'narrow'\` The formatting style to use. Type Default 'long' | | |
-| \`numeric\` numeric | \`auto\` When , values such as "yesterday" and "tomorrow" will be shown when possible. When always, values such as "1 day ago" and "in 1 day" will be shown. Type 'always' \\| 'auto' Default 'auto' | | |
-| \`sync\` sync | \`boolean\` Keep the displayed value up to date as time passes. Type Default false | | |
-
-**Need a hand?** Report a bug Ask for help
+| Attribute | Property | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| `date` |  | `Date \| string` | `new Date()` | The date from which to calculate time from. If not set, the current date and time will be used. When passing a string, it's strongly recommended to use the ISO 8601 format to ensure timezones are handled correctly. To convert a date to this format in JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString). |
+| `format` |  | `'long' \| 'short' \| 'narrow'` | `'long'` | The formatting style to use. |
+| `numeric` |  | `'always' \| 'auto'` | `'auto'` | When `auto`, values such as "yesterday" and "tomorrow" will be shown when possible. When `always`, values such as "1 day ago" and "in 1 day" will be shown. |
+| `sync` |  | `boolean` | `false` | Keep the displayed value up to date as time passes. |
+| `dir` |  | `string` |  |  |
+| `lang` |  | `string` |  |  |
+| `did-ssr` | `didSSR` |  |  |  |

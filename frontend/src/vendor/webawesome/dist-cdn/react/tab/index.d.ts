@@ -1,6 +1,6 @@
 import Component from '../../components/tab/tab.js';
 /**
- * @summary Tabs are used inside [tab groups](/docs/components/tab-group) to represent and activate [tab panels](/docs/components/tab-panel).
+ * @summary Tabs label and activate an individual panel inside a tab group.
  * @documentation https://webawesome.com/docs/components/tab
  * @status stable
  * @since 2.0

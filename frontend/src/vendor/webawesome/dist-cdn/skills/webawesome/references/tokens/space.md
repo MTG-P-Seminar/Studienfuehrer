@@ -2,21 +2,24 @@
 
 **Full documentation:** https://webawesome.com/docs/tokens/space
 
-Space properties are used intentionally throughout Web Awesome to create predictable rhythm and meaningful proximity. These properties use `rem` units in order to scale proportionately with the root font size.
+Design Tokens Space
 
-You can use `--wa-space-scale` to increase or decrease all spacing at once. By default, this multiplier is `1`.
+Space tokens create predictable rhythm and meaningful proximity. They use `rem` units so that spacing scales proportionately with the root font size.
 
-The calculations for each size and the resulting pixel value (assuming a 16px root font size) are listed below.
+Use `--wa-space-scale` to increase or decrease all spacing at once.
 
-| Custom Property | Default Value | Preview - |
-| --- | --- | --- |
-| \`--wa-space-3xs\` | \`calc(var(--wa-space-scale) \* 0.125rem)\` (2px) | |
-| \`--wa-space-2xs\` | \`calc(var(--wa-space-scale) \* 0.25rem)\` (4px) | |
-| \`--wa-space-xs\` | \`calc(var(--wa-space-scale) \* 0.5rem)\` (8px) | |
-| \`--wa-space-s\` | \`calc(var(--wa-space-scale) \* 0.75rem)\` (12px) | |
-| \`--wa-space-m\` | \`calc(var(--wa-space-scale) \* 1rem)\` (16px) | |
-| \`--wa-space-l\` | \`calc(var(--wa-space-scale) \* 1.5rem)\` (24px) | |
-| \`--wa-space-xl\` | \`calc(var(--wa-space-scale) \* 2rem)\` (32px) | |
-| \`--wa-space-2xl\` | \`calc(var(--wa-space-scale) \* 2.5rem)\` (40px) | |
-| \`--wa-space-3xl\` | \`calc(var(--wa-space-scale) \* 3rem)\` (48px) | |
-| \`--wa-space-4xl\` | \`calc(var(--wa-space-scale) \* 4rem)\` (64px) | |
+| Custom Property | Description |
+| --- | --- |
+| \`--wa-space-scale\` | Global multiplier applied to all space tokens |
+| \`--wa-space-3xs\` | Smallest space, for hairline gaps and nudges |
+| \`--wa-space-2xs\` | Near-smallest space, for text or icon gaps |
+| \`--wa-space-xs\` | Extra-small space, for closely related elements |
+| \`--wa-space-s\` | Small space, for inner padding in small components |
+| \`--wa-space-m\` | Base space, the most common padding and gap size |
+| \`--wa-space-l\` | Large space, for inner padding in larger components |
+| \`--wa-space-xl\` | Extra-large space, for padding between or around groups |
+| \`--wa-space-2xl\` | 2× extra-large space |
+| \`--wa-space-3xl\` | 3× extra-large space |
+| \`--wa-space-4xl\` | 4× extra-large space |
+| \`--wa-space-5xl\` | Largest space, for ultra-breathable spacing |
+| \`--wa-content-spacing\` | Semantic alias for the default spacing between top-level blocks |

@@ -3,7 +3,8 @@ import { type EventName } from '@lit/react';
 import type { WaCancelEvent, WaFinishEvent, WaStartEvent } from '../../events/events.js';
 export type { WaCancelEvent, WaFinishEvent, WaStartEvent } from '../../events/events.js';
 /**
- * @summary Animate elements declaratively with nearly 100 baked-in presets, or roll your own with custom keyframes. Powered by the [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API).
+ * @summary Animate elements declaratively with nearly 100 baked-in presets, or roll your own with custom keyframes.
+ *  Powered by the Web Animations API.
  * @documentation https://webawesome.com/docs/components/animation
  * @status stable
  * @since 2.0
@@ -14,6 +15,8 @@ export type { WaCancelEvent, WaFinishEvent, WaStartEvent } from '../../events/ev
  *
  * @slot - The element to animate. Avoid slotting in more than one element, as subsequent ones will be ignored. To
  *  animate multiple elements, either wrap them in a single container or use multiple `<wa-animation>` elements.
+ *
+ * @ssr - Because the animation uses the JS API to start / stop animations, this component will SSR properly and not cause layout shift, but it will not play its animation until the component loads.
  */
 declare const reactWrapper: import("@lit/react").ReactWebComponent<Component, {
     onWaCancel: EventName<WaCancelEvent>;

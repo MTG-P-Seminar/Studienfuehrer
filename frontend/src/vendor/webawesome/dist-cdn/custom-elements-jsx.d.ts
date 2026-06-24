@@ -1,11 +1,13 @@
 
 import type { default as WebAwesomeElement } from "./internal/webawesome-element.js";
 import type { default as WaIcon } from "./components/icon/icon.js";
+import type { default as WaAccordionItem } from "./components/accordion-item/accordion-item.js";
 import type { default as WaCheckbox } from "./components/checkbox/checkbox.js";
 import type { default as WaSpinner } from "./components/spinner/spinner.js";
-import type { default as WaTreeItem } from "./components/tree-item/tree-item.js";
+import type { WaTreeItem, default as treeItemContext } from "./components/tree-item/tree-item.js";
 import type { default as WaCarouselItem } from "./components/carousel-item/carousel-item.js";
 import type { default as WaButton } from "./components/button/button.js";
+import type { default as WaAccordion } from "./components/accordion/accordion.js";
 import type { default as WaAnimatedImage } from "./components/animated-image/animated-image.js";
 import type { default as WaAnimation } from "./components/animation/animation.js";
 import type { default as WaAvatar } from "./components/avatar/avatar.js";
@@ -16,6 +18,7 @@ import type { default as WaButtonGroup } from "./components/button-group/button-
 import type { default as WaCallout } from "./components/callout/callout.js";
 import type { default as WaCard } from "./components/card/card.js";
 import type { default as WaCarousel } from "./components/carousel/carousel.js";
+import type { default as WaCheckboxGroup } from "./components/checkbox-group/checkbox-group.js";
 import type { default as WaInput } from "./components/input/input.js";
 import type { default as WaPopup } from "./components/popup/popup.js";
 import type { default as WaColorPicker } from "./components/color-picker/color-picker.js";
@@ -33,11 +36,14 @@ import type { default as WaFormatDate } from "./components/format-date/format-da
 import type { default as WaFormatNumber } from "./components/format-number/format-number.js";
 import type { default as WaInclude } from "./components/include/include.js";
 import type { default as WaIntersectionObserver } from "./components/intersection-observer/intersection-observer.js";
+import type { default as WaKnownDate } from "./components/known-date/known-date.js";
+import type { default as WaMarkdown } from "./components/markdown/markdown.js";
 import type { default as WaMutationObserver } from "./components/mutation-observer/mutation-observer.js";
 import type { default as WaNumberInput } from "./components/number-input/number-input.js";
 import type { default as WaTag } from "./components/tag/tag.js";
-import type { default as WaSelect } from "./components/select/select.js";
 import type { default as WaOption } from "./components/option/option.js";
+import type { default as WaSelect } from "./components/select/select.js";
+import type { default as WaPage } from "./components/page/page.js";
 import type { default as WaPopover } from "./components/popover/popover.js";
 import type { default as WaProgressBar } from "./components/progress-bar/progress-bar.js";
 import type { default as WaProgressRing } from "./components/progress-ring/progress-ring.js";
@@ -46,16 +52,17 @@ import type { default as WaRadio } from "./components/radio/radio.js";
 import type { default as WaRadioGroup } from "./components/radio-group/radio-group.js";
 import type { default as WaRating } from "./components/rating/rating.js";
 import type { default as WaRelativeTime } from "./components/relative-time/relative-time.js";
-import type { default as WaScroller } from "./components/scroller/scroller.js";
 import type { default as WaResizeObserver } from "./components/resize-observer/resize-observer.js";
+import type { default as WaScroller } from "./components/scroller/scroller.js";
 import type { default as WaSkeleton } from "./components/skeleton/skeleton.js";
 import type { default as WaSlider } from "./components/slider/slider.js";
-import type { default as WaSwitch } from "./components/switch/switch.js";
-import type { default as WaTab } from "./components/tab/tab.js";
 import type { default as WaSplitPanel } from "./components/split-panel/split-panel.js";
+import type { default as WaSwitch } from "./components/switch/switch.js";
 import type { default as WaTabPanel } from "./components/tab-panel/tab-panel.js";
+import type { default as WaTab } from "./components/tab/tab.js";
 import type { default as WaTabGroup } from "./components/tab-group/tab-group.js";
 import type { default as WaTextarea } from "./components/textarea/textarea.js";
+import type { default as WaTimeInput } from "./components/time-input/time-input.js";
 import type { default as WaTree } from "./components/tree/tree.js";
 import type { default as WaZoomableFrame } from "./components/zoomable-frame/zoomable-frame.js";
 
@@ -299,6 +306,30 @@ ignored by assistive devices. */
 }
 
 
+export type WaAccordionItemProps = {
+  /** The text label shown in the header. If you need HTML, use the `label` slot instead. */
+  "label"?: WaAccordionItem['label'];
+  /** Expands the accordion item. */
+  "expanded"?: WaAccordionItem['expanded'];
+  /** Disables the accordion item so it can't be toggled. */
+  "disabled"?: WaAccordionItem['disabled'];
+  /**  */
+  "dir"?: WaAccordionItem['dir'];
+  /**  */
+  "lang"?: WaAccordionItem['lang'];
+  /**  */
+  "did-ssr"?: WaAccordionItem['didSSR'];
+  /**  */
+  "didSSR"?: WaAccordionItem['didSSR'];
+  /**  */
+  "initialReflectedProperties"?: WaAccordionItem['initialReflectedProperties'];
+  /**  */
+  "internals"?: WaAccordionItem['internals'];
+
+
+}
+
+
 export type WaCheckboxProps = {
   /**  */
   "title"?: WaCheckbox['title'];
@@ -397,6 +428,12 @@ export type WaTreeItemProps = {
   /** Enables lazy loading behavior. */
   "lazy"?: WaTreeItem['lazy'];
   /**  */
+  "tabindex"?: WaTreeItem['tabIndex'];
+  /**  */
+  "tabIndex"?: WaTreeItem['tabIndex'];
+  /**  */
+  "role"?: WaTreeItem['role'];
+  /**  */
   "dir"?: WaTreeItem['dir'];
   /**  */
   "lang"?: WaTreeItem['lang'];
@@ -412,6 +449,10 @@ export type WaTreeItemProps = {
   "loading"?: WaTreeItem['loading'];
   /**  */
   "selectable"?: WaTreeItem['selectable'];
+  /**  */
+  "_treeItemContext"?: WaTreeItem['_treeItemContext'];
+  /**  */
+  "_parentTreeContext"?: WaTreeItem['_parentTreeContext'];
   /**  */
   "defaultSlot"?: WaTreeItem['defaultSlot'];
   /**  */
@@ -473,6 +514,18 @@ export type WaButtonProps = {
   "with-caret"?: WaButton['withCaret'];
   /** Draws the button with a caret. Used to indicate that the button triggers a dropdown menu or similar behavior. */
   "withCaret"?: WaButton['withCaret'];
+  /** Only required for SSR. Set to `true` if you're slotting in a `start` element so the server-rendered markup
+includes the start slot before the component hydrates on the client. */
+  "with-start"?: WaButton['withStart'];
+  /** Only required for SSR. Set to `true` if you're slotting in a `start` element so the server-rendered markup
+includes the start slot before the component hydrates on the client. */
+  "withStart"?: WaButton['withStart'];
+  /** Only required for SSR. Set to `true` if you're slotting in an `end` element so the server-rendered markup
+includes the end slot before the component hydrates on the client. */
+  "with-end"?: WaButton['withEnd'];
+  /** Only required for SSR. Set to `true` if you're slotting in an `end` element so the server-rendered markup
+includes the end slot before the component hydrates on the client. */
+  "withEnd"?: WaButton['withEnd'];
   /** Disables the button. */
   "disabled"?: WaButton['disabled'];
   /** Draws the button in a loading state. */
@@ -565,6 +618,46 @@ the same document or shadow root for this to work. */
   "onfocus"?: (e: CustomEvent<never>) => void;
   /** Emitted when the form control has been checked for validity and its constraints aren't satisfied. */
   "onwa-invalid"?: (e: CustomEvent<never>) => void;
+}
+
+
+export type WaAccordionProps = {
+  /** Controls how items can be expanded. `multiple` (the default) allows any number of items to be open at
+once. `single` allows only one item to be open at a time; opening a new item collapses the previously
+open one, and clicking an open item does not collapse it. `single-collapsible` is the same as `single`
+except that clicking the open item collapses it, so zero open items is a valid state. */
+  "mode"?: WaAccordion['mode'];
+  /** The location of the expand/collapse icon in child items. */
+  "icon-placement"?: WaAccordion['iconPlacement'];
+  /** The location of the expand/collapse icon in child items. */
+  "iconPlacement"?: WaAccordion['iconPlacement'];
+  /** The heading level for child item triggers (1–6), or "none" to omit the heading wrapper. Defaults to 3. */
+  "heading-level"?: WaAccordion['headingLevel'];
+  /** The heading level for child item triggers (1–6), or "none" to omit the heading wrapper. Defaults to 3. */
+  "headingLevel"?: WaAccordion['headingLevel'];
+  /** The accordion's visual appearance. */
+  "appearance"?: WaAccordion['appearance'];
+  /**  */
+  "dir"?: WaAccordion['dir'];
+  /**  */
+  "lang"?: WaAccordion['lang'];
+  /**  */
+  "did-ssr"?: WaAccordion['didSSR'];
+  /**  */
+  "didSSR"?: WaAccordion['didSSR'];
+  /**  */
+  "initialReflectedProperties"?: WaAccordion['initialReflectedProperties'];
+  /**  */
+  "internals"?: WaAccordion['internals'];
+
+  /** Emitted before an item expands. Cancelable. */
+  "onwa-expand"?: (e: CustomEvent<{ item: WaAccordionItem }>) => void;
+  /** Emitted after an item finishes expanding. */
+  "onwa-after-expand"?: (e: CustomEvent<{ item: WaAccordionItem }>) => void;
+  /** Emitted before an item collapses. Cancelable. */
+  "onwa-collapse"?: (e: CustomEvent<{ item: WaAccordionItem }>) => void;
+  /** Emitted after an item finishes collapsing. */
+  "onwa-after-collapse"?: (e: CustomEvent<{ item: WaAccordionItem }>) => void;
 }
 
 
@@ -828,18 +921,36 @@ export type WaCalloutProps = {
 export type WaCardProps = {
   /** The card's visual appearance. */
   "appearance"?: WaCard['appearance'];
-  /** Renders the card with a header. Only needed for SSR, otherwise is automatically added. */
+  /** Only required for SSR. Set to `true` if you're slotting in a `header` element so the server-rendered markup
+includes the header before the component hydrates on the client. */
   "with-header"?: WaCard['withHeader'];
-  /** Renders the card with a header. Only needed for SSR, otherwise is automatically added. */
+  /** Only required for SSR. Set to `true` if you're slotting in a `header` element so the server-rendered markup
+includes the header before the component hydrates on the client. */
   "withHeader"?: WaCard['withHeader'];
-  /** Renders the card with an image. Only needed for SSR, otherwise is automatically added. */
+  /** Only required for SSR. Set to `true` if you're slotting in a `media` element so the server-rendered markup
+includes the media before the component hydrates on the client. */
   "with-media"?: WaCard['withMedia'];
-  /** Renders the card with an image. Only needed for SSR, otherwise is automatically added. */
+  /** Only required for SSR. Set to `true` if you're slotting in a `media` element so the server-rendered markup
+includes the media before the component hydrates on the client. */
   "withMedia"?: WaCard['withMedia'];
-  /** Renders the card with a footer. Only needed for SSR, otherwise is automatically added. */
+  /** Only required for SSR. Set to `true` if you're slotting in a `footer` element so the server-rendered markup
+includes the footer before the component hydrates on the client. */
   "with-footer"?: WaCard['withFooter'];
-  /** Renders the card with a footer. Only needed for SSR, otherwise is automatically added. */
+  /** Only required for SSR. Set to `true` if you're slotting in a `footer` element so the server-rendered markup
+includes the footer before the component hydrates on the client. */
   "withFooter"?: WaCard['withFooter'];
+  /** Only required for SSR. Set to `true` if you're slotting in a `header-actions` element so the server-rendered markup
+includes the media before the component hydrates on the client. */
+  "with-header-actions"?: WaCard['withHeaderActions'];
+  /** Only required for SSR. Set to `true` if you're slotting in a `header-actions` element so the server-rendered markup
+includes the media before the component hydrates on the client. */
+  "withHeaderActions"?: WaCard['withHeaderActions'];
+  /** Only required for SSR. Set to `true` if you're slotting in a `footer-actions` element so the server-rendered markup
+includes the media before the component hydrates on the client. */
+  "with-footer-actions"?: WaCard['withFooterActions'];
+  /** Only required for SSR. Set to `true` if you're slotting in a `footer-actions` element so the server-rendered markup
+includes the media before the component hydrates on the client. */
+  "withFooterActions"?: WaCard['withFooterActions'];
   /** Renders the card's orientation * */
   "orientation"?: WaCard['orientation'];
   /**  */
@@ -920,6 +1031,49 @@ greater than one. It can't be higher than `slides-per-page`. */
 }
 
 
+export type WaCheckboxGroupProps = {
+  /** The checkbox group's label. Required for proper accessibility. If you need to display HTML, use the `label` slot
+instead. */
+  "label"?: WaCheckboxGroup['label'];
+  /** The checkbox group's hint. If you need to display HTML, use the `hint` slot instead. */
+  "hint"?: WaCheckboxGroup['hint'];
+  /** The orientation in which to show grouped checkboxes. */
+  "orientation"?: WaCheckboxGroup['orientation'];
+  /** The group's size. When present, this size will be applied to all `<wa-checkbox>` and `<wa-switch>` items inside. */
+  "size"?: WaCheckboxGroup['size'];
+  /** Indicates that at least one option should be selected. This only adds a visual indicator to the label. To enforce
+the requirement, use the `required` attribute on the individual checkboxes and/or their `setCustomValidity()`
+method. */
+  "required"?: WaCheckboxGroup['required'];
+  /** Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup includes
+the label before the component hydrates on the client. */
+  "with-label"?: WaCheckboxGroup['withLabel'];
+  /** Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup includes
+the label before the component hydrates on the client. */
+  "withLabel"?: WaCheckboxGroup['withLabel'];
+  /** Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup includes
+the hint before the component hydrates on the client. */
+  "with-hint"?: WaCheckboxGroup['withHint'];
+  /** Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup includes
+the hint before the component hydrates on the client. */
+  "withHint"?: WaCheckboxGroup['withHint'];
+  /**  */
+  "dir"?: WaCheckboxGroup['dir'];
+  /**  */
+  "lang"?: WaCheckboxGroup['lang'];
+  /**  */
+  "did-ssr"?: WaCheckboxGroup['didSSR'];
+  /**  */
+  "didSSR"?: WaCheckboxGroup['didSSR'];
+  /**  */
+  "initialReflectedProperties"?: WaCheckboxGroup['initialReflectedProperties'];
+  /**  */
+  "internals"?: WaCheckboxGroup['internals'];
+
+
+}
+
+
 export type WaInputProps = {
   /**  */
   "title"?: WaInput['title'];
@@ -977,7 +1131,8 @@ implied, allowing any numeric value. Only applies to date and number input types
   "step"?: WaInput['step'];
   /** Controls whether and how text input is automatically capitalized as it is entered by the user. */
   "autocapitalize"?: WaInput['autocapitalize'];
-  /** Indicates whether the browser's autocorrect feature is on or off. */
+  /** Indicates whether the browser's autocorrect feature is on or off. When set as an attribute, use `"off"` or `"on"`.
+When set as a property, use `true` or `false`. */
   "autocorrect"?: WaInput['autocorrect'];
   /** Specifies what permission the browser has to provide assistance in filling out form field values. Refer to
 [this page on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) for available values. */
@@ -991,13 +1146,17 @@ implied, allowing any numeric value. Only applies to date and number input types
   /** Tells the browser what type of data will be entered by the user, allowing it to display the appropriate virtual
 keyboard on supportive devices. */
   "inputmode"?: WaInput['inputmode'];
-  /** Used for SSR. Will determine if the SSRed component will have the label slot rendered on initial paint. */
+  /** Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup
+includes the label before the component hydrates on the client. */
   "with-label"?: WaInput['withLabel'];
-  /** Used for SSR. Will determine if the SSRed component will have the label slot rendered on initial paint. */
+  /** Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup
+includes the label before the component hydrates on the client. */
   "withLabel"?: WaInput['withLabel'];
-  /** Used for SSR. Will determine if the SSRed component will have the hint slot rendered on initial paint. */
+  /** Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup
+includes the hint before the component hydrates on the client. */
   "with-hint"?: WaInput['withHint'];
-  /** Used for SSR. Will determine if the SSRed component will have the hint slot rendered on initial paint. */
+  /** Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup
+includes the hint before the component hydrates on the client. */
   "withHint"?: WaInput['withHint'];
   /** The name of the input, submitted as a name/value pair with form data. */
   "name"?: WaInput['name'];
@@ -1172,13 +1331,17 @@ export type WaColorPickerProps = {
   "value"?: WaColorPicker['defaultValue'];
   /** The default value of the form control. Primarily used for resetting the form control. */
   "defaultValue"?: WaColorPicker['defaultValue'];
-  /**  */
+  /** Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup
+includes the label before the component hydrates on the client. */
   "with-label"?: WaColorPicker['withLabel'];
-  /**  */
+  /** Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup
+includes the label before the component hydrates on the client. */
   "withLabel"?: WaColorPicker['withLabel'];
-  /**  */
+  /** Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup
+includes the hint before the component hydrates on the client. */
   "with-hint"?: WaColorPicker['withHint'];
-  /**  */
+  /** Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup
+includes the hint before the component hydrates on the client. */
   "withHint"?: WaColorPicker['withHint'];
   /** The color picker's label. This will not be displayed, but it will be announced by assistive devices. If you need to
 display HTML, you can use the `label` slot` instead. */
@@ -1190,6 +1353,9 @@ picker will accept user input in any format (including CSS color names) and conv
   "format"?: WaColorPicker['format'];
   /** Determines the size of the color picker's trigger */
   "size"?: WaColorPicker['size'];
+  /** The preferred placement of the color picker's popup. Note that the actual placement will vary as configured to
+keep the panel inside of the viewport. */
+  "placement"?: WaColorPicker['placement'];
   /** Removes the button that lets users toggle between format. */
   "without-format-toggle"?: WaColorPicker['withoutFormatToggle'];
   /** Removes the button that lets users toggle between format. */
@@ -1207,7 +1373,9 @@ can use the `show()` and `hide()` methods and this attribute will reflect the po
   "uppercase"?: WaColorPicker['uppercase'];
   /** One or more predefined color swatches to display as presets in the color picker. Can include any format the color
 picker can parse, including HEX(A), RGB(A), HSL(A), HSV(A), and CSS color names. Each color must be separated by a
-semicolon (`;`). Alternatively, you can pass an array of color values to this property using JavaScript. */
+semicolon (`;`). Alternatively, you can pass an array of color values or an array of `{ color, label }` objects to
+this property using JavaScript. When using objects with labels, the label will be used for the swatch's accessible
+name instead of the raw color value. */
   "swatches"?: WaColorPicker['swatches'];
   /** Makes the color picker a required field. */
   "required"?: WaColorPicker['required'];
@@ -1372,9 +1540,9 @@ append a dot and the property name, e.g. `from="el.value"`. */
   "from"?: WaCopyButton['from'];
   /** Disables the copy button. */
   "disabled"?: WaCopyButton['disabled'];
-  /** A custom label to show in the tooltip. */
+  /** A custom label to use as the accessible name and tooltip text in the default copy state. */
   "copy-label"?: WaCopyButton['copyLabel'];
-  /** A custom label to show in the tooltip. */
+  /** A custom label to use as the accessible name and tooltip text in the default copy state. */
   "copyLabel"?: WaCopyButton['copyLabel'];
   /** A custom label to show in the tooltip after copying. */
   "success-label"?: WaCopyButton['successLabel'];
@@ -1392,6 +1560,10 @@ append a dot and the property name, e.g. `from="el.value"`. */
   "tooltip-placement"?: WaCopyButton['tooltipPlacement'];
   /** The preferred placement of the tooltip. */
   "tooltipPlacement"?: WaCopyButton['tooltipPlacement'];
+  /** Controls the built-in tooltip. `full` (default) shows the tooltip on hover and focus and during copy feedback.
+`copy` keeps the tooltip silent on hover/focus and only shows it briefly to confirm a successful or failed copy.
+`none` disables the tooltip entirely. Applies to both the default and custom triggers. */
+  "tooltip"?: WaCopyButton['tooltip'];
   /**  */
   "dir"?: WaCopyButton['dir'];
   /**  */
@@ -1407,11 +1579,17 @@ append a dot and the property name, e.g. `from="el.value"`. */
   /**  */
   "errorIcon"?: WaCopyButton['errorIcon'];
   /**  */
-  "tooltip"?: WaCopyButton['tooltip'];
+  "defaultSlot"?: WaCopyButton['defaultSlot'];
+  /**  */
+  "shadowTooltip"?: WaCopyButton['shadowTooltip'];
   /**  */
   "isCopying"?: WaCopyButton['isCopying'];
   /**  */
   "status"?: WaCopyButton['status'];
+  /**  */
+  "hasCustomTrigger"?: WaCopyButton['hasCustomTrigger'];
+  /**  */
+  "liveAnnouncement"?: WaCopyButton['liveAnnouncement'];
   /**  */
   "initialReflectedProperties"?: WaCopyButton['initialReflectedProperties'];
   /**  */
@@ -1488,6 +1666,12 @@ proper accessibility. If you need to display HTML, use the `label` slot instead.
   "light-dismiss"?: WaDialog['lightDismiss'];
   /** When enabled, the dialog will be closed when the user clicks outside of it. */
   "lightDismiss"?: WaDialog['lightDismiss'];
+  /** Only required for SSR. Set to `true` if you're slotting in a `footer` element so the server-rendered markup
+includes the footer before the component hydrates on the client. */
+  "with-footer"?: WaDialog['withFooter'];
+  /** Only required for SSR. Set to `true` if you're slotting in a `footer` element so the server-rendered markup
+includes the footer before the component hydrates on the client. */
+  "withFooter"?: WaDialog['withFooter'];
   /**  */
   "dir"?: WaDialog['dir'];
   /**  */
@@ -1550,6 +1734,12 @@ proper accessibility. If you need to display HTML, use the `label` slot instead.
   "light-dismiss"?: WaDrawer['lightDismiss'];
   /** When enabled, the drawer will be closed when the user clicks outside of it. */
   "lightDismiss"?: WaDrawer['lightDismiss'];
+  /** Only required for SSR. Set to `true` if you're slotting in a `footer` element so the server-rendered markup
+includes the footer before the component hydrates on the client. */
+  "with-footer"?: WaDrawer['withFooter'];
+  /** Only required for SSR. Set to `true` if you're slotting in a `footer` element so the server-rendered markup
+includes the footer before the component hydrates on the client. */
+  "withFooter"?: WaDrawer['withFooter'];
   /**  */
   "dir"?: WaDrawer['dir'];
   /**  */
@@ -1849,6 +2039,119 @@ the viewport, enabling pure CSS styling based on visibility state. */
 }
 
 
+export type WaKnownDateProps = {
+  /** The name submitted with form data. */
+  "name"?: WaKnownDate['name'];
+  /** The default value used for form reset. */
+  "value"?: WaKnownDate['defaultValue'];
+  /** The default value used for form reset. */
+  "defaultValue"?: WaKnownDate['defaultValue'];
+  /** Disables the known date. */
+  "disabled"?: WaKnownDate['disabled'];
+  /** Makes the known date required for form submission. */
+  "required"?: WaKnownDate['required'];
+  /** Makes the fields non-editable. */
+  "readonly"?: WaKnownDate['readonly'];
+  /** The known date's size. */
+  "size"?: WaKnownDate['size'];
+  /** The known date's visual appearance. */
+  "appearance"?: WaKnownDate['appearance'];
+  /** Draws pill-style fields with rounded edges. */
+  "pill"?: WaKnownDate['pill'];
+  /** The known date's label. If you need to display HTML, use the `label` slot instead. */
+  "label"?: WaKnownDate['label'];
+  /** The known date's hint. If you need to display HTML, use the `hint` slot instead. */
+  "hint"?: WaKnownDate['hint'];
+  /** Browser autofill family. When set to `bday`, the three fields receive `bday-day`, `bday-month`, and
+`bday-year` respectively. The field-agnostic directives `off` and `on` are applied to all three fields.
+Any other value is forwarded only to the year field. */
+  "autocomplete"?: WaKnownDate['autocomplete'];
+  /** Earliest selectable date as `YYYY-MM-DD`. */
+  "min"?: WaKnownDate['min'];
+  /** Latest selectable date as `YYYY-MM-DD`. */
+  "max"?: WaKnownDate['max'];
+  /** BCP-47 locale override. When empty, the inherited `lang` attribute is used. */
+  "locale"?: WaKnownDate['locale'];
+  /** Only required for SSR. Set to `true` if you're slotting in a `label` element. */
+  "with-label"?: WaKnownDate['withLabel'];
+  /** Only required for SSR. Set to `true` if you're slotting in a `label` element. */
+  "withLabel"?: WaKnownDate['withLabel'];
+  /** Only required for SSR. Set to `true` if you're slotting in a `hint` element. */
+  "with-hint"?: WaKnownDate['withHint'];
+  /** Only required for SSR. Set to `true` if you're slotting in a `hint` element. */
+  "withHint"?: WaKnownDate['withHint'];
+  /**  */
+  "custom-error"?: WaKnownDate['customError'];
+  /**  */
+  "customError"?: WaKnownDate['customError'];
+  /**  */
+  "dir"?: WaKnownDate['dir'];
+  /**  */
+  "lang"?: WaKnownDate['lang'];
+  /**  */
+  "did-ssr"?: WaKnownDate['didSSR'];
+  /**  */
+  "didSSR"?: WaKnownDate['didSSR'];
+  /**  */
+  "assumeInteractionOn"?: WaKnownDate['assumeInteractionOn'];
+  /** Hidden mirror used for native constraint validation (min/max/required + valid-date roundtrip). */
+  "valueInput"?: WaKnownDate['valueInput'];
+  /** The three field strings. Stored verbatim so user-typed digits round-trip faithfully. */
+  "parts"?: WaKnownDate['parts'];
+  /**  */
+  "input"?: WaKnownDate['input'];
+  /**  */
+  "valueHasChanged"?: WaKnownDate['valueHasChanged'];
+  /**  */
+  "hasInteracted"?: WaKnownDate['hasInteracted'];
+  /**  */
+  "states"?: WaKnownDate['states'];
+  /**  */
+  "emitInvalid"?: WaKnownDate['emitInvalid'];
+  /** By default, form controls are associated with the nearest containing `<form>` element. This attribute allows you
+to place the form control outside of a form and associate it with the form that has this `id`. The form must be in
+the same document or shadow root for this to work. */
+  "form"?: WaKnownDate['form'];
+  /**  */
+  "initialReflectedProperties"?: WaKnownDate['initialReflectedProperties'];
+  /**  */
+  "internals"?: WaKnownDate['internals'];
+
+  /** Emitted as the user types in any field. */
+  "oninput"?: (e: CustomEvent<InputEvent>) => void;
+  /** Emitted when the committed value transitions to a new ISO date. */
+  "onchange"?: (e: CustomEvent<Event>) => void;
+  /** Emitted when the control loses focus. */
+  "onblur"?: (e: CustomEvent<never>) => void;
+  /** Emitted when the control gains focus. */
+  "onfocus"?: (e: CustomEvent<never>) => void;
+  /** Emitted when the form control has been checked for validity and its constraints aren't satisfied. */
+  "onwa-invalid"?: (e: CustomEvent<never>) => void;
+}
+
+
+export type WaMarkdownProps = {
+  /** The tab stop width used when converting leading tabs to spaces during whitespace normalization. */
+  "tab-size"?: WaMarkdown['tabSize'];
+  /** The tab stop width used when converting leading tabs to spaces during whitespace normalization. */
+  "tabSize"?: WaMarkdown['tabSize'];
+  /**  */
+  "dir"?: WaMarkdown['dir'];
+  /**  */
+  "lang"?: WaMarkdown['lang'];
+  /**  */
+  "did-ssr"?: WaMarkdown['didSSR'];
+  /**  */
+  "didSSR"?: WaMarkdown['didSSR'];
+  /**  */
+  "initialReflectedProperties"?: WaMarkdown['initialReflectedProperties'];
+  /**  */
+  "internals"?: WaMarkdown['internals'];
+
+
+}
+
+
 export type WaMutationObserverProps = {
   /** Watches for changes to attributes. To watch only specific attributes, separate them by a space, e.g.
 `attr="class id title"`. To watch all attributes, use `*`. */
@@ -1933,13 +2236,17 @@ implied, allowing any numeric value. */
   /** Tells the browser what type of data will be entered by the user, allowing it to display the appropriate virtual
 keyboard on supportive devices. */
   "inputmode"?: WaNumberInput['inputmode'];
-  /** Used for SSR. Will determine if the SSRed component will have the label slot rendered on initial paint. */
+  /** Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup
+includes the label before the component hydrates on the client. */
   "with-label"?: WaNumberInput['withLabel'];
-  /** Used for SSR. Will determine if the SSRed component will have the label slot rendered on initial paint. */
+  /** Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup
+includes the label before the component hydrates on the client. */
   "withLabel"?: WaNumberInput['withLabel'];
-  /** Used for SSR. Will determine if the SSRed component will have the hint slot rendered on initial paint. */
+  /** Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup
+includes the hint before the component hydrates on the client. */
   "with-hint"?: WaNumberInput['withHint'];
-  /** Used for SSR. Will determine if the SSRed component will have the hint slot rendered on initial paint. */
+  /** Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup
+includes the hint before the component hydrates on the client. */
   "withHint"?: WaNumberInput['withHint'];
   /** The name of the input, submitted as a name/value pair with form data. */
   "name"?: WaNumberInput['name'];
@@ -1986,6 +2293,8 @@ the same document or shadow root for this to work. */
   "onblur"?: (e: CustomEvent<never>) => void;
   /** Emitted when the control gains focus. */
   "onfocus"?: (e: CustomEvent<never>) => void;
+  /** Emitted before the value changes. Can be cancelled with `event.preventDefault()` to prevent the value from changing. */
+  "onbeforeinput"?: (e: CustomEvent<never>) => void;
   /** Emitted when the form control has been checked for validity and its constraints aren't satisfied. */
   "onwa-invalid"?: (e: CustomEvent<never>) => void;
 }
@@ -2019,6 +2328,43 @@ export type WaTagProps = {
 
   /** Emitted when the remove button is activated. */
   "onwa-remove"?: (e: CustomEvent<never>) => void;
+}
+
+
+export type WaOptionProps = {
+  /** The option's value. When selected, the containing form control will receive this value. The value must be unique
+from other options in the same group. Values may not contain spaces, as spaces are used as delimiters when listing
+multiple values. */
+  "value"?: WaOption['value'];
+  /** Draws the option in a disabled state, preventing selection. */
+  "disabled"?: WaOption['disabled'];
+  /** Selects an option initially. */
+  "selected"?: WaOption['defaultSelected'];
+  /** Selects an option initially. */
+  "defaultSelected"?: WaOption['defaultSelected'];
+  /** The option’s plain text label.
+Usually automatically generated, but can be useful to provide manually for cases involving complex content. */
+  "label"?: WaOption['label'];
+  /**  */
+  "dir"?: WaOption['dir'];
+  /**  */
+  "lang"?: WaOption['lang'];
+  /**  */
+  "did-ssr"?: WaOption['didSSR'];
+  /**  */
+  "didSSR"?: WaOption['didSSR'];
+  /**  */
+  "defaultSlot"?: WaOption['defaultSlot'];
+  /**  */
+  "current"?: WaOption['current'];
+  /**  */
+  "_label"?: WaOption['_label'];
+  /**  */
+  "initialReflectedProperties"?: WaOption['initialReflectedProperties'];
+  /**  */
+  "internals"?: WaOption['internals'];
+
+
 }
 
 
@@ -2059,13 +2405,17 @@ inside of the viewport. */
   "placement"?: WaSelect['placement'];
   /** The select's hint. If you need to display HTML, use the `hint` slot instead. */
   "hint"?: WaSelect['hint'];
-  /** Used for SSR purposes when a label is slotted in. Will show the label on first render. */
+  /** Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup
+includes the label before the component hydrates on the client. */
   "with-label"?: WaSelect['withLabel'];
-  /** Used for SSR purposes when a label is slotted in. Will show the label on first render. */
+  /** Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup
+includes the label before the component hydrates on the client. */
   "withLabel"?: WaSelect['withLabel'];
-  /** Used for SSR purposes when hint is slotted in. Will show the hint on first render. */
+  /** Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup
+includes the hint before the component hydrates on the client. */
   "with-hint"?: WaSelect['withHint'];
-  /** Used for SSR purposes when hint is slotted in. Will show the hint on first render. */
+  /** Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup
+includes the hint before the component hydrates on the client. */
   "withHint"?: WaSelect['withHint'];
   /** The select's required attribute. */
   "required"?: WaSelect['required'];
@@ -2099,8 +2449,6 @@ inside of the viewport. */
   "currentOption"?: WaSelect['currentOption'];
   /**  */
   "selectedOptions"?: WaSelect['selectedOptions'];
-  /**  */
-  "optionValues"?: WaSelect['optionValues'];
   /**  */
   "defaultValue"?: WaSelect['defaultValue'];
   /** A function that customizes the tags to be rendered when multiple=true. The first argument is the option, the second
@@ -2149,40 +2497,68 @@ the same document or shadow root for this to work. */
 }
 
 
-export type WaOptionProps = {
-  /** The option's value. When selected, the containing form control will receive this value. The value must be unique
-from other options in the same group. Values may not contain spaces, as spaces are used as delimiters when listing
-multiple values. */
-  "value"?: WaOption['value'];
-  /** Draws the option in a disabled state, preventing selection. */
-  "disabled"?: WaOption['disabled'];
-  /** Selects an option initially. */
-  "selected"?: WaOption['defaultSelected'];
-  /** Selects an option initially. */
-  "defaultSelected"?: WaOption['defaultSelected'];
-  /** The option’s plain text label.
-Usually automatically generated, but can be useful to provide manually for cases involving complex content. */
-  "label"?: WaOption['label'];
+export type WaPageProps = {
+  /** The view is a reflection of the "mobileBreakpoint", when the page is larger than the `mobile-breakpoint` (768px by
+default), it is considered to be a "desktop" view. The view is merely a way to distinguish when to show/hide the
+navigation. You can use additional media queries to make other adjustments to content as necessary.
+The default is "desktop" because the "mobile navigation drawer" isn't accessible via SSR due to drawer requiring JS. */
+  "view"?: WaPage['view'];
+  /** Whether or not the navigation drawer is open. Note, the navigation drawer is only "open" on mobile views. */
+  "nav-open"?: WaPage['navOpen'];
+  /** Whether or not the navigation drawer is open. Note, the navigation drawer is only "open" on mobile views. */
+  "navOpen"?: WaPage['navOpen'];
+  /** At what page width to hide the "navigation" slot and collapse into a hamburger button.
+Accepts both numbers (interpreted as px) and CSS lengths (e.g. `50em`), which are resolved based on the root element. */
+  "mobile-breakpoint"?: WaPage['mobileBreakpoint'];
+  /** At what page width to hide the "navigation" slot and collapse into a hamburger button.
+Accepts both numbers (interpreted as px) and CSS lengths (e.g. `50em`), which are resolved based on the root element. */
+  "mobileBreakpoint"?: WaPage['mobileBreakpoint'];
+  /** Where to place the navigation when in the mobile viewport. */
+  "navigation-placement"?: WaPage['navigationPlacement'];
+  /** Where to place the navigation when in the mobile viewport. */
+  "navigationPlacement"?: WaPage['navigationPlacement'];
+  /** Determines whether or not to hide the default hamburger button.
+This will automatically flip to "true" if you add an element with `data-toggle-nav` anywhere in the element light DOM.
+Generally this will be set for you and you don't need to do anything, unless you're using SSR, in which case you should set this manually for initial page loads. */
+  "disable-navigation-toggle"?: WaPage['disableNavigationToggle'];
+  /** Determines whether or not to hide the default hamburger button.
+This will automatically flip to "true" if you add an element with `data-toggle-nav` anywhere in the element light DOM.
+Generally this will be set for you and you don't need to do anything, unless you're using SSR, in which case you should set this manually for initial page loads. */
+  "disableNavigationToggle"?: WaPage['disableNavigationToggle'];
   /**  */
-  "dir"?: WaOption['dir'];
+  "dir"?: WaPage['dir'];
   /**  */
-  "lang"?: WaOption['lang'];
+  "lang"?: WaPage['lang'];
   /**  */
-  "did-ssr"?: WaOption['didSSR'];
+  "did-ssr"?: WaPage['didSSR'];
   /**  */
-  "didSSR"?: WaOption['didSSR'];
+  "didSSR"?: WaPage['didSSR'];
   /**  */
-  "defaultSlot"?: WaOption['defaultSlot'];
+  "header"?: WaPage['header'];
   /**  */
-  "current"?: WaOption['current'];
+  "menu"?: WaPage['menu'];
   /**  */
-  "_label"?: WaOption['_label'];
-  /** The default label, generated from the element contents. Will be equal to `label` in most cases. */
-  "defaultLabel"?: WaOption['defaultLabel'];
+  "main"?: WaPage['main'];
   /**  */
-  "initialReflectedProperties"?: WaOption['initialReflectedProperties'];
+  "aside"?: WaPage['aside'];
   /**  */
-  "internals"?: WaOption['internals'];
+  "subheader"?: WaPage['subheader'];
+  /**  */
+  "footer"?: WaPage['footer'];
+  /**  */
+  "banner"?: WaPage['banner'];
+  /**  */
+  "navigationDrawer"?: WaPage['navigationDrawer'];
+  /**  */
+  "navigationToggleSlot"?: WaPage['navigationToggleSlot'];
+  /**  */
+  "pageResizeObserver"?: WaPage['pageResizeObserver'];
+  /**  */
+  "updateAsideAndMenuHeights"?: WaPage['updateAsideAndMenuHeights'];
+  /**  */
+  "initialReflectedProperties"?: WaPage['initialReflectedProperties'];
+  /**  */
+  "internals"?: WaPage['internals'];
 
 
 }
@@ -2304,6 +2680,20 @@ export type WaQrCodeProps = {
   /** The level of error correction to use. [Learn more](https://www.qrcode.com/en/about/error_correction.html) */
   "errorCorrection"?: WaQrCode['errorCorrection'];
   /**  */
+  "image"?: WaQrCode['image'];
+  /**  */
+  "image-background"?: WaQrCode['imageBackground'];
+  /**  */
+  "imageBackground"?: WaQrCode['imageBackground'];
+  /**  */
+  "image-coverage"?: WaQrCode['imageCoverage'];
+  /**  */
+  "imageCoverage"?: WaQrCode['imageCoverage'];
+  /**  */
+  "image-padding"?: WaQrCode['imagePadding'];
+  /**  */
+  "imagePadding"?: WaQrCode['imagePadding'];
+  /**  */
   "dir"?: WaQrCode['dir'];
   /**  */
   "lang"?: WaQrCode['lang'];
@@ -2398,13 +2788,17 @@ instead. */
   "size"?: WaRadioGroup['size'];
   /** Ensures a child radio is checked before allowing the containing form to submit. */
   "required"?: WaRadioGroup['required'];
-  /** Used for SSR. if true, will show slotted label on initial render. */
+  /** Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup
+includes the label before the component hydrates on the client. */
   "with-label"?: WaRadioGroup['withLabel'];
-  /** Used for SSR. if true, will show slotted label on initial render. */
+  /** Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup
+includes the label before the component hydrates on the client. */
   "withLabel"?: WaRadioGroup['withLabel'];
-  /** Used for SSR. if true, will show slotted hint on initial render. */
+  /** Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup
+includes the hint before the component hydrates on the client. */
   "with-hint"?: WaRadioGroup['withHint'];
-  /** Used for SSR. if true, will show slotted hint on initial render. */
+  /** Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup
+includes the hint before the component hydrates on the client. */
   "withHint"?: WaRadioGroup['withHint'];
   /**  */
   "custom-error"?: WaRadioGroup['customError'];
@@ -2451,10 +2845,18 @@ the same document or shadow root for this to work. */
 
 
 export type WaRatingProps = {
+  /**  */
+  "role"?: WaRating['role'];
+  /** The name of the rating, submitted as a name/value pair with form data. */
+  "name"?: WaRating['name'];
   /** A label that describes the rating to assistive devices. */
   "label"?: WaRating['label'];
   /** The current rating. */
   "value"?: WaRating['value'];
+  /** The default value of the form control. Used to reset the rating to its initial value. */
+  "default-value"?: WaRating['defaultValue'];
+  /** The default value of the form control. Used to reset the rating to its initial value. */
+  "defaultValue"?: WaRating['defaultValue'];
   /** The highest rating to show. */
   "max"?: WaRating['max'];
   /** The precision at which the rating will increase and decrease. For example, to allow half-star ratings, set this
@@ -2464,12 +2866,18 @@ attribute to `0.5`. */
   "readonly"?: WaRating['readonly'];
   /** Disables the rating. */
   "disabled"?: WaRating['disabled'];
+  /** Makes the rating a required field. */
+  "required"?: WaRating['required'];
   /** A function that customizes the symbol to be rendered. The first and only argument is the rating's current value.
 The function should return a string containing trusted HTML of the symbol to render at the specified value. Works
 well with `<wa-icon>` elements. */
   "getSymbol"?: WaRating['getSymbol'];
   /** The component's size. */
   "size"?: WaRating['size'];
+  /**  */
+  "custom-error"?: WaRating['customError'];
+  /**  */
+  "customError"?: WaRating['customError'];
   /**  */
   "dir"?: WaRating['dir'];
   /**  */
@@ -2479,16 +2887,32 @@ well with `<wa-icon>` elements. */
   /**  */
   "didSSR"?: WaRating['didSSR'];
   /**  */
-  "rating"?: WaRating['rating'];
+  "assumeInteractionOn"?: WaRating['assumeInteractionOn'];
+  /**  */
+  "input"?: WaRating['input'];
+  /**  */
+  "valueHasChanged"?: WaRating['valueHasChanged'];
+  /**  */
+  "hasInteracted"?: WaRating['hasInteracted'];
+  /**  */
+  "states"?: WaRating['states'];
+  /**  */
+  "emitInvalid"?: WaRating['emitInvalid'];
+  /** By default, form controls are associated with the nearest containing `<form>` element. This attribute allows you
+to place the form control outside of a form and associate it with the form that has this `id`. The form must be in
+the same document or shadow root for this to work. */
+  "form"?: WaRating['form'];
   /**  */
   "initialReflectedProperties"?: WaRating['initialReflectedProperties'];
   /**  */
   "internals"?: WaRating['internals'];
 
   /** Emitted when the rating's value changes. */
-  "onchange"?: (e: CustomEvent<Event>) => void;
+  "onchange"?: (e: CustomEvent<never>) => void;
   /** Emitted when the user hovers over a value. The `phase` property indicates when hovering starts, moves to a new value, or ends. The `value` property tells what the rating's value would be if the user were to commit to the hovered value. */
   "onwa-hover"?: (e: CustomEvent<{ phase: 'start' | 'move' | 'end', value: number }>) => void;
+  /** Emitted when the form control has been checked for validity and its constraints aren't satisfied. */
+  "onwa-invalid"?: (e: CustomEvent<never>) => void;
 }
 
 
@@ -2521,6 +2945,27 @@ a date to this format in JavaScript, use [`date.toISOString()`](https://develope
 }
 
 
+export type WaResizeObserverProps = {
+  /** Disables the observer. */
+  "disabled"?: WaResizeObserver['disabled'];
+  /**  */
+  "dir"?: WaResizeObserver['dir'];
+  /**  */
+  "lang"?: WaResizeObserver['lang'];
+  /**  */
+  "did-ssr"?: WaResizeObserver['didSSR'];
+  /**  */
+  "didSSR"?: WaResizeObserver['didSSR'];
+  /**  */
+  "initialReflectedProperties"?: WaResizeObserver['initialReflectedProperties'];
+  /**  */
+  "internals"?: WaResizeObserver['internals'];
+
+  /** Emitted when the element is resized. */
+  "onwa-resize"?: (e: CustomEvent<{ entries: ResizeObserverEntry[] }>) => void;
+}
+
+
 export type WaScrollerProps = {
   /** The scroller's orientation. */
   "orientation"?: WaScroller['orientation'];
@@ -2550,27 +2995,6 @@ export type WaScrollerProps = {
   "internals"?: WaScroller['internals'];
 
 
-}
-
-
-export type WaResizeObserverProps = {
-  /** Disables the observer. */
-  "disabled"?: WaResizeObserver['disabled'];
-  /**  */
-  "dir"?: WaResizeObserver['dir'];
-  /**  */
-  "lang"?: WaResizeObserver['lang'];
-  /**  */
-  "did-ssr"?: WaResizeObserver['didSSR'];
-  /**  */
-  "didSSR"?: WaResizeObserver['didSSR'];
-  /**  */
-  "initialReflectedProperties"?: WaResizeObserver['initialReflectedProperties'];
-  /**  */
-  "internals"?: WaResizeObserver['internals'];
-
-  /** Emitted when the element is resized. */
-  "onwa-resize"?: (e: CustomEvent<{ entries: ResizeObserverEntry[] }>) => void;
 }
 
 
@@ -2633,8 +3057,6 @@ export type WaSliderProps = {
   "max"?: WaSlider['max'];
   /** The granularity the value must adhere to when incrementing and decrementing. */
   "step"?: WaSlider['step'];
-  /** Makes the slider a required field. */
-  "required"?: WaSlider['required'];
   /** Tells the browser to focus the slider when the page loads or a dialog is shown. */
   "autofocus"?: WaSlider['autofocus'];
   /** The distance of the tooltip from the slider's thumb. */
@@ -2653,6 +3075,18 @@ export type WaSliderProps = {
   "with-tooltip"?: WaSlider['withTooltip'];
   /** Draws a tooltip above the thumb when the control has focus or is dragged. */
   "withTooltip"?: WaSlider['withTooltip'];
+  /** Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup
+includes the label before the component hydrates on the client. */
+  "with-label"?: WaSlider['withLabel'];
+  /** Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup
+includes the label before the component hydrates on the client. */
+  "withLabel"?: WaSlider['withLabel'];
+  /** Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup
+includes the hint before the component hydrates on the client. */
+  "with-hint"?: WaSlider['withHint'];
+  /** Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup
+includes the hint before the component hydrates on the client. */
+  "withHint"?: WaSlider['withHint'];
   /**  */
   "custom-error"?: WaSlider['customError'];
   /**  */
@@ -2680,6 +3114,8 @@ export type WaSliderProps = {
   /** A custom formatting function to apply to the value. This will be shown in the tooltip and announced by screen
 readers. Must be set with JavaScript. Property only. */
   "valueFormatter"?: WaSlider['valueFormatter'];
+  /**  */
+  "required"?: WaSlider['required'];
   /**  */
   "assumeInteractionOn"?: WaSlider['assumeInteractionOn'];
   /**  */
@@ -2714,6 +3150,49 @@ the same document or shadow root for this to work. */
 }
 
 
+export type WaSplitPanelProps = {
+  /** The current position of the divider from the primary panel's edge as a percentage 0-100. Defaults to 50% of the
+container's initial size. */
+  "position"?: WaSplitPanel['position'];
+  /** The current position of the divider from the primary panel's edge in pixels. */
+  "position-in-pixels"?: WaSplitPanel['positionInPixels'];
+  /** The current position of the divider from the primary panel's edge in pixels. */
+  "positionInPixels"?: WaSplitPanel['positionInPixels'];
+  /** Sets the split panel's orientation. */
+  "orientation"?: WaSplitPanel['orientation'];
+  /** Disables resizing. Note that the position may still change as a result of resizing the host element. */
+  "disabled"?: WaSplitPanel['disabled'];
+  /** If no primary panel is designated, both panels will resize proportionally when the host element is resized. If a
+primary panel is designated, it will maintain its size and the other panel will grow or shrink as needed when the
+host element is resized. */
+  "primary"?: WaSplitPanel['primary'];
+  /** One or more space-separated values at which the divider should snap. Values can be in pixels or percentages, e.g.
+`"100px 50%"`. */
+  "snap"?: WaSplitPanel['snap'];
+  /** How close the divider must be to a snap point until snapping occurs. */
+  "snap-threshold"?: WaSplitPanel['snapThreshold'];
+  /** How close the divider must be to a snap point until snapping occurs. */
+  "snapThreshold"?: WaSplitPanel['snapThreshold'];
+  /**  */
+  "dir"?: WaSplitPanel['dir'];
+  /**  */
+  "lang"?: WaSplitPanel['lang'];
+  /**  */
+  "did-ssr"?: WaSplitPanel['didSSR'];
+  /**  */
+  "didSSR"?: WaSplitPanel['didSSR'];
+  /**  */
+  "divider"?: WaSplitPanel['divider'];
+  /**  */
+  "initialReflectedProperties"?: WaSplitPanel['initialReflectedProperties'];
+  /**  */
+  "internals"?: WaSplitPanel['internals'];
+
+  /** Emitted when the divider's position changes. */
+  "onwa-reposition"?: (e: CustomEvent<never>) => void;
+}
+
+
 export type WaSwitchProps = {
   /**  */
   "title"?: WaSwitch['title'];
@@ -2733,9 +3212,11 @@ export type WaSwitchProps = {
   "required"?: WaSwitch['required'];
   /** The switch's hint. If you need to display HTML, use the `hint` slot instead. */
   "hint"?: WaSwitch['hint'];
-  /** Used for SSR. If you slot in hint, make sure to add `with-hint` to your component to get it to properly render with SSR. */
+  /** Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup
+includes the hint before the component hydrates on the client. */
   "with-hint"?: WaSwitch['withHint'];
-  /** Used for SSR. If you slot in hint, make sure to add `with-hint` to your component to get it to properly render with SSR. */
+  /** Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup
+includes the hint before the component hydrates on the client. */
   "withHint"?: WaSwitch['withHint'];
   /**  */
   "custom-error"?: WaSwitch['customError'];
@@ -2785,11 +3266,37 @@ the same document or shadow root for this to work. */
 }
 
 
+export type WaTabPanelProps = {
+  /** The tab panel's name. */
+  "name"?: WaTabPanel['name'];
+  /** When true, the tab panel will be shown. */
+  "active"?: WaTabPanel['active'];
+  /**  */
+  "role"?: WaTabPanel['role'];
+  /**  */
+  "dir"?: WaTabPanel['dir'];
+  /**  */
+  "lang"?: WaTabPanel['lang'];
+  /**  */
+  "did-ssr"?: WaTabPanel['didSSR'];
+  /**  */
+  "didSSR"?: WaTabPanel['didSSR'];
+  /**  */
+  "initialReflectedProperties"?: WaTabPanel['initialReflectedProperties'];
+  /**  */
+  "internals"?: WaTabPanel['internals'];
+
+
+}
+
+
 export type WaTabProps = {
   /** The name of the tab panel this tab is associated with. The panel must be located in the same tab group. */
   "panel"?: WaTab['panel'];
   /** Disables the tab and prevents selection. */
   "disabled"?: WaTab['disabled'];
+  /**  */
+  "role"?: WaTab['role'];
   /**  */
   "dir"?: WaTab['dir'];
   /**  */
@@ -2804,71 +3311,6 @@ export type WaTabProps = {
   "initialReflectedProperties"?: WaTab['initialReflectedProperties'];
   /**  */
   "internals"?: WaTab['internals'];
-
-
-}
-
-
-export type WaSplitPanelProps = {
-  /** The current position of the divider from the primary panel's edge as a percentage 0-100. Defaults to 50% of the
-container's initial size. */
-  "position"?: WaSplitPanel['position'];
-  /** The current position of the divider from the primary panel's edge in pixels. */
-  "position-in-pixels"?: WaSplitPanel['positionInPixels'];
-  /** The current position of the divider from the primary panel's edge in pixels. */
-  "positionInPixels"?: WaSplitPanel['positionInPixels'];
-  /** Sets the split panel's orientation. */
-  "orientation"?: WaSplitPanel['orientation'];
-  /** Disables resizing. Note that the position may still change as a result of resizing the host element. */
-  "disabled"?: WaSplitPanel['disabled'];
-  /** If no primary panel is designated, both panels will resize proportionally when the host element is resized. If a
-primary panel is designated, it will maintain its size and the other panel will grow or shrink as needed when the
-host element is resized. */
-  "primary"?: WaSplitPanel['primary'];
-  /** One or more space-separated values at which the divider should snap. Values can be in pixels or percentages, e.g.
-`"100px 50%"`. */
-  "snap"?: WaSplitPanel['snap'];
-  /** How close the divider must be to a snap point until snapping occurs. */
-  "snap-threshold"?: WaSplitPanel['snapThreshold'];
-  /** How close the divider must be to a snap point until snapping occurs. */
-  "snapThreshold"?: WaSplitPanel['snapThreshold'];
-  /**  */
-  "dir"?: WaSplitPanel['dir'];
-  /**  */
-  "lang"?: WaSplitPanel['lang'];
-  /**  */
-  "did-ssr"?: WaSplitPanel['didSSR'];
-  /**  */
-  "didSSR"?: WaSplitPanel['didSSR'];
-  /**  */
-  "divider"?: WaSplitPanel['divider'];
-  /**  */
-  "initialReflectedProperties"?: WaSplitPanel['initialReflectedProperties'];
-  /**  */
-  "internals"?: WaSplitPanel['internals'];
-
-  /** Emitted when the divider's position changes. */
-  "onwa-reposition"?: (e: CustomEvent<never>) => void;
-}
-
-
-export type WaTabPanelProps = {
-  /** The tab panel's name. */
-  "name"?: WaTabPanel['name'];
-  /** When true, the tab panel will be shown. */
-  "active"?: WaTabPanel['active'];
-  /**  */
-  "dir"?: WaTabPanel['dir'];
-  /**  */
-  "lang"?: WaTabPanel['lang'];
-  /**  */
-  "did-ssr"?: WaTabPanel['didSSR'];
-  /**  */
-  "didSSR"?: WaTabPanel['didSSR'];
-  /**  */
-  "initialReflectedProperties"?: WaTabPanel['initialReflectedProperties'];
-  /**  */
-  "internals"?: WaTabPanel['internals'];
 
 
 }
@@ -2896,8 +3338,8 @@ manual, the tab will receive focus but will not show until the user presses spac
   "didSSR"?: WaTabGroup['didSSR'];
   /**  */
   "tabGroup"?: WaTabGroup['tabGroup'];
-  /**  */
-  "body"?: WaTabGroup['body'];
+  /** Default slot for `<wa-tab-panel>` children (inside the `body` part container). */
+  "defaultSlot"?: WaTabGroup['defaultSlot'];
   /**  */
   "nav"?: WaTabGroup['nav'];
   /**  */
@@ -2947,7 +3389,8 @@ export type WaTextareaProps = {
   "maxlength"?: WaTextarea['maxlength'];
   /** Controls whether and how text input is automatically capitalized as it is entered by the user. */
   "autocapitalize"?: WaTextarea['autocapitalize'];
-  /** Indicates whether the browser's autocorrect feature is on or off. */
+  /** Indicates whether the browser's autocorrect feature is on or off. When set as an attribute, use `"off"` or `"on"`.
+When set as a property, use `true` or `false`. */
   "autocorrect"?: WaTextarea['autocorrect'];
   /** Specifies what permission the browser has to provide assistance in filling out form field values. Refer to
 [this page on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) for available values. */
@@ -2961,14 +3404,22 @@ export type WaTextareaProps = {
   /** Tells the browser what type of data will be entered by the user, allowing it to display the appropriate virtual
 keyboard on supportive devices. */
   "inputmode"?: WaTextarea['inputmode'];
-  /** Used for SSR. If you're slotting in a `label` element, make sure to set this to `true`. */
+  /** Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup
+includes the label before the component hydrates on the client. */
   "with-label"?: WaTextarea['withLabel'];
-  /** Used for SSR. If you're slotting in a `label` element, make sure to set this to `true`. */
+  /** Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup
+includes the label before the component hydrates on the client. */
   "withLabel"?: WaTextarea['withLabel'];
-  /** Used for SSR. If you're slotting in a `hint` element, make sure to set this to `true`. */
+  /** Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup
+includes the hint before the component hydrates on the client. */
   "with-hint"?: WaTextarea['withHint'];
-  /** Used for SSR. If you're slotting in a `hint` element, make sure to set this to `true`. */
+  /** Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup
+includes the hint before the component hydrates on the client. */
   "withHint"?: WaTextarea['withHint'];
+  /** Shows a character count below the textarea. When `maxlength` is set, shows remaining characters instead. */
+  "with-count"?: WaTextarea['withCount'];
+  /** Shows a character count below the textarea. When `maxlength` is set, shows remaining characters instead. */
+  "withCount"?: WaTextarea['withCount'];
   /**  */
   "custom-error"?: WaTextarea['customError'];
   /**  */
@@ -3019,10 +3470,136 @@ the same document or shadow root for this to work. */
 }
 
 
+export type WaTimeInputProps = {
+  /** The time picker's name, submitted as a name/value pair with form data. */
+  "name"?: WaTimeInput['name'];
+  /** The default value of the form control. Used for form reset. */
+  "value"?: WaTimeInput['defaultValue'];
+  /** The default value of the form control. Used for form reset. */
+  "defaultValue"?: WaTimeInput['defaultValue'];
+  /** Disables the time picker. */
+  "disabled"?: WaTimeInput['disabled'];
+  /** Makes the time picker required for form submission. */
+  "required"?: WaTimeInput['required'];
+  /** Makes the input non-editable. The popup still opens for browsing. */
+  "readonly"?: WaTimeInput['readonly'];
+  /** The time picker's size. */
+  "size"?: WaTimeInput['size'];
+  /** The time picker's visual appearance. */
+  "appearance"?: WaTimeInput['appearance'];
+  /** Draws a pill-style time picker with rounded edges. */
+  "pill"?: WaTimeInput['pill'];
+  /** The time picker's label. If you need to display HTML, use the `label` slot instead. */
+  "label"?: WaTimeInput['label'];
+  /** The time picker's hint. If you need to display HTML, use the `hint` slot instead. */
+  "hint"?: WaTimeInput['hint'];
+  /** Forwarded to the hidden form input to enable browser autofill (`on`/`off`/custom tokens). */
+  "autocomplete"?: WaTimeInput['autocomplete'];
+  /** Shows a clear button when the time picker has a value. */
+  "with-clear"?: WaTimeInput['withClear'];
+  /** Shows a clear button when the time picker has a value. */
+  "withClear"?: WaTimeInput['withClear'];
+  /** Renders a "Now" button in the popup footer. */
+  "with-now"?: WaTimeInput['withNow'];
+  /** Renders a "Now" button in the popup footer. */
+  "withNow"?: WaTimeInput['withNow'];
+  /** Only required for SSR. Set to `true` if you're slotting in a `label` element. */
+  "with-label"?: WaTimeInput['withLabel'];
+  /** Only required for SSR. Set to `true` if you're slotting in a `label` element. */
+  "withLabel"?: WaTimeInput['withLabel'];
+  /** Only required for SSR. Set to `true` if you're slotting in a `hint` element. */
+  "with-hint"?: WaTimeInput['withHint'];
+  /** Only required for SSR. Set to `true` if you're slotting in a `hint` element. */
+  "withHint"?: WaTimeInput['withHint'];
+  /** The earliest selectable time in wire format. May be later than `max` to represent an overnight range. The picker
+delegates reversed-range semantics to the mirrored native `<input type="time">`. */
+  "min"?: WaTimeInput['min'];
+  /** The latest selectable time in wire format. */
+  "max"?: WaTimeInput['max'];
+  /** The granularity, in seconds, matching HTML `<input type="time">`. Default `60` hides the seconds segment.
+Values below 60 reveal the seconds segment. `'any'` disables `stepMismatch` enforcement. */
+  "step"?: WaTimeInput['step'];
+  /** Whether the UI uses a 12-hour or 24-hour clock. `auto` follows the resolved locale. */
+  "hour-format"?: WaTimeInput['hourFormat'];
+  /** Whether the UI uses a 12-hour or 24-hour clock. `auto` follows the resolved locale. */
+  "hourFormat"?: WaTimeInput['hourFormat'];
+  /** Whether the popup is open. */
+  "open"?: WaTimeInput['open'];
+  /** Preferred popup placement. */
+  "placement"?: WaTimeInput['placement'];
+  /** Distance in pixels between the popup and the input. */
+  "distance"?: WaTimeInput['distance'];
+  /**  */
+  "custom-error"?: WaTimeInput['customError'];
+  /**  */
+  "customError"?: WaTimeInput['customError'];
+  /**  */
+  "dir"?: WaTimeInput['dir'];
+  /**  */
+  "lang"?: WaTimeInput['lang'];
+  /**  */
+  "did-ssr"?: WaTimeInput['didSSR'];
+  /**  */
+  "didSSR"?: WaTimeInput['didSSR'];
+  /** Every segment edit dispatches `input`, so a single observed `input` event marks the field as interacted with. */
+  "assumeInteractionOn"?: WaTimeInput['assumeInteractionOn'];
+  /**  */
+  "popup"?: WaTimeInput['popup'];
+  /**  */
+  "valueInput"?: WaTimeInput['valueInput'];
+  /**  */
+  "input"?: WaTimeInput['input'];
+  /**  */
+  "valueHasChanged"?: WaTimeInput['valueHasChanged'];
+  /**  */
+  "hasInteracted"?: WaTimeInput['hasInteracted'];
+  /**  */
+  "states"?: WaTimeInput['states'];
+  /**  */
+  "emitInvalid"?: WaTimeInput['emitInvalid'];
+  /** By default, form controls are associated with the nearest containing `<form>` element. This attribute allows you
+to place the form control outside of a form and associate it with the form that has this `id`. The form must be in
+the same document or shadow root for this to work. */
+  "form"?: WaTimeInput['form'];
+  /**  */
+  "initialReflectedProperties"?: WaTimeInput['initialReflectedProperties'];
+  /**  */
+  "internals"?: WaTimeInput['internals'];
+
+  /** Emitted as the user types into a segment or interacts with the popup columns. */
+  "oninput"?: (e: CustomEvent<InputEvent>) => void;
+  /** Emitted when the committed value changes. */
+  "onchange"?: (e: CustomEvent<Event>) => void;
+  /** Emitted when the control receives focus. */
+  "onfocus"?: (e: CustomEvent<never>) => void;
+  /** Emitted when the control loses focus. */
+  "onblur"?: (e: CustomEvent<never>) => void;
+  /** Emitted when the clear button is activated. */
+  "onwa-clear"?: (e: CustomEvent<never>) => void;
+  /** Emitted when the popup is about to open. Cancelable. */
+  "onwa-show"?: (e: CustomEvent<never>) => void;
+  /** Emitted after the popup opens and animations complete. */
+  "onwa-after-show"?: (e: CustomEvent<never>) => void;
+  /** Emitted when the popup is about to close. Cancelable. */
+  "onwa-hide"?: (e: CustomEvent<never>) => void;
+  /** Emitted after the popup closes and animations complete. */
+  "onwa-after-hide"?: (e: CustomEvent<never>) => void;
+  /** Emitted when the form control has been checked for validity and its constraints aren't satisfied. */
+  "onwa-invalid"?: (e: CustomEvent<never>) => void;
+}
+
+
 export type WaTreeProps = {
   /** The selection behavior of the tree. Single selection allows only one node to be selected at a time. Multiple
-displays checkboxes and allows more than one node to be selected. Leaf allows only leaf nodes to be selected. */
+displays checkboxes and allows more than one node to be selected. Leaf allows only leaf nodes to be selected.
+Leaf-multiple allows multiple leaf nodes to be selected while parent nodes only expand and collapse. */
   "selection"?: WaTree['selection'];
+  /**  */
+  "tabindex"?: WaTree['tabIndex'];
+  /**  */
+  "tabIndex"?: WaTree['tabIndex'];
+  /**  */
+  "role"?: WaTree['role'];
   /**  */
   "dir"?: WaTree['dir'];
   /**  */
@@ -3074,6 +3651,10 @@ export type WaZoomableFrameProps = {
   "without-interaction"?: WaZoomableFrame['withoutInteraction'];
   /** Disables interaction when present. */
   "withoutInteraction"?: WaZoomableFrame['withoutInteraction'];
+  /** Enables automatic theme syncing (light/dark mode and theme selector classes) from the host document to the iframe. */
+  "with-theme-sync"?: WaZoomableFrame['withThemeSync'];
+  /** Enables automatic theme syncing (light/dark mode and theme selector classes) from the host document to the iframe. */
+  "withThemeSync"?: WaZoomableFrame['withThemeSync'];
   /**  */
   "dir"?: WaZoomableFrame['dir'];
   /**  */
@@ -3191,6 +3772,70 @@ export type WaZoomableFrameProps = {
  * 
  * Component attributes and properties that can be applied to the element or by using JavaScript.
  * 
+ * - `label`: The text label shown in the header. If you need HTML, use the `label` slot instead. 
+ * - `expanded`: Expands the accordion item. 
+ * - `disabled`: Disables the accordion item so it can't be toggled. 
+ * - `dir`: undefined 
+ * - `lang`: undefined 
+ * - `did-ssr`/`didSSR`: undefined 
+ * - `initialReflectedProperties`: undefined (property only)
+ * - `internals`: undefined (property only)
+ * 
+ * #### Slots
+ * 
+ * Areas where markup can be added to the component.
+ * 
+ * - `(default)`: The accordion item's body content.
+ * - `label`: The accordion item's label. Alternatively, use the `label` attribute.
+ * - `icon`: Optional expand/collapse icon. Works best with `<wa-icon>`.
+ * 
+ * #### Methods
+ * 
+ * Methods that can be called to access component functionality.
+ * 
+ * - `handleExpandedChange() => void`: undefined
+ * - `expand() => void`: Expands the accordion item with animation.
+ * - `collapse() => void`: Collapses the accordion item with animation.
+ * - `toggle() => void`: Toggles the accordion item's expanded state.
+ * - `focus(options?: FocusOptions) => void`: Focuses the accordion item's trigger button.
+ * 
+ * #### CSS Custom Properties
+ * 
+ * CSS variables available for styling the component.
+ * 
+ * - `--spacing`: The amount of space around and between the item's header and content. (default: `var(--wa-space-m)`)
+ * - `--show-duration`: The duration of the expand animation. (default: `var(--wa-transition-normal)`)
+ * - `--hide-duration`: The duration of the collapse animation. (default: `var(--wa-transition-normal)`)
+ * - `--easing`: The easing of the expand/collapse animation. (default: `var(--wa-transition-easing)`)
+ * 
+ * #### CSS Parts
+ * 
+ * Custom selectors for styling elements within the component.
+ * 
+ * - `base`: The component's base wrapper.
+ * - `heading`: The heading element wrapping the trigger button. Omitted when `heading-level="none"`.
+ * - `button`: The trigger button that toggles the panel.
+ * - `label`: The container that wraps the label.
+ * - `icon`: The container that wraps the expand/collapse icon.
+ * - `panel`: The panel that contains the item's content.
+ * - `content`: The content slot inside the panel.
+ * 
+ * #### CSS States
+ * 
+ * These can be used to apply styling when a component is in a given state.
+ * 
+ * - `animating`: Applied while the panel is animating.
+  */
+    "wa-accordion-item": Partial<WaAccordionItemProps & BaseProps<WaAccordionItem> & BaseEvents>;
+
+
+  /**
+     * 
+ * 
+ * #### Attributes & Properties
+ * 
+ * Component attributes and properties that can be applied to the element or by using JavaScript.
+ * 
  * - `title`: undefined 
  * - `name`: The name of the checkbox, submitted as a name/value pair with form data. 
  * - `value`: The value of the checkbox, submitted as a name/value pair with form data. 
@@ -3246,6 +3891,7 @@ export type WaZoomableFrameProps = {
  * 
  * Methods that can be called to access component functionality.
  * 
+ * - `handleSizeChange() => void`: undefined
  * - `handleDefaultCheckedChange() => void`: undefined
  * - `handleValueOrCheckedChange() => void`: undefined
  * - `handleStateChange() => void`: undefined
@@ -3340,6 +3986,8 @@ export type WaZoomableFrameProps = {
  * - `selected`: Draws the tree item in a selected state. 
  * - `disabled`: Disables the tree item. 
  * - `lazy`: Enables lazy loading behavior. 
+ * - `tabindex`/`tabIndex`: undefined 
+ * - `role`: undefined 
  * - `dir`: undefined 
  * - `lang`: undefined 
  * - `did-ssr`/`didSSR`: undefined 
@@ -3347,6 +3995,8 @@ export type WaZoomableFrameProps = {
  * - `isLeaf`: undefined (property only)
  * - `loading`: undefined (property only)
  * - `selectable`: undefined (property only)
+ * - `_treeItemContext`: undefined (property only)
+ * - `_parentTreeContext`: undefined (property only)
  * - `defaultSlot`: undefined (property only)
  * - `childrenSlot`: undefined (property only)
  * - `itemElement`: undefined (property only)
@@ -3393,8 +4043,8 @@ export type WaZoomableFrameProps = {
  * 
  * CSS variables available for styling the component.
  * 
- * - `--show-duration`: The animation duration when expanding tree items. (default: `200ms`)
- * - `--hide-duration`: The animation duration when collapsing tree items. (default: `200ms`)
+ * - `--show-duration`: The animation duration when expanding tree items. (default: `var(--wa-transition-normal)`)
+ * - `--hide-duration`: The animation duration when collapsing tree items. (default: `var(--wa-transition-normal)`)
  * 
  * #### CSS Parts
  * 
@@ -3467,6 +4117,10 @@ export type WaZoomableFrameProps = {
  * - `appearance`: The button's visual appearance. 
  * - `size`: The button's size. 
  * - `with-caret`/`withCaret`: Draws the button with a caret. Used to indicate that the button triggers a dropdown menu or similar behavior. 
+ * - `with-start`/`withStart`: Only required for SSR. Set to `true` if you're slotting in a `start` element so the server-rendered markup
+ * includes the start slot before the component hydrates on the client. 
+ * - `with-end`/`withEnd`: Only required for SSR. Set to `true` if you're slotting in an `end` element so the server-rendered markup
+ * includes the end slot before the component hydrates on the client. 
  * - `disabled`: Disables the button. 
  * - `loading`: Draws the button in a loading state. 
  * - `pill`: Draws a pill-style button with rounded edges. 
@@ -3532,7 +4186,10 @@ export type WaZoomableFrameProps = {
  * 
  * Methods that can be called to access component functionality.
  * 
+ * - `handleSizeChange() => void`: undefined
  * - `handleDisabledChange() => void`: undefined
+ * - `handleHrefChange() => void`: undefined
+ * - `handleLoadingChange() => void`: undefined
  * - `setValue(_args: Parameters<WebAwesomeFormAssociatedElement['setValue']>) => void`: undefined
  * - `click() => void`: Simulates a click on the button.
  * - `focus(options?: FocusOptions) => void`: Sets focus on the button.
@@ -3562,8 +4219,65 @@ export type WaZoomableFrameProps = {
  * - `end`: The container that wraps the `end` slot.
  * - `caret`: The button's caret icon, a `<wa-icon>` element.
  * - `spinner`: The spinner that shows when the button is in the loading state.
+ * 
+ * #### CSS States
+ * 
+ * These can be used to apply styling when a component is in a given state.
+ * 
+ * - `disabled`: Applied when the button is disabled.
+ * - `icon-button`: Applied when the button contains only a `<wa-icon>` with no other content.
+ * - `link`: Applied when the button is rendered as a link (i.e. `href` is set).
+ * - `loading`: Applied when the button is in the loading state.
   */
     "wa-button": Partial<WaButtonProps & BaseProps<WaButton> & BaseEvents>;
+
+
+  /**
+     * 
+ * 
+ * #### Attributes & Properties
+ * 
+ * Component attributes and properties that can be applied to the element or by using JavaScript.
+ * 
+ * - `mode`: Controls how items can be expanded. `multiple` (the default) allows any number of items to be open at
+ * once. `single` allows only one item to be open at a time; opening a new item collapses the previously
+ * open one, and clicking an open item does not collapse it. `single-collapsible` is the same as `single`
+ * except that clicking the open item collapses it, so zero open items is a valid state. 
+ * - `icon-placement`/`iconPlacement`: The location of the expand/collapse icon in child items. 
+ * - `heading-level`/`headingLevel`: The heading level for child item triggers (1–6), or "none" to omit the heading wrapper. Defaults to 3. 
+ * - `appearance`: The accordion's visual appearance. 
+ * - `dir`: undefined 
+ * - `lang`: undefined 
+ * - `did-ssr`/`didSSR`: undefined 
+ * - `initialReflectedProperties`: undefined (property only)
+ * - `internals`: undefined (property only)
+ * 
+ * #### Events
+ * 
+ * Events that will be emitted by the component.
+ * 
+ * - `wa-expand`: Emitted before an item expands. Cancelable.
+ * - `wa-after-expand`: Emitted after an item finishes expanding.
+ * - `wa-collapse`: Emitted before an item collapses. Cancelable.
+ * - `wa-after-collapse`: Emitted after an item finishes collapsing.
+ * 
+ * #### Slots
+ * 
+ * Areas where markup can be added to the component.
+ * 
+ * - `(default)`: One or more `<wa-accordion-item>` elements.
+ * 
+ * #### Methods
+ * 
+ * Methods that can be called to access component functionality.
+ * 
+ * - `syncIconPlacement() => void`: undefined
+ * - `syncHeadingLevel() => void`: undefined
+ * - `syncAppearance() => void`: undefined
+ * - `expandAll() => void`: Expands all accordion items. No-op when `mode` is `single` or `single-collapsible`.
+ * - `collapseAll() => void`: Collapses all accordion items.
+  */
+    "wa-accordion": Partial<WaAccordionProps & BaseProps<WaAccordion> & BaseEvents>;
 
 
   /**
@@ -3912,6 +4626,12 @@ export type WaZoomableFrameProps = {
  * - `(default)`: The callout's main content.
  * - `icon`: An icon to show in the callout. Works best with `<wa-icon>`.
  * 
+ * #### Methods
+ * 
+ * Methods that can be called to access component functionality.
+ * 
+ * - `handleSizeChange() => void`: undefined
+ * 
  * #### CSS Parts
  * 
  * Custom selectors for styling elements within the component.
@@ -3930,9 +4650,16 @@ export type WaZoomableFrameProps = {
  * Component attributes and properties that can be applied to the element or by using JavaScript.
  * 
  * - `appearance`: The card's visual appearance. 
- * - `with-header`/`withHeader`: Renders the card with a header. Only needed for SSR, otherwise is automatically added. 
- * - `with-media`/`withMedia`: Renders the card with an image. Only needed for SSR, otherwise is automatically added. 
- * - `with-footer`/`withFooter`: Renders the card with a footer. Only needed for SSR, otherwise is automatically added. 
+ * - `with-header`/`withHeader`: Only required for SSR. Set to `true` if you're slotting in a `header` element so the server-rendered markup
+ * includes the header before the component hydrates on the client. 
+ * - `with-media`/`withMedia`: Only required for SSR. Set to `true` if you're slotting in a `media` element so the server-rendered markup
+ * includes the media before the component hydrates on the client. 
+ * - `with-footer`/`withFooter`: Only required for SSR. Set to `true` if you're slotting in a `footer` element so the server-rendered markup
+ * includes the footer before the component hydrates on the client. 
+ * - `with-header-actions`/`withHeaderActions`: Only required for SSR. Set to `true` if you're slotting in a `header-actions` element so the server-rendered markup
+ * includes the media before the component hydrates on the client. 
+ * - `with-footer-actions`/`withFooterActions`: Only required for SSR. Set to `true` if you're slotting in a `footer-actions` element so the server-rendered markup
+ * includes the media before the component hydrates on the client. 
  * - `orientation`: Renders the card's orientation * 
  * - `dir`: undefined 
  * - `lang`: undefined 
@@ -4058,6 +4785,63 @@ export type WaZoomableFrameProps = {
  * 
  * Component attributes and properties that can be applied to the element or by using JavaScript.
  * 
+ * - `label`: The checkbox group's label. Required for proper accessibility. If you need to display HTML, use the `label` slot
+ * instead. 
+ * - `hint`: The checkbox group's hint. If you need to display HTML, use the `hint` slot instead. 
+ * - `orientation`: The orientation in which to show grouped checkboxes. 
+ * - `size`: The group's size. When present, this size will be applied to all `<wa-checkbox>` and `<wa-switch>` items inside. 
+ * - `required`: Indicates that at least one option should be selected. This only adds a visual indicator to the label. To enforce
+ * the requirement, use the `required` attribute on the individual checkboxes and/or their `setCustomValidity()`
+ * method. 
+ * - `with-label`/`withLabel`: Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup includes
+ * the label before the component hydrates on the client. 
+ * - `with-hint`/`withHint`: Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup includes
+ * the hint before the component hydrates on the client. 
+ * - `dir`: undefined 
+ * - `lang`: undefined 
+ * - `did-ssr`/`didSSR`: undefined 
+ * - `initialReflectedProperties`: undefined (property only)
+ * - `internals`: undefined (property only)
+ * 
+ * #### Slots
+ * 
+ * Areas where markup can be added to the component.
+ * 
+ * - `(default)`: The default slot where `<wa-checkbox>` or `<wa-switch>` elements are placed.
+ * - `label`: The checkbox group's label. Required for proper accessibility. Alternatively, you can use the `label` attribute.
+ * - `hint`: Text that describes how to use the checkbox group. Alternatively, you can use the `hint` attribute.
+ * 
+ * #### Methods
+ * 
+ * Methods that can be called to access component functionality.
+ * 
+ * - `handleSizeChange() => void`: undefined
+ * 
+ * #### CSS Custom Properties
+ * 
+ * CSS variables available for styling the component.
+ * 
+ * - `--gap`: The gap between grouped checkboxes. (default: `0.5em`)
+ * 
+ * #### CSS Parts
+ * 
+ * Custom selectors for styling elements within the component.
+ * 
+ * - `form-control`: The form control that wraps the label, group, and hint.
+ * - `form-control-label`: The label's wrapper.
+ * - `form-control-input`: The element that wraps the grouped checkboxes, exposed as a `role="group"`.
+ * - `hint`: The hint's wrapper.
+  */
+    "wa-checkbox-group": Partial<WaCheckboxGroupProps & BaseProps<WaCheckboxGroup> & BaseEvents>;
+
+
+  /**
+     * 
+ * 
+ * #### Attributes & Properties
+ * 
+ * Component attributes and properties that can be applied to the element or by using JavaScript.
+ * 
  * - `title`: undefined 
  * - `type`: The type of input. Works the same as a native `<input>` element, but only a subset of types are supported. Defaults
  * to `text`. 
@@ -4082,7 +4866,8 @@ export type WaZoomableFrameProps = {
  * - `step`: Specifies the granularity that the value must adhere to, or the special value `any` which means no stepping is
  * implied, allowing any numeric value. Only applies to date and number input types. 
  * - `autocapitalize`: Controls whether and how text input is automatically capitalized as it is entered by the user. 
- * - `autocorrect`: Indicates whether the browser's autocorrect feature is on or off. 
+ * - `autocorrect`: Indicates whether the browser's autocorrect feature is on or off. When set as an attribute, use `"off"` or `"on"`.
+ * When set as a property, use `true` or `false`. 
  * - `autocomplete`: Specifies what permission the browser has to provide assistance in filling out form field values. Refer to
  * [this page on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) for available values. 
  * - `autofocus`: Indicates that the input should receive focus on page load. 
@@ -4090,8 +4875,10 @@ export type WaZoomableFrameProps = {
  * - `spellcheck`: Enables spell checking on the input. 
  * - `inputmode`: Tells the browser what type of data will be entered by the user, allowing it to display the appropriate virtual
  * keyboard on supportive devices. 
- * - `with-label`/`withLabel`: Used for SSR. Will determine if the SSRed component will have the label slot rendered on initial paint. 
- * - `with-hint`/`withHint`: Used for SSR. Will determine if the SSRed component will have the hint slot rendered on initial paint. 
+ * - `with-label`/`withLabel`: Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup
+ * includes the label before the component hydrates on the client. 
+ * - `with-hint`/`withHint`: Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup
+ * includes the hint before the component hydrates on the client. 
  * - `name`: The name of the input, submitted as a name/value pair with form data. 
  * - `disabled`: Disables the form control. 
  * - `custom-error`/`customError`: undefined 
@@ -4144,6 +4931,7 @@ export type WaZoomableFrameProps = {
  * 
  * Methods that can be called to access component functionality.
  * 
+ * - `handleSizeChange() => void`: undefined
  * - `handleStepChange() => void`: undefined
  * - `focus(options?: FocusOptions) => void`: Sets focus on the input.
  * - `blur() => void`: Removes focus from the input.
@@ -4278,8 +5066,8 @@ export type WaZoomableFrameProps = {
  * - `--arrow-color`: The color of the arrow. (default: `black`)
  * - `--auto-size-available-width`: A read-only custom property that determines the amount of width the popup can be before overflowing. Useful for positioning child elements that need to overflow. This property is only available when using `auto-size`. (default: `undefined`)
  * - `--auto-size-available-height`: A read-only custom property that determines the amount of height the popup can be before overflowing. Useful for positioning child elements that need to overflow. This property is only available when using `auto-size`. (default: `undefined`)
- * - `--show-duration`: The show duration to use when applying built-in animation classes. (default: `100ms`)
- * - `--hide-duration`: The hide duration to use when applying built-in animation classes. (default: `100ms`)
+ * - `--show-duration`: The show duration to use when applying built-in animation classes. (default: `var(--wa-transition-fast)`)
+ * - `--hide-duration`: The hide duration to use when applying built-in animation classes. (default: `var(--wa-transition-fast)`)
  * 
  * #### CSS Parts
  * 
@@ -4300,14 +5088,18 @@ export type WaZoomableFrameProps = {
  * Component attributes and properties that can be applied to the element or by using JavaScript.
  * 
  * - `value`/`defaultValue`: The default value of the form control. Primarily used for resetting the form control. 
- * - `with-label`/`withLabel`: undefined 
- * - `with-hint`/`withHint`: undefined 
+ * - `with-label`/`withLabel`: Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup
+ * includes the label before the component hydrates on the client. 
+ * - `with-hint`/`withHint`: Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup
+ * includes the hint before the component hydrates on the client. 
  * - `label`: The color picker's label. This will not be displayed, but it will be announced by assistive devices. If you need to
  * display HTML, you can use the `label` slot` instead. 
  * - `hint`: The color picker's hint. If you need to display HTML, use the `hint` slot instead. 
  * - `format`: The format to use. If opacity is enabled, these will translate to HEXA, RGBA, HSLA, and HSVA respectively. The color
  * picker will accept user input in any format (including CSS color names) and convert it to the desired format. 
  * - `size`: Determines the size of the color picker's trigger 
+ * - `placement`: The preferred placement of the color picker's popup. Note that the actual placement will vary as configured to
+ * keep the panel inside of the viewport. 
  * - `without-format-toggle`/`withoutFormatToggle`: Removes the button that lets users toggle between format. 
  * - `name`: The name of the form control, submitted as a name/value pair with form data. 
  * - `disabled`: Disables the color picker. 
@@ -4317,7 +5109,9 @@ export type WaZoomableFrameProps = {
  * - `uppercase`: By default, values are lowercase. With this attribute, values will be uppercase instead. 
  * - `swatches`: One or more predefined color swatches to display as presets in the color picker. Can include any format the color
  * picker can parse, including HEX(A), RGB(A), HSL(A), HSV(A), and CSS color names. Each color must be separated by a
- * semicolon (`;`). Alternatively, you can pass an array of color values to this property using JavaScript. 
+ * semicolon (`;`). Alternatively, you can pass an array of color values or an array of `{ color, label }` objects to
+ * this property using JavaScript. When using objects with labels, the label will be used for the swatch's accessible
+ * name instead of the raw color value. 
  * - `required`: Makes the color picker a required field. 
  * - `custom-error`/`customError`: undefined 
  * - `dir`: undefined 
@@ -4375,6 +5169,7 @@ export type WaZoomableFrameProps = {
  * 
  * Methods that can be called to access component functionality.
  * 
+ * - `handleSizeChange() => void`: undefined
  * - `getHexString(hue: number, saturation: number, brightness: number, alpha = 100) => void`: Generates a hex string from HSV values. Hue must be 0-360. All other arguments must be 0-100.
  * - `handleFormatChange() => void`: undefined
  * - `handleOpacityChange() => void`: undefined
@@ -4599,20 +5394,26 @@ export type WaZoomableFrameProps = {
  * attribute, append the attribute name wrapped in square brackets, e.g. `from="el[value]"`. To copy a property,
  * append a dot and the property name, e.g. `from="el.value"`. 
  * - `disabled`: Disables the copy button. 
- * - `copy-label`/`copyLabel`: A custom label to show in the tooltip. 
+ * - `copy-label`/`copyLabel`: A custom label to use as the accessible name and tooltip text in the default copy state. 
  * - `success-label`/`successLabel`: A custom label to show in the tooltip after copying. 
  * - `error-label`/`errorLabel`: A custom label to show in the tooltip when a copy error occurs. 
  * - `feedback-duration`/`feedbackDuration`: The length of time to show feedback before restoring the default trigger. 
  * - `tooltip-placement`/`tooltipPlacement`: The preferred placement of the tooltip. 
+ * - `tooltip`: Controls the built-in tooltip. `full` (default) shows the tooltip on hover and focus and during copy feedback.
+ * `copy` keeps the tooltip silent on hover/focus and only shows it briefly to confirm a successful or failed copy.
+ * `none` disables the tooltip entirely. Applies to both the default and custom triggers. 
  * - `dir`: undefined 
  * - `lang`: undefined 
  * - `did-ssr`/`didSSR`: undefined 
  * - `copyIcon`: undefined (property only)
  * - `successIcon`: undefined (property only)
  * - `errorIcon`: undefined (property only)
- * - `tooltip`: undefined (property only)
+ * - `defaultSlot`: undefined (property only)
+ * - `shadowTooltip`: undefined (property only)
  * - `isCopying`: undefined (property only)
  * - `status`: undefined (property only)
+ * - `hasCustomTrigger`: undefined (property only)
+ * - `liveAnnouncement`: undefined (property only)
  * - `initialReflectedProperties`: undefined (property only)
  * - `internals`: undefined (property only)
  * 
@@ -4627,9 +5428,19 @@ export type WaZoomableFrameProps = {
  * 
  * Areas where markup can be added to the component.
  * 
+ * - `(default)`: The trigger element. By default, a copy icon button is rendered so this is optional. If desired, you can slot in a custom element such as `<wa-button>` or `<button>`.
  * - `copy-icon`: The icon to show in the default copy state. Works best with `<wa-icon>`.
  * - `success-icon`: The icon to show when the content is copied. Works best with `<wa-icon>`.
  * - `error-icon`: The icon to show when a copy error occurs. Works best with `<wa-icon>`.
+ * 
+ * #### Methods
+ * 
+ * Methods that can be called to access component functionality.
+ * 
+ * - `handleStatusChange() => void`: undefined
+ * - `handleLabelChange() => void`: undefined
+ * - `handleTooltipOptionsChange() => void`: undefined
+ * - `handleTooltipModeChange(oldValue?: 'full' | 'copy' | 'none') => void`: undefined
  * 
  * #### CSS Parts
  * 
@@ -4639,10 +5450,14 @@ export type WaZoomableFrameProps = {
  * - `copy-icon`: The container that holds the copy icon.
  * - `success-icon`: The container that holds the success icon.
  * - `error-icon`: The container that holds the error icon.
- * - `tooltip__base`: The tooltip's exported `base` part.
- * - `tooltip__base__popup`: The tooltip's exported `popup` part.
- * - `tooltip__base__arrow`: The tooltip's exported `arrow` part.
- * - `tooltip__body`: The tooltip's exported `body` part.
+ * - `feedback`: The internal `<wa-tooltip>` element.
+ * 
+ * #### CSS States
+ * 
+ * These can be used to apply styling when a component is in a given state.
+ * 
+ * - `success`: Applied when the copy operation succeeds.
+ * - `error`: Applied when the copy operation fails.
   */
     "wa-copy-button": Partial<WaCopyButtonProps & BaseProps<WaCopyButton> & BaseEvents>;
 
@@ -4703,8 +5518,8 @@ export type WaZoomableFrameProps = {
  * CSS variables available for styling the component.
  * 
  * - `--spacing`: The amount of space around and between the details' content. Expects a single value. (default: `undefined`)
- * - `--show-duration`: The show duration to use when applying built-in animation classes. (default: `200ms`)
- * - `--hide-duration`: The hide duration to use when applying built-in animation classes. (default: `200ms`)
+ * - `--show-duration`: The show duration to use when applying built-in animation classes. (default: `var(--wa-transition-normal)`)
+ * - `--hide-duration`: The hide duration to use when applying built-in animation classes. (default: `var(--wa-transition-normal)`)
  * 
  * #### CSS Parts
  * 
@@ -4737,6 +5552,8 @@ export type WaZoomableFrameProps = {
  * proper accessibility. If you need to display HTML, use the `label` slot instead. 
  * - `without-header`/`withoutHeader`: Disables the header. This will also remove the default close button. 
  * - `light-dismiss`/`lightDismiss`: When enabled, the dialog will be closed when the user clicks outside of it. 
+ * - `with-footer`/`withFooter`: Only required for SSR. Set to `true` if you're slotting in a `footer` element so the server-rendered markup
+ * includes the footer before the component hydrates on the client. 
  * - `dir`: undefined 
  * - `lang`: undefined 
  * - `did-ssr`/`didSSR`: undefined 
@@ -4774,8 +5591,9 @@ export type WaZoomableFrameProps = {
  * 
  * - `--spacing`: The amount of space around and between the dialog's content. (default: `undefined`)
  * - `--width`: The preferred width of the dialog. Note that the dialog will shrink to accommodate smaller screens. (default: `undefined`)
- * - `--show-duration`: The animation duration when showing the dialog. (default: `200ms`)
- * - `--hide-duration`: The animation duration when hiding the dialog. (default: `200ms`)
+ * - `--backdrop-filter`: A filter to apply to the backdrop behind the dialog. (default: `none`)
+ * - `--show-duration`: The animation duration when showing the dialog. (default: `var(--wa-transition-normal)`)
+ * - `--hide-duration`: The animation duration when hiding the dialog. (default: `var(--wa-transition-normal)`)
  * 
  * #### CSS Parts
  * 
@@ -4837,6 +5655,8 @@ export type WaZoomableFrameProps = {
  * - `placement`: The direction from which the drawer will open. 
  * - `without-header`/`withoutHeader`: Disables the header. This will also remove the default close button. 
  * - `light-dismiss`/`lightDismiss`: When enabled, the drawer will be closed when the user clicks outside of it. 
+ * - `with-footer`/`withFooter`: Only required for SSR. Set to `true` if you're slotting in a `footer` element so the server-rendered markup
+ * includes the footer before the component hydrates on the client. 
  * - `dir`: undefined 
  * - `lang`: undefined 
  * - `did-ssr`/`didSSR`: undefined 
@@ -4875,8 +5695,9 @@ export type WaZoomableFrameProps = {
  * 
  * - `--spacing`: The amount of space around and between the drawer's content. (default: `undefined`)
  * - `--size`: The preferred size of the drawer. This will be applied to the drawer's width or height depending on its `placement`. Note that the drawer will shrink to accommodate smaller screens. (default: `undefined`)
- * - `--show-duration`: The animation duration when showing the drawer. (default: `200ms`)
- * - `--hide-duration`: The animation duration when hiding the drawer. (default: `200ms`)
+ * - `--backdrop-filter`: A filter to apply to the backdrop behind the drawer. (default: `none`)
+ * - `--show-duration`: The animation duration when showing the drawer. (default: `var(--wa-transition-normal)`)
+ * - `--hide-duration`: The animation duration when hiding the drawer. (default: `var(--wa-transition-normal)`)
  * 
  * #### CSS Parts
  * 
@@ -4935,6 +5756,7 @@ export type WaZoomableFrameProps = {
  * 
  * Methods that can be called to access component functionality.
  * 
+ * - `handleSizeChange() => void`: undefined
  * - `openSubmenu() => void`: Opens the submenu.
  * - `closeSubmenu() => void`: Closes the submenu.
  * 
@@ -4988,6 +5810,12 @@ export type WaZoomableFrameProps = {
  * 
  * - `(default)`: The dropdown's items, typically `<wa-dropdown-item>` elements.
  * - `trigger`: The element that triggers the dropdown, such as a `<wa-button>` or `<button>`.
+ * 
+ * #### Methods
+ * 
+ * Methods that can be called to access component functionality.
+ * 
+ * - `handleSizeChange() => void`: undefined
  * 
  * #### CSS Custom Properties
  * 
@@ -5164,6 +5992,157 @@ export type WaZoomableFrameProps = {
  * 
  * Component attributes and properties that can be applied to the element or by using JavaScript.
  * 
+ * - `name`: The name submitted with form data. 
+ * - `value`/`defaultValue`: The default value used for form reset. 
+ * - `disabled`: Disables the known date. 
+ * - `required`: Makes the known date required for form submission. 
+ * - `readonly`: Makes the fields non-editable. 
+ * - `size`: The known date's size. 
+ * - `appearance`: The known date's visual appearance. 
+ * - `pill`: Draws pill-style fields with rounded edges. 
+ * - `label`: The known date's label. If you need to display HTML, use the `label` slot instead. 
+ * - `hint`: The known date's hint. If you need to display HTML, use the `hint` slot instead. 
+ * - `autocomplete`: Browser autofill family. When set to `bday`, the three fields receive `bday-day`, `bday-month`, and
+ * `bday-year` respectively. The field-agnostic directives `off` and `on` are applied to all three fields.
+ * Any other value is forwarded only to the year field. 
+ * - `min`: Earliest selectable date as `YYYY-MM-DD`. 
+ * - `max`: Latest selectable date as `YYYY-MM-DD`. 
+ * - `locale`: BCP-47 locale override. When empty, the inherited `lang` attribute is used. 
+ * - `with-label`/`withLabel`: Only required for SSR. Set to `true` if you're slotting in a `label` element. 
+ * - `with-hint`/`withHint`: Only required for SSR. Set to `true` if you're slotting in a `hint` element. 
+ * - `custom-error`/`customError`: undefined 
+ * - `dir`: undefined 
+ * - `lang`: undefined 
+ * - `did-ssr`/`didSSR`: undefined 
+ * - `assumeInteractionOn`: undefined (property only)
+ * - `localize`: undefined (property only) (readonly)
+ * - `valueInput`: Hidden mirror used for native constraint validation (min/max/required + valid-date roundtrip). (property only)
+ * - `parts`: The three field strings. Stored verbatim so user-typed digits round-trip faithfully. (property only)
+ * - `value`: The committed value as an ISO `YYYY-MM-DD` string. The setter also accepts a `Date` or `null`. Reading
+ * returns an empty string when the value is blank or any field is only partially filled. (property only)
+ * - `valueAsDate`: The committed value as a `Date`, or `null` when the value is empty/invalid. (property only) (readonly)
+ * - `validationTarget`: Anchor native validation popups on a real visible input. The hidden mirror handles form data, but
+ * anchoring a popup on `display: none` content would render it at offset (0, 0). (property only) (readonly)
+ * - `input`: undefined (property only)
+ * - `valueHasChanged`: undefined (property only)
+ * - `hasInteracted`: undefined (property only)
+ * - `states`: undefined (property only)
+ * - `emitInvalid`: undefined (property only)
+ * - `labels`: undefined (property only) (readonly)
+ * - `form`: By default, form controls are associated with the nearest containing `<form>` element. This attribute allows you
+ * to place the form control outside of a form and associate it with the form that has this `id`. The form must be in
+ * the same document or shadow root for this to work. (property only)
+ * - `validity`: undefined (property only) (readonly)
+ * - `willValidate`: undefined (property only) (readonly)
+ * - `validationMessage`: undefined (property only) (readonly)
+ * - `allValidators`: undefined (property only) (readonly)
+ * - `initialReflectedProperties`: undefined (property only)
+ * - `internals`: undefined (property only)
+ * 
+ * #### Events
+ * 
+ * Events that will be emitted by the component.
+ * 
+ * - `input`: Emitted as the user types in any field.
+ * - `change`: Emitted when the committed value transitions to a new ISO date.
+ * - `blur`: Emitted when the control loses focus.
+ * - `focus`: Emitted when the control gains focus.
+ * - `wa-invalid`: Emitted when the form control has been checked for validity and its constraints aren't satisfied.
+ * 
+ * #### Slots
+ * 
+ * Areas where markup can be added to the component.
+ * 
+ * - `label`: The known date's group label. Alternatively, use the `label` attribute.
+ * - `hint`: Text that describes how to use the known date. Alternatively, use the `hint` attribute.
+ * 
+ * #### Methods
+ * 
+ * Methods that can be called to access component functionality.
+ * 
+ * - `handleSizeChange() => void`: undefined
+ * - `focus(options?: FocusOptions) => void`: Focuses the first empty field, or the first field when all are filled.
+ * - `blur() => void`: Removes focus from the known date.
+ * - `formResetCallback() => void`: undefined
+ * - `formStateRestoreCallback(state: string | File | FormData | null) => void`: Called when the browser is trying to restore element’s state to state in which case reason is "restore", or when
+ * the browser is trying to fulfill autofill on behalf of user in which case reason is "autocomplete". In the case of
+ * "restore", state is a string, File, or FormData object previously set as the second argument to setFormValue.
+ * - `getForm() => void`: undefined
+ * - `checkValidity() => void`: undefined
+ * - `reportValidity() => void`: undefined
+ * - `setValidity(args: Parameters<typeof this.internals.setValidity>) => void`: undefined
+ * - `setCustomStates() => void`: undefined
+ * - `setCustomValidity(message: string) => void`: Do not use this when creating a "Validator". This is intended for end users of components.
+ * We track manually defined custom errors so we don't clear them on accident in our validators.
+ * - `formDisabledCallback(isDisabled: boolean) => void`: undefined
+ * - `setValue(args: Parameters<typeof this.internals.setFormValue>) => void`: undefined
+ * - `resetValidity() => void`: Reset validity is a way of removing manual custom errors and native validation.
+ * - `updateValidity() => void`: undefined
+ * 
+ * #### CSS Parts
+ * 
+ * Custom selectors for styling elements within the component.
+ * 
+ * - `form-control`: The form control's outer wrapper.
+ * - `form-control-label`: The wrapper inside the legend that styles the visible label text.
+ * - `form-control-input`: Alias on the fields row matching other form controls.
+ * - `hint`: The hint's wrapper.
+ * - `label`: Alias on the legend's inner label wrapper.
+ * - `base`: The component's outer wrapper (alias of the fields row).
+ * - `fieldset`: The `<fieldset>` element grouping the three fields (or a `role="group"` div).
+ * - `legend`: The `<legend>` element (when a label is present).
+ * - `fields`: The flex row holding the three field blocks.
+ * - `field`: Each field block (label + input).
+ * - `field-day`: Added to the day field block.
+ * - `field-month`: Added to the month field block.
+ * - `field-year`: Added to the year field block.
+ * - `field-label`: The text label above each field's input.
+ * - `field-input`: The native `<input>` inside a field.
+ * - `error`: The inline error message region. This is an intentional difference from `<wa-date-input>` and `<wa-time-input>`, which rely on the browser's native validation popup. Because this control is composed of three separate fields, an inline `role="alert"` region gives a single, predictable place to surface the validation message rather than anchoring a native popup on one of the three fields.
+ * 
+ * #### CSS States
+ * 
+ * These can be used to apply styling when a component is in a given state.
+ * 
+ * - `blank`: The known date has no committed value.
+ * - `disabled`: The known date is disabled.
+  */
+    "wa-known-date": Partial<WaKnownDateProps & BaseProps<WaKnownDate> & BaseEvents>;
+
+
+  /**
+     * 
+ * 
+ * #### Attributes & Properties
+ * 
+ * Component attributes and properties that can be applied to the element or by using JavaScript.
+ * 
+ * - `tab-size`/`tabSize`: The tab stop width used when converting leading tabs to spaces during whitespace normalization. 
+ * - `dir`: undefined 
+ * - `lang`: undefined 
+ * - `did-ssr`/`didSSR`: undefined 
+ * - `marked`: A reference to the shared Marked instance for convenience. Equivalent to `WaMarkdown.getMarked()`. (property only) (readonly)
+ * - `initialReflectedProperties`: undefined (property only)
+ * - `internals`: undefined (property only)
+ * 
+ * #### Methods
+ * 
+ * Methods that can be called to access component functionality.
+ * 
+ * - `getMarked() => Marked`: Returns the shared Marked instance used by all `<wa-markdown>` components.
+ * - `updateAll() => void`: Re-renders all connected `<wa-markdown>` instances. Call this after changing the Marked configuration.
+ * - `renderMarkdown() => void`: Reads the script content, normalizes whitespace, parses markdown, and injects the result.
+  */
+    "wa-markdown": Partial<WaMarkdownProps & BaseProps<WaMarkdown> & BaseEvents>;
+
+
+  /**
+     * 
+ * 
+ * #### Attributes & Properties
+ * 
+ * Component attributes and properties that can be applied to the element or by using JavaScript.
+ * 
  * - `attr`: Watches for changes to attributes. To watch only specific attributes, separate them by a space, e.g.
  * `attr="class id title"`. To watch all attributes, use `*`. 
  * - `attr-old-value`/`attrOldValue`: Indicates whether or not the attribute's previous value should be recorded when monitoring changes. 
@@ -5227,8 +6206,10 @@ export type WaZoomableFrameProps = {
  * - `enterkeyhint`: Used to customize the label or icon of the Enter key on virtual keyboards. 
  * - `inputmode`: Tells the browser what type of data will be entered by the user, allowing it to display the appropriate virtual
  * keyboard on supportive devices. 
- * - `with-label`/`withLabel`: Used for SSR. Will determine if the SSRed component will have the label slot rendered on initial paint. 
- * - `with-hint`/`withHint`: Used for SSR. Will determine if the SSRed component will have the hint slot rendered on initial paint. 
+ * - `with-label`/`withLabel`: Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup
+ * includes the label before the component hydrates on the client. 
+ * - `with-hint`/`withHint`: Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup
+ * includes the hint before the component hydrates on the client. 
  * - `name`: The name of the input, submitted as a name/value pair with form data. 
  * - `disabled`: Disables the form control. 
  * - `custom-error`/`customError`: undefined 
@@ -5262,6 +6243,7 @@ export type WaZoomableFrameProps = {
  * - `change`: Emitted when an alteration to the control's value is committed by the user.
  * - `blur`: Emitted when the control loses focus.
  * - `focus`: Emitted when the control gains focus.
+ * - `beforeinput`: Emitted before the value changes. Can be cancelled with `event.preventDefault()` to prevent the value from changing.
  * - `wa-invalid`: Emitted when the form control has been checked for validity and its constraints aren't satisfied.
  * 
  * #### Slots
@@ -5279,6 +6261,7 @@ export type WaZoomableFrameProps = {
  * 
  * Methods that can be called to access component functionality.
  * 
+ * - `handleSizeChange() => void`: undefined
  * - `handleStepChange() => void`: undefined
  * - `focus(options?: FocusOptions) => void`: Sets focus on the input.
  * - `blur() => void`: Removes focus from the input.
@@ -5356,6 +6339,12 @@ export type WaZoomableFrameProps = {
  * 
  * - `(default)`: The tag's content.
  * 
+ * #### Methods
+ * 
+ * Methods that can be called to access component functionality.
+ * 
+ * - `handleSizeChange() => void`: undefined
+ * 
  * #### CSS Parts
  * 
  * Custom selectors for styling elements within the component.
@@ -5366,6 +6355,65 @@ export type WaZoomableFrameProps = {
  * - `remove-button__base`: The remove button's exported `base` part.
   */
     "wa-tag": Partial<WaTagProps & BaseProps<WaTag> & BaseEvents>;
+
+
+  /**
+     * 
+ * 
+ * #### Attributes & Properties
+ * 
+ * Component attributes and properties that can be applied to the element or by using JavaScript.
+ * 
+ * - `value`: The option's value. When selected, the containing form control will receive this value. The value must be unique
+ * from other options in the same group. Values may not contain spaces, as spaces are used as delimiters when listing
+ * multiple values. 
+ * - `disabled`: Draws the option in a disabled state, preventing selection. 
+ * - `selected`/`defaultSelected`: Selects an option initially. 
+ * - `label`: The option’s plain text label.
+ * Usually automatically generated, but can be useful to provide manually for cases involving complex content. 
+ * - `dir`: undefined 
+ * - `lang`: undefined 
+ * - `did-ssr`/`didSSR`: undefined 
+ * - `defaultSlot`: undefined (property only)
+ * - `current`: undefined (property only)
+ * - `_label`: undefined (property only)
+ * - `defaultLabel`: The default label, generated from the element contents. Will be equal to `label` in most cases. (property only) (readonly)
+ * - `initialReflectedProperties`: undefined (property only)
+ * - `internals`: undefined (property only)
+ * 
+ * #### Slots
+ * 
+ * Areas where markup can be added to the component.
+ * 
+ * - `(default)`: The option's label.
+ * - `start`: An element, such as `<wa-icon>`, placed before the label.
+ * - `end`: An element, such as `<wa-icon>`, placed after the label.
+ * 
+ * #### Methods
+ * 
+ * Methods that can be called to access component functionality.
+ * 
+ * - `syncDefaultSelected() => void`: undefined
+ * 
+ * #### CSS Parts
+ * 
+ * Custom selectors for styling elements within the component.
+ * 
+ * - `checked-icon`: The checked icon, a `<wa-icon>` element.
+ * - `label`: The option's label.
+ * - `start`: The container that wraps the `start` slot.
+ * - `end`: The container that wraps the `end` slot.
+ * 
+ * #### CSS States
+ * 
+ * These can be used to apply styling when a component is in a given state.
+ * 
+ * - `current`: The user has keyed into the option, but hasn't selected it yet (shows a highlight)
+ * - `selected`: The option is selected and has aria-selected="true"
+ * - `disabled`: Applied when the option is disabled
+ * - `hover`: Like `:hover` but works while dragging in Safari
+  */
+    "wa-option": Partial<WaOptionProps & BaseProps<WaOption> & BaseEvents>;
 
 
   /**
@@ -5392,8 +6440,10 @@ export type WaZoomableFrameProps = {
  * - `placement`: The preferred placement of the select's menu. Note that the actual placement may vary as needed to keep the listbox
  * inside of the viewport. 
  * - `hint`: The select's hint. If you need to display HTML, use the `hint` slot instead. 
- * - `with-label`/`withLabel`: Used for SSR purposes when a label is slotted in. Will show the label on first render. 
- * - `with-hint`/`withHint`: Used for SSR purposes when hint is slotted in. Will show the hint on first render. 
+ * - `with-label`/`withLabel`: Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup
+ * includes the label before the component hydrates on the client. 
+ * - `with-hint`/`withHint`: Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup
+ * includes the hint before the component hydrates on the client. 
  * - `required`: The select's required attribute. 
  * - `custom-error`/`customError`: undefined 
  * - `dir`: undefined 
@@ -5409,7 +6459,6 @@ export type WaZoomableFrameProps = {
  * - `displayLabel`: undefined (property only)
  * - `currentOption`: undefined (property only)
  * - `selectedOptions`: undefined (property only)
- * - `optionValues`: undefined (property only)
  * - `defaultValue`: undefined (property only)
  * - `getTag`: A function that customizes the tags to be rendered when multiple=true. The first argument is the option, the second
  * is the current tag's index.  The function should return either a Lit TemplateResult or a string containing trusted
@@ -5461,6 +6510,7 @@ export type WaZoomableFrameProps = {
  * 
  * Methods that can be called to access component functionality.
  * 
+ * - `handleSizeChange() => void`: undefined
  * - `handleDefaultSlotChange() => void`: undefined
  * - `selectionChanged() => void`: undefined
  * - `handleDisabledChange() => void`: undefined
@@ -5490,8 +6540,8 @@ export type WaZoomableFrameProps = {
  * 
  * CSS variables available for styling the component.
  * 
- * - `--show-duration`: The duration of the show animation. (default: `100ms`)
- * - `--hide-duration`: The duration of the hide animation. (default: `100ms`)
+ * - `--show-duration`: The duration of the show animation. (default: `var(--wa-transition-fast)`)
+ * - `--hide-duration`: The duration of the hide animation. (default: `var(--wa-transition-fast)`)
  * - `--tag-max-size`: When using `multiple`, the max size of tags before their content is truncated. (default: `10ch`)
  * 
  * #### CSS Parts
@@ -5531,20 +6581,31 @@ export type WaZoomableFrameProps = {
  * 
  * Component attributes and properties that can be applied to the element or by using JavaScript.
  * 
- * - `value`: The option's value. When selected, the containing form control will receive this value. The value must be unique
- * from other options in the same group. Values may not contain spaces, as spaces are used as delimiters when listing
- * multiple values. 
- * - `disabled`: Draws the option in a disabled state, preventing selection. 
- * - `selected`/`defaultSelected`: Selects an option initially. 
- * - `label`: The option’s plain text label.
- * Usually automatically generated, but can be useful to provide manually for cases involving complex content. 
+ * - `view`: The view is a reflection of the "mobileBreakpoint", when the page is larger than the `mobile-breakpoint` (768px by
+ * default), it is considered to be a "desktop" view. The view is merely a way to distinguish when to show/hide the
+ * navigation. You can use additional media queries to make other adjustments to content as necessary.
+ * The default is "desktop" because the "mobile navigation drawer" isn't accessible via SSR due to drawer requiring JS. 
+ * - `nav-open`/`navOpen`: Whether or not the navigation drawer is open. Note, the navigation drawer is only "open" on mobile views. 
+ * - `mobile-breakpoint`/`mobileBreakpoint`: At what page width to hide the "navigation" slot and collapse into a hamburger button.
+ * Accepts both numbers (interpreted as px) and CSS lengths (e.g. `50em`), which are resolved based on the root element. 
+ * - `navigation-placement`/`navigationPlacement`: Where to place the navigation when in the mobile viewport. 
+ * - `disable-navigation-toggle`/`disableNavigationToggle`: Determines whether or not to hide the default hamburger button.
+ * This will automatically flip to "true" if you add an element with `data-toggle-nav` anywhere in the element light DOM.
+ * Generally this will be set for you and you don't need to do anything, unless you're using SSR, in which case you should set this manually for initial page loads. 
  * - `dir`: undefined 
  * - `lang`: undefined 
  * - `did-ssr`/`didSSR`: undefined 
- * - `defaultSlot`: undefined (property only)
- * - `current`: undefined (property only)
- * - `_label`: undefined (property only)
- * - `defaultLabel`: The default label, generated from the element contents. Will be equal to `label` in most cases. (property only)
+ * - `header`: undefined (property only)
+ * - `menu`: undefined (property only)
+ * - `main`: undefined (property only)
+ * - `aside`: undefined (property only)
+ * - `subheader`: undefined (property only)
+ * - `footer`: undefined (property only)
+ * - `banner`: undefined (property only)
+ * - `navigationDrawer`: undefined (property only)
+ * - `navigationToggleSlot`: undefined (property only)
+ * - `pageResizeObserver`: undefined (property only)
+ * - `updateAsideAndMenuHeights`: undefined (property only)
  * - `initialReflectedProperties`: undefined (property only)
  * - `internals`: undefined (property only)
  * 
@@ -5552,28 +6613,68 @@ export type WaZoomableFrameProps = {
  * 
  * Areas where markup can be added to the component.
  * 
- * - `(default)`: The option's label.
- * - `start`: An element, such as `<wa-icon>`, placed before the label.
- * - `end`: An element, such as `<wa-icon>`, placed after the label.
+ * - `(default)`: The page's main content.
+ * - `banner`: The banner that gets display above the header. The banner will not be shown if no content is provided.
+ * - `header`: The header to display at the top of the page. If a banner is present, the header will appear below the banner. The header will not be shown if there is no content.
+ * - `subheader`: A subheader to display below the `header`. This is a good place to put things like breadcrumbs.
+ * - `menu`: The left side of the page. If you slot an element in here, you will override the default `navigation` slot and will be handling navigation on your own. This also will not disable the fallback behavior of the navigation button. This section "sticks" to the top as the page scrolls.
+ * - `navigation-header`: The header for a navigation area. On mobile this will be the header for `<wa-drawer>`.
+ * - `navigation`: The main content to display in the navigation area. This is displayed on the left side of the page, if `menu` is not used. This section "sticks" to the top as the page scrolls.
+ * - `navigation-footer`: The footer for a navigation area. On mobile this will be the footer for `<wa-drawer>`.
+ * - `navigation-toggle`: Use this slot to slot in your own button + icon for toggling the navigation drawer. By default it is a `<wa-button>` + a 3 bars `<wa-icon>`
+ * - `navigation-toggle-icon`: Use this to slot in your own icon for toggling the navigation drawer. By default it is 3 bars `<wa-icon>`.
+ * - `main-header`: Header to display inline above the main content.
+ * - `main-footer`: Footer to display inline below the main content.
+ * - `aside`: Content to be shown on the right side of the page. Typically contains a table of contents, ads, etc. This section "sticks" to the top as the page scrolls.
+ * - `skip-to-content`: The "skip to content" slot. You can override this If you would like to override the `Skip to content` button and add additional "Skip to X", they can be inserted here.
+ * - `footer`: The content to display in the footer. This is always displayed underneath the viewport so will always make the page "scrollable".
+ * 
+ * #### Methods
+ * 
+ * Methods that can be called to access component functionality.
+ * 
+ * - `visiblePixelsInViewport(element: HTMLElement | null) => void`: https://stackoverflow.com/a/26831113
+ * This prevents awkward gaps when scrolling the page and the aside / menu dont "fill" the gaps.
+ * - `showNavigation() => void`: Shows the mobile navigation drawer
+ * - `hideNavigation() => void`: Hides the mobile navigation drawer
+ * - `toggleNavigation() => void`: Toggles the mobile navigation drawer
+ * 
+ * #### CSS Custom Properties
+ * 
+ * CSS variables available for styling the component.
+ * 
+ * - `--menu-width`: The width of the page's "menu" section. (default: `auto`)
+ * - `--main-width`: The width of the page's "main" section. (default: `1fr`)
+ * - `--aside-width`: The wide of the page's "aside" section. (default: `auto`)
+ * - `--banner-height`: The height of the banner. This gets calculated when the page initializes. If the height is known, you can set it here to prevent shifting when the page loads. (default: `0px`)
+ * - `--header-height`: The height of the header. This gets calculated when the page initializes. If the height is known, you can set it here to prevent shifting when the page loads. (default: `0px`)
+ * - `--subheader-height`: The height of the subheader. This gets calculated when the page initializes. If the height is known, you can set it here to prevent shifting when the page loads. (default: `0px`)
  * 
  * #### CSS Parts
  * 
  * Custom selectors for styling elements within the component.
  * 
- * - `checked-icon`: The checked icon, a `<wa-icon>` element.
- * - `label`: The option's label.
- * - `start`: The container that wraps the `start` slot.
- * - `end`: The container that wraps the `end` slot.
- * 
- * #### CSS States
- * 
- * These can be used to apply styling when a component is in a given state.
- * 
- * - `current`: The user has keyed into the option, but hasn't selected it yet (shows a highlight)
- * - `selected`: The option is selected and has aria-selected="true"
- * - `hover`: Like `:hover` but works while dragging in Safari
+ * - `base`: The component's base wrapper.
+ * - `banner`: The banner to show above header.
+ * - `header`: The header, usually for top level navigation / branding.
+ * - `subheader`: Shown below the header, usually intended for things like breadcrumbs and other page level navigation.
+ * - `body`: The wrapper around menu, main, and aside.
+ * - `menu`: The left hand side of the page. Generally intended for navigation.
+ * - `navigation`: The `<nav>` that wraps the navigation slots on desktop viewports.
+ * - `navigation-header`: The header for a navigation area. On mobile this will be the header for `<wa-drawer>`.
+ * - `navigation-footer`: The footer for a navigation area. On mobile this will be the footer for `<wa-drawer>`.
+ * - `navigation-toggle`: The default `<wa-button>` that will toggle the `<wa-drawer>` for mobile viewports.
+ * - `navigation-toggle-icon`: The default `<wa-icon>` displayed inside of the navigation-toggle button.
+ * - `main-header`: The header above main content.
+ * - `main-content`: The main content.
+ * - `main-footer`: The footer below main content.
+ * - `aside`: The right hand side of the page. Used for things like table of contents, ads, etc.
+ * - `skip-links`: Wrapper around skip-link
+ * - `skip-link`: The "skip to main content" link
+ * - `footer`: The footer of the page. This is always below the initial viewport size.
+ * - `dialog-wrapper`: A wrapper around elements such as dialogs or other modal-like elements.
   */
-    "wa-option": Partial<WaOptionProps & BaseProps<WaOption> & BaseEvents>;
+    "wa-page": Partial<WaPageProps & BaseProps<WaPage> & BaseEvents>;
 
 
   /**
@@ -5631,8 +6732,8 @@ export type WaZoomableFrameProps = {
  * 
  * - `--arrow-size`: The size of the tiny arrow that points to the popover (set to zero to remove). (default: `0.375rem`)
  * - `--max-width`: The maximum width of the popover's body content. (default: `25rem`)
- * - `--show-duration`: The speed of the show animation. (default: `100ms`)
- * - `--hide-duration`: The speed of the hide animation. (default: `100ms`)
+ * - `--show-duration`: The speed of the show animation. (default: `var(--wa-transition-fast)`)
+ * - `--hide-duration`: The speed of the hide animation. (default: `var(--wa-transition-fast)`)
  * 
  * #### CSS Parts
  * 
@@ -5754,6 +6855,10 @@ export type WaZoomableFrameProps = {
  * - `background`: The background color. This can be any valid CSS color or `transparent`. It cannot be a CSS custom property. 
  * - `radius`: The edge radius of each module. Must be between 0 and 0.5. 
  * - `error-correction`/`errorCorrection`: The level of error correction to use. [Learn more](https://www.qrcode.com/en/about/error_correction.html) 
+ * - `image`: undefined 
+ * - `image-background`/`imageBackground`: undefined 
+ * - `image-coverage`/`imageCoverage`: undefined 
+ * - `image-padding`/`imagePadding`: undefined 
  * - `dir`: undefined 
  * - `lang`: undefined 
  * - `did-ssr`/`didSSR`: undefined 
@@ -5830,6 +6935,7 @@ export type WaZoomableFrameProps = {
  * 
  * Methods that can be called to access component functionality.
  * 
+ * - `handleSizeChange() => void`: undefined
  * - `setValue(args: Parameters<typeof this.internals.setFormValue>) => void`: undefined
  * - `getForm() => void`: undefined
  * - `checkValidity() => void`: undefined
@@ -5887,8 +6993,10 @@ export type WaZoomableFrameProps = {
  * - `value`/`defaultValue`: The default value of the form control. Primarily used for resetting the form control. 
  * - `size`: The radio group's size. When present, this size will be applied to all `<wa-radio>` items inside. 
  * - `required`: Ensures a child radio is checked before allowing the containing form to submit. 
- * - `with-label`/`withLabel`: Used for SSR. if true, will show slotted label on initial render. 
- * - `with-hint`/`withHint`: Used for SSR. if true, will show slotted hint on initial render. 
+ * - `with-label`/`withLabel`: Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup
+ * includes the label before the component hydrates on the client. 
+ * - `with-hint`/`withHint`: Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup
+ * includes the hint before the component hydrates on the client. 
  * - `custom-error`/`customError`: undefined 
  * - `dir`: undefined 
  * - `lang`: undefined 
@@ -5934,6 +7042,7 @@ export type WaZoomableFrameProps = {
  * 
  * Methods that can be called to access component functionality.
  * 
+ * - `handleSizeChange() => void`: undefined
  * - `formResetCallback(args: Parameters<WebAwesomeFormAssociatedElement['formResetCallback']>) => void`: undefined
  * - `focus(options?: FocusOptions) => void`: Sets focus on the radio group.
  * - `getForm() => void`: undefined
@@ -5971,21 +7080,40 @@ export type WaZoomableFrameProps = {
  * 
  * Component attributes and properties that can be applied to the element or by using JavaScript.
  * 
+ * - `role`: undefined 
+ * - `name`: The name of the rating, submitted as a name/value pair with form data. 
  * - `label`: A label that describes the rating to assistive devices. 
  * - `value`: The current rating. 
+ * - `default-value`/`defaultValue`: The default value of the form control. Used to reset the rating to its initial value. 
  * - `max`: The highest rating to show. 
  * - `precision`: The precision at which the rating will increase and decrease. For example, to allow half-star ratings, set this
  * attribute to `0.5`. 
  * - `readonly`: Makes the rating readonly. 
  * - `disabled`: Disables the rating. 
+ * - `required`: Makes the rating a required field. 
  * - `getSymbol`: A function that customizes the symbol to be rendered. The first and only argument is the rating's current value.
  * The function should return a string containing trusted HTML of the symbol to render at the specified value. Works
  * well with `<wa-icon>` elements. 
  * - `size`: The component's size. 
+ * - `custom-error`/`customError`: undefined 
  * - `dir`: undefined 
  * - `lang`: undefined 
  * - `did-ssr`/`didSSR`: undefined 
- * - `rating`: undefined (property only)
+ * - `assumeInteractionOn`: undefined (property only)
+ * - `input`: undefined (property only)
+ * - `valueHasChanged`: undefined (property only)
+ * - `hasInteracted`: undefined (property only)
+ * - `states`: undefined (property only)
+ * - `emitInvalid`: undefined (property only)
+ * - `labels`: undefined (property only) (readonly)
+ * - `form`: By default, form controls are associated with the nearest containing `<form>` element. This attribute allows you
+ * to place the form control outside of a form and associate it with the form that has this `id`. The form must be in
+ * the same document or shadow root for this to work. (property only)
+ * - `validity`: undefined (property only) (readonly)
+ * - `willValidate`: undefined (property only) (readonly)
+ * - `validationMessage`: undefined (property only) (readonly)
+ * - `validationTarget`: Override this to change where constraint validation popups are anchored. (property only) (readonly)
+ * - `allValidators`: undefined (property only) (readonly)
  * - `initialReflectedProperties`: undefined (property only)
  * - `internals`: undefined (property only)
  * 
@@ -5995,15 +7123,30 @@ export type WaZoomableFrameProps = {
  * 
  * - `change`: Emitted when the rating's value changes.
  * - `wa-hover`: Emitted when the user hovers over a value. The `phase` property indicates when hovering starts, moves to a new value, or ends. The `value` property tells what the rating's value would be if the user were to commit to the hovered value.
+ * - `wa-invalid`: Emitted when the form control has been checked for validity and its constraints aren't satisfied.
  * 
  * #### Methods
  * 
  * Methods that can be called to access component functionality.
  * 
+ * - `handleSizeChange() => void`: undefined
  * - `handleHoverValueChange() => void`: undefined
  * - `handleIsHoveringChange() => void`: undefined
- * - `focus(options?: FocusOptions) => void`: Sets focus on the rating.
- * - `blur() => void`: Removes focus from the rating.
+ * - `formResetCallback() => void`: undefined
+ * - `getForm() => void`: undefined
+ * - `checkValidity() => void`: undefined
+ * - `reportValidity() => void`: undefined
+ * - `setValidity(args: Parameters<typeof this.internals.setValidity>) => void`: undefined
+ * - `setCustomStates() => void`: undefined
+ * - `setCustomValidity(message: string) => void`: Do not use this when creating a "Validator". This is intended for end users of components.
+ * We track manually defined custom errors so we don't clear them on accident in our validators.
+ * - `formDisabledCallback(isDisabled: boolean) => void`: undefined
+ * - `formStateRestoreCallback(state: string | File | FormData | null, reason: 'autocomplete' | 'restore') => void`: Called when the browser is trying to restore element’s state to state in which case reason is "restore", or when
+ * the browser is trying to fulfill autofill on behalf of user in which case reason is "autocomplete". In the case of
+ * "restore", state is a string, File, or FormData object previously set as the second argument to setFormValue.
+ * - `setValue(args: Parameters<typeof this.internals.setFormValue>) => void`: undefined
+ * - `resetValidity() => void`: Reset validity is a way of removing manual custom errors and native validation.
+ * - `updateValidity() => void`: undefined
  * 
  * #### CSS Custom Properties
  * 
@@ -6052,6 +7195,41 @@ export type WaZoomableFrameProps = {
  * 
  * Component attributes and properties that can be applied to the element or by using JavaScript.
  * 
+ * - `disabled`: Disables the observer. 
+ * - `dir`: undefined 
+ * - `lang`: undefined 
+ * - `did-ssr`/`didSSR`: undefined 
+ * - `initialReflectedProperties`: undefined (property only)
+ * - `internals`: undefined (property only)
+ * 
+ * #### Events
+ * 
+ * Events that will be emitted by the component.
+ * 
+ * - `wa-resize`: Emitted when the element is resized.
+ * 
+ * #### Slots
+ * 
+ * Areas where markup can be added to the component.
+ * 
+ * - `(default)`: One or more elements to watch for resizing.
+ * 
+ * #### Methods
+ * 
+ * Methods that can be called to access component functionality.
+ * 
+ * - `handleDisabledChange() => void`: undefined
+  */
+    "wa-resize-observer": Partial<WaResizeObserverProps & BaseProps<WaResizeObserver> & BaseEvents>;
+
+
+  /**
+     * 
+ * 
+ * #### Attributes & Properties
+ * 
+ * Component attributes and properties that can be applied to the element or by using JavaScript.
+ * 
  * - `orientation`: The scroller's orientation. 
  * - `without-scrollbar`/`withoutScrollbar`: Removes the visible scrollbar. 
  * - `without-shadow`/`withoutShadow`: Removes the shadows. 
@@ -6083,41 +7261,6 @@ export type WaZoomableFrameProps = {
  * - `content`: The container that wraps the slotted content.
   */
     "wa-scroller": Partial<WaScrollerProps & BaseProps<WaScroller> & BaseEvents>;
-
-
-  /**
-     * 
- * 
- * #### Attributes & Properties
- * 
- * Component attributes and properties that can be applied to the element or by using JavaScript.
- * 
- * - `disabled`: Disables the observer. 
- * - `dir`: undefined 
- * - `lang`: undefined 
- * - `did-ssr`/`didSSR`: undefined 
- * - `initialReflectedProperties`: undefined (property only)
- * - `internals`: undefined (property only)
- * 
- * #### Events
- * 
- * Events that will be emitted by the component.
- * 
- * - `wa-resize`: Emitted when the element is resized.
- * 
- * #### Slots
- * 
- * Areas where markup can be added to the component.
- * 
- * - `(default)`: One or more elements to watch for resizing.
- * 
- * #### Methods
- * 
- * Methods that can be called to access component functionality.
- * 
- * - `handleDisabledChange() => void`: undefined
-  */
-    "wa-resize-observer": Partial<WaResizeObserverProps & BaseProps<WaResizeObserver> & BaseEvents>;
 
 
   /**
@@ -6172,12 +7315,15 @@ export type WaZoomableFrameProps = {
  * - `min`: The minimum value allowed. 
  * - `max`: The maximum value allowed. 
  * - `step`: The granularity the value must adhere to when incrementing and decrementing. 
- * - `required`: Makes the slider a required field. 
  * - `autofocus`: Tells the browser to focus the slider when the page loads or a dialog is shown. 
  * - `tooltip-distance`/`tooltipDistance`: The distance of the tooltip from the slider's thumb. 
  * - `tooltip-placement`/`tooltipPlacement`: The placement of the tooltip in reference to the slider's thumb. 
  * - `with-markers`/`withMarkers`: Draws markers at each step along the slider. 
  * - `with-tooltip`/`withTooltip`: Draws a tooltip above the thumb when the control has focus or is dragged. 
+ * - `with-label`/`withLabel`: Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup
+ * includes the label before the component hydrates on the client. 
+ * - `with-hint`/`withHint`: Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup
+ * includes the hint before the component hydrates on the client. 
  * - `custom-error`/`customError`: undefined 
  * - `dir`: undefined 
  * - `lang`: undefined 
@@ -6193,6 +7339,7 @@ export type WaZoomableFrameProps = {
  * - `isRange`: Get if this is a range slider (property only) (readonly)
  * - `valueFormatter`: A custom formatting function to apply to the value. This will be shown in the tooltip and announced by screen
  * readers. Must be set with JavaScript. Property only. (property only)
+ * - `required`: undefined (property only)
  * - `assumeInteractionOn`: undefined (property only)
  * - `input`: undefined (property only)
  * - `valueHasChanged`: undefined (property only)
@@ -6232,6 +7379,7 @@ export type WaZoomableFrameProps = {
  * 
  * Methods that can be called to access component functionality.
  * 
+ * - `handleSizeChange() => void`: undefined
  * - `focus() => void`: Sets focus to the slider.
  * - `blur() => void`: Removes focus from the slider.
  * - `stepDown() => void`: Decreases the slider's value by `step`. This is a programmatic change, so `input` and `change` events will not be
@@ -6295,148 +7443,6 @@ export type WaZoomableFrameProps = {
  * - `user-invalid`: Applied when the slider is invalid and the user has sufficiently interacted with it.
   */
     "wa-slider": Partial<WaSliderProps & BaseProps<WaSlider> & BaseEvents>;
-
-
-  /**
-     * 
- * 
- * #### Attributes & Properties
- * 
- * Component attributes and properties that can be applied to the element or by using JavaScript.
- * 
- * - `title`: undefined 
- * - `name`: The name of the switch, submitted as a name/value pair with form data. 
- * - `value`: The value of the switch, submitted as a name/value pair with form data. 
- * - `size`: The switch's size. 
- * - `disabled`: Disables the switch. 
- * - `checked`/`defaultChecked`: The default value of the form control. Primarily used for resetting the form control. 
- * - `required`: Makes the switch a required field. 
- * - `hint`: The switch's hint. If you need to display HTML, use the `hint` slot instead. 
- * - `with-hint`/`withHint`: Used for SSR. If you slot in hint, make sure to add `with-hint` to your component to get it to properly render with SSR. 
- * - `custom-error`/`customError`: undefined 
- * - `dir`: undefined 
- * - `lang`: undefined 
- * - `did-ssr`/`didSSR`: undefined 
- * - `input`: undefined (property only)
- * - `_checked`: undefined (property only)
- * - `checked`: Draws the checkbox in a checked state. (property only)
- * - `assumeInteractionOn`: undefined (property only)
- * - `valueHasChanged`: undefined (property only)
- * - `hasInteracted`: undefined (property only)
- * - `states`: undefined (property only)
- * - `emitInvalid`: undefined (property only)
- * - `labels`: undefined (property only) (readonly)
- * - `form`: By default, form controls are associated with the nearest containing `<form>` element. This attribute allows you
- * to place the form control outside of a form and associate it with the form that has this `id`. The form must be in
- * the same document or shadow root for this to work. (property only)
- * - `validity`: undefined (property only) (readonly)
- * - `willValidate`: undefined (property only) (readonly)
- * - `validationMessage`: undefined (property only) (readonly)
- * - `validationTarget`: Override this to change where constraint validation popups are anchored. (property only) (readonly)
- * - `allValidators`: undefined (property only) (readonly)
- * - `initialReflectedProperties`: undefined (property only)
- * - `internals`: undefined (property only)
- * 
- * #### Events
- * 
- * Events that will be emitted by the component.
- * 
- * - `change`: Emitted when the control's checked state changes.
- * - `input`: Emitted when the control receives input.
- * - `blur`: Emitted when the control loses focus.
- * - `focus`: Emitted when the control gains focus.
- * - `wa-invalid`: Emitted when the form control has been checked for validity and its constraints aren't satisfied.
- * 
- * #### Slots
- * 
- * Areas where markup can be added to the component.
- * 
- * - `(default)`: The switch's label.
- * - `hint`: Text that describes how to use the switch. Alternatively, you can use the `hint` attribute.
- * 
- * #### Methods
- * 
- * Methods that can be called to access component functionality.
- * 
- * - `handleValueOrCheckedChange() => void`: undefined
- * - `handleStateChange() => void`: undefined
- * - `handleDisabledChange() => void`: undefined
- * - `click() => void`: Simulates a click on the switch.
- * - `focus(options?: FocusOptions) => void`: Sets focus on the switch.
- * - `blur() => void`: Removes focus from the switch.
- * - `setValue(value: string | File | FormData | null, stateValue?: string | File | FormData | null | undefined) => void`: undefined
- * - `formResetCallback() => void`: undefined
- * - `getForm() => void`: undefined
- * - `checkValidity() => void`: undefined
- * - `reportValidity() => void`: undefined
- * - `setValidity(args: Parameters<typeof this.internals.setValidity>) => void`: undefined
- * - `setCustomStates() => void`: undefined
- * - `setCustomValidity(message: string) => void`: Do not use this when creating a "Validator". This is intended for end users of components.
- * We track manually defined custom errors so we don't clear them on accident in our validators.
- * - `formDisabledCallback(isDisabled: boolean) => void`: undefined
- * - `formStateRestoreCallback(state: string | File | FormData | null, reason: 'autocomplete' | 'restore') => void`: Called when the browser is trying to restore element’s state to state in which case reason is "restore", or when
- * the browser is trying to fulfill autofill on behalf of user in which case reason is "autocomplete". In the case of
- * "restore", state is a string, File, or FormData object previously set as the second argument to setFormValue.
- * - `resetValidity() => void`: Reset validity is a way of removing manual custom errors and native validation.
- * - `updateValidity() => void`: undefined
- * 
- * #### CSS Custom Properties
- * 
- * CSS variables available for styling the component.
- * 
- * - `--width`: The width of the switch. (default: `undefined`)
- * - `--height`: The height of the switch. (default: `undefined`)
- * - `--thumb-size`: The size of the thumb. (default: `undefined`)
- * 
- * #### CSS Parts
- * 
- * Custom selectors for styling elements within the component.
- * 
- * - `base`: The component's base wrapper.
- * - `control`: The control that houses the switch's thumb.
- * - `thumb`: The switch's thumb.
- * - `label`: The switch's label.
- * - `hint`: The hint's wrapper.
-  */
-    "wa-switch": Partial<WaSwitchProps & BaseProps<WaSwitch> & BaseEvents>;
-
-
-  /**
-     * 
- * 
- * #### Attributes & Properties
- * 
- * Component attributes and properties that can be applied to the element or by using JavaScript.
- * 
- * - `panel`: The name of the tab panel this tab is associated with. The panel must be located in the same tab group. 
- * - `disabled`: Disables the tab and prevents selection. 
- * - `dir`: undefined 
- * - `lang`: undefined 
- * - `did-ssr`/`didSSR`: undefined 
- * - `tab`: undefined (property only)
- * - `initialReflectedProperties`: undefined (property only)
- * - `internals`: undefined (property only)
- * 
- * #### Slots
- * 
- * Areas where markup can be added to the component.
- * 
- * - `(default)`: The tab's label.
- * 
- * #### Methods
- * 
- * Methods that can be called to access component functionality.
- * 
- * - `handleActiveChange() => void`: undefined
- * - `handleDisabledChange() => void`: undefined
- * 
- * #### CSS Parts
- * 
- * Custom selectors for styling elements within the component.
- * 
- * - `base`: The component's base wrapper.
-  */
-    "wa-tab": Partial<WaTabProps & BaseProps<WaTab> & BaseEvents>;
 
 
   /**
@@ -6514,8 +7520,115 @@ export type WaZoomableFrameProps = {
  * 
  * Component attributes and properties that can be applied to the element or by using JavaScript.
  * 
+ * - `title`: undefined 
+ * - `name`: The name of the switch, submitted as a name/value pair with form data. 
+ * - `value`: The value of the switch, submitted as a name/value pair with form data. 
+ * - `size`: The switch's size. 
+ * - `disabled`: Disables the switch. 
+ * - `checked`/`defaultChecked`: The default value of the form control. Primarily used for resetting the form control. 
+ * - `required`: Makes the switch a required field. 
+ * - `hint`: The switch's hint. If you need to display HTML, use the `hint` slot instead. 
+ * - `with-hint`/`withHint`: Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup
+ * includes the hint before the component hydrates on the client. 
+ * - `custom-error`/`customError`: undefined 
+ * - `dir`: undefined 
+ * - `lang`: undefined 
+ * - `did-ssr`/`didSSR`: undefined 
+ * - `input`: undefined (property only)
+ * - `_checked`: undefined (property only)
+ * - `checked`: Draws the checkbox in a checked state. (property only)
+ * - `assumeInteractionOn`: undefined (property only)
+ * - `valueHasChanged`: undefined (property only)
+ * - `hasInteracted`: undefined (property only)
+ * - `states`: undefined (property only)
+ * - `emitInvalid`: undefined (property only)
+ * - `labels`: undefined (property only) (readonly)
+ * - `form`: By default, form controls are associated with the nearest containing `<form>` element. This attribute allows you
+ * to place the form control outside of a form and associate it with the form that has this `id`. The form must be in
+ * the same document or shadow root for this to work. (property only)
+ * - `validity`: undefined (property only) (readonly)
+ * - `willValidate`: undefined (property only) (readonly)
+ * - `validationMessage`: undefined (property only) (readonly)
+ * - `validationTarget`: Override this to change where constraint validation popups are anchored. (property only) (readonly)
+ * - `allValidators`: undefined (property only) (readonly)
+ * - `initialReflectedProperties`: undefined (property only)
+ * - `internals`: undefined (property only)
+ * 
+ * #### Events
+ * 
+ * Events that will be emitted by the component.
+ * 
+ * - `change`: Emitted when the control's checked state changes.
+ * - `input`: Emitted when the control receives input.
+ * - `blur`: Emitted when the control loses focus.
+ * - `focus`: Emitted when the control gains focus.
+ * - `wa-invalid`: Emitted when the form control has been checked for validity and its constraints aren't satisfied.
+ * 
+ * #### Slots
+ * 
+ * Areas where markup can be added to the component.
+ * 
+ * - `(default)`: The switch's label.
+ * - `hint`: Text that describes how to use the switch. Alternatively, you can use the `hint` attribute.
+ * 
+ * #### Methods
+ * 
+ * Methods that can be called to access component functionality.
+ * 
+ * - `handleSizeChange() => void`: undefined
+ * - `handleValueOrCheckedChange() => void`: undefined
+ * - `handleStateChange() => void`: undefined
+ * - `handleDisabledChange() => void`: undefined
+ * - `click() => void`: Simulates a click on the switch.
+ * - `focus(options?: FocusOptions) => void`: Sets focus on the switch.
+ * - `blur() => void`: Removes focus from the switch.
+ * - `setValue(value: string | File | FormData | null, stateValue?: string | File | FormData | null | undefined) => void`: undefined
+ * - `formResetCallback() => void`: undefined
+ * - `getForm() => void`: undefined
+ * - `checkValidity() => void`: undefined
+ * - `reportValidity() => void`: undefined
+ * - `setValidity(args: Parameters<typeof this.internals.setValidity>) => void`: undefined
+ * - `setCustomStates() => void`: undefined
+ * - `setCustomValidity(message: string) => void`: Do not use this when creating a "Validator". This is intended for end users of components.
+ * We track manually defined custom errors so we don't clear them on accident in our validators.
+ * - `formDisabledCallback(isDisabled: boolean) => void`: undefined
+ * - `formStateRestoreCallback(state: string | File | FormData | null, reason: 'autocomplete' | 'restore') => void`: Called when the browser is trying to restore element’s state to state in which case reason is "restore", or when
+ * the browser is trying to fulfill autofill on behalf of user in which case reason is "autocomplete". In the case of
+ * "restore", state is a string, File, or FormData object previously set as the second argument to setFormValue.
+ * - `resetValidity() => void`: Reset validity is a way of removing manual custom errors and native validation.
+ * - `updateValidity() => void`: undefined
+ * 
+ * #### CSS Custom Properties
+ * 
+ * CSS variables available for styling the component.
+ * 
+ * - `--width`: The width of the switch. (default: `undefined`)
+ * - `--height`: The height of the switch. (default: `undefined`)
+ * - `--thumb-size`: The size of the thumb. (default: `undefined`)
+ * 
+ * #### CSS Parts
+ * 
+ * Custom selectors for styling elements within the component.
+ * 
+ * - `base`: The component's base wrapper.
+ * - `control`: The control that houses the switch's thumb.
+ * - `thumb`: The switch's thumb.
+ * - `label`: The switch's label.
+ * - `hint`: The hint's wrapper.
+  */
+    "wa-switch": Partial<WaSwitchProps & BaseProps<WaSwitch> & BaseEvents>;
+
+
+  /**
+     * 
+ * 
+ * #### Attributes & Properties
+ * 
+ * Component attributes and properties that can be applied to the element or by using JavaScript.
+ * 
  * - `name`: The tab panel's name. 
  * - `active`: When true, the tab panel will be shown. 
+ * - `role`: undefined 
  * - `dir`: undefined 
  * - `lang`: undefined 
  * - `did-ssr`/`didSSR`: undefined 
@@ -6556,6 +7669,45 @@ export type WaZoomableFrameProps = {
  * 
  * Component attributes and properties that can be applied to the element or by using JavaScript.
  * 
+ * - `panel`: The name of the tab panel this tab is associated with. The panel must be located in the same tab group. 
+ * - `disabled`: Disables the tab and prevents selection. 
+ * - `role`: undefined 
+ * - `dir`: undefined 
+ * - `lang`: undefined 
+ * - `did-ssr`/`didSSR`: undefined 
+ * - `tab`: undefined (property only)
+ * - `initialReflectedProperties`: undefined (property only)
+ * - `internals`: undefined (property only)
+ * 
+ * #### Slots
+ * 
+ * Areas where markup can be added to the component.
+ * 
+ * - `(default)`: The tab's label.
+ * 
+ * #### Methods
+ * 
+ * Methods that can be called to access component functionality.
+ * 
+ * - `handleActiveChange() => void`: undefined
+ * - `handleDisabledChange() => void`: undefined
+ * 
+ * #### CSS Parts
+ * 
+ * Custom selectors for styling elements within the component.
+ * 
+ * - `base`: The component's base wrapper.
+  */
+    "wa-tab": Partial<WaTabProps & BaseProps<WaTab> & BaseEvents>;
+
+
+  /**
+     * 
+ * 
+ * #### Attributes & Properties
+ * 
+ * Component attributes and properties that can be applied to the element or by using JavaScript.
+ * 
  * - `active`: Sets the active tab. 
  * - `placement`: The placement of the tabs. 
  * - `activation`: When set to auto, navigating tabs with the arrow keys will instantly show the corresponding tab panel. When set to
@@ -6565,7 +7717,7 @@ export type WaZoomableFrameProps = {
  * - `lang`: undefined 
  * - `did-ssr`/`didSSR`: undefined 
  * - `tabGroup`: undefined (property only)
- * - `body`: undefined (property only)
+ * - `defaultSlot`: Default slot for `<wa-tab-panel>` children (inside the `body` part container). (property only)
  * - `nav`: undefined (property only)
  * - `initialReflectedProperties`: undefined (property only)
  * - `internals`: undefined (property only)
@@ -6638,7 +7790,8 @@ export type WaZoomableFrameProps = {
  * - `minlength`: The minimum length of input that will be considered valid. 
  * - `maxlength`: The maximum length of input that will be considered valid. 
  * - `autocapitalize`: Controls whether and how text input is automatically capitalized as it is entered by the user. 
- * - `autocorrect`: Indicates whether the browser's autocorrect feature is on or off. 
+ * - `autocorrect`: Indicates whether the browser's autocorrect feature is on or off. When set as an attribute, use `"off"` or `"on"`.
+ * When set as a property, use `true` or `false`. 
  * - `autocomplete`: Specifies what permission the browser has to provide assistance in filling out form field values. Refer to
  * [this page on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) for available values. 
  * - `autofocus`: Indicates that the input should receive focus on page load. 
@@ -6646,8 +7799,11 @@ export type WaZoomableFrameProps = {
  * - `spellcheck`: Enables spell checking on the textarea. 
  * - `inputmode`: Tells the browser what type of data will be entered by the user, allowing it to display the appropriate virtual
  * keyboard on supportive devices. 
- * - `with-label`/`withLabel`: Used for SSR. If you're slotting in a `label` element, make sure to set this to `true`. 
- * - `with-hint`/`withHint`: Used for SSR. If you're slotting in a `hint` element, make sure to set this to `true`. 
+ * - `with-label`/`withLabel`: Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup
+ * includes the label before the component hydrates on the client. 
+ * - `with-hint`/`withHint`: Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup
+ * includes the hint before the component hydrates on the client. 
+ * - `with-count`/`withCount`: Shows a character count below the textarea. When `maxlength` is set, shows remaining characters instead. 
  * - `custom-error`/`customError`: undefined 
  * - `dir`: undefined 
  * - `lang`: undefined 
@@ -6694,6 +7850,7 @@ export type WaZoomableFrameProps = {
  * 
  * Methods that can be called to access component functionality.
  * 
+ * - `handleSizeChange() => void`: undefined
  * - `handleRowsChange() => void`: undefined
  * - `handleValueChange() => void`: undefined
  * - `focus(options?: FocusOptions) => void`: Sets focus on the textarea.
@@ -6727,6 +7884,7 @@ export type WaZoomableFrameProps = {
  * - `hint`: The hint's wrapper.
  * - `textarea`: The internal `<textarea>` control.
  * - `base`: The wrapper around the `<textarea>` control.
+ * - `count`: The character count element, rendered when the `with-count` attribute is present.
  * 
  * #### CSS States
  * 
@@ -6744,8 +7902,169 @@ export type WaZoomableFrameProps = {
  * 
  * Component attributes and properties that can be applied to the element or by using JavaScript.
  * 
+ * - `name`: The time picker's name, submitted as a name/value pair with form data. 
+ * - `value`/`defaultValue`: The default value of the form control. Used for form reset. 
+ * - `disabled`: Disables the time picker. 
+ * - `required`: Makes the time picker required for form submission. 
+ * - `readonly`: Makes the input non-editable. The popup still opens for browsing. 
+ * - `size`: The time picker's size. 
+ * - `appearance`: The time picker's visual appearance. 
+ * - `pill`: Draws a pill-style time picker with rounded edges. 
+ * - `label`: The time picker's label. If you need to display HTML, use the `label` slot instead. 
+ * - `hint`: The time picker's hint. If you need to display HTML, use the `hint` slot instead. 
+ * - `autocomplete`: Forwarded to the hidden form input to enable browser autofill (`on`/`off`/custom tokens). 
+ * - `with-clear`/`withClear`: Shows a clear button when the time picker has a value. 
+ * - `with-now`/`withNow`: Renders a "Now" button in the popup footer. 
+ * - `with-label`/`withLabel`: Only required for SSR. Set to `true` if you're slotting in a `label` element. 
+ * - `with-hint`/`withHint`: Only required for SSR. Set to `true` if you're slotting in a `hint` element. 
+ * - `min`: The earliest selectable time in wire format. May be later than `max` to represent an overnight range. The picker
+ * delegates reversed-range semantics to the mirrored native `<input type="time">`. 
+ * - `max`: The latest selectable time in wire format. 
+ * - `step`: The granularity, in seconds, matching HTML `<input type="time">`. Default `60` hides the seconds segment.
+ * Values below 60 reveal the seconds segment. `'any'` disables `stepMismatch` enforcement. 
+ * - `hour-format`/`hourFormat`: Whether the UI uses a 12-hour or 24-hour clock. `auto` follows the resolved locale. 
+ * - `open`: Whether the popup is open. 
+ * - `placement`: Preferred popup placement. 
+ * - `distance`: Distance in pixels between the popup and the input. 
+ * - `custom-error`/`customError`: undefined 
+ * - `dir`: undefined 
+ * - `lang`: undefined 
+ * - `did-ssr`/`didSSR`: undefined 
+ * - `assumeInteractionOn`: Every segment edit dispatches `input`, so a single observed `input` event marks the field as interacted with. (property only)
+ * - `popup`: undefined (property only)
+ * - `valueInput`: undefined (property only)
+ * - `validationTarget`: Override this to change where constraint validation popups are anchored. (property only) (readonly)
+ * - `value`: The time picker's value as a wire-format string matching HTML `<input type="time">`: `HH:mm`, `HH:mm:ss`, or
+ * `HH:mm:ss.sss` (always 24-hour). The setter also accepts a `Date` (extracts local h/m/s) or `null`. (property only)
+ * - `valueAsDate`: The time as a `Date` (today + wire value), or `null` when empty. (property only) (readonly)
+ * - `valueAsNumber`: Milliseconds since midnight, or `NaN` when empty. (property only) (readonly)
+ * - `input`: undefined (property only)
+ * - `valueHasChanged`: undefined (property only)
+ * - `hasInteracted`: undefined (property only)
+ * - `states`: undefined (property only)
+ * - `emitInvalid`: undefined (property only)
+ * - `labels`: undefined (property only) (readonly)
+ * - `form`: By default, form controls are associated with the nearest containing `<form>` element. This attribute allows you
+ * to place the form control outside of a form and associate it with the form that has this `id`. The form must be in
+ * the same document or shadow root for this to work. (property only)
+ * - `validity`: undefined (property only) (readonly)
+ * - `willValidate`: undefined (property only) (readonly)
+ * - `validationMessage`: undefined (property only) (readonly)
+ * - `allValidators`: undefined (property only) (readonly)
+ * - `initialReflectedProperties`: undefined (property only)
+ * - `internals`: undefined (property only)
+ * 
+ * #### Events
+ * 
+ * Events that will be emitted by the component.
+ * 
+ * - `input`: Emitted as the user types into a segment or interacts with the popup columns.
+ * - `change`: Emitted when the committed value changes.
+ * - `focus`: Emitted when the control receives focus.
+ * - `blur`: Emitted when the control loses focus.
+ * - `wa-clear`: Emitted when the clear button is activated.
+ * - `wa-show`: Emitted when the popup is about to open. Cancelable.
+ * - `wa-after-show`: Emitted after the popup opens and animations complete.
+ * - `wa-hide`: Emitted when the popup is about to close. Cancelable.
+ * - `wa-after-hide`: Emitted after the popup closes and animations complete.
+ * - `wa-invalid`: Emitted when the form control has been checked for validity and its constraints aren't satisfied.
+ * 
+ * #### Slots
+ * 
+ * Areas where markup can be added to the component.
+ * 
+ * - `label`: The time picker's label. Alternatively, use the `label` attribute.
+ * - `hint`: Text that describes how to use the time picker. Alternatively, use the `hint` attribute.
+ * - `start`: An element placed at the start of the input.
+ * - `end`: An element placed at the end of the input.
+ * - `clear-icon`: An icon to use in lieu of the default clear icon.
+ * - `expand-icon`: The icon to show on the popup toggle button. Defaults to a clock icon.
+ * - `footer`: Content shown below the column picker in the popup. Replaces the default Now button when present.
+ * 
+ * #### Methods
+ * 
+ * Methods that can be called to access component functionality.
+ * 
+ * - `handleSizeChange() => void`: undefined
+ * - `handleDisabledChange() => void`: undefined
+ * - `handleOpenChange() => void`: undefined
+ * - `focus(options?: FocusOptions) => void`: Sets focus on the first empty (else first) segment.
+ * - `blur() => void`: Removes focus from the time picker.
+ * - `show() => Promise<void>`: Opens the popup.
+ * - `hide() => Promise<void>`: Closes the popup.
+ * - `formResetCallback() => void`: undefined
+ * - `formStateRestoreCallback(state: string | File | FormData | null) => void`: Called when the browser is trying to restore element’s state to state in which case reason is "restore", or when
+ * the browser is trying to fulfill autofill on behalf of user in which case reason is "autocomplete". In the case of
+ * "restore", state is a string, File, or FormData object previously set as the second argument to setFormValue.
+ * - `getForm() => void`: undefined
+ * - `checkValidity() => void`: undefined
+ * - `reportValidity() => void`: undefined
+ * - `setValidity(args: Parameters<typeof this.internals.setValidity>) => void`: undefined
+ * - `setCustomStates() => void`: undefined
+ * - `setCustomValidity(message: string) => void`: Do not use this when creating a "Validator". This is intended for end users of components.
+ * We track manually defined custom errors so we don't clear them on accident in our validators.
+ * - `formDisabledCallback(isDisabled: boolean) => void`: undefined
+ * - `setValue(args: Parameters<typeof this.internals.setFormValue>) => void`: undefined
+ * - `resetValidity() => void`: Reset validity is a way of removing manual custom errors and native validation.
+ * - `updateValidity() => void`: undefined
+ * 
+ * #### CSS Custom Properties
+ * 
+ * CSS variables available for styling the component.
+ * 
+ * - `--show-duration`: The duration of the show animation. (default: `var(--wa-transition-fast)`)
+ * - `--hide-duration`: The duration of the hide animation. (default: `var(--wa-transition-fast)`)
+ * - `--column-item-height`: Height of each option inside a popup column. (default: `2.25em`)
+ * - `--column-width`: Width of each popup column. (default: `3em`)
+ * 
+ * #### CSS Parts
+ * 
+ * Custom selectors for styling elements within the component.
+ * 
+ * - `form-control`: The form control that wraps the label, input, and hint.
+ * - `form-control-label`: The label's wrapper.
+ * - `form-control-input`: The input's wrapper.
+ * - `hint`: The hint's wrapper.
+ * - `base`: The component's base wrapper.
+ * - `input-wrapper`: The container around the start slot, segmented input, clear button, and expand button.
+ * - `start`: The container that wraps the `start` slot.
+ * - `end`: The container that wraps the `end` slot.
+ * - `input`: The segmented input group.
+ * - `segment`: Each editable segment (hour/minute/second/AM-PM spinbutton). Use `[part~="segment"]` to style all.
+ * - `segment-literal`: Inert literal text between segments (separators).
+ * - `clear-button`: The clear button.
+ * - `expand-button`: The popup toggle button.
+ * - `expand-icon`: The expand icon wrapper.
+ * - `popup`: The popup container.
+ * - `columns`: The row of column listboxes inside the popup.
+ * - `column`: Each column listbox.
+ * - `column-item`: Each option inside a column.
+ * - `column-item-selected`: The currently selected option inside a column.
+ * - `now-button`: The default "Now" button rendered in the popup footer when `with-now` is set.
+ * 
+ * #### CSS States
+ * 
+ * These can be used to apply styling when a component is in a given state.
+ * 
+ * - `blank`: The time picker has no committed value.
+ * - `open`: The popup is open.
+ * - `disabled`: The time picker is disabled.
+  */
+    "wa-time-input": Partial<WaTimeInputProps & BaseProps<WaTimeInput> & BaseEvents>;
+
+
+  /**
+     * 
+ * 
+ * #### Attributes & Properties
+ * 
+ * Component attributes and properties that can be applied to the element or by using JavaScript.
+ * 
  * - `selection`: The selection behavior of the tree. Single selection allows only one node to be selected at a time. Multiple
- * displays checkboxes and allows more than one node to be selected. Leaf allows only leaf nodes to be selected. 
+ * displays checkboxes and allows more than one node to be selected. Leaf allows only leaf nodes to be selected.
+ * Leaf-multiple allows multiple leaf nodes to be selected while parent nodes only expand and collapse. 
+ * - `tabindex`/`tabIndex`: undefined 
+ * - `role`: undefined 
  * - `dir`: undefined 
  * - `lang`: undefined 
  * - `did-ssr`/`didSSR`: undefined 
@@ -6812,6 +8131,7 @@ export type WaZoomableFrameProps = {
  * - `zoom-levels`/`zoomLevels`: The zoom levels to step through when using zoom controls. This does not restrict programmatic changes to the zoom. 
  * - `without-controls`/`withoutControls`: Removes the zoom controls. 
  * - `without-interaction`/`withoutInteraction`: Disables interaction when present. 
+ * - `with-theme-sync`/`withThemeSync`: Enables automatic theme syncing (light/dark mode and theme selector classes) from the host document to the iframe. 
  * - `dir`: undefined 
  * - `lang`: undefined 
  * - `did-ssr`/`didSSR`: undefined 
@@ -6905,6 +8225,14 @@ export type CustomCssProperties = {
   "--secondary-color"?: string;
   /** Sets a duotone icon's secondary opacity. */
   "--secondary-opacity"?: string;
+  /** The amount of space around and between the item's header and content. */
+  "--spacing"?: string;
+  /** The duration of the expand animation. */
+  "--show-duration"?: string;
+  /** The duration of the collapse animation. */
+  "--hide-duration"?: string;
+  /** The easing of the expand/collapse animation. */
+  "--easing"?: string;
   /** The color of the checked and indeterminate icons. */
   "--checked-icon-color"?: string;
   /** The size of the checked and indeterminate icons relative to the checkbox. */
@@ -6917,10 +8245,6 @@ export type CustomCssProperties = {
   "--indicator-color"?: string;
   /** The time it takes for the spinner to complete one animation cycle. */
   "--speed"?: string;
-  /** The animation duration when expanding tree items. */
-  "--show-duration"?: string;
-  /** The animation duration when collapsing tree items. */
-  "--hide-duration"?: string;
   /** The slide's aspect ratio. Inherited from the carousel by default. */
   "--aspect-ratio"?: string;
   /** The size of the icon box. */
@@ -6931,12 +8255,12 @@ export type CustomCssProperties = {
   "--size"?: string;
   /** The color of the badge's pulse effect when using `attention="pulse"`. */
   "--pulse-color"?: string;
-  /** The amount of space around and between sections of the card. Expects a single value. */
-  "--spacing"?: string;
   /** The amount of padding to apply to the scroll area, allowing adjacent slides to become partially visible as a scroll hint. */
   "--scroll-hint"?: string;
   /** The space between each slide. */
   "--slide-gap"?: string;
+  /** The gap between grouped checkboxes. */
+  "--gap"?: string;
   /** The size of the arrow. Note that an arrow won't be shown unless the `arrow` attribute is used. */
   "--arrow-size"?: string;
   /** The width of any custom border applied to the popup. This is used to reposition the arrow to overlap to the inside edge of the popup border. */
@@ -6965,10 +8289,24 @@ export type CustomCssProperties = {
   "--max-width"?: string;
   /** The preferred width of the dialog. Note that the dialog will shrink to accommodate smaller screens. */
   "--width"?: string;
+  /** A filter to apply to the backdrop behind the dialog. */
+  "--backdrop-filter"?: string;
   /** The color of the divider. */
   "--color"?: string;
   /** When using `multiple`, the max size of tags before their content is truncated. */
   "--tag-max-size"?: string;
+  /** The width of the page's "menu" section. */
+  "--menu-width"?: string;
+  /** The width of the page's "main" section. */
+  "--main-width"?: string;
+  /** The wide of the page's "aside" section. */
+  "--aside-width"?: string;
+  /** The height of the banner. This gets calculated when the page initializes. If the height is known, you can set it here to prevent shifting when the page loads. */
+  "--banner-height"?: string;
+  /** The height of the header. This gets calculated when the page initializes. If the height is known, you can set it here to prevent shifting when the page loads. */
+  "--header-height"?: string;
+  /** The height of the subheader. This gets calculated when the page initializes. If the height is known, you can set it here to prevent shifting when the page loads. */
+  "--subheader-height"?: string;
   /** The color of the track. */
   "--track-height"?: string;
   /** The width of the indicator. Defaults to the track width. */
@@ -6997,18 +8335,22 @@ export type CustomCssProperties = {
   "--thumb-width"?: string;
   /** The height of the thumb. */
   "--thumb-height"?: string;
-  /** The height of the switch. */
-  "--height"?: string;
-  /** The size of the thumb. */
-  "--thumb-size"?: string;
   /** The invisible region around the divider where dragging can occur. This is usually wider than the divider to facilitate easier dragging. */
   "--divider-hit-area"?: string;
   /** The minimum allowed size of the primary panel. */
   "--min"?: string;
   /** The maximum allowed size of the primary panel. */
   "--max"?: string;
+  /** The height of the switch. */
+  "--height"?: string;
+  /** The size of the thumb. */
+  "--thumb-size"?: string;
   /** The tab panel's padding. */
   "--padding"?: string;
+  /** Height of each option inside a popup column. */
+  "--column-item-height"?: string;
+  /** Width of each popup column. */
+  "--column-width"?: string;
   /** The size of the indentation for nested items. */
   "--indent-size"?: string;
   /** The color of the indentation line. */

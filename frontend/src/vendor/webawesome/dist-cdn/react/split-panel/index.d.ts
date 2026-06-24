@@ -3,7 +3,8 @@ import { type EventName } from '@lit/react';
 import type { WaRepositionEvent } from '../../events/events.js';
 export type { WaRepositionEvent } from '../../events/events.js';
 /**
- * @summary Split panels display two adjacent panels, allowing the user to reposition them.
+ * @summary Split panels display two adjacent panels separated by a draggable divider, letting users resize each side to
+ *  suit their workflow.
  * @documentation https://webawesome.com/docs/components/split-panel
  * @status stable
  * @since 2.0

@@ -3,7 +3,8 @@ import { type EventName } from '@lit/react';
 import type { WaRepositionEvent } from '../../events/events.js';
 export type { WaRepositionEvent } from '../../events/events.js';
 /**
- * @summary Popup is a utility that lets you declaratively anchor "popup" containers to another element.
+ * @summary Popups declaratively anchor one element to another and keep them positioned together as the page scrolls or
+ *  resizes. Primarily a low-level building block for popovers, dropdowns, and tooltips.
  * @documentation https://webawesome.com/docs/components/popup
  * @status stable
  * @since 2.0
@@ -32,8 +33,8 @@ export type { WaRepositionEvent } from '../../events/events.js';
  * @cssproperty [--auto-size-available-height] - A read-only custom property that determines the amount of height the
  *  popup can be before overflowing. Useful for positioning child elements that need to overflow. This property is only
  *  available when using `auto-size`.
- * @cssproperty [--show-duration=100ms] - The show duration to use when applying built-in animation classes.
- * @cssproperty [--hide-duration=100ms] - The hide duration to use when applying built-in animation classes.
+ * @cssproperty [--show-duration=var(--wa-transition-fast)] - The show duration to use when applying built-in animation classes.
+ * @cssproperty [--hide-duration=var(--wa-transition-fast)] - The hide duration to use when applying built-in animation classes.
  */
 declare const reactWrapper: import("@lit/react").ReactWebComponent<Component, {
     onWaReposition: EventName<WaRepositionEvent>;

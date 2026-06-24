@@ -3,7 +3,8 @@ import type { PropertyValueMap } from 'lit';
 import WebAwesomeElement from '../../internal/webawesome-element.js';
 import '../icon/icon.js';
 /**
- * @summary Carousels display an arbitrary number of content slides along a horizontal or vertical axis.
+ * @summary Carousels display a series of content slides along a horizontal or vertical axis, one or more at a time.
+ *  Users can navigate between slides with controls, pagination, or autoplay.
  *
  * @since 2.2
  * @status experimental
@@ -30,6 +31,8 @@ import '../icon/icon.js';
  * @cssproperty --scroll-hint - The amount of padding to apply to the scroll area, allowing adjacent slides to become
  *  partially visible as a scroll hint.
  * @cssproperty [--slide-gap=var(--wa-space-m)] - The space between each slide.
+ *
+ * @ssr - Carousel relies on scroll behaviors to work properly. Carousel will display the first image properly, but will not be interactive.
  */
 export default class WaCarousel extends WebAwesomeElement {
     static css: import("lit").CSSResult;
@@ -65,6 +68,7 @@ export default class WaCarousel extends WebAwesomeElement {
     private dragStartPosition;
     private readonly localize;
     private mutationObserver;
+    private resizeObserver?;
     private pendingSlideChange;
     connectedCallback(): void;
     disconnectedCallback(): void;

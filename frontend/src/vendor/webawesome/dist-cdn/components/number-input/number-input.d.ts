@@ -2,9 +2,10 @@ import { type PropertyValues } from 'lit';
 import { WebAwesomeFormAssociatedElement } from '../../internal/webawesome-form-associated-element.js';
 import '../icon/icon.js';
 /**
- * @summary Number inputs allow users to enter and edit numeric values with optional stepper buttons.
+ * @summary Number inputs let users enter and edit numeric values, with optional stepper buttons for incrementing and
+ *  decrementing. Use them for quantities, measurements, and other numeric form fields.
  * @documentation https://webawesome.com/docs/components/number-input
- * @status experimental
+ * @status stable
  * @since 3.2
  *
  * @dependency wa-icon
@@ -20,6 +21,8 @@ import '../icon/icon.js';
  * @event change - Emitted when an alteration to the control's value is committed by the user.
  * @event focus - Emitted when the control gains focus.
  * @event input - Emitted when the control receives input.
+ * @event beforeinput - Emitted before the value changes. Can be cancelled with `event.preventDefault()` to prevent the
+ *  value from changing.
  * @event wa-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
  *
  * @csspart label - The label element.
@@ -40,6 +43,8 @@ export default class WaNumberInput extends WebAwesomeFormAssociatedElement {
     static css: import("lit").CSSResult[];
     static shadowRootOptions: {
         delegatesFocus: boolean;
+        clonable?: boolean;
+        customElementRegistry?: CustomElementRegistry;
         mode: ShadowRootMode;
         serializable?: boolean;
         slotAssignment?: SlotAssignmentMode;
@@ -57,7 +62,8 @@ export default class WaNumberInput extends WebAwesomeFormAssociatedElement {
     /** The default value of the form control. Primarily used for resetting the form control. */
     defaultValue: string | null;
     /** The input's size. */
-    size: 'small' | 'medium' | 'large';
+    size: 'xs' | 's' | 'm' | 'l' | 'xl' | 'small' | 'medium' | 'large';
+    handleSizeChange(): void;
     /** The input's visual appearance. */
     appearance: 'filled' | 'outlined' | 'filled-outlined';
     /** Draws a pill-style input with rounded edges. */
@@ -98,13 +104,19 @@ export default class WaNumberInput extends WebAwesomeFormAssociatedElement {
      */
     inputmode: 'numeric' | 'decimal';
     /**
-     * Used for SSR. Will determine if the SSRed component will have the label slot rendered on initial paint.
+     * Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup
+     * includes the label before the component hydrates on the client.
      */
     withLabel: boolean;
     /**
-     * Used for SSR. Will determine if the SSRed component will have the hint slot rendered on initial paint.
+     * Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup
+     * includes the hint before the component hydrates on the client.
      */
     withHint: boolean;
+    /**
+     * @internal
+     */
+    protected updateFormValue(value: unknown): void;
     /** Returns true if the value is at or below the minimum. */
     private get isAtMin();
     /** Returns true if the value is at or above the maximum. */
@@ -112,8 +124,8 @@ export default class WaNumberInput extends WebAwesomeFormAssociatedElement {
     private handleChange;
     private handleInput;
     private handleKeyDown;
-    private handleStepperClick;
-    private maintainFocusOnPointerDown;
+    private handleStepperPointerUp;
+    private handleStepperPointerDown;
     updated(changedProperties: PropertyValues<this>): void;
     handleStepChange(): void;
     /** Sets focus on the input. */

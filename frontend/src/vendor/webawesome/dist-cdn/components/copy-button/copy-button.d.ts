@@ -3,10 +3,11 @@ import '../icon/icon.js';
 import '../tooltip/tooltip.js';
 import type WaTooltip from '../tooltip/tooltip.js';
 /**
- * @summary Copies text data to the clipboard when the user clicks the trigger.
+ * @summary Copy buttons copy text to the clipboard when the user activates them. They provide built-in success and
+ *  error feedback so users know the copy worked.
  * @documentation https://webawesome.com/docs/components/copy
- * @status experimental
- * @since 2.7
+ * @status stable
+ * @since 3.6
  *
  * @dependency wa-icon
  * @dependency wa-tooltip
@@ -14,18 +15,20 @@ import type WaTooltip from '../tooltip/tooltip.js';
  * @event wa-copy - Emitted when the data has been copied.
  * @event wa-error - Emitted when the data could not be copied.
  *
+ * @slot - The trigger element. By default, a copy icon button is rendered so this is optional. If desired, you can slot
+ *  in a custom element such as `<wa-button>` or `<button>`.
  * @slot copy-icon - The icon to show in the default copy state. Works best with `<wa-icon>`.
  * @slot success-icon - The icon to show when the content is copied. Works best with `<wa-icon>`.
  * @slot error-icon - The icon to show when a copy error occurs. Works best with `<wa-icon>`.
+ *
+ * @cssstate success - Applied when the copy operation succeeds.
+ * @cssstate error - Applied when the copy operation fails.
  *
  * @csspart button - The internal `<button>` element.
  * @csspart copy-icon - The container that holds the copy icon.
  * @csspart success-icon - The container that holds the success icon.
  * @csspart error-icon - The container that holds the error icon.
- * @csspart tooltip__base - The tooltip's exported `base` part.
- * @csspart tooltip__base__popup - The tooltip's exported `popup` part.
- * @csspart tooltip__base__arrow - The tooltip's exported `arrow` part.
- * @csspart tooltip__body - The tooltip's exported `body` part.
+ * @csspart feedback - The internal `<wa-tooltip>` element.
  */
 export default class WaCopyButton extends WebAwesomeElement {
     static css: import("lit").CSSResult[];
@@ -33,9 +36,16 @@ export default class WaCopyButton extends WebAwesomeElement {
     copyIcon: HTMLSlotElement;
     successIcon: HTMLSlotElement;
     errorIcon: HTMLSlotElement;
-    tooltip: WaTooltip;
+    defaultSlot: HTMLSlotElement;
+    shadowTooltip: WaTooltip;
     isCopying: boolean;
     status: 'rest' | 'success' | 'error';
+    hasCustomTrigger: boolean;
+    liveAnnouncement: string;
+    private customTriggerEl;
+    private lightTooltip;
+    private feedbackTimeout;
+    private get activeTooltip();
     private get currentLabel();
     /** The text value to copy. */
     value: string;
@@ -48,7 +58,7 @@ export default class WaCopyButton extends WebAwesomeElement {
     from: string;
     /** Disables the copy button. */
     disabled: boolean;
-    /** A custom label to show in the tooltip. */
+    /** A custom label to use as the accessible name and tooltip text in the default copy state. */
     copyLabel: string;
     /** A custom label to show in the tooltip after copying. */
     successLabel: string;
@@ -58,6 +68,23 @@ export default class WaCopyButton extends WebAwesomeElement {
     feedbackDuration: number;
     /** The preferred placement of the tooltip. */
     tooltipPlacement: 'top' | 'right' | 'bottom' | 'left';
+    /**
+     * Controls the built-in tooltip. `full` (default) shows the tooltip on hover and focus and during copy feedback.
+     * `copy` keeps the tooltip silent on hover/focus and only shows it briefly to confirm a successful or failed copy.
+     * `none` disables the tooltip entirely. Applies to both the default and custom triggers.
+     */
+    tooltip: 'full' | 'copy' | 'none';
+    firstUpdated(): void;
+    disconnectedCallback(): void;
+    handleStatusChange(): void;
+    handleLabelChange(): void;
+    handleTooltipOptionsChange(): void;
+    handleTooltipModeChange(oldValue?: 'full' | 'copy' | 'none'): void;
+    private handleDefaultSlotChange;
+    private releaseAssignedId;
+    private ensureLightTooltip;
+    private removeLightTooltip;
+    private syncTooltipText;
     private handleCopy;
     private showStatus;
     render(): import("lit-html").TemplateResult<1>;

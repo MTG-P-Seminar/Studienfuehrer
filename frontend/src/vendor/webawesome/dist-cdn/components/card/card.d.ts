@@ -1,6 +1,8 @@
+import { type PropertyValues } from 'lit';
 import WebAwesomeElement from '../../internal/webawesome-element.js';
 /**
- * @summary Cards can be used to group related subjects in a container.
+ * @summary Cards group related content and actions inside a bordered container. Use them to present products, articles,
+ *  user profiles, or any self-contained unit of information.
  * @documentation https://webawesome.com/docs/components/card
  * @status stable
  * @since 2.0
@@ -19,21 +21,42 @@ import WebAwesomeElement from '../../internal/webawesome-element.js';
  * @csspart footer - The container that wraps the card's footer.
  *
  * @cssproperty [--spacing=var(--wa-space-l)] - The amount of space around and between sections of the card. Expects a single value.
+ *
+ * @ssr - `<wa-card>` requires `with-header` / `with-media` / `with-footer` attributes to be set if you use any of these slots. This is a limitation of the platform not currently providing a `:has-slotted` CSS directive to allow us to apply things like borders based on slotted content. Without these attributes, only the body of the card will be rendered via SSR.
  */
 export default class WaCard extends WebAwesomeElement {
     static css: import("lit").CSSResult[];
     private readonly hasSlotController;
     /** The card's visual appearance. */
     appearance: 'accent' | 'filled' | 'outlined' | 'filled-outlined' | 'plain';
-    /** Renders the card with a header. Only needed for SSR, otherwise is automatically added. */
+    /**
+     * Only required for SSR. Set to `true` if you're slotting in a `header` element so the server-rendered markup
+     * includes the header before the component hydrates on the client.
+     */
     withHeader: boolean;
-    /** Renders the card with an image. Only needed for SSR, otherwise is automatically added. */
+    /**
+     * Only required for SSR. Set to `true` if you're slotting in a `media` element so the server-rendered markup
+     * includes the media before the component hydrates on the client.
+     */
     withMedia: boolean;
-    /** Renders the card with a footer. Only needed for SSR, otherwise is automatically added. */
+    /**
+     * Only required for SSR. Set to `true` if you're slotting in a `footer` element so the server-rendered markup
+     * includes the footer before the component hydrates on the client.
+     */
     withFooter: boolean;
+    /**
+     * Only required for SSR. Set to `true` if you're slotting in a `header-actions` element so the server-rendered markup
+     * includes the media before the component hydrates on the client.
+     */
+    withHeaderActions: boolean;
+    /**
+     * Only required for SSR. Set to `true` if you're slotting in a `footer-actions` element so the server-rendered markup
+     * includes the media before the component hydrates on the client.
+     */
+    withFooterActions: boolean;
     /** Renders the card's orientation **/
     orientation: 'horizontal' | 'vertical';
-    updated(): void;
+    willUpdate(changedProperties: PropertyValues<this>): void;
     render(): import("lit-html").TemplateResult<1>;
 }
 declare global {

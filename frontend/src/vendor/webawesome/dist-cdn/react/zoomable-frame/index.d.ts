@@ -1,6 +1,6 @@
 import Component from '../../components/zoomable-frame/zoomable-frame.js';
 /**
- * @summary Zoomable frames render iframe content with zoom and interaction controls.
+ * @summary Zoomable frames embed iframe content with built-in controls for zooming, panning, and managing interaction.
  * @documentation https://webawesome.com/docs/components/zoomable-frame
  * @status stable
  * @since 3.0

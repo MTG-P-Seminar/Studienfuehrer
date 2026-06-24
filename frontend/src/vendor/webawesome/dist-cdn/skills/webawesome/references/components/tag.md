@@ -3,9 +3,11 @@
 **Full documentation:** https://webawesome.com/docs/components/tag
 
 
-`<wa-tag>` Since 2.0 Stable
+`<wa-tag>`
 
-Tags are used as labels to organize things or to indicate a selection.
+Stable [Feedback](https://webawesome.com/docs/components/?category=feedback) [Since 2.0](https://webawesome.com/docs/resources/changelog#wa_200)
+
+Tags label, categorize, or represent selections with a compact visual marker. Use them for status indicators, filters, or removable chips.
 
 ```html
 <wa-tag variant="brand">Brand</wa-tag>
@@ -17,7 +19,11 @@ Tags are used as labels to organize things or to indicate a selection.
 
 ## Examples
 
+Link to This Section
+
 ### Appearance
+
+Link to This Section
 
 Use the `size` attribute to change a tag's visual appearance. The default appearance is `filled-outlined`.
 
@@ -61,33 +67,45 @@ Use the `size` attribute to change a tag's visual appearance. The default appear
 
 ### Sizes
 
+Link to This Section
+
 Use the `size` attribute to change a tag's size.
 
 ```html
-<wa-tag size="small">Small</wa-tag>
-<wa-tag size="medium">Medium</wa-tag>
-<wa-tag size="large">Large</wa-tag>
+<wa-tag size="xs">Extra Small</wa-tag>
+<wa-tag size="s">Small</wa-tag>
+<wa-tag size="m">Medium</wa-tag>
+<wa-tag size="l">Large</wa-tag>
+<wa-tag size="xl">Extra Large</wa-tag>
 ```
 
 ### Pill
 
+Link to This Section
+
 Use the `pill` attribute to give tabs rounded edges.
 
 ```html
-<wa-tag size="small" pill>Small</wa-tag>
-<wa-tag size="medium" pill>Medium</wa-tag>
-<wa-tag size="large" pill>Large</wa-tag>
+<wa-tag size="xs" pill>Extra Small</wa-tag>
+<wa-tag size="s" pill>Small</wa-tag>
+<wa-tag size="m" pill>Medium</wa-tag>
+<wa-tag size="l" pill>Large</wa-tag>
+<wa-tag size="xl" pill>Extra Large</wa-tag>
 ```
 
 ### Removable
+
+Link to This Section
 
 Use the `with-remove` attribute to add a remove button to the tag.
 
 ```html
 <div class="tags-removable">
-  <wa-tag size="small" with-remove>Small</wa-tag>
-  <wa-tag size="medium" with-remove>Medium</wa-tag>
-  <wa-tag size="large" with-remove>Large</wa-tag>
+  <wa-tag size="xs" with-remove>Extra Small</wa-tag>
+  <wa-tag size="s" with-remove>Small</wa-tag>
+  <wa-tag size="m" with-remove>Medium</wa-tag>
+  <wa-tag size="l" with-remove>Large</wa-tag>
+  <wa-tag size="xl" with-remove>Extra Large</wa-tag>
 </div>
 
 <script>
@@ -107,76 +125,37 @@ Use the `with-remove` attribute to add a remove button to the tag.
 </style>
 ```
 
-## Importing
-
-Autoloading components via [projects](https://webawesome.com/docs/#using-a-project) is the recommended way to import components. If you prefer to do it manually, use one of the following code snippets.
-
-\*\*CDN\*\*
-
-Let your project code do the work! [Sign up for free](https://webawesome.com/signup) to use a project with your very own CDN — it's the fastest and easiest way to use Web Awesome.
-
-\*\*npm\*\*
-
-To manually import this component from NPM, use the following code.
-
-```js
-import '@awesome.me/webawesome/dist/components/tag/tag.js';
-```
-
-\*\*React\*\*
-
-To manually import this component from React, use the following code.
-
-```js
-import WaTag from '@awesome.me/webawesome/dist/react/tag';
-```
-
 ## Slots
 
-Learn more about [using slots](https://webawesome.com/docs/usage/#slots).
+Valid slot names for this component (use exactly these — any other `slot` value
+is silently ignored and the element falls back to the default slot):
 
-| Name | Description |
-| --- | --- |
-| (default) | The tag's content. |
+- `(default)` — The tag's content.
 
 ## Attributes & Properties
 
-Learn more about [attributes and properties](https://webawesome.com/docs/usage/#attributes-and-properties).
-
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`appearance\` appearance | \`'accent' \\| 'filled' \\| 'outlined' \\| 'filled-outlined'\` The tag's visual appearance. Type Default 'filled-outlined' | | |
-| \`css\` | \`CSSResultGroup \\| undefined\` One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. Type Default \[styles, variantStyles, sizeStyles\] | | |
-| \`pill\` pill | \`boolean\` Draws a pill-style tag with rounded edges. Type Default false | | |
-| \`size\` size | \`'small' \\| 'medium' \\| 'large'\` The tag's size. Type Default 'medium' | | |
-| \`variant\` variant | \`neutral\` The tag's theme variant. Defaults to if not within another element with a variant. Type 'brand' \\| 'neutral' \\| 'success' \\| 'warning' \\| 'danger' Default 'neutral' | | |
-| \`withRemove\` with-remove | \`boolean\` Makes the tag removable and shows a remove button. Type Default false | | |
+| Attribute | Property | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| `variant` |  | `'brand' \| 'neutral' \| 'success' \| 'warning' \| 'danger'` | `'neutral'` | The tag's theme variant. Defaults to `neutral` if not within another element with a variant. |
+| `appearance` |  | `'accent' \| 'filled' \| 'outlined' \| 'filled-outlined'` | `'filled-outlined'` | The tag's visual appearance. |
+| `size` |  | `'xs' \| 's' \| 'm' \| 'l' \| 'xl' \| 'small' \| 'medium' \| 'large'` | `'m'` | The tag's size. |
+| `pill` |  | `boolean` | `false` | Draws a pill-style tag with rounded edges. |
+| `with-remove` | `withRemove` | `boolean` | `false` | Makes the tag removable and shows a remove button. |
+| `dir` |  | `string` |  |  |
+| `lang` |  | `string` |  |  |
+| `did-ssr` | `didSSR` |  |  |  |
 
 ## Events
 
-Learn more about [events](https://webawesome.com/docs/usage/#events).
-
-| Name | Description |
+| Event | Description |
 | --- | --- |
-| \`wa-remove\` | Emitted when the remove button is activated. |
+| `wa-remove` | Emitted when the remove button is activated. |
 
-## CSS parts
+## CSS Parts
 
-Learn more about [CSS parts](https://webawesome.com/docs/customizing/#css-parts).
-
-| Name | Description | CSS selector |
-| --- | --- | --- |
-| \`base\` | The component's base wrapper. | \`::part(base)\` |
-| \`content\` | The tag's content. | \`::part(content)\` |
-| \`remove-button\` | \`\` The tag's remove button, a . | \`::part(remove-button)\` |
-| \`remove-button\_\_base\` | \`base\` The remove button's exported part. | \`::part(remove-button\_\_base)\` |
-
-## Dependencies
-
-This component automatically imports the following elements. Sub-dependencies, if any exist, will also be included in this list.
-
--   [`<wa-button>`](https://webawesome.com/docs/components/button)
--   [`<wa-icon>`](https://webawesome.com/docs/components/icon)
--   [`<wa-spinner>`](https://webawesome.com/docs/components/spinner)
-
-**Need a hand?** Report a bug Ask for help
+| Part | Description |
+| --- | --- |
+| `base` | The component's base wrapper. |
+| `content` | The tag's content. |
+| `remove-button` | The tag's remove button, a `<wa-button>`. |
+| `remove-button__base` | The remove button's exported `base` part. |

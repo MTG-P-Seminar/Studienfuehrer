@@ -3,7 +3,8 @@ import { type EventName } from '@lit/react';
 import type { WaAfterHideEvent, WaAfterShowEvent, WaHideEvent, WaShowEvent } from '../../events/events.js';
 export type { WaAfterHideEvent, WaAfterShowEvent, WaHideEvent, WaShowEvent } from '../../events/events.js';
 /**
- * @summary Dialogs, sometimes called "modals", appear above the page and require the user's immediate attention.
+ * @summary Dialogs appear above the page and require the user's immediate attention. Use them for confirmations, forms,
+ *  or focused tasks that interrupt the main flow.
  * @documentation https://webawesome.com/docs/components/dialog
  * @status stable
  * @since 2.0
@@ -35,8 +36,9 @@ export type { WaAfterHideEvent, WaAfterShowEvent, WaHideEvent, WaShowEvent } fro
  *
  * @cssproperty --spacing - The amount of space around and between the dialog's content.
  * @cssproperty --width - The preferred width of the dialog. Note that the dialog will shrink to accommodate smaller screens.
- * @cssproperty [--show-duration=200ms] - The animation duration when showing the dialog.
- * @cssproperty [--hide-duration=200ms] - The animation duration when hiding the dialog.
+ * @cssproperty [--backdrop-filter=none] - A filter to apply to the backdrop behind the dialog.
+ * @cssproperty [--show-duration=var(--wa-transition-normal)] - The animation duration when showing the dialog.
+ * @cssproperty [--hide-duration=var(--wa-transition-normal)] - The animation duration when hiding the dialog.
  */
 declare const reactWrapper: import("@lit/react").ReactWebComponent<Component, {
     onWaShow: EventName<WaShowEvent>;

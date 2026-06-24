@@ -1,12 +1,15 @@
 import WebAwesomeElement from '../../internal/webawesome-element.js';
 /**
- * @summary Includes give you the power to embed external HTML files into the page.
+ * @summary Fetches an external HTML file and embeds its contents inline on the page. Useful for reusing shared markup
+ *  like headers, footers, and partials across multiple pages.
  * @documentation https://webawesome.com/docs/components/include
  * @status stable
  * @since 2.0
  *
  * @event wa-load - Emitted when the included file is loaded.
  * @event {{ status: number }} wa-include-error - Emitted when the included file fails to load due to an error.
+ *
+ * @ssr - `<wa-include>` uses fetch, but due to its asynchronous nature similar to `<wa-icon>`, there is no way to get the rendered content on your server.
  */
 export default class WaInclude extends WebAwesomeElement {
     static css: import("lit").CSSResult;

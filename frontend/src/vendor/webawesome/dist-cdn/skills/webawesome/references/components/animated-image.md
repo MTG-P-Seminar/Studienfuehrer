@@ -3,9 +3,11 @@
 **Full documentation:** https://webawesome.com/docs/components/animated-image
 
 
-`<wa-animated-image>` Since 2.0 Stable
+`<wa-animated-image>`
 
-A component for displaying animated GIFs and WEBPs that play and pause on interaction.
+Stable [Media](https://webawesome.com/docs/components/?category=media) [Since 2.0](https://webawesome.com/docs/resources/changelog#wa_200)
+
+Animated images display GIFs and WEBPs with controls to play and pause them on demand. Use them when you want motion but need to give users control over when it plays.
 
 ```html
 <wa-animated-image
@@ -18,7 +20,11 @@ This component uses `<canvas>` to draw freeze frames, so images are subject to [
 
 ## Examples
 
+Link to This Section
+
 ### WEBP Images
+
+Link to This Section
 
 Both GIF and WEBP images are supported.
 
@@ -30,6 +36,8 @@ Both GIF and WEBP images are supported.
 ```
 
 ### Setting a Width and Height
+
+Link to This Section
 
 To set a custom size, apply a width and/or height to the host element.
 
@@ -43,6 +51,8 @@ To set a custom size, apply a width and/or height to the host element.
 ```
 
 ### Customizing the Control Box
+
+Link to This Section
 
 You can change the appearance and location of the control box by targeting the `control-box` part in your styles.
 
@@ -66,79 +76,41 @@ You can change the appearance and location of the control box by targeting the `
 </style>
 ```
 
-## Importing
-
-Autoloading components via [projects](https://webawesome.com/docs/#using-a-project) is the recommended way to import components. If you prefer to do it manually, use one of the following code snippets.
-
-\*\*CDN\*\*
-
-Let your project code do the work! [Sign up for free](https://webawesome.com/signup) to use a project with your very own CDN — it's the fastest and easiest way to use Web Awesome.
-
-\*\*npm\*\*
-
-To manually import this component from NPM, use the following code.
-
-```js
-import '@awesome.me/webawesome/dist/components/animated-image/animated-image.js';
-```
-
-\*\*React\*\*
-
-To manually import this component from React, use the following code.
-
-```js
-import WaAnimatedImage from '@awesome.me/webawesome/dist/react/animated-image';
-```
-
 ## Slots
 
-Learn more about [using slots](https://webawesome.com/docs/usage/#slots).
+Valid slot names for this component (use exactly these — any other `slot` value
+is silently ignored and the element falls back to the default slot):
 
-| Name | Description |
-| --- | --- |
-| \`pause-icon\` | \`\` Optional play icon to use instead of the default. Works best with . |
+- `play-icon` — Optional play icon to use instead of the default. Works best with `<wa-icon>`.
+- `pause-icon` — Optional pause icon to use instead of the default. Works best with `<wa-icon>`.
 
 ## Attributes & Properties
 
-Learn more about [attributes and properties](https://webawesome.com/docs/usage/#attributes-and-properties).
-
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`alt\` alt | \`string\` A description of the image used by assistive devices. Type | | |
-| \`css\` | \`CSSResultGroup \\| undefined\` One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. Type Default styles | | |
-| \`play\` play | \`boolean\` Plays the animation. When this attribute is remove, the animation will pause. Type | | |
-| \`src\` src | \`string\` The path to the image to load. Type | | |
+| Attribute | Property | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| `src` |  | `string` |  | The path to the image to load. |
+| `alt` |  | `string` |  | A description of the image used by assistive devices. |
+| `play` |  | `boolean` |  | Plays the animation. When this attribute is remove, the animation will pause. |
+| `dir` |  | `string` |  |  |
+| `lang` |  | `string` |  |  |
+| `did-ssr` | `didSSR` |  |  |  |
 
 ## Events
 
-Learn more about [events](https://webawesome.com/docs/usage/#events).
-
-| Name | Description |
+| Event | Description |
 | --- | --- |
-| \`wa-error\` | Emitted when the image fails to load. |
-| \`wa-load\` | Emitted when the image loads successfully. |
+| `wa-load` | Emitted when the image loads successfully. |
+| `wa-error` | Emitted when the image fails to load. |
 
-## CSS custom properties
+## CSS Parts
 
-Learn more about [CSS custom properties](https://webawesome.com/docs/customizing/#custom-properties).
-
-| Name | Description |
+| Part | Description |
 | --- | --- |
-| \`--control-box-size\` | The size of the icon box. |
-| \`--icon-size\` | The size of the play/pause icons. |
+| `control-box` | The container that surrounds the pause/play icons and provides their background. |
 
-## CSS parts
+## CSS Custom Properties
 
-Learn more about [CSS parts](https://webawesome.com/docs/customizing/#css-parts).
-
-| Name | Description | CSS selector |
+| Property | Default | Description |
 | --- | --- | --- |
-| \`control-box\` | The container that surrounds the pause/play icons and provides their background. | \`::part(control-box)\` |
-
-## Dependencies
-
-This component automatically imports the following elements. Sub-dependencies, if any exist, will also be included in this list.
-
--   [`<wa-icon>`](https://webawesome.com/docs/components/icon)
-
-**Need a hand?** Report a bug Ask for help
+| `--control-box-size` |  | The size of the icon box. |
+| `--icon-size` |  | The size of the play/pause icons. |

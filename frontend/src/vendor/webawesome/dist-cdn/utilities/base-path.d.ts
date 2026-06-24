@@ -15,6 +15,19 @@ export declare function setBasePath(path: string): void;
  * @param subpath - An optional path to append to the base path.
  */
 export declare function getBasePath(subpath?: string): string;
+/**
+ * Sets the path where the default icon library resolves SVG icons from. When set, the default icon library will load
+ * icons from this path instead of the Font Awesome CDN. The expected directory structure mirrors the Font Awesome SVG
+ * download, e.g. `{path}/solid/house.svg` or `{path}/brands/github.svg`.
+ *
+ * This should be called before Web Awesome components are loaded.
+ */
+export declare function setIconPath(path: string): void;
+/**
+ * Gets the path where the default icon library resolves SVG icons from. When set, the default icon library will load
+ * icons from this path instead of the Font Awesome CDN.
+ */
+export declare function getIconPath(): string;
 /** Sets the library's Web Awesome kit code. */
 export declare function setKitCode(code: string): void;
 /**

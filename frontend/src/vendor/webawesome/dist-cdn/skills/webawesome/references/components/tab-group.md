@@ -3,9 +3,11 @@
 **Full documentation:** https://webawesome.com/docs/components/tab-group
 
 
-`<wa-tab-group>` Since 2.0 Stable
+`<wa-tab-group>`
 
-Tab groups organize content into a container that shows one section at a time.
+Stable [Navigation](https://webawesome.com/docs/components/?category=navigation) [Since 2.0](https://webawesome.com/docs/resources/changelog#wa_200)
+
+Tab groups organize related content into a single container that displays one panel at a time, with tabs for switching between them.
 
 Tab groups make use of [tabs](https://webawesome.com/docs/components/tab) and [tab panels](https://webawesome.com/docs/components/tab-panel). Each panel should have a name that's unique within the tab group, and tabs should have a `panel` attribute that points to the respective panel's name.
 
@@ -16,7 +18,7 @@ Tab groups make use of [tabs](https://webawesome.com/docs/components/tab) and [t
   <wa-tab panel="advanced">Advanced</wa-tab>
   <wa-tab panel="disabled" disabled>Disabled</wa-tab>
 
-  <wa-tab-panel name="general">This is the general tab panel.</wa-tab-panel>
+  <wa-tab-panel name="general" active>This is the general tab panel.</wa-tab-panel>
   <wa-tab-panel name="custom">This is the custom tab panel.</wa-tab-panel>
   <wa-tab-panel name="advanced">This is the advanced tab panel.</wa-tab-panel>
   <wa-tab-panel name="disabled">This is a disabled tab panel.</wa-tab-panel>
@@ -25,7 +27,11 @@ Tab groups make use of [tabs](https://webawesome.com/docs/components/tab) and [t
 
 ## Examples
 
+Link to This Section
+
 ### Setting the Active Tab
+
+Link to This Section
 
 To make a tab active, set the `active` attribute to the name of the appropriate panel.
 
@@ -42,6 +48,8 @@ To make a tab active, set the `active` attribute to the name of the appropriate 
 ```
 
 ### Tabs on Bottom
+
+Link to This Section
 
 Tabs can be shown on the bottom by setting `placement` to `bottom`.
 
@@ -61,6 +69,8 @@ Tabs can be shown on the bottom by setting `placement` to `bottom`.
 
 ### Tabs on Start
 
+Link to This Section
+
 Tabs can be shown on the starting side by setting `placement` to `start`.
 
 ```html
@@ -78,6 +88,8 @@ Tabs can be shown on the starting side by setting `placement` to `start`.
 ```
 
 ### Tabs on End
+
+Link to This Section
 
 Tabs can be shown on the ending side by setting `placement` to `end`.
 
@@ -97,13 +109,15 @@ Tabs can be shown on the ending side by setting `placement` to `end`.
 
 ### Closable Tabs
 
+Link to This Section
+
 You can make a tab closable by adding a close button next to the tab and inside the `nav` slot. You can position the button to your liking with CSS and handle close/restore behaviors by removing/appending the tab as desired. Note the use of `tabindex="-1"`, which prevents the close button from interfering with the tab order. The close button is still recognizable to the virtual cursor in screen readers.
 
 ```html
 <wa-tab-group class="tabs-closable">
   <wa-tab panel="general">General</wa-tab>
   <wa-tab panel="closable">Closable</wa-tab>
-  <wa-button slot="nav" tabindex="-1" appearance="plain" size="small">
+  <wa-button slot="nav" tabindex="-1" appearance="plain" size="s">
     <wa-icon name="xmark" label="Close the closable tab"></wa-icon>
   </wa-button>
   <wa-tab panel="closable-2">Advanced</wa-tab>
@@ -149,6 +163,8 @@ You can make a tab closable by adding a close button next to the tab and inside 
 ```
 
 ### Scrolling Tabs
+
+Link to This Section
 
 When there are more tabs than horizontal space allows, the nav will be scrollable.
 
@@ -200,6 +216,8 @@ When there are more tabs than horizontal space allows, the nav will be scrollabl
 
 ### Manual Activation
 
+Link to This Section
+
 When focused, keyboard users can press Left or Right to select the desired tab. By default, the corresponding tab panel will be shown immediately (automatic activation). You can change this behavior by setting `activation="manual"` which will require the user to press Space or Enter before showing the tab panel (manual activation).
 
 ```html
@@ -216,93 +234,50 @@ When focused, keyboard users can press Left or Right to select the desired tab. 
 </wa-tab-group>
 ```
 
-## Importing
-
-Autoloading components via [projects](https://webawesome.com/docs/#using-a-project) is the recommended way to import components. If you prefer to do it manually, use one of the following code snippets.
-
-\*\*CDN\*\*
-
-Let your project code do the work! [Sign up for free](https://webawesome.com/signup) to use a project with your very own CDN — it's the fastest and easiest way to use Web Awesome.
-
-\*\*npm\*\*
-
-To manually import this component from NPM, use the following code.
-
-```js
-import '@awesome.me/webawesome/dist/components/tab-group/tab-group.js';
-```
-
-\*\*React\*\*
-
-To manually import this component from React, use the following code.
-
-```js
-import WaTabGroup from '@awesome.me/webawesome/dist/react/tab-group';
-```
-
 ## Slots
 
-Learn more about [using slots](https://webawesome.com/docs/usage/#slots).
+Valid slot names for this component (use exactly these — any other `slot` value
+is silently ignored and the element falls back to the default slot):
 
-| Name | Description |
-| --- | --- |
-| (default) | \`\` Used for grouping tab panels in the tab group. Must be elements. |
-| \`nav\` | \`\` Used for grouping tabs in the tab group. Must be elements. Note that will set this slot on itself automatically. |
+- `(default)` — Used for grouping tab panels in the tab group. Must be `<wa-tab-panel>` elements.
+- `nav` — Used for grouping tabs in the tab group. Must be `<wa-tab>` elements. Note that `<wa-tab>` will set this slot on itself automatically.
 
 ## Attributes & Properties
 
-Learn more about [attributes and properties](https://webawesome.com/docs/usage/#attributes-and-properties).
-
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`activation\` activation | \`'auto' \\| 'manual'\` When set to auto, navigating tabs with the arrow keys will instantly show the corresponding tab panel. When set to manual, the tab will receive focus but will not show until the user presses spacebar or enter. Type Default 'auto' | | |
-| \`active\` active | \`string\` Sets the active tab. Type Default '' | | |
-| \`css\` | \`CSSResultGroup \\| undefined\` One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. Type Default styles | | |
-| \`placement\` placement | \`'top' \\| 'bottom' \\| 'start' \\| 'end'\` The placement of the tabs. Type Default 'top' | | |
-| \`withoutScrollControls\` without-scroll-controls | \`boolean\` Disables the scroll arrows that appear when tabs overflow. Type Default false | | |
+| Attribute | Property | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| `active` |  | `string` | `''` | Sets the active tab. |
+| `placement` |  | `'top' \| 'bottom' \| 'start' \| 'end'` | `'top'` | The placement of the tabs. |
+| `activation` |  | `'auto' \| 'manual'` | `'auto'` | When set to auto, navigating tabs with the arrow keys will instantly show the corresponding tab panel. When set to manual, the tab will receive focus but will not show until the user presses spacebar or enter. |
+| `without-scroll-controls` | `withoutScrollControls` | `boolean` | `false` | Disables the scroll arrows that appear when tabs overflow. |
+| `dir` |  | `string` |  |  |
+| `lang` |  | `string` |  |  |
+| `did-ssr` | `didSSR` |  |  |  |
 
 ## Events
 
-Learn more about [events](https://webawesome.com/docs/usage/#events).
-
-| Name | Description |
+| Event | Description |
 | --- | --- |
-| \`wa-tab-hide\` | Emitted when a tab is hidden. |
-| \`wa-tab-show\` | Emitted when a tab is shown. |
+| `wa-tab-show` | Emitted when a tab is shown. |
+| `wa-tab-hide` | Emitted when a tab is hidden. |
 
-## CSS custom properties
+## CSS Parts
 
-Learn more about [CSS custom properties](https://webawesome.com/docs/customizing/#custom-properties).
-
-| Name | Description |
+| Part | Description |
 | --- | --- |
-| \`--indicator-color\` | The color of the active tab indicator. |
-| \`--track-color\` | The color of the indicator's track (the line that separates tabs from panels). |
-| \`--track-width\` | The width of the indicator's track (the line that separates tabs from panels). |
+| `base` | The component's base wrapper. |
+| `nav` | The tab group's navigation container where tabs are slotted in. |
+| `tabs` | The container that wraps the tabs. |
+| `body` | The tab group's body where tab panels are slotted in. |
+| `scroll-button` | The previous/next scroll buttons that show when tabs are scrollable, a `<wa-button>`. |
+| `scroll-button-start` | The starting scroll button. |
+| `scroll-button-end` | The ending scroll button. |
+| `scroll-button__base` | The scroll button's exported `base` part. |
 
-## CSS parts
+## CSS Custom Properties
 
-Learn more about [CSS parts](https://webawesome.com/docs/customizing/#css-parts).
-
-| Name | Description | CSS selector |
+| Property | Default | Description |
 | --- | --- | --- |
-| \`base\` | The component's base wrapper. | \`::part(base)\` |
-| \`body\` | The tab group's body where tab panels are slotted in. | \`::part(body)\` |
-| \`nav\` | The tab group's navigation container where tabs are slotted in. | \`::part(nav)\` |
-| \`scroll-button\` | \`\` The previous/next scroll buttons that show when tabs are scrollable, a . | \`::part(scroll-button)\` |
-| \`scroll-button\_\_base\` | \`base\` The scroll button's exported part. | \`::part(scroll-button\_\_base)\` |
-| \`scroll-button-end\` | The ending scroll button. | \`::part(scroll-button-end)\` |
-| \`scroll-button-start\` | The starting scroll button. | \`::part(scroll-button-start)\` |
-| \`tabs\` | The container that wraps the tabs. | \`::part(tabs)\` |
-
-## Dependencies
-
-This component automatically imports the following elements. Sub-dependencies, if any exist, will also be included in this list.
-
--   [`<wa-button>`](https://webawesome.com/docs/components/button)
--   [`<wa-icon>`](https://webawesome.com/docs/components/icon)
--   [`<wa-spinner>`](https://webawesome.com/docs/components/spinner)
--   [`<wa-tab>`](https://webawesome.com/docs/components/tab)
--   [`<wa-tab-panel>`](https://webawesome.com/docs/components/tab-panel)
-
-**Need a hand?** Report a bug Ask for help
+| `--indicator-color` |  | The color of the active tab indicator. |
+| `--track-color` |  | The color of the indicator's track (the line that separates tabs from panels). |
+| `--track-width` |  | The width of the indicator's track (the line that separates tabs from panels). |

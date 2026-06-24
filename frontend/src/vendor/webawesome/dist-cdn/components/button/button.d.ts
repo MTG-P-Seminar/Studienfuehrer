@@ -2,7 +2,8 @@ import { WebAwesomeFormAssociatedElement } from '../../internal/webawesome-form-
 import '../icon/icon.js';
 import '../spinner/spinner.js';
 /**
- * @summary Buttons represent actions that are available to the user.
+ * @summary Buttons represent actions the user can take, such as submitting a form, opening a dialog, or navigating to
+ *  another page.
  * @documentation https://webawesome.com/docs/components/button
  * @status stable
  * @since 2.0
@@ -24,10 +25,17 @@ import '../spinner/spinner.js';
  * @csspart end - The container that wraps the `end` slot.
  * @csspart caret - The button's caret icon, a `<wa-icon>` element.
  * @csspart spinner - The spinner that shows when the button is in the loading state.
+ *
+ * @cssstate disabled - Applied when the button is disabled.
+ * @cssstate icon-button - Applied when the button contains only a `<wa-icon>` with no other content.
+ * @cssstate link - Applied when the button is rendered as a link (i.e. `href` is set).
+ * @cssstate loading - Applied when the button is in the loading state.
  */
 export default class WaButton extends WebAwesomeFormAssociatedElement {
     static shadowRootOptions: {
         delegatesFocus: boolean;
+        clonable?: boolean;
+        customElementRegistry?: CustomElementRegistry;
         mode: ShadowRootMode;
         serializable?: boolean;
         slotAssignment?: SlotAssignmentMode;
@@ -47,9 +55,20 @@ export default class WaButton extends WebAwesomeFormAssociatedElement {
     /** The button's visual appearance. */
     appearance: 'accent' | 'filled' | 'outlined' | 'filled-outlined' | 'plain';
     /** The button's size. */
-    size: 'small' | 'medium' | 'large';
+    size: 'xs' | 's' | 'm' | 'l' | 'xl' | 'small' | 'medium' | 'large';
+    handleSizeChange(): void;
     /** Draws the button with a caret. Used to indicate that the button triggers a dropdown menu or similar behavior. */
     withCaret: boolean;
+    /**
+     * Only required for SSR. Set to `true` if you're slotting in a `start` element so the server-rendered markup
+     * includes the start slot before the component hydrates on the client.
+     */
+    withStart: boolean;
+    /**
+     * Only required for SSR. Set to `true` if you're slotting in an `end` element so the server-rendered markup
+     * includes the end slot before the component hydrates on the client.
+     */
+    withEnd: boolean;
     /** Disables the button. */
     disabled: boolean;
     /** Draws the button in a loading state. */
@@ -100,6 +119,8 @@ export default class WaButton extends WebAwesomeFormAssociatedElement {
     private isButton;
     private isLink;
     handleDisabledChange(): void;
+    handleHrefChange(): void;
+    handleLoadingChange(): void;
     setValue(..._args: Parameters<WebAwesomeFormAssociatedElement['setValue']>): void;
     /** Simulates a click on the button. */
     click(): void;

@@ -3,7 +3,8 @@ import { type EventName } from '@lit/react';
 import type { WaClearEvent, WaInvalidEvent } from '../../events/events.js';
 export type { WaClearEvent, WaInvalidEvent } from '../../events/events.js';
 /**
- * @summary Inputs collect data from the user.
+ * @summary Inputs collect single-line data from the user, such as text, numbers, email addresses, and passwords. They
+ *  support labels, hints, validation, and prefix or suffix slots.
  * @documentation https://webawesome.com/docs/components/input
  * @status stable
  * @since 2.0

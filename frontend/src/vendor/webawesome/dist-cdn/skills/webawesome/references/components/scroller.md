@@ -3,9 +3,11 @@
 **Full documentation:** https://webawesome.com/docs/components/scroller
 
 
-`<wa-scroller>` Since 3.0 Stable
+`<wa-scroller>`
 
-Scrollers create an accessible container while providing visual cues that help users identify and navigate through content that scrolls.
+Stable [Layout](https://webawesome.com/docs/components/?category=layout) [Since 3.0](https://webawesome.com/docs/resources/changelog#wa_300)
+
+Scrollers wrap overflowing content in an accessible container with visual cues that help users recognize and navigate scrollable regions.
 
 ```html
 <wa-scroller id="scroller__overview">
@@ -77,7 +79,11 @@ Scrollers create an accessible container while providing visual cues that help u
 
 ## Examples
 
+Link to This Section
+
 ### Adding Content
+
+Link to This Section
 
 The scroller component automatically provides a scrollable container for any content that exceeds the available space. Simply add your content as children of the `<wa-scroller>` element, and it will handle the rest.
 
@@ -124,6 +130,8 @@ The scroller component automatically provides a scrollable container for any con
 
 ### Orientation
 
+Link to This Section
+
 Set the `orientation` attribute to `vertical` and provide a height to create a vertical scroller.
 
 ```html
@@ -154,6 +162,8 @@ Set the `orientation` attribute to `vertical` and provide a height to create a v
 ```
 
 ### Without a Shadow
+
+Link to This Section
 
 Use the `without-shadow` attribute to remove the fading shadow effect at the edges of the scroller, which typically indicates more content is available.
 
@@ -189,6 +199,8 @@ Use the `without-shadow` attribute to remove the fading shadow effect at the edg
 
 ### Without a Scrollbar
 
+Link to This Section
+
 Use the `without-scrollbar` attribute to hide the scrollbar while maintaining scroll functionality. This creates a cleaner visual appearance but may reduce usability on content that needs a clear scrolling indicator.
 
 ```html
@@ -222,64 +234,33 @@ Use the `without-scrollbar` attribute to hide the scrollbar while maintaining sc
 
 Hiding scrollbars can negatively impact accessibility. Users who rely on visible scrollbars to navigate content may have difficulty recognizing that content is scrollable or controlling their scrolling position. Consider the needs of all users when implementing this option.
 
-## Importing
-
-Autoloading components via [projects](https://webawesome.com/docs/#using-a-project) is the recommended way to import components. If you prefer to do it manually, use one of the following code snippets.
-
-\*\*CDN\*\*
-
-Let your project code do the work! [Sign up for free](https://webawesome.com/signup) to use a project with your very own CDN — it's the fastest and easiest way to use Web Awesome.
-
-\*\*npm\*\*
-
-To manually import this component from NPM, use the following code.
-
-```js
-import '@awesome.me/webawesome/dist/components/scroller/scroller.js';
-```
-
-\*\*React\*\*
-
-To manually import this component from React, use the following code.
-
-```js
-import WaScroller from '@awesome.me/webawesome/dist/react/scroller';
-```
-
 ## Slots
 
-Learn more about [using slots](https://webawesome.com/docs/usage/#slots).
+Valid slot names for this component (use exactly these — any other `slot` value
+is silently ignored and the element falls back to the default slot):
 
-| Name | Description |
-| --- | --- |
-| (default) | The content to show inside the scroller. |
+- `(default)` — The content to show inside the scroller.
 
 ## Attributes & Properties
 
-Learn more about [attributes and properties](https://webawesome.com/docs/usage/#attributes-and-properties).
+| Attribute | Property | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| `orientation` |  | `'horizontal' \| 'vertical'` | `'horizontal'` | The scroller's orientation. |
+| `without-scrollbar` | `withoutScrollbar` | `boolean` | `false` | Removes the visible scrollbar. |
+| `without-shadow` | `withoutShadow` | `boolean` | `false` | Removes the shadows. |
+| `dir` |  | `string` |  |  |
+| `lang` |  | `string` |  |  |
+| `did-ssr` | `didSSR` |  |  |  |
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`css\` | \`CSSResultGroup \\| undefined\` One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. Type Default \[styles\] | | |
-| \`orientation\` orientation | \`'horizontal' \\| 'vertical'\` The scroller's orientation. Type Default 'horizontal' | | |
-| \`withoutScrollbar\` without-scrollbar | \`boolean\` Removes the visible scrollbar. Type Default false | | |
-| \`withoutShadow\` without-shadow | \`boolean\` Removes the shadows. Type Default false | | |
+## CSS Parts
 
-## CSS custom properties
-
-Learn more about [CSS custom properties](https://webawesome.com/docs/customizing/#custom-properties).
-
-| Name | Description |
+| Part | Description |
 | --- | --- |
-| \`--shadow-color\` | \`var(--wa-color-surface-default)\` The base color of the shadow. Default |
-| \`--shadow-size\` | \`2rem\` The size of the shadow. Default |
+| `content` | The container that wraps the slotted content. |
 
-## CSS parts
+## CSS Custom Properties
 
-Learn more about [CSS parts](https://webawesome.com/docs/customizing/#css-parts).
-
-| Name | Description | CSS selector |
+| Property | Default | Description |
 | --- | --- | --- |
-| \`content\` | The container that wraps the slotted content. | \`::part(content)\` |
-
-**Need a hand?** Report a bug Ask for help
+| `--shadow-color` | `var(--wa-color-surface-default)` | The base color of the shadow. |
+| `--shadow-size` | `2rem` | The size of the shadow. |

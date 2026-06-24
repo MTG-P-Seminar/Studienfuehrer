@@ -1,6 +1,7 @@
 import WebAwesomeElement from '../../internal/webawesome-element.js';
 /**
- * @summary Callouts are used to display important messages inline.
+ * @summary Callouts display important messages inline with surrounding content. Use them to highlight tips, warnings,
+ *  errors, or other information users should not miss.
  * @documentation https://webawesome.com/docs/components/callout
  * @status stable
  * @since 3.0
@@ -18,7 +19,8 @@ export default class WaCallout extends WebAwesomeElement {
     /** The callout's visual appearance. */
     appearance: 'accent' | 'filled' | 'outlined' | 'plain' | 'filled-outlined';
     /** The callout's size. */
-    size: 'small' | 'medium' | 'large';
+    size: 'xs' | 's' | 'm' | 'l' | 'xl' | 'small' | 'medium' | 'large';
+    handleSizeChange(): void;
     render(): import("lit-html").TemplateResult<1>;
 }
 declare global {

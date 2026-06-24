@@ -3,16 +3,18 @@
 **Full documentation:** https://webawesome.com/docs/components/intersection-observer
 
 
-`<wa-intersection-observer>` Since 2.0 Stable
+`<wa-intersection-observer>`
 
-Tracks immediate child elements and fires events as they move in and out of view.
+Stable [Helpers](https://webawesome.com/docs/components/?category=helpers) [Since 2.0](https://webawesome.com/docs/resources/changelog#wa_200)
+
+Tracks immediate child elements and fires events as they move in and out of view. Useful for lazy loading, scroll-triggered animations, and viewport-aware interactions.
 
 This component leverages the [IntersectionObserver API](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver) to track when its direct children enter or leave a designated root element. The `wa-intersect` event fires whenever elements cross the visibility threshold.
 
 ```html
 <div id="intersection__overview">
   <wa-intersection-observer threshold="1" intersect-class="visible">
-    <div class="box"><wa-icon name="bulb"></wa-icon></div>
+    <div class="box"><wa-icon name="lightbulb"></wa-icon></div>
   </wa-intersection-observer>
 </div>
 
@@ -79,7 +81,11 @@ Keep in mind that only direct children of the host element are monitored. Nested
 
 ## Usage Examples
 
+Link to This Section
+
 ### Adding Observable Content
+
+Link to This Section
 
 The intersection observer tracks only its direct children. The component uses [`display: contents`](https://developer.mozilla.org/en-US/docs/Web/CSS/display#contents) styling, which makes it seamless to integrate with flex and grid layouts from a parent container.
 
@@ -111,6 +117,8 @@ observer.addEventListener('wa-intersect', event => {
 
 ### Setting a Custom Root Element
 
+Link to This Section
+
 You can observe intersections within a specific container by assigning the `root` attribute to the [root element's](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/root) ID. Apply [`rootMargin`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/rootMargin) with the `root-margin` attribute to expand or contract the observation area.
 
 ```html
@@ -121,6 +129,8 @@ You can observe intersections within a specific container by assigning the `root
 
 ### Configuring Multiple Thresholds
 
+Link to This Section
+
 Track different visibility percentages by providing multiple [`threshold`](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#threshold) values as a space-separated list.
 
 ```html
@@ -128,6 +138,8 @@ Track different visibility percentages by providing multiple [`threshold`](https
 ```
 
 ### Applying Classes on Intersect
+
+Link to This Section
 
 The `intersect-class` attribute automatically toggles the specified class on direct children when they become visible. This enables pure CSS styling without JavaScript event handlers.
 
@@ -297,58 +309,29 @@ The `intersect-class` attribute automatically toggles the specified class on dir
 </style>
 ```
 
-## Importing
-
-Autoloading components via [projects](https://webawesome.com/docs/#using-a-project) is the recommended way to import components. If you prefer to do it manually, use one of the following code snippets.
-
-\*\*CDN\*\*
-
-Let your project code do the work! [Sign up for free](https://webawesome.com/signup) to use a project with your very own CDN — it's the fastest and easiest way to use Web Awesome.
-
-\*\*npm\*\*
-
-To manually import this component from NPM, use the following code.
-
-```js
-import '@awesome.me/webawesome/dist/components/intersection-observer/intersection-observer.js';
-```
-
-\*\*React\*\*
-
-To manually import this component from React, use the following code.
-
-```js
-import WaIntersectionObserver from '@awesome.me/webawesome/dist/react/intersection-observer';
-```
-
 ## Slots
 
-Learn more about [using slots](https://webawesome.com/docs/usage/#slots).
+Valid slot names for this component (use exactly these — any other `slot` value
+is silently ignored and the element falls back to the default slot):
 
-| Name | Description |
-| --- | --- |
-| (default) | Elements to track. Only immediate children of the host are monitored. |
+- `(default)` — Elements to track. Only immediate children of the host are monitored.
 
 ## Attributes & Properties
 
-Learn more about [attributes and properties](https://webawesome.com/docs/usage/#attributes-and-properties).
-
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`css\` | \`CSSResultGroup \\| undefined\` One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. Type Default styles | | |
-| \`disabled\` disabled | \`boolean\` Deactivates the intersection observer functionality. Type Default false | | |
-| \`intersectClass\` intersect-class | \`string\` CSS class applied to elements during intersection. Automatically removed when elements leave the viewport, enabling pure CSS styling based on visibility state. Type Default '' | | |
-| \`once\` once | \`boolean\` If enabled, observation ceases after initial intersection. Type Default false | | |
-| \`root\` root | \`string \\| null\` Element ID to define the viewport boundaries for tracked targets. Type Default null | | |
-| \`rootMargin\` root-margin | \`string\` Offset space around the root boundary. Accepts values like CSS margin syntax. Type Default '0px' | | |
-| \`threshold\` threshold | \`string\` One or more space-separated values representing visibility percentages that trigger the observer callback. Type Default '0' | | |
+| Attribute | Property | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| `root` |  | `string \| null` | `null` | Element ID to define the viewport boundaries for tracked targets. |
+| `root-margin` | `rootMargin` | `string` | `'0px'` | Offset space around the root boundary. Accepts values like CSS margin syntax. |
+| `threshold` |  | `string` | `'0'` | One or more space-separated values representing visibility percentages that trigger the observer callback. |
+| `intersect-class` | `intersectClass` | `string` | `''` | CSS class applied to elements during intersection. Automatically removed when elements leave the viewport, enabling pure CSS styling based on visibility state. |
+| `once` |  | `boolean` | `false` | If enabled, observation ceases after initial intersection. |
+| `disabled` |  | `boolean` | `false` | Deactivates the intersection observer functionality. |
+| `dir` |  | `string` |  |  |
+| `lang` |  | `string` |  |  |
+| `did-ssr` | `didSSR` |  |  |  |
 
 ## Events
 
-Learn more about [events](https://webawesome.com/docs/usage/#events).
-
-| Name | Description |
+| Event | Description |
 | --- | --- |
-| \`wa-intersect\` | Fired when a tracked element begins or ceases intersecting. |
-
-**Need a hand?** Report a bug Ask for help
+| `wa-intersect` | Fired when a tracked element begins or ceases intersecting. |

@@ -3,16 +3,18 @@
 **Full documentation:** https://webawesome.com/docs/components/mutation-observer
 
 
-`<wa-mutation-observer>` Since 2.0 Stable
+`<wa-mutation-observer>`
 
-The Mutation Observer component offers a thin, declarative interface to the [`MutationObserver API`](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver).
+Stable [Helpers](https://webawesome.com/docs/components/?category=helpers) [Since 2.0](https://webawesome.com/docs/resources/changelog#wa_200)
+
+Mutation observers watch for changes to an element's DOM tree and emit an event when they occur. Provides a thin, declarative interface to the browser's MutationObserver API.
 
 The mutation observer will report changes to the content it wraps through the `wa-mutation` event. When emitted, a collection of [MutationRecord](https://developer.mozilla.org/en-US/docs/Web/API/MutationRecord) objects will be attached to `event.detail` that contains information about how it changed.
 
 ```html
 <div class="mutation-overview">
   <wa-mutation-observer attr="variant">
-    <wa-button variant="brand">Click to mutate</wa-button>
+    <wa-button appearance="filled" variant="brand">Click to mutate</wa-button>
   </wa-mutation-observer>
 
   <br />
@@ -49,7 +51,11 @@ When you create a mutation observer, you must indicate what changes it should re
 
 ## Examples
 
+Link to This Section
+
 ### Child List
+
+Link to This Section
 
 Use the `child-list` attribute to watch for new child elements that are added or removed.
 
@@ -57,7 +63,7 @@ Use the `child-list` attribute to watch for new child elements that are added or
 <div class="mutation-child-list">
   <wa-mutation-observer child-list>
     <div class="buttons">
-      <wa-button variant="brand">Add button</wa-button>
+      <wa-button appearance="filled" variant="brand">Add button</wa-button>
     </div>
   </wa-mutation-observer>
 
@@ -104,58 +110,29 @@ Use the `child-list` attribute to watch for new child elements that are added or
 </div>
 ```
 
-## Importing
-
-Autoloading components via [projects](https://webawesome.com/docs/#using-a-project) is the recommended way to import components. If you prefer to do it manually, use one of the following code snippets.
-
-\*\*CDN\*\*
-
-Let your project code do the work! [Sign up for free](https://webawesome.com/signup) to use a project with your very own CDN — it's the fastest and easiest way to use Web Awesome.
-
-\*\*npm\*\*
-
-To manually import this component from NPM, use the following code.
-
-```js
-import '@awesome.me/webawesome/dist/components/mutation-observer/mutation-observer.js';
-```
-
-\*\*React\*\*
-
-To manually import this component from React, use the following code.
-
-```js
-import WaMutationObserver from '@awesome.me/webawesome/dist/react/mutation-observer';
-```
-
 ## Slots
 
-Learn more about [using slots](https://webawesome.com/docs/usage/#slots).
+Valid slot names for this component (use exactly these — any other `slot` value
+is silently ignored and the element falls back to the default slot):
 
-| Name | Description |
-| --- | --- |
-| (default) | The content to watch for mutations. |
+- `(default)` — The content to watch for mutations.
 
 ## Attributes & Properties
 
-Learn more about [attributes and properties](https://webawesome.com/docs/usage/#attributes-and-properties).
-
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`attr\` attr | \`attr="class id title"\` Watches for changes to attributes. To watch only specific attributes, separate them by a space, e.g. . To watch all attributes, use \*. Type string | | |
-| \`attrOldValue\` attr-old-value | \`boolean\` Indicates whether or not the attribute's previous value should be recorded when monitoring changes. Type Default false | | |
-| \`charData\` char-data | \`boolean\` Watches for changes to the character data contained within the node. Type Default false | | |
-| \`charDataOldValue\` char-data-old-value | \`boolean\` Indicates whether or not the previous value of the node's text should be recorded. Type Default false | | |
-| \`childList\` child-list | \`boolean\` Watches for the addition or removal of new child nodes. Type Default false | | |
-| \`css\` | \`CSSResultGroup \\| undefined\` One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. Type Default styles | | |
-| \`disabled\` disabled | \`boolean\` Disables the observer. Type Default false | | |
+| Attribute | Property | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| `attr` |  | `string` |  | Watches for changes to attributes. To watch only specific attributes, separate them by a space, e.g. `attr="class id title"`. To watch all attributes, use `*`. |
+| `attr-old-value` | `attrOldValue` | `boolean` | `false` | Indicates whether or not the attribute's previous value should be recorded when monitoring changes. |
+| `char-data` | `charData` | `boolean` | `false` | Watches for changes to the character data contained within the node. |
+| `char-data-old-value` | `charDataOldValue` | `boolean` | `false` | Indicates whether or not the previous value of the node's text should be recorded. |
+| `child-list` | `childList` | `boolean` | `false` | Watches for the addition or removal of new child nodes. |
+| `disabled` |  | `boolean` | `false` | Disables the observer. |
+| `dir` |  | `string` |  |  |
+| `lang` |  | `string` |  |  |
+| `did-ssr` | `didSSR` |  |  |  |
 
 ## Events
 
-Learn more about [events](https://webawesome.com/docs/usage/#events).
-
-| Name | Description |
+| Event | Description |
 | --- | --- |
-| \`wa-mutation\` | Emitted when a mutation occurs. |
-
-**Need a hand?** Report a bug Ask for help
+| `wa-mutation` | Emitted when a mutation occurs. |

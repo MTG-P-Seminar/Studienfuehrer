@@ -3,8 +3,16 @@ import WebAwesomeElement from '../../internal/webawesome-element.js';
 import '../checkbox/checkbox.js';
 import '../icon/icon.js';
 import '../spinner/spinner.js';
+export type TreeItemContext = {
+    depth: number;
+    expanded: boolean;
+};
+export declare const treeItemContext: {
+    __context__: TreeItemContext;
+};
 /**
- * @summary A tree item serves as a hierarchical node that lives inside a [tree](/docs/components/tree).
+ * @summary Tree items represent a single hierarchical node inside a tree, and can contain nested items that expand and
+ *  collapse.
  * @documentation https://webawesome.com/docs/components/tree-item
  * @status stable
  * @since 2.0
@@ -41,8 +49,8 @@ import '../spinner/spinner.js';
  * @csspart checkbox__indeterminate-icon - The checkbox's exported `indeterminate-icon` part.
  * @csspart checkbox__label - The checkbox's exported `label` part.
  *
- * @cssproperty [--show-duration=200ms] - The animation duration when expanding tree items.
- * @cssproperty [--hide-duration=200ms] - The animation duration when collapsing tree items.
+ * @cssproperty [--show-duration=var(--wa-transition-normal)] - The animation duration when expanding tree items.
+ * @cssproperty [--hide-duration=var(--wa-transition-normal)] - The animation duration when collapsing tree items.
  *
  * @cssstate disabled - Applied when the tree item is disabled.
  * @cssstate expanded - Applied when the tree item is expanded.
@@ -65,15 +73,23 @@ export default class WaTreeItem extends WebAwesomeElement {
     disabled: boolean;
     /** Enables lazy loading behavior. */
     lazy: boolean;
+    _treeItemContext: TreeItemContext;
+    _parentTreeContext: TreeItemContext | null;
+    private animationGeneration;
     defaultSlot: HTMLSlotElement;
     childrenSlot: HTMLSlotElement;
     itemElement: HTMLDivElement;
     childrenContainer: HTMLDivElement;
     expandButtonSlot: HTMLSlotElement;
+    tabIndex: number;
+    role: string;
     connectedCallback(): void;
     firstUpdated(): void;
     private animateCollapse;
     private isNestedItem;
+    /** Counts the nesting depth and sets the private --indent property on the host for indentation. */
+    private updateIndentation;
+    private getDepth;
     private handleChildrenSlotChange;
     protected willUpdate(changedProperties: PropertyValueMap<WaTreeItem> | Map<PropertyKey, unknown>): void;
     private animateExpand;

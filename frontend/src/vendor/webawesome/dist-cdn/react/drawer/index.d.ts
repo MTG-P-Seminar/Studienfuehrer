@@ -3,7 +3,8 @@ import { type EventName } from '@lit/react';
 import type { WaAfterHideEvent, WaAfterShowEvent, WaHideEvent, WaShowEvent } from '../../events/events.js';
 export type { WaAfterHideEvent, WaAfterShowEvent, WaHideEvent, WaShowEvent } from '../../events/events.js';
 /**
- * @summary Drawers slide in from a container to expose additional options and information.
+ * @summary Drawers slide in from the edge of a container to expose additional options and information without
+ *  navigating away. Useful for navigation menus, filters, and secondary content.
  * @documentation https://webawesome.com/docs/components/drawer
  * @status stable
  * @since 2.0
@@ -37,8 +38,9 @@ export type { WaAfterHideEvent, WaAfterShowEvent, WaHideEvent, WaShowEvent } fro
  * @cssproperty --spacing - The amount of space around and between the drawer's content.
  * @cssproperty --size - The preferred size of the drawer. This will be applied to the drawer's width or height
  *   depending on its `placement`. Note that the drawer will shrink to accommodate smaller screens.
- * @cssproperty [--show-duration=200ms] - The animation duration when showing the drawer.
- * @cssproperty [--hide-duration=200ms] - The animation duration when hiding the drawer.
+ * @cssproperty [--backdrop-filter=none] - A filter to apply to the backdrop behind the drawer.
+ * @cssproperty [--show-duration=var(--wa-transition-normal)] - The animation duration when showing the drawer.
+ * @cssproperty [--hide-duration=var(--wa-transition-normal)] - The animation duration when hiding the drawer.
  *
  * @property modal - Exposes the internal modal utility that controls focus trapping. To temporarily disable focus
  *   trapping and allow third-party modals spawned from an active Shoelace modal, call `modal.activateExternal()` when

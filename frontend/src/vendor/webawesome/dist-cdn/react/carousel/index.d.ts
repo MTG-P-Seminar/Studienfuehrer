@@ -3,7 +3,8 @@ import { type EventName } from '@lit/react';
 import type { WaSlideChangeEvent } from '../../events/events.js';
 export type { WaSlideChangeEvent } from '../../events/events.js';
 /**
- * @summary Carousels display an arbitrary number of content slides along a horizontal or vertical axis.
+ * @summary Carousels display a series of content slides along a horizontal or vertical axis, one or more at a time.
+ *  Users can navigate between slides with controls, pagination, or autoplay.
  *
  * @since 2.2
  * @status experimental
@@ -30,6 +31,8 @@ export type { WaSlideChangeEvent } from '../../events/events.js';
  * @cssproperty --scroll-hint - The amount of padding to apply to the scroll area, allowing adjacent slides to become
  *  partially visible as a scroll hint.
  * @cssproperty [--slide-gap=var(--wa-space-m)] - The space between each slide.
+ *
+ * @ssr - Carousel relies on scroll behaviors to work properly. Carousel will display the first image properly, but will not be interactive.
  */
 declare const reactWrapper: import("@lit/react").ReactWebComponent<Component, {
     onWaSlideChange: EventName<WaSlideChangeEvent>;

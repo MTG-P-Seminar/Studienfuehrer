@@ -1,7 +1,8 @@
 import type { PropertyValues } from 'lit';
 import WebAwesomeElement from '../../internal/webawesome-element.js';
 /**
- * @summary Progress bars are used to show the status of an ongoing operation.
+ * @summary Progress bars show how far along an ongoing operation is as a horizontal fill. Use them for file uploads,
+ *  multi-step flows, or any task with measurable progress.
  * @documentation https://webawesome.com/docs/components/progress-bar
  * @status stable
  * @since 2.0
@@ -25,6 +26,7 @@ export default class WaProgressBar extends WebAwesomeElement {
     indeterminate: boolean;
     /** A custom label for assistive devices. */
     label: string;
+    willUpdate(changedProperties: PropertyValues<this>): void;
     updated(changedProperties: PropertyValues<this>): void;
     render(): import("lit-html").TemplateResult<1>;
 }

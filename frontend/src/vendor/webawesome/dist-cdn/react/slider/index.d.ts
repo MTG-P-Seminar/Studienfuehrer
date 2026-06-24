@@ -5,7 +5,7 @@ export type { WaInvalidEvent } from '../../events/events.js';
 /**
  * <wa-slider>
  *
- * @summary Ranges allow the user to select a single value within a given range using a slider.
+ * @summary Sliders let users choose a numeric value within a defined range by dragging a thumb along a track.
  * @documentation https://webawesome.com/docs/components/range
  * @status stable
  * @since 2.0

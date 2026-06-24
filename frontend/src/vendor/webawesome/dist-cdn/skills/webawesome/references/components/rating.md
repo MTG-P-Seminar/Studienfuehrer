@@ -3,17 +3,25 @@
 **Full documentation:** https://webawesome.com/docs/components/rating
 
 
-`<wa-rating>` Since 2.0 Stable
+`<wa-rating>`
 
-Ratings give users a way to quickly view and provide feedback.
+Stable [Forms](https://webawesome.com/docs/components/?category=forms) [Since 2.0](https://webawesome.com/docs/resources/changelog#wa_200)
+
+Ratings display a numeric score as a row of selectable symbols, typically stars. Use them to capture quick feedback or show an average rating for a product or piece of content.
 
 ```html
 <wa-rating label="Rating"></wa-rating>
 ```
 
+This component works with standard `<form>` elements. Please refer to the section on [form controls](https://webawesome.com/docs/form-controls) to learn more about form submission and client-side validation.
+
 ## Examples
 
+Link to This Section
+
 ### Labels
+
+Link to This Section
 
 Ratings are commonly identified contextually, so labels aren't displayed. However, you should always provide one for assistive devices using the `label` attribute.
 
@@ -23,6 +31,8 @@ Ratings are commonly identified contextually, so labels aren't displayed. Howeve
 
 ### Maximum Value
 
+Link to This Section
+
 Ratings are 0-5 by default. To change the maximum possible value, use the `max` attribute.
 
 ```html
@@ -30,6 +40,8 @@ Ratings are 0-5 by default. To change the maximum possible value, use the `max` 
 ```
 
 ### Precision
+
+Link to This Section
 
 Use the `precision` attribute to let users select fractional ratings.
 
@@ -39,12 +51,16 @@ Use the `precision` attribute to let users select fractional ratings.
 
 ### Sizing
 
+Link to This Section
+
 Use the `size` attribute to adjust the size of the rating.
 
 ```html
-<wa-rating label="Rating" size="small"></wa-rating><br />
-<wa-rating label="Rating" size="medium"></wa-rating><br />
-<wa-rating label="Rating" size="large"></wa-rating>
+<wa-rating label="Rating" size="xs"></wa-rating><br />
+<wa-rating label="Rating" size="s"></wa-rating><br />
+<wa-rating label="Rating" size="m"></wa-rating><br />
+<wa-rating label="Rating" size="l"></wa-rating><br />
+<wa-rating label="Rating" size="xl"></wa-rating>
 ```
 
 For more granular sizing, you can use the `font-size` property.
@@ -55,6 +71,8 @@ For more granular sizing, you can use the `font-size` property.
 
 ### Readonly
 
+Link to This Section
+
 Use the `readonly` attribute to display a rating that users can't change.
 
 ```html
@@ -63,6 +81,8 @@ Use the `readonly` attribute to display a rating that users can't change.
 
 ### Disabled
 
+Link to This Section
+
 Use the `disabled` attribute to disable the rating.
 
 ```html
@@ -70,6 +90,8 @@ Use the `disabled` attribute to disable the rating.
 ```
 
 ### Detecting Hover
+
+Link to This Section
 
 Use the `wa-hover` event to detect when the user hovers over (or touch and drag) the rating. This lets you hook into values as the user interacts with the rating, but before they select a value.
 
@@ -116,6 +138,8 @@ The event has a payload with `phase` and `value` properties. The `phase` propert
 
 ### Custom Icons
 
+Link to This Section
+
 You can provide custom icons by passing a function to the `getSymbol` property.
 
 ```html
@@ -132,6 +156,8 @@ You can provide custom icons by passing a function to the `getSymbol` property.
 ```
 
 ### Value-based Icons
+
+Link to This Section
 
 You can also use the `getSymbol` property to render different icons based on value and/or whether the icon is currently selected.
 
@@ -151,80 +177,130 @@ You can also use the `getSymbol` property to render different icons based on val
 </script>
 ```
 
-## Importing
+### Required
 
-Autoloading components via [projects](https://webawesome.com/docs/#using-a-project) is the recommended way to import components. If you prefer to do it manually, use one of the following code snippets.
+Link to This Section
 
-\*\*CDN\*\*
+Use the `required` attribute to make the rating mandatory. The form will not submit if the user hasn't selected a value.
 
-Let your project code do the work! [Sign up for free](https://webawesome.com/signup) to use a project with your very own CDN — it's the fastest and easiest way to use Web Awesome.
+```html
+<form class="rating-required">
+  <wa-rating label="Rating" required></wa-rating>
+  <br /><br />
+  <wa-button appearance="filled" type="submit">Submit</wa-button>
+</form>
 
-\*\*npm\*\*
+<script type="module">
+  const form = document.querySelector('.rating-required');
 
-To manually import this component from NPM, use the following code.
-
-```js
-import '@awesome.me/webawesome/dist/components/rating/rating.js';
+  await Promise.all([customElements.whenDefined('wa-button'), customElements.whenDefined('wa-rating')]).then(() => {
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      alert('All fields are valid!');
+    });
+  });
+</script>
 ```
 
-\*\*React\*\*
+### Custom Validity
 
-To manually import this component from React, use the following code.
+Link to This Section
 
-```js
-import WaRating from '@awesome.me/webawesome/dist/react/rating';
+Use the `setCustomValidity()` method to set a custom validation message. This will prevent the form from submitting and make the browser display the error message you provide. To clear the error, call this function with an empty string.
+
+```html
+<form class="rating-custom-validity">
+  <wa-rating label="Rating"></wa-rating>
+  <br /><br />
+  <wa-button appearance="filled" type="submit">Submit</wa-button>
+</form>
+
+<script type="module">
+  const form = document.querySelector('.rating-custom-validity');
+  const rating = form.querySelector('wa-rating');
+  const errorMessage = 'Please rate at least 3 stars!';
+
+  customElements.whenDefined('wa-rating').then(async () => {
+    await rating.updateComplete;
+    rating.setCustomValidity(errorMessage);
+  });
+
+  rating.addEventListener('change', () => {
+    rating.setCustomValidity(rating.value >= 3 ? '' : errorMessage);
+  });
+
+  await Promise.all([customElements.whenDefined('wa-button'), customElements.whenDefined('wa-rating')]).then(() => {
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      alert('All fields are valid!');
+    });
+  });
+</script>
+```
+
+### Form Submission
+
+Link to This Section
+
+Ratings can be used in forms just like native form controls. The rating's `name` and `value` will be included in the form data when submitted.
+
+```html
+<form class="rating-form-submission" action="about:blank" method="get" target="_blank">
+  <label style="display: block; margin-bottom: 0.5rem;">How would you rate your experience?</label>
+  <wa-rating name="rating" label="Rating" required></wa-rating>
+  <br /><br />
+  <wa-button type="submit">Submit</wa-button>
+  <wa-button appearance="filled" type="reset" variant="neutral">Reset</wa-button>
+</form>
 ```
 
 ## Attributes & Properties
 
-Learn more about [attributes and properties](https://webawesome.com/docs/usage/#attributes-and-properties).
-
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`css\` | \`CSSResultGroup \\| undefined\` One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. Type Default \[sizeStyles, styles\] | | |
-| \`disabled\` disabled | \`boolean\` Disables the rating. Type Default false | | |
-| \`getSymbol\` getSymbol | \`
+| Attribute | Property | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| `role` |  | `string` | `'slider'` |  |
+| `name` |  | `string \| null` | `null` | The name of the rating, submitted as a name/value pair with form data. |
+| `label` |  | `string` | `''` | A label that describes the rating to assistive devices. |
+| `value` |  | `number` | `0` | The current rating. |
+| `default-value` | `defaultValue` | `number` | `0` | The default value of the form control. Used to reset the rating to its initial value. |
+| `max` |  | `number` | `5` | The highest rating to show. |
+| `precision` |  | `number` | `1` | The precision at which the rating will increase and decrease. For example, to allow half-star ratings, set this attribute to `0.5`. |
+| `readonly` |  | `boolean` | `false` | Makes the rating readonly. |
+| `disabled` |  | `boolean` | `false` | Disables the rating. |
+| `required` |  | `boolean` | `false` | Makes the rating a required field. |
+| `getSymbol` |  | `(value: number, isSelected: boolean) => string` |  | A function that customizes the symbol to be rendered. The first and only argument is the rating's current value. The function should return a string containing trusted HTML of the symbol to render at the specified value. Works well with `<wa-icon>` elements. |
+| `size` |  | `'xs' \| 's' \| 'm' \| 'l' \| 'xl' \| 'small' \| 'medium' \| 'large'` | `'m'` | The component's size. |
+| `custom-error` | `customError` | `string \| null` | `null` |  |
+| `dir` |  | `string` |  |  |
+| `lang` |  | `string` |  |  |
+| `did-ssr` | `didSSR` |  |  |  |
 
 ## Methods
 
-Learn more about [methods](https://webawesome.com/docs/usage/#methods).
-
-| Name | Description | Arguments |
+| Method | Description | Arguments |
 | --- | --- | --- |
-| \`blur()\` | Removes focus from the rating. | |
-| \`focus()\` | Sets focus on the rating. | \`options: FocusOptions\` |
+| `setCustomValidity` | Do not use this when creating a "Validator". This is intended for end users of components. We track manually defined custom errors so we don't clear them on accident in our validators. | `message: string` |
+| `formStateRestoreCallback` | Called when the browser is trying to restore element’s state to state in which case reason is "restore", or when the browser is trying to fulfill autofill on behalf of user in which case reason is "autocomplete". In the case of "restore", state is a string, File, or FormData object previously set as the second argument to setFormValue. | `state: string \| File \| FormData \| null, reason: 'autocomplete' \| 'restore'` |
+| `resetValidity` | Reset validity is a way of removing manual custom errors and native validation. |  |
 
 ## Events
 
-Learn more about [events](https://webawesome.com/docs/usage/#events).
-
-| Name | Description |
+| Event | Description |
 | --- | --- |
-| \`change\` | Emitted when the rating's value changes. |
-| \`wa-hover\` | \`phase\` Emitted when the user hovers over a value. The property indicates when hovering starts, moves to a new value, or ends. The value property tells what the rating's value would be if the user were to commit to the hovered value. |
+| `change` | Emitted when the rating's value changes. |
+| `wa-hover` | Emitted when the user hovers over a value. The `phase` property indicates when hovering starts, moves to a new value, or ends. The `value` property tells what the rating's value would be if the user were to commit to the hovered value. |
+| `wa-invalid` | Emitted when the form control has been checked for validity and its constraints aren't satisfied. |
 
-## CSS custom properties
+## CSS Parts
 
-Learn more about [CSS custom properties](https://webawesome.com/docs/customizing/#custom-properties).
-
-| Name | Description |
+| Part | Description |
 | --- | --- |
-| \`--symbol-color\` | The inactive color for symbols. |
-| \`--symbol-color-active\` | The active color for symbols. |
-| \`--symbol-spacing\` | The spacing to use around symbols. |
+| `base` | The component's base wrapper. |
 
-## CSS parts
+## CSS Custom Properties
 
-Learn more about [CSS parts](https://webawesome.com/docs/customizing/#css-parts).
-
-| Name | Description | CSS selector |
+| Property | Default | Description |
 | --- | --- | --- |
-| \`base\` | The component's base wrapper. | \`::part(base)\` |
-
-## Dependencies
-
-This component automatically imports the following elements. Sub-dependencies, if any exist, will also be included in this list.
-
--   [`<wa-icon>`](https://webawesome.com/docs/components/icon)
-
-**Need a hand?** Report a bug Ask for help
+| `--symbol-color` |  | The inactive color for symbols. |
+| `--symbol-color-active` |  | The active color for symbols. |
+| `--symbol-spacing` |  | The spacing to use around symbols. |

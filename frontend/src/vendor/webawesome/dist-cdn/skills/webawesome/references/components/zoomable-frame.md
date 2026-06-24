@@ -3,17 +3,23 @@
 **Full documentation:** https://webawesome.com/docs/components/zoomable-frame
 
 
-`<wa-zoomable-frame>` Since 3.0 Stable
+`<wa-zoomable-frame>`
 
-Zoomable frames render iframe content with zoom and interaction controls.
+Stable [Media](https://webawesome.com/docs/components/?category=media) [Since 3.0](https://webawesome.com/docs/resources/changelog#wa_300)
+
+Zoomable frames embed iframe content with built-in controls for zooming, panning, and managing interaction.
 
 ```html
-<wa-zoomable-frame src="https://webawesome.com/" zoom="0.5"> </wa-zoomable-frame>
+<wa-zoomable-frame src="/examples/themes/showcase" zoom="0.5"> </wa-zoomable-frame>
 ```
 
 ## Examples
 
+Link to This Section
+
 ### Loading external content
+
+Link to This Section
 
 Use the `src` attribute to embed external websites or resources. The URL must be accessible, and cross-origin restrictions may apply due to the Same-Origin Policy, potentially limiting access to the iframe's content.
 
@@ -38,116 +44,92 @@ When both `src` and `srcdoc` are specified, `srcdoc` takes precedence.
 
 ### Controlling zoom behavior
 
+Link to This Section
+
 Set the `zoom` attribute to control the frame's zoom level. Use `1` for 100%, `2` for 200%, `0.5` for 50%, and so on.
 
 Define specific zoom increments with the `zoom-levels` attribute using space-separated percentages and decimal values like `zoom-levels="0.25 0.5 75% 100%"`.
 
 ```html
-<wa-zoomable-frame src="https://webawesome.com/" zoom="0.5" zoom-levels="50% 0.75 100%"> </wa-zoomable-frame>
+<wa-zoomable-frame src="/examples/themes/showcase" zoom="0.5" zoom-levels="50% 0.75 100%"> </wa-zoomable-frame>
 ```
 
 ### Hiding zoom controls
 
+Link to This Section
+
 Add the `without-controls` attribute to hide the zoom control interface from the frame.
 
 ```html
-<wa-zoomable-frame src="https://webawesome.com/" without-controls zoom="0.5"> </wa-zoomable-frame>
+<wa-zoomable-frame src="/examples/themes/showcase" without-controls zoom="0.5"> </wa-zoomable-frame>
 ```
 
 ### Preventing user interaction
 
+Link to This Section
+
 Apply the `without-interaction` attribute to make the frame non-interactive. Note that this prevents keyboard navigation into the frame, which may impact accessibility for some users.
 
 ```html
-<wa-zoomable-frame src="https://webawesome.com/" zoom="0.5" without-interaction> </wa-zoomable-frame>
+<wa-zoomable-frame src="/examples/themes/showcase" zoom="0.5" without-interaction> </wa-zoomable-frame>
 ```
 
-## Importing
+### Enabling theme sync
 
-Autoloading components via [projects](https://webawesome.com/docs/#using-a-project) is the recommended way to import components. If you prefer to do it manually, use one of the following code snippets.
+Link to This Section
 
-\*\*CDN\*\*
+By default, the frame does not sync theme classes into the iframe. Add the `with-theme-sync` attribute to mirror the host page's light/dark mode and [theme selector classes](https://webawesome.com/docs/theming-overview) (such as `wa-theme-*`, `wa-brand-*`, and `wa-palette-*`) into the iframe document. This is useful when the iframe renders Web Awesome styles that should match the host page's theme.
 
-Let your project code do the work! [Sign up for free](https://webawesome.com/signup) to use a project with your very own CDN — it's the fastest and easiest way to use Web Awesome.
-
-\*\*npm\*\*
-
-To manually import this component from NPM, use the following code.
-
-```js
-import '@awesome.me/webawesome/dist/components/zoomable-frame/zoomable-frame.js';
-```
-
-\*\*React\*\*
-
-To manually import this component from React, use the following code.
-
-```js
-import WaZoomableFrame from '@awesome.me/webawesome/dist/react/zoomable-frame';
+```html
+<wa-zoomable-frame src="/examples/themes/showcase" zoom="0.5" with-theme-sync> </wa-zoomable-frame>
 ```
 
 ## Slots
 
-Learn more about [using slots](https://webawesome.com/docs/usage/#slots).
+Valid slot names for this component (use exactly these — any other `slot` value
+is silently ignored and the element falls back to the default slot):
 
-| Name | Description |
-| --- | --- |
-| \`zoom-in-icon\` | The slot that contains the zoom in icon. |
-| \`zoom-out-icon\` | The slot that contains the zoom out icon. |
+- `zoom-in-icon` — The slot that contains the zoom in icon.
+- `zoom-out-icon` — The slot that contains the zoom out icon.
 
 ## Attributes & Properties
 
-Learn more about [attributes and properties](https://webawesome.com/docs/usage/#attributes-and-properties).
-
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`allowfullscreen\` allowfullscreen | \`boolean\` Allows fullscreen mode. Type Default false | | |
-| \`contentDocument\` | \`document\` Returns the internal iframe's object. (Readonly property) Type Document \\| null | | |
-| \`contentWindow\` | \`window\` Returns the internal iframe's object. (Readonly property) Type Window \\| null | | |
-| \`css\` | \`CSSResultGroup \\| undefined\` One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. Type Default styles | | |
-| \`loading\` loading | \`'eager' \\| 'lazy'\` Controls iframe loading behavior. Type Default 'eager' | | |
-| \`referrerpolicy\` referrerpolicy | \`string\` Controls referrer information. Type | | |
-| \`sandbox\` sandbox | \`string\` Security restrictions for the iframe. Type | | |
-| \`src\` src | \`string\` The URL of the content to display. Type | | |
-| \`srcdoc\` srcdoc | \`string\` Inline HTML to display. Type | | |
-| \`withoutControls\` without-controls | \`boolean\` Removes the zoom controls. Type Default false | | |
-| \`withoutInteraction\` without-interaction | \`boolean\` Disables interaction when present. Type Default false | | |
-| \`zoom\` zoom | \`number\` The current zoom of the frame, e.g. 0 = 0% and 1 = 100%. Type Default 1 | | |
-| \`zoomLevels\` zoom-levels | \`string\` The zoom levels to step through when using zoom controls. This does not restrict programmatic changes to the zoom. Type Default '25% 50% 75% 100% 125% 150% 175% 200%' | | |
+| Attribute | Property | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| `src` |  | `string` |  | The URL of the content to display. |
+| `srcdoc` |  | `string` |  | Inline HTML to display. |
+| `allowfullscreen` |  | `boolean` | `false` | Allows fullscreen mode. |
+| `loading` |  | `'eager' \| 'lazy'` | `'eager'` | Controls iframe loading behavior. |
+| `referrerpolicy` |  | `string` |  | Controls referrer information. |
+| `sandbox` |  | `string` |  | Security restrictions for the iframe. |
+| `zoom` |  | `number` | `1` | The current zoom of the frame, e.g. 0 = 0% and 1 = 100%. |
+| `zoom-levels` | `zoomLevels` | `string` | `'25% 50% 75% 100% 125% 150% 175% 200%'` | The zoom levels to step through when using zoom controls. This does not restrict programmatic changes to the zoom. |
+| `without-controls` | `withoutControls` | `boolean` | `false` | Removes the zoom controls. |
+| `without-interaction` | `withoutInteraction` | `boolean` | `false` | Disables interaction when present. |
+| `with-theme-sync` | `withThemeSync` | `boolean` | `false` | Enables automatic theme syncing (light/dark mode and theme selector classes) from the host document to the iframe. |
+| `dir` |  | `string` |  |  |
+| `lang` |  | `string` |  |  |
+| `did-ssr` | `didSSR` |  |  |  |
 
 ## Methods
 
-Learn more about [methods](https://webawesome.com/docs/usage/#methods).
-
-| Name | Description | Arguments |
+| Method | Description | Arguments |
 | --- | --- | --- |
-| \`zoomIn()\` | Zooms in to the next available zoom level. | |
-| \`zoomOut()\` | Zooms out to the previous available zoom level. | |
+| `zoomIn` | Zooms in to the next available zoom level. |  |
+| `zoomOut` | Zooms out to the previous available zoom level. |  |
 
 ## Events
 
-Learn more about [events](https://webawesome.com/docs/usage/#events).
-
-| Name | Description |
+| Event | Description |
 | --- | --- |
-| \`error\` | Emitted from the internal iframe when it fails to load. |
-| \`load\` | Emitted when the internal iframe when it finishes loading. |
+| `load` | Emitted when the internal iframe when it finishes loading. |
+| `error` | Emitted from the internal iframe when it fails to load. |
 
-## CSS parts
+## CSS Parts
 
-Learn more about [CSS parts](https://webawesome.com/docs/customizing/#css-parts).
-
-| Name | Description | CSS selector |
-| --- | --- | --- |
-| \`controls\` | The container that surrounds zoom control buttons. | \`::part(controls)\` |
-| \`iframe\` | \`\` The internal element. | \`::part(iframe)\` |
-| \`zoom-in-button\` | The zoom in button. | \`::part(zoom-in-button)\` |
-| \`zoom-out-button\` | The zoom out button. | \`::part(zoom-out-button)\` |
-
-## Dependencies
-
-This component automatically imports the following elements. Sub-dependencies, if any exist, will also be included in this list.
-
--   [`<wa-icon>`](https://webawesome.com/docs/components/icon)
-
-**Need a hand?** Report a bug Ask for help
+| Part | Description |
+| --- | --- |
+| `iframe` | The internal `<iframe>` element. |
+| `controls` | The container that surrounds zoom control buttons. |
+| `zoom-in-button` | The zoom in button. |
+| `zoom-out-button` | The zoom out button. |

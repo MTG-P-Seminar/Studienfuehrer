@@ -3,9 +3,11 @@
 **Full documentation:** https://webawesome.com/docs/components/progress-ring
 
 
-`<wa-progress-ring>` Since 2.0 Stable
+`<wa-progress-ring>`
 
-Progress rings are used to show the progress of a determinate operation in a circular fashion.
+Stable [Feedback](https://webawesome.com/docs/components/?category=feedback) [Since 2.0](https://webawesome.com/docs/resources/changelog#wa_200)
+
+Progress rings show how far along a determinate operation is using a circular indicator. Use them as a compact alternative to progress bars when horizontal space is limited.
 
 ```html
 <wa-progress-ring value="25"></wa-progress-ring>
@@ -13,7 +15,11 @@ Progress rings are used to show the progress of a determinate operation in a cir
 
 ## Examples
 
+Link to This Section
+
 ### Size
+
+Link to This Section
 
 Use the `--size` custom property to set the diameter of the progress ring.
 
@@ -23,6 +29,8 @@ Use the `--size` custom property to set the diameter of the progress ring.
 
 ### Track and Indicator Width
 
+Link to This Section
+
 Use the `--track-width` and `--indicator-width` custom properties to set the width of the progress ring's track and indicator.
 
 ```html
@@ -30,6 +38,8 @@ Use the `--track-width` and `--indicator-width` custom properties to set the wid
 ```
 
 ### Colors
+
+Link to This Section
 
 To change the color, use the `--track-color` and `--indicator-color` custom properties.
 
@@ -46,6 +56,8 @@ To change the color, use the `--track-color` and `--indicator-color` custom prop
 
 ### Labels
 
+Link to This Section
+
 Use the default slot to show a label inside the progress ring.
 
 ```html
@@ -53,8 +65,8 @@ Use the default slot to show a label inside the progress ring.
 
 <br />
 
-<wa-button circle><wa-icon name="minus" variant="solid" label="Decrease"></wa-icon></wa-button>
-<wa-button circle><wa-icon name="plus" variant="solid" label="Increase"></wa-icon></wa-button>
+<wa-button appearance="filled" circle><wa-icon name="minus" variant="solid" label="Decrease"></wa-icon></wa-button>
+<wa-button appearance="filled" circle><wa-icon name="plus" variant="solid" label="Increase"></wa-icon></wa-button>
 
 <script>
   const progressRing = document.querySelector('.progress-ring-values');
@@ -75,70 +87,39 @@ Use the default slot to show a label inside the progress ring.
 </script>
 ```
 
-## Importing
-
-Autoloading components via [projects](https://webawesome.com/docs/#using-a-project) is the recommended way to import components. If you prefer to do it manually, use one of the following code snippets.
-
-\*\*CDN\*\*
-
-Let your project code do the work! [Sign up for free](https://webawesome.com/signup) to use a project with your very own CDN — it's the fastest and easiest way to use Web Awesome.
-
-\*\*npm\*\*
-
-To manually import this component from NPM, use the following code.
-
-```js
-import '@awesome.me/webawesome/dist/components/progress-ring/progress-ring.js';
-```
-
-\*\*React\*\*
-
-To manually import this component from React, use the following code.
-
-```js
-import WaProgressRing from '@awesome.me/webawesome/dist/react/progress-ring';
-```
-
 ## Slots
 
-Learn more about [using slots](https://webawesome.com/docs/usage/#slots).
+Valid slot names for this component (use exactly these — any other `slot` value
+is silently ignored and the element falls back to the default slot):
 
-| Name | Description |
-| --- | --- |
-| (default) | A label to show inside the ring. |
+- `(default)` — A label to show inside the ring.
 
 ## Attributes & Properties
 
-Learn more about [attributes and properties](https://webawesome.com/docs/usage/#attributes-and-properties).
+| Attribute | Property | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| `value` |  | `number` | `0` | The current progress as a percentage, 0 to 100. |
+| `label` |  | `string` | `''` | A custom label for assistive devices. |
+| `dir` |  | `string` |  |  |
+| `lang` |  | `string` |  |  |
+| `did-ssr` | `didSSR` |  |  |  |
 
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`css\` | \`CSSResultGroup \\| undefined\` One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. Type Default styles | | |
-| \`label\` label | \`string\` A custom label for assistive devices. Type Default '' | | |
-| \`value\` value | \`number\` The current progress as a percentage, 0 to 100. Type Default 0 | | |
+## CSS Parts
 
-## CSS custom properties
-
-Learn more about [CSS custom properties](https://webawesome.com/docs/customizing/#custom-properties).
-
-| Name | Description |
+| Part | Description |
 | --- | --- |
-| \`--indicator-color\` | The color of the indicator. |
-| \`--indicator-transition-duration\` | The duration of the indicator's transition when the value changes. |
-| \`--indicator-width\` | The width of the indicator. Defaults to the track width. |
-| \`--size\` | The diameter of the progress ring (cannot be a percentage). |
-| \`--track-color\` | The color of the track. |
-| \`--track-width\` | The width of the track. |
+| `base` | The component's base wrapper. |
+| `label` | The progress ring label. |
+| `track` | The progress ring's track. |
+| `indicator` | The progress ring's indicator. |
 
-## CSS parts
+## CSS Custom Properties
 
-Learn more about [CSS parts](https://webawesome.com/docs/customizing/#css-parts).
-
-| Name | Description | CSS selector |
+| Property | Default | Description |
 | --- | --- | --- |
-| \`base\` | The component's base wrapper. | \`::part(base)\` |
-| \`indicator\` | The progress ring's indicator. | \`::part(indicator)\` |
-| \`label\` | The progress ring label. | \`::part(label)\` |
-| \`track\` | The progress ring's track. | \`::part(track)\` |
-
-**Need a hand?** Report a bug Ask for help
+| `--size` |  | The diameter of the progress ring (cannot be a percentage). |
+| `--track-width` |  | The width of the track. |
+| `--track-color` |  | The color of the track. |
+| `--indicator-width` |  | The width of the indicator. Defaults to the track width. |
+| `--indicator-color` |  | The color of the indicator. |
+| `--indicator-transition-duration` |  | The duration of the indicator's transition when the value changes. |

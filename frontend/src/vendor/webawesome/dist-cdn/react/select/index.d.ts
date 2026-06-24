@@ -3,7 +3,8 @@ import { type EventName } from '@lit/react';
 import type { WaAfterHideEvent, WaAfterShowEvent, WaClearEvent, WaHideEvent, WaInvalidEvent, WaShowEvent } from '../../events/events.js';
 export type { WaAfterHideEvent, WaAfterShowEvent, WaClearEvent, WaHideEvent, WaInvalidEvent, WaShowEvent, } from '../../events/events.js';
 /**
- * @summary Selects allow you to choose items from a menu of predefined options.
+ * @summary Selects let users choose one or more values from a dropdown list of predefined options. Use them in forms
+ *  when a fixed set of choices needs to fit in limited space.
  * @documentation https://webawesome.com/docs/components/select
  * @status stable
  * @since 2.0
@@ -49,8 +50,8 @@ export type { WaAfterHideEvent, WaAfterShowEvent, WaClearEvent, WaHideEvent, WaI
  * @csspart clear-button - The clear button.
  * @csspart expand-icon - The container that wraps the expand icon.
  *
- * @cssproperty [--show-duration=100ms] - The duration of the show animation.
- * @cssproperty [--hide-duration=100ms] - The duration of the hide animation.
+ * @cssproperty [--show-duration=var(--wa-transition-fast)] - The duration of the show animation.
+ * @cssproperty [--hide-duration=var(--wa-transition-fast)] - The duration of the hide animation.
  * @cssproperty [--tag-max-size=10ch] - When using `multiple`, the max size of tags before their content is truncated.
  *
  * @cssstate blank - The select is empty.

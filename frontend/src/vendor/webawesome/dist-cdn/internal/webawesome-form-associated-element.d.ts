@@ -66,6 +66,10 @@ export declare class WebAwesomeFormAssociatedElement extends WebAwesomeElement i
     firstUpdated(...args: Parameters<LitElement['firstUpdated']>): void;
     emitInvalid: (e: Event) => void;
     protected willUpdate(changedProperties: Parameters<LitElement['willUpdate']>[0]): void;
+    /**
+     * @internal
+     */
+    protected updateFormValue(value: unknown): void;
     private handleInteraction;
     get labels(): NodeList;
     getForm(): HTMLFormElement | null;

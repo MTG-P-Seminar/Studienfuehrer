@@ -1,6 +1,7 @@
 import Component from '../../components/option/option.js';
 /**
- * @summary Options define the selectable items within a select component.
+ * @summary Options represent the individual choices inside a select or similar form control. Each option holds a value
+ *  and the label shown to the user.
  * @documentation https://webawesome.com/docs/components/option
  * @status stable
  * @since 2.0
@@ -18,6 +19,7 @@ import Component from '../../components/option/option.js';
  *
  * @cssstate current - The user has keyed into the option, but hasn't selected it yet (shows a highlight)
  * @cssstate selected - The option is selected and has aria-selected="true"
+ * @cssstate disabled - Applied when the option is disabled
  * @cssstate hover - Like `:hover` but works while dragging in Safari
  */
 declare const reactWrapper: import("@lit/react").ReactWebComponent<Component, {}>;

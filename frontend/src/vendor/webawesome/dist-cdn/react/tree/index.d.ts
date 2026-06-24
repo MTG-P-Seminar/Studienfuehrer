@@ -3,7 +3,8 @@ import { type EventName } from '@lit/react';
 import type { WaSelectionChangeEvent } from '../../events/events.js';
 export type { WaSelectionChangeEvent } from '../../events/events.js';
 /**
- * @summary Trees allow you to display a hierarchical list of selectable [tree items](/docs/components/tree-item). Items with children can be expanded and collapsed as desired by the user.
+ * @summary Trees allow you to display a hierarchical list of selectable tree items. Items with children can be expanded
+ *  and collapsed as desired by the user.
  * @documentation https://webawesome.com/docs/components/tree
  * @status stable
  * @since 2.0

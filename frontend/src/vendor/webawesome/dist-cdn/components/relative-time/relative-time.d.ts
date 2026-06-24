@@ -1,6 +1,8 @@
+import { type PropertyValues } from 'lit';
 import WebAwesomeElement from '../../internal/webawesome-element.js';
 /**
- * @summary Outputs a localized time phrase relative to the current date and time.
+ * @summary Relative times display a date as a localized phrase relative to now, such as "3 hours ago" or "in 2 days".
+ *  The phrase updates automatically as time passes and respects the user's locale.
  * @documentation https://webawesome.com/docs/components/relative-time
  * @status stable
  * @since 2.0
@@ -25,8 +27,14 @@ export default class WaRelativeTime extends WebAwesomeElement {
     numeric: 'always' | 'auto';
     /** Keep the displayed value up to date as time passes. */
     sync: boolean;
+    /**
+     * @internal
+     * this is used purely for testing as sinon fake timers seem to cause an issue with SSR hydration
+     */
+    private referenceDate;
     disconnectedCallback(): void;
-    render(): import("lit-html").TemplateResult<1> | "";
+    willUpdate(changedProperties: PropertyValues<this>): void;
+    render(): "" | import("lit-html").TemplateResult<1>;
 }
 declare global {
     interface HTMLElementTagNameMap {

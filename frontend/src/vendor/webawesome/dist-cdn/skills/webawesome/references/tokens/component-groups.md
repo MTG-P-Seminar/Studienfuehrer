@@ -2,39 +2,43 @@
 
 **Full documentation:** https://webawesome.com/docs/tokens/component-groups
 
-For components that share similar qualities, Web Awesome includes custom properties to change the appearance of these related components all at once.
+Design Tokens Component Groups
+
+Component tokens let you style groups of related components at once. Rather than overriding individual component styles, these tokens propagate the style across every component that shares a given visual quality.
 
 ## Form Controls
 
-Components such as [input](https://webawesome.com/docs/components/input), [select](https://webawesome.com/docs/components/select), [textarea](https://webawesome.com/docs/components/textarea), [checkbox](https://webawesome.com/docs/components/checkbox), and others share a number of styles to give your forms a cohesive appearance. Web Awesome defines custom properties for these styles using the format `--wa-form-control-{style}`.
+Link to This Section
 
-Not every form control uses all of these custom properties. For example, `<wa-radio>` defines its own height and border radius to achieve its familiar shape but shares many other styles with other components for a cohesive look and feel. Similarly, `<wa-button>` defines many of its own styles but matches the height and border width of other form controls.
+Components such as [input](https://webawesome.com/docs/components/input), [select](https://webawesome.com/docs/components/select), [textarea](https://webawesome.com/docs/components/textarea), [checkbox](https://webawesome.com/docs/components/checkbox), and others share styles defined with the `--wa-form-control-*` prefix.
 
-| Custom Property | Default Value |
+Not every form control uses all of these custom properties. For example, [radio](https://webawesome.com/docs/components/radio) defines its own height and border radius to achieve its familiar shape but shares many other styles with other components for a cohesive look and feel. Similarly, [button](https://webawesome.com/docs/components/button) defines many of its own styles but matches the height and border width of other form controls.
+
+| Custom Property | Description |
 | --- | --- |
-| \`--wa-form-control-background-color\` | \`var(--wa-color-surface-default)\` |
-| \`--wa-form-control-border-color\` | \`var(--wa-color-neutral-border-loud)\` |
-| \`--wa-form-control-border-style\` | \`var(--wa-border-style)\` |
-| \`--wa-form-control-border-width\` | \`var(--wa-border-width-s)\` |
-| \`--wa-form-control-border-radius\` | \`var(--wa-border-radius-m)\` |
-| \`--wa-form-control-activated-color\` | \`var(--wa-color-brand-fill-loud)\` |
-| \`--wa-form-control-label-color\` | \`var(--wa-color-neutral-border-loud)\` |
-| \`--wa-form-control-label-font-weight\` | \`var(--wa-font-weight-normal)\` |
-| \`--wa-form-control-label-line-height\` | \`var(--wa-line-height-normal)\` |
-| \`--wa-form-control-value-color\` | \`var(--wa-color-text-normal)\` |
-| \`--wa-form-control-value-font-weight\` | \`var(--wa-font-weight-body)\` |
-| \`--wa-form-control-value-line-height\` | \`var(--wa-line-height-condensed)\` |
-| \`--wa-form-control-hint-color\` | \`var(--wa-color-text-quiet)\` |
-| \`--wa-form-control-hint-font-weight\` | \`var(--wa-font-weight-body)\` |
-| \`--wa-form-control-hint-line-height\` | \`var(--wa-line-height-normal)\` |
-| \`--wa-form-control-placeholder-color\` | \`var(--wa-color-gray-60)\` |
-| \`--wa-form-control-required-content\` | \`'\*'\` |
-| \`--wa-form-control-required-content-color\` | \`inherit\` |
-| \`--wa-form-control-required-content-offset\` | \`-0.1em\` |
-| \`--wa-form-control-padding-block\` | \`0.75em\` |
-| \`--wa-form-control-padding-inline\` | \`1em\` |
-| \`--wa-form-control-height\` | \`round(calc(2 \* var(--wa-form-control-padding-block) + 1em \* var(--wa-form-control-value-line-height)), 1px)\` |
-| \`--wa-form-control-toggle-size\` | \`round(1.25em, 1px)\` |
+| \`--wa-form-control-background-color\` | Background color of form control inputs |
+| \`--wa-form-control-border-color\` | Border color of form control inputs |
+| \`--wa-form-control-border-style\` | Border line style of form control inputs |
+| \`--wa-form-control-border-width\` | Border thickness of form control inputs |
+| \`--wa-form-control-border-radius\` | Corner rounding of form control inputs |
+| \`--wa-form-control-activated-color\` | Accent color when a control is active, checked, or selected |
+| \`--wa-form-control-label-color\` | Text color of form control labels |
+| \`--wa-form-control-label-font-weight\` | Font weight of form control labels |
+| \`--wa-form-control-label-line-height\` | Line height of form control labels |
+| \`--wa-form-control-value-color\` | Text color of the user-entered or selected value |
+| \`--wa-form-control-value-font-weight\` | Font weight of the user-entered or selected value |
+| \`--wa-form-control-value-line-height\` | Line height of the user-entered or selected value |
+| \`--wa-form-control-hint-color\` | Text color of the hint text below a form control |
+| \`--wa-form-control-hint-font-weight\` | Font weight of hint text |
+| \`--wa-form-control-hint-line-height\` | Line height of hint text |
+| \`--wa-form-control-placeholder-color\` | Text color of input placeholder text |
+| \`--wa-form-control-required-content\` | Content appended to labels of required fields |
+| \`--wa-form-control-required-content-color\` | Color of the required field indicator |
+| \`--wa-form-control-required-content-offset\` | Inline spacing between the label text and required indicator |
+| \`--wa-form-control-padding-block\` | Block (top/bottom) padding inside form control inputs |
+| \`--wa-form-control-padding-inline\` | Inline (left/right) padding inside form control inputs |
+| \`--wa-form-control-height\` | Computed height of single-line form controls; derived from padding and line height |
+| \`--wa-form-control-toggle-size\` | Size of toggle controls (checkboxes, radios, switches) |
 
 ```html
 <form class="wa-stack">
@@ -57,15 +61,28 @@ Not every form control uses all of these custom properties. For example, `<wa-ra
 </form>
 ```
 
+## Buttons
+
+Link to This Section
+
+In addition to sharing styles with form controls, [buttons](https://webawesome.com/docs/components/button) have their own subset of unique tokens.
+
+| Custom Property | Description |
+| --- | --- |
+| \`--wa-button-transform-hover\` | A transform function to apply to buttons on mouseover/hover |
+| \`--wa-button-transform-active\` | A transform function to apply to buttons when pressed/active |
+
 ## Panels
 
-Panels consist of components with larger, contained surface areas like [callout](https://webawesome.com/docs/components/callout), [card](https://webawesome.com/docs/components/card), [details](https://webawesome.com/docs/components/details), and [dialog](https://webawesome.com/docs/components/dialog).
+Link to This Section
 
-| Custom Property | Default Value |
+Panel tokens apply to components with larger, contained surface areas, like [callout](https://webawesome.com/docs/components/callout), [card](https://webawesome.com/docs/components/card), [details](https://webawesome.com/docs/components/details), and [dialog](https://webawesome.com/docs/components/dialog).
+
+| Custom Property | Description |
 | --- | --- |
-| \`--wa-panel-border-style\` | \`var(--wa-border-style)\` |
-| \`--wa-panel-border-width\` | \`var(--wa-border-width-s)\` |
-| \`--wa-panel-border-radius\` | \`var(--wa-border-radius-l)\` |
+| \`--wa-panel-border-style\` | Border line style for panel components |
+| \`--wa-panel-border-width\` | Border thickness for panel components |
+| \`--wa-panel-border-radius\` | Corner rounding for panel components |
 
 ```html
 <div class="wa-stack">
@@ -82,23 +99,25 @@ Panels consist of components with larger, contained surface areas like [callout]
 
 ## Tooltips
 
-Tooltip styles are shared between the [tooltip](https://webawesome.com/docs/components/tooltip) component and the tooltips in [slider](https://webawesome.com/docs/components/slider) and [copy button](https://webawesome.com/docs/components/copy-button).
+Link to This Section
 
-| Custom Property | Default Value |
+Tooltip tokens apply to the [tooltip](https://webawesome.com/docs/components/tooltip) component and built-in tooltips in other components like [slider](https://webawesome.com/docs/components/slider) and [copy button](https://webawesome.com/docs/components/copy-button).
+
+| Custom Property | Description |
 | --- | --- |
-| \`--wa-tooltip-arrow-size\` | \`0.375rem\` (6px) |
-| \`--wa-tooltip-background-color\` | \`var(--wa-color-neutral-fill-loud)\` |
-| \`--wa-tooltip-border-color\` | \`var(--wa-tooltip-background-color)\` |
-| \`--wa-tooltip-border-style\` | \`var(--wa-border-style)\` |
-| \`--wa-tooltip-border-width\` | \`var(--wa-border-width-s)\` |
-| \`--wa-tooltip-border-radius\` | \`var(--wa-border-radius-s)\` |
-| \`--wa-tooltip-content-color\` | \`var(--wa-color-neutral-on-loud)\` |
-| \`--wa-tooltip-font-size\` | \`var(--wa-font-size-s)\` |
-| \`--wa-tooltip-line-height\` | \`var(--wa-line-height-normal)\` |
+| \`--wa-tooltip-arrow-size\` | Size of the tooltip arrow/caret |
+| \`--wa-tooltip-background-color\` | Background color of the tooltip body |
+| \`--wa-tooltip-border-color\` | Border color of the tooltip |
+| \`--wa-tooltip-border-style\` | Border line style of the tooltip |
+| \`--wa-tooltip-border-width\` | Border thickness of the tooltip |
+| \`--wa-tooltip-border-radius\` | Corner rounding of the tooltip |
+| \`--wa-tooltip-content-color\` | Text color of tooltip content |
+| \`--wa-tooltip-font-size\` | Font size of tooltip text |
+| \`--wa-tooltip-line-height\` | Line height of tooltip text |
 
 ```html
-<wa-button id="bullseye-example" appearance="plain">
+<wa-button id="tooltip-demo" appearance="plain">
   <wa-icon label="Target" name="bullseye"></wa-icon>
 </wa-button>
-<wa-tooltip for="bullseye-example" open trigger="manual">This is a tooltip</wa-tooltip>
+<wa-tooltip for="tooltip-demo" open trigger="manual">This is a tooltip</wa-tooltip>
 ```

@@ -1,6 +1,6 @@
-import type WaIcon from '../icon/icon.js';
+import type WaIcon from './icon.js';
 export type IconLibraryHostElement = WaIcon;
-export type IconLibraryResolver = (name: string, family: string, variant: string, autoWidth: boolean) => string;
+export type IconLibraryResolver = (name: string, family: string, variant: string, autoWidth: boolean) => string | Promise<string>;
 export type IconLibraryMutator = (svg: SVGElement, hostElement?: IconLibraryHostElement) => void;
 export interface IconLibrary {
     name: string;

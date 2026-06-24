@@ -1,7 +1,8 @@
 import WebAwesomeElement from '../../internal/webawesome-element.js';
 import '../button/button.js';
 /**
- * @summary Dialogs, sometimes called "modals", appear above the page and require the user's immediate attention.
+ * @summary Dialogs appear above the page and require the user's immediate attention. Use them for confirmations, forms,
+ *  or focused tasks that interrupt the main flow.
  * @documentation https://webawesome.com/docs/components/dialog
  * @status stable
  * @since 2.0
@@ -33,8 +34,9 @@ import '../button/button.js';
  *
  * @cssproperty --spacing - The amount of space around and between the dialog's content.
  * @cssproperty --width - The preferred width of the dialog. Note that the dialog will shrink to accommodate smaller screens.
- * @cssproperty [--show-duration=200ms] - The animation duration when showing the dialog.
- * @cssproperty [--hide-duration=200ms] - The animation duration when hiding the dialog.
+ * @cssproperty [--backdrop-filter=none] - A filter to apply to the backdrop behind the dialog.
+ * @cssproperty [--show-duration=var(--wa-transition-normal)] - The animation duration when showing the dialog.
+ * @cssproperty [--hide-duration=var(--wa-transition-normal)] - The animation duration when hiding the dialog.
  */
 export default class WaDialog extends WebAwesomeElement {
     static css: import("lit").CSSResult;
@@ -53,6 +55,11 @@ export default class WaDialog extends WebAwesomeElement {
     withoutHeader: boolean;
     /** When enabled, the dialog will be closed when the user clicks outside of it. */
     lightDismiss: boolean;
+    /**
+     * Only required for SSR. Set to `true` if you're slotting in a `footer` element so the server-rendered markup
+     * includes the footer before the component hydrates on the client.
+     */
+    withFooter: boolean;
     firstUpdated(): void;
     disconnectedCallback(): void;
     private requestClose;

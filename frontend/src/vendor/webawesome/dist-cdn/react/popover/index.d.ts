@@ -3,7 +3,8 @@ import { type EventName } from '@lit/react';
 import type { WaAfterHideEvent, WaAfterShowEvent, WaHideEvent, WaShowEvent } from '../../events/events.js';
 export type { WaAfterHideEvent, WaAfterShowEvent, WaHideEvent, WaShowEvent } from '../../events/events.js';
 /**
- * @summary Popovers display contextual content and interactive elements in a floating panel.
+ * @summary Popovers display contextual content and interactive elements in a floating panel anchored to a trigger. Use
+ *  them for rich tooltips, menus, or any content that appears on demand without navigating away.
  * @documentation https://webawesome.com/docs/components/popover
  * @status stable
  * @since 3.0
@@ -25,8 +26,8 @@ export type { WaAfterHideEvent, WaAfterShowEvent, WaHideEvent, WaShowEvent } fro
  *
  * @cssproperty [--arrow-size=0.375rem] - The size of the tiny arrow that points to the popover (set to zero to remove).
  * @cssproperty [--max-width=25rem] - The maximum width of the popover's body content.
- * @cssproperty [--show-duration=100ms] - The speed of the show animation.
- * @cssproperty [--hide-duration=100ms] - The speed of the hide animation.
+ * @cssproperty [--show-duration=var(--wa-transition-fast)] - The speed of the show animation.
+ * @cssproperty [--hide-duration=var(--wa-transition-fast)] - The speed of the hide animation.
  *
  * @cssstate open - Applied when the popover is open.
  */

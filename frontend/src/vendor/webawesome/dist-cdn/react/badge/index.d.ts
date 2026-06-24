@@ -1,6 +1,7 @@
 import Component from '../../components/badge/badge.js';
 /**
- * @summary Badges are used to draw attention and display statuses or counts.
+ * @summary Badges draw attention to adjacent content by displaying a status, count, or label. Use them to highlight
+ *  notifications, categorize items, or flag new activity.
  * @documentation https://webawesome.com/docs/components/badge
  * @status stable
  * @since 2.0

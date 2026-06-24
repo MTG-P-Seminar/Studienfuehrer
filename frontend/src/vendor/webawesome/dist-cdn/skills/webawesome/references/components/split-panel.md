@@ -3,9 +3,11 @@
 **Full documentation:** https://webawesome.com/docs/components/split-panel
 
 
-`<wa-split-panel>` Since 2.0 Stable
+`<wa-split-panel>`
 
-Split panels display two adjacent panels, allowing the user to reposition them.
+Stable [Layout](https://webawesome.com/docs/components/?category=layout) [Since 2.0](https://webawesome.com/docs/resources/changelog#wa_200)
+
+Split panels display two adjacent panels separated by a draggable divider, letting users resize each side to suit their workflow.
 
 ```html
 <wa-split-panel>
@@ -26,7 +28,11 @@ Split panels display two adjacent panels, allowing the user to reposition them.
 
 ## Examples
 
+Link to This Section
+
 ### Initial Position
+
+Link to This Section
 
 To set the initial position, use the `position` attribute. If no position is provided, it will default to 50% of the available space.
 
@@ -63,6 +69,8 @@ To set the initial position, use the `position` attribute. If no position is pro
 
 ### Initial Position in Pixels
 
+Link to This Section
+
 To set the initial position in pixels instead of a percentage, use the `position-in-pixels` attribute.
 
 ```html
@@ -84,6 +92,8 @@ To set the initial position in pixels instead of a percentage, use the `position
 
 ### Orientation
 
+Link to This Section
+
 Set the `orientation` attribute to `vertical` and provide a height to render the split panel in a vertical orientation where the start and end panels are stacked.
 
 ```html
@@ -104,6 +114,8 @@ Set the `orientation` attribute to `vertical` and provide a height to render the
 ```
 
 ### Snapping
+
+Link to This Section
 
 To snap panels at specific positions while dragging, add the `snap` attribute with one or more space-separated values. Values must be in pixels or percentages. For example, to snap the panel at `100px` and `50%`, use `snap="100px 50%"`. You can also customize how close the divider must be before snapping with the `snap-threshold` attribute.
 
@@ -156,6 +168,8 @@ To snap panels at specific positions while dragging, add the `snap` attribute wi
 
 ### Disabled
 
+Link to This Section
+
 Add the `disabled` attribute to prevent the divider from being repositioned.
 
 ```html
@@ -176,6 +190,8 @@ Add the `disabled` attribute to prevent the divider from being repositioned.
 ```
 
 ### Setting the Primary Panel
+
+Link to This Section
 
 By default, both panels will grow or shrink proportionally when the host element is resized. If a primary panel is designated, it will maintain its size and the secondary panel will grow or shrink to fit the remaining space. You can set the primary panel to `start` or `end` using the `primary` attribute.
 
@@ -216,6 +232,8 @@ Try resizing the example below with each option and notice how the panels respon
 
 ### Min & Max
 
+Link to This Section
+
 To set a minimum or maximum size of the primary panel, use the `--min` and `--max` custom properties. Since the secondary panel is flexible, size constraints can only be applied to the primary panel. If no primary panel is designated, these constraints will be applied to the `start` panel.
 
 This examples demonstrates how you can ensure both panels are at least 150px using `--min`, `--max`, and the `calc()` function.
@@ -238,6 +256,8 @@ This examples demonstrates how you can ensure both panels are at least 150px usi
 ```
 
 ### Nested Split Panels
+
+Link to This Section
 
 Create complex layouts that can be repositioned independently by nesting split panels.
 
@@ -269,6 +289,8 @@ Create complex layouts that can be repositioned independently by nesting split p
 ```
 
 ### Customizing the Divider
+
+Link to This Section
 
 You can target the `divider` part to apply CSS properties to the divider. To add a custom handle, slot an icon into the `divider` slot. When customizing the divider, make sure to think about focus styles for keyboard users.
 
@@ -367,83 +389,50 @@ Here's a more elaborate example that changes the divider's color and width and a
 </style>
 ```
 
-## Importing
-
-Autoloading components via [projects](https://webawesome.com/docs/#using-a-project) is the recommended way to import components. If you prefer to do it manually, use one of the following code snippets.
-
-\*\*CDN\*\*
-
-Let your project code do the work! [Sign up for free](https://webawesome.com/signup) to use a project with your very own CDN — it's the fastest and easiest way to use Web Awesome.
-
-\*\*npm\*\*
-
-To manually import this component from NPM, use the following code.
-
-```js
-import '@awesome.me/webawesome/dist/components/split-panel/split-panel.js';
-```
-
-\*\*React\*\*
-
-To manually import this component from React, use the following code.
-
-```js
-import WaSplitPanel from '@awesome.me/webawesome/dist/react/split-panel';
-```
-
 ## Slots
 
-Learn more about [using slots](https://webawesome.com/docs/usage/#slots).
+Valid slot names for this component (use exactly these — any other `slot` value
+is silently ignored and the element falls back to the default slot):
 
-| Name | Description |
-| --- | --- |
-| \`divider\` | The divider. Useful for slotting in a custom icon that renders as a handle. |
-| \`end\` | Content to place in the end panel. |
-| \`start\` | Content to place in the start panel. |
+- `start` — Content to place in the start panel.
+- `end` — Content to place in the end panel.
+- `divider` — The divider. Useful for slotting in a custom icon that renders as a handle.
 
 ## Attributes & Properties
 
-Learn more about [attributes and properties](https://webawesome.com/docs/usage/#attributes-and-properties).
-
-| Name | Description | Reflects |
-| --- | --- | --- |
-| \`css\` | \`CSSResultGroup \\| undefined\` One or more CSSResultGroup to include in the component's shadow root. Host styles are automatically prepended. Type Default styles | | |
-| \`disabled\` disabled | \`boolean\` Disables resizing. Note that the position may still change as a result of resizing the host element. Type Default false | | |
-| \`orientation\` orientation | \`'horizontal' \\| 'vertical'\` Sets the split panel's orientation. Type Default 'horizontal' | | |
-| \`position\` position | \`number\` The current position of the divider from the primary panel's edge as a percentage 0-100. Defaults to 50% of the container's initial size. Type Default 50 | | |
-| \`positionInPixels\` position-in-pixels | \`number\` The current position of the divider from the primary panel's edge in pixels. Type | | |
-| \`primary\` primary | \`'start' \\| 'end' \\| undefined\` If no primary panel is designated, both panels will resize proportionally when the host element is resized. If a primary panel is designated, it will maintain its size and the other panel will grow or shrink as needed when the host element is resized. Type | | |
-| \`snap\` snap | \`"100px 50%"\` One or more space-separated values at which the divider should snap. Values can be in pixels or percentages, e.g. . Type string \\| undefined | | |
-| \`snapThreshold\` snap-threshold | \`number\` How close the divider must be to a snap point until snapping occurs. Type Default 12 | | |
+| Attribute | Property | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| `position` |  | `number` | `50` | The current position of the divider from the primary panel's edge as a percentage 0-100. Defaults to 50% of the container's initial size. |
+| `position-in-pixels` | `positionInPixels` | `number` |  | The current position of the divider from the primary panel's edge in pixels. |
+| `orientation` |  | `'horizontal' \| 'vertical'` | `'horizontal'` | Sets the split panel's orientation. |
+| `disabled` |  | `boolean` | `false` | Disables resizing. Note that the position may still change as a result of resizing the host element. |
+| `primary` |  | `'start' \| 'end' \| undefined` |  | If no primary panel is designated, both panels will resize proportionally when the host element is resized. If a primary panel is designated, it will maintain its size and the other panel will grow or shrink as needed when the host element is resized. |
+| `snap` |  | `string \| undefined` |  | One or more space-separated values at which the divider should snap. Values can be in pixels or percentages, e.g. `"100px 50%"`. |
+| `snap-threshold` | `snapThreshold` | `number` | `12` | How close the divider must be to a snap point until snapping occurs. |
+| `dir` |  | `string` |  |  |
+| `lang` |  | `string` |  |  |
+| `did-ssr` | `didSSR` |  |  |  |
 
 ## Events
 
-Learn more about [events](https://webawesome.com/docs/usage/#events).
-
-| Name | Description |
+| Event | Description |
 | --- | --- |
-| \`wa-reposition\` | Emitted when the divider's position changes. |
+| `wa-reposition` | Emitted when the divider's position changes. |
 
-## CSS custom properties
+## CSS Parts
 
-Learn more about [CSS custom properties](https://webawesome.com/docs/customizing/#custom-properties).
-
-| Name | Description |
+| Part | Description |
 | --- | --- |
-| \`--divider-hit-area\` | \`12px\` The invisible region around the divider where dragging can occur. This is usually wider than the divider to facilitate easier dragging. Default |
-| \`--divider-width\` | \`4px\` The width of the visible divider. Default |
-| \`--max\` | \`100%\` The maximum allowed size of the primary panel. Default |
-| \`--min\` | \`0\` The minimum allowed size of the primary panel. Default |
+| `start` | The start panel. |
+| `end` | The end panel. |
+| `panel` | Targets both the start and end panels. |
+| `divider` | The divider that separates the start and end panels. |
 
-## CSS parts
+## CSS Custom Properties
 
-Learn more about [CSS parts](https://webawesome.com/docs/customizing/#css-parts).
-
-| Name | Description | CSS selector |
+| Property | Default | Description |
 | --- | --- | --- |
-| \`divider\` | The divider that separates the start and end panels. | \`::part(divider)\` |
-| \`end\` | The end panel. | \`::part(end)\` |
-| \`panel\` | Targets both the start and end panels. | \`::part(panel)\` |
-| \`start\` | The start panel. | \`::part(start)\` |
-
-**Need a hand?** Report a bug Ask for help
+| `--divider-width` | `4px` | The width of the visible divider. |
+| `--divider-hit-area` | `12px` | The invisible region around the divider where dragging can occur. This is usually wider than the divider to facilitate easier dragging. |
+| `--min` | `0` | The minimum allowed size of the primary panel. |
+| `--max` | `100%` | The maximum allowed size of the primary panel. |
