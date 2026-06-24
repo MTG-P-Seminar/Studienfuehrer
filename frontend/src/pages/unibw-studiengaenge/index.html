@@ -627,36 +627,9 @@
   </wa-accordion-item>
 </wa-accordion>
 
-<br />
-
-<div class="wa-cluster">
-  <wa-button appearance="filled" id="expand-all">Alles ausklappen</wa-button>
-  <wa-button appearance="filled" id="collapse-all">Alles einklappen</wa-button>
-</div>
-
-<script>
-  const accordion = document.querySelector('UnibwStudiengaenge-Accordion-methods');
-
-  document.querySelector('#expand-all').addEventListener('click', () => accordion.expandAll());
-  document.querySelector('#collapse-all').addEventListener('click', () => accordion.collapseAll());
-</script>
-
-
-
-
-
 <script>
   const dialog = document.querySelector('.dialog-without-header');
   const openButton = dialog.nextElementSibling;
 
   openButton.addEventListener('click', () => (dialog.open = true));
 </script>
-
-
-
-          <wa-dialog label="Dialog" without-header class="dialog-without-header">
-            Look ma, no header! Sometimes you just need a clean, simple dialog.
-            <wa-button slot="footer" variant="brand" data-dialog="close">Schließen</wa-button>
-          </wa-dialog>
-
-          <wa-button appearance="filled">Bewertung anzeigen</wa-button>
