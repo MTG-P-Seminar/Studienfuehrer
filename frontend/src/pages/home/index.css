@@ -1,24 +1,23 @@
-body {
-  height: 100dvh;
-  overflow: hidden;
-}
-
 main {
-  background: #dfcdb5;
   padding: 0 !important;
   margin: 0 !important;
   max-width: none !important;
-  width: 100dvw;
-  height: 100dvh;
 }
 
 .main-img-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100dvh;
+  max-height: 100dvh;
   width: 100dvw;
-  overflow: hidden;
+
+  --mask: linear-gradient(
+    to bottom,
+    black calc(100% - 7dvw),
+    transparent 100%
+  );
+  -webkit-mask-image: var(--mask);
+  mask-image: var(--mask);
 }
 
 .main-img {
@@ -27,11 +26,8 @@ main {
 }
 
 .section-button {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: calc(50dvh + 16dvw);
+  width: fit-content;
   font-size: calc(1dvw + 1dvh);
-  color: #694a36;
 }
 
 .section-button span {
@@ -47,9 +43,25 @@ main {
 }
 
 .section-button-early-studies {
-  left: 22dvw;
+  translate: calc(22dvw - 50%)  calc(10dvw - min(50dvw, 50dvh));
 }
 
 .section-button-abroad {
-  left: 78dvw;
+  translate: calc(78dvw - 50%) calc(10dvw - min(50dvw, 50dvh) - 100% - 1rem);
+}
+
+.content {
+  margin-top: calc(-5.5dvw - 5.5dvh - 1rem)
+}
+
+#early-studies, #abroad {
+  font-size: 3rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+#early-studies wa-button, #abroad wa-button {
+  width: 23rem;
 }

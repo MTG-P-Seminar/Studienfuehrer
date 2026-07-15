@@ -49,3 +49,9 @@ document.querySelectorAll("wa-dropdown-item:has([slot='submenu'])").forEach(di =
     }, 100)
   });
 })
+
+document.querySelectorAll("[href]").forEach(el => {
+  el.addEventListener("click", () => {
+    location.href = el.getAttribute("href")
+  });
+})

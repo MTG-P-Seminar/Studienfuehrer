@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "server": "node backend/server.js",
-    "wrapper": "chokidar 'frontend/src/**/*' -c 'node frontend/wrapper.js'",
+    "wrapper": "chokidar 'frontend/src/**/*' 'frontend/wrapper*' -c 'node frontend/wrapper.js'",
     "dev": "concurrently -n 'server,wrapper' \"npm run server\" \"npm run wrapper\""
   },
   "author": "",

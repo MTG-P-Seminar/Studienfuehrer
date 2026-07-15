@@ -1,15 +1,35 @@
 <div class="main-img-container">
   <img src="${BASE_PATH}assets/home-eyes.jpg" class="main-img"/>
 </div>
-<wa-button pill class="section-button section-button-early-studies" theme="early-studies">
+<wa-button pill class="section-button section-button-early-studies" theme="early-studies" href="#early-studies">
   <span>
     Frühstudium
     <wa-icon name="arrow-right"></wa-icon>
   </span>
 </wa-button>
-<wa-button pill class="section-button section-button-abroad" theme="abroad">
+<wa-button pill class="section-button section-button-abroad" theme="abroad" href="#abroad">
   <span>
     Auslandsjahr
     <wa-icon name="arrow-right"></wa-icon>
   </span>
 </wa-button>
+
+<div class="content"></div>
+
+<div id="early-studies">
+  <span theme="early-studies">Frühstudium</span>
+  <wa-button theme="tum" href="tum">TUM</wa-button>
+  <wa-button theme="lmu" href="lmu">LMU</wa-button>
+  <wa-button theme="unibw" href="unibw-communication">UniBW - Kommunikation</wa-button>
+  <wa-button theme="unibw" href="unibw-portals">UniBW - Portale</wa-button>
+  <wa-button theme="unibw" href="unibw-portals">UniBW - Anleitung YubiKey</wa-button>
+  <wa-button theme="early-studies" href="early-studies-ratings">Persönliche Bewertungen</wa-button>
+  <wa-button theme="early-studies" href="early-studies-regular-class">Frühstudium für Regelklassenschüler:innen</wa-button>
+</div>
+
+<div id="abroad">
+  <span theme="abroad">Auslandsjahr</span>
+  <wa-button theme="abroad" href="abroad-challenges">Herausforderungen und Tipps</wa-button>
+  <wa-button theme="abroad" href="abroad-faq">FAQ</wa-button>
+  <wa-button theme="abroad" href="abroad-tips">Tipps</wa-button>
+</div>
