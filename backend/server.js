@@ -19,7 +19,7 @@ app.get("/:page", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  const filePath = path.join(__dirname, `../frontend/dist/pages/showcase`, "index.html");
+  const filePath = path.join(__dirname, `../frontend/dist/pages/home`, "index.html");
   res.sendFile(filePath);
 });
 

@@ -1,0 +1,13 @@
+#site-list {
+	width: fit-content;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 1rem;
+	margin: auto;
+  text-align: center
+}
+
+#site-list wa-button::part(base) {
+	padding: 1rem 2rem;
+}

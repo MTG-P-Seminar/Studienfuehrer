@@ -12,13 +12,14 @@ const ASSETS_SRC = path.join(__dirname, "src/assets");
 const ASSETS_DIST = path.join(__dirname, "dist/assets");
 
 const titles = {
-  "showcase": "Showcase",
+  "abroad": "Inhalte zum Auslandsjahr",
   "abroad-challenges": "Herausforderungen und Tipps zum Auslandsjahr",
   "abroad-faq": "FAQ zum Auslandsjahr",
   "abroad-tips": "Tipps fürs Auslandsjahr",
+  "early-studies": "Inhalte zum Frühstudium",
   "early-studies-ratings": "Bewertungen zum Frühstudium",
   "early-studies-regular-class": "Frühstudium - Erfahrungen aus der Perspektive eines Regelklassenschülers",
-  "home": "StAu - Studien- und Auslandsjahrführer des MTG",
+  "home": "StAu – Studien- und Auslandsjahrführer des MTG",
   "lmu": "Frühstudium an der LMU",
   "todos": "TODOs",
   "tum": "Frühstudium an der TUM",
