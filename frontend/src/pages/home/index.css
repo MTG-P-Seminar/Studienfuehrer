@@ -2,22 +2,20 @@ main {
   padding: 0 !important;
   margin: 0 !important;
   max-width: none !important;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  flex-grow: 1;
+  position: relative;
+  background: linear-gradient(#dfcdb5, #e0d1be);
 }
 
 .main-img-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-height: 100dvh;
   width: 100dvw;
-
-  --mask: linear-gradient(
-    to bottom,
-    black calc(100% - 7dvw),
-    transparent 100%
-  );
-  -webkit-mask-image: var(--mask);
-  mask-image: var(--mask);
+  margin-top: 4dvw;
 }
 
 .main-img {
@@ -26,42 +24,21 @@ main {
 }
 
 .section-button {
+  position: absolute;
   width: fit-content;
   font-size: calc(1dvw + 1dvh);
+  top: calc(50% + 16dvw);
+  translate: -50% 0;
 }
 
 .section-button span {
   white-space: nowrap;
 }
 
-.section-button wa-icon {
-  transition: 0.3s;
-}
-
-.section-button:hover wa-icon {
-  transform: translate(1rem);
-}
-
 .section-button-early-studies {
-  translate: calc(22dvw - 50%)  calc(10dvw - min(50dvw, 50dvh));
+  left: 22dvw;
 }
 
 .section-button-abroad {
-  translate: calc(78dvw - 50%) calc(10dvw - min(50dvw, 50dvh) - 100% - 1rem);
-}
-
-.content {
-  margin-top: calc(-5.5dvw - 5.5dvh - 1rem)
-}
-
-#early-studies, #abroad {
-  font-size: 3rem;
-  display: flex;
-  gap: 0.5rem;
-  flex-direction: column;
-  align-items: center;
-}
-
-#early-studies wa-button, #abroad wa-button {
-  width: 23rem;
+  left: 78dvw;
 }
