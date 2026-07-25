@@ -10,8 +10,6 @@ The classes on this page cover the most common needs: picking a size and weight 
 
 ## Body
 
-Link to This Section
-
 Use `wa-body-*` classes to style the main content of your pages. Each class specifies a `font-size` that corresponds to a [font size token](https://webawesome.com/docs/tokens/typography/#font-size) from your theme.
 
 `3xs` and `2xs` fall below typical legibility. It's best to keep their use to non-essential UI only (e.g. labels, metadata) to maintain accessibility.
@@ -34,8 +32,6 @@ Alternatively, use `wa-body` to apply the same styling without an explicit font 
 
 ## Headings
 
-Link to This Section
-
 Use `wa-heading-*` classes to style section titles and headings in your content. Each class specifies a `font-size` that corresponds to a [font size token](https://webawesome.com/docs/tokens/typography/#font-size) from your theme.
 
 Alternatively, use `wa-heading` to apply the same styling without an explicit font size.
@@ -55,8 +51,6 @@ Alternatively, use `wa-heading` to apply the same styling without an explicit fo
 | \`wa-heading-5xl\` |
 
 ## Captions
-
-Link to This Section
 
 Use `wa-caption-*` classes to style descriptions or auxiliary text in your content. Each class specifies a `font-size` that corresponds to a [font size token](https://webawesome.com/docs/tokens/typography/#font-size) from your theme.
 
@@ -78,8 +72,6 @@ Alternatively, use `wa-caption` to apply the same styling without an explicit fo
 
 ## Longform
 
-Link to This Section
-
 Use `wa-longform-*` classes to style lengthy content like essays or blog posts. Each class specifies a `font-size` that corresponds to a [font size token](https://webawesome.com/docs/tokens/typography/#font-size) from your theme.
 
 Alternatively, use `wa-longform` to apply the same styling without an explicit font size.
@@ -100,8 +92,6 @@ Alternatively, use `wa-longform` to apply the same styling without an explicit f
 
 ## Links
 
-Link to This Section
-
 Use `wa-link` to give interactive text a link-like appearance. Alternatively, use `wa-link-plain` to remove typical link styles from `<a>` elements.
 
 | Class Name |
@@ -111,8 +101,6 @@ Use `wa-link` to give interactive text a link-like appearance. Alternatively, us
 
 ## Lists
 
-Link to This Section
-
 Ordered (`<ol>`) and unordered (`<ul>`) lists are given default styles by either Web Awesome's [native styles](https://webawesome.com/docs/utilities/native/) or your browser. Use `wa-list-plain` to clear any built-in list styles.
 
 | Class Name |
@@ -120,8 +108,6 @@ Ordered (`<ol>`) and unordered (`<ul>`) lists are given default styles by either
 | \`wa-list-plain\` |
 
 ## Form Controls
-
-Link to This Section
 
 Use `wa-form-control-*` classes to style labels, values, placeholders, and hints outside of typical form control contexts with [form control tokens](https://webawesome.com/docs/tokens/component-groups/#form-controls) from your theme.
 
@@ -133,8 +119,6 @@ Use `wa-form-control-*` classes to style labels, values, placeholders, and hints
 | \`wa-form-control-hint\` |
 
 ## Font Size
-
-Link to This Section
 
 Use single-purpose `wa-font-size-*` classes to apply a given [font size](https://webawesome.com/docs/tokens/typography/#font-size) from your theme to any element without additional styling.
 
@@ -154,8 +138,6 @@ Use single-purpose `wa-font-size-*` classes to apply a given [font size](https:/
 
 ## Font Weight
 
-Link to This Section
-
 Use single-purpose `wa-font-weight-*` classes to apply a given [font weight](https://webawesome.com/docs/tokens/typography/#font-weight) from your theme to any element without additional styling.
 
 | Class Name |
@@ -167,8 +149,6 @@ Use single-purpose `wa-font-weight-*` classes to apply a given [font weight](htt
 
 ## Text Color
 
-Link to This Section
-
 Use single-purpose `wa-color-text-*` classes to apply a given [text color](https://webawesome.com/docs/tokens/color/#text) from your theme to any element without additional styling.
 
 | Class Name |
@@ -178,8 +158,6 @@ Use single-purpose `wa-color-text-*` classes to apply a given [text color](https
 | \`wa-color-text-link\` |
 
 ## Wrapping
-
-Link to This Section
 
 Use these classes to control how text wraps across lines. They apply standard CSS [`text-wrap`](https://developer.mozilla.org/docs/Web/CSS/text-wrap) values.
 
@@ -195,8 +173,6 @@ The original `wa-text-wrap-nowrap`, `wa-text-wrap-balance`, and `wa-text-wrap-pr
 
 ## Transform
 
-Link to This Section
-
 Use these classes to change the case of text. They apply standard CSS [`text-transform`](https://developer.mozilla.org/docs/Web/CSS/text-transform) values.
 
 | Class Name |
@@ -208,8 +184,6 @@ Use these classes to change the case of text. They apply standard CSS [`text-tra
 Large blocks of uppercase text are [harder for everyone to read](https://www.w3.org/WAI/WCAG21/Understanding/visual-presentation.html) and especially difficult for folks with dyslexia. Reserve it for buttons, badges, or short headings.
 
 ## Alignment
-
-Link to This Section
 
 Use these classes to align text within its container. They apply standard CSS [`text-align`](https://developer.mozilla.org/docs/Web/CSS/text-align) values using logical properties, so they adapt automatically to the document's writing direction.
 
@@ -223,8 +197,6 @@ Use these classes to align text within its container. They apply standard CSS [`
 Justified text can create uneven word spacing that's [harder for everyone to read](https://www.w3.org/WAI/WCAG21/Understanding/visual-presentation.html) and especially difficult for folks with dyslexia. Reserve it for short, narrow text columns.
 
 ## Truncation
-
-Link to This Section
 
 Use the `wa-text-truncate` class to truncate text with an ellipsis instead of letting it overflow or wrap.
 

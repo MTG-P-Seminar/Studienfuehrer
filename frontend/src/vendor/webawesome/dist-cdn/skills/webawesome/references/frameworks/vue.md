@@ -10,8 +10,6 @@ These instructions are for Vue 3 and above. If you're using Vue 2, please see th
 
 ## Installation
 
-Link to This Section
-
 To add Web Awesome to your Vue app, install the package from npm.
 
 ```bash
@@ -28,15 +26,11 @@ import '@awesome.me/webawesome/dist/components/button/button.js';
 
 ## Configuration
 
-Link to This Section
-
 If you haven't configured your Vue.js project to work with custom elements/web components, follow [the instructions here](https://vuejs.org/guide/extras/web-components.html#using-custom-elements-in-vue) based on your project type to ensure your project will not throw an error when it encounters a custom element.
 
 Now you can start using Web Awesome components in your app!
 
 ## Types
-
-Link to This Section
 
 Once you have configured your application for custom elements, you should be able to use Shoelace in your application without it causing any errors. Unfortunately, this doesn't register the custom elements to behave like components built using Vue. To provide autocomplete information and type safety for your components, you can import the Shoelace Vue types into your `tsconfig.json` to get better integration in your standard Vue and JSX templates.
 
@@ -50,11 +44,7 @@ Once you have configured your application for custom elements, you should be abl
 
 ## Usage
 
-Link to This Section
-
-### QR code generator example
-
-Link to This Section
+### QR Code Generator Example
 
 ```html
 <template>
@@ -85,17 +75,13 @@ Link to This Section
 
 ### Binding Complex Data
 
-Link to This Section
-
 When binding complex data such as objects and arrays, use the `.prop` modifier to make Vue bind them as a property instead of an attribute.
 
 ```html
 <wa-color-picker :swatches.prop="mySwatches" />
 ```
 
-### Two-way Binding
-
-Link to This Section
+### Two-Way Binding
 
 One caveat is there's currently [varying levels of support for v-model on custom elements](https://github.com/vuejs/vue/issues/7830), but you can still achieve two-way binding manually.
 
@@ -107,8 +93,6 @@ One caveat is there's currently [varying levels of support for v-model on custom
 ```
 
 ### Slots
-
-Link to This Section
 
 Slots in Web Awesome / web components are functionally the same as basic slots in Vue. Slots can be assigned to elements using the `slot` attribute followed by the name of the slot it is being assigned to.
 

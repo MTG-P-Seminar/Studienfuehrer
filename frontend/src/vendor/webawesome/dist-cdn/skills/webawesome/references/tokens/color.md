@@ -10,8 +10,6 @@ For an overview of how theming works across the library, see [Theming](https://w
 
 ## Color Palette
 
-Link to This Section
-
 [Color palettes](https://webawesome.com/docs/color-palettes) give you a full spectrum of colors to use in your project and are the lowest-level color tokens. Each color palette includes 10 different hues, each with 11 numeric tints that make up a color scale from light to dark — `95` is near white, `05` is near black.
 
 These numeric tints help ensure accessible color contrast per [WCAG 2.1 success criteria](https://www.w3.org/TR/WCAG21/#contrast-minimum):
@@ -282,8 +280,6 @@ Gray
 
 ### Core Colors
 
-Link to This Section
-
 In addition to numeric tints, each hue has a _core color_ — the most colorful, vibrant tint in the scale. The exact tint varies by palette. Use `--wa-color-{hue}` when you want a representative color for a hue without specifying a tint.
 
 The tint for each core color is stored as an integer in `--wa-color-{hue}-key`. These tokens are used internally to determine a compatible text color when using the core color as a background and are not used directly by components.
@@ -304,8 +300,6 @@ Using this key, the color system derives a paired _on color_ guaranteed to meet 
 | \`--wa-color-gray\` | \`--wa-color-gray-key\` | \`--wa-color-gray-on\` |
 
 ## Variant Colors
-
-Link to This Section
 
 Variant colors are aliases for specific hues in your color palette to give them an extra layer of semantic meaning. These variants are familiar, meaningful hues that reinforce a specific message or intended use:
 
@@ -453,8 +447,6 @@ Danger
 
 ### Core Colors
 
-Link to This Section
-
 Just like the hues in your color palette, each variant has a _core color_ — an alias for the most colorful, vibrant tint in the color scale selected for your variant. Use `--wa-color-{variant}` when you want a representative color for a variant without specifying a tint.
 
 Each core color also has a paired _on color_ (`--wa-color-{variant}-on`) guaranteed to meet WCAG 2.1 AA contrast when placed on top of it. Use on color tokens any time you render text or icons on a core color background.
@@ -469,8 +461,6 @@ Each core color also has a paired _on color_ (`--wa-color-{variant}-on`) guarant
 
 ### Changing Variant Colors
 
-Link to This Section
-
 Any hue from your color palette can be assigned to any variant without redefining the tokens in your own stylesheet. To use a different hue, simply apply the class `"wa-{variant}-{hue}` to the `<html>` element.
 
 ```html
@@ -481,13 +471,9 @@ All ten palette hues — `red`, `orange`, `yellow`, `green`, `cyan`, `blue`, `in
 
 ## Color for Themed Elements
 
-Link to This Section
-
 These tokens apply specific tints from your color palette and variant colors to the elements and components that make up a theme. They're named for the role they play rather than their appearance, and adapt to light and dark modes.
 
 ### Surfaces
-
-Link to This Section
 
 Surfaces are background layers that content rests on. They convey elevation hierarchy — `raised` is closest to the user (e.g., dialogs) and `lowered` is farthest away (e.g., wells).
 
@@ -500,8 +486,6 @@ Surfaces are background layers that content rests on. They convey elevation hier
 
 ### Text
 
-Link to This Section
-
 Text colors are used for readable content. We recommend a minimum 4.5:1 contrast ratio against surface colors for text colors.
 
 | Custom Property | Description |
@@ -512,8 +496,6 @@ Text colors are used for readable content. We recommend a minimum 4.5:1 contrast
 
 ### Overlays
 
-Link to This Section
-
 Overlays provide a backdrop that isolates content, often with some transparency so background context shows through.
 
 | Custom Property | Description |
@@ -523,8 +505,6 @@ Overlays provide a backdrop that isolates content, often with some transparency 
 
 ### Shadow
 
-Link to This Section
-
 A single color is used for all drop shadows. Use it alongside the [shadow tokens](?active_tab=shadows) to construct realistic shadows.
 
 | Custom Property | Description |
@@ -532,8 +512,6 @@ A single color is used for all drop shadows. Use it alongside the [shadow tokens
 | \`--wa-color-shadow\` | Color used for all component drop shadows |
 
 ### Interactions
-
-Link to This Section
 
 These tokens power the consistent hover, active, and focus feedback you see across interactive components. The `--wa-color-focus` token sets the color of the keyboard focus ring. The `--wa-color-mix-hover` and `--wa-color-mix-active` tokens are overlays — they're mixed into a component's background via [`color-mix()`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix) to subtly shift it on hover and press, so every interactive component reacts consistently without each one defining its own hover/active palette.
 
@@ -544,8 +522,6 @@ These tokens power the consistent hover, active, and focus feedback you see acro
 | \`--wa-color-mix-active\` | Color blended into a component's fill on press |
 
 ### Semantic Variants
-
-Link to This Section
 
 Semantic variants use the `--wa-color-{variant}-{tint}` tokens from your [variant colors](#variant-colors) to power the `variant=""` attribute shared by buttons, badges, callouts, and many other components. Each variant is a complete, self-contained color system built from five groups — `brand`, `success`, `neutral`, `warning`, and `danger` — each defining fills, borders, and on colors at three attention levels.
 

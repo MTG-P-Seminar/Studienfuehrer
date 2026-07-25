@@ -2,7 +2,7 @@
 import {
   getIconFolder,
   library_default_default
-} from "../../chunks/chunk.HCXBOJYW.js";
+} from "../../chunks/chunk.D4VAJWKJ.js";
 import "../../chunks/chunk.HGBRCPUS.js";
 import "../../chunks/chunk.JHZRD2LV.js";
 export {

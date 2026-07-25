@@ -40,7 +40,7 @@ var translation = {
   goToSlide: (slide, count) => `Vai alla diapositiva ${slide} di ${count}`,
   hidePassword: "Nascondi password",
   hour: "Ora",
-  incompleteDate: "Inserisci una data completa.",
+  incompleteDate: "Inserisci una data valida.",
   increment: "Aumenta",
   loading: "In caricamento",
   minute: "Minuto",

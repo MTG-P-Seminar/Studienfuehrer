@@ -1,8 +1,5 @@
 # Radio Group
 
-**Full documentation:** https://webawesome.com/docs/components/radio-group
-
-
 `<wa-radio-group>`
 
 Stable [Forms](https://webawesome.com/docs/components/?category=forms) [Since 2.0](https://webawesome.com/docs/resources/changelog#wa_200)
@@ -17,13 +14,107 @@ Radio groups wrap a set of radios so they function as a single form control with
 </wa-radio-group>
 ```
 
+## Importing
+
+If you're using the autoloader or a hosted project, components load on demand — no manual import needed. To cherry-pick a component manually, use one of the following snippets.
+
+\*\*CDN\*\*
+
+Import this component directly from the CDN:
+
+```js
+import 'https://ka-f.webawesome.com/webawesome@3.10.0/components/radio-group/radio-group.js';
+```
+
+\*\*npm\*\*
+
+After installing Web Awesome via npm, import this component:
+
+```js
+import '@awesome.me/webawesome/dist/components/radio-group/radio-group.js';
+```
+
+\*\*Self-Hosted\*\*
+
+If you're self-hosting Web Awesome, import this component from your server:
+
+```js
+import './webawesome/dist/components/radio-group/radio-group.js';
+```
+
+\*\*React\*\*
+
+To import this component for React 18 or below, use the following code:
+
+```js
+import WaRadioGroup from '@awesome.me/webawesome/dist/react/radio-group/index.js';
+```
+
+## Slots
+
+Valid slot names for this component (use exactly these — any other `slot` value is
+silently ignored and the element falls back to the default slot):
+
+- `(default)` — The default slot where `<wa-radio>` elements are placed.
+- `label` — The radio group's label. Required for proper accessibility. Alternatively, you can use the `label` attribute.
+- `hint` — Text that describes how to use the radio group. Alternatively, you can use the `hint` attribute.
+
+## Attributes & Properties
+
+| Property | Attribute | Description | Type | Default |
+| --- | --- | --- | --- | --- |
+| `validators` | — | Validators are static because they have `observedAttributes`, essentially attributes to "watch" for changes. Whenever these attributes change, we want to be notified and update the validator. | `Validator[]` | `[]` |
+| `label` | `label` | The radio group's label. Required for proper accessibility. If you need to display HTML, use the `label` slot instead. | `string` | `''` |
+| `hint` | `hint` | The radio groups's hint. If you need to display HTML, use the `hint` slot instead. | `string` | `''` |
+| `name` | `name` | The name of the radio group, submitted as a name/value pair with form data. | `string \| null` | `null` |
+| `disabled` | `disabled` | Disables the radio group and all child radios. | `boolean` | `false` |
+| `orientation` | `orientation` | The orientation in which to show radio items. | `'horizontal' \| 'vertical'` | `'vertical'` |
+| `value` | — | The current value of the radio group, submitted as a name/value pair with form data. | — | — |
+| `defaultValue` | `value` | The default value of the form control. Primarily used for resetting the form control. | `string \| null` | — |
+| `size` | `size` | The radio group's size. When present, this size will be applied to all `<wa-radio>` items inside. | `'xs' \| 's' \| 'm' \| 'l' \| 'xl' \| 'small' \| 'medium' \| 'large'` | — |
+| `required` | `required` | Ensures a child radio is checked before allowing the containing form to submit. | `boolean` | `false` |
+| `withLabel` | `with-label` | Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup includes the label before the component hydrates on the client. | `boolean` | `false` |
+| `withHint` | `with-hint` | Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup includes the hint before the component hydrates on the client. | `boolean` | `false` |
+| `validationTarget` | — | We use the first available radio as the validationTarget similar to native HTML that shows the validation popup on the first radio element. | `undefined \| HTMLElement` | — |
+| `form` | — | By default, form controls are associated with the nearest containing `<form>` element. This attribute allows you to place the form control outside of a form and associate it with the form that has this `id`. The form must be in the same document or shadow root for this to work. | `HTMLFormElement \| null` | — |
+
+## Methods
+
+| Name | Description | Arguments |
+| --- | --- | --- |
+| `focus()` | Sets focus on the radio group. | `options: FocusOptions` |
+| `setCustomValidity()` | Do not use this when creating a "Validator". This is intended for end users of components. We track manually defined custom errors so we don't clear them on accident in our validators. | `message: string` |
+| `formStateRestoreCallback()` | Called when the browser is trying to restore element’s state to state in which case reason is "restore", or when the browser is trying to fulfill autofill on behalf of user in which case reason is "autocomplete". In the case of "restore", state is a string, File, or FormData object previously set as the second argument to setFormValue. | `state: string \\| File \\| FormData \\| null, reason: 'autocomplete' \\| 'restore'` |
+| `resetValidity()` | Reset validity is a way of removing manual custom errors and native validation. | — |
+
+## Events
+
+| Name | Description |
+| --- | --- |
+| `input` | Emitted when the radio group receives user input. |
+| `change` | Emitted when the radio group's selected value changes. |
+| `wa-invalid` | Emitted when the form control has been checked for validity and its constraints aren't satisfied. |
+
+## CSS Parts
+
+| Name | Description | CSS selector |
+| --- | --- | --- |
+| \`form-control\` | The form control that wraps the label, input, and hint. | \`::part(form-control)\` |
+| \`form-control-input\` | The input's wrapper. | \`::part(form-control-input)\` |
+| \`form-control-label\` | The label's wrapper. | \`::part(form-control-label)\` |
+| \`hint\` | The hint's wrapper. | \`::part(hint)\` |
+| \`radios\` | The wrapper than surrounds radio items, styled as a flex container by default. | \`::part(radios)\` |
+
+## Dependencies
+
+This component automatically imports the following elements. Sub-dependencies, if any exist, will also be included in this list.
+
+-   [`<wa-icon>`](https://webawesome.com/docs/components/icon)
+-   [`<wa-radio>`](https://webawesome.com/docs/components/radio)
+
 ## Examples
 
-Link to This Section
-
 ### Checked
-
-Link to This Section
 
 Use the `value` attribute on the radio group to set the checked radio.
 
@@ -39,8 +130,6 @@ To target checked radios with CSS, use the `:state(checked)` selector.
 
 ### Hint
 
-Link to This Section
-
 Add descriptive hint to a radio group with the `hint` attribute. For hints that contain HTML, use the `hint` slot instead.
 
 ```html
@@ -52,8 +141,6 @@ Add descriptive hint to a radio group with the `hint` attribute. For hints that 
 ```
 
 ### Radio Buttons
-
-Link to This Section
 
 Set the `appearance` attribute to `button` on all radios to render a radio button group.
 
@@ -88,8 +175,6 @@ Set the `appearance` attribute to `button` on all radios to render a radio butto
 
 ### Disabling
 
-Link to This Section
-
 To disable the entire radio group, add the `disabled` attribute to the radio group.
 
 ```html
@@ -112,8 +197,6 @@ To disable individual options, add the `disabled` attribute to the respective op
 
 ### Orientation
 
-Link to This Section
-
 The default orientation for radio items is `vertical`. Set the `orientation` to `horizontal` to items on the same row.
 
 ```html
@@ -131,8 +214,6 @@ The default orientation for radio items is `vertical`. Set the `orientation` to 
 ```
 
 ### Sizing Options
-
-Link to This Section
 
 The size of radios will be determined by the Radio Group's `size` attribute.
 
@@ -182,8 +263,6 @@ If you need to have radios of varying sizes, place the `size` attribute on indiv
 
 ### Validation
 
-Link to This Section
-
 Setting the `required` attribute to make selecting an option mandatory. If a value has not been selected, it will prevent the form from submitting and display an error message.
 
 ```html
@@ -209,8 +288,6 @@ Setting the `required` attribute to make selecting an option mandatory. If a val
 ```
 
 ### Custom Validity
-
-Link to This Section
 
 Use the `setCustomValidity()` method to set a custom validation message. This will prevent the form from submitting and make the browser display the error message you provide. To clear the error, call this function with an empty string.
 
@@ -248,58 +325,3 @@ Use the `setCustomValidity()` method to set a custom validation message. This wi
   });
 </script>
 ```
-
-## Slots
-
-Valid slot names for this component (use exactly these — any other `slot` value
-is silently ignored and the element falls back to the default slot):
-
-- `(default)` — The default slot where `<wa-radio>` elements are placed.
-- `label` — The radio group's label. Required for proper accessibility. Alternatively, you can use the `label` attribute.
-- `hint` — Text that describes how to use the radio group. Alternatively, you can use the `hint` attribute.
-
-## Attributes & Properties
-
-| Attribute | Property | Type | Default | Description |
-| --- | --- | --- | --- | --- |
-| `label` |  | `string` | `''` | The radio group's label. Required for proper accessibility. If you need to display HTML, use the `label` slot instead. |
-| `hint` |  | `string` | `''` | The radio groups's hint. If you need to display HTML, use the `hint` slot instead. |
-| `name` |  | `string \| null` | `null` | The name of the radio group, submitted as a name/value pair with form data. |
-| `disabled` |  | `boolean` | `false` | Disables the radio group and all child radios. |
-| `orientation` |  | `'horizontal' \| 'vertical'` | `'vertical'` | The orientation in which to show radio items. |
-| `value` | `defaultValue` | `string \| null` |  | The default value of the form control. Primarily used for resetting the form control. |
-| `size` |  | `'xs' \| 's' \| 'm' \| 'l' \| 'xl' \| 'small' \| 'medium' \| 'large'` |  | The radio group's size. When present, this size will be applied to all `<wa-radio>` items inside. |
-| `required` |  | `boolean` | `false` | Ensures a child radio is checked before allowing the containing form to submit. |
-| `with-label` | `withLabel` | `boolean` | `false` | Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup includes the label before the component hydrates on the client. |
-| `with-hint` | `withHint` | `boolean` | `false` | Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup includes the hint before the component hydrates on the client. |
-| `custom-error` | `customError` | `string \| null` | `null` |  |
-| `dir` |  | `string` |  |  |
-| `lang` |  | `string` |  |  |
-| `did-ssr` | `didSSR` |  |  |  |
-
-## Methods
-
-| Method | Description | Arguments |
-| --- | --- | --- |
-| `focus` | Sets focus on the radio group. | `options: FocusOptions` |
-| `setCustomValidity` | Do not use this when creating a "Validator". This is intended for end users of components. We track manually defined custom errors so we don't clear them on accident in our validators. | `message: string` |
-| `formStateRestoreCallback` | Called when the browser is trying to restore element’s state to state in which case reason is "restore", or when the browser is trying to fulfill autofill on behalf of user in which case reason is "autocomplete". In the case of "restore", state is a string, File, or FormData object previously set as the second argument to setFormValue. | `state: string \| File \| FormData \| null, reason: 'autocomplete' \| 'restore'` |
-| `resetValidity` | Reset validity is a way of removing manual custom errors and native validation. |  |
-
-## Events
-
-| Event | Description |
-| --- | --- |
-| `input` | Emitted when the radio group receives user input. |
-| `change` | Emitted when the radio group's selected value changes. |
-| `wa-invalid` | Emitted when the form control has been checked for validity and its constraints aren't satisfied. |
-
-## CSS Parts
-
-| Part | Description |
-| --- | --- |
-| `form-control` | The form control that wraps the label, input, and hint. |
-| `form-control-label` | The label's wrapper. |
-| `form-control-input` | The input's wrapper. |
-| `radios` | The wrapper than surrounds radio items, styled as a flex container by default. |
-| `hint` | The hint's wrapper. |

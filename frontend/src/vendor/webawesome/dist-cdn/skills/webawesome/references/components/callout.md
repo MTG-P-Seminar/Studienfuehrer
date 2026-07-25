@@ -1,8 +1,5 @@
 # Callout
 
-**Full documentation:** https://webawesome.com/docs/components/callout
-
-
 `<wa-callout>`
 
 Stable [Feedback](https://webawesome.com/docs/components/?category=feedback) [Since 3.0](https://webawesome.com/docs/resources/changelog#wa_300)
@@ -16,13 +13,68 @@ Callouts display important messages inline with surrounding content. Use them to
 </wa-callout>
 ```
 
+## Importing
+
+If you're using the autoloader or a hosted project, components load on demand — no manual import needed. To cherry-pick a component manually, use one of the following snippets.
+
+\*\*CDN\*\*
+
+Import this component directly from the CDN:
+
+```js
+import 'https://ka-f.webawesome.com/webawesome@3.10.0/components/callout/callout.js';
+```
+
+\*\*npm\*\*
+
+After installing Web Awesome via npm, import this component:
+
+```js
+import '@awesome.me/webawesome/dist/components/callout/callout.js';
+```
+
+\*\*Self-Hosted\*\*
+
+If you're self-hosting Web Awesome, import this component from your server:
+
+```js
+import './webawesome/dist/components/callout/callout.js';
+```
+
+\*\*React\*\*
+
+To import this component for React 18 or below, use the following code:
+
+```js
+import WaCallout from '@awesome.me/webawesome/dist/react/callout/index.js';
+```
+
+## Slots
+
+Valid slot names for this component (use exactly these — any other `slot` value is
+silently ignored and the element falls back to the default slot):
+
+- `(default)` — The callout's main content.
+- `icon` — An icon to show in the callout. Works best with `<wa-icon>`.
+
+## Attributes & Properties
+
+| Property | Attribute | Description | Type | Default |
+| --- | --- | --- | --- | --- |
+| `variant` | `variant` | The callout's theme variant. Defaults to `brand` if not within another element with a variant. | `'brand' \| 'neutral' \| 'success' \| 'warning' \| 'danger'` | `'brand'` |
+| `appearance` | `appearance` | The callout's visual appearance. | `'accent' \| 'filled' \| 'outlined' \| 'plain' \| 'filled-outlined'` | — |
+| `size` | `size` | The callout's size. | `'xs' \| 's' \| 'm' \| 'l' \| 'xl' \| 'small' \| 'medium' \| 'large'` | `'m'` |
+
+## CSS Parts
+
+| Name | Description | CSS selector |
+| --- | --- | --- |
+| \`icon\` | The container that wraps the optional icon. | \`::part(icon)\` |
+| \`message\` | The container that wraps the callout's main content. | \`::part(message)\` |
+
 ## Examples
 
-Link to This Section
-
 ### Variants
-
-Link to This Section
 
 Set the `variant` attribute to change the callout's variant.
 
@@ -68,8 +120,6 @@ Set the `variant` attribute to change the callout's variant.
 
 ### Appearance
 
-Link to This Section
-
 Use the `appearance` attribute to change the callout's visual appearance (the default is `filled-outlined`).
 
 ```html
@@ -108,8 +158,6 @@ Use the `appearance` attribute to change the callout's visual appearance (the de
 ```
 
 ### Sizes
-
-Link to This Section
 
 Use the `size` attribute to change a callout's size.
 
@@ -150,8 +198,6 @@ Use the `size` attribute to change a callout's size.
 
 ### Without Icons
 
-Link to This Section
-
 Icons are optional. Simply omit the `icon` slot if you don't want them.
 
 ```html
@@ -160,32 +206,4 @@ Icons are optional. Simply omit the `icon` slot if you don't want them.
 
 ### Styling
 
-Link to This Section
-
 You can customize the callout's appearance mostly by setting regular CSS properties. `background`, `border`, `border-radius`, `color`, `padding`, `margin`, etc. work as expected.
-
-## Slots
-
-Valid slot names for this component (use exactly these — any other `slot` value
-is silently ignored and the element falls back to the default slot):
-
-- `(default)` — The callout's main content.
-- `icon` — An icon to show in the callout. Works best with `<wa-icon>`.
-
-## Attributes & Properties
-
-| Attribute | Property | Type | Default | Description |
-| --- | --- | --- | --- | --- |
-| `variant` |  | `'brand' \| 'neutral' \| 'success' \| 'warning' \| 'danger'` | `'brand'` | The callout's theme variant. Defaults to `brand` if not within another element with a variant. |
-| `appearance` |  | `'accent' \| 'filled' \| 'outlined' \| 'plain' \| 'filled-outlined'` |  | The callout's visual appearance. |
-| `size` |  | `'xs' \| 's' \| 'm' \| 'l' \| 'xl' \| 'small' \| 'medium' \| 'large'` | `'m'` | The callout's size. |
-| `dir` |  | `string` |  |  |
-| `lang` |  | `string` |  |  |
-| `did-ssr` | `didSSR` |  |  |  |
-
-## CSS Parts
-
-| Part | Description |
-| --- | --- |
-| `icon` | The container that wraps the optional icon. |
-| `message` | The container that wraps the callout's main content. |

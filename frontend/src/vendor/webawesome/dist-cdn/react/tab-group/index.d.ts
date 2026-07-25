@@ -33,7 +33,7 @@ export type { WaTabHideEvent, WaTabShowEvent } from '../../events/events.js';
  * @cssproperty --track-color - The color of the indicator's track (the line that separates tabs from panels).
  * @cssproperty --track-width - The width of the indicator's track (the line that separates tabs from panels).
  *
- * @ssr - In an SSR environment, there is no access to the children of a `<wa-tab-group>`, as such, it cannot set "active" on children and will not render any panels unless you manually set the "active" attribute on the appropriate `<wa-tab-panel>` + `<wa-tab>`.
+ * @ssr - During SSR, `<wa-tab-group>` can't access its children to determine which tab is active. To render the correct panel, manually set the `active` attribute on the matching `<wa-tab>` and `<wa-tab-panel>`.
  */
 declare const reactWrapper: import("@lit/react").ReactWebComponent<Component, {
     onWaTabShow: EventName<WaTabShowEvent>;

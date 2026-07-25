@@ -10,8 +10,6 @@ Mouse over or focus the preview swatches below to see each token in action.
 
 ## Duration
 
-Link to This Section
-
 Web Awesome uses different transition durations to make it easy to track a component's state while minimizing sluggish or distracting movement.
 
 Properties that change between frequent, incidental states (like hover) typically use faster durations than properties that change between intentional states (like opening a menu or checking a box).
@@ -23,8 +21,6 @@ Properties that change between frequent, incidental states (like hover) typicall
 | \`--wa-transition-slow\` | Slow duration for intentional, impactful state changes like opening a panel or checking a box |
 
 ## Easing
-
-Link to This Section
 
 Easing controls the standard `transition-timing-function` used for transitions throughout Web Awesome.
 

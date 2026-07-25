@@ -41,8 +41,8 @@ import type { default as WaMarkdown } from "./components/markdown/markdown.js";
 import type { default as WaMutationObserver } from "./components/mutation-observer/mutation-observer.js";
 import type { default as WaNumberInput } from "./components/number-input/number-input.js";
 import type { default as WaTag } from "./components/tag/tag.js";
-import type { default as WaOption } from "./components/option/option.js";
 import type { default as WaSelect } from "./components/select/select.js";
+import type { default as WaOption } from "./components/option/option.js";
 import type { default as WaPage } from "./components/page/page.js";
 import type { default as WaPopover } from "./components/popover/popover.js";
 import type { default as WaProgressBar } from "./components/progress-bar/progress-bar.js";
@@ -50,6 +50,7 @@ import type { default as WaProgressRing } from "./components/progress-ring/progr
 import type { default as WaQrCode } from "./components/qr-code/qr-code.js";
 import type { default as WaRadio } from "./components/radio/radio.js";
 import type { default as WaRadioGroup } from "./components/radio-group/radio-group.js";
+import type { default as WaRandomContent } from "./components/random-content/random-content.js";
 import type { default as WaRating } from "./components/rating/rating.js";
 import type { default as WaRelativeTime } from "./components/relative-time/relative-time.js";
 import type { default as WaResizeObserver } from "./components/resize-observer/resize-observer.js";
@@ -264,9 +265,13 @@ one. */
 the `classic` and `sharp` families. Some variants require a Font Awesome Pro subscription. Custom icon libraries
 may or may not use this property. */
   "variant"?: WaIcon['variant'];
-  /** Sets the width of the icon to match the cropped SVG viewBox. This operates like the Font `fa-width-auto` class. */
+  /** Sets the icon canvas — the box the icon is centered within. Unset renders as `fixed` (1.25em × 1em); `auto` hugs the
+icon's width; `square` is 1.25em × 1.25em; `roomy` is 1.5em × 1.5em. Mirrors Font Awesome's `fa-fixed-width`,
+`fa-width-auto`, `fa-canvas-square`, and `fa-canvas-roomy`. Scales with `font-size`. */
+  "canvas"?: WaIcon['canvas'];
+  /** @deprecated Use `canvas="auto"` instead. - Sets the width of the icon to match the cropped SVG viewBox. This operates like the Font `fa-width-auto` class. */
   "auto-width"?: WaIcon['autoWidth'];
-  /** Sets the width of the icon to match the cropped SVG viewBox. This operates like the Font `fa-width-auto` class. */
+  /** @deprecated Use `canvas="auto"` instead. - Sets the width of the icon to match the cropped SVG viewBox. This operates like the Font `fa-width-auto` class. */
   "autoWidth"?: WaIcon['autoWidth'];
   /** Swaps the opacity of duotone icons. */
   "swap-opacity"?: WaIcon['swapOpacity'];
@@ -333,8 +338,6 @@ export type WaAccordionItemProps = {
 export type WaCheckboxProps = {
   /**  */
   "title"?: WaCheckbox['title'];
-  /** The name of the checkbox, submitted as a name/value pair with form data. */
-  "name"?: WaCheckbox['name'];
   /** The value of the checkbox, submitted as a name/value pair with form data. */
   "value"?: WaCheckbox['value'];
   /** The checkbox's size. */
@@ -352,6 +355,8 @@ all/none" behavior when associated checkboxes have a mix of checked and unchecke
   "required"?: WaCheckbox['required'];
   /** The checkbox's hint. If you need to display HTML, use the `hint` slot instead. */
   "hint"?: WaCheckbox['hint'];
+  /** The name of the input, submitted as a name/value pair with form data. */
+  "name"?: WaCheckbox['name'];
   /**  */
   "custom-error"?: WaCheckbox['customError'];
   /**  */
@@ -1021,6 +1026,8 @@ greater than one. It can't be higher than `slides-per-page`. */
   "scrolling"?: WaCarousel['scrolling'];
   /**  */
   "dragging"?: WaCarousel['dragging'];
+  /**  */
+  "awaitingInitialPosition"?: WaCarousel['awaitingInitialPosition'];
   /**  */
   "initialReflectedProperties"?: WaCarousel['initialReflectedProperties'];
   /**  */
@@ -2331,43 +2338,6 @@ export type WaTagProps = {
 }
 
 
-export type WaOptionProps = {
-  /** The option's value. When selected, the containing form control will receive this value. The value must be unique
-from other options in the same group. Values may not contain spaces, as spaces are used as delimiters when listing
-multiple values. */
-  "value"?: WaOption['value'];
-  /** Draws the option in a disabled state, preventing selection. */
-  "disabled"?: WaOption['disabled'];
-  /** Selects an option initially. */
-  "selected"?: WaOption['defaultSelected'];
-  /** Selects an option initially. */
-  "defaultSelected"?: WaOption['defaultSelected'];
-  /** The option’s plain text label.
-Usually automatically generated, but can be useful to provide manually for cases involving complex content. */
-  "label"?: WaOption['label'];
-  /**  */
-  "dir"?: WaOption['dir'];
-  /**  */
-  "lang"?: WaOption['lang'];
-  /**  */
-  "did-ssr"?: WaOption['didSSR'];
-  /**  */
-  "didSSR"?: WaOption['didSSR'];
-  /**  */
-  "defaultSlot"?: WaOption['defaultSlot'];
-  /**  */
-  "current"?: WaOption['current'];
-  /**  */
-  "_label"?: WaOption['_label'];
-  /**  */
-  "initialReflectedProperties"?: WaOption['initialReflectedProperties'];
-  /**  */
-  "internals"?: WaOption['internals'];
-
-
-}
-
-
 export type WaSelectProps = {
   /** The name of the select, submitted as a name/value pair with form data. */
   "name"?: WaSelect['name'];
@@ -2497,6 +2467,43 @@ the same document or shadow root for this to work. */
 }
 
 
+export type WaOptionProps = {
+  /** The option's value. When selected, the containing form control will receive this value. The value must be unique
+from other options in the same group. Values may not contain spaces, as spaces are used as delimiters when listing
+multiple values. */
+  "value"?: WaOption['value'];
+  /** Draws the option in a disabled state, preventing selection. */
+  "disabled"?: WaOption['disabled'];
+  /** Selects an option initially. */
+  "selected"?: WaOption['defaultSelected'];
+  /** Selects an option initially. */
+  "defaultSelected"?: WaOption['defaultSelected'];
+  /** The option’s plain text label.
+Usually automatically generated, but can be useful to provide manually for cases involving complex content. */
+  "label"?: WaOption['label'];
+  /**  */
+  "dir"?: WaOption['dir'];
+  /**  */
+  "lang"?: WaOption['lang'];
+  /**  */
+  "did-ssr"?: WaOption['didSSR'];
+  /**  */
+  "didSSR"?: WaOption['didSSR'];
+  /**  */
+  "defaultSlot"?: WaOption['defaultSlot'];
+  /**  */
+  "current"?: WaOption['current'];
+  /**  */
+  "_label"?: WaOption['_label'];
+  /**  */
+  "initialReflectedProperties"?: WaOption['initialReflectedProperties'];
+  /**  */
+  "internals"?: WaOption['internals'];
+
+
+}
+
+
 export type WaPageProps = {
   /** The view is a reflection of the "mobileBreakpoint", when the page is larger than the `mobile-breakpoint` (768px by
 default), it is considered to be a "desktop" view. The view is merely a way to distinguish when to show/hide the
@@ -2553,8 +2560,6 @@ Generally this will be set for you and you don't need to do anything, unless you
   "navigationToggleSlot"?: WaPage['navigationToggleSlot'];
   /**  */
   "pageResizeObserver"?: WaPage['pageResizeObserver'];
-  /**  */
-  "updateAsideAndMenuHeights"?: WaPage['updateAsideAndMenuHeights'];
   /**  */
   "initialReflectedProperties"?: WaPage['initialReflectedProperties'];
   /**  */
@@ -2841,6 +2846,37 @@ the same document or shadow root for this to work. */
   "onchange"?: (e: CustomEvent<Event>) => void;
   /** Emitted when the form control has been checked for validity and its constraints aren't satisfied. */
   "onwa-invalid"?: (e: CustomEvent<never>) => void;
+}
+
+
+export type WaRandomContentProps = {
+  /** Number of children to show simultaneously. Clamped to [1, childCount]. */
+  "items"?: WaRandomContent['items'];
+  /** Selection strategy: `unique` (default), `random`, or `sequence`. */
+  "mode"?: WaRandomContent['mode'];
+  /** Rotate the content automatically. Set the cadence with `autoplay-interval`. */
+  "autoplay"?: WaRandomContent['autoplay'];
+  /** Autoplay cadence in milliseconds. */
+  "autoplay-interval"?: WaRandomContent['autoplayInterval'];
+  /** Autoplay cadence in milliseconds. */
+  "autoplayInterval"?: WaRandomContent['autoplayInterval'];
+  /** Entrance animation for newly shown children. */
+  "animation"?: WaRandomContent['animation'];
+  /**  */
+  "dir"?: WaRandomContent['dir'];
+  /**  */
+  "lang"?: WaRandomContent['lang'];
+  /**  */
+  "did-ssr"?: WaRandomContent['didSSR'];
+  /**  */
+  "didSSR"?: WaRandomContent['didSSR'];
+  /**  */
+  "initialReflectedProperties"?: WaRandomContent['initialReflectedProperties'];
+  /**  */
+  "internals"?: WaRandomContent['internals'];
+
+  /** Emitted whenever the displayed selection changes, including on first render, on `randomize()`, and on each autoplay tick. */
+  "onwa-content-change"?: (e: CustomEvent<{ items: Element[] }>) => void;
 }
 
 
@@ -3695,6 +3731,9 @@ export type WaZoomableFrameProps = {
  * - `variant`: The name of the icon's variant. For Font Awesome, valid options include `thin`, `light`, `regular`, and `solid` for
  * the `classic` and `sharp` families. Some variants require a Font Awesome Pro subscription. Custom icon libraries
  * may or may not use this property. 
+ * - `canvas`: Sets the icon canvas — the box the icon is centered within. Unset renders as `fixed` (1.25em × 1em); `auto` hugs the
+ * icon's width; `square` is 1.25em × 1.25em; `roomy` is 1.5em × 1.5em. Mirrors Font Awesome's `fa-fixed-width`,
+ * `fa-width-auto`, `fa-canvas-square`, and `fa-canvas-roomy`. Scales with `font-size`. 
  * - `auto-width`/`autoWidth`: Sets the width of the icon to match the cropped SVG viewBox. This operates like the Font `fa-width-auto` class. 
  * - `swap-opacity`/`swapOpacity`: Swaps the opacity of duotone icons. 
  * - `src`: An external URL of an SVG file. Be sure you trust the content you are including, as it will be executed as code and
@@ -3736,7 +3775,7 @@ export type WaZoomableFrameProps = {
  * - `--animation-timing`: Describes how the animation will progress over one cycle of its duration. (default: `undefined`)
  * - `--beat-fade-opacity`: Set lowest opacity value an icon with `beat-fade` animation will fade to and from. (default: `undefined`)
  * - `--beat-fade-scale`: Set max value that an icon with `beat-fade` animation will scale. (default: `undefined`)
- * - `--beat-scale`: Set max value that an icon with `beat` animation will scale. (default: `undefined`)
+ * - `--beat-scale`: Set the scale multiplier for an icon with `beat` animation. This multiplies the animation's 1.25× base pulse, so the default `1.25` peaks at ~1.56× and `2` roughly doubles the pulse. (default: `undefined`)
  * - `--bounce-height`: Set the max height an icon with `bounce` animation will jump to when bouncing. (default: `undefined`)
  * - `--bounce-jump-scale-x`: Set the icon’s horizontal distortion (“squish”) at the top of the jump. (default: `undefined`)
  * - `--bounce-jump-scale-y`: Set the icon’s vertical distortion (“squish”) at the top of the jump. (default: `undefined`)
@@ -3746,10 +3785,25 @@ export type WaZoomableFrameProps = {
  * - `--bounce-start-scale-x`: Set the icon’s horizontal distortion (“squish”) when starting to bounce. (default: `undefined`)
  * - `--bounce-start-scale-y`: Set the icon’s vertical distortion (“squish”) when starting to bounce. (default: `undefined`)
  * - `--fade-opacity`: Set lowest opacity value an icon with `fade` animation will fade to and from. (default: `undefined`)
- * - `--flip-angle`: Set rotation angle of flip for an icon with `flip` animation. A positive angle denotes a clockwise rotation, a negative angle a counter-clockwise one. (default: `undefined`)
- * - `--flip-x`: Set x-coordinate of the vector denoting the axis of rotation (between 0 and 1) for an icon with `flip` animation. (default: `undefined`)
- * - `--flip-y`: Set y-coordinate of the vector denoting the axis of rotation (between 0 and 1) for an icon with `flip` animation. (default: `undefined`)
- * - `--flip-z`: Set z-coordinate of the vector denoting the axis of rotation (between 0 and 1) for an icon with `flip` animation. (default: `undefined`)
+ * - `--flip-angle`: Set rotation angle of flip for an icon with `flip` or `flip-360` animation. A positive angle denotes a clockwise rotation, a negative angle a counter-clockwise one. (default: `undefined`)
+ * - `--flip-x`: Set x-coordinate of the vector denoting the axis of rotation (between 0 and 1) for an icon with `flip` or `flip-360` animation. (default: `undefined`)
+ * - `--flip-y`: Set y-coordinate of the vector denoting the axis of rotation (between 0 and 1) for an icon with `flip` or `flip-360` animation. (default: `undefined`)
+ * - `--flip-z`: Set z-coordinate of the vector denoting the axis of rotation (between 0 and 1) for an icon with `flip` or `flip-360` animation. (default: `undefined`)
+ * - `--flip-anticipation-scale`: Set the scale of the wind-up before an icon with `flip` or `flip-360` animation rotates. (default: `undefined`)
+ * - `--flip-overshoot`: Set how far past the final angle an icon with `flip` or `flip-360` animation rotates before settling. (default: `undefined`)
+ * - `--bounce-anticipation`: Set the downward squash distance before an icon with `bounce` animation jumps. (default: `undefined`)
+ * - `--buzz-distance`: Set the horizontal travel of an icon with `buzz` animation. (default: `undefined`)
+ * - `--wag-angle`: Set the peak rotation of an icon with `wag` animation. (default: `undefined`)
+ * - `--swing-angle`: Set the peak rotation of an icon with `swing` animation. (default: `undefined`)
+ * - `--jello-scale-x`: Set the horizontal stretch of an icon with `jello` animation. (default: `undefined`)
+ * - `--jello-scale-y`: Set the vertical stretch of an icon with `jello` animation. (default: `undefined`)
+ * - `--float-height`: Set the rise height of an icon with `float` animation. (default: `undefined`)
+ * - `--float-drift`: Set the horizontal drift of an icon with `float` animation. (default: `undefined`)
+ * - `--float-tilt`: Set the rotation of an icon with `float` animation. (default: `undefined`)
+ * - `--float-squash-x`: Set the horizontal squash of an icon with `float` animation at rest. (default: `undefined`)
+ * - `--float-squash-y`: Set the vertical squash of an icon with `float` animation at rest. (default: `undefined`)
+ * - `--float-stretch-x`: Set the horizontal stretch of an icon with `float` animation at its peak. (default: `undefined`)
+ * - `--float-stretch-y`: Set the vertical stretch of an icon with `float` animation at its peak. (default: `undefined`)
  * - `--primary-color`: Sets a duotone icon's primary color. (default: `currentColor`)
  * - `--primary-opacity`: Sets a duotone icon's primary opacity. (default: `1`)
  * - `--secondary-color`: Sets a duotone icon's secondary color. (default: `currentColor`)
@@ -3837,7 +3891,6 @@ export type WaZoomableFrameProps = {
  * Component attributes and properties that can be applied to the element or by using JavaScript.
  * 
  * - `title`: undefined 
- * - `name`: The name of the checkbox, submitted as a name/value pair with form data. 
  * - `value`: The value of the checkbox, submitted as a name/value pair with form data. 
  * - `size`: The checkbox's size. 
  * - `disabled`: Disables the checkbox. 
@@ -3846,6 +3899,7 @@ export type WaZoomableFrameProps = {
  * - `checked`/`defaultChecked`: The default value of the form control. Primarily used for resetting the form control. 
  * - `required`: Makes the checkbox a required field. 
  * - `hint`: The checkbox's hint. If you need to display HTML, use the `hint` slot instead. 
+ * - `name`: The name of the input, submitted as a name/value pair with form data. 
  * - `custom-error`/`customError`: undefined 
  * - `dir`: undefined 
  * - `lang`: undefined 
@@ -4724,6 +4778,7 @@ export type WaZoomableFrameProps = {
  * - `activeSlide`: undefined (property only)
  * - `scrolling`: undefined (property only)
  * - `dragging`: undefined (property only)
+ * - `awaitingInitialPosition`: undefined (property only)
  * - `initialReflectedProperties`: undefined (property only)
  * - `internals`: undefined (property only)
  * 
@@ -6098,7 +6153,6 @@ export type WaZoomableFrameProps = {
  * - `field-year`: Added to the year field block.
  * - `field-label`: The text label above each field's input.
  * - `field-input`: The native `<input>` inside a field.
- * - `error`: The inline error message region. This is an intentional difference from `<wa-date-input>` and `<wa-time-input>`, which rely on the browser's native validation popup. Because this control is composed of three separate fields, an inline `role="alert"` region gives a single, predictable place to surface the validation message rather than anchoring a native popup on one of the three fields.
  * 
  * #### CSS States
  * 
@@ -6364,65 +6418,6 @@ export type WaZoomableFrameProps = {
  * 
  * Component attributes and properties that can be applied to the element or by using JavaScript.
  * 
- * - `value`: The option's value. When selected, the containing form control will receive this value. The value must be unique
- * from other options in the same group. Values may not contain spaces, as spaces are used as delimiters when listing
- * multiple values. 
- * - `disabled`: Draws the option in a disabled state, preventing selection. 
- * - `selected`/`defaultSelected`: Selects an option initially. 
- * - `label`: The option’s plain text label.
- * Usually automatically generated, but can be useful to provide manually for cases involving complex content. 
- * - `dir`: undefined 
- * - `lang`: undefined 
- * - `did-ssr`/`didSSR`: undefined 
- * - `defaultSlot`: undefined (property only)
- * - `current`: undefined (property only)
- * - `_label`: undefined (property only)
- * - `defaultLabel`: The default label, generated from the element contents. Will be equal to `label` in most cases. (property only) (readonly)
- * - `initialReflectedProperties`: undefined (property only)
- * - `internals`: undefined (property only)
- * 
- * #### Slots
- * 
- * Areas where markup can be added to the component.
- * 
- * - `(default)`: The option's label.
- * - `start`: An element, such as `<wa-icon>`, placed before the label.
- * - `end`: An element, such as `<wa-icon>`, placed after the label.
- * 
- * #### Methods
- * 
- * Methods that can be called to access component functionality.
- * 
- * - `syncDefaultSelected() => void`: undefined
- * 
- * #### CSS Parts
- * 
- * Custom selectors for styling elements within the component.
- * 
- * - `checked-icon`: The checked icon, a `<wa-icon>` element.
- * - `label`: The option's label.
- * - `start`: The container that wraps the `start` slot.
- * - `end`: The container that wraps the `end` slot.
- * 
- * #### CSS States
- * 
- * These can be used to apply styling when a component is in a given state.
- * 
- * - `current`: The user has keyed into the option, but hasn't selected it yet (shows a highlight)
- * - `selected`: The option is selected and has aria-selected="true"
- * - `disabled`: Applied when the option is disabled
- * - `hover`: Like `:hover` but works while dragging in Safari
-  */
-    "wa-option": Partial<WaOptionProps & BaseProps<WaOption> & BaseEvents>;
-
-
-  /**
-     * 
- * 
- * #### Attributes & Properties
- * 
- * Component attributes and properties that can be applied to the element or by using JavaScript.
- * 
  * - `name`: The name of the select, submitted as a name/value pair with form data. 
  * - `value`: The select's value. This will be a string for single select or an array for multi-select. 
  * - `size`: The select's size. 
@@ -6581,6 +6576,71 @@ export type WaZoomableFrameProps = {
  * 
  * Component attributes and properties that can be applied to the element or by using JavaScript.
  * 
+ * - `value`: The option's value. When selected, the containing form control will receive this value. The value must be unique
+ * from other options in the same group. Values may not contain spaces, as spaces are used as delimiters when listing
+ * multiple values. 
+ * - `disabled`: Draws the option in a disabled state, preventing selection. 
+ * - `selected`/`defaultSelected`: Selects an option initially. 
+ * - `label`: The option’s plain text label.
+ * Usually automatically generated, but can be useful to provide manually for cases involving complex content. 
+ * - `dir`: undefined 
+ * - `lang`: undefined 
+ * - `did-ssr`/`didSSR`: undefined 
+ * - `defaultSlot`: undefined (property only)
+ * - `current`: undefined (property only)
+ * - `_label`: undefined (property only)
+ * - `defaultLabel`: The default label, generated from the element contents. Will be equal to `label` in most cases. (property only) (readonly)
+ * - `initialReflectedProperties`: undefined (property only)
+ * - `internals`: undefined (property only)
+ * 
+ * #### Slots
+ * 
+ * Areas where markup can be added to the component.
+ * 
+ * - `(default)`: The option's label.
+ * - `start`: An element, such as `<wa-icon>`, placed before the label.
+ * - `end`: An element, such as `<wa-icon>`, placed after the label.
+ * 
+ * #### Methods
+ * 
+ * Methods that can be called to access component functionality.
+ * 
+ * - `syncDefaultSelected() => void`: undefined
+ * 
+ * #### CSS Custom Properties
+ * 
+ * CSS variables available for styling the component.
+ * 
+ * - `--current-text-color`: The text color of the current (highlighted) option, paired with `--wa-form-control-activated-color`. (default: `undefined`)
+ * 
+ * #### CSS Parts
+ * 
+ * Custom selectors for styling elements within the component.
+ * 
+ * - `checked-icon`: The checked icon, a `<wa-icon>` element.
+ * - `label`: The option's label.
+ * - `start`: The container that wraps the `start` slot.
+ * - `end`: The container that wraps the `end` slot.
+ * 
+ * #### CSS States
+ * 
+ * These can be used to apply styling when a component is in a given state.
+ * 
+ * - `current`: The user has keyed into the option, but hasn't selected it yet (shows a highlight)
+ * - `selected`: The option is selected and has aria-selected="true"
+ * - `disabled`: Applied when the option is disabled
+ * - `hover`: Like `:hover` but works while dragging in Safari
+  */
+    "wa-option": Partial<WaOptionProps & BaseProps<WaOption> & BaseEvents>;
+
+
+  /**
+     * 
+ * 
+ * #### Attributes & Properties
+ * 
+ * Component attributes and properties that can be applied to the element or by using JavaScript.
+ * 
  * - `view`: The view is a reflection of the "mobileBreakpoint", when the page is larger than the `mobile-breakpoint` (768px by
  * default), it is considered to be a "desktop" view. The view is merely a way to distinguish when to show/hide the
  * navigation. You can use additional media queries to make other adjustments to content as necessary.
@@ -6605,7 +6665,6 @@ export type WaZoomableFrameProps = {
  * - `navigationDrawer`: undefined (property only)
  * - `navigationToggleSlot`: undefined (property only)
  * - `pageResizeObserver`: undefined (property only)
- * - `updateAsideAndMenuHeights`: undefined (property only)
  * - `initialReflectedProperties`: undefined (property only)
  * - `internals`: undefined (property only)
  * 
@@ -7071,6 +7130,56 @@ export type WaZoomableFrameProps = {
  * - `hint`: The hint's wrapper.
   */
     "wa-radio-group": Partial<WaRadioGroupProps & BaseProps<WaRadioGroup> & BaseEvents>;
+
+
+  /**
+     * 
+ * 
+ * #### Attributes & Properties
+ * 
+ * Component attributes and properties that can be applied to the element or by using JavaScript.
+ * 
+ * - `items`: Number of children to show simultaneously. Clamped to [1, childCount]. 
+ * - `mode`: Selection strategy: `unique` (default), `random`, or `sequence`. 
+ * - `autoplay`: Rotate the content automatically. Set the cadence with `autoplay-interval`. 
+ * - `autoplay-interval`/`autoplayInterval`: Autoplay cadence in milliseconds. 
+ * - `animation`: Entrance animation for newly shown children. 
+ * - `dir`: undefined 
+ * - `lang`: undefined 
+ * - `did-ssr`/`didSSR`: undefined 
+ * - `initialReflectedProperties`: undefined (property only)
+ * - `internals`: undefined (property only)
+ * 
+ * #### Events
+ * 
+ * Events that will be emitted by the component.
+ * 
+ * - `wa-content-change`: Emitted whenever the displayed selection changes, including on first render, on `randomize()`, and on each autoplay tick.
+ * 
+ * #### Slots
+ * 
+ * Areas where markup can be added to the component.
+ * 
+ * - `(default)`: The pool of children to choose from. Only direct element children are eligible; unselected children are hidden with the `hidden` attribute.
+ * 
+ * #### Methods
+ * 
+ * Methods that can be called to access component functionality.
+ * 
+ * - `handleAutoplayChange() => void`: undefined
+ * - `handleModeChange() => void`: undefined
+ * - `handleItemsChange() => void`: undefined
+ * - `randomize() => Element[]`: Selects a new set of children using the current mode. Returns the elements now shown.
+ * 
+ * #### CSS Custom Properties
+ * 
+ * CSS variables available for styling the component.
+ * 
+ * - `--animation-duration`: Duration of the entrance animation. Default is `300ms`. (default: `undefined`)
+ * - `--animation-easing`: Easing function for the entrance animation. Default is `ease`. (default: `undefined`)
+ * - `--animation-translate`: Translation distance for directional animations (`fade-up`, `fade-down`, `fade-left`, `fade-right`). Default is `0.5em`. (default: `undefined`)
+  */
+    "wa-random-content": Partial<WaRandomContentProps & BaseProps<WaRandomContent> & BaseEvents>;
 
 
   /**
@@ -8189,7 +8298,7 @@ export type CustomCssProperties = {
   "--beat-fade-opacity"?: string;
   /** Set max value that an icon with `beat-fade` animation will scale. */
   "--beat-fade-scale"?: string;
-  /** Set max value that an icon with `beat` animation will scale. */
+  /** Set the scale multiplier for an icon with `beat` animation. This multiplies the animation's 1.25× base pulse, so the default `1.25` peaks at ~1.56× and `2` roughly doubles the pulse. */
   "--beat-scale"?: string;
   /** Set the max height an icon with `bounce` animation will jump to when bouncing. */
   "--bounce-height"?: string;
@@ -8209,14 +8318,44 @@ export type CustomCssProperties = {
   "--bounce-start-scale-y"?: string;
   /** Set lowest opacity value an icon with `fade` animation will fade to and from. */
   "--fade-opacity"?: string;
-  /** Set rotation angle of flip for an icon with `flip` animation. A positive angle denotes a clockwise rotation, a negative angle a counter-clockwise one. */
+  /** Set rotation angle of flip for an icon with `flip` or `flip-360` animation. A positive angle denotes a clockwise rotation, a negative angle a counter-clockwise one. */
   "--flip-angle"?: string;
-  /** Set x-coordinate of the vector denoting the axis of rotation (between 0 and 1) for an icon with `flip` animation. */
+  /** Set x-coordinate of the vector denoting the axis of rotation (between 0 and 1) for an icon with `flip` or `flip-360` animation. */
   "--flip-x"?: string;
-  /** Set y-coordinate of the vector denoting the axis of rotation (between 0 and 1) for an icon with `flip` animation. */
+  /** Set y-coordinate of the vector denoting the axis of rotation (between 0 and 1) for an icon with `flip` or `flip-360` animation. */
   "--flip-y"?: string;
-  /** Set z-coordinate of the vector denoting the axis of rotation (between 0 and 1) for an icon with `flip` animation. */
+  /** Set z-coordinate of the vector denoting the axis of rotation (between 0 and 1) for an icon with `flip` or `flip-360` animation. */
   "--flip-z"?: string;
+  /** Set the scale of the wind-up before an icon with `flip` or `flip-360` animation rotates. */
+  "--flip-anticipation-scale"?: string;
+  /** Set how far past the final angle an icon with `flip` or `flip-360` animation rotates before settling. */
+  "--flip-overshoot"?: string;
+  /** Set the downward squash distance before an icon with `bounce` animation jumps. */
+  "--bounce-anticipation"?: string;
+  /** Set the horizontal travel of an icon with `buzz` animation. */
+  "--buzz-distance"?: string;
+  /** Set the peak rotation of an icon with `wag` animation. */
+  "--wag-angle"?: string;
+  /** Set the peak rotation of an icon with `swing` animation. */
+  "--swing-angle"?: string;
+  /** Set the horizontal stretch of an icon with `jello` animation. */
+  "--jello-scale-x"?: string;
+  /** Set the vertical stretch of an icon with `jello` animation. */
+  "--jello-scale-y"?: string;
+  /** Set the rise height of an icon with `float` animation. */
+  "--float-height"?: string;
+  /** Set the horizontal drift of an icon with `float` animation. */
+  "--float-drift"?: string;
+  /** Set the rotation of an icon with `float` animation. */
+  "--float-tilt"?: string;
+  /** Set the horizontal squash of an icon with `float` animation at rest. */
+  "--float-squash-x"?: string;
+  /** Set the vertical squash of an icon with `float` animation at rest. */
+  "--float-squash-y"?: string;
+  /** Set the horizontal stretch of an icon with `float` animation at its peak. */
+  "--float-stretch-x"?: string;
+  /** Set the vertical stretch of an icon with `float` animation at its peak. */
+  "--float-stretch-y"?: string;
   /** Sets a duotone icon's primary color. */
   "--primary-color"?: string;
   /** Sets a duotone icon's primary opacity. */
@@ -8295,6 +8434,8 @@ export type CustomCssProperties = {
   "--color"?: string;
   /** When using `multiple`, the max size of tags before their content is truncated. */
   "--tag-max-size"?: string;
+  /** The text color of the current (highlighted) option, paired with `--wa-form-control-activated-color`. */
+  "--current-text-color"?: string;
   /** The width of the page's "menu" section. */
   "--menu-width"?: string;
   /** The width of the page's "main" section. */
@@ -8313,6 +8454,10 @@ export type CustomCssProperties = {
   "--indicator-width"?: string;
   /** The duration of the indicator's transition when the value changes. */
   "--indicator-transition-duration"?: string;
+  /** Easing function for the entrance animation. Default is `ease`. */
+  "--animation-easing"?: string;
+  /** Translation distance for directional animations (`fade-up`, `fade-down`, `fade-left`, `fade-right`). Default is `0.5em`. */
+  "--animation-translate"?: string;
   /** The inactive color for symbols. */
   "--symbol-color"?: string;
   /** The active color for symbols. */

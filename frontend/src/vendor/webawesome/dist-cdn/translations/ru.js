@@ -1,6 +1,6 @@
 /*! Copyright 2026 Fonticons, Inc. - https://webawesome.com/license */
-import "../chunks/chunk.WQ2OSH23.js";
-import "../chunks/chunk.MFUK3XY6.js";
+import "../chunks/chunk.FA3XZ7H6.js";
+import "../chunks/chunk.V7SU5PYA.js";
 import {
   registerTranslation
 } from "../chunks/chunk.CZ2YL77F.js";
@@ -42,7 +42,7 @@ var translation = {
   goToSlide: (slide, count) => `\u041F\u0435\u0440\u0435\u0439\u0442\u0438 \u043A \u0441\u043B\u0430\u0439\u0434\u0443 ${slide} \u0438\u0437 ${count}`,
   hidePassword: "\u0421\u043A\u0440\u044B\u0442\u044C \u043F\u0430\u0440\u043E\u043B\u044C",
   hour: "\u0427\u0430\u0441",
-  incompleteDate: "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u043E\u043B\u043D\u0443\u044E \u0434\u0430\u0442\u0443.",
+  incompleteDate: "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043A\u043E\u0440\u0440\u0435\u043A\u0442\u043D\u0443\u044E \u0434\u0430\u0442\u0443.",
   increment: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0442\u044C",
   loading: "\u0417\u0430\u0433\u0440\u0443\u0437\u043A\u0430",
   minute: "\u041C\u0438\u043D\u0443\u0442\u0430",

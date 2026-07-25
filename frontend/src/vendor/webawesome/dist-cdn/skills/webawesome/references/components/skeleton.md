@@ -1,8 +1,5 @@
 # Skeleton
 
-**Full documentation:** https://webawesome.com/docs/components/skeleton
-
-
 `<wa-skeleton>`
 
 Stable [Feedback](https://webawesome.com/docs/components/?category=feedback) [Since 2.0](https://webawesome.com/docs/resources/changelog#wa_200)
@@ -59,13 +56,64 @@ Skeletons try not to be opinionated, as there are endless possibilities for desi
 </style>
 ```
 
+## Importing
+
+If you're using the autoloader or a hosted project, components load on demand — no manual import needed. To cherry-pick a component manually, use one of the following snippets.
+
+\*\*CDN\*\*
+
+Import this component directly from the CDN:
+
+```js
+import 'https://ka-f.webawesome.com/webawesome@3.10.0/components/skeleton/skeleton.js';
+```
+
+\*\*npm\*\*
+
+After installing Web Awesome via npm, import this component:
+
+```js
+import '@awesome.me/webawesome/dist/components/skeleton/skeleton.js';
+```
+
+\*\*Self-Hosted\*\*
+
+If you're self-hosting Web Awesome, import this component from your server:
+
+```js
+import './webawesome/dist/components/skeleton/skeleton.js';
+```
+
+\*\*React\*\*
+
+To import this component for React 18 or below, use the following code:
+
+```js
+import WaSkeleton from '@awesome.me/webawesome/dist/react/skeleton/index.js';
+```
+
+## Attributes & Properties
+
+| Property | Attribute | Description | Type | Default |
+| --- | --- | --- | --- | --- |
+| `effect` | `effect` | Determines which effect the skeleton will use. | `'pulse' \| 'sheen' \| 'none'` | `'none'` |
+
+## CSS Custom Properties
+
+| Name | Description |
+| --- | --- |
+| \`--color\` | The color of the skeleton. |
+| \`--sheen-color\` | The sheen color when the skeleton is in its loading state. |
+
+## CSS Parts
+
+| Name | Description | CSS selector |
+| --- | --- | --- |
+| \`indicator\` | The skeleton's indicator which is responsible for its color and animation. | \`::part(indicator)\` |
+
 ## Examples
 
-Link to This Section
-
 ### Effects
-
-Link to This Section
 
 There are two built-in effects, `sheen` and `pulse`. Effects are intentionally subtle, as they can be distracting when used extensively. The default is `none`, which displays a static, non-animated skeleton.
 
@@ -93,8 +141,6 @@ There are two built-in effects, `sheen` and `pulse`. Effects are intentionally s
 ```
 
 ### Paragraphs
-
-Link to This Section
 
 Use multiple skeletons and some clever styles to simulate paragraphs.
 
@@ -128,8 +174,6 @@ Use multiple skeletons and some clever styles to simulate paragraphs.
 
 ### Avatars
 
-Link to This Section
-
 Set a matching width and height to make a circle, square, or rounded avatar skeleton.
 
 ```html
@@ -158,8 +202,6 @@ Set a matching width and height to make a circle, square, or rounded avatar skel
 ```
 
 ### Custom Shapes
-
-Link to This Section
 
 Set a `border-radius` on the `indicator` part to make circles, squares, and rectangles. For more complex shapes, you can apply `clip-path` to the `indicator` part. [Try Clippy](https://bennettfeely.com/clippy/) if you need help generating custom shapes.
 
@@ -223,32 +265,8 @@ Set a `border-radius` on the `indicator` part to make circles, squares, and rect
 
 ### Custom Colors
 
-Link to This Section
-
 Set the `--color` and `--sheen-color` custom properties to adjust the skeleton's color.
 
 ```html
 <wa-skeleton effect="sheen" style="--color: tomato; --sheen-color: #ffb094;"></wa-skeleton>
 ```
-
-## Attributes & Properties
-
-| Attribute | Property | Type | Default | Description |
-| --- | --- | --- | --- | --- |
-| `effect` |  | `'pulse' \| 'sheen' \| 'none'` | `'none'` | Determines which effect the skeleton will use. |
-| `dir` |  | `string` |  |  |
-| `lang` |  | `string` |  |  |
-| `did-ssr` | `didSSR` |  |  |  |
-
-## CSS Parts
-
-| Part | Description |
-| --- | --- |
-| `indicator` | The skeleton's indicator which is responsible for its color and animation. |
-
-## CSS Custom Properties
-
-| Property | Default | Description |
-| --- | --- | --- |
-| `--color` |  | The color of the skeleton. |
-| `--sheen-color` |  | The sheen color when the skeleton is in its loading state. |

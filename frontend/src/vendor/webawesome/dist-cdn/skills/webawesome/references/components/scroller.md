@@ -1,8 +1,5 @@
 # Scroller
 
-**Full documentation:** https://webawesome.com/docs/components/scroller
-
-
 `<wa-scroller>`
 
 Stable [Layout](https://webawesome.com/docs/components/?category=layout) [Since 3.0](https://webawesome.com/docs/resources/changelog#wa_300)
@@ -77,13 +74,73 @@ Scrollers wrap overflowing content in an accessible container with visual cues t
 </style>
 ```
 
+## Importing
+
+If you're using the autoloader or a hosted project, components load on demand — no manual import needed. To cherry-pick a component manually, use one of the following snippets.
+
+\*\*CDN\*\*
+
+Import this component directly from the CDN:
+
+```js
+import 'https://ka-f.webawesome.com/webawesome@3.10.0/components/scroller/scroller.js';
+```
+
+\*\*npm\*\*
+
+After installing Web Awesome via npm, import this component:
+
+```js
+import '@awesome.me/webawesome/dist/components/scroller/scroller.js';
+```
+
+\*\*Self-Hosted\*\*
+
+If you're self-hosting Web Awesome, import this component from your server:
+
+```js
+import './webawesome/dist/components/scroller/scroller.js';
+```
+
+\*\*React\*\*
+
+To import this component for React 18 or below, use the following code:
+
+```js
+import WaScroller from '@awesome.me/webawesome/dist/react/scroller/index.js';
+```
+
+## Slots
+
+Valid slot names for this component (use exactly these — any other `slot` value is
+silently ignored and the element falls back to the default slot):
+
+- `(default)` — The content to show inside the scroller.
+
+## Attributes & Properties
+
+| Property | Attribute | Description | Type | Default |
+| --- | --- | --- | --- | --- |
+| `orientation` | `orientation` | The scroller's orientation. | `'horizontal' \| 'vertical'` | `'horizontal'` |
+| `withoutScrollbar` | `without-scrollbar` | Removes the visible scrollbar. | `boolean` | `false` |
+| `withoutShadow` | `without-shadow` | Removes the shadows. | `boolean` | `false` |
+
+## CSS Custom Properties
+
+| Name | Description |
+| --- | --- |
+| \`--shadow-color\` | \`var(--wa-color-surface-default)\` The base color of the shadow. Default |
+| \`--shadow-size\` | \`2rem\` The size of the shadow. Default |
+
+## CSS Parts
+
+| Name | Description | CSS selector |
+| --- | --- | --- |
+| \`content\` | The container that wraps the slotted content. | \`::part(content)\` |
+
 ## Examples
 
-Link to This Section
-
 ### Adding Content
-
-Link to This Section
 
 The scroller component automatically provides a scrollable container for any content that exceeds the available space. Simply add your content as children of the `<wa-scroller>` element, and it will handle the rest.
 
@@ -130,8 +187,6 @@ The scroller component automatically provides a scrollable container for any con
 
 ### Orientation
 
-Link to This Section
-
 Set the `orientation` attribute to `vertical` and provide a height to create a vertical scroller.
 
 ```html
@@ -162,8 +217,6 @@ Set the `orientation` attribute to `vertical` and provide a height to create a v
 ```
 
 ### Without a Shadow
-
-Link to This Section
 
 Use the `without-shadow` attribute to remove the fading shadow effect at the edges of the scroller, which typically indicates more content is available.
 
@@ -199,8 +252,6 @@ Use the `without-shadow` attribute to remove the fading shadow effect at the edg
 
 ### Without a Scrollbar
 
-Link to This Section
-
 Use the `without-scrollbar` attribute to hide the scrollbar while maintaining scroll functionality. This creates a cleaner visual appearance but may reduce usability on content that needs a clear scrolling indicator.
 
 ```html
@@ -233,34 +284,3 @@ Use the `without-scrollbar` attribute to hide the scrollbar while maintaining sc
 ```
 
 Hiding scrollbars can negatively impact accessibility. Users who rely on visible scrollbars to navigate content may have difficulty recognizing that content is scrollable or controlling their scrolling position. Consider the needs of all users when implementing this option.
-
-## Slots
-
-Valid slot names for this component (use exactly these — any other `slot` value
-is silently ignored and the element falls back to the default slot):
-
-- `(default)` — The content to show inside the scroller.
-
-## Attributes & Properties
-
-| Attribute | Property | Type | Default | Description |
-| --- | --- | --- | --- | --- |
-| `orientation` |  | `'horizontal' \| 'vertical'` | `'horizontal'` | The scroller's orientation. |
-| `without-scrollbar` | `withoutScrollbar` | `boolean` | `false` | Removes the visible scrollbar. |
-| `without-shadow` | `withoutShadow` | `boolean` | `false` | Removes the shadows. |
-| `dir` |  | `string` |  |  |
-| `lang` |  | `string` |  |  |
-| `did-ssr` | `didSSR` |  |  |  |
-
-## CSS Parts
-
-| Part | Description |
-| --- | --- |
-| `content` | The container that wraps the slotted content. |
-
-## CSS Custom Properties
-
-| Property | Default | Description |
-| --- | --- | --- |
-| `--shadow-color` | `var(--wa-color-surface-default)` | The base color of the shadow. |
-| `--shadow-size` | `2rem` | The size of the shadow. |

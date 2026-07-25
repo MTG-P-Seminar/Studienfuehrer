@@ -6,13 +6,9 @@ You can customize the look and feel of Web Awesome at a high level with themes. 
 
 ## Themes
 
-Link to This Section
-
 Web Awesome uses [themes](https://webawesome.com/docs/themes) to apply a cohesive look and feel across the entire library. Themes are built with a collection of predefined CSS custom properties, which we call [design tokens](https://webawesome.com/docs/tokens), and there are many pre-built themes to choose from.
 
 ### Use a Pre-Built Theme
-
-Link to This Section
 
 [Sign up](https://webawesome.com/signup) or [log in](https://webawesome.com/login) to create a project, then follow the steps below.
 
@@ -36,15 +32,11 @@ Link to This Section
 
 ### Theme Builder
 
-Link to This Section
-
 The Theme Builder is a visual editor for **Pro workspace projects** that lets you customize your project's [theme](https://webawesome.com/docs/themes), [color palette](https://webawesome.com/docs/color-palettes), [variant colors](https://webawesome.com/docs/tokens/color#variant-colors), fonts, roundness, spacing, and icons — with a live preview as you go. Saves apply instantly anywhere you're using your project.
 
 You can launch the Theme Builder from your project's Settings by pressing Edit Your Theme.
 
-### Light and Dark Mode
-
-Link to This Section
+### Light & Dark Mode
 
 Every theme is designed to adapt to light and dark mode. Light mode styles are applied by default, but you can apply a specific color scheme to an entire page or just a section with `class="wa-light"` or `class="wa-dark"`.
 
@@ -92,8 +84,6 @@ Every theme is designed to adapt to light and dark mode. Light mode styles are a
 
 #### Inverting the Color Scheme
 
-Link to This Section
-
 You can force a section to behave like `.wa-dark` in light mode and like `.wa-light` in dark mode by using `class="wa-invert"`.
 
 ```html
@@ -119,8 +109,6 @@ You can force a section to behave like `.wa-dark` in light mode and like `.wa-li
 ```
 
 #### Detecting Color Scheme Preference
-
-Link to This Section
 
 While both light and dark mode styles are built-in to all themes, Web Awesome doesn't automatically detect the user's color scheme preference. We recommend doing this at the application level.
 
@@ -167,8 +155,6 @@ document.getElementById('color-scheme-button').addEventListener('click', () => {
 ```
 
 ### Customizing with CSS
-
-Link to This Section
 
 For even more customizations, you can off-road and override any theme just with CSS — no preprocessor required. All tokens use the `--wa-` prefix to prevent collisions with other libraries. Write a stylesheet that overrides Web Awesome's [design tokens](https://webawesome.com/docs/tokens) and you're off to the races.
 
@@ -218,16 +204,14 @@ For a complete list of all custom properties used for theming, refer to `src/sty
 
 ### Using Multiple Themes
 
-Link to This Section
-
 You can use multiple themes on a single page as long as the styles for each theme are scoped to a specific class. All pre-built themes are scoped to their own classes. The Default theme is additionally scoped to `:where(:root)` so that the styles are applied automatically.
 
 Simply load the theme stylesheets, then add your preferred classes to each element.
 
 ```html
 <!-- Load each theme's stylesheet -->
-<link rel="stylesheet" href="https://ka-f.webawesome.com/webawesome@3.9.0/styles/themes/awesome.css" />
-<link rel="stylesheet" href="https://ka-f.webawesome.com/webawesome@3.9.0/styles/themes/shoelace.css" />
+<link rel="stylesheet" href="https://ka-f.webawesome.com/webawesome@3.10.0/styles/themes/awesome.css" />
+<link rel="stylesheet" href="https://ka-f.webawesome.com/webawesome@3.10.0/styles/themes/shoelace.css" />
 
 <wa-callout class="wa-theme-awesome wa-brand-yellow" style="margin-block-start: 0;">
   <wa-icon slot="icon" name="face-awesome"></wa-icon>
@@ -265,13 +249,9 @@ You can also use multiple variant colors on the same page. **On each element whe
 
 ## Customizing Components
 
-Link to This Section
-
 While themes offer a high-level way to customize the library, individual components offer different hooks as a low-level way to customize them one at a time. Web Awesome components use a [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM) to encapsulate their styles and behaviors. As a result, you can't simply target their internals with the usual CSS selectors. Instead, components expose a set of CSS parts, custom properties, and custom states that can be targeted to customize their appearance.
 
 ### CSS Parts
-
-Link to This Section
 
 CSS parts offer the most flexibility to customize individual components. The "parts" exposed by each component can be targeted with the [CSS part selector](https://developer.mozilla.org/en-US/docs/Web/CSS/::part), or `::part()`.
 
@@ -319,8 +299,6 @@ Most (but not all) components expose parts. You can find them in each component'
 
 ### Custom Properties
 
-Link to This Section
-
 Components expose custom properties that are scoped to the component, not global, so they do not have the same `--wa-` prefix as a theme's custom properties. These custom properties reflect common qualities of a component, such as `--background-color`, `--border-style`, `--size`, etc.
 
 You can set custom properties on a component in your stylesheet.
@@ -349,8 +327,6 @@ The custom properties exposed by each component can be found in the component's 
 
 ### Custom States
 
-Link to This Section
-
 Components can expose custom states that allow you to style them based on their current condition using the `:state()` selector. Custom states provide a way to target specific component states that aren't covered by standard pseudo-classes like `:hover` or `:focus`. Here's an example that styles a checkbox that's checked.
 
 ```css
@@ -362,8 +338,6 @@ wa-checkbox:state(checked) {
 Custom states can be combined with CSS parts and custom properties to create sophisticated customizations. The custom states exposed by each component can be found in the component's API documentation under the "Custom States" section.
 
 ### Native Elements
-
-Link to This Section
 
 If you're using [native styles](https://webawesome.com/docs/utilities/native), any custom styles added for a component should also target the corresponding native element. In general, the same styles you declare for components will work just the same to style their native counterparts.
 

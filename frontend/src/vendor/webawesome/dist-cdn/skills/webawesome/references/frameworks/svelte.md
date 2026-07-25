@@ -8,8 +8,6 @@ Svelte [plays nice](https://custom-elements-everywhere.com/#svelte) with custom 
 
 ## Installation
 
-Link to This Section
-
 To add Web Awesome to your Svelte app, install the package from npm.
 
 ```bash
@@ -17,8 +15,6 @@ npm install @awesome.me/webawesome
 ```
 
 ## Usage
-
-Link to This Section
 
 Next, import the Web Awesome stylesheet, import the components you need, and then start using Web Awesome!
 
@@ -42,9 +38,7 @@ Next, import the Web Awesome stylesheet, import the components you need, and the
 </wa-callout>
 ```
 
-### Two-way Binding
-
-Link to This Section
+### Two-Way Binding
 
 One caveat is there's currently Svelte only supports `bind:value` directive in `<input>`, `<textarea>` and `<select>`, but you can still achieve two-way binding manually.
 
@@ -67,8 +61,6 @@ One caveat is there's currently Svelte only supports `bind:value` directive in `
 ```
 
 ### Slots
-
-Link to This Section
 
 Slots in Web Awesome/web components are functionally the same as basic slots in Svelte. Slots can be assigned to elements using the `slot` attribute followed by the name of the slot it is being assigned to.
 

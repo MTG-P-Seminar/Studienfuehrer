@@ -1,8 +1,5 @@
 # Include
 
-**Full documentation:** https://webawesome.com/docs/components/include
-
-
 `<wa-include>`
 
 Stable [Helpers](https://webawesome.com/docs/components/?category=helpers) [Since 2.0](https://webawesome.com/docs/resources/changelog#wa_200)
@@ -17,13 +14,66 @@ The included content will be inserted into the `<wa-include>` element's default 
 <wa-include src="https://shoelace.style/assets/examples/include.html"></wa-include>
 ```
 
+## Importing
+
+If you're using the autoloader or a hosted project, components load on demand — no manual import needed. To cherry-pick a component manually, use one of the following snippets.
+
+\*\*CDN\*\*
+
+Import this component directly from the CDN:
+
+```js
+import 'https://ka-f.webawesome.com/webawesome@3.10.0/components/include/include.js';
+```
+
+\*\*npm\*\*
+
+After installing Web Awesome via npm, import this component:
+
+```js
+import '@awesome.me/webawesome/dist/components/include/include.js';
+```
+
+\*\*Self-Hosted\*\*
+
+If you're self-hosting Web Awesome, import this component from your server:
+
+```js
+import './webawesome/dist/components/include/include.js';
+```
+
+\*\*React\*\*
+
+To import this component for React 18 or below, use the following code:
+
+```js
+import WaInclude from '@awesome.me/webawesome/dist/react/include/index.js';
+```
+
+## Attributes & Properties
+
+| Property | Attribute | Description | Type | Default |
+| --- | --- | --- | --- | --- |
+| `src` | `src` | The location of the HTML file to include. Be sure you trust the content you are including as it will be executed as code and can result in XSS attacks. | `string` | — |
+| `mode` | `mode` | The fetch mode to use. | `'cors' \| 'no-cors' \| 'same-origin'` | `'cors'` |
+| `allowScripts` | `allow-scripts` | Allows included scripts to be executed. Be sure you trust the content you are including as it will be executed as code and can result in XSS attacks. | `boolean` | `false` |
+
+## Events
+
+| Name | Description |
+| --- | --- |
+| `wa-load` | Emitted when the included file is loaded. |
+| `wa-include-error` | Emitted when the included file fails to load due to an error. |
+
+## SSR
+
+Learn more about [Server-Side Rendering (SSR)](https://webawesome.com/docs/ssr).
+
+`<wa-include>` fetches its content asynchronously (like [`<wa-icon>`](https://webawesome.com/docs/components/icon)), so the rendered output isn't available during SSR.
+
 ## Examples
 
-Link to This Section
-
 ### Listening for Events
-
-Link to This Section
 
 When an include file loads successfully, the `wa-load` event will be emitted. You can listen for this event to add custom loading logic to your includes.
 
@@ -48,21 +98,3 @@ If the request fails, the `wa-include-error` event will be emitted. In this case
   });
 </script>
 ```
-
-## Attributes & Properties
-
-| Attribute | Property | Type | Default | Description |
-| --- | --- | --- | --- | --- |
-| `src` |  | `string` |  | The location of the HTML file to include. Be sure you trust the content you are including as it will be executed as code and can result in XSS attacks. |
-| `mode` |  | `'cors' \| 'no-cors' \| 'same-origin'` | `'cors'` | The fetch mode to use. |
-| `allow-scripts` | `allowScripts` | `boolean` | `false` | Allows included scripts to be executed. Be sure you trust the content you are including as it will be executed as code and can result in XSS attacks. |
-| `dir` |  | `string` |  |  |
-| `lang` |  | `string` |  |  |
-| `did-ssr` | `didSSR` |  |  |  |
-
-## Events
-
-| Event | Description |
-| --- | --- |
-| `wa-load` | Emitted when the included file is loaded. |
-| `wa-include-error` | Emitted when the included file fails to load due to an error. |

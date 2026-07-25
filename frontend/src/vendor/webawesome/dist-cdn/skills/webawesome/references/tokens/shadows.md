@@ -16,8 +16,6 @@ Larger shadows have greater offset and blur values to suggest greater distance f
 
 ## Horizontal Offset (X)
 
-Link to This Section
-
 Offset-x tokens control a shadow's horizontal position relative to the element. Use `--wa-shadow-offset-x-scale` to change all offset-x tokens at once.
 
 | Custom Property | Description |
@@ -28,8 +26,6 @@ Offset-x tokens control a shadow's horizontal position relative to the element. 
 | \`--wa-shadow-offset-x-l\` | Large horizontal shadow offset |
 
 ## Vertical Offset (Y)
-
-Link to This Section
 
 Offset-y tokens control a shadow's vertical position relative to the element. Use `--wa-shadow-offset-y-scale` to change all offset-y tokens at once.
 
@@ -42,8 +38,6 @@ Offset-y tokens control a shadow's vertical position relative to the element. Us
 
 ## Blur
 
-Link to This Section
-
 Blur tokens control how soft or sharp the shadow edge is. Use `--wa-shadow-blur-scale` to change all blur tokens at once.
 
 | Custom Property | Description |
@@ -54,8 +48,6 @@ Blur tokens control how soft or sharp the shadow edge is. Use `--wa-shadow-blur-
 | \`--wa-shadow-blur-l\` | Large shadow blur radius |
 
 ## Spread
-
-Link to This Section
 
 Spread tokens expand or contract the shadow shape. A negative spread (the default) contracts the shadow inward for a more natural look. Use `--wa-shadow-spread-scale` to change all spread tokens at once.
 

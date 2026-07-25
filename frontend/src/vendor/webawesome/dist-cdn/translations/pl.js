@@ -1,6 +1,6 @@
 /*! Copyright 2026 Fonticons, Inc. - https://webawesome.com/license */
-import "../chunks/chunk.WQ2OSH23.js";
-import "../chunks/chunk.MFUK3XY6.js";
+import "../chunks/chunk.FA3XZ7H6.js";
+import "../chunks/chunk.V7SU5PYA.js";
 import {
   registerTranslation
 } from "../chunks/chunk.CZ2YL77F.js";
@@ -42,7 +42,7 @@ var translation = {
   goToSlide: (slide, count) => `Przejd\u017A do slajdu ${slide} z ${count}`,
   hidePassword: "Ukryj has\u0142o",
   hour: "Godzina",
-  incompleteDate: "Wprowad\u017A pe\u0142n\u0105 dat\u0119.",
+  incompleteDate: "Wprowad\u017A prawid\u0142ow\u0105 dat\u0119.",
   increment: "Zwi\u0119ksz",
   loading: "\u0141adowanie",
   minute: "Minuta",

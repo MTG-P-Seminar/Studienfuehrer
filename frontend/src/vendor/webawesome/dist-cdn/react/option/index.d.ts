@@ -21,6 +21,8 @@ import Component from '../../components/option/option.js';
  * @cssstate selected - The option is selected and has aria-selected="true"
  * @cssstate disabled - Applied when the option is disabled
  * @cssstate hover - Like `:hover` but works while dragging in Safari
+ *
+ * @cssproperty --current-text-color - The text color of the current (highlighted) option, paired with `--wa-form-control-activated-color`.
  */
 declare const reactWrapper: import("@lit/react").ReactWebComponent<Component, {}>;
 export default reactWrapper;

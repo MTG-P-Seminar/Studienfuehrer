@@ -1,6 +1,6 @@
 /*! Copyright 2026 Fonticons, Inc. - https://webawesome.com/license */
-import "../chunks/chunk.WQ2OSH23.js";
-import "../chunks/chunk.MFUK3XY6.js";
+import "../chunks/chunk.FA3XZ7H6.js";
+import "../chunks/chunk.V7SU5PYA.js";
 import {
   registerTranslation
 } from "../chunks/chunk.CZ2YL77F.js";
@@ -42,7 +42,7 @@ var translation = {
   goToSlide: (slide, count) => `Aller \xE0 la diapositive ${slide} de ${count}`,
   hidePassword: "Masquer le mot de passe",
   hour: "Heure",
-  incompleteDate: "Saisissez une date compl\xE8te.",
+  incompleteDate: "Saisissez une date valide.",
   increment: "Augmenter",
   loading: "Chargement",
   minute: "Minute",

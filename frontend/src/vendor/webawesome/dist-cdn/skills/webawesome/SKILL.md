@@ -4,7 +4,7 @@ description: Web Awesome is a UI component library built with web components. Us
 license: MIT / Commercial (for Web Awesome Pro)
 metadata:
   author: Web Awesome
-  version: "3.9.0"
+  version: "3.10.0"
   homepage: https://webawesome.com
   repository: https://github.com/shoelace-style/webawesome
 compatibility: Works in modern browsers. Requires no build tools when using CDN. Works with bundlers like Webpack and Vite when installed via npm.
@@ -111,8 +111,8 @@ indeterminate state for partial selections in groups. ([docs](https://webawesome
 HSL, and HSV formats with optional alpha channel and swatch presets. ([docs](https://webawesome.com/docs/components/color-picker))
 - [`<wa-input>`](references/components/input.md) - Inputs collect single-line data from the user, such as text, numbers, email addresses, and passwords. They
 support labels, hints, validation, and prefix or suffix slots. ([docs](https://webawesome.com/docs/components/input))
-- [`<wa-known-date>`](references/components/known-date.md) - Known dates let users enter dates they already know — birthdays, expirations, document
-dates — through three separate day, month, and year fields shown in the locale's natural order. ([docs](https://webawesome.com/docs/components/known-date))
+- [`<wa-known-date>`](references/components/known-date.md) - Known dates let users enter dates they already know - birthdays, expirations, document
+dates - through three separate day, month, and year fields shown in the locale's natural order. ([docs](https://webawesome.com/docs/components/known-date))
 - [`<wa-number-input>`](references/components/number-input.md) - Number inputs let users enter and edit numeric values, with optional stepper buttons for incrementing and
 decrementing. Use them for quantities, measurements, and other numeric form fields. ([docs](https://webawesome.com/docs/components/number-input))
 - [`<wa-option>`](references/components/option.md) - Options represent the individual choices inside a select or similar form control. Each option holds a value
@@ -152,6 +152,7 @@ thin, declarative interface to the browser's MutationObserver API. ([docs](https
 them for rich tooltips, menus, or any content that appears on demand without navigating away. ([docs](https://webawesome.com/docs/components/popover))
 - [`<wa-popup>`](references/components/popup.md) - Popups declaratively anchor one element to another and keep them positioned together as the page scrolls or
 resizes. Primarily a low-level building block for popovers, dropdowns, and tooltips. ([docs](https://webawesome.com/docs/components/popup))
+- [`<wa-random-content>`](references/components/random-content.md) - Selects one or more child elements at random and displays them, hiding the rest. ([docs](https://webawesome.com/docs/components/random-content))
 - [`<wa-relative-time>`](references/components/relative-time.md) - Relative times display a date as a localized phrase relative to now, such as "3 hours ago" or "in 2 days".
 The phrase updates automatically as time passes and respects the user's locale. ([docs](https://webawesome.com/docs/components/relative-time))
 - [`<wa-resize-observer>`](references/components/resize-observer.md) - Resize observers watch their slotted elements for size changes and emit an event when they occur. Provides a

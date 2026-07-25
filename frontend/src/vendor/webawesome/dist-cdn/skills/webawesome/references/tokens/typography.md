@@ -8,8 +8,6 @@ Typography tokens give your theme consistent, scalable text styles across every 
 
 ## Font Family
 
-Link to This Section
-
 Font family tokens are assigned to specific roles — body text, headings, code, and long-form prose. By default, they use system fonts for maximum performance.
 
 | Custom Property | Description |
@@ -20,8 +18,6 @@ Font family tokens are assigned to specific roles — body text, headings, code,
 | \`--wa-font-family-longform\` | Font for long-form prose and reading-optimized content |
 
 ## Font Size
-
-Link to This Section
 
 Font sizes use a ratio of 1.125 to scale proportionally. The medium size (`m`) is the base; sizes below are 1.125× smaller and sizes above are _twice_ 1.125× larger to maximize visual contrast between larger sizes. All values use `rem` units and round to the nearest whole pixel.
 
@@ -46,8 +42,6 @@ Use `--wa-font-size-scale` to proportionally increase or decrease all sizes at o
 
 ## Font Weight
 
-Link to This Section
-
 Font weight tokens come in two flavors: named weights that cover the full range, and role-based weights for specific text types. Role-based weights reference named weights by default.
 
 | Custom Property | Description |
@@ -64,8 +58,6 @@ Font weight tokens come in two flavors: named weights that cover the full range,
 
 ## Line Height
 
-Link to This Section
-
 Line heights are unitless to scale proportionately with text size. For readability, paragraph text should be at least `1.5`.
 
 | Custom Property | Description |
@@ -75,8 +67,6 @@ Line heights are unitless to scale proportionately with text size. For readabili
 | \`--wa-line-height-expanded\` | Open line height for reading-optimized or airy content |
 
 ## Link Decoration
-
-Link to This Section
 
 Together with [`--wa-color-text-link`](?active_tab=color), these tokens add text decoration to `<a>` elements to signal their role as hyperlinks.
 

@@ -4,8 +4,8 @@ import { type DateParts } from './internal/parts.js';
 export type WaKnownDateSize = 'xs' | 's' | 'm' | 'l' | 'xl';
 export type WaKnownDateAppearance = 'filled' | 'outlined' | 'filled-outlined';
 /**
- * @summary Known dates let users enter dates they already know — birthdays, expirations, document
- *  dates — through three separate day, month, and year fields shown in the locale's natural order.
+ * @summary Known dates let users enter dates they already know - birthdays, expirations, document
+ *  dates - through three separate day, month, and year fields shown in the locale's natural order.
  * @documentation https://webawesome.com/docs/components/known-date
  * @status experimental
  * @since 3.8
@@ -34,10 +34,6 @@ export type WaKnownDateAppearance = 'filled' | 'outlined' | 'filled-outlined';
  * @csspart field-year - Added to the year field block.
  * @csspart field-label - The text label above each field's input.
  * @csspart field-input - The native `<input>` inside a field.
- * @csspart error - The inline error message region. This is an intentional difference from `<wa-date-input>`
- *  and `<wa-time-input>`, which rely on the browser's native validation popup. Because this control is composed
- *  of three separate fields, an inline `role="alert"` region gives a single, predictable place to surface the
- *  validation message rather than anchoring a native popup on one of the three fields.
  *
  * @cssstate blank - The known date has no committed value.
  * @cssstate disabled - The known date is disabled.
@@ -58,7 +54,6 @@ export default class WaKnownDate extends WebAwesomeFormAssociatedElement {
     private readonly hasSlotController;
     private readonly groupId;
     private readonly hintId;
-    private readonly errorId;
     /** Hidden mirror used for native constraint validation (min/max/required + valid-date roundtrip). */
     valueInput: HTMLInputElement;
     /** Debounces duplicate `change` events when the value hasn't transitioned. */
@@ -132,6 +127,12 @@ export default class WaKnownDate extends WebAwesomeFormAssociatedElement {
     private updateHiddenInput;
     private recomputeValue;
     private firstFocusableInput;
+    /**
+     * Returns the field to fix when the value doesn't compose, in locale order: the first empty field, else the first
+     * out-of-range field (year < 1, month not 1–12, day not 1–31), else the day (e.g. Feb 30). Null when the value
+     * composes cleanly.
+     */
+    private firstInvalidField;
     private autocompleteFor;
     private handleFieldInput;
     render(): import("lit-html").TemplateResult<1>;

@@ -1,8 +1,5 @@
 # Markdown
 
-**Full documentation:** https://webawesome.com/docs/components/markdown
-
-
 `<wa-markdown>`
 
 Experimental [Media](https://webawesome.com/docs/components/?category=media) [Since 3.4](https://webawesome.com/docs/resources/changelog#wa_340)
@@ -29,13 +26,66 @@ Since content is rendered client-side, it won't be visible to search engine craw
 
 **Do not use this component with unsanitized user input.** Markdown is parsed as-is without sanitization, so rendering untrusted content can lead to XSS vulnerabilities.
 
+## Importing
+
+If you're using the autoloader or a hosted project, components load on demand — no manual import needed. To cherry-pick a component manually, use one of the following snippets.
+
+\*\*CDN\*\*
+
+Import this component directly from the CDN:
+
+```js
+import 'https://ka-f.webawesome.com/webawesome@3.10.0/components/markdown/markdown.js';
+```
+
+\*\*npm\*\*
+
+After installing Web Awesome via npm, import this component:
+
+```js
+import '@awesome.me/webawesome/dist/components/markdown/markdown.js';
+```
+
+\*\*Self-Hosted\*\*
+
+If you're self-hosting Web Awesome, import this component from your server:
+
+```js
+import './webawesome/dist/components/markdown/markdown.js';
+```
+
+\*\*React\*\*
+
+To import this component for React 18 or below, use the following code:
+
+```js
+import WaMarkdown from '@awesome.me/webawesome/dist/react/markdown/index.js';
+```
+
+## Attributes & Properties
+
+| Property | Attribute | Description | Type | Default |
+| --- | --- | --- | --- | --- |
+| `tabSize` | `tab-size` | The tab stop width used when converting leading tabs to spaces during whitespace normalization. | `number` | `4` |
+| `marked` | — | A reference to the shared Marked instance for convenience. Equivalent to `WaMarkdown.getMarked()`. | `Marked` | — |
+
+## Methods
+
+| Name | Description | Arguments |
+| --- | --- | --- |
+| `getMarked()` | Returns the shared Marked instance used by all `<wa-markdown>` components. | — |
+| `updateAll()` | Re-renders all connected `<wa-markdown>` instances. Call this after changing the Marked configuration. | — |
+| `renderMarkdown()` | Reads the script content, normalizes whitespace, parses markdown, and injects the result. | — |
+
+## SSR
+
+Learn more about [Server-Side Rendering (SSR)](https://webawesome.com/docs/ssr).
+
+`<wa-markdown>` parses the content of its children at runtime, which requires a DOM. It can't render during SSR — use it on the client only.
+
 ## Examples
 
-Link to This Section
-
-### Providing content
-
-Link to This Section
+### Providing Content
 
 Markdown must go inside a `<script type="text/markdown">` element, which must be a direct child of the markdown component. (The script is required to prevent the browser from parsing the content.) The rendered output is placed in the light DOM where it inherits your page's styles.
 
@@ -49,9 +99,7 @@ Markdown must go inside a `<script type="text/markdown">` element, which must be
 
 The [Marked](https://marked.js.org/) library is used under the hood to render markdown. Marked supports [GitHub Flavored Markdown](https://github.github.com/gfm/) (GFM) and the [CommonMark](https://commonmark.org/) specification. This includes headings, bold, italic, links, images, lists, blockquotes, code blocks, tables, task lists, strike-through, and auto-links. For a full breakdown of supported syntax, see the [Marked documentation](https://marked.js.org/#specifications).
 
-### Whitespace normalization
-
-Link to This Section
+### Whitespace Normalization
 
 Indentation inside the script is automatically normalized before the markdown parser sees it. This lets you indent your content to match the surrounding HTML without it being treated as a code block. The normalization process:
 
@@ -86,9 +134,7 @@ For tab-indented source files, adjust the tab stop width with the `tab-size` att
 </wa-markdown>
 ```
 
-### Formatting features
-
-Link to This Section
+### Formatting Features
 
 All standard markdown formatting supported by Marked is available, including headings, lists, blockquotes, code blocks, links, and images.
 
@@ -113,8 +159,6 @@ All standard markdown formatting supported by Marked is available, including hea
 ```
 
 ### Configuring Marked
-
-Link to This Section
 
 All `<wa-markdown>` instances share a single [Marked](https://marked.js.org/using_advanced) instance. You can access it through any `<wa-markdown>` element's `marked` property. After making changes, call `WaMarkdown.updateAll()` to re-render every connected instance.
 
@@ -146,9 +190,7 @@ All `<wa-markdown>` instances share a single [Marked](https://marked.js.org/usin
 
 The Marked instance is shared across all `<wa-markdown>` elements. If you want every instance on the page to pick up the new configuration, call `WaMarkdown.updateAll()` instead of `renderMarkdown()` on a single element.
 
-### Writing a custom Marked plugin
-
-Link to This Section
+### Writing a Custom Marked Plugin
 
 Custom [Marked extensions](https://marked.js.org/using_advanced#extensions) can be applied through any element's `marked` property. The example below adds support for `==highlight==` syntax, wrapping matched text in `<mark>` tags.
 
@@ -193,9 +235,7 @@ Custom [Marked extensions](https://marked.js.org/using_advanced#extensions) can 
 </script>
 ```
 
-### Updating content dynamically
-
-Link to This Section
+### Updating Content Dynamically
 
 The component parses and renders automatically when the script element is first slotted in. It does not watch for subsequent changes to the script's content. To re-render after modifying the source, update the script's `textContent` and call `renderMarkdown()`.
 
@@ -222,20 +262,3 @@ The component parses and renders automatically when the script element is first 
   });
 </script>
 ```
-
-## Attributes & Properties
-
-| Attribute | Property | Type | Default | Description |
-| --- | --- | --- | --- | --- |
-| `tab-size` | `tabSize` | `number` | `4` | The tab stop width used when converting leading tabs to spaces during whitespace normalization. |
-| `dir` |  | `string` |  |  |
-| `lang` |  | `string` |  |  |
-| `did-ssr` | `didSSR` |  |  |  |
-
-## Methods
-
-| Method | Description | Arguments |
-| --- | --- | --- |
-| `getMarked` | Returns the shared Marked instance used by all `<wa-markdown>` components. |  |
-| `updateAll` | Re-renders all connected `<wa-markdown>` instances. Call this after changing the Marked configuration. |  |
-| `renderMarkdown` | Reads the script content, normalizes whitespace, parses markdown, and injects the result. |  |

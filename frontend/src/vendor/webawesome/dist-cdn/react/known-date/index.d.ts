@@ -3,8 +3,8 @@ import { type EventName } from '@lit/react';
 import type { WaInvalidEvent } from '../../events/events.js';
 export type { WaInvalidEvent } from '../../events/events.js';
 /**
- * @summary Known dates let users enter dates they already know — birthdays, expirations, document
- *  dates — through three separate day, month, and year fields shown in the locale's natural order.
+ * @summary Known dates let users enter dates they already know - birthdays, expirations, document
+ *  dates - through three separate day, month, and year fields shown in the locale's natural order.
  * @documentation https://webawesome.com/docs/components/known-date
  * @status experimental
  * @since 3.8
@@ -33,10 +33,6 @@ export type { WaInvalidEvent } from '../../events/events.js';
  * @csspart field-year - Added to the year field block.
  * @csspart field-label - The text label above each field's input.
  * @csspart field-input - The native `<input>` inside a field.
- * @csspart error - The inline error message region. This is an intentional difference from `<wa-date-input>`
- *  and `<wa-time-input>`, which rely on the browser's native validation popup. Because this control is composed
- *  of three separate fields, an inline `role="alert"` region gives a single, predictable place to surface the
- *  validation message rather than anchoring a native popup on one of the three fields.
  *
  * @cssstate blank - The known date has no committed value.
  * @cssstate disabled - The known date is disabled.

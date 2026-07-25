@@ -24,10 +24,6 @@ function init() {
     }
   }, { passive: false });
 
-  carousel.addEventListener("wa-slide-change", () => {
-    setTimeout(carousel.synchronizeSlides, 0)
-  })
-
   document.querySelectorAll(".img-wrapper wa-button").forEach(el => {
     el.addEventListener("click", () => {
       const img = el.parentElement.querySelector("img")

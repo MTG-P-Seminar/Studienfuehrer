@@ -8,8 +8,6 @@ Component tokens let you style groups of related components at once. Rather than
 
 ## Form Controls
 
-Link to This Section
-
 Components such as [input](https://webawesome.com/docs/components/input), [select](https://webawesome.com/docs/components/select), [textarea](https://webawesome.com/docs/components/textarea), [checkbox](https://webawesome.com/docs/components/checkbox), and others share styles defined with the `--wa-form-control-*` prefix.
 
 Not every form control uses all of these custom properties. For example, [radio](https://webawesome.com/docs/components/radio) defines its own height and border radius to achieve its familiar shape but shares many other styles with other components for a cohesive look and feel. Similarly, [button](https://webawesome.com/docs/components/button) defines many of its own styles but matches the height and border width of other form controls.
@@ -63,8 +61,6 @@ Not every form control uses all of these custom properties. For example, [radio]
 
 ## Buttons
 
-Link to This Section
-
 In addition to sharing styles with form controls, [buttons](https://webawesome.com/docs/components/button) have their own subset of unique tokens.
 
 | Custom Property | Description |
@@ -73,8 +69,6 @@ In addition to sharing styles with form controls, [buttons](https://webawesome.c
 | \`--wa-button-transform-active\` | A transform function to apply to buttons when pressed/active |
 
 ## Panels
-
-Link to This Section
 
 Panel tokens apply to components with larger, contained surface areas, like [callout](https://webawesome.com/docs/components/callout), [card](https://webawesome.com/docs/components/card), [details](https://webawesome.com/docs/components/details), and [dialog](https://webawesome.com/docs/components/dialog).
 
@@ -98,8 +92,6 @@ Panel tokens apply to components with larger, contained surface areas, like [cal
 ```
 
 ## Tooltips
-
-Link to This Section
 
 Tooltip tokens apply to the [tooltip](https://webawesome.com/docs/components/tooltip) component and built-in tooltips in other components like [slider](https://webawesome.com/docs/components/slider) and [copy button](https://webawesome.com/docs/components/copy-button).
 

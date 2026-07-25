@@ -1,8 +1,5 @@
 # Format Bytes
 
-**Full documentation:** https://webawesome.com/docs/components/format-bytes
-
-
 `<wa-format-bytes>`
 
 Stable [Helpers](https://webawesome.com/docs/components/?category=helpers) [Since 2.0](https://webawesome.com/docs/resources/changelog#wa_200)
@@ -11,7 +8,10 @@ Formats a number of bytes as a human-readable string with the appropriate unit, 
 
 ```html
 <div class="format-bytes-overview">
-  The file is <wa-format-bytes value="1000"></wa-format-bytes> in size. <br /><br />
+  The file is <wa-format-bytes value="1000"></wa-format-bytes> in size.
+
+  <wa-divider></wa-divider>
+
   <wa-input type="number" value="1000" label="Number to Format" style="max-width: 180px;"></wa-input>
 </div>
 
@@ -24,13 +24,53 @@ Formats a number of bytes as a human-readable string with the appropriate unit, 
 </script>
 ```
 
+## Importing
+
+If you're using the autoloader or a hosted project, components load on demand — no manual import needed. To cherry-pick a component manually, use one of the following snippets.
+
+\*\*CDN\*\*
+
+Import this component directly from the CDN:
+
+```js
+import 'https://ka-f.webawesome.com/webawesome@3.10.0/components/format-bytes/format-bytes.js';
+```
+
+\*\*npm\*\*
+
+After installing Web Awesome via npm, import this component:
+
+```js
+import '@awesome.me/webawesome/dist/components/format-bytes/format-bytes.js';
+```
+
+\*\*Self-Hosted\*\*
+
+If you're self-hosting Web Awesome, import this component from your server:
+
+```js
+import './webawesome/dist/components/format-bytes/format-bytes.js';
+```
+
+\*\*React\*\*
+
+To import this component for React 18 or below, use the following code:
+
+```js
+import WaFormatBytes from '@awesome.me/webawesome/dist/react/format-bytes/index.js';
+```
+
+## Attributes & Properties
+
+| Property | Attribute | Description | Type | Default |
+| --- | --- | --- | --- | --- |
+| `value` | `value` | The number to format in bytes. | `number` | `0` |
+| `unit` | `unit` | The type of unit to display. | `'byte' \| 'bit'` | `'byte'` |
+| `display` | `display` | Determines how to display the result, e.g. "100 bytes", "100 b", or "100b". | `'long' \| 'short' \| 'narrow'` | `'short'` |
+
 ## Examples
 
-Link to This Section
-
 ### Formatting Bytes
-
-Link to This Section
 
 Set the `value` attribute to a number to get the value in bytes.
 
@@ -43,8 +83,6 @@ Set the `value` attribute to a number to get the value in bytes.
 
 ### Formatting Bits
 
-Link to This Section
-
 To get the value in bits, set the `unit` attribute to `bit`.
 
 ```html
@@ -56,8 +94,6 @@ To get the value in bits, set the `unit` attribute to `bit`.
 
 ### Localization
 
-Link to This Section
-
 Use the `lang` attribute to set the number formatting locale.
 
 ```html
@@ -66,14 +102,3 @@ Use the `lang` attribute to set the number formatting locale.
 <wa-format-bytes value="1200000" lang="de"></wa-format-bytes><br />
 <wa-format-bytes value="1200000000" lang="de"></wa-format-bytes>
 ```
-
-## Attributes & Properties
-
-| Attribute | Property | Type | Default | Description |
-| --- | --- | --- | --- | --- |
-| `value` |  | `number` | `0` | The number to format in bytes. |
-| `unit` |  | `'byte' \| 'bit'` | `'byte'` | The type of unit to display. |
-| `display` |  | `'long' \| 'short' \| 'narrow'` | `'short'` | Determines how to display the result, e.g. "100 bytes", "100 b", or "100b". |
-| `dir` |  | `string` |  |  |
-| `lang` |  | `string` |  |  |
-| `did-ssr` | `didSSR` |  |  |  |

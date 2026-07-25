@@ -1,8 +1,5 @@
 # Format Number
 
-**Full documentation:** https://webawesome.com/docs/components/format-number
-
-
 `<wa-format-number>`
 
 Stable [Helpers](https://webawesome.com/docs/components/?category=helpers) [Since 2.0](https://webawesome.com/docs/resources/changelog#wa_200)
@@ -14,7 +11,9 @@ Localization is handled by the browser's [`Intl.NumberFormat` API](https://devel
 ```html
 <div class="format-number-overview">
   <wa-format-number value="1000"></wa-format-number>
-  <br /><br />
+
+  <wa-divider></wa-divider>
+
   <wa-input type="number" value="1000" label="Number to Format" style="max-width: 180px;"></wa-input>
 </div>
 
@@ -27,13 +26,60 @@ Localization is handled by the browser's [`Intl.NumberFormat` API](https://devel
 </script>
 ```
 
+## Importing
+
+If you're using the autoloader or a hosted project, components load on demand — no manual import needed. To cherry-pick a component manually, use one of the following snippets.
+
+\*\*CDN\*\*
+
+Import this component directly from the CDN:
+
+```js
+import 'https://ka-f.webawesome.com/webawesome@3.10.0/components/format-number/format-number.js';
+```
+
+\*\*npm\*\*
+
+After installing Web Awesome via npm, import this component:
+
+```js
+import '@awesome.me/webawesome/dist/components/format-number/format-number.js';
+```
+
+\*\*Self-Hosted\*\*
+
+If you're self-hosting Web Awesome, import this component from your server:
+
+```js
+import './webawesome/dist/components/format-number/format-number.js';
+```
+
+\*\*React\*\*
+
+To import this component for React 18 or below, use the following code:
+
+```js
+import WaFormatNumber from '@awesome.me/webawesome/dist/react/format-number/index.js';
+```
+
+## Attributes & Properties
+
+| Property | Attribute | Description | Type | Default |
+| --- | --- | --- | --- | --- |
+| `value` | `value` | The number to format. | `number` | `0` |
+| `type` | `type` | The formatting style to use. | `'currency' \| 'decimal' \| 'percent'` | `'decimal'` |
+| `withoutGrouping` | `without-grouping` | Turns off grouping separators. | `boolean` | `false` |
+| `currency` | `currency` | The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) currency code to use when formatting. | `string` | `'USD'` |
+| `currencyDisplay` | `currency-display` | How to display the currency. | `'symbol' \| 'narrowSymbol' \| 'code' \| 'name'` | `'symbol'` |
+| `minimumIntegerDigits` | `minimum-integer-digits` | The minimum number of integer digits to use. Possible values are 1-21. | `number` | — |
+| `minimumFractionDigits` | `minimum-fraction-digits` | The minimum number of fraction digits to use. Possible values are 0-100. | `number` | — |
+| `maximumFractionDigits` | `maximum-fraction-digits` | The maximum number of fraction digits to use. Possible values are 0-100. | `number` | — |
+| `minimumSignificantDigits` | `minimum-significant-digits` | The minimum number of significant digits to use. Possible values are 1-21. | `number` | — |
+| `maximumSignificantDigits` | `maximum-significant-digits` | The maximum number of significant digits to use,. Possible values are 1-21. | `number` | — |
+
 ## Examples
 
-Link to This Section
-
 ### Percentages
-
-Link to This Section
 
 To get the value as a percent, set the `type` attribute to `percent`.
 
@@ -47,8 +93,6 @@ To get the value as a percent, set the `type` attribute to `percent`.
 
 ### Localization
 
-Link to This Section
-
 Use the `lang` attribute to set the number formatting locale.
 
 ```html
@@ -59,8 +103,6 @@ Russian: <wa-format-number value="2000" lang="ru" minimum-fraction-digits="2"></
 
 ### Currency
 
-Link to This Section
-
 To format a number as a monetary value, set the `type` attribute to `currency` and set the `currency` attribute to the desired ISO 4217 currency code. You should also specify `lang` to ensure the the number is formatted correctly for the target locale.
 
 ```html
@@ -70,21 +112,3 @@ To format a number as a monetary value, set the `type` attribute to `currency` a
 <wa-format-number type="currency" currency="RUB" value="2000" lang="ru"></wa-format-number><br />
 <wa-format-number type="currency" currency="CNY" value="2000" lang="zh-cn"></wa-format-number>
 ```
-
-## Attributes & Properties
-
-| Attribute | Property | Type | Default | Description |
-| --- | --- | --- | --- | --- |
-| `value` |  | `number` | `0` | The number to format. |
-| `type` |  | `'currency' \| 'decimal' \| 'percent'` | `'decimal'` | The formatting style to use. |
-| `without-grouping` | `withoutGrouping` | `boolean` | `false` | Turns off grouping separators. |
-| `currency` |  | `string` | `'USD'` | The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) currency code to use when formatting. |
-| `currency-display` | `currencyDisplay` | `'symbol' \| 'narrowSymbol' \| 'code' \| 'name'` | `'symbol'` | How to display the currency. |
-| `minimum-integer-digits` | `minimumIntegerDigits` | `number` |  | The minimum number of integer digits to use. Possible values are 1-21. |
-| `minimum-fraction-digits` | `minimumFractionDigits` | `number` |  | The minimum number of fraction digits to use. Possible values are 0-100. |
-| `maximum-fraction-digits` | `maximumFractionDigits` | `number` |  | The maximum number of fraction digits to use. Possible values are 0-100. |
-| `minimum-significant-digits` | `minimumSignificantDigits` | `number` |  | The minimum number of significant digits to use. Possible values are 1-21. |
-| `maximum-significant-digits` | `maximumSignificantDigits` | `number` |  | The maximum number of significant digits to use,. Possible values are 1-21. |
-| `dir` |  | `string` |  |  |
-| `lang` |  | `string` |  |  |
-| `did-ssr` | `didSSR` |  |  |  |

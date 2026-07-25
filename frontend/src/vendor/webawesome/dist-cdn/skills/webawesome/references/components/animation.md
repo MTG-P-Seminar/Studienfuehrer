@@ -1,8 +1,5 @@
 # Animation
 
-**Full documentation:** https://webawesome.com/docs/components/animation
-
-
 `<wa-animation>`
 
 Stable [Helpers](https://webawesome.com/docs/components/?category=helpers) [Since 2.0](https://webawesome.com/docs/resources/changelog#wa_200)
@@ -32,13 +29,91 @@ To animate an element, wrap it in `<wa-animation>` and set an animation `name`. 
 
 The animation will only be applied to the first child element found in `<wa-animation>`.
 
+## Importing
+
+If you're using the autoloader or a hosted project, components load on demand — no manual import needed. To cherry-pick a component manually, use one of the following snippets.
+
+\*\*CDN\*\*
+
+Import this component directly from the CDN:
+
+```js
+import 'https://ka-f.webawesome.com/webawesome@3.10.0/components/animation/animation.js';
+```
+
+\*\*npm\*\*
+
+After installing Web Awesome via npm, import this component:
+
+```js
+import '@awesome.me/webawesome/dist/components/animation/animation.js';
+```
+
+\*\*Self-Hosted\*\*
+
+If you're self-hosting Web Awesome, import this component from your server:
+
+```js
+import './webawesome/dist/components/animation/animation.js';
+```
+
+\*\*React\*\*
+
+To import this component for React 18 or below, use the following code:
+
+```js
+import WaAnimation from '@awesome.me/webawesome/dist/react/animation/index.js';
+```
+
+## Slots
+
+Valid slot names for this component (use exactly these — any other `slot` value is
+silently ignored and the element falls back to the default slot):
+
+- `(default)` — The element to animate. Avoid slotting in more than one element, as subsequent ones will be ignored. To animate multiple elements, either wrap them in a single container or use multiple `<wa-animation>` elements.
+
+## Attributes & Properties
+
+| Property | Attribute | Description | Type | Default |
+| --- | --- | --- | --- | --- |
+| `name` | `name` | The name of the built-in animation to use. For custom animations, use the `keyframes` prop. | `string` | `'none'` |
+| `play` | `play` | Plays the animation. When omitted, the animation will be paused. This attribute will be automatically removed when the animation finishes or gets canceled. | `boolean` | `false` |
+| `delay` | `delay` | The number of milliseconds to delay the start of the animation. | `number` | `0` |
+| `direction` | `direction` | Determines the direction of playback as well as the behavior when reaching the end of an iteration. [Learn more](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-direction) | `PlaybackDirection` | `'normal'` |
+| `duration` | `duration` | The number of milliseconds each iteration of the animation takes to complete. | `number` | `1000` |
+| `easing` | `easing` | The easing function to use for the animation. This can be a Web Awesome easing function or a custom easing function such as `cubic-bezier(0, 1, .76, 1.14)`. | `string` | `'linear'` |
+| `endDelay` | `end-delay` | The number of milliseconds to delay after the active period of an animation sequence. | `number` | `0` |
+| `fill` | `fill` | Sets how the animation applies styles to its target before and after its execution. | `FillMode` | `'auto'` |
+| `iterations` | `iterations` | The number of iterations to run before the animation completes. Defaults to `Infinity`, which loops. | `number` | `Infinity` |
+| `iterationStart` | `iteration-start` | The offset at which to start the animation, usually between 0 (start) and 1 (end). | `number` | `0` |
+| `keyframes` | — | The keyframes to use for the animation. If this is set, `name` will be ignored. | `Keyframe[] \| undefined` | — |
+| `playbackRate` | `playback-rate` | Sets the animation's playback rate. The default is `1`, which plays the animation at a normal speed. Setting this to `2`, for example, will double the animation's speed. A negative value can be used to reverse the animation. This value can be changed without causing the animation to restart. | `number` | `1` |
+| `currentTime` | — | Gets and sets the current animation time. | `CSSNumberish` | — |
+
+## Methods
+
+| Name | Description | Arguments |
+| --- | --- | --- |
+| `cancel()` | Clears all keyframe effects caused by this animation and aborts its playback. | — |
+| `finish()` | Sets the playback time to the end of the animation corresponding to the current playback direction. | — |
+
+## Events
+
+| Name | Description |
+| --- | --- |
+| `wa-cancel` | Emitted when the animation is canceled. |
+| `wa-finish` | Emitted when the animation finishes. |
+| `wa-start` | Emitted when the animation starts or restarts. |
+
+## SSR
+
+Learn more about [Server-Side Rendering (SSR)](https://webawesome.com/docs/ssr).
+
+`<wa-animation>` renders during SSR without causing layout shift, but won't play its animation until the component hydrates on the client. Playback is driven by the Web Animations API, which is only available in the browser.
+
 ## Examples
 
-Link to This Section
-
 ### Animations & Easings
-
-Link to This Section
 
 This example demonstrates all of the baked-in animations and easings. Animations are based on those found in the popular [Animate.css](https://animate.style/) library.
 
@@ -47,6 +122,8 @@ This example demonstrates all of the baked-in animations and easings. Animations
   <wa-animation name="bounce" easing="ease-in-out" duration="2000" play>
     <div class="box"></div>
   </wa-animation>
+
+  <wa-divider></wa-divider>
 
   <div class="controls">
     <wa-select label="Animation" value="bounce"></wa-select>
@@ -110,6 +187,8 @@ This example demonstrates all of the baked-in animations and easings. Animations
   <wa-animation name="bounce" easing="ease-in-out" duration="2000" play>
     <div class="box"></div>
   </wa-animation>
+
+  <wa-divider></wa-divider>
 
   <div class="controls">
     <wa-combobox label="Animation" placeholder="Select animation..."></wa-combobox>
@@ -176,8 +255,6 @@ This example demonstrates all of the baked-in animations and easings. Animations
 
 ### Using Intersection Observer
 
-Link to This Section
-
 Use an [Intersection Observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) to control the animation when an element enters or exits the viewport. For example, scroll the box below in and out of your screen. The animation stops when the box exits the viewport and restarts each time it enters the viewport.
 
 ```html
@@ -214,8 +291,6 @@ Use an [Intersection Observer](https://developer.mozilla.org/en-US/docs/Web/API/
 ```
 
 ### Custom Keyframe Formats
-
-Link to This Section
 
 Supply your own [keyframe formats](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API/Keyframe_Formats) to build custom animations.
 
@@ -257,8 +332,6 @@ Supply your own [keyframe formats](https://developer.mozilla.org/en-US/docs/Web/
 
 ### Playing Animations on Demand
 
-Link to This Section
-
 Animations won't play until you apply the `play` attribute. You can omit it initially, then apply it on demand such as after a user interaction. In this example, the button will animate once every time the button is clicked.
 
 ```html
@@ -278,44 +351,3 @@ Animations won't play until you apply the `play` attribute. You can omit it init
   });
 </script>
 ```
-
-## Slots
-
-Valid slot names for this component (use exactly these — any other `slot` value
-is silently ignored and the element falls back to the default slot):
-
-- `(default)` — The element to animate. Avoid slotting in more than one element, as subsequent ones will be ignored. To animate multiple elements, either wrap them in a single container or use multiple `<wa-animation>` elements.
-
-## Attributes & Properties
-
-| Attribute | Property | Type | Default | Description |
-| --- | --- | --- | --- | --- |
-| `name` |  | `string` | `'none'` | The name of the built-in animation to use. For custom animations, use the `keyframes` prop. |
-| `play` |  | `boolean` | `false` | Plays the animation. When omitted, the animation will be paused. This attribute will be automatically removed when the animation finishes or gets canceled. |
-| `delay` |  | `number` | `0` | The number of milliseconds to delay the start of the animation. |
-| `direction` |  | `PlaybackDirection` | `'normal'` | Determines the direction of playback as well as the behavior when reaching the end of an iteration. [Learn more](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-direction) |
-| `duration` |  | `number` | `1000` | The number of milliseconds each iteration of the animation takes to complete. |
-| `easing` |  | `string` | `'linear'` | The easing function to use for the animation. This can be a Web Awesome easing function or a custom easing function such as `cubic-bezier(0, 1, .76, 1.14)`. |
-| `end-delay` | `endDelay` | `number` | `0` | The number of milliseconds to delay after the active period of an animation sequence. |
-| `fill` |  | `FillMode` | `'auto'` | Sets how the animation applies styles to its target before and after its execution. |
-| `iterations` |  | `number` | `Infinity` | The number of iterations to run before the animation completes. Defaults to `Infinity`, which loops. |
-| `iteration-start` | `iterationStart` | `number` | `0` | The offset at which to start the animation, usually between 0 (start) and 1 (end). |
-| `playback-rate` | `playbackRate` | `number` | `1` | Sets the animation's playback rate. The default is `1`, which plays the animation at a normal speed. Setting this to `2`, for example, will double the animation's speed. A negative value can be used to reverse the animation. This value can be changed without causing the animation to restart. |
-| `dir` |  | `string` |  |  |
-| `lang` |  | `string` |  |  |
-| `did-ssr` | `didSSR` |  |  |  |
-
-## Methods
-
-| Method | Description | Arguments |
-| --- | --- | --- |
-| `cancel` | Clears all keyframe effects caused by this animation and aborts its playback. |  |
-| `finish` | Sets the playback time to the end of the animation corresponding to the current playback direction. |  |
-
-## Events
-
-| Event | Description |
-| --- | --- |
-| `wa-cancel` | Emitted when the animation is canceled. |
-| `wa-finish` | Emitted when the animation finishes. |
-| `wa-start` | Emitted when the animation starts or restarts. |

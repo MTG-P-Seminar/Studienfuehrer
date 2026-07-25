@@ -18,11 +18,7 @@ Since visually hidden content can receive focus when tabbing, the element become
 
 ## Examples
 
-Link to This Section
-
 ### Links That Open in New Windows
-
-Link to This Section
 
 In this example, the link will open a new window. Screen readers will announce "opens in a new window" even though the text content isn't visible to sighted users.
 
@@ -34,9 +30,7 @@ In this example, the link will open a new window. Screen readers will announce "
 </a>
 ```
 
-### Content Conveyed By Context
-
-Link to This Section
+### Content Conveyed by Context
 
 Adding a label may seem redundant at times, but they're very helpful for unsighted users. Rather than omit them, you can provide context to unsighted users with visually hidden content that will be announced by assistive devices such as screen readers.
 
@@ -49,8 +43,6 @@ Adding a label may seem redundant at times, but they're very helpful for unsight
 ```
 
 ### Visually Hidden Input Parts
-
-Link to This Section
 
 Sometimes you want a form control to have a cleaner, more minimal appearance by hiding the `label` or `hint` visually. However, removing these elements entirely would make the form inaccessible to users with assistive devices.
 
@@ -108,8 +100,6 @@ Instead, you can hide them visually while keeping them available to screen reade
 ```
 
 ### Force Visually Hidden
-
-Link to This Section
 
 There are cases where you want to _always_ visually hide certain content, even when it's focused. For example when hiding a checkbox to render a custom one:
 

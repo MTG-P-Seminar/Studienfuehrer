@@ -6,9 +6,9 @@ CSS Utilities Native Styles
 
 Native styles use design tokens to spruce up native HTML elements so that they match the look and feel of your theme. While these native styles are completely optional, they're a great starting point for a cohesive design and a huge help when using a combination of native elements and Web Awesome components in your project.
 
-## Using native styles
+## Using Native Styles
 
-Link to This Section \*\*CDN\*\*
+\*\*CDN\*\*
 
 1.  Head over to your project's Settings.
 2.  Next to Features, select the Native styles checkbox.
@@ -46,9 +46,7 @@ Or, if you only want styles for native elements, include a theme and native styl
 
 You can additionally include any pre-made [theme](https://webawesome.com/docs/themes/) or [color palette](https://webawesome.com/docs/color-palettes/) to change the look of native elements.
 
-## Opting out of native styles
-
-Link to This Section
+## Opting out of Native Styles
 
 If you want to keep Web Awesome's components, tokens, and utilities but let a native element fall back to browser defaults, reset that element in your own stylesheet.
 
@@ -79,9 +77,7 @@ To opt out for an entire section, apply the same reset within a wrapper and targ
 
 If your app has separate page-level entry points, the simplest page-level opt-out is to not load `native.css` on pages that should keep browser defaults. You can still load your theme, components, and any [utilities](https://webawesome.com/docs/utilities/) you want on those pages.
 
-## Content flow
-
-Link to This Section
+## Content Flow
 
 Native styles set default space between many block-level HTML elements using the `--wa-content-spacing` token from your theme. This helps ensure that your content is readable.
 
@@ -111,13 +107,9 @@ To remove this default spacing, you can set `--wa-content-spacing: 0` in your st
 
 ## Typography
 
-Link to This Section
-
 Native styles use [typography design tokens](https://webawesome.com/docs/tokens/typography/) to style text elements. A number of styles — such as `color`, `font-family`, `font-size`, `font-weight`, and `line-height` — are set on the `<body>` element to be inherited by child elements.
 
 ### Headings
-
-Link to This Section
 
 Create headings with `<h1>` through `<h6>`. Headings use tokens with the `-heading` suffix, condensed line height, and `text-wrap: balance` for a prominent yet compact appearance.
 
@@ -131,8 +123,6 @@ Create headings with `<h1>` through `<h6>`. Headings use tokens with the `-headi
 ```
 
 ### Paragraphs
-
-Link to This Section
 
 Create paragraphs with `<p>`. Paragraphs inherit the default text styles set on the `<body>` element and use `text-wrap: pretty` to prevent orphaned lines in supported browsers.
 
@@ -150,8 +140,6 @@ Create paragraphs with `<p>`. Paragraphs inherit the default text styles set on 
 
 ### Blockquotes
 
-Link to This Section
-
 Emphasize longer quotations with `<blockquote>`. Block quotes use your theme's serif font family, a quiet color, a leading border, and a larger font size that scales with surrounding text.
 
 ```html
@@ -163,8 +151,6 @@ Emphasize longer quotations with `<blockquote>`. Block quotes use your theme's s
 ```
 
 ### Lists
-
-Link to This Section
 
 Create ordered and unordered lists with `<ol>` and `<ul>`, plus `<li>` for list items within. Markers use `currentColor` at reduced opacity so they sit quietly next to text.
 
@@ -243,9 +229,7 @@ Use `<dl>` to create lists of terms (`<dt>`) and definitions (`<dd>`).
 </dl>
 ```
 
-### Code blocks
-
-Link to This Section
+### Code Blocks
 
 Create code blocks or other preformatted text with `<pre>`. Preformatted text uses your theme's monospace font family and a subtle background color.
 
@@ -258,9 +242,7 @@ export function thing() {
 </pre>
 ```
 
-### Inline text
-
-Link to This Section
+### Inline Text
 
 Use any inline text element like `<strong>`, `<em>`, `<a>`, `<kbd>`, and others to stylize or emphasize text.
 
@@ -287,13 +269,9 @@ Use any inline text element like `<strong>`, `<em>`, `<a>`, `<kbd>`, and others 
 </div>
 ```
 
-## Widgets & media
-
-Link to This Section
+## Widgets & Media
 
 ### Media
-
-Link to This Section
 
 Add responsive media with `<img>`, `<svg>`, `<video>`, `<iframe>`, and others. Media takes up 100% width by default and scales according to its container's width.
 
@@ -305,8 +283,6 @@ Add responsive media with `<img>`, `<svg>`, `<video>`, `<iframe>`, and others. M
 ```
 
 ### Figures
-
-Link to This Section
 
 Pair media with a caption using `<figure>` and `<figcaption>`. Captions use a quiet color and condensed line-height so they read as a label, not running text.
 
@@ -321,8 +297,6 @@ Pair media with a caption using `<figure>` and `<figcaption>`. Captions use a qu
 ```
 
 ### Tables
-
-Link to This Section
 
 Structure tabular data with `<table>` and related elements like `<caption>`, `<thead>`, `<tbody>`, `<th>`, `<tr>`, and `<td>`. Headers carry a subtle bottom border, and numeric columns use `tabular-nums` so digits line up.
 
@@ -405,8 +379,6 @@ Add the `wa-hover-rows` class to highlight table rows on hover and the `wa-zebra
 
 ### Details
 
-Link to This Section
-
 Create disclosure widgets with `<details>` and `<summary>`. Details closely match the appearance of [`<wa-details>`](https://webawesome.com/docs/components/details/).
 
 ```html
@@ -420,8 +392,6 @@ Create disclosure widgets with `<details>` and `<summary>`. Details closely matc
 ```
 
 ### Dialog
-
-Link to This Section
 
 Create modal and non-modal dialog boxes with `<dialog>`. Dialogs closely match the appearance of [`<wa-dialog>`](https://webawesome.com/docs/components/dialog/).
 
@@ -445,8 +415,6 @@ Create modal and non-modal dialog boxes with `<dialog>`. Dialogs closely match t
 
 ### Progress
 
-Link to This Section
-
 Create progress indicators with `<progress>`. Progress indicators closely match the appearance of [`<wa-progress-bar>`](https://webawesome.com/docs/components/progress-bar/).
 
 ```html
@@ -457,13 +425,9 @@ Create progress indicators with `<progress>`. Progress indicators closely match 
 
 ## Forms
 
-Link to This Section
-
 Native styles use [form control design tokens](https://webawesome.com/docs/tokens/component-groups/#form-controls) to style form elements like buttons and inputs. Form elements additionally inherit `font-family` from the `<body>` element.
 
 ### Buttons
-
-Link to This Section
 
 Create buttons with `<button>` or `<input type="button | submit | reset">`. Buttons closely match the appearance of [`<wa-button>`](https://webawesome.com/docs/components/button/).
 
@@ -529,9 +493,7 @@ When using [`<wa-icon>`](https://webawesome.com/docs/components/icon) within a b
 </button>
 ```
 
-### Form controls
-
-Link to This Section
+### Form Controls
 
 Create a variety of form controls with `<input type="">`, `<select>`, and `<textarea>`. Each control closely matches the appearance of the corresponding Web Awesome component.
 
@@ -633,8 +595,6 @@ Add any [button](#buttons) modifier class to `<input type="file">` to change the
 
 ### Fieldsets
 
-Link to This Section
-
 Group form controls together with `<fieldset>` and `<legend>`.
 
 ```html
@@ -646,9 +606,7 @@ Group form controls together with `<fieldset>` and `<legend>`.
 </fieldset>
 ```
 
-### Form layouts
-
-Link to This Section
+### Form Layouts
 
 Wrap form controls in a flex container to arrange them horizontally or vertically with even spacing. Layout utility classes like [`wa-cluster`](https://webawesome.com/docs/utilities/cluster) and [`wa-stack`](https://webawesome.com/docs/utilities/stack) can be added directly to a `<fieldset>` or `<form>` to make this especially easy.
 

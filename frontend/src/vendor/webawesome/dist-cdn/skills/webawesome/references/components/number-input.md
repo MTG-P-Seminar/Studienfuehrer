@@ -1,8 +1,5 @@
 # Number Input
 
-**Full documentation:** https://webawesome.com/docs/components/number-input
-
-
 `<wa-number-input>`
 
 Stable [Forms](https://webawesome.com/docs/components/?category=forms) [Since 3.2](https://webawesome.com/docs/resources/changelog#wa_320)
@@ -15,13 +12,139 @@ Number inputs let users enter and edit numeric values, with optional stepper but
 
 This component works with standard `<form>` elements. Please refer to the section on [form controls](https://webawesome.com/docs/form-controls) to learn more about form submission and client-side validation.
 
+## Importing
+
+If you're using the autoloader or a hosted project, components load on demand — no manual import needed. To cherry-pick a component manually, use one of the following snippets.
+
+\*\*CDN\*\*
+
+Import this component directly from the CDN:
+
+```js
+import 'https://ka-f.webawesome.com/webawesome@3.10.0/components/number-input/number-input.js';
+```
+
+\*\*npm\*\*
+
+After installing Web Awesome via npm, import this component:
+
+```js
+import '@awesome.me/webawesome/dist/components/number-input/number-input.js';
+```
+
+\*\*Self-Hosted\*\*
+
+If you're self-hosting Web Awesome, import this component from your server:
+
+```js
+import './webawesome/dist/components/number-input/number-input.js';
+```
+
+\*\*React\*\*
+
+To import this component for React 18 or below, use the following code:
+
+```js
+import WaNumberInput from '@awesome.me/webawesome/dist/react/number-input/index.js';
+```
+
+## Slots
+
+Valid slot names for this component (use exactly these — any other `slot` value is
+silently ignored and the element falls back to the default slot):
+
+- `label` — The input's label. Alternatively, you can use the `label` attribute.
+- `start` — An element, such as `<wa-icon>`, placed at the start of the input control.
+- `end` — An element, such as `<wa-icon>`, placed at the end of the input control (before steppers).
+- `increment-icon` — An icon to use in lieu of the default increment icon.
+- `decrement-icon` — An icon to use in lieu of the default decrement icon.
+- `hint` — Text that describes how to use the input. Alternatively, you can use the `hint` attribute.
+
+## Attributes & Properties
+
+| Property | Attribute | Description | Type | Default |
+| --- | --- | --- | --- | --- |
+| `validators` | — | Validators are static because they have `observedAttributes`, essentially attributes to "watch" for changes. Whenever these attributes change, we want to be notified and update the validator. | `Validator[]` | `[]` |
+| `value` | — | The current value of the input, submitted as a name/value pair with form data. | — | — |
+| `defaultValue` | `value` | The default value of the form control. Primarily used for resetting the form control. | `string \| null` | — |
+| `size` | `size` | The input's size. | `'xs' \| 's' \| 'm' \| 'l' \| 'xl' \| 'small' \| 'medium' \| 'large'` | `'m'` |
+| `appearance` | `appearance` | The input's visual appearance. | `'filled' \| 'outlined' \| 'filled-outlined'` | `'outlined'` |
+| `pill` | `pill` | Draws a pill-style input with rounded edges. | `boolean` | `false` |
+| `label` | `label` | The input's label. If you need to display HTML, use the `label` slot instead. | `string` | `''` |
+| `hint` | `hint` | The input's hint. If you need to display HTML, use the `hint` slot instead. | `string` | `''` |
+| `placeholder` | `placeholder` | Placeholder text to show as a hint when the input is empty. | `string` | `''` |
+| `readonly` | `readonly` | Makes the input readonly. | `boolean` | `false` |
+| `required` | `required` | Makes the input a required field. | `boolean` | `false` |
+| `min` | `min` | The input's minimum value. | `number` | — |
+| `max` | `max` | The input's maximum value. | `number` | — |
+| `step` | `step` | Specifies the granularity that the value must adhere to, or the special value `any` which means no stepping is implied, allowing any numeric value. | `number \| 'any'` | `1` |
+| `withoutSteppers` | `without-steppers` | Hides the increment/decrement stepper buttons. | `boolean` | `false` |
+| `autocomplete` | `autocomplete` | Specifies what permission the browser has to provide assistance in filling out form field values. Refer to [this page on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) for available values. | `string` | — |
+| `autofocus` | `autofocus` | Indicates that the input should receive focus on page load. | `boolean` | — |
+| `enterkeyhint` | `enterkeyhint` | Used to customize the label or icon of the Enter key on virtual keyboards. | `'enter' \| 'done' \| 'go' \| 'next' \| 'previous' \| 'search' \| 'send'` | — |
+| `inputmode` | `inputmode` | Tells the browser what type of data will be entered by the user, allowing it to display the appropriate virtual keyboard on supportive devices. | `'numeric' \| 'decimal'` | `'numeric'` |
+| `withLabel` | `with-label` | Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup includes the label before the component hydrates on the client. | `boolean` | `false` |
+| `withHint` | `with-hint` | Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup includes the hint before the component hydrates on the client. | `boolean` | `false` |
+| `name` | `name` | The name of the input, submitted as a name/value pair with form data. | `string \| null` | `null` |
+| `disabled` | `disabled` | Disables the form control. | `boolean` | `false` |
+| `form` | — | By default, form controls are associated with the nearest containing `<form>` element. This attribute allows you to place the form control outside of a form and associate it with the form that has this `id`. The form must be in the same document or shadow root for this to work. | `HTMLFormElement \| null` | — |
+| `validationTarget` | — | Override this to change where constraint validation popups are anchored. | `undefined \| HTMLElement` | — |
+
+## Methods
+
+| Name | Description | Arguments |
+| --- | --- | --- |
+| `focus()` | Sets focus on the input. | `options: FocusOptions` |
+| `blur()` | Removes focus from the input. | — |
+| `select()` | Selects all the text in the input. | — |
+| `stepUp()` | Increments the value by the step amount. | — |
+| `stepDown()` | Decrements the value by the step amount. | — |
+| `setCustomValidity()` | Do not use this when creating a "Validator". This is intended for end users of components. We track manually defined custom errors so we don't clear them on accident in our validators. | `message: string` |
+| `formStateRestoreCallback()` | Called when the browser is trying to restore element’s state to state in which case reason is "restore", or when the browser is trying to fulfill autofill on behalf of user in which case reason is "autocomplete". In the case of "restore", state is a string, File, or FormData object previously set as the second argument to setFormValue. | `state: string \\| File \\| FormData \\| null, reason: 'autocomplete' \\| 'restore'` |
+| `resetValidity()` | Reset validity is a way of removing manual custom errors and native validation. | — |
+
+## Events
+
+| Name | Description |
+| --- | --- |
+| `input` | Emitted when the control receives input. |
+| `change` | Emitted when an alteration to the control's value is committed by the user. |
+| `blur` | Emitted when the control loses focus. |
+| `focus` | Emitted when the control gains focus. |
+| `beforeinput` | Emitted before the value changes. Can be cancelled with `event.preventDefault()` to prevent the value from changing. |
+| `wa-invalid` | Emitted when the form control has been checked for validity and its constraints aren't satisfied. |
+
+## Custom States
+
+| Name | Description | CSS selector |
+| --- | --- | --- |
+| `blank` | The input is empty. | `:state(blank)` |
+| `focused` | The input has focus. | `:state(focused)` |
+
+## CSS Parts
+
+| Name | Description | CSS selector |
+| --- | --- | --- |
+| \`base\` | The wrapper containing the input and steppers. | \`::part(base)\` |
+| \`end\` | \`end\` The container that wraps the slot. | \`::part(end)\` |
+| \`form-control-label\` | Alias for the label element. | \`::part(form-control-label)\` |
+| \`hint\` | The hint element. | \`::part(hint)\` |
+| \`input\` | \`\` The internal control. | \`::part(input)\` |
+| \`label\` | The label element. | \`::part(label)\` |
+| \`start\` | \`start\` The container that wraps the slot. | \`::part(start)\` |
+| \`stepper\` | Both stepper buttons (for shared styling). | \`::part(stepper)\` |
+| \`stepper-decrement\` | The decrement (-) button on the start side. | \`::part(stepper-decrement)\` |
+| \`stepper-increment\` | The increment (+) button on the end side. | \`::part(stepper-increment)\` |
+
+## Dependencies
+
+This component automatically imports the following elements. Sub-dependencies, if any exist, will also be included in this list.
+
+-   [`<wa-icon>`](https://webawesome.com/docs/components/icon)
+
 ## Examples
 
-Link to This Section
-
 ### Labels
-
-Link to This Section
 
 Use the `label` attribute to give the input an accessible label. For labels that contain HTML, use the `label` slot instead.
 
@@ -30,8 +153,6 @@ Use the `label` attribute to give the input an accessible label. For labels that
 ```
 
 ### Hint
-
-Link to This Section
 
 Add descriptive hint to an input with the `hint` attribute. For hints that contain HTML, use the `hint` slot instead.
 
@@ -45,17 +166,13 @@ Add descriptive hint to an input with the `hint` attribute. For hints that conta
 
 ### Placeholders
 
-Link to This Section
-
 Use the `placeholder` attribute to add a placeholder.
 
 ```html
 <wa-number-input placeholder="Enter a number" style="max-width: 260px;"></wa-number-input>
 ```
 
-### Setting Min, Max, and Step
-
-Link to This Section
+### Setting Min, Max, & Step
 
 Use the `min` and `max` attributes to set a minimum and maximum value. Use the `step` attribute to change the granularity the value must adhere to when using the stepper buttons or arrow keys.
 
@@ -72,8 +189,6 @@ Use the `min` and `max` attributes to set a minimum and maximum value. Use the `
 ```
 
 ### Appearance
-
-Link to This Section
 
 Use the `appearance` attribute to change the input's visual appearance.
 
@@ -92,8 +207,6 @@ Use the `appearance` attribute to change the input's visual appearance.
 
 ### Disabled
 
-Link to This Section
-
 Use the `disabled` attribute to disable an input.
 
 ```html
@@ -102,8 +215,6 @@ Use the `disabled` attribute to disable an input.
 
 ### Readonly
 
-Link to This Section
-
 Use the `readonly` attribute to make the input readonly. The value can still be selected and copied, but it cannot be changed.
 
 ```html
@@ -111,8 +222,6 @@ Use the `readonly` attribute to make the input readonly. The value can still be 
 ```
 
 ### Sizes
-
-Link to This Section
 
 Use the `size` attribute to change an input's size.
 
@@ -130,8 +239,6 @@ Use the `size` attribute to change an input's size.
 
 ### Pill
 
-Link to This Section
-
 Use the `pill` attribute to give inputs rounded edges.
 
 ```html
@@ -148,8 +255,6 @@ Use the `pill` attribute to give inputs rounded edges.
 
 ### Without Steppers
 
-Link to This Section
-
 Add the `without-steppers` attribute to remove the increment/decrement buttons. Users can still modify the value using the keyboard.
 
 ```html
@@ -159,8 +264,6 @@ Add the `without-steppers` attribute to remove the increment/decrement buttons. 
 When steppers are hidden, users can still use the arrow keys to increment and decrement the value.
 
 ### Start & End Decorations
-
-Link to This Section
 
 Use the `start` and `end` slots to add presentational elements like [`<wa-icon>`](https://webawesome.com/docs/components/icon) within the input.
 
@@ -178,8 +281,6 @@ Use the `start` and `end` slots to add presentational elements like [`<wa-icon>`
 
 ### Custom Stepper Icons
 
-Link to This Section
-
 Use the `increment-icon` and `decrement-icon` slots to customize the stepper button icons.
 
 ```html
@@ -190,8 +291,6 @@ Use the `increment-icon` and `decrement-icon` slots to customize the stepper but
 ```
 
 ### Customizing Label Position
-
-Link to This Section
 
 Use [CSS parts](#css-parts) to customize the way form controls are drawn. This example uses CSS grid to position the label to the left of the control, but the possible orientations are nearly endless. The same technique works for inputs, textareas, radio groups, and similar form controls.
 
@@ -229,8 +328,6 @@ Use [CSS parts](#css-parts) to customize the way form controls are drawn. This e
 ```
 
 ### Form Validation
-
-Link to This Section
 
 Use the `required` attribute to make the field required. Combine with `min` and `max` for range validation.
 
@@ -271,92 +368,3 @@ Use the `required` attribute to make the field required. Combine with `min` and 
   });
 </script>
 ```
-
-## Slots
-
-Valid slot names for this component (use exactly these — any other `slot` value
-is silently ignored and the element falls back to the default slot):
-
-- `label` — The input's label. Alternatively, you can use the `label` attribute.
-- `start` — An element, such as `<wa-icon>`, placed at the start of the input control.
-- `end` — An element, such as `<wa-icon>`, placed at the end of the input control (before steppers).
-- `increment-icon` — An icon to use in lieu of the default increment icon.
-- `decrement-icon` — An icon to use in lieu of the default decrement icon.
-- `hint` — Text that describes how to use the input. Alternatively, you can use the `hint` attribute.
-
-## Attributes & Properties
-
-| Attribute | Property | Type | Default | Description |
-| --- | --- | --- | --- | --- |
-| `title` |  | `string` | `''` |  |
-| `value` | `defaultValue` | `string \| null` |  | The default value of the form control. Primarily used for resetting the form control. |
-| `size` |  | `'xs' \| 's' \| 'm' \| 'l' \| 'xl' \| 'small' \| 'medium' \| 'large'` | `'m'` | The input's size. |
-| `appearance` |  | `'filled' \| 'outlined' \| 'filled-outlined'` | `'outlined'` | The input's visual appearance. |
-| `pill` |  | `boolean` | `false` | Draws a pill-style input with rounded edges. |
-| `label` |  | `string` | `''` | The input's label. If you need to display HTML, use the `label` slot instead. |
-| `hint` |  | `string` | `''` | The input's hint. If you need to display HTML, use the `hint` slot instead. |
-| `placeholder` |  | `string` | `''` | Placeholder text to show as a hint when the input is empty. |
-| `readonly` |  | `boolean` | `false` | Makes the input readonly. |
-| `required` |  | `boolean` | `false` | Makes the input a required field. |
-| `min` |  | `number` |  | The input's minimum value. |
-| `max` |  | `number` |  | The input's maximum value. |
-| `step` |  | `number \| 'any'` | `1` | Specifies the granularity that the value must adhere to, or the special value `any` which means no stepping is implied, allowing any numeric value. |
-| `without-steppers` | `withoutSteppers` | `boolean` | `false` | Hides the increment/decrement stepper buttons. |
-| `autocomplete` |  | `string` |  | Specifies what permission the browser has to provide assistance in filling out form field values. Refer to [this page on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) for available values. |
-| `autofocus` |  | `boolean` |  | Indicates that the input should receive focus on page load. |
-| `enterkeyhint` |  | `'enter' \| 'done' \| 'go' \| 'next' \| 'previous' \| 'search' \| 'send'` |  | Used to customize the label or icon of the Enter key on virtual keyboards. |
-| `inputmode` |  | `'numeric' \| 'decimal'` | `'numeric'` | Tells the browser what type of data will be entered by the user, allowing it to display the appropriate virtual keyboard on supportive devices. |
-| `with-label` | `withLabel` | `boolean` | `false` | Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup includes the label before the component hydrates on the client. |
-| `with-hint` | `withHint` | `boolean` | `false` | Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup includes the hint before the component hydrates on the client. |
-| `name` |  | `string \| null` | `null` | The name of the input, submitted as a name/value pair with form data. |
-| `disabled` |  | `boolean` | `false` | Disables the form control. |
-| `custom-error` | `customError` | `string \| null` | `null` |  |
-| `dir` |  | `string` |  |  |
-| `lang` |  | `string` |  |  |
-| `did-ssr` | `didSSR` |  |  |  |
-
-## Methods
-
-| Method | Description | Arguments |
-| --- | --- | --- |
-| `focus` | Sets focus on the input. | `options: FocusOptions` |
-| `blur` | Removes focus from the input. |  |
-| `select` | Selects all the text in the input. |  |
-| `stepUp` | Increments the value by the step amount. |  |
-| `stepDown` | Decrements the value by the step amount. |  |
-| `setCustomValidity` | Do not use this when creating a "Validator". This is intended for end users of components. We track manually defined custom errors so we don't clear them on accident in our validators. | `message: string` |
-| `formStateRestoreCallback` | Called when the browser is trying to restore element’s state to state in which case reason is "restore", or when the browser is trying to fulfill autofill on behalf of user in which case reason is "autocomplete". In the case of "restore", state is a string, File, or FormData object previously set as the second argument to setFormValue. | `state: string \| File \| FormData \| null, reason: 'autocomplete' \| 'restore'` |
-| `resetValidity` | Reset validity is a way of removing manual custom errors and native validation. |  |
-
-## Events
-
-| Event | Description |
-| --- | --- |
-| `input` | Emitted when the control receives input. |
-| `change` | Emitted when an alteration to the control's value is committed by the user. |
-| `blur` | Emitted when the control loses focus. |
-| `focus` | Emitted when the control gains focus. |
-| `beforeinput` | Emitted before the value changes. Can be cancelled with `event.preventDefault()` to prevent the value from changing. |
-| `wa-invalid` | Emitted when the form control has been checked for validity and its constraints aren't satisfied. |
-
-## Custom States
-
-| State | Description |
-| --- | --- |
-| `blank` | The input is empty. |
-| `focused` | The input has focus. |
-
-## CSS Parts
-
-| Part | Description |
-| --- | --- |
-| `label` | The label element. |
-| `form-control-label` | Alias for the label element. |
-| `hint` | The hint element. |
-| `base` | The wrapper containing the input and steppers. |
-| `input` | The internal `<input>` control. |
-| `start` | The container that wraps the `start` slot. |
-| `end` | The container that wraps the `end` slot. |
-| `stepper` | Both stepper buttons (for shared styling). |
-| `stepper-increment` | The increment (+) button on the end side. |
-| `stepper-decrement` | The decrement (-) button on the start side. |

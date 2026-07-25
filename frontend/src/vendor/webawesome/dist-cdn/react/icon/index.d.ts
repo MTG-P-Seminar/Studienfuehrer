@@ -22,7 +22,7 @@ export type { WaErrorEvent, WaLoadEvent } from '../../events/events.js';
  * @cssproperty [--animation-timing] Describes how the animation will progress over one cycle of its duration.
  * @cssproperty [--beat-fade-opacity] Set lowest opacity value an icon with `beat-fade` animation will fade to and from.
  * @cssproperty [--beat-fade-scale] Set max value that an icon with `beat-fade` animation will scale.
- * @cssproperty [--beat-scale] Set max value that an icon with `beat` animation will scale.
+ * @cssproperty [--beat-scale] Set the scale multiplier for an icon with `beat` animation. This multiplies the animation's 1.25× base pulse, so the default `1.25` peaks at ~1.56× and `2` roughly doubles the pulse.
  * @cssproperty [--bounce-height] Set the max height an icon with `bounce` animation will jump to when bouncing.
  * @cssproperty [--bounce-jump-scale-x] Set the icon’s horizontal distortion (“squish”) at the top of the jump.
  * @cssproperty [--bounce-jump-scale-y] Set the icon’s vertical distortion (“squish”) at the top of the jump.
@@ -32,10 +32,25 @@ export type { WaErrorEvent, WaLoadEvent } from '../../events/events.js';
  * @cssproperty [--bounce-start-scale-x] Set the icon’s horizontal distortion (“squish”) when starting to bounce.
  * @cssproperty [--bounce-start-scale-y] Set the icon’s vertical distortion (“squish”) when starting to bounce.
  * @cssproperty [--fade-opacity] Set lowest opacity value an icon with `fade` animation will fade to and from.
- * @cssproperty [--flip-angle] Set rotation angle of flip for an icon with `flip` animation. A positive angle denotes a clockwise rotation, a negative angle a counter-clockwise one.
- * @cssproperty [--flip-x] Set x-coordinate of the vector denoting the axis of rotation (between 0 and 1) for an icon with `flip` animation.
- * @cssproperty [--flip-y] Set y-coordinate of the vector denoting the axis of rotation (between 0 and 1) for an icon with `flip` animation.
- * @cssproperty [--flip-z] Set z-coordinate of the vector denoting the axis of rotation (between 0 and 1) for an icon with `flip` animation.
+ * @cssproperty [--flip-angle] Set rotation angle of flip for an icon with `flip` or `flip-360` animation. A positive angle denotes a clockwise rotation, a negative angle a counter-clockwise one.
+ * @cssproperty [--flip-x] Set x-coordinate of the vector denoting the axis of rotation (between 0 and 1) for an icon with `flip` or `flip-360` animation.
+ * @cssproperty [--flip-y] Set y-coordinate of the vector denoting the axis of rotation (between 0 and 1) for an icon with `flip` or `flip-360` animation.
+ * @cssproperty [--flip-z] Set z-coordinate of the vector denoting the axis of rotation (between 0 and 1) for an icon with `flip` or `flip-360` animation.
+ * @cssproperty [--flip-anticipation-scale] Set the scale of the wind-up before an icon with `flip` or `flip-360` animation rotates.
+ * @cssproperty [--flip-overshoot] Set how far past the final angle an icon with `flip` or `flip-360` animation rotates before settling.
+ * @cssproperty [--bounce-anticipation] Set the downward squash distance before an icon with `bounce` animation jumps.
+ * @cssproperty [--buzz-distance] Set the horizontal travel of an icon with `buzz` animation.
+ * @cssproperty [--wag-angle] Set the peak rotation of an icon with `wag` animation.
+ * @cssproperty [--swing-angle] Set the peak rotation of an icon with `swing` animation.
+ * @cssproperty [--jello-scale-x] Set the horizontal stretch of an icon with `jello` animation.
+ * @cssproperty [--jello-scale-y] Set the vertical stretch of an icon with `jello` animation.
+ * @cssproperty [--float-height] Set the rise height of an icon with `float` animation.
+ * @cssproperty [--float-drift] Set the horizontal drift of an icon with `float` animation.
+ * @cssproperty [--float-tilt] Set the rotation of an icon with `float` animation.
+ * @cssproperty [--float-squash-x] Set the horizontal squash of an icon with `float` animation at rest.
+ * @cssproperty [--float-squash-y] Set the vertical squash of an icon with `float` animation at rest.
+ * @cssproperty [--float-stretch-x] Set the horizontal stretch of an icon with `float` animation at its peak.
+ * @cssproperty [--float-stretch-y] Set the vertical stretch of an icon with `float` animation at its peak.
  * @cssproperty [--primary-color=currentColor] - Sets a duotone icon's primary color.
  * @cssproperty [--primary-opacity=1] - Sets a duotone icon's primary opacity.
  * @cssproperty [--secondary-color=currentColor] - Sets a duotone icon's secondary color.

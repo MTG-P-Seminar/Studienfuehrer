@@ -1,8 +1,5 @@
 # Badge
 
-**Full documentation:** https://webawesome.com/docs/components/badge
-
-
 `<wa-badge>`
 
 Stable [Feedback](https://webawesome.com/docs/components/?category=feedback) [Since 2.0](https://webawesome.com/docs/resources/changelog#wa_200)
@@ -13,13 +10,77 @@ Badges draw attention to adjacent content by displaying a status, count, or labe
 <wa-badge>Badge</wa-badge>
 ```
 
+## Importing
+
+If you're using the autoloader or a hosted project, components load on demand — no manual import needed. To cherry-pick a component manually, use one of the following snippets.
+
+\*\*CDN\*\*
+
+Import this component directly from the CDN:
+
+```js
+import 'https://ka-f.webawesome.com/webawesome@3.10.0/components/badge/badge.js';
+```
+
+\*\*npm\*\*
+
+After installing Web Awesome via npm, import this component:
+
+```js
+import '@awesome.me/webawesome/dist/components/badge/badge.js';
+```
+
+\*\*Self-Hosted\*\*
+
+If you're self-hosting Web Awesome, import this component from your server:
+
+```js
+import './webawesome/dist/components/badge/badge.js';
+```
+
+\*\*React\*\*
+
+To import this component for React 18 or below, use the following code:
+
+```js
+import WaBadge from '@awesome.me/webawesome/dist/react/badge/index.js';
+```
+
+## Slots
+
+Valid slot names for this component (use exactly these — any other `slot` value is
+silently ignored and the element falls back to the default slot):
+
+- `(default)` — The badge's content.
+- `start` — An element, such as `<wa-icon>`, placed before the label.
+- `end` — An element, such as `<wa-icon>`, placed after the label.
+
+## Attributes & Properties
+
+| Property | Attribute | Description | Type | Default |
+| --- | --- | --- | --- | --- |
+| `variant` | `variant` | The badge's theme variant. Defaults to `brand` if not within another element with a variant. | `'brand' \| 'neutral' \| 'success' \| 'warning' \| 'danger'` | `'brand'` |
+| `appearance` | `appearance` | The badge's visual appearance. | `'accent' \| 'filled' \| 'outlined' \| 'filled-outlined'` | `'accent'` |
+| `pill` | `pill` | Draws a pill-style badge with rounded edges. | `boolean` | `false` |
+| `attention` | `attention` | Adds an animation to draw attention to the badge. | `'none' \| 'pulse' \| 'bounce'` | `'none'` |
+
+## CSS Custom Properties
+
+| Name | Description |
+| --- | --- |
+| \`--pulse-color\` | \`attention="pulse"\` The color of the badge's pulse effect when using . |
+
+## CSS Parts
+
+| Name | Description | CSS selector |
+| --- | --- | --- |
+| \`base\` | The component's base wrapper. | \`::part(base)\` |
+| \`end\` | \`end\` The container that wraps the slot. | \`::part(end)\` |
+| \`start\` | \`start\` The container that wraps the slot. | \`::part(start)\` |
+
 ## Examples
 
-Link to This Section
-
 ### Variants
-
-Link to This Section
 
 Set the `variant` attribute to change the badge's variant.
 
@@ -32,8 +93,6 @@ Set the `variant` attribute to change the badge's variant.
 ```
 
 ### Appearance
-
-Link to This Section
 
 Use the `appearance` attribute to change the badge's visual appearance.
 
@@ -72,8 +131,6 @@ Use the `appearance` attribute to change the badge's visual appearance.
 
 ### Size
 
-Link to This Section
-
 Badges are sized relative to the current font size. You can set `font-size` on any badge (or an ancestor element) to change it.
 
 ```html
@@ -86,8 +143,6 @@ Badges are sized relative to the current font size. You can set `font-size` on a
 
 ### Pill Badges
 
-Link to This Section
-
 Use the `pill` attribute to give badges rounded edges.
 
 ```html
@@ -99,8 +154,6 @@ Use the `pill` attribute to give badges rounded edges.
 ```
 
 ### Drawing Attention
-
-Link to This Section
 
 Use the `attention` attribute to draw attention to the badge with a subtle animation. Supported effects are `bounce`, `pulse` and `none`.
 
@@ -134,8 +187,6 @@ Use the `attention` attribute to draw attention to the badge with a subtle anima
 
 ### Start & End Decorations
 
-Link to This Section
-
 Use the `start` and `end` slots to add presentational elements like [`<wa-icon>`](https://webawesome.com/docs/components/icon) alongside the badge's label.
 
 ```html
@@ -156,8 +207,6 @@ Use the `start` and `end` slots to add presentational elements like [`<wa-icon>`
 
 ### With Buttons
 
-Link to This Section
-
 One of the most common use cases for badges is attaching them to buttons. To make this easier, badges will be automatically positioned at the top-right when they're a child of a button.
 
 ```html
@@ -176,38 +225,3 @@ One of the most common use cases for badges is attaching them to buttons. To mak
   <wa-badge variant="danger" pill>6</wa-badge>
 </wa-button>
 ```
-
-## Slots
-
-Valid slot names for this component (use exactly these — any other `slot` value
-is silently ignored and the element falls back to the default slot):
-
-- `(default)` — The badge's content.
-- `start` — An element, such as `<wa-icon>`, placed before the label.
-- `end` — An element, such as `<wa-icon>`, placed after the label.
-
-## Attributes & Properties
-
-| Attribute | Property | Type | Default | Description |
-| --- | --- | --- | --- | --- |
-| `variant` |  | `'brand' \| 'neutral' \| 'success' \| 'warning' \| 'danger'` | `'brand'` | The badge's theme variant. Defaults to `brand` if not within another element with a variant. |
-| `appearance` |  | `'accent' \| 'filled' \| 'outlined' \| 'filled-outlined'` | `'accent'` | The badge's visual appearance. |
-| `pill` |  | `boolean` | `false` | Draws a pill-style badge with rounded edges. |
-| `attention` |  | `'none' \| 'pulse' \| 'bounce'` | `'none'` | Adds an animation to draw attention to the badge. |
-| `dir` |  | `string` |  |  |
-| `lang` |  | `string` |  |  |
-| `did-ssr` | `didSSR` |  |  |  |
-
-## CSS Parts
-
-| Part | Description |
-| --- | --- |
-| `base` | The component's base wrapper. |
-| `start` | The container that wraps the `start` slot. |
-| `end` | The container that wraps the `end` slot. |
-
-## CSS Custom Properties
-
-| Property | Default | Description |
-| --- | --- | --- |
-| `--pulse-color` |  | The color of the badge's pulse effect when using `attention="pulse"`. |

@@ -2,6 +2,12 @@
   position: relative;
 }
 
+@media (hover: none) and (pointer: coarse) {
+  .img-wrapper wa-button {
+    display: none;
+  }
+}
+
 .img-wrapper wa-button, .img-overlay wa-button {
   position: absolute;
   top: 1rem;

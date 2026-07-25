@@ -32,7 +32,7 @@ import '../icon/icon.js';
  *  partially visible as a scroll hint.
  * @cssproperty [--slide-gap=var(--wa-space-m)] - The space between each slide.
  *
- * @ssr - Carousel relies on scroll behaviors to work properly. Carousel will display the first image properly, but will not be interactive.
+ * @ssr - `<wa-carousel>` displays its first slide during SSR, but won't be interactive until it hydrates on the client.
  */
 export default class WaCarousel extends WebAwesomeElement {
     static css: import("lit").CSSResult;
@@ -64,6 +64,7 @@ export default class WaCarousel extends WebAwesomeElement {
     activeSlide: number;
     scrolling: boolean;
     dragging: boolean;
+    awaitingInitialPosition: boolean;
     private autoplayController;
     private dragStartPosition;
     private readonly localize;

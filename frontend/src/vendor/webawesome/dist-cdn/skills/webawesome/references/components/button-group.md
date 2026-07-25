@@ -1,8 +1,5 @@
 # Button Group
 
-**Full documentation:** https://webawesome.com/docs/components/button-group
-
-
 `<wa-button-group>`
 
 Stable [Actions](https://webawesome.com/docs/components/?category=actions) [Since 2.0](https://webawesome.com/docs/resources/changelog#wa_200)
@@ -17,13 +14,65 @@ Button groups combine related buttons into a single visual unit. Use them for to
 </wa-button-group>
 ```
 
+## Importing
+
+If you're using the autoloader or a hosted project, components load on demand — no manual import needed. To cherry-pick a component manually, use one of the following snippets.
+
+\*\*CDN\*\*
+
+Import this component directly from the CDN:
+
+```js
+import 'https://ka-f.webawesome.com/webawesome@3.10.0/components/button-group/button-group.js';
+```
+
+\*\*npm\*\*
+
+After installing Web Awesome via npm, import this component:
+
+```js
+import '@awesome.me/webawesome/dist/components/button-group/button-group.js';
+```
+
+\*\*Self-Hosted\*\*
+
+If you're self-hosting Web Awesome, import this component from your server:
+
+```js
+import './webawesome/dist/components/button-group/button-group.js';
+```
+
+\*\*React\*\*
+
+To import this component for React 18 or below, use the following code:
+
+```js
+import WaButtonGroup from '@awesome.me/webawesome/dist/react/button-group/index.js';
+```
+
+## Slots
+
+Valid slot names for this component (use exactly these — any other `slot` value is
+silently ignored and the element falls back to the default slot):
+
+- `(default)` — One or more `<wa-button>` elements to display in the button group.
+
+## Attributes & Properties
+
+| Property | Attribute | Description | Type | Default |
+| --- | --- | --- | --- | --- |
+| `label` | `label` | A label to use for the button group. This won't be displayed on the screen, but it will be announced by assistive devices when interacting with the control and is strongly recommended. | `string` | `''` |
+| `orientation` | `orientation` | The button group's orientation. | `'horizontal' \| 'vertical'` | `'horizontal'` |
+
+## CSS Parts
+
+| Name | Description | CSS selector |
+| --- | --- | --- |
+| \`base\` | The component's base wrapper. | \`::part(base)\` |
+
 ## Examples
 
-Link to This Section
-
 ### Vertical Button Groups
-
-Link to This Section
 
 Set the `orientation` attribute to `vertical` to make a vertical button group.
 
@@ -41,8 +90,6 @@ Set the `orientation` attribute to `vertical` to make a vertical button group.
 ```
 
 ### Pill Buttons
-
-Link to This Section
 
 Pill buttons are supported through the button's `pill` attribute.
 
@@ -88,8 +135,6 @@ Pill buttons are supported through the button's `pill` attribute.
 
 ### Dropdowns in Button Groups
 
-Link to This Section
-
 Dropdowns can be placed into button groups.
 
 ```html
@@ -106,8 +151,6 @@ Dropdowns can be placed into button groups.
 ```
 
 ### Split Buttons
-
-Link to This Section
 
 Create a split button using a button and a dropdown. Use a [visually hidden](https://webawesome.com/docs/utilities/visually-hidden) label to ensure the dropdown is accessible to users with assistive devices.
 
@@ -127,8 +170,6 @@ Create a split button using a button and a dropdown. Use a [visually hidden](htt
 
 ### Tooltips in Button Groups
 
-Link to This Section
-
 Buttons can be wrapped in tooltips to provide more detail when the user interacts with them.
 
 ```html
@@ -144,8 +185,6 @@ Buttons can be wrapped in tooltips to provide more detail when the user interact
 ```
 
 ### Toolbar Example
-
-Link to This Section
 
 Create interactive toolbars with button groups.
 
@@ -194,8 +233,6 @@ Create interactive toolbars with button groups.
 
 ### Native Buttons
 
-Link to This Section
-
 Button groups also work with native `<button>` elements when [Native Styles](https://webawesome.com/docs/utilities/native) are included.
 
 ```html
@@ -205,26 +242,3 @@ Button groups also work with native `<button>` elements when [Native Styles](htt
   <button class="wa-filled">Right</button>
 </wa-button-group>
 ```
-
-## Slots
-
-Valid slot names for this component (use exactly these — any other `slot` value
-is silently ignored and the element falls back to the default slot):
-
-- `(default)` — One or more `<wa-button>` elements to display in the button group.
-
-## Attributes & Properties
-
-| Attribute | Property | Type | Default | Description |
-| --- | --- | --- | --- | --- |
-| `label` |  | `string` | `''` | A label to use for the button group. This won't be displayed on the screen, but it will be announced by assistive devices when interacting with the control and is strongly recommended. |
-| `orientation` |  | `'horizontal' \| 'vertical'` | `'horizontal'` | The button group's orientation. |
-| `dir` |  | `string` |  |  |
-| `lang` |  | `string` |  |  |
-| `did-ssr` | `didSSR` |  |  |  |
-
-## CSS Parts
-
-| Part | Description |
-| --- | --- |
-| `base` | The component's base wrapper. |

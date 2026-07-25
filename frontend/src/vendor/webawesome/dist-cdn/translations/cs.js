@@ -40,7 +40,7 @@ var translation = {
   goToSlide: (slide, count) => `P\u0159ej\xEDt na slide ${slide} z ${count}`,
   hidePassword: "Skr\xFDt heslo",
   hour: "Hodina",
-  incompleteDate: "Zadejte \xFApln\xE9 datum.",
+  incompleteDate: "Zadejte platn\xE9 datum.",
   increment: "Zv\xFD\u0161it",
   loading: "Nahr\xE1v\xE1 se",
   minute: "Minuta",

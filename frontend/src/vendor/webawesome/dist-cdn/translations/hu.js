@@ -1,6 +1,6 @@
 /*! Copyright 2026 Fonticons, Inc. - https://webawesome.com/license */
-import "../chunks/chunk.WQ2OSH23.js";
-import "../chunks/chunk.MFUK3XY6.js";
+import "../chunks/chunk.FA3XZ7H6.js";
+import "../chunks/chunk.V7SU5PYA.js";
 import {
   registerTranslation
 } from "../chunks/chunk.CZ2YL77F.js";
@@ -42,7 +42,7 @@ var translation = {
   goToSlide: (slide, count) => `Ugr\xE1s a ${count}/${slide}. di\xE1ra`,
   hidePassword: "Jelsz\xF3 elrejt\xE9se",
   hour: "\xD3ra",
-  incompleteDate: "Adjon meg egy teljes d\xE1tumot.",
+  incompleteDate: "Adjon meg egy \xE9rv\xE9nyes d\xE1tumot.",
   increment: "N\xF6vel\xE9s",
   loading: "Bet\xF6lt\xE9s",
   minute: "Perc",

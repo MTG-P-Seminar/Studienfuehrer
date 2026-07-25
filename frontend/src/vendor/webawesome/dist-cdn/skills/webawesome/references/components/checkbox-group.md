@@ -1,8 +1,5 @@
 # Checkbox Group
 
-**Full documentation:** https://webawesome.com/docs/components/checkbox-group
-
-
 `<wa-checkbox-group>`
 
 Stable [Forms](https://webawesome.com/docs/components/?category=forms) [Since 3.9](https://webawesome.com/docs/resources/changelog#wa_390)
@@ -19,13 +16,88 @@ Checkboxes in a group remain independent form controls with their own `name`, `v
 </wa-checkbox-group>
 ```
 
+## Importing
+
+If you're using the autoloader or a hosted project, components load on demand — no manual import needed. To cherry-pick a component manually, use one of the following snippets.
+
+\*\*CDN\*\*
+
+Import this component directly from the CDN:
+
+```js
+import 'https://ka-f.webawesome.com/webawesome@3.10.0/components/checkbox-group/checkbox-group.js';
+```
+
+\*\*npm\*\*
+
+After installing Web Awesome via npm, import this component:
+
+```js
+import '@awesome.me/webawesome/dist/components/checkbox-group/checkbox-group.js';
+```
+
+\*\*Self-Hosted\*\*
+
+If you're self-hosting Web Awesome, import this component from your server:
+
+```js
+import './webawesome/dist/components/checkbox-group/checkbox-group.js';
+```
+
+\*\*React\*\*
+
+To import this component for React 18 or below, use the following code:
+
+```js
+import WaCheckboxGroup from '@awesome.me/webawesome/dist/react/checkbox-group/index.js';
+```
+
+## Slots
+
+Valid slot names for this component (use exactly these — any other `slot` value is
+silently ignored and the element falls back to the default slot):
+
+- `(default)` — The default slot where `<wa-checkbox>` or `<wa-switch>` elements are placed.
+- `label` — The checkbox group's label. Required for proper accessibility. Alternatively, you can use the `label` attribute.
+- `hint` — Text that describes how to use the checkbox group. Alternatively, you can use the `hint` attribute.
+
+## Attributes & Properties
+
+| Property | Attribute | Description | Type | Default |
+| --- | --- | --- | --- | --- |
+| `label` | `label` | The checkbox group's label. Required for proper accessibility. If you need to display HTML, use the `label` slot instead. | `string` | `''` |
+| `hint` | `hint` | The checkbox group's hint. If you need to display HTML, use the `hint` slot instead. | `string` | `''` |
+| `orientation` | `orientation` | The orientation in which to show grouped checkboxes. | `'horizontal' \| 'vertical'` | `'vertical'` |
+| `size` | `size` | The group's size. When present, this size will be applied to all `<wa-checkbox>` and `<wa-switch>` items inside. | `'xs' \| 's' \| 'm' \| 'l' \| 'xl' \| 'small' \| 'medium' \| 'large'` | — |
+| `required` | `required` | Indicates that at least one option should be selected. This only adds a visual indicator to the label. To enforce the requirement, use the `required` attribute on the individual checkboxes and/or their `setCustomValidity()` method. | `boolean` | `false` |
+| `withLabel` | `with-label` | Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup includes the label before the component hydrates on the client. | `boolean` | `false` |
+| `withHint` | `with-hint` | Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup includes the hint before the component hydrates on the client. | `boolean` | `false` |
+
+## CSS Custom Properties
+
+| Name | Description |
+| --- | --- |
+| \`--gap\` | \`0.5em\` The gap between grouped checkboxes. Default |
+
+## CSS Parts
+
+| Name | Description | CSS selector |
+| --- | --- | --- |
+| \`form-control\` | The form control that wraps the label, group, and hint. | \`::part(form-control)\` |
+| \`form-control-input\` | \`role="group"\` The element that wraps the grouped checkboxes, exposed as a . | \`::part(form-control-input)\` |
+| \`form-control-label\` | The label's wrapper. | \`::part(form-control-label)\` |
+| \`hint\` | The hint's wrapper. | \`::part(hint)\` |
+
+## Dependencies
+
+This component automatically imports the following elements. Sub-dependencies, if any exist, will also be included in this list.
+
+-   [`<wa-checkbox>`](https://webawesome.com/docs/components/checkbox)
+-   [`<wa-icon>`](https://webawesome.com/docs/components/icon)
+
 ## Examples
 
-Link to This Section
-
 ### Labels
-
-Link to This Section
 
 Use the `label` attribute to give the group an accessible label. For labels that contain HTML, use the `label` slot instead.
 
@@ -42,8 +114,6 @@ Use the `label` attribute to give the group an accessible label. For labels that
 
 ### Hint
 
-Link to This Section
-
 Add a descriptive hint to a checkbox group with the `hint` attribute. For hints that contain HTML, use the `hint` slot instead.
 
 ```html
@@ -55,8 +125,6 @@ Add a descriptive hint to a checkbox group with the `hint` attribute. For hints 
 ```
 
 ### Orientation
-
-Link to This Section
 
 Checkbox groups stack vertically by default. Set the `orientation` attribute to `horizontal` to lay them out in a row.
 
@@ -70,36 +138,36 @@ Checkbox groups stack vertically by default. Set the `orientation` attribute to 
 
 ### Sizes
 
-Link to This Section
-
 The size of grouped checkboxes and switches is determined by the checkbox group's `size` attribute. Any `size` set on individual items will be overridden.
 
 ```html
-<wa-checkbox-group id="checkbox-group-size" label="Options" hint="Use the select below to change the size." size="m">
-  <wa-checkbox>Option 1</wa-checkbox>
-  <wa-checkbox>Option 2</wa-checkbox>
-  <wa-checkbox>Option 3</wa-checkbox>
-</wa-checkbox-group>
+<div>
+  <wa-checkbox-group id="checkbox-group-size" label="Options" hint="Use the select below to change the size." size="m">
+    <wa-checkbox>Option 1</wa-checkbox>
+    <wa-checkbox>Option 2</wa-checkbox>
+    <wa-checkbox>Option 3</wa-checkbox>
+  </wa-checkbox-group>
 
-<wa-select label="Size" value="m" style="max-width: 200px; margin-top: 2rem;">
-  <wa-option value="xs">Extra small</wa-option>
-  <wa-option value="s">Small</wa-option>
-  <wa-option value="m">Medium</wa-option>
-  <wa-option value="l">Large</wa-option>
-  <wa-option value="xl">Extra large</wa-option>
-</wa-select>
+  <wa-divider></wa-divider>
+
+  <wa-select label="Size" value="m" style="max-width: 200px;">
+    <wa-option value="xs">Extra small</wa-option>
+    <wa-option value="s">Small</wa-option>
+    <wa-option value="m">Medium</wa-option>
+    <wa-option value="l">Large</wa-option>
+    <wa-option value="xl">Extra large</wa-option>
+  </wa-select>
+</div>
 
 <script>
   const checkboxGroup = document.getElementById('checkbox-group-size');
-  const sizeSelect = checkboxGroup.nextElementSibling;
+  const sizeSelect = checkboxGroup.parentElement.querySelector('wa-select');
 
   sizeSelect.addEventListener('change', () => (checkboxGroup.size = sizeSelect.value));
 </script>
 ```
 
 ### Disabling
-
-Link to This Section
 
 A checkbox group itself can't be disabled. Add the `disabled` attribute to individual checkboxes to disable them.
 
@@ -114,8 +182,6 @@ A checkbox group itself can't be disabled. Add the `disabled` attribute to indiv
 
 ### Switches
 
-Link to This Section
-
 A checkbox group also works with [switches](https://webawesome.com/docs/components/switch).
 
 ```html
@@ -128,8 +194,6 @@ A checkbox group also works with [switches](https://webawesome.com/docs/componen
 
 ### Required
 
-Link to This Section
-
 The `required` attribute adds a visual indicator to the group's label. Because each checkbox is an independent control, the checkbox group doesn't enforce the requirement. Set the `required` property on the checkbox or call its `setCustomValidity()` method to control validation.
 
 ```html
@@ -141,42 +205,3 @@ The `required` attribute adds a visual indicator to the group's label. Because e
   <wa-button type="submit" appearance="filled">Submit</wa-button>
 </form>
 ```
-
-## Slots
-
-Valid slot names for this component (use exactly these — any other `slot` value
-is silently ignored and the element falls back to the default slot):
-
-- `(default)` — The default slot where `<wa-checkbox>` or `<wa-switch>` elements are placed.
-- `label` — The checkbox group's label. Required for proper accessibility. Alternatively, you can use the `label` attribute.
-- `hint` — Text that describes how to use the checkbox group. Alternatively, you can use the `hint` attribute.
-
-## Attributes & Properties
-
-| Attribute | Property | Type | Default | Description |
-| --- | --- | --- | --- | --- |
-| `label` |  | `string` | `''` | The checkbox group's label. Required for proper accessibility. If you need to display HTML, use the `label` slot instead. |
-| `hint` |  | `string` | `''` | The checkbox group's hint. If you need to display HTML, use the `hint` slot instead. |
-| `orientation` |  | `'horizontal' \| 'vertical'` | `'vertical'` | The orientation in which to show grouped checkboxes. |
-| `size` |  | `'xs' \| 's' \| 'm' \| 'l' \| 'xl' \| 'small' \| 'medium' \| 'large'` |  | The group's size. When present, this size will be applied to all `<wa-checkbox>` and `<wa-switch>` items inside. |
-| `required` |  | `boolean` | `false` | Indicates that at least one option should be selected. This only adds a visual indicator to the label. To enforce the requirement, use the `required` attribute on the individual checkboxes and/or their `setCustomValidity()` method. |
-| `with-label` | `withLabel` | `boolean` | `false` | Only required for SSR. Set to `true` if you're slotting in a `label` element so the server-rendered markup includes the label before the component hydrates on the client. |
-| `with-hint` | `withHint` | `boolean` | `false` | Only required for SSR. Set to `true` if you're slotting in a `hint` element so the server-rendered markup includes the hint before the component hydrates on the client. |
-| `dir` |  | `string` |  |  |
-| `lang` |  | `string` |  |  |
-| `did-ssr` | `didSSR` |  |  |  |
-
-## CSS Parts
-
-| Part | Description |
-| --- | --- |
-| `form-control` | The form control that wraps the label, group, and hint. |
-| `form-control-label` | The label's wrapper. |
-| `form-control-input` | The element that wraps the grouped checkboxes, exposed as a `role="group"`. |
-| `hint` | The hint's wrapper. |
-
-## CSS Custom Properties
-
-| Property | Default | Description |
-| --- | --- | --- |
-| `--gap` | `0.5em` | The gap between grouped checkboxes. |

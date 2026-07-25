@@ -107,7 +107,6 @@ export default class WaPage extends WebAwesomeElement {
      * This prevents awkward gaps when scrolling the page and the aside / menu dont "fill" the gaps.
      */
     visiblePixelsInViewport(element: HTMLElement | null): number | null;
-    updateAsideAndMenuHeights: () => void;
     firstUpdated(): void;
     disconnectedCallback(): void;
     /**

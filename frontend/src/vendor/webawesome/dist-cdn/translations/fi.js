@@ -40,7 +40,7 @@ var translation = {
   goToSlide: (slide, count) => `Siirry diaan ${slide} / ${count}`,
   hidePassword: "Piilota salasana",
   hour: "Tunti",
-  incompleteDate: "Anna t\xE4ydellinen p\xE4iv\xE4m\xE4\xE4r\xE4.",
+  incompleteDate: "Anna kelvollinen p\xE4iv\xE4m\xE4\xE4r\xE4.",
   increment: "Lis\xE4\xE4",
   loading: "Ladataan",
   minute: "Minuutti",

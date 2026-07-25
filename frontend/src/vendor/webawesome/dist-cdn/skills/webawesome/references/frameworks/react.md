@@ -6,8 +6,6 @@ Frameworks React
 
 ## Installation
 
-Link to This Section
-
 To add Web Awesome to your React app, install the package from npm.
 
 ```bash
@@ -34,8 +32,6 @@ If you're using React 18 or below, skip to the [legacy React wrappers](#legacy-r
 Get personalized installation instructions from [your workspaces](https://webawesome.com/workspaces) instead.
 
 ## TypeScript
-
-Link to This Section
 
 If you're using TypeScript, you can add type safety using the types file included with Web Awesome.
 
@@ -67,8 +63,6 @@ declare module 'react' {
 ```
 
 ## Event Handling
-
-Link to This Section
 
 Many Web Awesome components emit [native events](https://developer.mozilla.org/en-US/docs/Web/API/Event). For example, the [input component](https://webawesome.com/components/input) emits the `input` event when it receives input. In React, you can listen for the event using `onInput`.
 
@@ -105,13 +99,9 @@ export default MyComponent;
 
 ### Preact
 
-Link to This Section
-
 Preact users facing type errors using components may benefit from setting "paths" in their `tsconfig.json` so that react types will instead resolve to preact/compat as described in [Preact's typescript documentation](https://preactjs.com/guide/v10/typescript/#typescript-preactcompat-configuration).
 
 ## Testing with Jest
-
-Link to This Section
 
 Testing with web components can be challenging if your test environment runs in a Node environment (i.e. it doesn't run in a real browser). Fortunately, [Jest](https://jestjs.io/) has made a number of strides to support web components and provide additional browser APIs. However, it's still not a complete replication of a browser environment.
 
@@ -120,8 +110,6 @@ Here are some tips that will help smooth things over if you're having trouble wi
 If you're looking for a fast, modern testing alternative, consider [Web Test Runner](https://modern-web.dev/docs/test-runner/overview/).
 
 ### Upgrade Jest
-
-Link to This Section
 
 Jest underwent a major revamp and received support for web components in [version 26.5.0](https://github.com/facebook/jest/blob/main/CHANGELOG.md#2650) when it introduced [JSDOM 16.2.0](https://github.com/jsdom/jsdom/blob/master/Changelog.md#1620). This release also included a number of mocks for built-in browser functions such as `MutationObserver`, `document.createRange`, and others.
 
@@ -132,8 +120,6 @@ npm install react-scripts@latest
 ```
 
 ### Mock Missing APIs
-
-Link to This Section
 
 Some components use `window.matchMedia`, but this function isn't supported by JSDOM so you'll need to mock it yourself.
 
@@ -159,8 +145,6 @@ For more details, refer to Jest's [manual mocking](https://jestjs.io/docs/manual
 
 ### Transform ES Modules
 
-Link to This Section
-
 ES Modules are a [well-supported browser standard](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/). This is how Web Awesome is distributed, but most React apps expect CommonJS. As a result, you'll probably run into the following error.
 
 ```
@@ -181,15 +165,11 @@ These instructions are for apps created via Create React App. If you're using Je
 
 For more details, refer to Jest's [`transformIgnorePatterns` customization](https://jestjs.io/docs/tutorial-react-native#transformignorepatterns-customization) documentation.
 
-## Legacy React Wrappers (React 18 and Below)
-
-Link to This Section
+## Legacy React Wrappers (React 18 & Below)
 
 React 18 and below have [poor support](https://custom-elements-everywhere.com/#react) for custom elements. For these versions, Web Awesome provides React wrappers for every component.
 
 ### Importing React Wrappers
-
-Link to This Section
 
 Every Web Awesome component is available to import as a React component. Note that you import the `<WaButton>` _React component_ instead of the [`<wa-button>`](https://webawesome.com/docs/components/button) _custom element_ in the example below.
 
@@ -203,9 +183,7 @@ export default MyComponent;
 
 You can find a copy + paste import for each component by selecting the _React_ tab in the _Importing_ section of each component's documentation.
 
-#### Notes about tree shaking
-
-Link to This Section
+#### Notes About Tree Shaking
 
 Previously, it was recommended to import from a single entrypoint like so:
 
@@ -221,8 +199,6 @@ However, tree-shaking extra Web Awesome components proved to be a challenge. As 
 ```
 
 ### Event Handling with React Wrappers
-
-Link to This Section
 
 Many Web Awesome components emit [native events](https://developer.mozilla.org/en-US/docs/Web/API/Event). For example, the [input component](https://webawesome.com/components/input) emits the `input` event when it receives input. In React, you can listen for the event using `onInput`.
 

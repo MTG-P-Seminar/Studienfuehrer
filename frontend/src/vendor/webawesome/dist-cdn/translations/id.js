@@ -40,7 +40,7 @@ var translation = {
   goToSlide: (slide, count) => `Pergi ke slide ${slide} dari ${count}`,
   hidePassword: "Sembunyikan sandi",
   hour: "Jam",
-  incompleteDate: "Masukkan tanggal lengkap.",
+  incompleteDate: "Masukkan tanggal yang valid.",
   increment: "Tambah",
   loading: "Memuat",
   minute: "Menit",

@@ -22,7 +22,7 @@ export type { WaErrorEvent, WaLoadEvent } from '../../events/events.js';
  * @cssproperty --control-box-size - The size of the icon box.
  * @cssproperty --icon-size - The size of the play/pause icons.
  *
- * @ssr - Due to limitations of the browser, this component is not able to be SSR'ed. You can use a `<video>` tag, but the controls will not work, and it will always auto-play the gif or webp.
+ * @ssr - Due to browser limitations, `<wa-animated-image>` can't render during SSR. As a fallback you can use a `<video>` tag, but its controls won't work, and the gif or webp will always auto-play.
  */
 declare const reactWrapper: import("@lit/react").ReactWebComponent<Component, {
     onWaLoad: EventName<WaLoadEvent>;

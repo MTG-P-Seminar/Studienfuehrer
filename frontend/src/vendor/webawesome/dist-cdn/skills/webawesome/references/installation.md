@@ -10,13 +10,11 @@ You can load Web Awesome via CDN or by installing it locally. If you’re using 
 
 ## CDN (Easiest)
 
-Link to This Section
-
 The CDN is the fastest way to get started with Web Awesome. Just copy and paste the following into the `<head>` of your HTML to get started!
 
 ```html
-<link rel="stylesheet" href="https://ka-f.webawesome.com/webawesome@3.9.0/styles/webawesome.css" />
-<script type="module" src="https://ka-f.webawesome.com/webawesome@3.9.0/webawesome.loader.js"></script>
+<link rel="stylesheet" href="https://ka-f.webawesome.com/webawesome@3.10.0/styles/webawesome.css" />
+<script type="module" src="https://ka-f.webawesome.com/webawesome@3.10.0/webawesome.loader.js"></script>
 ```
 
 Now you can [use any Web Awesome component](https://webawesome.com/docs/components)! Try putting a button on the page:
@@ -30,8 +28,6 @@ Now you can [use any Web Awesome component](https://webawesome.com/docs/componen
 Get personalized installation instructions from [your workspaces](https://webawesome.com/workspaces) instead.
 
 ## Installing with npm
-
-Link to This Section
 
 Start by installing the Web Awesome package:
 
@@ -58,8 +54,6 @@ Get personalized installation instructions from [your workspaces](https://webaw
 
 ## Get the Download (Advanced)
 
-Link to This Section
-
 You can download Web Awesome from npm and self-host it.
 
 ```bash
@@ -72,11 +66,7 @@ This will download a `.tgz` archive containing all Web Awesome files. Extract it
 
 ## Additional Setup
 
-Link to This Section
-
 ### The Difference Between /dist & /dist-cdn
-
-Link to This Section
 
 If you have Web Awesome installed locally via npm, you'll notice the following directories in the project's root:
 
@@ -90,8 +80,6 @@ The `dist-cdn` files come with everything bundled together, so you can use them 
 Use `dist-cdn` if you're loading directly in the browser or from a CDN. Use `dist` if you're using a bundler like Webpack or Vite.
 
 ### Referencing Necessary Styles
-
-Link to This Section
 
 If you're self-hosting Web Awesome, you'll need to set up your pages to reference any necessary styles. You can do so by referencing `webawesome.css`, or you can pick and choose specific stylesheets you'd like to use.
 
@@ -115,8 +103,6 @@ If you choose to use a theme other than the default theme, be sure to add the co
 
 ### Setting the Base Path
 
-Link to This Section
-
 Some components rely on assets (icons, images, etc.) and Web Awesome needs to know where they're located. For convenience, Web Awesome will try to auto-detect the correct location based on the script you've loaded it from. This assumes assets are colocated with `webawesome.loader.js` and will "just work" for most users.
 
 If you're using the CDN, you can skip this section. However, if you're using npm or a downloaded version, you'll need to set the base path. You can do this one of two ways.
@@ -133,8 +119,6 @@ If you're using the CDN, you can skip this section. However, if you're using npm
 ```
 
 ### Referencing Assets
-
-Link to This Section
 
 Most of the magic behind assets is handled internally by Web Awesome, but if you need to reference the base path for any reason, the same module exports a function called `getBasePath()`. An optional string argument can be passed, allowing you to get the full path to any asset.
 
@@ -154,9 +138,7 @@ Most of the magic behind assets is handled internally by Web Awesome, but if you
 </script>
 ```
 
-### Using Font Awesome Pro and Pro+
-
-Link to This Section
+### Using Font Awesome Pro & Pro+
 
 Font Awesome users can provide their kit code to unlock Pro and Pro+ icon packs. You can do so by adding the `data-fa-kit-code` attribute to any element on the page, or by calling the `setKitCode()` method.
 
@@ -166,7 +148,7 @@ Font Awesome users can provide their kit code to unlock Pro and Pro+ icon packs.
 
 <!-- Option 2: the setKitCode() method -->
 <script type="module">
-  import { setKitCode } from 'https://ka-f.webawesome.com/webawesome@3.9.0/webawesome.loader.js';
+  import { setKitCode } from 'https://ka-f.webawesome.com/webawesome@3.10.0/webawesome.loader.js';
   setKitCode('YOUR_KIT_CODE_HERE');
 </script>
 ```

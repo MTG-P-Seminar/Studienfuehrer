@@ -8,8 +8,6 @@ Several Web Awesome components (like [`<wa-badge>`](https://webawesome.com/docs/
 
 ## Variant Classes
 
-Link to This Section
-
 Add one of these classes to any element to apply a semantic color:
 
 -   `.wa-brand`
@@ -20,15 +18,11 @@ Add one of these classes to any element to apply a semantic color:
 
 ## How Variants Work
 
-Link to This Section
-
 The variant classes don't apply styles directly. Instead, each one points a generic set of color tokens (like `--wa-color-fill-loud` and `--wa-color-on-loud`) at the matching [semantic color](https://webawesome.com/docs/tokens/color/#semantic-colors) group (`--wa-color-brand-fill-loud`, and so on). That means your own CSS can be written once, using the group-less tokens, and automatically pick up whatever variant is applied. When no variant class is set, the tokens fall back to `neutral`.
 
 Web Awesome's [native styles](https://webawesome.com/docs/utilities/native/) use this pattern wherever it made sense, which is how a native `<button>` can pick up a `.wa-success` class and just work.
 
 ## Example: Custom Class with Variants
-
-Link to This Section
 
 Here's a tiny `.callout` class that responds to every color variant without any extra selectors:
 

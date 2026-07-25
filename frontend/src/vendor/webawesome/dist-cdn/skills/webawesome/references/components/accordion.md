@@ -1,8 +1,5 @@
 # Accordion
 
-**Full documentation:** https://webawesome.com/docs/components/accordion
-
-
 `<wa-accordion>`
 
 Experimental [Layout](https://webawesome.com/docs/components/?category=layout) [Since 3.7](https://webawesome.com/docs/resources/changelog#wa_370)
@@ -28,13 +25,84 @@ Accordions use [accordion items](https://webawesome.com/docs/components/accordio
 </wa-accordion>
 ```
 
+## Importing
+
+If you're using the autoloader or a hosted project, components load on demand — no manual import needed. To cherry-pick a component manually, use one of the following snippets.
+
+\*\*CDN\*\*
+
+Import this component directly from the CDN:
+
+```js
+import 'https://ka-f.webawesome.com/webawesome@3.10.0/components/accordion/accordion.js';
+```
+
+\*\*npm\*\*
+
+After installing Web Awesome via npm, import this component:
+
+```js
+import '@awesome.me/webawesome/dist/components/accordion/accordion.js';
+```
+
+\*\*Self-Hosted\*\*
+
+If you're self-hosting Web Awesome, import this component from your server:
+
+```js
+import './webawesome/dist/components/accordion/accordion.js';
+```
+
+\*\*React\*\*
+
+To import this component for React 18 or below, use the following code:
+
+```js
+import WaAccordion from '@awesome.me/webawesome/dist/react/accordion/index.js';
+```
+
+## Slots
+
+Valid slot names for this component (use exactly these — any other `slot` value is
+silently ignored and the element falls back to the default slot):
+
+- `(default)` — One or more `<wa-accordion-item>` elements.
+
+## Attributes & Properties
+
+| Property | Attribute | Description | Type | Default |
+| --- | --- | --- | --- | --- |
+| `mode` | `mode` | Controls how items can be expanded. `multiple` (the default) allows any number of items to be open at once. `single` allows only one item to be open at a time; opening a new item collapses the previously open one, and clicking an open item does not collapse it. `single-collapsible` is the same as `single` except that clicking the open item collapses it, so zero open items is a valid state. | `'single' \| 'single-collapsible' \| 'multiple'` | `'multiple'` |
+| `iconPlacement` | `icon-placement` | The location of the expand/collapse icon in child items. | `'start' \| 'end'` | `'end'` |
+| `headingLevel` | `heading-level` | The heading level for child item triggers (1–6), or "none" to omit the heading wrapper. Defaults to 3. | `string` | `'3'` |
+| `appearance` | `appearance` | The accordion's visual appearance. | `'filled' \| 'outlined' \| 'filled-outlined' \| 'plain'` | `'outlined'` |
+
+## Methods
+
+| Name | Description | Arguments |
+| --- | --- | --- |
+| `expandAll()` | Expands all accordion items. No-op when `mode` is `single` or `single-collapsible`. | — |
+| `collapseAll()` | Collapses all accordion items. | — |
+
+## Events
+
+| Name | Description |
+| --- | --- |
+| `wa-expand` | Emitted before an item expands. Cancelable. |
+| `wa-after-expand` | Emitted after an item finishes expanding. |
+| `wa-collapse` | Emitted before an item collapses. Cancelable. |
+| `wa-after-collapse` | Emitted after an item finishes collapsing. |
+
+## Dependencies
+
+This component automatically imports the following elements. Sub-dependencies, if any exist, will also be included in this list.
+
+-   [`<wa-accordion-item>`](https://webawesome.com/docs/components/accordion-item)
+-   [`<wa-icon>`](https://webawesome.com/docs/components/icon)
+
 ## Examples
 
-Link to This Section
-
 ### Expanded Initially
-
-Link to This Section
 
 Use the `expanded` attribute on an accordion item to expand it by default.
 
@@ -51,8 +119,6 @@ Use the `expanded` attribute on an accordion item to expand it by default.
 
 ### Disabled Items
 
-Link to This Section
-
 Use the `disabled` attribute on an accordion item to prevent it from being toggled.
 
 ```html
@@ -65,8 +131,6 @@ Use the `disabled` attribute on an accordion item to prevent it from being toggl
 ```
 
 ### Without a Heading
-
-Link to This Section
 
 The [W3C accordion pattern](https://www.w3.org/WAI/ARIA/apg/patterns/accordion/examples/accordion/) recommends wrapping each accordion trigger in a heading element so screen reader users can navigate the page outline and locate accordion sections using heading navigation. Each accordion item uses an `<h3>` by default for this reason.
 
@@ -81,8 +145,6 @@ But if an accordion lives outside the document outline, for example, inside a na
 
 ### Heading Level
 
-Link to This Section
-
 The default heading level is `3`. Use `heading-level` on the accordion to match the level to your page's hierarchy. Values outside 1–6 fall back to `3`. The heading level is a semantic choice only — the accordion inherits the surrounding font, so the visual appearance is identical at every level.
 
 ```html
@@ -95,8 +157,6 @@ The default heading level is `3`. Use `heading-level` on the accordion to match 
 ```
 
 ### Sizing
-
-Link to This Section
 
 The accordion's text and expand/collapse icon scale with `font-size`. Setting `font-size` on a `<wa-accordion>` proportionally resizes the type and icon together.
 
@@ -122,8 +182,6 @@ The accordion's text and expand/collapse icon scale with `font-size`. Setting `f
 ```
 
 ### Appearance
-
-Link to This Section
 
 Use the `appearance` attribute to change the accordion's visual appearance.
 
@@ -163,8 +221,6 @@ Use the `appearance` attribute to change the accordion's visual appearance.
 
 ### Mode
 
-Link to This Section
-
 Use the `mode` attribute to control how items can be expanded:
 
 -   `multiple` (default): any number of items can be open at once, and each item toggles independently.
@@ -199,8 +255,6 @@ Use `single-collapsible` when you want the same one-at-a-time constraint but sti
 
 ### Icon Placement
 
-Link to This Section
-
 The expand/collapse icon appears at the end of each header by default. Set `icon-placement="start"` to move it to the beginning, a common pattern for sidebars and tree style navigation.
 
 ```html
@@ -211,8 +265,6 @@ The expand/collapse icon appears at the end of each header by default. Set `icon
 ```
 
 ### Custom Icon
-
-Link to This Section
 
 Use the `icon` slot on an accordion item to replace the default expand/collapse icon with any icon you like.
 
@@ -257,8 +309,6 @@ By default the icon rotates as the item expands. You can target the `icon` part 
 
 ### HTML in the Label
 
-Link to This Section
-
 To place HTML in an accordion item's header, use the `label` slot instead of the `label` attribute. This lets you add icons, badges, or other elements alongside the label text.
 
 ```html
@@ -280,24 +330,24 @@ To place HTML in an accordion item's header, use the `label` slot instead of the
 </wa-accordion>
 ```
 
-### Expand and Collapse All
-
-Link to This Section
+### Expand & Collapse All
 
 Use the `expandAll()` and `collapseAll()` methods to programmatically control all items at once. Note that `expandAll()` is a no-op when `mode` is `single` or `single-collapsible`.
 
 ```html
-<wa-accordion id="accordion-methods">
-  <wa-accordion-item label="Section one">Content for the first section.</wa-accordion-item>
-  <wa-accordion-item label="Section two">Content for the second section.</wa-accordion-item>
-  <wa-accordion-item label="Section three">Content for the third section.</wa-accordion-item>
-</wa-accordion>
+<div>
+  <wa-accordion id="accordion-methods">
+    <wa-accordion-item label="Section one">Content for the first section.</wa-accordion-item>
+    <wa-accordion-item label="Section two">Content for the second section.</wa-accordion-item>
+    <wa-accordion-item label="Section three">Content for the third section.</wa-accordion-item>
+  </wa-accordion>
 
-<br />
+  <wa-divider></wa-divider>
 
-<div class="wa-cluster">
-  <wa-button appearance="filled" id="expand-all">Expand All</wa-button>
-  <wa-button appearance="filled" id="collapse-all">Collapse All</wa-button>
+  <div class="wa-cluster">
+    <wa-button appearance="filled" id="expand-all">Expand All</wa-button>
+    <wa-button appearance="filled" id="collapse-all">Collapse All</wa-button>
+  </div>
 </div>
 
 <script>
@@ -309,8 +359,6 @@ Use the `expandAll()` and `collapseAll()` methods to programmatically control al
 ```
 
 ### Nested Accordions
-
-Link to This Section
 
 Place a `<wa-accordion>` inside an accordion item's default slot to nest one accordion inside another. Each accordion manages its own items independently, so toggling an inner item won't affect outer items, and properties like `mode` apply only to direct children.
 
@@ -334,8 +382,6 @@ Place a `<wa-accordion>` inside an accordion item's default slot to nest one acc
 
 ### Preventing Expand or Collapse
 
-Link to This Section
-
 Listen for the `wa-expand` or `wa-collapse` events and call `event.preventDefault()` to stop the action from completing. The `event.detail.item` property tells you which accordion item triggered the event.
 
 ```html
@@ -357,38 +403,3 @@ Listen for the `wa-expand` or `wa-collapse` events and call `event.preventDefaul
   });
 </script>
 ```
-
-## Slots
-
-Valid slot names for this component (use exactly these — any other `slot` value
-is silently ignored and the element falls back to the default slot):
-
-- `(default)` — One or more `<wa-accordion-item>` elements.
-
-## Attributes & Properties
-
-| Attribute | Property | Type | Default | Description |
-| --- | --- | --- | --- | --- |
-| `mode` |  | `'single' \| 'single-collapsible' \| 'multiple'` | `'multiple'` | Controls how items can be expanded. `multiple` (the default) allows any number of items to be open at once. `single` allows only one item to be open at a time; opening a new item collapses the previously open one, and clicking an open item does not collapse it. `single-collapsible` is the same as `single` except that clicking the open item collapses it, so zero open items is a valid state. |
-| `icon-placement` | `iconPlacement` | `'start' \| 'end'` | `'end'` | The location of the expand/collapse icon in child items. |
-| `heading-level` | `headingLevel` | `string` | `'3'` | The heading level for child item triggers (1–6), or "none" to omit the heading wrapper. Defaults to 3. |
-| `appearance` |  | `'filled' \| 'outlined' \| 'filled-outlined' \| 'plain'` | `'outlined'` | The accordion's visual appearance. |
-| `dir` |  | `string` |  |  |
-| `lang` |  | `string` |  |  |
-| `did-ssr` | `didSSR` |  |  |  |
-
-## Methods
-
-| Method | Description | Arguments |
-| --- | --- | --- |
-| `expandAll` | Expands all accordion items. No-op when `mode` is `single` or `single-collapsible`. |  |
-| `collapseAll` | Collapses all accordion items. |  |
-
-## Events
-
-| Event | Description |
-| --- | --- |
-| `wa-expand` | Emitted before an item expands. Cancelable. |
-| `wa-after-expand` | Emitted after an item finishes expanding. |
-| `wa-collapse` | Emitted before an item collapses. Cancelable. |
-| `wa-after-collapse` | Emitted after an item finishes collapsing. |

@@ -1,8 +1,8 @@
 /*! Copyright 2026 Fonticons, Inc. - https://webawesome.com/license */
 import {
   LocalizeController
-} from "../chunks/chunk.WQ2OSH23.js";
-import "../chunks/chunk.MFUK3XY6.js";
+} from "../chunks/chunk.FA3XZ7H6.js";
+import "../chunks/chunk.V7SU5PYA.js";
 import {
   registerTranslation
 } from "../chunks/chunk.CZ2YL77F.js";

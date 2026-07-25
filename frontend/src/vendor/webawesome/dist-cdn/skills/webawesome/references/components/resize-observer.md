@@ -1,8 +1,5 @@
 # Resize Observer
 
-**Full documentation:** https://webawesome.com/docs/components/resize-observer
-
-
 `<wa-resize-observer>`
 
 Stable [Helpers](https://webawesome.com/docs/components/?category=helpers) [Since 2.0](https://webawesome.com/docs/resources/changelog#wa_200)
@@ -39,24 +36,57 @@ The resize observer will report changes to the dimensions of the elements it wra
 </style>
 ```
 
+## Importing
+
+If you're using the autoloader or a hosted project, components load on demand — no manual import needed. To cherry-pick a component manually, use one of the following snippets.
+
+\*\*CDN\*\*
+
+Import this component directly from the CDN:
+
+```js
+import 'https://ka-f.webawesome.com/webawesome@3.10.0/components/resize-observer/resize-observer.js';
+```
+
+\*\*npm\*\*
+
+After installing Web Awesome via npm, import this component:
+
+```js
+import '@awesome.me/webawesome/dist/components/resize-observer/resize-observer.js';
+```
+
+\*\*Self-Hosted\*\*
+
+If you're self-hosting Web Awesome, import this component from your server:
+
+```js
+import './webawesome/dist/components/resize-observer/resize-observer.js';
+```
+
+\*\*React\*\*
+
+To import this component for React 18 or below, use the following code:
+
+```js
+import WaResizeObserver from '@awesome.me/webawesome/dist/react/resize-observer/index.js';
+```
+
 ## Slots
 
-Valid slot names for this component (use exactly these — any other `slot` value
-is silently ignored and the element falls back to the default slot):
+Valid slot names for this component (use exactly these — any other `slot` value is
+silently ignored and the element falls back to the default slot):
 
 - `(default)` — One or more elements to watch for resizing.
 
 ## Attributes & Properties
 
-| Attribute | Property | Type | Default | Description |
+| Property | Attribute | Description | Type | Default |
 | --- | --- | --- | --- | --- |
-| `disabled` |  | `boolean` | `false` | Disables the observer. |
-| `dir` |  | `string` |  |  |
-| `lang` |  | `string` |  |  |
-| `did-ssr` | `didSSR` |  |  |  |
+| `disabled` | `disabled` | Disables the observer. | `boolean` | `false` |
 
 ## Events
 
-| Event | Description |
+| Name | Description |
 | --- | --- |
 | `wa-resize` | Emitted when the element is resized. |

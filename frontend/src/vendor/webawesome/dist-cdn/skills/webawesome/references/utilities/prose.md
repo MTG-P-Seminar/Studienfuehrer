@@ -8,9 +8,7 @@ Wrap a block of content in `wa-prose` to apply a hierarchical, asymmetric typogr
 
 Reach for it on documentation, blog posts, articles, or marketing copy. Element styling (color, font, borders) still comes from [native styles](https://webawesome.com/docs/utilities/native/); `wa-prose` only adjusts rhythm, type scale, and the reading column.
 
-## Using prose
-
-Link to This Section
+## Using Prose
 
 Wrap your long-form content in any block element with the `wa-prose` class.
 
@@ -25,11 +23,7 @@ By default, content is constrained to a comfortable reading column of `65ch`. Ov
 
 ## Examples
 
-Link to This Section
-
-### Headings and paragraphs
-
-Link to This Section
+### Headings & Paragraphs
 
 Each heading level gets generous space above and tight space below, so the eye reads it as part of the section it introduces — not the one it follows. When two headings sit back-to-back, the second tightens up so it reads as subordinate to the first.
 
@@ -57,8 +51,6 @@ Each heading level gets generous space above and tight space below, so the eye r
 ```
 
 ### Lists
-
-Link to This Section
 
 Lists get a small breath between multi-line items. Quiet markers and bold `<dt>` terms come from [native styles](https://webawesome.com/docs/utilities/native/).
 
@@ -89,9 +81,7 @@ Lists get a small breath between multi-line items. Quiet markers and bold `<dt>`
 </article>
 ```
 
-### Inline elements
-
-Link to This Section
+### Inline Elements
 
 Inline elements you'd reach for in long-form writing — `<kbd>`, `<mark>`, `<sub>`/`<sup>`, `<abbr>` — work as expected inside a prose container, styled by [native styles](https://webawesome.com/docs/utilities/native/).
 
@@ -105,9 +95,7 @@ Inline elements you'd reach for in long-form writing — `<kbd>`, `<mark>`, `<su
 </article>
 ```
 
-### Major blocks
-
-Link to This Section
+### Major Blocks
 
 Code samples, tables, callouts, and collapsible `<details>` get more breathing room than running prose, so they read as distinct chunks of content rather than another sentence.
 
@@ -158,9 +146,7 @@ develop in HC-110, dilution B</code></pre>
 </article>
 ```
 
-### Section breaks
-
-Link to This Section
+### Section Breaks
 
 `<hr>` marks a topic shift. Its own margin defines the gap; the heading or paragraph that follows hugs up to it so the divider stays visually anchored to what comes next.
 
@@ -181,9 +167,7 @@ Link to This Section
 </article>
 ```
 
-## Typographic details
-
-Link to This Section
+## Typographic Details
 
 A few quieter refinements come along with the rhythm:
 
@@ -191,9 +175,7 @@ A few quieter refinements come along with the rhythm:
 -   **Hanging punctuation** pulls opening quotes, em-dashes, and trailing stops into the margin (Safari today; progressive enhancement elsewhere).
 -   **Long-word breaks** on `<code>` and `<pre>` so URLs and identifiers can't overflow the column.
 
-## Composing with font-size utilities
-
-Link to This Section
+## Composing with Font Size Utilities
 
 Apply any [`wa-font-size-*`](https://webawesome.com/docs/utilities/text/#font-size) utility to a `wa-prose` container and text, headings, and rhythm scale together. No size variants required.
 
@@ -219,9 +201,7 @@ Apply any [`wa-font-size-*`](https://webawesome.com/docs/utilities/text/#font-si
 </div>
 ```
 
-## Adjusting rhythm
-
-Link to This Section
+## Adjusting Rhythm
 
 Set `--wa-prose-rhythm-scale` on the prose container to multiply every margin in the system. Values below `1` tighten the rhythm; values above loosen it. Type sizes are unaffected.
 
@@ -241,9 +221,7 @@ Set `--wa-prose-rhythm-scale` on the prose container to multiply every margin in
 </div>
 ```
 
-## Composing with other utilities
-
-Link to This Section
+## Composing with Other Utilities
 
 The `wa-prose` class and its element rules sit at `0,0,0` specificity, so any utility class you apply alongside — `wa-heading-m`, `wa-cluster`, `wa-text-center`, and so on — wins automatically. The same goes for plain element rules in your own stylesheet, no `!important` or specificity tricks required.
 
@@ -256,8 +234,6 @@ h2.release-header {
 
 ## Theming
 
-Link to This Section
-
 Color flows from your theme's [color tokens](https://webawesome.com/docs/tokens/color/), so prose follows dark mode and theme changes automatically. To recolor an element inside prose, use a descendant selector on your container.
 
 ```css
@@ -266,27 +242,31 @@ Color flows from your theme's [color tokens](https://webawesome.com/docs/tokens/
 }
 ```
 
-## Opting out of prose
-
-Link to This Section
+## Opting out of Prose
 
 Apply `wa-not-prose` to any element inside a `wa-prose` container to disable prose rhythm for that element and its descendants. Other utilities — `wa-cluster`, `wa-stack`, `wa-font-size-*` — keep working in the opt-out subtree.
 
 ```html
-<article class="wa-prose">
+<article class="wa-prose wa-font-size-s">
   <h3>Ready when you are</h3>
   <p>
-    The paragraphs around this section follow prose rhythm. The button row below sits inside a
-    <code>wa-not-prose</code> wrapper, so its spacing reverts to the component defaults.
+    The content in this section follows prose rhythm and adopt a smaller font size. The callout below is given
+    <code>wa-not-prose</code>, so its spacing and font sizing revert to element defaults.
   </p>
 
-  <div class="wa-not-prose">
-    <div class="wa-cluster" style="gap: var(--wa-space-s);">
-      <wa-button variant="brand">Primary action</wa-button>
-      <wa-button appearance="outlined">Secondary action</wa-button>
+  <wa-callout class="wa-not-prose" variant="warning">
+    <wa-icon slot="icon" name="highlighter"></wa-icon>
+    <div class="wa-stack wa-gap-s">
+      <h4>Leave it to the prose</h4>
+      <p>This callout and its child elements are exempt from <code>wa-prose</code> rules, thanks to <code>wa-not-prose</code>.</p>
     </div>
-  </div>
+  </wa-callout>
 
-  <p>And the paragraph after picks the rhythm back up where it left off.</p>
+  <p>And the content after picks the rhythm back up where it left off.</p>
+  <ul>
+    <li>Asymmetric spacing</li>
+    <li>Relative font sizing</li>
+    <li>Comfortable line length</li>
+  </ul>
 </article>
 ```

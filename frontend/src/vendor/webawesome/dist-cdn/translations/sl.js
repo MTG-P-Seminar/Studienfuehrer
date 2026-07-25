@@ -40,7 +40,7 @@ var translation = {
   goToSlide: (slide, count) => `Pojdi na diapozitiv ${slide} od ${count}`,
   hidePassword: "Skrij geslo",
   hour: "Ura",
-  incompleteDate: "Vnesite popoln datum.",
+  incompleteDate: "Vnesite veljaven datum.",
   increment: "Pove\u010Daj",
   loading: "Nalaganje",
   minute: "Minuta",

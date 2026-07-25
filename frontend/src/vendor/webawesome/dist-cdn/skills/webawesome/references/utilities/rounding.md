@@ -10,7 +10,7 @@ Each class corresponds to one of the [`--wa-border-radius-*`](https://webawesome
 
 ## Rounding Classes
 
-Link to This Section | Class Name | border-radius Value |
+| Class Name | border-radius Value |
 | --- | --- |
 | \`wa-border-radius-s\` | \`--wa-border-radius-s\` |
 | \`wa-border-radius-m\` | \`--wa-border-radius-m\` |

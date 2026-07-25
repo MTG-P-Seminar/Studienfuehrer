@@ -1,8 +1,5 @@
 # Tooltip
 
-**Full documentation:** https://webawesome.com/docs/components/tooltip
-
-
 `<wa-tooltip>`
 
 Stable [Feedback](https://webawesome.com/docs/components/?category=feedback) [Since 2.0](https://webawesome.com/docs/resources/changelog#wa_200)
@@ -16,13 +13,103 @@ A tooltip's target is based on the `for` attribute which points to an element id
 <wa-button appearance="filled" id="my-button">Hover Me</wa-button>
 ```
 
+## Importing
+
+If you're using the autoloader or a hosted project, components load on demand — no manual import needed. To cherry-pick a component manually, use one of the following snippets.
+
+\*\*CDN\*\*
+
+Import this component directly from the CDN:
+
+```js
+import 'https://ka-f.webawesome.com/webawesome@3.10.0/components/tooltip/tooltip.js';
+```
+
+\*\*npm\*\*
+
+After installing Web Awesome via npm, import this component:
+
+```js
+import '@awesome.me/webawesome/dist/components/tooltip/tooltip.js';
+```
+
+\*\*Self-Hosted\*\*
+
+If you're self-hosting Web Awesome, import this component from your server:
+
+```js
+import './webawesome/dist/components/tooltip/tooltip.js';
+```
+
+\*\*React\*\*
+
+To import this component for React 18 or below, use the following code:
+
+```js
+import WaTooltip from '@awesome.me/webawesome/dist/react/tooltip/index.js';
+```
+
+## Slots
+
+Valid slot names for this component (use exactly these — any other `slot` value is
+silently ignored and the element falls back to the default slot):
+
+- `(default)` — The tooltip's default slot where any content should live. Interactive content should be avoided.
+
+## Attributes & Properties
+
+| Property | Attribute | Description | Type | Default |
+| --- | --- | --- | --- | --- |
+| `placement` | `placement` | The preferred placement of the tooltip. Note that the actual placement may vary as needed to keep the tooltip inside of the viewport. | `\| 'top' \| 'top-start' \| 'top-end' \| 'right' \| 'right-start' \| 'right-end' \| 'bottom' \| 'bottom-start' \| 'bottom-end' \| 'left' \| 'left-start' \| 'left-end'` | `'top'` |
+| `disabled` | `disabled` | Disables the tooltip so it won't show when triggered. | `boolean` | `false` |
+| `distance` | `distance` | The distance in pixels from which to offset the tooltip away from its target. | `number` | `8` |
+| `open` | `open` | Indicates whether or not the tooltip is open. You can use this in lieu of the show/hide methods. | `boolean` | `false` |
+| `skidding` | `skidding` | The distance in pixels from which to offset the tooltip along its target. | `number` | `0` |
+| `showDelay` | `show-delay` | The amount of time to wait before showing the tooltip when the user mouses in. | `number` | `150` |
+| `hideDelay` | `hide-delay` | The amount of time to wait before hiding the tooltip when the user mouses out. | `number` | `0` |
+| `trigger` | `trigger` | Controls how the tooltip is activated. Possible options include `click`, `hover`, `focus`, and `manual`. Multiple options can be passed by separating them with a space. When manual is used, the tooltip must be activated programmatically. | `string` | `'hover focus'` |
+| `withoutArrow` | `without-arrow` | Removes the arrow from the tooltip. | `boolean` | `false` |
+
+## Methods
+
+| Name | Description | Arguments |
+| --- | --- | --- |
+| `show()` | Shows the tooltip. | — |
+| `hide()` | Hides the tooltip | — |
+
+## Events
+
+| Name | Description |
+| --- | --- |
+| `wa-show` | Emitted when the tooltip begins to show. |
+| `wa-after-show` | Emitted after the tooltip has shown and all animations are complete. |
+| `wa-hide` | Emitted when the tooltip begins to hide. |
+| `wa-after-hide` | Emitted after the tooltip has hidden and all animations are complete. |
+
+## CSS Custom Properties
+
+| Name | Description |
+| --- | --- |
+| \`--max-width\` | The maximum width of the tooltip before its content will wrap. |
+
+## CSS Parts
+
+| Name | Description | CSS selector |
+| --- | --- | --- |
+| \`base\` | \`\` The component's base wrapper, an element. | \`::part(base)\` |
+| \`base\_\_arrow\` | \`arrow\` The popup's exported part. Use this to target the tooltip's arrow. | \`::part(base\_\_arrow)\` |
+| \`base\_\_popup\` | \`popup\` The 's exported popup part. Use this to target the tooltip's popup container. | \`::part(base\_\_popup)\` |
+| \`body\` | The tooltip's body where its content is rendered. | \`::part(body)\` |
+
+## Dependencies
+
+This component automatically imports the following elements. Sub-dependencies, if any exist, will also be included in this list.
+
+-   [`<wa-popup>`](https://webawesome.com/docs/components/popup)
+
 ## Examples
 
-Link to This Section
-
 ### Placement
-
-Link to This Section
 
 Use the `placement` attribute to set the preferred placement of the tooltip.
 
@@ -95,8 +182,6 @@ Use the `placement` attribute to set the preferred placement of the tooltip.
 
 ### Click Trigger
 
-Link to This Section
-
 Set the `trigger` attribute to `click` to toggle the tooltip on click instead of hover.
 
 ```html
@@ -106,27 +191,27 @@ Set the `trigger` attribute to `click` to toggle the tooltip on click instead of
 
 ### Manual Trigger
 
-Link to This Section
-
 Tooltips can be controller programmatically by setting the `trigger` attribute to `manual`. Use the `open` attribute to control when the tooltip is shown.
 
 ```html
-<wa-button appearance="filled" style="margin-right: 4rem;">Toggle Manually</wa-button>
+<div class="manual-trigger-example">
+  <wa-tooltip for="manual-trigger-tooltip" trigger="manual" class="manual-tooltip">This is an avatar!</wa-tooltip>
+  <wa-avatar id="manual-trigger-tooltip" label="User"></wa-avatar>
 
-<wa-tooltip for="manual-trigger-tooltip" trigger="manual" class="manual-tooltip">This is an avatar!</wa-tooltip>
-<wa-avatar id="manual-trigger-tooltip" label="User"></wa-avatar>
+  <wa-divider></wa-divider>
+
+  <wa-button appearance="filled" class="manual-toggle">Toggle Manually</wa-button>
+</div>
 
 <script>
   const tooltip = document.querySelector('.manual-tooltip');
-  const toggle = tooltip.previousElementSibling;
+  const toggle = document.querySelector('.manual-toggle');
 
   toggle.addEventListener('click', () => (tooltip.open = !tooltip.open));
 </script>
 ```
 
 ### Removing Arrows
-
-Link to This Section
 
 You can control the size of tooltip arrows by overriding the `--wa-tooltip-arrow-size` design token. To remove the arrow, use the `without-arrow` attribute.
 
@@ -145,8 +230,6 @@ To override it globally, set it in a root block in your stylesheet after the Web
 
 ### HTML in Tooltips
 
-Link to This Section
-
 Use the default slot to create tooltips with HTML content. Tooltips are designed only for text and presentational elements. Avoid placing interactive content, such as buttons, links, and form controls, in a tooltip.
 
 ```html
@@ -158,8 +241,6 @@ Use the default slot to create tooltips with HTML content. Tooltips are designed
 
 ### Setting a Maximum Width
 
-Link to This Section
-
 Use the `--max-width` custom property to change the width the tooltip can grow to before wrapping occurs.
 
 ```html
@@ -168,59 +249,3 @@ Use the `--max-width` custom property to change the width the tooltip can grow t
 </wa-tooltip>
 <wa-button appearance="filled" id="wrapping-tooltip">Hover me</wa-button>
 ```
-
-## Slots
-
-Valid slot names for this component (use exactly these — any other `slot` value
-is silently ignored and the element falls back to the default slot):
-
-- `(default)` — The tooltip's default slot where any content should live. Interactive content should be avoided.
-
-## Attributes & Properties
-
-| Attribute | Property | Type | Default | Description |
-| --- | --- | --- | --- | --- |
-| `placement` |  | `\| 'top' \| 'top-start' \| 'top-end' \| 'right' \| 'right-start' \| 'right-end' \| 'bottom' \| 'bottom-start' \| 'bottom-end' \| 'left' \| 'left-start' \| 'left-end'` | `'top'` | The preferred placement of the tooltip. Note that the actual placement may vary as needed to keep the tooltip inside of the viewport. |
-| `disabled` |  | `boolean` | `false` | Disables the tooltip so it won't show when triggered. |
-| `distance` |  | `number` | `8` | The distance in pixels from which to offset the tooltip away from its target. |
-| `open` |  | `boolean` | `false` | Indicates whether or not the tooltip is open. You can use this in lieu of the show/hide methods. |
-| `skidding` |  | `number` | `0` | The distance in pixels from which to offset the tooltip along its target. |
-| `show-delay` | `showDelay` | `number` | `150` | The amount of time to wait before showing the tooltip when the user mouses in. |
-| `hide-delay` | `hideDelay` | `number` | `0` | The amount of time to wait before hiding the tooltip when the user mouses out. |
-| `trigger` |  | `string` | `'hover focus'` | Controls how the tooltip is activated. Possible options include `click`, `hover`, `focus`, and `manual`. Multiple options can be passed by separating them with a space. When manual is used, the tooltip must be activated programmatically. |
-| `without-arrow` | `withoutArrow` | `boolean` | `false` | Removes the arrow from the tooltip. |
-| `for` |  | `string \| null` | `null` |  |
-| `dir` |  | `string` |  |  |
-| `lang` |  | `string` |  |  |
-| `did-ssr` | `didSSR` |  |  |  |
-
-## Methods
-
-| Method | Description | Arguments |
-| --- | --- | --- |
-| `show` | Shows the tooltip. |  |
-| `hide` | Hides the tooltip |  |
-
-## Events
-
-| Event | Description |
-| --- | --- |
-| `wa-show` | Emitted when the tooltip begins to show. |
-| `wa-after-show` | Emitted after the tooltip has shown and all animations are complete. |
-| `wa-hide` | Emitted when the tooltip begins to hide. |
-| `wa-after-hide` | Emitted after the tooltip has hidden and all animations are complete. |
-
-## CSS Parts
-
-| Part | Description |
-| --- | --- |
-| `base` | The component's base wrapper, an `<wa-popup>` element. |
-| `base__popup` | The popup's exported `popup` part. Use this to target the tooltip's popup container. |
-| `base__arrow` | The popup's exported `arrow` part. Use this to target the tooltip's arrow. |
-| `body` | The tooltip's body where its content is rendered. |
-
-## CSS Custom Properties
-
-| Property | Default | Description |
-| --- | --- | --- |
-| `--max-width` |  | The maximum width of the tooltip before its content will wrap. |

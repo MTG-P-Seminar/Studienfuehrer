@@ -48,8 +48,6 @@ export default class WaCheckbox extends WebAwesomeFormAssociatedElement {
     private readonly hasSlotController;
     input: HTMLInputElement;
     title: string;
-    /** The name of the checkbox, submitted as a name/value pair with form data. */
-    name: null;
     private _value;
     /** The value of the checkbox, submitted as a name/value pair with form data. */
     get value(): string | null;

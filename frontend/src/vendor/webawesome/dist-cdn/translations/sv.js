@@ -1,6 +1,6 @@
 /*! Copyright 2026 Fonticons, Inc. - https://webawesome.com/license */
-import "../chunks/chunk.WQ2OSH23.js";
-import "../chunks/chunk.MFUK3XY6.js";
+import "../chunks/chunk.FA3XZ7H6.js";
+import "../chunks/chunk.V7SU5PYA.js";
 import {
   registerTranslation
 } from "../chunks/chunk.CZ2YL77F.js";
@@ -42,7 +42,7 @@ var translation = {
   goToSlide: (slide, count) => `G\xE5 till bild ${slide} av ${count}`,
   hidePassword: "D\xF6lj l\xF6senord",
   hour: "Timme",
-  incompleteDate: "Ange ett fullst\xE4ndigt datum.",
+  incompleteDate: "Ange ett giltigt datum.",
   increment: "\xD6ka",
   loading: "L\xE4ser in",
   minute: "Minut",

@@ -1,8 +1,5 @@
 # Comparison
 
-**Full documentation:** https://webawesome.com/docs/components/comparison
-
-
 `<wa-comparison>`
 
 Stable [Media](https://webawesome.com/docs/components/?category=media) [Since 2.0](https://webawesome.com/docs/resources/changelog#wa_200)
@@ -26,13 +23,95 @@ This is especially useful for comparing images, but can be used for comparing an
 </wa-comparison>
 ```
 
+## Importing
+
+If you're using the autoloader or a hosted project, components load on demand — no manual import needed. To cherry-pick a component manually, use one of the following snippets.
+
+\*\*CDN\*\*
+
+Import this component directly from the CDN:
+
+```js
+import 'https://ka-f.webawesome.com/webawesome@3.10.0/components/comparison/comparison.js';
+```
+
+\*\*npm\*\*
+
+After installing Web Awesome via npm, import this component:
+
+```js
+import '@awesome.me/webawesome/dist/components/comparison/comparison.js';
+```
+
+\*\*Self-Hosted\*\*
+
+If you're self-hosting Web Awesome, import this component from your server:
+
+```js
+import './webawesome/dist/components/comparison/comparison.js';
+```
+
+\*\*React\*\*
+
+To import this component for React 18 or below, use the following code:
+
+```js
+import WaComparison from '@awesome.me/webawesome/dist/react/comparison/index.js';
+```
+
+## Slots
+
+Valid slot names for this component (use exactly these — any other `slot` value is
+silently ignored and the element falls back to the default slot):
+
+- `before` — The before content, often an `<img>` or `<svg>` element.
+- `after` — The after content, often an `<img>` or `<svg>` element.
+- `handle` — The icon used inside the handle.
+
+## Attributes & Properties
+
+| Property | Attribute | Description | Type | Default |
+| --- | --- | --- | --- | --- |
+| `position` | `position` | The position of the divider as a percentage. | `number` | `50` |
+
+## Events
+
+| Name | Description |
+| --- | --- |
+| `change` | Emitted when the position changes. |
+
+## CSS Custom Properties
+
+| Name | Description |
+| --- | --- |
+| \`--divider-width\` | The width of the dividing line. |
+| \`--handle-size\` | The size of the compare handle. |
+
+## Custom States
+
+| Name | Description | CSS selector |
+| --- | --- | --- |
+| `dragging` | Applied when the comparison is being dragged. | `:state(dragging)` |
+
+## CSS Parts
+
+| Name | Description | CSS selector |
+| --- | --- | --- |
+| \`after\` | The container that wraps the after content. | \`::part(after)\` |
+| \`base\` | The container that wraps the before and after content. | \`::part(base)\` |
+| \`before\` | The container that wraps the before content. | \`::part(before)\` |
+| \`divider\` | The divider that separates the before and after content. | \`::part(divider)\` |
+| \`handle\` | The handle that the user drags to expose the after content. | \`::part(handle)\` |
+
+## Dependencies
+
+This component automatically imports the following elements. Sub-dependencies, if any exist, will also be included in this list.
+
+-   [`<wa-icon>`](https://webawesome.com/docs/components/icon)
+
 ## Examples
 
-Link to This Section
-
 ### Initial Position
-
-Link to This Section
 
 Use the `position` attribute to set the initial position of the slider. This is a percentage from `0` to `100`.
 
@@ -50,50 +129,3 @@ Use the `position` attribute to set the initial position of the slider. This is 
   />
 </wa-comparison>
 ```
-
-## Slots
-
-Valid slot names for this component (use exactly these — any other `slot` value
-is silently ignored and the element falls back to the default slot):
-
-- `before` — The before content, often an `<img>` or `<svg>` element.
-- `after` — The after content, often an `<img>` or `<svg>` element.
-- `handle` — The icon used inside the handle.
-
-## Attributes & Properties
-
-| Attribute | Property | Type | Default | Description |
-| --- | --- | --- | --- | --- |
-| `position` |  | `number` | `50` | The position of the divider as a percentage. |
-| `dir` |  | `string` |  |  |
-| `lang` |  | `string` |  |  |
-| `did-ssr` | `didSSR` |  |  |  |
-
-## Events
-
-| Event | Description |
-| --- | --- |
-| `change` | Emitted when the position changes. |
-
-## Custom States
-
-| State | Description |
-| --- | --- |
-| `dragging` | Applied when the comparison is being dragged. |
-
-## CSS Parts
-
-| Part | Description |
-| --- | --- |
-| `base` | The container that wraps the before and after content. |
-| `before` | The container that wraps the before content. |
-| `after` | The container that wraps the after content. |
-| `divider` | The divider that separates the before and after content. |
-| `handle` | The handle that the user drags to expose the after content. |
-
-## CSS Custom Properties
-
-| Property | Default | Description |
-| --- | --- | --- |
-| `--divider-width` |  | The width of the dividing line. |
-| `--handle-size` |  | The size of the compare handle. |

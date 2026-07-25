@@ -8,8 +8,6 @@ Border tokens define the edges and corners of Web Awesome components. They use `
 
 ## Border Style
 
-Link to This Section
-
 A single style token controls the line type used for all component borders throughout the library.
 
 | Custom Property | Description |
@@ -17,8 +15,6 @@ A single style token controls the line type used for all component borders throu
 | \`--wa-border-style\` | Standard border line style used across all components |
 
 ## Border Width
-
-Link to This Section
 
 Border width tokens use `rem` units and are scaled by `--wa-border-width-scale`. Values below `1` make all borders thinner; values above `1` make them thicker.
 
@@ -30,8 +26,6 @@ Border width tokens use `rem` units and are scaled by `--wa-border-width-scale`.
 | \`--wa-border-width-l\` | Thick border, used for prominent outlines |
 
 ## Border Radius
-
-Link to This Section
 
 Border radius tokens control the corner rounding of components. Size-based tokens use `rem` units and scale with `--wa-border-radius-scale`. Values below `1` make corners sharper; values above `1` make them rounder. Shape tokens provide fixed shapes regardless of the scale.
 
