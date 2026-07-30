@@ -66,6 +66,7 @@ copyFolderRecursive(VENDOR_SRC, VENDOR_DIST);
 console.log("✔ Vendor copied");
 
 // --- GLOBAL kopieren ---
+fs.mkdirSync(GLOBAL_DIST, { recursive: true });
 fs.copyFileSync(path.join(GLOBAL_SRC, "global.css"), path.join(GLOBAL_DIST, "global.css"));
 const globalJsPath = path.join(GLOBAL_SRC, "global.js");
 const globalJsContent = fs.readFileSync(globalJsPath, "utf8");
