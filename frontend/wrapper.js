@@ -1,6 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 
+const BASE_PATH = process.env.GITHUB_ACTIONS === "true" ? `/${process.env.GITHUB_REPOSITORY.split("/")[1]}/`: "../"
+
 const SRC_DIR = path.join(__dirname, "src/pages");
 const DIST_DIR = path.join(__dirname, "dist/pages");
 const WRAPPER_PATH = path.join(__dirname, "wrapper.html");
@@ -64,7 +66,10 @@ copyFolderRecursive(VENDOR_SRC, VENDOR_DIST);
 console.log("✔ Vendor copied");
 
 // --- GLOBAL kopieren ---
-copyFolderRecursive(GLOBAL_SRC, GLOBAL_DIST);
+fs.copyFileSync(path.join(GLOBAL_SRC, "global.css"), path.join(GLOBAL_DIST, "global.css"));
+const globalJsPath = path.join(GLOBAL_SRC, "global.js");
+const globalJsContent = fs.readFileSync(globalJsPath, "utf8");
+fs.writeFileSync(path.join(GLOBAL_DIST, "global.js"), globalJsContent.replaceAll("${BASE_PATH}", BASE_PATH), "utf8");
 console.log("✔ Global copied");
 
 // --- Assets kopieren ---
@@ -102,7 +107,6 @@ fs.readdirSync(SRC_DIR).forEach((page) => {
     if (process.env.GITHUB_ACTIONS === "true") {
       console.log("läuft in GitHub Actions");
     }
-    const BASE_PATH = process.env.GITHUB_ACTIONS === "true" ? `/${process.env.GITHUB_REPOSITORY.split("/")[1]}/`: "../"
 
     const finalHtml = wrapperTemplate.replace(
       /<main[^>]*>[\s\S]*?<\/main>/i,

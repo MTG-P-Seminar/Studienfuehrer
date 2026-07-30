@@ -1,4 +1,4 @@
-import { registerIconLibrary } from '/vendor/webawesome/dist-cdn/webawesome.js';
+import { registerIconLibrary } from '${BASE_PATH}vendor/webawesome/dist-cdn/webawesome.js';
 
 export function createCheckList(localStorageKey, formId) {
   let checked = new Set(JSON.parse(localStorage.getItem(localStorageKey) ?? "[]"))
