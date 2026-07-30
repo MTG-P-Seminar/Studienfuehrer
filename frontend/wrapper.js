@@ -15,6 +15,7 @@ const titles = {
   "abroad": "Inhalte zum Auslandsjahr",
   "abroad-challenges": "Herausforderungen und Tipps zum Auslandsjahr",
   "abroad-faq": "FAQ zum Auslandsjahr",
+  "abroad-pictures": "Bilder aus dem Auslandsjahr",
   "abroad-tips": "Tipps fürs Auslandsjahr",
   "early-studies": "Inhalte zum Frühstudium",
   "early-studies-ratings": "Bewertungen zum Frühstudium",
@@ -25,6 +26,7 @@ const titles = {
   "tum": "Frühstudium an der TUM",
   "unibw-communication": "Kommunikation an der Universität der Bundeswehr",
   "unibw-portals": "Portale der Universität der Bundeswehr",
+  "unibw-studyguide": "Studiengänge der Universität der Bundeswehr",
   "unibw-yubikey": "Anleitung für den YubiKey an der Universität der Bundeswehr",
 }
 
@@ -109,7 +111,7 @@ fs.readdirSync(SRC_DIR).forEach((page) => {
     .replace(
       /<\/head>/i,
       `<link rel="stylesheet" href="${BASE_PATH}pages/${page}/index.css">\n</head>
-       <title>${titles[page]} · StAu MTG</title>`
+       <title>${titles[page]} · StAu Navigation MTG</title>`
     )
     .replace(
       /<\/body>/i,
