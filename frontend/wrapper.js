@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const BASE_PATH = process.env.GITHUB_ACTIONS === "true" ? `/${process.env.GITHUB_REPOSITORY.split("/")[1]}/`: "../"
+const BASE_PATH = process.env.GITHUB_ACTIONS === "true" ? `/${process.env.GITHUB_REPOSITORY.split("/")[1]}/`: "/"
 
 const SRC_DIR = path.join(__dirname, "src/pages");
 const DIST_DIR = path.join(__dirname, "dist/pages");
@@ -20,16 +20,13 @@ const titles = {
   "abroad-pictures": "Bilder aus dem Auslandsjahr",
   "abroad-tips": "Tipps fürs Auslandsjahr",
   "early-studies": "Inhalte zum Frühstudium",
-  "early-studies-ratings": "Bewertungen zum Frühstudium",
-  "early-studies-regular-class": "Frühstudium - Erfahrungen aus der Perspektive eines Regelklassenschülers",
+  "early-studies-ratings": "Unsere Erfahrungen an verschiedenen Unis",
+  "early-studies-regular-class": "Frühstudium in Regelklassen",
   "home": "StAu – Studien- und Auslandsjahrführer des MTG",
   "lmu": "Frühstudium an der LMU",
   "todos": "TODOs",
   "tum": "Frühstudium an der TUM",
-  "unibw-communication": "Kommunikation an der Universität der Bundeswehr",
-  "unibw-portals": "Portale der Universität der Bundeswehr",
-  "unibw-studyguide": "Studiengänge der Universität der Bundeswehr",
-  "unibw-yubikey": "Anleitung für den YubiKey an der Universität der Bundeswehr",
+  "unibw": "Frühstudium an der UniBW"
 }
 
 // Wrapper laden
@@ -93,7 +90,8 @@ fs.readdirSync(SRC_DIR).forEach((page) => {
 
   // JS & CSS kopieren
   if (fs.existsSync(jsPath)) {
-    fs.copyFileSync(jsPath, path.join(distPagePath, "index.js"));
+    const content = fs.readFileSync(jsPath, "utf8");
+    fs.writeFileSync(path.join(distPagePath, "index.js"), content.replaceAll("${BASE_PATH}", BASE_PATH), "utf8");
   }
 
   if (fs.existsSync(cssPath)) {

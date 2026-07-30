@@ -1,4 +1,8 @@
-import { allDefined } from "/vendor/webawesome/dist-cdn/webawesome.js";
+import { createCheckList } from "${BASE_PATH}global/global.js"
+import { allDefined } from "${BASE_PATH}vendor/webawesome/dist-cdn/webawesome.js";
+
+createCheckList("unibw-communication", "communication")
+
 
 document.addEventListener("DOMContentLoaded", async () => {
   await allDefined();
