@@ -1,6 +1,9 @@
 <h1 class="wa-heading-xl">Studiengänge der Universität der Bundeswehr</h1>
 <wa-divider></wa-divider>
 
+Hier findest du das gesamte Angebot an Studiengängen für Interessierte. Bei den Studiengängen, die wir belegt haben,
+findest du auch eine Bewertung.
+
 <wa-accordion id="UnibwStudiengaenge-Accordion" theme="unibw">
   <wa-accordion-item label="Fakultät für Bauingenieurswesen und Umweltwissenschaften">
     Klassische Ingenieurfakultät für Infrastruktur und Umwelt: Bauen, Verkehr, Wasser und Raumplanung. Richtet sich stark auf reale Systeme (Straßen, Städte, Wasser, Bauwerke) und deren Nachhaltigkeit aus.
@@ -49,7 +52,7 @@
 
   </wa-accordion-item>
   <wa-accordion-item label="Fakultät für Betriebswirtschaft">
-    Praxisnahe Management-Fakultät. Fokus: Unternehmen steuern, Märkte verstehen, Kommunikation und Medien. => Deutlich anwendungsorientierter als klassische Uni-BWL
+    Praxisnahe Management-Fakultät. Fokus: Unternehmen steuern, Märkte verstehen, Kommunikation und Medien. → Deutlich anwendungsorientierter als klassische Uni-BWL
     <wa-tree style="--indent-guide-width: 1px;">
       <wa-tree-item>
         Institut für Ökonomie und Recht
@@ -91,7 +94,7 @@
 
   </wa-accordion-item>
   <wa-accordion-item label="Fakultät für Elektrische Energiesysteme und Informationstechnik">
-    Elektrotechnik auf Forschungsniveau. =>Energie, Netze, Kommunikation und Systeme – also die technische Infrastruktur moderner Gesellschaften
+    Elektrotechnik auf Forschungsniveau. → Energie, Netze, Kommunikation und Systeme – also die technische Infrastruktur moderner Gesellschaften
     <wa-tree style="--indent-guide-width: 1px;">
       <wa-tree-item>
         Institut für Dynamische Systeme und Messtechnik
@@ -132,7 +135,7 @@
     </wa-tree>    
   </wa-accordion-item>
   <wa-accordion-item label="Fakultät für Elektrotechnik und Informationstechnik">
-    Mehr Anwendung, weniger Theorie – Vorbereitung auf Ingenieurpraxis. =>praktische Version der Elektrotechnik
+    Mehr Anwendung, weniger Theorie – Vorbereitung auf Ingenieurpraxis. → praktische Version der Elektrotechnik
     <wa-tree style="--indent-guide-width: 1px;">
       <wa-tree-item>
         Institut für Elektrische Antriebstechnik und Aktorik
@@ -183,7 +186,7 @@
         <wa-tree-item>Professur für Mathematik</wa-tree-item>
         <wa-tree-item>Professur für Mathematik und Operations Research</wa-tree-item>
         <wa-tree-item>Grundlagen Elektrotechnik I 
-          <wa-dialog label="Dialog" without-header class="dialog-without-header">
+          <wa-dialog label="Dialog" without-header class="dialog-without-header" light-dismiss id="open dialog-rating-1">
             <ul>
             <li>Bietet nützliche Grundlagen</li>
             <li>Kompetente, sympathische Professoren</li>
@@ -195,7 +198,7 @@
             <wa-button slot="footer" variant="brand" data-dialog="close">Schließen</wa-button>
           </wa-dialog>
 
-          <wa-button appearance="filled">Bewertung anzeigen</wa-button>
+          <wa-button appearance="filled" size="xs" style="margin-left: 0.5rem;" data-dialog="open dialog-rating-1">Bewertung anzeigen</wa-button>
         </wa-tree-item>
       </wa-tree-item>
     </wa-tree>
@@ -264,7 +267,7 @@
         <wa-tree-item>Professur für Persönlichkeitspsychologie und Psychologische Diagnostik</wa-tree-item>
         <wa-tree-item>Professur für Psychologische Methodenlehre und Evaluation</wa-tree-item>
         <wa-tree-item>Professur für Sozial- und Konfliktpsychologie
-          <wa-dialog label="Dialog" without-header class="dialog-without-header">
+          <wa-dialog label="Dialog" without-header class="dialog-without-header" light-dismiss id="dialog-rating-2">
           <ul>
             <li>Wenig Vorwissen nötig</li>
             <li>Interaktive und inhaltlich starke Vorlesung</li>
@@ -277,7 +280,7 @@
             <wa-button slot="footer" variant="brand" data-dialog="close">Schließen</wa-button>
           </wa-dialog>
 
-          <wa-button appearance="filled">Bewertung anzeigen</wa-button>
+          <wa-button appearance="filled" size="xs" style="margin-left: 0.5rem;" data-dialog="open dialog-rating-2">Bewertung anzeigen</wa-button>
         </wa-tree-item>
       </wa-tree-item>
 
@@ -308,12 +311,12 @@
     </wa-tree>
   </wa-accordion-item>
   <wa-accordion-item label="Fakultät für Informatik">
-    Klassische Informatik mit starkem Fokus auf =>IT-Sicherheit, Systeme, Software und Mathematik.
+    Klassische Informatik mit starkem Fokus auf → IT-Sicherheit, Systeme, Software und Mathematik.
     <wa-tree style="--indent-guide-width: 1px;">
       <wa-tree-item>
         Institut für Theoretische Informatik, Mathematik und Operations Research
         <wa-tree-item>Modul Analysis I
-          <wa-dialog label="Dialog" without-header class="dialog-without-header">
+          <wa-dialog label="Dialog" without-header class="dialog-without-header" light-dismiss id="dialog-rating-3">
             <ul>
             <li>Sehr positiv bewertet als gründliche, formale und strukturierte Mathevorlesung.</li>
             <li>Tieferes Verständnis als in der Schule</li>
@@ -325,7 +328,7 @@
             <wa-button slot="footer" variant="brand" data-dialog="close">Schließen</wa-button>
           </wa-dialog>
 
-          <wa-button appearance="filled">Bewertung anzeigen</wa-button>
+          <wa-button appearance="filled" size="xs" style="margin-left: 0.5rem;" data-dialog="open dialog-rating-3">Bewertung anzeigen</wa-button>
         </wa-tree-item>
       </wa-tree-item>
 
@@ -369,7 +372,7 @@
       <wa-tree-item>
         Institut für Mechanik
         <wa-tree-item>Modul Technische Mechanik I
-          <wa-dialog label="Dialog" without-header class="dialog-without-header">
+          <wa-dialog label="Dialog" without-header class="dialog-without-header" light-dismiss id="dialog-rating-4">
             <ul>
             <li>Gute Grundlage für spätere technische oder physikalische Studiengänge</li>
             <li>Spannende Themen wie Gleichgewichtslagen, Schwerpunktberechnung, Kräftegleichgewichte, Schnittgrößen</li>
@@ -382,7 +385,7 @@
             <wa-button slot="footer" variant="brand" data-dialog="close">Schließen</wa-button>
           </wa-dialog>
 
-          <wa-button appearance="filled">Bewertung anzeigen</wa-button>
+          <wa-button appearance="filled" size="xs" style="margin-left: 0.5rem;" data-dialog="open dialog-rating-4">Bewertung anzeigen</wa-button>
         </wa-tree-item>
       </wa-tree-item>
 
@@ -561,7 +564,7 @@
     </wa-tree>
   </wa-accordion-item>
   <wa-accordion-item label="Fakultät für Wirtschafts- und Organisationswissenschaften">
-    Management + Wirtschaft + Gesellschaft auf Uni-Niveau. d.h. Verbindung von BWL, VWL, Datenanalyse und Organisation. => analytischer und strategischer als Betriebswirtschaft
+    Management + Wirtschaft + Gesellschaft auf Uni-Niveau. d.h. Verbindung von BWL, VWL, Datenanalyse und Organisation. → analytischer und strategischer als Betriebswirtschaft
     <wa-tree style="--indent-guide-width: 1px;">
       <wa-tree-item>
         WOW 1
@@ -601,7 +604,7 @@
         <wa-tree-item>WOW 5.1 - Professur für Volkswirtschaftslehre, insbesondere Mikroökonomie und Wettbewerbspolitik</wa-tree-item>
         <wa-tree-item>WOW 5.2 - Professur für Volkswirtschaftslehre, insbesondere Makroökonomik</wa-tree-item>
         <wa-tree-item>WOW 5.3 - Professur für Volkswirtschaftslehre, insbesondere Finanzwissenschaft und soziale Sicherungssysteme 
-          <wa-dialog label="DialogVWL" without-header class="dialog-without-header">
+          <wa-dialog label="DialogVWL" without-header class="dialog-without-header" light-dismiss id="dialog-rating-5">
             <ul>
             <li>Wenig Aufwand nötig, eher niedriges bis mittleres Niveau</li>
             <li>Gute Grundlage für Schule, Studium und spätere Karriere</li>
@@ -615,7 +618,7 @@
             <wa-button slot="footer" variant="brand" data-dialog="close">Schließen</wa-button>
           </wa-dialog>
 
-          <wa-button appearance="filled">Bewertung anzeigen</wa-button>
+          <wa-button appearance="filled" size="xs" style="margin-left: 0.5rem;" data-dialog="open dialog-rating-5">Bewertung anzeigen</wa-button>
         </wa-tree-item>
         <wa-tree-item>WOW 5.4 - Professur für Wandel und Nachhaltigkeit</wa-tree-item>
         <wa-tree-item>WOW 5.5 - Honorarprofessur für Sicherheits- und Militärökonomie</wa-tree-item>
@@ -631,10 +634,3 @@
     </wa-tree>
   </wa-accordion-item>
 </wa-accordion>
-
-<script>
-  const dialog = document.querySelector('.dialog-without-header');
-  const openButton = dialog.nextElementSibling;
-
-  openButton.addEventListener('click', () => (dialog.open = true));
-</script>
