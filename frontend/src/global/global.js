@@ -22,7 +22,7 @@ export function createCheckList(localStorageKey, formId) {
 
 registerIconLibrary('default', {
   resolver: (name, _, variant) => {
-    return `/vendor/fontawesome/svgs/${variant ?? "solid"}/${name}.svg`;
+    return `${BASE_PATH}vendor/fontawesome/svgs/${variant ?? "solid"}/${name}.svg`;
   },
 });
 
