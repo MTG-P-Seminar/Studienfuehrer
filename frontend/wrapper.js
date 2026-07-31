@@ -17,6 +17,8 @@ const titles = {
   "abroad": "Inhalte zum Auslandsjahr",
   "abroad-challenges": "Herausforderungen und Tipps zum Auslandsjahr",
   "abroad-faq": "FAQ zum Auslandsjahr",
+  "abroad-introduction": "Einführung zum Auslandsjahr",
+  "abroad-organisation": "Organisation und Kosten eines Auslandsjahrs",
   "abroad-pictures": "Bilder aus dem Auslandsjahr",
   "abroad-tips": "Tipps fürs Auslandsjahr",
   "early-studies": "Inhalte zum Frühstudium",

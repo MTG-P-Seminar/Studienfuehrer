@@ -1,0 +1,19 @@
+td[green] {
+  font-weight: bold;
+  color: var(--wa-color-green)
+}
+
+td[yellow] {
+  font-weight: bold;
+  color: var(--wa-color-yellow)
+}
+
+td[red] {
+  font-weight: bold;
+  color: var(--wa-color-red)
+}
+
+td[gray] {
+  font-weight: bold;
+  color: var(--wa-color-gray)
+}
